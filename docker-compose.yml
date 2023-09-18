@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  lkf-documentation:
+    restart: "no"
+    container_name: lkf-documentation
+    hostname: lkf-documentation
+    image: linkaform/documentation:latest
+    build:    
+     context: ./
+     dockerfile: ./Dockerfile
+     target: develop
+    volumes:
+      - ./:/srv/docs/
+      # - ./content:/srv/docs/content
+      # - ./extensions:/srv/docs/extensions
+      # - ./locale:/srv/docs/locale
+    command: sleep infinity
+    stdin_open: true
+    tty: true
