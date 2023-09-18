@@ -17,13 +17,11 @@ release = 'v0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = []
 
 language = 'es'
-
 languages_names = {
     'en': 'EN',
     'es': 'ES',
@@ -35,7 +33,10 @@ sys.path.insert(0, str(extension_dir.absolute()))
 extensions = [
     # Cards
     'cards',
+    'myst_parser'
 ]
+#extensions = []
+source_suffix = ['.rst', '.md']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
