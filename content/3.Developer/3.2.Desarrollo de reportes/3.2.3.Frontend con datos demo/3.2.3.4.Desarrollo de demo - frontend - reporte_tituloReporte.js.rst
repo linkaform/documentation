@@ -1,0 +1,215 @@
+=====================================
+Demo de frontend - archivo Javascript
+=====================================
+
+Antes de comenzar a explicar el código perce, se deben considerar
+algunos estándares y buenas prácticas al momento de programar. Una de
+esas es usar comentarios que describan en pocas palabras y de forma
+coherente el código que se está realizando, esto permitirá al
+desarrollador y a otros desarrolladores comprender el código. Una buena
+práctica es usar un estándar en el nombre de las variables, estas deben
+ser descriptivas y estar en el formato Camel Case o “” (guión bajo),
+además de nombrarlas en inglés de preferencia. Otra buena práctica es
+considerar que se está usando el lenguaje Python 3 al momento de
+desarrollar la documentación, por lo que se recomienda estudiar python 3
+o la versión solicitada.
+
+Este archivo se encarga principalmente de gestionar los eventos que
+ocurren en la vista y alguna de estas corresponden a solicitudes que se
+realizan al backend, por ejemplo a los catálogos en la mayoria de de los
+casos **No en todos**, estas formas son: 1. Utilizar una función API que
+se encuentrán el front para realizar peticiones a catálogos que se
+encuentran asociadas a una forma. Esta manera de realizar la petición es
+poco práctica, ya que devuelve solo los datos de catálogos en un primer
+nivel, recordemos que los catálogos pueden ser anidados, esto devuelve
+resultados incompletos, por lo que no se considera práctico. 2. Hacer
+una petición a los scripts: los scripts realizan la petición a una misma
+API de los scripts y esta API realiza las peticiones a los catálogos. Es
+un método recomendado, ya que puedes formatear la dato o inclusive es
+posible realizar consultas a la misma base de datos y devolver la data.
+
+La creación de Script comienza declarando las variables a utilizar y a
+instanciarlas con un valor inicial **null**. let us = null; let usTy =
+null; let jw = null; let userId = null; let userJwt = null; // token del
+usuario let userName = null; // let userParentId = null; // id de la
+cuenta padre let scriptId = null; // argumento get
+
+Cuando un reporte se renderiza, se aplican ciertas funciones
+automáticamente, a continuación se muestran las siguientes:
+
+$(‘#divOptions’).hide(); $(‘#title_report’).hide();
+$(‘.title_tables’).hide(); hideElement(“title_demo”);
+hideElement(“firstParameters”); hideElement(“firstElement”);
+hideElement(“secondElement”); hideElement(“thirdElement”);
+
+Estos son métodos de jQuery, los argumentos que recibe son los ids de
+las etiquetas en el archivo HTML, estos métodos ocultan estos elementos
+al cargar el reporte. Las siguientes funciones son las siguientes: -
+window.onload = function(){ } Esta función le ejecuta en automático al
+cargar el reporte, esta función se encarga de comprobar el entorno de
+ejecución y los filtros a utilizar. Esta a su vez se compone de otras
+funciones y condicionales como son: - if(us != “” && jw != “” \|\|
+scriptId===null){} Esta condición verifica que se ha iniciado sesión, se
+pueden observar los parámetros de us correspondiente al id del usuario,
+el parámetro de jw correspondiente al token del usuario y al parámetro
+scriptId, si este parámetro es null el entorno se configura a la demo.
+-Si la condición se cumple se deben realizar las siguientes funciones. -
+hideElement(“inicio_ses”) Esta función oculta la sección correspondiente
+a inicio de sesión porque ya se cuenta con una sesión activa. -
+unhideElement(“close_sesion”) Muestrael elemento correspondiente al
+botón serrar sesión. - getCompanyLogo(userParentId) Esta función recibe
+como parámetro el id de la cuenta padre, esta devuelve el logo de la
+empresa. - userId = us Se define el id del usuario - userJwt = jw Se
+define el token - userName = getCookie(“userName”) Se obtiene el nombre
+del usuario a trravés de la cookie -
+document.getElementById(“firstParameters”).style.removeProperty(‘display’)
+- unHideReportElements() Des oculta los elementos del reporte - if
+(scriptId == null) { Se encarga de comprobar que la url devuelva el id
+del script, si la condición se cumple establece el entorno a demo
+ejecutando la función correspondiente de loadDemoData. loadDemoData(); }
+- setSpinner() Se encarga de cargar la animación de spinnner cuando se
+carga la data. - setDate() Esta función esta diseñada para configurar el
+formato de los rangos de fechas. - get_catalog() Esta función se encarga
+de realizar una petición al backend utilizando fetch. - La función fetch
+recibe la url (puede ser a prod o a preprod dependiendo de los
+parámetros en la url, esta se le añade una ruta estandarizada).
+Posteriormente se define el cuerpo de la función con el método HTTP
+POST, el cuerpo de la petición se formatea a JSON, el cuerpo recibe dos
+atributos, el primero corresponde al id del script y el option; este
+puede valer 0 o 1, estos definen el tipo de petición, option 0 define la
+búsqueda a catálogos y option 1 define una petición normal. -
+posteriormente se define el encabezado de la perición:esta recibe el
+tipo con contenido de la petición y el token del usuario. -
+``fetch(url + 'infosync/scripts/run/', {                       method: 'POST',                       body: JSON.stringify({                         script_id: id del script,                         option: 0 o 1,                       }),                       headers:{                         'Content-Type': 'application/json',                         'Authorization': 'Bearer '+userJwt                       },                     }) headers:{                         'Content-Type': 'application/json','Authorization': 'Bearer '+userJwt },``
+posteriormente se define el resultado de la promesa, esta convierte la
+respuesta en formato json. Si la respuesta es devuelta con éxito, se
+comprueba que el catalogo tenga un valor, si hay un valor en catalogo
+esta se procesa en un bucle agregando los valores a un arreglo,
+posteriormente se recorre el arreglo para agregar los resultados a un
+elemento options de un select con el id promotor. \``\`.then(res =>
+res.json()) .then(res => { if (res.success) { if
+(res.response.catalog.length){ array_value = [] for (i = 0; i <
+res.response.catalog.length; i++) { if
+(!array_value.includes(res.response.catalog[i][‘63dc0f1ec29b8336b7b72615’]))
+{ array_value.push(res.response.catalog[i][‘63dc0f1ec29b8336b7b72615’])
+} } array_value.sort(); $(“#promotor”).empty();
+$(‘#promotor’).append(‘–Seleccione–’); for (i = 0; i
+<array_value.length; i++) { $(‘#promotor’).append(‘’+array_value[i]+‘’);
+}
+
+::
+
+                       }
+                     } 
+                   })
+               ```
+                                   
+
+-  El resultado del código anterior se visualiza de la siguiente forma:
+   ![[igmlkf/imgFromDatosPrueba/imgDesarrolloDemo/1.png]]
+-  unHideReportElements(){ } Esta función se encarga de ocultar aquellos
+   elementos que no son necesarios en el loggin, como los filtros,
+   gráficas o tablas.
+-  loadDemoData(){ } Esta función detecta si el entorno es la demo, en
+   caso de serlo muestra ciertos elementos pertenecientes a la demo,
+   como son un título representativo de demo, un filtro y un tabla de
+   demo.
+-  setDate(){ }
+-  runFirstElement(){ }: Cuando se realiza una solicitud de la data,
+   esta función se encarga de gestionar los filtros existentes, toma los
+   valores de “date_to” (de esta fecha) y “date_from” (a esta fecha) y
+   las almacena en las variables con el siguiente estandar:
+   ``let date_from = document.getElementById("date_from");     let date_to = document.getElementById("date_to");       let promotor = document.getElementById("promotor");``
+
+Posteriormente, se realiza la siguiente validación, la propiedad value
+de las fechas no deben tener un valor nulo (no existencia) y que no
+deben estar vacías, si la condición se cumple se ejecuta la función
+**getFirstElement** esta recibe tres argumentos, data_to.value (la fecha
+inicial) date_from.value (la fecha final) y el promotor.value (id del
+promotor).
+``if (date_from.value != null && date_to.value != null && date_from.value != "" && date_to.value != ""){                 getFirstElement(date_to.value, date_from.value, promotor.value);               }               else               {                 Swal.fire({                   title: 'Rango de Fechas Requerido',                 });         } - function getFirstElement(dateTo, dateFrom, promotor){} Esta función recibe los tres argumentos y se encarga de solicitar la data y de otras funciones, a continuación, se presenta la estructura del cuerpo de la función.     -``//—-Hide
+Css $(“#divContent”).hide(); Se encarga de ocultar el elemento HTML
+encargado de mostrar el contenido de la data. $(‘.load-wrapp’).show();
+Muestra la animación de carga. $(‘.title_tables’).hide(); Oculta el
+título del contenido. \``\`
+
+El siguiente bloque de código consiste en realizar la petición al backen
+a través de una función fetch, esta recibe una serie de argumentos, como
+son, la url y el complemento de la ruta como estandar, la petición se
+ejecuta con el método POST y el cuerpo de la petición envía los
+argumentos de script_id, los rangos de fechas el id del promotor y el
+option: 1 correspondiente al tipo de petición.
+
+::
+
+   fetch(url + 'infosync/scripts/run/', {
+       method: 'POST',
+       body: JSON.stringify({
+         script_id: scriptId,
+         date_to: dateTo,
+         date_from: dateFrom,
+         promotor: promotor,
+         option: 1,
+       }),
+       headers:{
+         'Content-Type': 'application/json',
+         'Authorization': 'Bearer '+userJwt
+       },
+     })
+
+Posteriormente se encuentra el bloque de código que verifica que los
+datos se devuelvan con éxito, en caso de tener éxito, se oculta el
+elemento de carga y se muestra el contenido, en teste caso demo en
+particular se hace uso de la función getDrawTable, responsable de
+dibujar la tabla.
+
+::
+
+     .then(res => res.json())
+     .then(res => {
+       if (res.success) {
+         //----Hide and show
+         $('.load-wrapp').hide();
+         $("#divContent").show();
+         $('.title_tables').show();
+         console.log(res.response)
+         
+         if (res.response.firstElement.tabledata) {
+           getDrawTable('firstElement', columsTable1, res.response.firstElement.tabledata, 450);
+           document.getElementById("firstElement").style.removeProperty('display');
+         }
+
+-  function getDrawTable(id, columData, tableData, height = 500){} Esta
+   función recibe cuatro parámetros, id hace referencia al id del
+   elemento HTML que contendrá la tabla, columData representa los
+   títulos de las columnas da las tablas, tableData representa las filas
+   de datos de las tablas y height = 500 define altura estándar de la
+   tabla. El cuerpo de la función que se presenta a continuación,
+   presenta un formato definido por la librería
+   `Tabulator <https://tabulator.info/>`__. Esta estructura es un
+   estándar para la gestión de tablas, puede ser a justada a las
+   necesidades de los clientes. Se inicializa un objeto de Tabulator
+   esta recibe como primer argumento “#”+ id y un objeto javascript que
+   define el formato de la tabla.
+   ``var  table = new Tabulator("#" + id, {       height:height +"px",       layout:"fitDataTable",       data:tableData,       resizableRows:false,       dataTree:true,       dataTreeStartExpanded:false,       clipboard:true,       clipboardPasteAction:"replace",       textDirection:"ltr",       columns:columnsData,     });``
+   El resto del cuerpo de la función consiste en las condicionales que
+   se muestran a continuación. Las condicionales comprueban si existen
+   los botones de descarga de la tabla en distintos formatos (xlsx, csv,
+   pdf). Se realiza esta condición porque en ciertos casos estos botones
+   no se colocan por requerimientos del cliente. \``\` if
+   (document.getElementById(“download_xlsx\_”+id)){ //trigger download
+   of data.xlsx file
+   document.getElementById(“download_xlsx\_”+id).replaceWith(document.getElementById(“download_xlsx\_”+id).cloneNode(true));
+   document.getElementById(“download_xlsx\_”+id).addEventListener(“click”,
+   function (){ table.download(“xlsx”, “data.xlsx”, {sheetName:“data”});
+   }); }
+
+   if (document.getElementById(“download_csv\_”+id)){ //trigger download
+   of data.csv file
+   document.getElementById(“download_csv\_”+id).replaceWith(document.getElementById(“download_csv\_”+id).cloneNode(true));
+   document.getElementById(“download_csv\_”+id).addEventListener(“click”,
+   function (){ table.download(“csv”, “data.csv”); }); \``\` Los botones
+   de descarga son los siguientes:
+   ![[igmlkf/imgFromDatosPrueba/imgDesarrolloDemo/2.png]] Continua con
+   la
+   `reporte_nombreReporte_data.js <3.2.4.5.Configuración%20de%20reporte_nombreReporte_data.js>`__

@@ -1,0 +1,305 @@
+===============================
+Demo de frontend - archivo HTML
+===============================
+
+
+Al crear un reporte se generan dos enlaces, una utilizada   
+para demos y otra para producción, lo primero que se debe   
+realizar es una demo (Prototipo), se debe comenzar con el   
+frontend y los resultados del backend se simularan con      
+datos demo. El objetivo es brindar al cliente una           
+perspectiva del resultado del producto final, a partir de  
+la demo los stakeholders ofrecen retroalimentación para la  
+mejora y optimización del reporte.                         
+
+Configuración del HTML, comenzamos con la estructura del HTML.
+--------------------------------------------------------------
+
+HEAD 
+----                                    |
+
+::
+
+   <head>
+          <!--------- Configuración inicial del la web de reportes. ------------>
+          <meta charset="utf-8">
+          <title>Servido</title>
+          <meta name="title" content="Servido">
+          <meta name="description" content="Reporte Visitas">
+          <!--------- Importar las rutas a los archivos de ciertos diseños. --------->
+          <link type="image/x-icon" rel="shortcut icon" href="../styles/img/favicon.ico">
+          <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+          <link type="image/x-icon" rel="shortcut icon" href="../styles/img/favicon.ico">
+          <!--Bootstrap -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+          <!--Font Awesome -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <!--Utils -->        
+          <link rel="stylesheet" href="../styles/css/sweetalert2.min.css">
+          <link rel="stylesheet" href="../styles/css/styles.css">
+          <link rel="stylesheet" href="style.css">
+      </head>
+
+BODY
+-----
+
+En este apartado se colocan los elementos que observará el cliente, como
+los rangos de fechas, las tablas o gráficos. Una estructura del body es
+la siguiente: Un elemento ``<nav>,`` generalmente solo tiene el titulo
+con el formato reporte de nombreReporte y el botón de cerrar sesión. El
+siguiente elemento, corresponde al contenedor padre del reporte perce,
+el siguiente elemento corresponde a la etiqueta contenedora de la
+subventana, del inicio de sesión. Esta a su vez anida a los elementos
+correspondientes al inicio de sesión, puede utilizar el siguiente
+estandar.
+
+::
+
+   <div class="row inicio_ses" id="inicio_ses">
+       <div class="errorLogin" id="errorLog"></div>
+           <div class="control">
+                   <div class="renglon">
+                       <h3>Usuario: </h3>
+                       <input class="form-control ds-input" id="user" name="user" value="">
+                   </div>
+                   <div class="renglon">
+                       <h3>Contraseña: </h3>
+                       <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
+                   </div>
+                   <div class="controlBtn">
+                   <div class="btn btn-primary" onclick="login()">Login</div>
+                   <div class="btn btn-primary" onclick="reset()">Reset</div>
+           </div>
+       </div>
+   </div>
+
+Resultado:
+
+.. raw:: html
+
+   <div class="row inicio_ses" id="inicio_ses">
+
+::
+
+                   <div class="errorLogin" id="errorLog"></div>
+                   <div class="control">
+                       <div class="renglon">
+                           <h3>Usuario: </h3>
+                           <input class="form-control ds-input" id="user" name="user" value="">
+                       </div>
+                       <div class="renglon">
+                           <h3>Contraseña: </h3>
+                           <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
+                       </div>
+                       <div class="controlBtn">
+                       <div class="btn btn-primary" onclick="login()">Login</div>
+                       <div class="btn btn-primary" onclick="reset()">Reset</div>
+                       </div>
+                   </div>
+               </div>
+
+El siguiente elemento corresponde al una etiqueta que se muestra cuando
+se accede a la demo, puede seguir el siguiente estandar:
+
+::
+
+    <!--Title Demo -->
+       <div id="title_demo" style="margin-bottom: 20px;">
+           <center>
+               <h1><span>Demo data</span>&nbsp;&nbsp;</h1>
+           </center>
+       </div>
+
+Resultado:
+
+.. raw:: html
+
+   <div id="title_demo" style="margin-bottom: 20px;">
+
+::
+
+                   <center>
+                       <h1><span>Demo data</span>&nbsp;&nbsp;</h1>
+                   </center>
+               </div>
+
+Lo siguiente es configurar las opciones de filtro:
+
+::
+
+    <!--OPtions FIlter -->
+                   <div class="col-sm-12 col-md-12 col-lg-12 row" id="divOptions">
+                       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#firstParameters" aria-expanded="false" aria-controls="collapseExample" id="buttonFilter">
+                           <i class="fa-solid fa-filter"></i>
+                       </button >  &nbsp;  &nbsp;
+                       <div class="btn btn-primary" onclick="runFirstElement()" >Run</div>
+                   </div>
+
+Resultado:
+
+.. raw:: html
+
+   <div class="col-sm-12 col-md-12 col-lg-12 row" id="divOptions">
+
+::
+
+                   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#firstParameters" aria-expanded="false" aria-controls="collapseExample" id="buttonFilter">
+                       <i class="fa-solid fa-filter"></i>
+                   </button >  &nbsp;  &nbsp;
+                   <div class="btn btn-primary" onclick="runFirstElement()" >Run</div>
+               </div>
+
+Lo siguiente es configurar los filtros, estos son de fecha, de periodo,
+existen otros filtros específicos como el selector múltiple, checkbox y
+checkbox múltiple. Los input deben tener la clase **form-control**
+
+::
+
+   <!--Filters -->
+                   <div id="firstParameters" class="collapse row show">
+                       <div class="col-sm-12 col-md-3 col-lg-3">
+                           <h5>Fecha Desde: </h5>
+                           <input class="form-control ds-input" type="date" id="date_from" name="date_from">
+                       </div>
+                       <div class="col-sm-12 col-md-3 col-lg-3">
+                           <h5>Fecha Hasta: </h5>
+                           <input class="form-control ds-input" type="date" id="date_to" name="date_to">
+                       </div>
+                   </div>
+
+Resultado:
+
+.. raw:: html
+
+   <div id="firstParameters" class="collapse row show">
+
+::
+
+                   <div class="col-sm-12 col-md-3 col-lg-3">
+                       <h5>Fecha Desde: </h5>
+                       <input class="form-control ds-input" type="date" id="date_from" name="date_from">
+                   </div>
+                   <div class="col-sm-12 col-md-3 col-lg-3">
+                       <h5>Fecha Hasta: </h5>
+                       <input class="form-control ds-input" type="date" id="date_to" name="date_to">
+                   </div>
+               </div>
+               
+
+Lo siguiente es configurar el contenido perce, correspondiente a las
+gráficas o/y tablas, estos son nombrados bajo un concepto de lista de
+elementos, firstElement, secondElement sucesivamente.
+
+::
+
+   <!--Content -->
+                   <div class="row" style="margin-top:20px;"  id="divContent">
+                       <!--Primer Elemento -->
+                       <div class="col-sm-12 col-md-12 col-lg-12" style="align-items: center;overflow-y: scroll;">
+                           <section class="title_tables">
+                               <h3><span>Recepción Visitas</span>&nbsp;&nbsp;
+                                   <button class="btn btn-primary" id="download_csv_firstElement"><i class="fa-solid fa-file-csv"></i></button>
+                                   <button class="btn btn-success" id="download_xlsx_firstElement"><i class="fa-regular fa-file-excel"></i></button>
+                               </h3>
+                               <hr class="hrFirstElement">
+                           </section>
+                           <div id="firstElement" ></div>
+                       </div>
+     
+                   </div>
+
+Resultado:
+
+.. raw:: html
+
+   <div class="row" style="margin-top:20px;"  id="divContent">
+
+::
+
+                   <!--Primer Elemento -->
+                   <div class="col-sm-12 col-md-12 col-lg-12" style="align-items: center;overflow-y: scroll;">
+                       <section class="title_tables">
+                           <h3><span>Recepción Visitas</span>&nbsp;&nbsp;
+                               <button class="btn btn-primary" id="download_csv_firstElement"><i class="fa-solid fa-file-csv"></i></button>
+                               <button class="btn btn-success" id="download_xlsx_firstElement"><i class="fa-regular fa-file-excel"></i></button>
+                           </h3>
+                           <hr class="hrFirstElement">
+                       </section>
+                       <div id="firstElement" ></div>
+                   </div>
+
+               </div>
+
+Después del contenido, se deben agregar ciertos scripts correspondientes
+a ciertas librerías dividida en las secciones de Tabulator, chartjs,
+jquery, bootstrap.
+
+::
+
+   <!-- TABULATOR -->
+       <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+       <!-- tabulator : PDF Downlowd-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+
+       <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+
+       <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+
+       <!-- chartjs -->
+       <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+       <script type="text/javascript" src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
+       <!-- Jquery -->
+       <script
+       src="https://code.jquery.com/jquery-3.6.0.js"
+       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+       crossorigin="anonymous"></script>
+
+       <!-- Bootstrap -->
+       <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+       <script 
+       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
+       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" 
+       crossorigin="anonymous"></script>
+
+       <script 
+       src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" 
+       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+       crossorigin="anonymous"></script>
+
+Posteriormente se encuentra la sección de los archivos **syles** propios
+de servido; en esta se encuentran de forma minimizada ciertas librerías
+como cgroma; la cual permite crear una paleta de colores
+automáticamente; útiles cuando se necesitan ciertos colores para
+gráficos, la librería de weetalert2 permite crear alertas atractivas.
+Posteriormente se encuentran los archivos de la carpeta apps/utils en
+servido; estas corresponden a las funciones API; a continuación se
+explican breve mente: - servido_utils: Esta configura el inicio de
+sesión, como los usuarios, contraseñas, configurar las cookies
+configurando el sessionId, userId, userJwt, userName y userParentId.
+Además se encarga de generar ciertas funciones como: getPalleteColors,
+setSpinner, getChartDownload, getDownload, setDateFilterMonth.
+
+::
+
+       <!-- Utils -->
+       <script type="text/javascript" src="../styles/js/chroma.min.js"></script>
+       <script type="text/javascript" src="../styles/js/sweetalert2.all.min.js"></script>
+
+Finalmente se mandan a llamar los archivos encargados de gestionar el
+reporte y posteriormente se encuentran los archivos que gestionan la
+petición a la API de linkaform y el archivo con la data que se verá
+reflejado en la gráfica y las tablas.
+
+::
+
+       <script type="text/javascript" src="../utils/lkf_utils.js"></script>
+       <script type="text/javascript" src="../utils/servido_utils.js"></script>
+
+El demo anterior puede ser utilizado como referencia para realizar
+reportes.

@@ -1,0 +1,25 @@
+=========
+Linkaform
+=========
+
+Linkaform hace uso de los reportes para ofrecer a sus clientes una perspectiva, visual, confiable y agradable de sus datos. Por lo que es necesario desarrollarla de forma que siempre brinde esas cualidades que nos distinguen.
+
+Un reporte se construye a partir de un conjunto de estándares y librerías establecidas por linkaform, para agilizar el proceso de construcción, además el reporte es el resultado de una correcta interacción entre el backend (lo que no ve el usuario, p.e. conexión a bases de datos, querys) y el frontend (lo que ve el usuario, p.e. gráficas, tablas, tarjetas, etc.)
+
+En este apartado se le guiara por todos los puntos necesarios que tiene que conocer para poder poder realizar un reporte de calidad, siguiendo los estándares de la industria.
+
+Funcionamiento de formas
+------------------------
+Las **formas** (formulario digital) es una interfaz visual que permite obtener los datos solicitados o necesarios para nuestros clientes, a fin de apoyarlos a gestionar todas sus actividades operacionales. 
+
+A partir de los datos obtenida de los formularios  se comenzará a desarrollar los reportes. 
+Para acceder a estos formularios es necesario hacer uso de un usuario y contraseña si se desea consultar los identificadores únicos de cada campo que compone el formulario y poder visualizar los resultados de la forma a medida que se desarrolla.
+Estas credenciales se las proporcionará el equipo técnico de Linkaform, cabe aclarar que para acceder a estas formas y hacer uso de ellas, es posible acceder desde la cuenta del cliente.
+
+En este punto es necesario recordar la estructura de las cuentas de Linkaform, en donde se menciona que se hace uso de la cuenta de **preproducción** ***preprod***, esta sirve principalmente para realizar pruebas y evitar que un posible error sea evitado por el cliente o usuario. La segunda cuenta de mayor importancia es **producción**  ***prod*** , esta cuenta es la que utiliza el cliente y el usuario, cuando los cambios en la cuenta de ***preprod*** son satisfactorios y cumplen los requerimientos de los clientes se envían a producción.
+
+¿En donde se encuentran los reportes en Linkaform?
+--------------------------------------------------
+Al acceder a una cuenta en web el módulo de reporte se debe dirigir a los íconos de la barra lateral izquierda, seleccione el quinto ícono para acceder a los reportes. 
+
+Continua a :doc:`3.2.2.Configuración de servido`

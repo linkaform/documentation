@@ -41,7 +41,7 @@ source_suffix = ['.rst', '.md']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 #html_theme = 'alabaster'
-html_theme = 'classic'
+html_theme = 'press'
 html_static_path = ['static']
 locale_dirs = ['./locale/']
 templates_path = ['./extensions/']

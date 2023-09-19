@@ -3,12 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to LinkaForm's documentation! DOS
+Welcome to LinkaForm's documentation!
 =====================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Contenido:
+   :titlesonly:
+
+   2.Módulos/Viáticos/index
+   3.Developer/3.2.Desarrollo de reportes/index
+
+   ...
 
 
 

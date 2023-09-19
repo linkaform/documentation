@@ -1,0 +1,120 @@
+================
+Autorizar gastos
+================
+
+En este apartado usted podrá consultar información relacionado con la
+**autorización de solicitudes de viáticos**. ### Cómo ubicar las
+solicitudes de gastos
+
+1. Deberá dirigirse a **menú > Registros**
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+En esta sección podrá ver la **lista de registros** que se han creado y
+detalles de los mismos, también podrá **aplicar filtros** si desea ver
+algún registro en especifico.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-1-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+Cómo autorizar un gasto
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Revisar que en la columna **Forma** se indique “**Solicitud de
+   viáticos**”, a continuación clicar el **ícono de detalles**.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+Esta pantalla le mostrará en detalle los datos de la solicitud de
+viáticos. Si hace click en el ícono de **editar** (recuadro verde),
+podrá hacer la **revisión** o **modificar** la solicitud en caso de que
+requiera algún ajuste.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms//autorizar-gastos/2-1-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+2. Después de haber revisado y/o editado la solicitud, en el campo de
+   **status** podrá **seleccionar** el estado de la solicitud y
+   cambiarlo a **Autorizado**.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/3-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+..
+
+.. note::
+   El estado por defecto de la solicitud es **Solicitado**
+   |Estado solicitud por defecto|
+
+3. **Asignar** el monto autorizado a la solicitud del empleado.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/4-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+4. **Firmar** la autorización **Firmar > Aceptar firma.**
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/5-autorizar-gastos.png
+   :alt: Autorizar gastos menú
+
+   Autorizar gastos menú
+
+Esperar a que Linkaform procese su firma.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/5-2-autorizar-gastos.png
+   :alt: Procesando firma
+
+   Procesando firma
+
+5. **Enviar solicitud**.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/6-autorizar-gastos.png
+   :alt: Enviar solicitud
+
+   Enviar solicitud
+
+Una vez realizado este proceso aparecerá en pantalla un mensaje de
+confirmación, como el que se muestra a continuación.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/7-autorizar-gastos.png
+   :alt: Mensaje de confirmación
+
+   Mensaje de confirmación
+
+Al clicar en Volver al registro, los cambios relacionados con la
+autorización se verán reflejados.
+
+.. figure::
+   /imgs/Modulos/Viaticos/forms/autorizar-gastos/8-autorizar-gastos.png
+   :alt: Cambios guardados
+
+   Cambios guardados
+
+Cuando se cierra la autorización de solicitud de gastos se envía una
+notificación por correo electrónico junto con un PDF resumido del
+proceso, todo esto configurable.
+
+.. |Estado solicitud por defecto| image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/3-1-autorizar-gastos.png

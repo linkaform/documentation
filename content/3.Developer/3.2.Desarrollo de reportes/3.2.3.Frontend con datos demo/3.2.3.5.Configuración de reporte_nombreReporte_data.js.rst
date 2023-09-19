@@ -1,0 +1,64 @@
+====================================================
+Demo de frontend - formateo de la data en Javascript
+====================================================
+
+Este archivo gestiona el formato de la data para las tablas, su
+estructura se describe a continuación: Definir un arreglo que contendrá
+un lista de objetos, estos objetos tienen ciertas propiedades comunes
+pero con valores distintos, en el primer objeto se define las siguientes
+propiedades: - title: contiene el texto **Folio**, - field: folio -
+hozAlingn: “right”, define la posición del texto, también puede ser
+“center” o “left” - formatterParams: Esta es igual a una función que
+devuelve un enlace con los valores de cdll.getData.record_id, este valor
+es el elemento record_id de cada fila de la tabla. -
+headerFilter:“input”, este input define el elemento de búsqueda, dentro
+de este ingresamos el folio del registro que deseamos y este devuelve el
+registro en específico. - width:100: Define el ancho de la columna en
+pixeles. Existen otros atributos propios de Tabulator que son de
+utilidad para la construcción de tablas, como los siguientes: -
+formatter: “money” este define un tipo de formato en específico, en este
+caso definimos el símbolo de $ indicando dinero. - formatterParams esta
+propiedad recibe un objeto con las siguientes propiedades: - symbol: “”
+Define un un símbolo en particular si es que se desea uno. -
+symbolAfter: Define la ubicación del símbolo después del contenido. -
+thousand: ““, define el número de decimales aceptables. - precision:
+false, define si se desean decimales, false: no se desean decimales,
+true: se desean decimales.
+
+::
+
+   var columsTable1 = [
+     {title:"Folio", field:'folio', hozAlign:"right", formatter:"link", formatterParams:{
+     url:function(cell){return "https://app.linkaform.com/#/records/detail/" + cell.getData().record_id}, 
+     target:"_blank",}, headerFilter:"input",width:100},
+     { title:"Store ID", field:'store_id',hozAlign:"right",width:200},
+     { title:"Store", field:'store',hozAlign:"left",width:300},
+     { title:"Cordenas Latitud", field:'cordenada_latitud',hozAlign:"right",formatter: "money",
+      "formatterParams": {"symbol": "", "symbolAfter": "", "thousand": "",  precision:false},width:250},
+   ];
+
+Posteriormente se definen los datos correspondientes a la fila de las
+tablas, cada fila se define en un arreglo y se guardan en una variables
+con el formato dataTable1, dataTable2, etc. 
+
+.. important::
+  Cada valor de
+  la propiedad corresponde a su respectiva columa, estas no deben variar
+  para evitar conflictos en la tabla. Para mayor información consulte la
+  biblioteca, debido a que se actualiza constantemente y ciertos formatos
+  pueden llegar a cambiar.
+
+::
+
+   var dataTable1 = [
+     {
+       "folio": "850-11702", 
+       "record_id": "63eaed385a3ef7414d4899da", 
+       "store_id": "1209250816961081402", 
+       "merchant": "C alvin Klein Instore",  
+        "checkin": "2023-02-14 08:03:49", 
+       }
+   ]
+
+La siguiente etapa consiste en el [[3.2.5.1.Desarrollo de
+Scripts|3.2.5.1.Desarrollo de Scripts]]

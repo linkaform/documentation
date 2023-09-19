@@ -19,3 +19,6 @@ WORKDIR /srv/docs
 
 ADD requirements.txt /srv/docs
 RUN pip3 install -r requirements.txt
+
+# Instala la librería sphinx-press-theme
+RUN pip3 install sphinx-press-theme

@@ -1,0 +1,33 @@
+==========
+Estructura
+==========
+
+La estructura del documento HTML es la siguiente:
+
++--------------------------------+-------------------------------------+
+| Estructura                     | Descripción                         |
++================================+=====================================+
+| HEAD                           | Contiene la ciertos requerimientos  |
+|                                | que considera el navegador al       |
+|                                | momento de renderizar la página. En |
+|                                | esta sección se deben colocar los   |
+|                                | CDN para los estilos, estos son     |
+|                                | bootstrap, Font Awesome y estilos   |
+|                                | propios de Linkaform.               |
++--------------------------------+-------------------------------------+
+| BODY                           | Contiene el cuerpo del reporte, es  |
+|                                | lo que verá el usuario, dentro de   |
+|                                | esta se mostraran gráficas, tablas, |
+|                                | tarjetas, entre otros elementos.    |
++--------------------------------+-------------------------------------+
+| Librerías                      | Este apartado se ubica en la última |
+|                                | sección de la etiqueta body, en     |
+|                                | donde se encuentran las rutas de:   |
+|                                | Tabulator, Chartjs, Jquery,         |
+|                                | Bootstrap, utilidades de linkaform  |
+|                                | y servido, la ubicación del         |
+|                                | manejador js, y del manejador de la |
+|                                | estructura de los datos.            |
++--------------------------------+-------------------------------------+
+
+Continua con [[3.2.5.1.Desarrollo de Scripts]]
