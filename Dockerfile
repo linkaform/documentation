@@ -6,11 +6,12 @@
 FROM sphinxdoc/sphinx as develop
 MAINTAINER Linkaform
 
-ARG UID=1000
-ARG GID=1000
 
-RUN groupadd -g "${GID}" sphinix \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" sphinix
+ARG UID=${UID}
+ARG GID=$UID
+
+RUN groupadd -g "${UID}" sphinix \
+  && useradd --create-home --no-log-init -u "${UID}" -g "${UID}" sphinix
 
 USER sphinix
 

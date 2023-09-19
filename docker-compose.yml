@@ -15,7 +15,7 @@ services:
       # - ./content:/srv/docs/content
       # - ./extensions:/srv/docs/extensions
       # - ./locale:/srv/docs/locale
-    command: sleep infinity
-    #command: bash /srv/docs/local_build.sh
+    #command: sleep infinity
+    command: bash /srv/docs/local_build.sh
     stdin_open: true
     tty: true
