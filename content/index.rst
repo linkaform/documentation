@@ -138,7 +138,3 @@ Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para a
                <i class="fa-solid fa-puzzle-piece fa-2x" style="margin-right:18px"></i>
             </body>
         </html>
-
-
-
-
