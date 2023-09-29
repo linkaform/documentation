@@ -31,9 +31,9 @@ languages_names = {
 extension_dir = Path('extensions')
 sys.path.insert(0, str(extension_dir.absolute()))
 extensions = [
-    # Cards
+    'sphinxcontrib.mermaid', #Extensión que permite hacer uso de Mermaind
     'cards',
-    'myst_parser'
+    'myst_parser',  #Extensión que permite a Sphinx leer MySt(Markedly Structured Text)
 ]
 #extensions = []
 source_suffix = ['.rst', '.md']

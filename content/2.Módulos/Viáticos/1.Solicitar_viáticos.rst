@@ -12,9 +12,6 @@ Pasos
 
 .. figure:: /imgs/Modulos/Viaticos/forms/1-solicitud-viaticos.png
    :alt: Paso 1 para realizar una solicitud de viáticos
-
-   Paso 1 para realizar una solicitud de viáticos
-
 ..
 
 .. note::
@@ -27,20 +24,17 @@ puesto y correo del mismo. Tal como se ve a continuación.
 .. figure:: /imgs/Modulos/Viaticos/forms/1-1-solicitud-viaticos.png
    :alt: Solicitud de viáticos
 
-   Solicitud de viáticos
-
 **2. Escribir el destino** (Este campo esta abierto).
 
-|image1|
+.. figure:: /imgs/Modulos/Viaticos/forms/2-solicitud-viaticos.png
+   :alt: Solicitud de viáticos
+
 
 **3. Escribir el motivo.** Si su motivo no se encuentra en la lista de
 opciones, puede seleccionar **otros**.
 
 .. figure:: /imgs/Modulos/Viaticos/forms/3-solicitud-viaticos.png
    :alt: Campo selección de motivo
-
-   Campo selección de motivo
-
 ..
 
 .. note::
@@ -52,36 +46,26 @@ opciones, puede seleccionar **otros**.
 .. figure:: /imgs/Modulos/Viaticos/forms/4-solicitud-viaticos.png
    :alt: Campos fecha de salida y de regreso
 
-   Campos fecha de salida y de regreso
-
 **5. En este paso, deberá indicar la cantidad de días.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/5-solicitud-viaticos.png
    :alt: Campo cantidad de días
-
-   Campo cantidad de días
 
 **6. En este campo, deberá indicar el medio de transporte a usar.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/6-solicitud-viaticos.png
    :alt: Campo medio de transporte
 
-   Campo medio de transporte
-
 **7. En este paso, deberá indicar el tipo de moneda que requiere en su
 solicitud.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/7-solicitud-viaticos.png
    :alt: Campo de moneda
-
-   Campo de moneda
-
 ..
 
 .. note::
-    El tipo de moneda no se limita a los que se muestran
-   en la lista. Usted puede configurar u agregar los que requiera en el
-   **catálogo de moneda**.
+   El tipo de moneda no se limita a los que se muestran en la lista. 
+   Usted puede configurar o agregar lo que requiera en el **catálogo de moneda**.
 
    También puede solicitar viáticos en una moneda, por ejemplo: Pesos
    mexicanos y gastar en dólares americanos. Linkaform dispone de la
@@ -91,9 +75,6 @@ solicitud.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/8-solicitud-viaticos.png
    :alt: Campos Costo de transporte
-
-   Campos Costo de transporte
-
 ..
 
 .. tip::
@@ -105,9 +86,6 @@ solicitud.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/9-solicitud-viaticos.png
    :alt: Campo Gastos diarios
-
-   Campo Gastos diarios
-
 ..
 
 .. tip::
@@ -118,9 +96,6 @@ solicitud.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/10-solicitud-viaticos.png
    :alt: Campos monto solicitado
-
-   Campos monto solicitado
-
 ..
 
 .. note::
@@ -132,9 +107,6 @@ solicitud.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/11-solicitud-viaticos.png
    :alt: Campo anticipo en efectivo al empleado solicitado
-
-   Campo anticipo en efectivo al empleado solicitado
-
 ..
 
 .. note::
@@ -145,9 +117,6 @@ solicitud.**
 
 .. figure:: /imgs/Modulos/Viaticos/forms/12-solicitud-viaticos.png
    :alt: Campo Responsable de autorizar viáticos
-
-   Campo Responsable de autorizar viáticos
-
 ..
 
 .. note::
@@ -160,9 +129,6 @@ como se ve a continuación.
 
 .. figure:: /imgs/Modulos/Viaticos/forms/13-solicitud-viaticos.png
    :alt: Campos responsable de autorizar viáticos
-
-   Campos responsable de autorizar viáticos
-
 ..
 
 .. warning::
@@ -170,30 +136,21 @@ como se ve a continuación.
    la autorización es a través del correo electrónico que se muestra
    arriba. Por ello, es importante un correcto registro.
 
-**12. Firma del empleado solicitante** Después de indicar la firma,
+**13. Firma del empleado solicitante** Después de indicar la firma,
 clicar en **Aceptar firma** y esperar a que Linkaform lo procese.
-
-|Campo firma del empleado solicitante|
 
 .. note:: 
    El empleado podrá firmar de forma electrónica la solicitud.
 
-**13. Enviar la solicitud**. Después de haber firmado, deberá clicar el
+**14. Enviar la solicitud**. Después de haber firmado, deberá clicar el
 **botón verde** (ubicado a la derecha) para mandar su solicitud ó bien
 puede cancelar con el **botón rojo**.
 
 .. figure:: /imgs/Modulos/Viaticos/forms/16-solicitud-viaticos.png
    :alt: Campo firma del empleado solicitante
 
-   Campo firma del empleado solicitante
-
 Al enviar su solicitud podrá ver un **mensaje de confirmación**, como el
 que se muestra a continuación.
 
 .. figure:: /imgs/Modulos/Viaticos/forms/17-solicitud-viaticos.png
    :alt: Campo firma del empleado solicitante
-
-   Campo firma del empleado solicitante
-
-.. |image1| image:: /imgs/Modulos/Viaticos/forms/2-solicitud-viaticos.png
-.. |Campo firma del empleado solicitante| image:: /imgs/Modulos/Viaticos/forms/14-solicitud-viaticos.png

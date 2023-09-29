@@ -16,20 +16,16 @@ Proceso para registrar sus gastos
 
 1. Indicar la fecha que se realizó el gasto.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/1-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-registrar-gastos.png
    :alt: Registro de gastos
 
-   Registro de gastos
 
 2. **Indicar** el destino de su solicitud y a continuación
-   **seleccionar** el folio de su solicitud.
+   **seleccionar** el folio de su solicitud
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/2-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-registrar-gastos.png
    :alt: Indicar el destino de su solicitud
 
-   Indicar el destino de su solicitud
 
 Al seleccionar un folio Linkaform mostrará los datos asociados a su
 solicitud.
@@ -52,13 +48,9 @@ concepto que haya seleccionado.
 Si seleccionó **Comida** en **Concepto**, deberá **indicar el nombre del
 negocio o local** donde hizo el consumo.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/3-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-registrar-gastos.png
    :alt: Img seleccionar el tipo de…
 
-   Img seleccionar el tipo de…
-
-..
 
 .. note:: 
    La lista de opciones en **Tipo de gasto** son configurables y
@@ -66,19 +58,13 @@ negocio o local** donde hizo el consumo.
 
 4. Describir detalles del gasto.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/4-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/4-registrar-gastos.png
    :alt: Describir detalles del gasto
-
-   Describir detalles del gasto
 
 5. Seleccionar el tipo de moneda en que fue realizado el gasto.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/5-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/5-registrar-gastos.png
    :alt: Seleccionar el tipo de moneda
-
-   Seleccionar el tipo de moneda
 
 6. Indicar:
 
@@ -87,21 +73,14 @@ negocio o local** donde hizo el consumo.
    -  Propina (Sólo si aplica);
    -  Total gastado.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/6-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/6-registrar-gastos.png
    :alt: Indicar datos especificos del gasto
-
-   Indicar datos especificos del gasto
 
 7. Indicar el total de su gasto en Moneda solicitud.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/7-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/7-registrar-gastos.png
    :alt: Indicar el total en moneda solicitud
 
-   Indicar el total en moneda solicitud
-
-..
 
 .. note:: 
    Sólo si realizó el gasto en una moneda distinta a la que se
@@ -109,13 +88,9 @@ negocio o local** donde hizo el consumo.
 
 8. Seleccionar el Método de pago.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/8-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/8-registrar-gastos.png
    :alt: Img Seleccionar el Método de pago
 
-   Img Seleccionar el Método de pago
-
-..
 
 .. note::
    El método por defecto es **Efectivo Débito**, este puede ser
@@ -123,13 +98,9 @@ negocio o local** donde hizo el consumo.
 
 9. Subir imágenes y/o archivos de comprobación.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/9-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/9-registrar-gastos.png
    :alt: Img campos para subir archivos de comprobación
 
-   Img campos para subir archivos de comprobación
-
-..
 
 .. note:: 
    Ambas opciones estan activadas, puede usar uno o ambos, según
@@ -137,13 +108,8 @@ negocio o local** donde hizo el consumo.
 
 10. Seleccionar el estatus del registro de gastos.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/10-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/10-registrar-gastos.png
    :alt: Img Seleccionar el estatus del registreo de gastos
-
-   Img Seleccionar el estatus del registreo de gastos
-
-..
 
 .. note::  
    El estatus por defecto para su registro de gastos es **Por
@@ -157,21 +123,14 @@ negocio o local** donde hizo el consumo.
 
 11. Indicar la cantidad autorizada en moneda del gasto.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/11-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/11-registrar-gastos.png
    :alt: Cantidad Moneda del gasto
-
-   Cantidad Moneda del gasto
 
 12. Indicar alguna página para descargar factura.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/12-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/12-registrar-gastos.png
    :alt: Campo página de descarga fáctura
 
-   Campo página de descarga fáctura
-
-..
 
 .. note::  
    Puede dejar en blanco el campo, a menos de que requiera
@@ -179,21 +138,15 @@ negocio o local** donde hizo el consumo.
 
 13. **[Opcional]** Escribir algun comentario.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/13-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/13-registrar-gastos.png
    :alt: Campo escribir un comentario
-
-   Campo escribir un comentario
 
 14. Mandar respuesta.
 
 Clic sobre el boton ``Mandar respuestas > Permitir conocer ubicación``.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/14-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/14-registrar-gastos.png
    :alt: Botón mandar respuestas
-
-   Botón mandar respuestas
 
 15. Mensaje de confirmación.
 
@@ -201,13 +154,8 @@ Al finalizar su registro, podrá ver en pantalla un mensaje de
 confirmación como este. Además podra ver su registro y otras acciones
 más.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/15-registrar-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/15-registrar-gastos.png
    :alt: Mensaje de confirmación
-
-   Mensaje de confirmación
-
-..
 
 .. note:: 
    Una solicitud de viáticos tambien puede sobregirarse cuando se
@@ -231,13 +179,8 @@ de los registros de gasto correspondientes.
 Como puede observar todos los registros de gastos estan vinculados un
 folio de solicitud de viaje.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/1-ver-registro-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-ver-registro-gastos.png
    :alt: Campo escribir un comentario
-
-   Campo escribir un comentario
-
-..
 
 .. note:: 
    El estatus de cada gasto por defecto es **Autorizado**, esto
@@ -250,22 +193,16 @@ folio de solicitud de viaje.
 Siguiendo los pasos de la sección anterior, podrá seleccionar en la
 parte superior derecha y clic sobre el ícono de **Editar**.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/2-ver-registro-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-ver-registro-gastos.png
    :alt: Campo escribir un comentario
-
-   Campo escribir un comentario
 
 Para editar el estado de algún registro de gastos:
 
 -  Deslice hacía abajo, hasta llegar a la tabla de **Gastos de viaje**.
 -  Clic sobre la fila que desee editar en la columna **Set**.
 
-.. figure::
-   /imgs/Modulos/Viaticos/forms/registrar-gastos/1-editar-registro-gastos.png
+.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-editar-registro-gastos.png
    :alt: Campo escribir un comentario
-
-   Campo escribir un comentario
 
 En seguida, el set seleccionado expandira sus campos para que pueda
 proceder a editar los registros. Después de editar algun campo, recuerde

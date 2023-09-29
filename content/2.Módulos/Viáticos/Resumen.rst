@@ -7,6 +7,13 @@ una solicitud de viáticos.
 
 1. El proceso inicia con el registro de una solicitud de viáticos.
 
+.. mermaid::
+
+    graph TD;
+        A[Django] -->|Cada PDF es una plantilla| B(LinkaForm);
+        B -->|Plantillas genéricas| D[No tienen dueño, disponibles para todos];
+        B -->|Plantillas hechas a la medida| E[Es exclusivo y personalizado];
+
 .. code:: mermaid
 
    ---
