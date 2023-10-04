@@ -1,86 +1,71 @@
-================
 Autorizar gastos
 ================
 
-En este apartado usted podrá consultar información relacionado con la
-**autorización de solicitudes de viáticos**. 
+En este apartado, podrás consultar información relacionada con la **autorización de solicitudes de viáticos**.
 
-Cómo ubicar las solicitudes de gastos
--------------------------------------
+Cómo ubicar los registros de autorización de viáticos
+------------------------------------------------------
 
-1. Deberá dirigirse a **menú > Registros**
+1. Deberás dirigirte a **menú > Registros > Autorización de Viaticos**.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-autorizar-gastos.png
-   :alt: Autorizar gastos menú
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-autorizar-gastos.png
 
-En esta sección podrá ver la **lista de registros** que se han creado y
-detalles de los mismos, también podrá **aplicar filtros** si desea ver
-algún registro en especifico.
+O bien, en ```Mis Formas > Módulo Viáticos > Autorización de Viáticos```, haz clic en el ícono de configuración y selecciona **Ver registros**.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-1-autorizar-gastos.png
-   :alt: Autorizar gastos menú
-
-   Autorizar gastos menú
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-autorizar-gastos.png
 
 Cómo autorizar un gasto
-~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-2. Revisar que en la columna **Forma** se indique “**Solicitud de
-   viáticos**”, a continuación clicar el **ícono de detalles**.
+Una vez ubicado en los registros de autorización de gastos:
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-autorizar-gastos.png
-   :alt: Autorizar gastos menú
+1. Selecciona el registro de autorización de gastos que deseas revisar.
 
-Esta pantalla le mostrará en detalle los datos de la solicitud de
-viáticos. Si hace click en el ícono de **editar** (recuadro verde),
-podrá hacer la **revisión** o **modificar** la solicitud en caso de que
-requiera algún ajuste.
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-1-autorizar-gastos.png
 
-.. figure:: /imgs/Modulos/Viaticos/forms//autorizar-gastos/2-1-autorizar-gastos.png
-   :alt: Autorizar gastos menú
+Siguiendo los pasos de la sección anterior, podrás seleccionar en la parte superior derecha y hacer clic en el ícono de **Editar**.
 
-3. Después de haber revisado y/o editado la solicitud, en el campo de
-   **status** podrá **seleccionar** el estado de la solicitud y
-   cambiarlo a **Autorizado**.
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-ver-registro-gastos.png
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/3-autorizar-gastos.png
-   :alt: Autorizar gastos menú
+Por defecto, el estado de cada registro de gastos está en **Autorizado**. Si deseas editarlo, sigue los siguientes pasos:
 
-.. note::
-   El estado por defecto de la solicitud es **Solicitado**
+- 2.1 Desliza hacia abajo hasta llegar a la tabla de **Gastos de viaje**.
+- 2.2 Haz clic sobre la fila que desees editar en la columna **Set**.
 
-4. **Asignar** el monto autorizado a la solicitud del empleado.
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-editar-registro-gastos.png
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/4-autorizar-gastos.png
-   :alt: Autorizar gastos menú
+A continuación, el set seleccionado expandirá sus campos para que puedas proceder a revisar el registro de gasto, como se muestra a continuación.
 
-5. **Firmar** la autorización **Firmar > Aceptar firma.**
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-1-editar-registro-gastos.png
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/5-autorizar-gastos.png
-   :alt: Autorizar gastos menú
+Si deseas cambiar el estatus de un set a **No autorizado**, deberás especificar el motivo en un campo adicional.
 
-Esperar a que Linkaform procese su firma.
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-2-autorizar-gastos.png
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/5-2-autorizar-gastos.png
-   :alt: Procesando firma
+Después de haber revisado los sets de gastos, recuerda:
 
-6. **Enviar solicitud**.
+3. Actualizar el estado de la Autorización de Viáticos.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/6-autorizar-gastos.png
-   :alt: Enviar solicitud
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/3-autorizar-gastos.png
 
-Una vez realizado este proceso aparecerá en pantalla un mensaje de
-confirmación, como el que se muestra a continuación.
+4. **Firmar** la autorización: **Firmar > Aceptar firma**, espera a que Linkaform procese tu firma.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/7-autorizar-gastos.png
-   :alt: Mensaje de confirmación
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/5-autorizar-gastos.png 
 
-Al clicar en Volver al registro, los cambios relacionados con la
-autorización se verán reflejados.
+5. **Enviar solicitud**.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/8-autorizar-gastos.png
-   :alt: Cambios guardados
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/6-autorizar-gastos.png
 
-Cuando se cierra la autorización de solicitud de gastos se envía una
-notificación por correo electrónico junto con un PDF resumido del
-proceso, todo esto configurable.
+Una vez realizado este proceso, aparecerá en pantalla un mensaje de confirmación, como el que se muestra a continuación.
+
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/7-autorizar-gastos.png
+
+Al hacer clic en "Volver al registro", los cambios relacionados con la autorización se verán reflejados.
+
+Si deseas generar un PDF de la autorización, haz clic en el ícono de PDF.
+
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-2-pdf-autorizar-gastos.png
+
+Tu PDF tendrá un formato similar al que se muestra a continuación.
+
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-3-pdf-autorizar-gastos.png

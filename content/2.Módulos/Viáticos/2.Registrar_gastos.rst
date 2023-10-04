@@ -1,209 +1,150 @@
 Registrar gastos
 ================
 
-En esta sección aprenderá el proceso para registrar sus gastos. Primero
-deberá ubicarse en
-``Mis formas > Registros de Gastos Viaje > Responder``
+En esta sección aprenderás el proceso para registrar tus gastos.
 
-Importante conocer los datos de su viaje, tales como: - Destino - Folio
-de la solicitud de viáticos
+Primero, debes dirigirte a ``Mis formas > Registros de Gastos > Responder``.
 
-Este formulario estará disponible para los empleados que requieran de
-hacer gastos.
+Es importante tener conocimiento de los datos de tu viaje, como:
 
-Proceso para registrar sus gastos
----------------------------------
+- Destino
+- Folio de la solicitud de viáticos
 
-1. Indicar la fecha que se realizó el gasto.
+Este formulario estará disponible para los empleados que necesiten realizar gastos y cuya solicitud de viáticos haya sido previamente autorizada.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-registrar-gastos.png
-   :alt: Registro de gastos
-
-
-2. **Indicar** el destino de su solicitud y a continuación
-   **seleccionar** el folio de su solicitud
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-registrar-gastos.png
-   :alt: Indicar el destino de su solicitud
-
-
-Al seleccionar un folio Linkaform mostrará los datos asociados a su
-solicitud.
-
-El **Gasto ejecutado** y **Monto restante** los calculará Linkaform,
-estos se iran actualizando automáticamente.
-
-.. note::
-   En la lista de opciones, sólo podra ver aquellos viajes
-   vigentes o activos.
-
-   Dado que en un mismo viaje pueden estar uno o más empleados, cada una
-   de estas solicitudes tendrán su propio folio.
-
-3. Seleccionar el concepto del gasto.
-
-A continuación el campo **Tipo de** le ofrecerá un listado en base al
-concepto que haya seleccionado.
-
-Si seleccionó **Comida** en **Concepto**, deberá **indicar el nombre del
-negocio o local** donde hizo el consumo.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-registrar-gastos.png
-   :alt: Img seleccionar el tipo de…
-
-
-.. note:: 
-   La lista de opciones en **Tipo de gasto** son configurables y
-   usted podrá agregar o eliminar los que requiera.
-
-4. Describir detalles del gasto.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/4-registrar-gastos.png
-   :alt: Describir detalles del gasto
-
-5. Seleccionar el tipo de moneda en que fue realizado el gasto.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/5-registrar-gastos.png
-   :alt: Seleccionar el tipo de moneda
-
-6. Indicar:
-
-   -  El Subtotal;
-   -  Impuestos (Sólo si aplica);
-   -  Propina (Sólo si aplica);
-   -  Total gastado.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/6-registrar-gastos.png
-   :alt: Indicar datos especificos del gasto
-
-7. Indicar el total de su gasto en Moneda solicitud.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/7-registrar-gastos.png
-   :alt: Indicar el total en moneda solicitud
-
-
-.. note:: 
-   Sólo si realizó el gasto en una moneda distinta a la que se
-   indica en su solicitud de viáticos.
-
-8. Seleccionar el Método de pago.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/8-registrar-gastos.png
-   :alt: Img Seleccionar el Método de pago
-
-
-.. note::
-   El método por defecto es **Efectivo Débito**, este puede ser
-   modificado.
-
-9. Subir imágenes y/o archivos de comprobación.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/9-registrar-gastos.png
-   :alt: Img campos para subir archivos de comprobación
-
-
-.. note:: 
-   Ambas opciones estan activadas, puede usar uno o ambos, según
-   lo requiera.
-
-10. Seleccionar el estatus del registro de gastos.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/10-registrar-gastos.png
-   :alt: Img Seleccionar el estatus del registreo de gastos
-
-.. note::  
-   El estatus por defecto para su registro de gastos es **Por
-   autorizar**.
-
-   En caso de que los datos de su registro esten incompletos o situación
-   similar podrá actualizarlos después.
-
-   Si el estatus de su gasto se encuentra en **No autorizado**, tendrá
-   que rellenar un campo adicional detallando la razón.
-
-11. Indicar la cantidad autorizada en moneda del gasto.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/11-registrar-gastos.png
-   :alt: Cantidad Moneda del gasto
-
-12. Indicar alguna página para descargar factura.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/12-registrar-gastos.png
-   :alt: Campo página de descarga fáctura
-
-
-.. note::  
-   Puede dejar en blanco el campo, a menos de que requiera
-   descargar su factura.
-
-13. **[Opcional]** Escribir algun comentario.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/13-registrar-gastos.png
-   :alt: Campo escribir un comentario
-
-14. Mandar respuesta.
-
-Clic sobre el boton ``Mandar respuestas > Permitir conocer ubicación``.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/14-registrar-gastos.png
-   :alt: Botón mandar respuestas
-
-15. Mensaje de confirmación.
-
-Al finalizar su registro, podrá ver en pantalla un mensaje de
-confirmación como este. Además podra ver su registro y otras acciones
-más.
-
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/15-registrar-gastos.png
-   :alt: Mensaje de confirmación
-
-.. note:: 
-   Una solicitud de viáticos tambien puede sobregirarse cuando se
-   reportan gastos adicionales o cuando estos exceden el monto
-   autorizado.
-
-¿Donde ver los registros de gastos?
+Proceso para registrar tus gastos
 -----------------------------------
 
-Dirigirse al Menú:
+1. Indica la fecha en que se realizó el gasto.
 
--  Mis formas;
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-registrar-gastos.png
 
-   -  Seleccionar algún solicitud de viáticos;
-   -  Clic en ver forma.
+2. Se mostrará el destino y el folio de tu solicitud.
 
-Siguiendo estos pasos podrá ver la información de la solicitud de
-viáticos seleccionado y en la parte final **Gastos de viaje** el listado
-de los registros de gasto correspondientes.
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-registrar-gastos.png
 
-Como puede observar todos los registros de gastos estan vinculados un
-folio de solicitud de viaje.
+Al seleccionar un folio, Linkaform mostrará los datos asociados a tu solicitud. Los campos **Gasto ejecutado** y **Monto restante** se calcularán automáticamente y se actualizarán automáticamente.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-ver-registro-gastos.png
-   :alt: Campo escribir un comentario
+.. note::
+   En la lista de opciones, solo podrás ver aquellos viajes vigentes o activos que ya hayan sido previamente autorizados.
+   Dado que en un mismo viaje pueden estar uno o más empleados, cada una de estas solicitudes tendrá su propio folio.
 
-.. note:: 
-   El estatus de cada gasto por defecto es **Autorizado**, esto
-   para agilizar el estado de las solicitudes y que usted solo edite el
-   estado de uno en particular si así lo requiere.
+3. Selecciona el concepto del gasto.
 
-¿Cómo revisar/editar los registros de gastos?
----------------------------------------------
+A continuación, el campo **Tipo de** te ofrecerá un listado basado en el concepto que hayas seleccionado.
 
-Siguiendo los pasos de la sección anterior, podrá seleccionar en la
-parte superior derecha y clic sobre el ícono de **Editar**.
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-registrar-gastos.png
 
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-ver-registro-gastos.png
-   :alt: Campo escribir un comentario
+Si seleccionaste **Comida** en **Concepto**, deberás indicar el **tipo de comida** en un campo adicional, como se muestra a continuación.
 
-Para editar el estado de algún registro de gastos:
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-1-registrar-gastos.png
 
--  Deslice hacía abajo, hasta llegar a la tabla de **Gastos de viaje**.
--  Clic sobre la fila que desee editar en la columna **Set**.
+.. note::
+   La lista de opciones en **Tipo de gasto** es configurable y podrás agregar o eliminar las que necesites.
 
-.. figure:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-editar-registro-gastos.png
-   :alt: Campo escribir un comentario
+4. Indica el nombre del comercio.
 
-En seguida, el set seleccionado expandira sus campos para que pueda
-proceder a editar los registros. Después de editar algun campo, recuerde
-**Mandar sus respuestas**.
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-2-registrar-gastos.png
+
+5. Describe los detalles del gasto.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/4-registrar-gastos.png
+
+6. Selecciona el tipo de moneda en que se realizó el gasto.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/5-registrar-gastos.png
+
+7. Indica el subtotal.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/6-registrar-gastos.png
+
+8. Selecciona el método de pago.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/8-registrar-gastos.png
+
+.. note::
+   El método por defecto es **Efectivo - Débito**, pero puede ser modificado. En caso de efectuar un gasto en efectivo o débito, este gasto aplicará para el anticipo previamente solicitado.
+
+9. Sube imágenes y/o archivos de comprobación.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/9-registrar-gastos.png
+
+.. note::
+   Ambas opciones están activadas, puedes usar una o ambas según sea necesario.
+
+.. note::
+   El estado por defecto para tu registro de gastos es **Por autorizar**. Si los datos de tu registro están incompletos u otra situación similar, podrás actualizarlos más tarde.
+
+10. Indica una página para descargar factura.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/12-registrar-gastos.png
+
+.. note::
+   Puedes dejar en blanco este campo a menos que necesites descargar tu factura.
+
+11. Envía tu respuesta.
+
+Haz clic en el botón ``Mandar respuestas > Permitir conocer ubicación``.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/14-registrar-gastos.png
+
+12. Mensaje de confirmación.
+
+Al finalizar tu registro, verás en pantalla un mensaje de confirmación como este. Además, podrás ver tu registro y realizar otras acciones.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/15-registrar-gastos.png
+
+¿Dónde ver un resumen de los registros de gastos?
+---------------------------------------------------
+
+Dirígete al Menú:
+
+- Mis formas;
+  - Selecciona alguna solicitud de viáticos;
+  - Haz clic en ver forma.
+
+Siguiendo estos pasos, podrás ver la información de la solicitud de viáticos seleccionada y en la parte final, **Gastos de viaje**, el listado de los registros de gasto correspondientes.
+
+Como puedes observar, todos los registros de gastos están vinculados a un folio de solicitud de viaje.
+
+.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-ver-registro-gastos.png
+
+.. note::
+   El estado de cada gasto por defecto es **Por autorizar** hasta que la persona encargada de autorizarlo lo cambie a **autorizado**.
+
+¿Cómo generar reportes en PDF de los registros de gastos?
+---------------------------------------------------------
+
+1. Dirígete a la sección de ``Registros`` o bien en ``Mis formas > Modulo Viáticos > Registros de gastos > Ver registros``, selecciona los registros que deseas generar como PDF.
+
+2. Aplica el/los filtro(s) que deseas y haz clic en **Filtrar**.
+
+.. important::
+   Puedes aplicar filtros si deseas generar reportes según algún campo en específico. También puedes seleccionar solo los registros de tu interés.
+
+Verás una pantalla como la que se muestra a continuación.
+
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-genera-pdf-gastos.png
+
+En esta pantalla se muestran los registros de gastos que se hicieron el día de ayer.
+
+3. Selecciona los registros y haz clic en el ícono de la hoja en blanco; a continuación, se te mostrará una ventana.
+
+   3.1 Elije el rango de descarga > Registros seleccionados.
+   3.2 Introduce el nombre de tu archivo a generar.
+   3.3 Selecciona la plantilla a usar y haz clic en el botón de **descargar**.
+
+.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-genera-pdf-gastos.png
+
+4. Después de esto, espera un momento y dirígete a la sección de ``Registros > Descargas``.
+
+.. image:: /imgs/Modulos/Viaticos/forms/solicitar-viatico/2-2-genera-multiple-pdf_Solicitud-viatico.png
+
+En esta sección, podrás ver que tu archivo está listo para descargar.
+
+.. image:: /imgs/Modulos/Viaticos/forms/solicitar-viatico/2-3-genera-multiple-pdf_Solicitud-viatico.png
+
+Una vez descargado, tu documento se verá de la siguiente forma:
+El número de páginas y contenido dependerán de la cantidad de registros que hayas seleccionado.
+
+.. image:: /imgs/Modulos/Viaticos/forms/solicitar-viatico/2-4-genera-multiple-pdf_Solicitud-viatico.png

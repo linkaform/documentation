@@ -41,8 +41,17 @@ source_suffix = ['.rst', '.md']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 #html_theme = 'alabaster'
-html_theme = 'press'
-html_static_path = ['static']
+#html_theme = 'press'
+html_theme = 'furo'
+html_static_path = ['_static']
 locale_dirs = ['./locale/']
 templates_path = ['./extensions/']
+html_css_files = ['custom.css']
+html_logo = '_static/LogotipoAzul.svg'
+html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
+    "rightsidebar": "true",
+    "relbarbgcolor": "pink",
+}
 
