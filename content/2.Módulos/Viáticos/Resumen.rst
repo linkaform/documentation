@@ -7,14 +7,6 @@ Este diagrama representa el flujo de acciones que ocurren al realizar una solici
 
 .. mermaid::
 
-    graph TD;
-        A[Django] -->|Cada PDF es una plantilla| B(LinkaForm);
-        B -->|Plantillas genéricas| D[No tienen dueño, disponibles para todos];
-        B -->|Plantillas hechas a la medida| E[Es exclusivo y personalizado];
-
-
-.. mermaid::
-
     graph TB
         %% Formularios
         form_solicitud_viaticos(#1 Solicitud de viáticos);

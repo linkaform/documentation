@@ -31,7 +31,10 @@ languages_names = {
 extension_dir = Path('extensions')
 sys.path.insert(0, str(extension_dir.absolute()))
 extensions = [
+    'sphinx.ext.autodoc',
+    'sphinxcontrib.youtube',
     'sphinxcontrib.mermaid', #Extensión que permite hacer uso de Mermaind
+    'sphinx_copybutton',
     'cards',
     'myst_parser',  #Extensión que permite a Sphinx leer MySt(Markedly Structured Text)
 ]
@@ -42,16 +45,33 @@ source_suffix = ['.rst', '.md']
 
 #html_theme = 'alabaster'
 #html_theme = 'press'
+
 html_theme = 'furo'
 html_static_path = ['_static']
 locale_dirs = ['./locale/']
 templates_path = ['./extensions/']
 html_css_files = ['custom.css']
-html_logo = '_static/LogotipoAzul.svg'
 html_theme_options = {
-    'logo_only': True,
-    'display_version': False,
-    "rightsidebar": "true",
-    "relbarbgcolor": "pink",
+    "relbarbgcolor": "black",
+    'sidebar_hide_name': True,
+    'light_logo': 'Linkaform_light.png',
+    'dark_logo': 'Linkaform_dark.png',
+    'light_css_variables': {
+        "color-brand-primary": "#0c1c49",
+        "color-brand-content": "#2c3e50",
+        "font-stack": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans, Helvetica Neue ,sans-serif, Arial, sans-serif",
+        "font-stack--monospace": "Courier, monospace",
+    },
+    'dark_css_variables': {
+        "color-brand-primary": "#FFFFFF",
+        "color-brand-content": "#E0E0E0",
+        "color-header-text": "#FFFFFF",
+        "font-stack": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans, Helvetica Neue ,sans-serif, Arial, sans-serif",
+        "font-stack--monospace": "Courier, monospace",
+    },
 }
+pygments_style = "lightbulb"
+pygments_dark_style = "zenburn"
+
+
 
