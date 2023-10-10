@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-Bienvenido a la documentación de Linkaform
+Documentación de Linkaform
 ------------------------------------------
 
 .. toctree::
@@ -12,6 +12,67 @@ Bienvenido a la documentación de Linkaform
 
    1.Introducción/Introducción
    2.Módulos/viaticos
+   3.PDF/PDF
+
+.. grid:: 2
+    :gutter: 1
+    :outline:
+
+    .. grid-item-card:: 
+      :class-card: card-indice
+      
+      
+      header
+      ^^^
+      :doc:`1.Introducción/Introducción` 
+      :doc:`1.Introducción/Linkaform`
+      :doc:`1.Introducción/Arquitectura`
+      :doc:`1.Introducción/Formularios/Formularios`
+      :doc:`1.Introducción/Registros/Registros`
+      :doc:`1.Introducción/Catálogos/Catálogos`
+      :doc:`1.Introducción/PDF_medida`
+      :doc:`1.Introducción/Reportes_medida`
+      :doc:`1.Introducción/Scripts_medida`
+      +++
+      Footer
+
+
+    .. grid-item-card:: Viáticos
+
+        B
+
+.. grid:: 2
+    :gutter: 1
+
+    .. grid-item-card::
+
+        A
+
+    .. grid-item-card::
+
+        B
+
+:bdg-link-primary:`https://example.com`
+
+:bdg-link-primary-line:`explicit title <https://example.com>`
+
+:bdg:`plain badge`
+
+:bdg-primary:`primary`, :bdg-primary-line:`primary-line`
+
+:bdg-secondary:`secondary`, :bdg-secondary-line:`secondary-line`
+
+:bdg-success:`success`, :bdg-success-line:`success-line`
+
+:bdg-info:`info`, :bdg-info-line:`info-line`
+
+:bdg-warning:`warning`, :bdg-warning-line:`warning-line`
+
+:bdg-danger:`danger`, :bdg-danger-line:`danger-line`
+
+:bdg-light:`light`, :bdg-light-line:`light-line`
+
+:bdg-dark:`dark`, :bdg-dark-line:`dark-line`
 
 
 .. table:: Ejemplo de Tabla Personalizada

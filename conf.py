@@ -31,11 +31,12 @@ languages_names = {
 extension_dir = Path('extensions')
 sys.path.insert(0, str(extension_dir.absolute()))
 extensions = [
+    'sphinx_design',
     'sphinx.ext.autodoc',
     'sphinxcontrib.youtube',
     'sphinxcontrib.mermaid', #Extensión que permite hacer uso de Mermaind
     'sphinx_copybutton',
-    'cards',
+    #'cards',
     'myst_parser',  #Extensión que permite a Sphinx leer MySt(Markedly Structured Text)
 ]
 #extensions = []
@@ -48,10 +49,14 @@ source_suffix = ['.rst', '.md']
 
 html_theme = 'furo'
 html_static_path = ['_static']
-locale_dirs = ['./locale/']
+#locale_dirs = ['./locale/']
+locale_dirs = ['locale/']
+gettext_compact = True 
 templates_path = ['./extensions/']
 html_css_files = ['custom.css']
 html_theme_options = {
+    #"prefers-color-scheme": "dark
+    #"primary_sidebar_end": ["index.html"],
     "relbarbgcolor": "black",
     'sidebar_hide_name': True,
     'light_logo': 'Linkaform_light.png',
@@ -72,6 +77,7 @@ html_theme_options = {
 }
 pygments_style = "lightbulb"
 pygments_dark_style = "zenburn"
+#html_sidebars = {"**" : 'index.html',}
 
 
 

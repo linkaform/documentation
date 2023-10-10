@@ -32,5 +32,12 @@ RUN pip3 install sphinx-copybutton
 # Instala extensión para diagramas mermaind
 RUN pip3 install sphinxcontrib-mermaid
 
+# Instala herramienta para traducciones
+RUN pip3 install sphinx-intl
+
+# Instala extensión para diseñar componentes web responsivos
+RUN pip3 install --upgrade sphinx_design
+
+
 # Instala extensión para hacer uso de videos Youtube
 RUN pip3 install sphinxcontrib-youtube

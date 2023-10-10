@@ -1,0 +1,14 @@
+Bases de Linkaform
+==================
+
+Flujo de trabajo Antes de adentrarse en la descripción detallada de la
+estructura de las plantillas y sus componentes, es esencial comprender
+el proceso de creación de las mismas.
+
+.. code:: mermaid
+
+   graph TD
+       A[PDP] --> B[Creación de plantilla]
+       A --> C[Estructura de archivos]
+
+Plantillas
