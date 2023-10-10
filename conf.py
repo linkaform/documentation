@@ -48,12 +48,12 @@ source_suffix = ['.rst', '.md']
 #html_theme = 'press'
 
 html_theme = 'furo'
-html_static_path = ['_static']
 #locale_dirs = ['./locale/']
 locale_dirs = ['locale/']
 gettext_compact = True 
 templates_path = ['./extensions/']
-html_css_files = ['custom.css']
+html_static_path = ['static']
+html_css_files = ['css/custom.css']
 html_theme_options = {
     #"prefers-color-scheme": "dark
     #"primary_sidebar_end": ["index.html"],
