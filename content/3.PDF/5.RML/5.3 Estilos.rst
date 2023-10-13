@@ -1,0 +1,178 @@
+=======
+Estilos
+=======
+
+En esta sección, se abordarán los elementos clave que mejorarán la presentación visual de los componentes que conforman el PDF.
+
+paraStyle
+=========
+
+La etiqueta ``<paraStyle>`` se utiliza para definir el estilo de uno o
+varios párrafos en el documento. Los estilos definidos con
+``<paraStyle>`` incluyen características como fuente, tamaño de fuente,
+color de fuente, sangrías, interlineado, etc. En la siguiente lista se
+presentan los atributos que componen la etiqueta ``<paraStyle>`` en RML:
+
+:bdg-secondary:`name`: Es el nombre del estilo que ha asignado a los párrafos. Se usa para aplicar ese estilo a partes específicas del documento usando ``<para>``.
+
+:bdg-secondary:`alias`: Permite asignar un alias (nombre alternativo) al estilo. Puede usar este alias en lugar del nombre completo del estilo cuando aplique estilos a elementos ``<para>``.
+
+:bdg-secondary:`parent`: Indica el nombre del estilo del cual heredará este estilo. Los atributos del estilo heredado se aplicarán a menos que se sobrescriban explícitamente en el estilo actual.
+
+:bdg-secondary:`fontname`: Define el nombre de la fuente para el estilo de párrafo.
+
+:bdg-secondary:`fontsize`: Establece el tamaño de la fuente para el estilo.
+
+:bdg-secondary:`leading`: Define el espacio interlineal (leading) para el estilo, es decir, el espacio vertical entre líneas.
+
+:bdg-secondary:`leftIndent`, :bdg-secondary:`rightIndent`: Establecen las sangrías izquierda y derecha para el estilo.
+
+:bdg-secondary:`firstLineIndent`: Define la sangría de la primera línea del párrafo.
+
+:bdg-secondary:`spaceBefore`, :bdg-secondary:`spaceAfter`: Establecen el espacio antes y después del párrafo.
+
+:bdg-secondary:`alignment`: Define la alineación del párrafo (left, right, center, justify).
+
+:bdg-secondary:`bulletFontName`, :bdg-secondary:`bulletFontsize`: Define la fuente y el tamaño de fuente para viñetas en listas (párrafos con viñetas).
+
+:bdg-secondary:`bulletIndent`: Define la sangría para las viñetas en listas.
+
+:bdg-secondary:`textColor`: Define el color del texto en el párrafo.
+
+:bdg-secondary:`backColor`: Define el color de fondo del párrafo.
+
+
+Estos atributos permiten personalizar y controlar la apariencia de los
+párrafos en el documento RML de manera precisa y coherente al definir
+estilos de párrafo. Puede aplicar estos estilos a diferentes partes del
+documento según sea su necesidad.
+
+.. code:: xml
+
+   <?xml version="1.0"?>
+   <paraStyle
+      name="mystyle" string
+      alias="pretty" string
+      parent="oldstyle" string
+      fontname="Courier-Oblique" string
+      fontsize="13" measurement
+      leading="20" measurement
+      leftIndent="1.25in" measurement
+      rightIndent="2.5in" measurement
+      firstLineIndent="0.5in" measurement
+      spaceBefore="0.2in" measurement
+      spaceAfter="3cm" measurement
+      alignment="justify" "left", "right", "center" or "justify"
+      bulletFontName="Courier" string
+      bulletFontsize="13" measurement
+      bulletIndent="0.2in" measurement
+      textColor="red" string
+      backColor="cyan" string
+   />
+
+
+
+blockTableStyle
+===============
+
+La etiqueta ``<blockTableStyle>`` se utiliza para definir estilos que pueden 
+aplicarse a una o más tablas en el documento. Los atributos de ``<blockTableStyle>`` son:
+
+:bdg-secondary:`id`: Define el nombre del estilo de tabla.
+
+.. code:: xml
+
+   <blockTableStyle id="miestilotabla">
+       ...
+   </blockTableStyle>
+
+Descriptores de estilo de tabla
+===============================
+
+Dentro de ``<blockTableStyle>`` se encuentran diversos descriptores que
+posibilitan la personalización de tablas y sus celdas. Sin embargo, a
+continuación, se presentan los más utilizados:
+
+**lineStyle**
+
+Se utiliza para definir estilos de líneas decorativas que se utilizan a
+los bordes de una tabla. Esto permite personalizar cómo se verán las
+líneas que rodean la tabla, creando efectos visuales como bordes o
+recuadros alrededor de la tabla.
+
+Los atributos que componen a lineStyle son los siguientes:
+
+:bdg-secondary:`kind`: Especifica el tipo de línea que se va a dibujar alrededor de la tabla. Las líneas que la componen son las siguientes:
+
+:bdg-secondary:`GRID`: Este comando dibuja tanto un borde exterior (BOX) como líneas internas (INNERGRID) en los bordes de la tabla. Es una forma de aplicar un borde completo a la tabla con líneas internas que dividen las celdas.
+
+:bdg-secondary:`BOX` y :bdg-secondary:`OUTLINE`: Ambos comandos son equivalentes y dibujan un borde completo alrededor de la tabla. Establecen líneas en los bordes superior, inferior, izquierdo y derecho de la tabla.
+
+:bdg-secondary:`INNERGRID`: Este comando dibuja líneas internas en los bordes de las celdas individuales de la tabla, creando divisiones visuales entre las celdas.
+
+:bdg-secondary:`LINEBELOW`, :bdg-secondary:`LINEABOVE`, :bdg-secondary:`LINEBEFORE` y :bdg-secondary:`LINEAFTER`: Estos comandos aplican líneas específicamente a los bordes de las celdas. :bdg-secondary:`LINEBELOW` dibuja una línea debajo de la celda, :bdg-secondary:`LINEABOVE` dibuja una línea encima de la celda, :bdg-secondary:`LINEBEFORE` dibuja una línea a la izquierda de la celda y :bdg-secondary:`LINEAFTER` dibuja una línea a la derecha de la celda.
+
+:bdg-secondary:`thickness`: Define el grosor de la línea en la tabla.
+
+:bdg-secondary:`colorName`: Define el color de la línea. Puede ser un nombre de color predefinido o un valor en formato hexadecimal.
+
+:bdg-secondary:`start`, :bdg-secondary:`stop`, :bdg-secondary:`count`, :bdg-secondary:`space`: Estos atributos controlan la configuración de las líneas punteadas o discontinuas. :bdg-secondary:`start` y :bdg-secondary:`stop` indican dónde comienza y termina la secuencia de líneas. :bdg-secondary:`count` especifica la cantidad de segmentos en la línea punteada, y :bdg-secondary:`space` determina el espacio entre los segmentos.
+
+:bdg-secondary:`dash``: Define una secuencia de segmentos de línea, donde el primer valor es la longitud del segmento visible y el segundo valor es la longitud del espacio en blanco. Por ejemplo, :bdg-secondary:`dash="2,2"` crearía un patrón de línea con segmentos visibles de 2 unidades y espacios en blanco de 2 unidades.
+
+
+.. code:: xml
+
+   <lineStyle
+           kind="BOX" line command required
+           thickness="4" measurement required
+           colorName="magenta" string required
+           start="4" integer
+           stop="11" integer
+           count="2" integer
+           space="2" integer
+           dash="2,2" integer,integer
+   />
+
+Los nombres de los comandos de línea son: GRID, BOX, OUTLINE, INNERGRID,
+LINEBELOW, LINEABOVE, LINEBEFORE y LINEAFTER. BOX y OUTLINE son
+equivalentes, y GRID es el equivalente de aplicar ambos BOX e INNERGRID.
+
+.. code:: xml
+   
+   blockFont
+   <blockFont
+       name="TimesRoman" string required
+       size="8" measurement
+       leading="10" measurement
+       start="4" integer
+       stop="11" integer
+   />
+
+   blockAlignment
+   <blockAlignment
+       value="left" "left", "right", or "center"
+       start="4" integer
+       stop="11" integer
+   />
+
+   blockBackground
+   <blockBackground
+       colorName="indigo" string required
+       start="4" integer
+       stop="11" integer
+   />
+
+   //blockLeading
+   <blockLeading
+       length="10" measurement required
+       start="4" integer
+       stop="11" integer
+   />
+
+   //blockTextColor
+   <blockTextColor
+       colorName="pink" string required
+       start="4" integer
+       stop="11" integer
+   />

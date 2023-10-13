@@ -48,19 +48,19 @@ source_suffix = ['.rst', '.md']
 #html_theme = 'press'
 
 html_theme = 'furo'
-#locale_dirs = ['./locale/']
 locale_dirs = ['locale/']
 gettext_compact = True 
 templates_path = ['./extensions/']
 html_static_path = ['static']
 html_css_files = ['css/custom.css']
 html_theme_options = {
+    #"extra_navbar": "<p>Your HTML</p>",
     #"prefers-color-scheme": "dark
     #"primary_sidebar_end": ["index.html"],
-    "relbarbgcolor": "black",
+    #"relbarbgcolor": "black",
     'sidebar_hide_name': True,
     'light_logo': 'Linkaform_light.png',
-    'dark_logo': 'Linkaform_dark.png',
+    'dark_logo': '/img/Linkaform_dark_new.png',
     'light_css_variables': {
         "color-brand-primary": "#0c1c49",
         "color-brand-content": "#2c3e50",
@@ -77,6 +77,18 @@ html_theme_options = {
 }
 pygments_style = "lightbulb"
 pygments_dark_style = "zenburn"
+#locale_dirs = ['./locale/']
+#html_title = "titulo personalizado"
+#html_sidebars = {
+#    "**": [
+#        "sidebar/scroll-start.html",
+#        "sidebar/brand.html",
+#        "sidebar/search.html",
+#        "sidebar/navigation.html",
+#        "sidebar/ethical-ads.html",
+#        "sidebar/scroll-end.html",
+#    ]
+#}
 #html_sidebars = {"**" : 'index.html',}
 
 

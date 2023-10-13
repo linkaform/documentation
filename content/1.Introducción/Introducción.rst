@@ -1,10 +1,9 @@
+============
 Introducción
 ============
 
 .. toctree::
-	:maxdepth: 2
-	:captation:
-	:titlesonly:
+   :maxdepth: 2
 
    Linkaform
    Arquitectura

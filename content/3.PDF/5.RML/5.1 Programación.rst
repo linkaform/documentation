@@ -1,0 +1,273 @@
+===
+RML
+===
+
+Para simplificar el proceso y permitir la creación automatizada y personalizada de documentos PDF, se emplea RML (Report Markup Language). 
+En esta sección, abordaremos temas relevantes relacionados con la elaboración de código para las plantillas de los PDFs.
+
+¿Qué es RML?
+============
+
+RML (Report Markup Language), es un miembro de la familia de los
+lenguajes XML, su dialecto XML es utilizado por rml2pdf para producir
+documentos en formato de Adobe's Portable Document (PDF). Los documentos
+RML son archivos de texto básicos, que pueden ser creados al vuelo por
+scripts en python, Pearl o casi cualquier otro lenguaje de programación.
+RML permite crear documentos en PDF de forma tan simple como HTML o
+cualquier otro lenguaje de marcado como XML.
+
+.. note::
+
+   rml2pdf es un modulo de python para crear fácilmente documentos PDF
+   sin necesidad de programación. 
+   
+Estructura básica en RML
+------------------------
+
+El siguiente código es la estructura básica de un archivo ``RML``.
+
+.. code:: xml
+
+   <?xml version="1.0"?>
+
+   <!-- Condiguración del documento -->
+   <document filename="Name" xmlns:doc="http://namespaces.zope.org/rml/doc">
+       <!-- Propiedades informativas -->
+       <pageInfo pageSize="(21cm,27.5cm)" doc:example="" />
+
+       <!-- Definiciones de la plantilla -->
+       <template title="Name" pageSize="(22cm,28cm)" author="LinkaForm">
+       </template>
+       
+       <!-- Estilos -->
+       <stylesheet>
+       </stylesheet>
+       
+       <story>
+       <!-- Aquí va el código del cuerpo de la plantilla -->
+       </story>
+   </document>
+
+:bdg-secondary:`version`: Versión de xml.
+
+:bdg-secondary:`document`: Configuración del documento. 
+   - :bdg-secondary:`filename`: Nombre del documento.
+
+:bdg-secondary:`pageInfo`: Propiedades informativas del documento.
+
+:bdg-secondary:`pageSize`: Tamaño de la página.
+
+:bdg-secondary:`template:`: Definiciones para todas las hojas que se genere.
+
+Dentro de ``template`` se definen las etiquetas para llamar al ``header`` y ``footer``.
+
+- :bdg-secondary:`title`: Tamaño de la página.
+- :bdg-secondary:`pageSize`: Tamaño que se establece a la página.
+- :bdg-secondary:`author`: Autor del documento.
+
+:bdg-secondary:`stylesheet`: Define la totalidad de estilos que se van a implementar.
+
+:bdg-secondary:`story`: Dentro se desarrolla todo el cuerpo del PDF. 
+
+Conceptos básicos
+=================
+
+Fonts
+-----
+
+RML utiliza una lista común de fuentes ``montserrat`` y ``PT Sans``. Sin
+embargo, en la siguiente lista se muestran otras fuentes soportadas.
+
+.. code::
+
+   Symbola_hint.ttf
+   DejaVuSans.ttf              
+   Montserrat-BoldItalic.ttf        
+   Montserrat-ExtraLight.ttf    
+   Montserrat-Medium.ttf          
+   Montserrat-Thin.ttf              
+   times-new-roman.ttf
+   FreeMonoBold.ttf            
+   Montserrat-Bold.ttf              
+   Montserrat-Italic.ttf        
+   Montserrat-Regular.ttf         
+   Symbola_hint.ttf                 
+   Wingdings.ttf
+   janeaust-webfont.ttf        
+   Montserrat-ExtraBoldItalic.ttf   
+   Montserrat-LightItalic.ttf   
+   Montserrat-SemiBoldItalic.ttf  
+   times-new-roman-bold-italic.ttf
+   Montserrat-BlackItalic.ttf  
+   Montserrat-ExtraBold.ttf         
+   Montserrat-Light.ttf         
+   Montserrat-SemiBold.ttf        
+   times-new-roman-bold.ttf
+   Montserrat-Black.ttf        
+   Montserrat-ExtraLightItalic.ttf  
+   Montserrat-MediumItalic.ttf  
+   Montserrat-ThinItalic.ttf      
+   times-new-roman-italic.ttf
+
+Coordenadas cartesianas
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Las coordenadas cartesianas son un sistema de localización en un plano
+usando dos números, uno para la posición horizontal ``(x)`` y otro para
+la posición vertical ``(y)``. En los documentos PDF las coordenadas
+cartesianas se utilizan como referencia para ubicar elementos.
+
+.. image:: /imgs/PDF/5/5.1.png
+   :alt: Formas del módulo viáticos
+
+Figura 1. Formas del módulo viáticos
+
+Graphics vs Flowables
+---------------------
+
+Tanto las figuras gráficas básicas como las operaciones de texto básicas
+comparten algunas propiedades. Todo requiere que se posicione
+específicamente en un punto determinado de una página usando
+``coordenadas``.
+
+Los ``Graphics`` son etiquetas que requieren ``coordenadas`` especificas
+``(x, y)`` en una página, como es el caso de ``<blockTableStyle>``.
+
+.. code:: xml
+
+   <blockTableStyle id="general">
+       <blockAlignment value="center" start="0,0" stop="-1,-1"/>
+   </blockTableStyle>
+
+Por otro lado, las ``Flowables`` son etiquetas que no requieren un
+posicionamiento preciso, ya que se colocan secuencialmente en el
+contenido del documento, por ejemplo, la etiqueta ``<para>``.
+
+.. code:: xml
+
+     <blockTable colWidths="18cm">
+       <tr>
+           <td>
+               <para>Hello world</para>
+           </td>
+       </tr>
+   </blockTable>
+
+Espacios
+--------
+
+La etiqueta ``<spacer>`` se utiliza para agregar espacios en blanco
+verticalmente entre elementos del documento generado. ``length`` es un
+atributo de ``spacer``, que define el tamaño del espacio en blanco en
+unidades de medida (píxeles, puntos, milímetros, etc.).
+
+.. code:: xml
+
+   <spacer length="0.5cm" />
+
+Párrafos
+--------
+
+La etiqueta ``<para>`` se utiliza para crear párrafos de texto en los
+documentos generados. Se coloca dentro de la etiqueta ``<story>``. Puede
+incluir texto directamente dentro de la etiqueta ``<para>`` o utilizar
+variables y expresiones de Django para mostrar contenido dinámico.
+
+El atributo que utiliza la etiqueta ``<para>`` es:
+
+-  ``style``: Especifica el nombre de un estilo definido con
+   ``<paraStyle>`` para aplicar al párrafo. Similar al atributo
+   ``class`` en HTML. [[5.3 Estilos]]
+
+.. code:: xml
+
+   <para style="nombre_estilo">
+       Texto
+   </para>
+
+
+Tablas
+------
+
+La etiqueta ``<blockTable>`` se utiliza para definir una tabla en el
+documento. Su uso es principalmente para organizar y mostrar datos en
+forma de filas y columnas. Los atributos de ``<blockTable>`` son:
+
+-  ``style``: Define el nombre de un estilo de tabla definido con
+   ``<blockTableStyle>``.
+-  ``colWidths``: Define el ancho de las columnas en la tabla, lo que
+   afectará la distribución y el diseño de los datos en esas columnas.
+-  ``rowHeights``: Define la altura de las filas en la tabla.
+-  ``repeatRows``: Se utiliza para controlar la repetición de filas
+   cuando una tabla se divide en varias páginas debido al contenido.
+
+.. code:: xml
+
+   <blockTable repeatRows="2">
+       <!-- Celdas y contenido de la tabla -->
+   </blockTable>
+
+También puede usar una tupla de valores para ``repeatRows`` si desea
+especificar filas específicas que deben repetirse. Por ejemplo:
+
+.. code:: xml
+
+   <blockTable repeatRows="0,1,2">
+       <!-- Celdas y contenido de la tabla -->
+   </blockTable>
+
+En este ejemplo, las filas 0, 1 y 2 se repetirán en cada página nueva
+cuando la tabla se divide.
+
+A continuación, se presenta un ejemplo donde se combinan los atributos
+antes vistos de manera conjunta:
+
+.. code:: xml
+
+   <blockTable style="mytablestyle"  <!-- nombre de estilo -->
+      rowHeights="(23, 20, 30, 10)"   <!-- secuencia de medición -->
+      colWidths="50, 90, 35, 11"      <!-- secuencia de medición -->
+      repeatRows="2"                  <!-- repite las filas -->
+   >   
+      <tr>...</tr> <!-- Aquí debe poner el contenido de la primera fila -->
+      <tr>...</tr> <!-- Aquí debe poner el contenido de la segunda fila -->
+   </blockTable>
+
+
+Elementos de una tabla
+======================
+
+Las etiquetas ``<tr>`` y ``<td>`` se utilizan para estructurar y dar
+forma a las tablas, de manera similar a HTML. Sin embargo, en RML, se
+utilizan las etiquetas ``<tr>`` y ``<td>`` dentro de la etiqueta
+``<blockTable>`` para definir las filas y celdas de la tabla,
+respectivamente.
+
+-  ``<tr>`` (Tabla Row): La etiqueta ``<tr>`` se utiliza para definir
+   una fila en una tabla. Dentro de esta etiqueta, se pueden colocar una
+   o más etiquetas ``<td>`` que representarán las celdas en esa fila.
+
+-  ``<td>`` (Tabla Data): La etiqueta ``<td>`` se utiliza para definir
+   una celda en una tabla. El contenido dentro de esta etiqueta será el
+   contenido de la celda. Puede aplicar estilos y atributos específicos
+   a las celdas utilizando las propiedades de estilo de RML. [[5.3
+   Estilos]]
+
+Ejemplo de uso de ``<tr>`` y ``<td>`` en RML:
+
+.. code:: xml
+
+   <blockTable>
+       <tr>
+           <td>Contenido de la celda 1</td>
+           <td>Contenido de la celda 2</td>
+       </tr>
+       <tr>
+           <td>Contenido de la celda 3</td>
+           <td>Contenido de la celda 4</td>
+       </tr>
+   </blockTable>
+
+En este ejemplo, se está definiendo una tabla con dos filas (``<tr>``) y
+dos columnas (``<td>``). El contenido dentro de las etiquetas ``<td>``
+representa el contenido de las celdas de la tabla.

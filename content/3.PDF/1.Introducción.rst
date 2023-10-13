@@ -1,4 +1,0 @@
-Introducción a PDF
-==================
-
-Para la gestión de PDFs se utiliza la plataforma de Django

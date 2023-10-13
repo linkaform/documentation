@@ -1,3 +1,4 @@
+==================
 ¿Qué es Linkaform?
 ==================
 
@@ -8,7 +9,6 @@ Labore dolor nisi nulla Lorem anim enim aute ad dolor duis fugiat nulla. Veniam 
 Excepteur voluptate dolor elit amet do qui occaecat adipisicing esse veniam dolor id. Cillum qui sit amet est nulla pariatur pariatur aliquip nostrud cillum sunt. Velit eu amet esse duis.
 Sint ullamco sint sit occaecat eu anim officia pariatur esse esse sit aliqua sint laborum. Exercitation culpa irure fugiat eiusmod adipisicing. Nostrud eu irure fugiat adipisicing ea irure aute. Adipisicing adipisicing fugiat sint dolore cillum esse tempor nisi ullamco in sit et. Adipisicing in adipisicing excepteur veniam incididunt esse ullamco veniam elit. Excepteur cupidatat nulla do mollit anim amet qui magna in mollit sint eu sit ex. Tempor id laborum amet sunt magna ea cupidatat commodo reprehenderit ea.
 
-========================
 Ejemplo de Código python
 ========================
 
@@ -19,7 +19,6 @@ Ejemplo de Código python
        print(f"Hola, {nombre}!")
 
 
-========================
 Ejemplo de Código JS
 ========================
     
@@ -32,7 +31,6 @@ Ejemplo de Código JS
    saludar("Juan");
 
 
-========================
 Ejemplo de Código HTML
 ========================
 
@@ -50,7 +48,7 @@ Ejemplo de Código HTML
    </body>
    </html>
 
-========================
+
 Ejemplo de Código CSS
 ========================
 
