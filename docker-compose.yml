@@ -12,6 +12,7 @@ services:
      target: develop
     volumes:
       - ./:/srv/docs/
+      - ./local_build:/usr/local/bin/local_build
       # - ./content:/srv/docs/content
       # - ./extensions:/srv/docs/extensions
       # - ./locale:/srv/docs/locale

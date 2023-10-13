@@ -1,5 +1,6 @@
-
+#!/bin/bash
 echo 'Building LinkaForm Documentation'
 cd /srv/docs/
+rm -rf /srv/docs/build
 sphinx-build -c /srv/docs/ content/ build/
 echo 'Building done..'
