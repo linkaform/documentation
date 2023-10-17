@@ -2,24 +2,26 @@
 Vista general
 ==============
 
-Servido es una plataforma Open Source, donde los clientes de Linkaform pueden desarrollar reportes usando herramientas como API´s o scripts.
+Servido es una plataforma de código abierto donde los clientes de Linkaform tienen la capacidad de desarrollar informes utilizando herramientas como APIs o scripts.
 
-La estructura es la siguiente:
-Servido se compone en dos partes.
+La estructura de Servido se divide en dos partes.
 
-**Servido**: Correspondiente al frontend, este directorio general contiene todo el entorno del sistema, se encuentra montada en un servidor docker. Contiene la siguiente estructura de directorios y archivos.
+**Servido**: Representa el frontend. Este directorio general abarca todo el entorno del sistema y se ejecuta en un servidor Docker, consta de la siguiente estructura de directorios y archivos.
 
-- apps: Contiene un conjunto de carpetas donde cada una corresponde a cada cliente.
+- apps: Contiene carpetas corresponde a cada cliente.
 
-- Cada carpeta contiene  mínimo tres archivos  por reporte , estos archivos corresponden al front.
+Cada carpeta contiene mínimo tres archivos por reporte, estos archivos corresponden al front.
 
 **Infosyn_scripts**: Correspondiente al backend, en este directorio se encuentran un conjunto de carpetas correspondiente a cada cliente que hace uso de scripts para sus reportes. Cada carpeta debe contener un conjunto de scripts, los cuales se encuentran estandarizados de la siguiente forma:
     
-- account_settings.py: Contiene la configuración de la base de datos, como las credenciales de acceso del cliente. **Se debe tener un alto cuidado en su configuración**
+- account_settings.py: Contiene la configuración de la base de datos, como las credenciales de acceso del cliente. 
+
+.. danger::
+    Debe tener cuidado en la configuración de account_settings.py, contiene información sensible. 
     
-- reporte_nombre_scripts.py: Estos archivos, por ejemplo: ***reporte_visitas.py*** corresponden al backend del reporte.
+- report_nombre_scripts.py: Estos archivos, por ejemplo: ***reporte_visitas.py*** corresponden al backend del reporte.
     
-- Los reportes usan la arquitectura client-API-backend.
+Los reportes usan la arquitectura client-API-backend.
 
 Configuración de servido
 ------------------------
@@ -27,7 +29,8 @@ Configuración de servido
 .. important:: Antes de comenzar con la configuración es necesario
    contar con el entorno de **docker-compose** instalado y configurado
    en su entorno local, si aun no lo tiene instalado puede consultar la
-   `instalación de docker-compose https://docs.docker.com/compose/install/linux/#install-using-the-repository`.
+   `instalación de docker-compose  <https://docs.docker.com/compose/install/linux/#install-using-the-repository/>`__. 
+
 
 .. note:: Si usa una distribución de Linux como Ubuntu, debian o algún
    otro; se recomienda configurar el usuario local para darle permisos
@@ -35,81 +38,87 @@ Configuración de servido
    dentro de su entorno **home**, ya que dentro de este entorno se
    configurarán todos los proyectos de linkaform.
 
-A continuación, se describe la configuración necesaria para instalar
-**servido** e iniciar con el desarrollo de reportes.
+A continuación, se detalla la configuración necesaria para la instalación de **servido** y el inicio del desarrollo de reportes.
 
-1. Dirigirse al enlace de `servido <https://github.com/linkaform/servido>`__.
+1. Diríjase al enlace de `servido <https://github.com/linkaform/servido/>`__.
 2. Clone el repositorio de servido en la carpeta lkf dentro de su entorno local.
 3. Siga las instrucciones del documento README.md.
-4. Para conectarse en local se usa el siguiente enlace: http://127.0.0.1:8011/visitas/resporte_visitas.html?script_id=94392
+4. Una vez que el proyecto esté en ejecución podrá acceder a:
+    - API en el puerto 5000 `<http://127.0.0.1:5000/>`__.
+    - Páginas web en el puerto 8011 en https
 
-Si se desea acceder desde servido, se usa la siguiente estructura:
+.. image:: /imgs/Reportes/ConfServido/9.png
+.. seealso::
 
-http://srv.linkaform.com/visitas/resporte_visitas.html?script_id=94392
+    Para conectarse en su local utilice el siguiente enlace: 
+
+    `http://127.0.0.1:8011/carpeta_cliente/nombre_archivo.html?script_id=123`.
+
+
+    Por ejemplo:
+
+    `http://srv.linkaform.com/visitas/resporte_visitas.html?script_id=94392`.
 
 
 Configuración del backend de reportes
 -------------------------------------
 
-1. Ingresar a la cuenta del cliente, para esto serán necesarios las credenciales para acceder a la cuenta.
+1. Ingrese a su cuenta (utilice las credenciales proporcionadas por Linkaform).
+2. Seleccione el ícono de Formas seguido de la opción ``Scripts``. 
 
-2. Seleccionar la carpeta de Formas y seleccionar la opción **Scripts**. [[Pasted image 20230810144007.png]]
+.. image:: /imgs/Reportes/ConfServido/3.png
 
-3. Dentro de este apartado, debe seleccionarse el opción de crear Scripts. 
-    - Esto abrirá la siguiente ventana emergente con tres pestañas, se encontrará en la pestaña por defecto llamada **General**, se encontrarán los siguientes campos de textos: ***Nombre de Reporte***, ***URL***: Se debe ingresar el link de la página , y **Script**, se recomienda ingresar el script para que automáticamente se configure el nombre de reporte.
-    - Seleccione guardar **Cargar**.
-    - Sí se necesitan más de un scripts, se recomienda crear una y dentro de esta guardar los scripts.
+3. Seleccione la opción de cargar ``Script``.
+
+.. image:: /imgs/Reportes/ConfServido/4.png
+
+4. Cargue el archivo ``.py`` para que el nombre del script se autocomplete con el nombre del archivo. 
+
+Seleccione una imagen; en este caso, hace referencia a la versión que utiliza Python, se recomienda ingresar el número "3", y automáticamente aparecerá el nombre completo de la imagen.
+
+Finalmente, presione ``cargar``.
+
+.. image:: /imgs/Reportes/ConfServido/6.png
 
 Configuración de frontend de reportes
 -------------------------------------
 
-1. Solicitar acceso a la plataforma de servido.
+1. Acceda a la carpeta de apps.
 
-2. Acceder a la carpeta de clientes.
+2. Cree una carpeta unica para su reporte. Se recomienda utilizar el nombre del cliente.
 
-3. Crear los archivos correspondientes.
+3. Cree los archivos correspondientes.
 
-4. Subir los archivos al repositorio.
+Cada carpeta tiene el siguiente estándar:
 
-5. Hacer un build del proyecto.
+- styles.css: Contiene los estilos del frontend.
 
-6. Cada carpeta tiene el siguiente estándar:
-    - styles.css: Contiene los estilos del frontend.
-	- reporte_nombreReporte.html: Contiene la estructura del reporte.
-	- reporte_nombreReporte.js: Contiene la la lógica para gestionar las peticiones con la API y mostrarlas en el html.
-	- reporte_nombreReporte_data.js: Contiene configuraciones de librerías que se utiliza, estas pueden ser para gráficos, tablas, entre otros. estas bibliotecas se pueden consultar en la sección bibliotecas(HIPERVINCULO)
+- reporte_nombreReporte.html: Contiene la estructura del reporte.
 
+- reporte_nombreReporte.js: Contiene la lógica para gestionar las peticiones con la API y mostrarlas en la estructura.
 
-7. Configuración de reportes en en linkaform, debe dirigirse a la barra lateral izquierda y seleccionar la opción de **Reporte**, la interfaz debe ser similar a la siguiente:
+- reporte_nombreReporte_data.js: Contiene configuraciones de librerías que se utiliza, estas pueden ser para gráficos, tablas, entre otros. estas bibliotecas se pueden consultar en la sección bibliotecas. (HIPERVINCULO)
+
+.. image:: /imgs/Reportes/ConfServido/8.png
+
+4. Suba los archivos al repositorio.
+
+5. Haga build del proyecto (solicite ayuda a soporte de Linkaform).
+
+6. Configure el reporte en Linkaform, diríjase a la barra lateral izquierda y seleccionar la opción de ``Reporte``, la interfaz debe ser similar a la siguiente:
 
 .. image:: /imgs/Reportes/ConfServido/2.png
 
-8. Nota: Los reportes que se hacen en linkaform son embebidos, esto significa que existe un enlace de servido que contiene todo el reporte perce.
+.. note:: Los reportes que se hacen en linkaform son embebidos, esto significa que existe un enlace de servido que contiene todo el reporte perce.
 
-9. Crear un reporte: Seleccione el ícono de documento en la sección de la barra superior derecha, al seleccionar el ícono, Linkaform mostrará una ventana emergente con tres ventanas, la ventana por defecto es **General** esta cuenta con tres campos: 
-    - **Nombre de reporte**:
-    - **URL:**
-    - **Scripts:**
+7. Cree un reporte. Seleccione el ícono de documento en la sección de la barra superior derecha, al seleccionar el ícono, Linkaform mostrará una ventana emergente con tres ventanas, la ventana por defecto es **General** esta cuenta con tres campos: 
 
-13. Observe
+- **Nombre de reporte**: Nombre descriptivo que diferenciará al reporte.
 
-+-----------------------------------+-----------------------------------+
-| Syntax                            | Description                       |
-+===================================+===================================+
-| **apps**                          | Contiene un conjunto de carpetas  |
-|                                   | correspondientes a los clientes   |
-+-----------------------------------+-----------------------------------+
-| **docker**                        | Usado para gestionar el proyecto  |
-|                                   | en el repositorio                 |
-+-----------------------------------+-----------------------------------+
-| **libs**                          | -                                 |
-+-----------------------------------+-----------------------------------+
-| **nginx**                         | -                                 |
-+-----------------------------------+-----------------------------------+
-| **Pycache**                       | -                                 |
-+-----------------------------------+-----------------------------------+
-| **Servido_api**                   | Tiene las herramientas necesarias |
-|                                   | para la creación de reportes      |
-+-----------------------------------+-----------------------------------+
+- **URL**: Dirección de la demo que generó en servido.
 
+- **Scripts**: Nombre del script que cargó anteriormente.
 
+.. image:: /imgs/Reportes/ConfServido/10.png
+
+En esta sección, ha aprendido a configurar el entorno de scripts y reportes. En las secciones posteriores, se proporcionará una explicación más detallada sobre el código que compone los archivos.

@@ -47,28 +47,11 @@ párrafos en el documento RML de manera precisa y coherente al definir
 estilos de párrafo. Puede aplicar estos estilos a diferentes partes del
 documento según sea su necesidad.
 
-.. code:: xml
+.. code-block:: xml
+    
+    <paraStyle name="mystyle" string alias="pretty" string parent="oldstyle" string fontname="Courier-Oblique" string fontsize="13" measurement leading="20" measurement leftIndent="1.25in" measurement rightIndent="2.5in" measurement firstLineIndent="0.5in" measurement spaceBefore="0.2in" measurement spaceAfter="3cm" measurement alignment="justify" "left", "right", "center" or "justify" bulletFontName="Courier" string bulletFontsize="13" measurement bulletIndent="0.2in" measurement textColor="red" string backColor="cyan" string />
 
-   <?xml version="1.0"?>
-   <paraStyle
-      name="mystyle" string
-      alias="pretty" string
-      parent="oldstyle" string
-      fontname="Courier-Oblique" string
-      fontsize="13" measurement
-      leading="20" measurement
-      leftIndent="1.25in" measurement
-      rightIndent="2.5in" measurement
-      firstLineIndent="0.5in" measurement
-      spaceBefore="0.2in" measurement
-      spaceAfter="3cm" measurement
-      alignment="justify" "left", "right", "center" or "justify"
-      bulletFontName="Courier" string
-      bulletFontsize="13" measurement
-      bulletIndent="0.2in" measurement
-      textColor="red" string
-      backColor="cyan" string
-   />
+
 
 
 

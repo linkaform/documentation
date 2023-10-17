@@ -12,17 +12,25 @@ En este apartado se le guiara por todos los puntos necesarios que tiene que cono
 Funcionamiento de formas
 ========================
 
-Las **formas** (formulario digital) es una interfaz visual que permite obtener los datos solicitados o necesarios para nuestros clientes, a fin de apoyarlos a gestionar todas sus actividades operacionales. 
+Las **formas** (formulario digital) son una interfaz visual que permite obtener los datos solicitados o necesarios de los clientes, a fin de apoyarlos a gestionar todas sus actividades operacionales. 
 
-A partir de los datos obtenida de los formularios  se comenzará a desarrollar los reportes. 
-Para acceder a estos formularios es necesario hacer uso de un usuario y contraseña si se desea consultar los identificadores únicos de cada campo que compone el formulario y poder visualizar los resultados de la forma a medida que se desarrolla.
-Estas credenciales se las proporcionará el equipo técnico de Linkaform, cabe aclarar que para acceder a estas formas y hacer uso de ellas, es posible acceder desde la cuenta del cliente.
+A partir de los datos obtenidos en los formularios  se comenzará a desarrollar los reportes. 
+Para acceder a estos formularios es necesario hacer uso de un usuario y contraseña y así consultar los identificadores únicos de cada campo que compone el formulario y poder visualizar los resultados de la forma a medida que se desarrolla.
 
-En este punto es necesario recordar la estructura de las cuentas de Linkaform, en donde se menciona que se hace uso de la cuenta de **preproducción** ***preprod***, esta sirve principalmente para realizar pruebas y evitar que un posible error sea evitado por el cliente o usuario. La segunda cuenta de mayor importancia es **producción**  ***prod*** , esta cuenta es la que utiliza el cliente y el usuario, cuando los cambios en la cuenta de ***preprod*** son satisfactorios y cumplen los requerimientos de los clientes se envían a producción.
+.. nota::
+    Estas credenciales se las proporcionará el equipo técnico de Linkaform, cabe aclarar que para acceder a estas formas y hacer uso de ellas, es posible acceder desde la cuenta del cliente.
+
+En este punto es necesario recordar la estructura de las cuentas de Linkaform.
+
+.. important::
+    Se recomienda utilizar la cuenta en **preproducción** (**preprod**). Ya que podrá realizar pruebas sin afectar a otros usuarios que hacen uso de la misma cuenta. 
+
+La segunda cuenta de mayor importancia es **producción** (**prod**) , esta cuenta es la que utiliza el cliente y el usuario, cuando los cambios en la cuenta de **preprod** son satisfactorios y cumplen los requerimientos de los clientes.
 
 
 ¿En donde se encuentran los reportes en Linkaform?
 ==================================================
 
-Al acceder a una cuenta en web el módulo de reporte se debe dirigir a los íconos de la barra lateral izquierda, seleccione el quinto ícono para acceder a los reportes. 
+Al acceder a su cuenta en web, debe dirigirse a los íconos de la barra lateral izquierda, seleccione el quinto ícono para acceder a los reportes. 
 
+.. image:: /imgs/Reportes/Reportes.png

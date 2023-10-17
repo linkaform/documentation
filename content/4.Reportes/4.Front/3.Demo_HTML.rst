@@ -2,109 +2,146 @@
 Desarrollo de Demo Frontend (HTML)
 ==================================
 
-Al crear un reporte se generan dos enlaces, una utilizada para demos y otra para producción, lo primero que se debe realizar es una demo (Prototipo), se debe comenzar con el frontend y los resultados del backend se simularan con datos demo. El objetivo es brindar al cliente una perspectiva del resultado del producto final, a partir de la demo los stakeholders ofrecen retroalimentación para la mejora y optimización del reporte.
+Al crear un reporte se generan dos enlaces, una utilizada para demos y otra para producción, lo primero que se debe realizar es una demo (Prototipo), se debe comenzar con el frontend y los resultados del backend se simularan con datos demo. El objetivo es brindar al cliente una perspectiva del resultado del producto final y obtener aprobación o retroalimentación del reporte.ç
 
 Es posible acceder a los reportes de manera local o desde linkaform, a continuación se explica:
 
-1. Local: 
-    Configurar el contenedor en Docker y crear el servidor local. Una vez hecho esto, dirígete a un navegador y coloca la ruta con la siguiente estructura: `http://127.0.0.1:8011/nombreCarpetaReporte/reporte_nombreReporte.html?scripts=idSCript`.
+**Local**
 
-2. Linkaform:
-   Acceder desde la web utilizando la siguiente ruta ``https://srv.linkaform.com/nombreCarpetaReporte/reporte_nombreReporte.html?scripts=idSCript``.
+Anteriormente configuró el contenedor docker. Ahora diríjase a su navegador y coloque la ruta con la siguiente estructura: 
+
+``http://127.0.0.1:8011/nombre_carpeta/nombre_reporte.html?script_id=123``
+
+.. image:: /imgs/Reportes/ConfServido/11.png
+
+**Linkaform**
+
+Acceda desde la web utilizando la siguiente ruta:
+
+``https://srv.linkaform.com/nombre_carpeta/nombre_reporte.html?script_id=123``
+
+.. image:: /imgs/Reportes/ConfServido/12.png
 
 
-Al acceder a los enlaces se mostrará una ventana de inicio de sesión en producción, donde se debe  ingresar los campos de correo del cliente y la contraseña de la cuenta de producción.
-En caso de no tener la contraseña se debe agregar un nuevo argumento a la URL, se explica a continuación:
+Al acceder a los enlaces, se mostrará una ventana de inicio de sesión donde deberá ingresar los campos de correo del cliente y la contraseña de la cuenta. 
 
-1. ``127.0.0.8011/nombreReporte/reporte_nombreReporte.html?scripts=idSCript&env=test``
-2. ``http://linkaform.com/nombreReporte/reporte_nombreReporte.html?scripts=idSCript&env=test``
+.. image:: /imgs/Reportes/ConfServido/13.png
 
-Al hacer este cambio el sistema de **servido** detecta el cambio en el ambiente de producción a preproducción, en este subdominio la contraseña para todos las cuentas es **20lkf23**.
-Para acceder a la demo se deben colocar la ruta sin parámetros, es decir; sin el **scriptId**, esto se hace de la siguiente manera:
+En caso de no tener la contraseña, se debe agregar un nuevo argumento a la URL (**&env=test**). Como se muestra a continuación:
 
-1. ``127.0.0.8011/nombreCarpetaReporte/reporte_nombreReporte.html``
+``127.0.0.8011/nombreReporte/reporte_nombreReporte.html?scripts=idSCript&env=test``
 
-En automático se generará una interfaz demo con datos simulados, a continuación se explica el frontend y el backend.
+``https://srv.linkaform.com/nombre_carpeta/nombre_reporte.html?script_id=123&env=test``
+
+.. important::
+
+    Al hacer este cambio el sistema de **servido** detecta el cambio en el ambiente de producción a preproducción, en este subdominio la contraseña para todos las cuentas es **20lkf23**.
+    Para acceder a la demo se deben colocar la ruta sin parámetros, es decir; sin el **scriptId**, esto se hace de la siguiente manera:
+
+``127.0.0.8011/nombreCarpetaReporte/reporte_nombreReporte.html``
+
+Automáticamente se generará una interfaz demo con datos simulados, a continuación se explica el frontend y el backend.
+
+
+.. image:: /imgs/Reportes/ConfServido/12.png
+
 
 Frontend demo
 =============
 
-Configuración del HTML, comenzamos con la estructura del HTML
--------------------------------------------------------------
+Configuración del HTML
+----------------------
+
+En primer lugar, debe iniciar la preparación del archivo HTML.
 
 HEAD
 ^^^^
+Integramos las configuraciones necesarias a la cabecera de nuestro archivo html, como bibliotecas, estilos, etc.
+
 .. code-block:: html
 
    <head>
-          <!--------- Configuración inicial del la web de reportes. ------------>
-          <meta charset="utf-8">
-          <title>Servido</title>
-          <meta name="title" content="Servido">
-          <meta name="description" content="Reporte Visitas">
-          <!--------- Importar las rutas a los archivos de ciertos diseños. --------->
-          <link type="image/x-icon" rel="shortcut icon" href="../styles/img/favicon.ico">
-          <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-          <link type="image/x-icon" rel="shortcut icon" href="../styles/img/favicon.ico">
-          <!--Bootstrap -->
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-          <!--Font Awesome -->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-          <!--Utils -->        
-          <link rel="stylesheet" href="../styles/css/sweetalert2.min.css">
-          <link rel="stylesheet" href="../styles/css/styles.css">
-          <link rel="stylesheet" href="style.css">
-      </head>
+        <!--------- Configuración inicial del la web de reportes ------------>
+        <meta charset="utf-8">
+        <title>Servido</title>
+        <meta name="title" content="Servido">
+        <meta name="description" content="Reporte Visitas">
+        <!--------- Importar las rutas a los archivos de ciertos diseños. --------->
+        <link type="image/x-icon" rel="shortcut icon" href="../styles/img/favicon.ico">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <link type="image/x-icon" rel="shortcut icon" href="../styles/img/favicon.ico">
+        <!--Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--Utils -->        
+        <link rel="stylesheet" href="../styles/css/sweetalert2.min.css">
+        <link rel="stylesheet" href="../styles/css/styles.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
 BODY
 ^^^^
 En este apartado se colocan los elementos que observará el cliente, como los rangos de fechas, las tablas o gráficos.
 Una estructura del body es la siguiente:
-Un elemento ``<nav>`` generalmente solo tiene el titulo con el formato reporte de nombreReporte y el botón de cerrar sesión.
-El siguiente elemento, corresponde al contenedor padre del reporte perce, el siguiente elemento corresponde a la etiqueta contenedora de la subventana, del inicio de sesión. 
+
+Un elemento ``<nav>`` generalmente solo tiene el titulo con el formato ``reporte de nombre_reporte`` y el botón de cerrar sesión.
+
+El siguiente elemento corresponde al contenedor padre del reporte, el siguiente elemento corresponde a la etiqueta contenedora de la subventana, del inicio de sesión. 
+
 Esta a su vez anida a los elementos correspondientes al inicio de sesión, puede utilizar el siguiente estandar.
 
-.. code-block:: html
+.. tab-set::
 
-   <div class="row inicio_ses" id="inicio_ses">
-       <div class="errorLogin" id="errorLog"></div>
-           <div class="control">
-                   <div class="renglon">
-                       <h3>Usuario: </h3>
-                       <input class="form-control ds-input" id="user" name="user" value="">
-                   </div>
-                   <div class="renglon">
-                       <h3>Contraseña: </h3>
-                       <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
-                   </div>
-                   <div class="controlBtn">
-                   <div class="btn btn-primary" onclick="login()">Login</div>
-                   <div class="btn btn-primary" onclick="reset()">Reset</div>
-           </div>
-       </div>
-   </div>
+    .. tab-item:: Ejecutado
+        
+        .. raw:: html
 
-Resultado:
-
-.. raw:: html
-
-    <div class="row inicio_ses" id="inicio_ses">
-        <div class="errorLogin" id="errorLog"></div>
-            <div class="control">
-                <div class="renglon">
-                    <h3>Usuario: </h3>
-                    <input class="form-control ds-input" id="user" name="user" value="">
+            <div class="row inicio_ses" id="inicio_ses">
+                <div class="errorLogin" id="errorLog"></div>
+                    <div class="control">
+                        <div class="renglon">
+                            <h3>Usuario: </h3>
+                            <input class="form-control ds-input" id="user" name="user" value="">
+                        </div>
+                        <div class="renglon">
+                            <h3>Contraseña: </h3>
+                            <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
+                        </div>
+                        <div class="controlBtn">
+                        <div class="btn btn-primary" onclick="login()">Login</div>
+                        <div class="btn btn-primary" onclick="reset()">Reset</div>
+                    </div>
                 </div>
-                <div class="renglon">
-                    <h3>Contraseña: </h3>
-                    <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
-                </div>
-                <div class="controlBtn">
-                <div class="btn btn-primary" onclick="login()">Login</div>
-                <div class="btn btn-primary" onclick="reset()">Reset</div>
             </div>
-         </div>
-    </div>
+
+    .. tab-item:: Resultado
+
+        .. image:: /imgs/Reportes/ConfServido/13.png
+
+    .. tab-item:: Código
+
+		.. code-block:: html
+            
+            <div class="row inicio_ses" id="inicio_ses">
+                <div class="errorLogin" id="errorLog"></div>
+                    <div class="control">
+                        <div class="renglon">
+                            <h3>Usuario: </h3>
+                            <input class="form-control ds-input" id="user" name="user" value="">
+                        </div>
+                        <div class="renglon">
+                            <h3>Contraseña: </h3>
+                            <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
+                        </div>
+                        <div class="controlBtn">
+                        <div class="btn btn-primary" onclick="login()">Login</div>
+                        <div class="btn btn-primary" onclick="reset()">Reset</div>
+                    </div>
+                </div>
+            </div>
+
+
 
 El siguiente elemento corresponde al una etiqueta que se muestra cuando se accede a la demo, puede seguir el siguiente estandar:
 
@@ -129,7 +166,7 @@ Resultado:
        </center>
    </div>
 
-Lo siguiente es configurar las opciones de filtro:
+Configure las opciones de filtro, esto lo puede hacer de la siguiente manera:
 
 .. code-block:: html
 
@@ -154,7 +191,8 @@ Resultado:
         <div class="btn btn-primary" onclick="runFirstElement()">Run</div>
     </div>
 
-Lo siguiente es configurar los filtros, estos son de fecha, de periodo, existen otros filtros específicos como el selector múltiple, checkbox y checkbox múltiple.
+Posteriormente configure los filtros, estos son fecha, periodo, existen otros filtros específicos como el selector múltiple, checkbox y checkbox múltiple.
+
 Los input deben tener la clase **form-control**
 
 .. code-block:: html
@@ -254,8 +292,15 @@ Después del contenido, se deben agregar ciertos scripts correspondientes a cier
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-Posteriormente se encuentra la sección de los archivos **syles** propios de servido; en esta se encuentran de forma minimizada ciertas librerías como cgroma; la cual permite crear una paleta de colores automáticamente; útiles cuando se necesitan ciertos colores para gráficos, la librería de weetalert2 permite crear alertas atractivas. Posteriormente se encuentran los archivos de la carpeta apps/utils en servido; estas corresponden a las funciones API; a continuación se explican breve mente:
-- servido_utils: Esta configura el inicio de sesión, como los usuarios, contraseñas, configurar las cookies configurando el sessionId,  userId, userJwt, userName y userParentId. Además se encarga de generar ciertas funciones como: getPalleteColors, setSpinner, getChartDownload, getDownload, setDateFilterMonth.
+Posteriormente, encontramos la sección de los archivos **styles** propios de servido. 
+
+Aquí se encuentran ciertas librerías, como "cgroma", que permite crear una paleta de colores automáticamente, lo cual resulta útil cuando se necesitan colores específicos para gráficos. 
+
+También se incluye la librería "weetalert2", que permite crear alertas atractivas.
+
+En los archivos de la carpeta "apps/utils" de servido. Encontrará archivos corresponden a las funciones de la API:
+
+- ``servido_utils``: Esta configuración se encarga del inicio de sesión, gestionando usuarios y contraseñas, además de configurar las cookies para establecer el "sessionId", "userId", "userJwt", "userName" y "userParentId". Además, proporciona funciones como "getPalleteColors", "setSpinner", "getChartDownload", "getDownload" y "setDateFilterMonth".
 
 .. code-block:: html
 
@@ -263,8 +308,7 @@ Posteriormente se encuentra la sección de los archivos **syles** propios de ser
     <script type="text/javascript" src="../styles/js/chroma.min.js"></script>
     <script type="text/javascript" src="../styles/js/sweetalert2.all.min.js"></script>
 
-
-Finalmente se mandan a llamar los archivos encargados de gestionar el reporte y posteriormente se encuentran los archivos que gestionan la petición a la API de linkaform y el archivo con la data que se verá reflejado en la gráfica y las tablas.
+Finalmente, se realizan las llamadas a los archivos encargados de gestionar el reporte. Luego, se encuentran los archivos que manejan las solicitudes a la API de linkaform, y el archivo que contiene los datos que se reflejarán en las gráficas y las tablas del reporte.
 
 .. code-block:: html
 

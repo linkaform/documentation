@@ -10,7 +10,6 @@ p {
   width: 50em;
 }
 .sidebar-drawer{
-  background-color: #3f3f3f;
   min-width: 15em;
   width: calc(50% - 33em);
 }
@@ -18,12 +17,6 @@ p {
 img {
     max-width: 100%;
     height: auto;
-}
-
-.sidebar-search{
-  background-color: #3f3f3f;
-  color: #ddd;
-  /*border: 1px solid black;*/
 }
 
 button.copybtn {

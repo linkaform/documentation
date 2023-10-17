@@ -224,10 +224,10 @@ antes vistos de manera conjunta:
 
 .. code:: xml
 
-   <blockTable style="mytablestyle"  <!-- nombre de estilo -->
-      rowHeights="(23, 20, 30, 10)"   <!-- secuencia de medición -->
-      colWidths="50, 90, 35, 11"      <!-- secuencia de medición -->
-      repeatRows="2"                  <!-- repite las filas -->
+   <blockTable style="mytablestyle"
+      rowHeights="(23, 20, 30, 10)"
+      colWidths="50, 90, 35, 11"  
+      repeatRows="2"            
    >   
       <tr>...</tr> <!-- Aquí debe poner el contenido de la primera fila -->
       <tr>...</tr> <!-- Aquí debe poner el contenido de la segunda fila -->
