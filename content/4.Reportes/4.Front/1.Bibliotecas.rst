@@ -15,7 +15,7 @@ El frontend consiste en el desarrollo de la interfaz gráfica de un sitio o apli
 
     .. tab-item:: Ejemplo
 
-		.. code-block:: html
+		.. raw:: html
 
 			<!doctype html>
 			<html>

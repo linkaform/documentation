@@ -47,7 +47,7 @@ source_suffix = ['.rst', '.md']
 #html_theme = 'alabaster'
 #html_theme = 'press'
 
-html_theme = 'furo'
+html_theme = 'press'
 locale_dirs = ['locale/']
 gettext_compact = True 
 templates_path = ['./extensions/']
