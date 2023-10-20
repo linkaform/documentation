@@ -1,0 +1,7 @@
+===========
+Instalación
+===========
+
+Antes de comenzar a crear documentación con Sphinx, es esencial que tenga la herramienta correctamente instalada en su entorno de desarrollo. La instalación de Sphinx es un proceso sencillo que le permitirá comenzar a generar documentación.
+
+En esta sección, se presentan los pasos necesarios para instalar Sphinx en su sistema. Ya sea que se encuentre trabajando en un sistema operativo Windows, macOS o Linux, Sphinx es una herramienta versátil que puede adaptarse a sus necesidades.

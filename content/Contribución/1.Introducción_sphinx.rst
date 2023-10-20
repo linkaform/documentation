@@ -1,0 +1,15 @@
+=====================
+Introducción a Sphinx
+=====================
+
+La documentación desempeña un papel fundamental en el éxito de cualquier proyecto. Proporciona información esencial que guía a los usuarios, colaboradores y desarrolladores a través de su software, biblioteca, API o cualquier otro proyecto que desarrolle. 
+
+La documentación le permite transferir el porqué del código. De la misma manera que los comentarios de código explican el por qué , y no el cómo. La documentación tiene el mismo propósito. 
+
+Una documentación bien elaborada no solo mejora la experiencia de los usuarios, sino que también contribuye a la difusión y la adopción de su proyecto. Sin embargo, escribir documentación de alta calidad puede ser un desafío, y es aquí donde Sphinx se convierte en una herramienta viable.
+
+Sphinx es un generador de documentación o una herramienta que traduce un conjunto de archivos fuente de texto sin formato a varios formatos de salida, produciendo automáticamente referencias cruzadas, índices, etc. Es decir, si tiene un directorio que contiene un montón de documentos reStructuredText o Markdown, Sphinx puede generar una serie de archivos HTML, un archivo PDF (a través de LaTeX), páginas de manual y mucho más.(REFERENCIA SPHINX)
+
+Esta sección tiene como objetivo ofrecer una breve introducción a Sphinx y su uso, así como servir como guía para documentar su primer proyecto en Linkaform. Al final, debería tener un proyecto que esté listo para su lanzamiento público.
+Puede leer este documento de principio a fin o utilizarlo como referencia. 
+Para obtener más detalles, consulte la guía disponible de sphinx. (REFERENCIA SPHINX)

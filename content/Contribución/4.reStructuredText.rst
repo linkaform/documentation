@@ -1,0 +1,65 @@
+===============================
+Escribiendo en reStructuredText
+===============================
+
+reStructuredText es el lenguaje de marcado de texto sin formato predeterminado utilizado por Sphinx. Esta sección es una breve introducción a los conceptos y la sintaxis de reStructuredText (reST) que comúnmente se utiliza para crear documentación y cuyo objetivo es proporcionar suficiente información para crear documentos de forma productiva.
+
+Si necesita más detalles puede consultar la guía de Introducción a reStructuredText
+de Spginx (HIPERVINCULO).
+
+Creación de archivo
+===================
+
+Antes de adentrarnos en la explicación de reStructuredText, siga estos pasos para crear su primer proyecto.
+
+1. Cree la carpeta de su proyecto en ``content``. En este caso llevará el nombre de ``5.Desarrolladores``.
+
+.. caution:: Asegúrese de que el nombre de su carpeta no contenga espacios, en caso de tener más de dos palabras use ``snake_case``.
+
+2. Cree su archivo ``.rst`` dentro de la carpeta de su proyecto. 
+
+.. caution:: De la misma manera, asegúrese de que el nombre de su archivo no contenga espacios.
+
+.. image:: /imgs/Contribución/5.png
+
+Si dentro de la carpeta de su proyecto tendrá más de un archivo, cree un ``index.rst``, y los archivos que necesite, por ejemplo:
+
+.. image:: /imgs/Contribución/6.png
+
+Si necesita otras secciones dentro de su proyecto, cree una carpeta y dentro de ella los archivos que necesite. Como se muestra en la siguiente imagen:
+
+.. image:: /imgs/Contribución/7.png
+
+.. note:: Si lo prefiere, puede nombrar los archivos siguiendo una numeración, aunque esto no es obligatorio.
+
+Parrafos
+========
+
+El párrafo es el bloque más básico en un documento ``reST``. Los párrafos son simplemente fragmentos de texto separados por uno o más espacios en blanco. 
+
+.. important:: Como en Python, la sangría es significativa en reST, por lo que todas las líneas del mismo párrafo debe estar alineado a la izquierda con el mismo nivel de sangría. 
+
+Resaltos
+========
+
+El marcado en línea estándar de reST es muy sencilla.
+
+Utilice un asterisco para un *énfasis* (cursiva)
+
+.. code-block:: rst
+
+    *text*
+
+Utilice dos asteriscos para un ** fuerte énfasis** (negrita)
+
+.. code-block:: rst
+
+    **text**
+
+Utilice comillas inversas para un ejemplo de tipo ``código en línea``.
+
+.. code-block:: rst
+
+    ``text``
+
+.. caution:: Al utilizar alguno de los resaltos anteriores, debe tener cuidado con los espacios. Ya que un espacio después del asterisco o las comillas no reconocerá la instrucción.
