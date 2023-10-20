@@ -44,21 +44,16 @@ Resaltos
 
 El marcado en línea estándar de reST es muy sencilla.
 
-Utilice un asterisco para un *énfasis* (cursiva)
-
-.. code-block:: rst
+Utilice un asterisco para un *énfasis* (cursiva)::
 
     *text*
 
-Utilice dos asteriscos para un ** fuerte énfasis** (negrita)
-
-.. code-block:: rst
+Utilice dos asteriscos para un ** fuerte énfasis** (negrita)::
 
     **text**
 
-Utilice comillas inversas para un ejemplo de tipo ``código en línea``.
+Utilice comillas inversas para un ejemplo de tipo ``código en línea``::
 
-.. code-block:: rst
 
     ``text``
 
