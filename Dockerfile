@@ -7,11 +7,18 @@ FROM sphinxdoc/sphinx as develop
 MAINTAINER Linkaform
 
 
-ARG UID=${UID}
-ARG GID=$UID
+RUN apt-get update && \
+    apt-get install -y \
+    graphviz
 
-RUN groupadd -g "${UID}" sphinix \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${UID}" sphinix
+ARG UID=${UID}
+ARG GID=${UID}
+ARG UID=1000
+ARG GID=1000
+
+
+RUN groupadd -g $GID sphinix 
+RUN useradd --create-home --no-log-init -u $GID -g $GID sphinix
 
 USER sphinix
 
@@ -19,25 +26,3 @@ WORKDIR /srv/docs
 
 ADD requirements.txt /srv/docs
 RUN pip3 install -r requirements.txt
-
-# Instala el tema furo
-RUN pip3 install furo
-
-# Instala la librería sphinx-press-theme
-RUN pip3 install sphinx-press-theme
-
-# Instala extensión para "copiar" bloques de código.
-RUN pip3 install sphinx-copybutton
-
-# Instala extensión para diagramas mermaind
-RUN pip3 install sphinxcontrib-mermaid
-
-# Instala herramienta para traducciones
-RUN pip3 install sphinx-intl
-
-# Instala extensión para diseñar componentes web responsivos
-RUN pip3 install --upgrade sphinx_design
-
-
-# Instala extensión para hacer uso de videos Youtube
-RUN pip3 install sphinxcontrib-youtube
