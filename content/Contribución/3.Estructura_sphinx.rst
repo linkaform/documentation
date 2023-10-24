@@ -43,7 +43,7 @@ Esta carpeta contiene los archivos generados por Sphinx, como la documentación 
 
 :bdg-secondary:`_static`: Esta carpeta almacena archivos estáticos utilizados por los temas en la documentación, como hojas de estilo (CSS), imágenes o archivos JavaScript.
 
-.. precaution:: Por ningún motivo modifique estos archivos. Ya que son propios del tema que se está utilizando en este momento.
+.. caution:: Por ningún motivo modifique estos archivos. Ya que son propios del tema que se está utilizando en este momento.
 
 :bdg-secondary:`.doctrees`: Esta carpeta almacena archivos temporales utilizados por Sphinx para agilizar la generación de la documentación. No es necesario para la distribución final de la documentación, pero es esencial para acelerar la generación de la misma durante el proceso de desarrollo.
 

@@ -4,8 +4,7 @@ Escribiendo en reStructuredText
 
 reStructuredText es el lenguaje de marcado de texto sin formato predeterminado utilizado por Sphinx. Esta sección es una breve introducción a los conceptos y la sintaxis de reStructuredText (reST) que comúnmente se utiliza para crear documentación y cuyo objetivo es proporcionar suficiente información para crear documentos de forma productiva.
 
-Si necesita más detalles puede consultar la guía de Introducción a reStructuredText
-de Spginx (HIPERVINCULO).
+Si necesita más detalles puede consultar la guía de Introducción a reStructuredText de Sphinx (HIPERVINCULO).
 
 Creación de archivo
 ===================
@@ -32,6 +31,40 @@ Si necesita otras secciones dentro de su proyecto, cree una carpeta y dentro de 
 
 .. note:: Si lo prefiere, puede nombrar los archivos siguiendo una numeración, aunque esto no es obligatorio.
 
+Secciones
+=========
+
+Las ecciones son útiles para organizar y estructurar su documentación. Las secciones le permitirán dividir su contenido en partes más pequeñas y darle una jerarquía clara. 
+
+En lugar de imponer un número y un orden fijos para el título de la sección, el orden aplicado será el orden encontrado. El primer estilo hallado se considerará como un título principal (similar al HTML H1), el segundo estilo será un subtítulo, el tercero será otro subtítulo, y así sucesivamente.
+
+A continuación, se muestran ejemplos de títulos y subelementos ::
+
+    ====================
+    Título de la Sección
+    ====================
+
+    Introducción
+    ============
+
+    Sección 1
+    ---------
+            
+    Subsección 1.1
+    ^^^^^^^^^^^^^^
+    Subsección 1.2
+    ^^^^^^^^^^^^^^
+
+    Sección 2
+    ---------
+
+    EXPLICAR QUE PASA SI LA CADENA NO CIERRA COMPLETAMENTE:
+    QUE PASA SI TENGO Esto
+    pARRAFO DE EFEJMOKI
+    ======(TIRA UN ERROR)
+
+
+
 Parrafos
 ========
 
@@ -48,7 +81,7 @@ Utilice un asterisco para un *énfasis* (cursiva)::
 
     *text*
 
-Utilice dos asteriscos para un ** fuerte énfasis** (negrita)::
+Utilice dos asteriscos para un **fuerte énfasis** (negrita)::
 
     **text**
 
@@ -57,4 +90,615 @@ Utilice comillas inversas para un ejemplo de tipo ``código en línea``::
 
     ``text``
 
-.. caution:: Al utilizar alguno de los resaltos anteriores, debe tener cuidado con los espacios. Ya que un espacio después del asterisco o las comillas no reconocerá la instrucción.
+.. caution:: Al utilizar alguno de los resaltos anteriores, debe tener cuidado con los espacios. Si existe un espacio entre el caracter y la palabra, la instrucción no será reconocida.
+    
+Listas 
+======
+
+Listas ordenadas y no ordenadas
+-------------------------------
+
+Para utilizar listas en reStructuredText es sencillo: para crear una lista no ordenada, simplemente coloque un asterisco ``*`` al principio del texto y aplique la sangría adecuada. 
+
+Del mismo modo, las listas numeradas se pueden generar automáticamente utilizando el signo ``#`` al principio de cada elemento o enumerarlas manualmente (1, 2, 3...).
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        * Esta es una lista con viñetas.
+        * Tiene dos ítems, el segundo item
+          utiliza dos líneas.
+
+        1. Esta es una lista numerada.
+        2. También tiene dos elementos.
+
+        #. Esta es una lista numerada.
+        #. Tiene dos artículos también.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            * Esta es una lista con viñetas.
+            * Tiene dos ítems, el segundo item
+              utiliza dos líneas.
+
+            1. Esta es una lista numerada.
+            2. También tiene dos elementos.
+
+            #. Esta es una lista numerada.
+            #. Tiene dos artículos también.
+
+Listas anidadas
+---------------
+
+Es posible anidar listas, pero es importante tener en cuenta que deben separarse de los elementos de la lista principal mediante líneas en blanco.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        * Esto es
+            * una lista
+            * con una lista anidada
+            * y algunos subelementos
+        * y aquí continúa la lista padre
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            * Esto es
+                * una lista
+                * con una lista anidada
+                * y algunos subelementos
+            * y aquí continúa la lista padre
+
+Tablas 
+======
+
+Las tablas en reStructuredText se crean utilizando caracteres como la barra vertical ``|``, guiones ``-``, ``+``, e incluso el signo igual ``=`` para definir las celdas y encabezados de la tabla.
+
+Si desea mostrar tablas con bordes, deberá agregar la cuadrícula manualmente, por ejemplo:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        +-----------+--------------+------------+
+        | Fruta     | Color        | Sabor      |
+        +===========+==============+============+
+        | Manzana   | Roja         | Dulce      |
+        +-----------+--------------+------------+
+        | Plátano   | Amarillo     | Dulce      |
+        +-----------+--------------+------------+
+        | Fresa     | Roja         | Dulce      |
+        +-----------+--------------+------------+
+
+
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            +-----------+--------------+------------+
+            | Fruta     | Color        | Sabor      |
+            +===========+==============+============+
+            | Manzana   | Roja         | Dulce      |
+            +-----------+--------------+------------+
+            | Plátano   | Amarillo     | Dulce      |
+            +-----------+--------------+------------+
+            | Fresa     | Roja         | Dulce      |
+            +-----------+--------------+------------+
+
+Las tablas simples son más fáciles de escribir, pero tienen limitaciones. Deben tener más de una fila y las celdas de la primera columna no pueden contener múltiples líneas, por ejemplo:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        ================  ==========  ==========
+        Fruta             Color       Sabor
+        ================  ==========  ==========
+        Manzana           Roja        Dulce
+        Plátano           Amarillo    Dulce
+        Fresa             Roja        Dulce
+        ================  ==========  ==========
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            ================  ==========  ==========
+            Fruta             Color       Sabor
+            ================  ==========  ==========
+            Manzana           Roja        Dulce
+            Plátano           Amarillo    Dulce
+            Fresa             Roja        Dulce
+            ================  ==========  ==========
+
+Si necesita información más detallada acerca de las tablas, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives/>`_ :octicon:`report;1em;sd-text-info`.
+
+Hipervínculos
+=============
+
+Enlaces externos
+----------------
+
+Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ejemplo:: `Texto del enlace <URL>`_
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ .
+        `Texto del enlace <URL>`_
+
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_.
+
+
+
+.. important:: Tenga en cuenta que debe existir un espacio entre el texto del enlace y la apertura `<` de la URL.
+
+.. note:: 
+    Se recomienda el uso del icono de información para destacar al usuario que se trata de un enlace, como se muestra en el siguiente ejemplo: 
+
+    `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ :octicon:`report;1em;sd-text-info`. 
+
+    Sin embargo, la inclusión de este icono es opcional y no es necesario.
+
+.. _mi-etiqueta-de-referencia:
+Enlaces internos
+----------------
+
+Si desea enlazar a otra parte de su propia documentación, puede hacerlo utilizando una función reST especial proporcionada por Sphinx. 
+
+Para que esto funcione correctamente, los nombres de las etiquetas deben ser únicos, es decir, si coloca una etiqueta directamente antes del título de una sección, puede hacer referencia a esto. Por ejemplo:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        Se refiere a la sección misma, ver :ref:`mi-etiqueta-de-referencia`.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            Se refiere a la sección misma :ref:`mi-etiqueta-de-referencia`.
+
+.. important:: Las etiquetas de referencia deben comenzar con un guión bajo. Al hacer referencia a una etiqueta, se debe omitir el guión bajo.
+
+    Si necesita información más detallada acerca de hipervínculos, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/referencing.html#ref-role/>`_ :octicon:`report;1em;sd-text-info`.
+
+Directivas
+==========
+
+Las directivas son comandos especiales de marcado que permiten incorporar elementos interactivos, como tablas, imágenes, notas y otros elementos, en su documentación.
+
+Básicamente, una directiva consta de un nombre, argumentos, opciones y contenido. Una directiva es uno de los mecanismos de extensión de reStructuredText (reST), y Sphinx la emplea de manera frecuente en su funcionamiento.
+
+Tabla de contenidos
+-------------------
+
+Dado que reST no proporciona facilidades para interconectar varios documentos o dividir documentos en múltiples archivos de salida, Sphinx utiliza una directiva personalizada para agregar relaciones entre los distintos archivos que componen la documentación, así como tablas de contenidos. La directiva ``toctree`` es el elemento central en este proceso.
+
+toctree
+^^^^^^^
+Advertencias
+------------
+
+Las advertencias son útiles para incorporar contenido adicional en su documentación sin interrumpir significativamente el flujo del documento. Sphinx ofrece varios tipos de advertencias diferentes y permite la inclusión y anidación de contenido arbitrario.
+
+Nota
+^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. note:: Esta es una advertencia más básica.
+
+        .. note:: 
+            Esta es otra advertencia básica con varios párrafos.
+
+            Puede incluir listas, código, tablas o imágenes.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. note:: Esta es una advertencia más básica.
+
+            .. note:: 
+                Esta es otra advertencia básica con varios párrafos.
+
+                Puede incluir listas, código, tablas o imágenes.
+            
+            Para finalizar un bloque de advertencia, simplemente colóquese a la misma altura donde comenzó la instrucción.
+                
+Peligro
+^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. danger:: Tocar esto sin saber lo que está haciendo es como tratar de domar un león mientras lleva una hamburguesa en el bolso.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. danger:: Tocar esto sin saber lo que está haciendo es como tratar de domar un león mientras lleva una hamburguesa en el bolso.
+
+Error
+^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. error:: Parece que cometiste un error de dedo. 
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. error:: Parece que cometiste un error de dedo. 
+
+Atención
+^^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. attention:: El cambio climático es real.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. attention:: El cambio climático es real.
+
+Advertencia
+^^^^^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. warning:: Si su código funciona, no lo toque más.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. warning:: Si su código funciona, no lo toque más.
+
+Precaución
+^^^^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. caution:: No sobrepase el horario de comida.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. caution:: No sobrepase el horario de comida.
+
+Importante
+^^^^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. important:: Esta biblioteca es compatible con las versiones de Python 3.6 o superiores.
+
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. important:: Esta biblioteca es compatible con las versiones de Python 3.6 o superiores.
+
+Pista
+^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. hint:: Aquí tienes una pequeña pista, si el código no funciona, ¡probablemente necesite algún arreglo! Mágico.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. hint:: Aquí tienes una pequeña pista, si el código no funciona, ¡probablemente necesite algún arreglo! Mágico.
+
+Consejo
+^^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. tip:: Intente reiniciar su equipo.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. tip:: Intente reiniciar su equipo.
+
+Ver también
+^^^^^^^^^^^
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. seealso:: Otra información relevante. 
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. seealso:: Otra información relevante. 
+
+Si necesita más información a cerca de las tarjetas de advertencia, o en su caso advertencias personalizadas puede consultar la documentación que ofrece el tema furo respecto a las `advertencias  <https://pradyunsg.me/furo/reference/admonitions/#admonition/>`_ :octicon:`report;1em;sd-text-info`.
+
+Imágenes
+--------
+
+Las imágenes en línea se pueden definir utilizando la directiva ``image``. El argumento obligatorio de esta directiva es la URI del archivo de imagen.
+
+Opcionalmente, el bloque de la directiva de imagen puede contener una lista de campos clave y valor, que definen las opciones de la imagen, por ejemplo:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. image:: /imgs/Contribución/gato.jpg
+            :height: 500px
+            :width: 550px
+            :scale: 50%
+            :alt: texto alternativo
+            :align: center
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            .. image:: /imgs/Contribución/gato.jpg
+                :height: 300px
+                :width: 550px
+                :scale: 50%
+                :alt: texto alternativo
+                :align: center
+
+Se reconocen las siguientes opciones: 
+
++------------+-------------------------------------------------+
+| Propiedad  | Descripción                                     |
++============+=================================================+
+| height     | La altura deseada de la imagen en píxeles o     |
+|            | porcentaje.                                     | 
++------------+-------------------------------------------------+
+| width      | El ancho de la imagen en píxeles o porcentaje.  |
++------------+-------------------------------------------------+
+| scale      | El factor de escala uniforme de la imagen,      |
+|            | expresado en porcentaje (el símbolo ``%`` es    |
+|            | opcional).                                      |
++------------+-------------------------------------------------+
+| alt        | Texto alternativo.                              |
++------------+-------------------------------------------------+
+| align      | La alineación de la imagen (``top``, ``middle``,|
+|            | ``bottom``, ``left``, ``center`` o ``right``).  |
++------------+-------------------------------------------------+
+
+.. attention:: Al utilizar la directiva ``image``, debe tener en cuenta lo siguiente:
+
+    Es correcto que exista un espacio entre los dos puntos y la ruta de la imagen, así como también una sangría para las propiedades.
+
+    .. code-block::
+        :caption: Correcto
+
+        .. image:: /imgs/Contribución/gato.jpg
+            :height: 300px
+            :width: 550px
+            :scale: 50%
+            :alt: texto alternativo
+            :align: center
+
+    .. code-block::
+        :caption: Incorrecto
+
+        .. image::/imgs/Contribución/gato.jpg
+        :height: 300px
+        :width: 550px
+        :scale: 50%
+        :alt: texto alternativo
+        :align: center
+
+Si necesita más información sobre imágenes, puede consultar el siguiente `enlace <https://docutils.sourceforge.io/docs/ref/rst/directives.html#image/>`_ :octicon:`report;1em;sd-text-info`.
+
+Bloques de código
+-----------------
+
+Los bloques de código son una herramienta valiosa que permite ver ejemplos de código, comprender su funcionamiento y en última instancia, aplicarlo a su propio proyecto. Sphinx proporciona una forma flexible de incluir bloques de código en su documentación a través de la directiva bloque de código.
+
+Para mostrar un código de ejemplo, utilice `code-block` bajo la siguiente estructura: ::
+
+    .. code-block:: language
+
+        code ...
+  
+Al especificar el lenguaje, se habilitarán los colores correspondientes a la sintaxis, como se muestra a continuación.
+
+.. tab-set::
+
+    .. tab-item:: Código python
+
+        .. code-block:: python
+
+            # Esto es un ejemplo de código en Python
+            def saludar(nombre):
+                print("Hola, {nombre}!")
+
+    .. tab-item:: Código JS
+
+        .. code-block:: javascript
+
+            // Esto es un ejemplo de código en JavaScript
+            function saludar(nombre) {
+                console.log(`Hola, ${nombre}!`);
+            }
+            saludar("Pedrito");
+
+    .. tab-item:: Código HTML 
+
+        .. code-block:: HTML
+
+            <!-- Esto es un ejemplo de código HTML -->
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Mi Página Web</title>
+            </head>
+            <body>
+                <h1>Bienvenido a mi página web</h1>
+                <p>Esta es una página de ejemplo.</p>
+            </body>
+            </html>
+
+    .. tab-item:: Código CSS
+
+        .. code-block:: CSS
+
+            /*Esto es un ejemplo de código CSS*/
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+Títulos dentro del bloque
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Puede agregar títulos dentro del bloque de código utilizando el parámetro ``:caption:``` ::
+
+    .. code-block:: language
+        :caption: Example
+
+        code ...
+
+
+Montrar números de línea
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Puede agregar números de línea a bloques de código con el parámetro ``:linenos:``: ::
+
+    .. code-block:: language
+        :linenos:
+
+        code ...
+
+Resaltar líneas
+^^^^^^^^^^^^^^^
+
+Puede resaltar ciertas líneas utilizando el parámetro ``:emphasize-lines:``: ::
+
+    .. code-block:: language
+        :emphasize-lines: 6,12,15
+
+        code ...
+
+Los parámetros mencionados anteriormente se reflejan de la siguiente manera, con un título, números de línea y líneas resaltadas:
+
+.. code-block:: XML
+    :caption: Ejemplo de código XML
+    :linenos:
+    :emphasize-lines: 6,12,15
+
+    <library>
+    <book>
+        <title>El Gran Gatsby</title>
+        <author>F. Scott Fitzgerald</author>
+        <genre>Novela</genre>
+        <published>1925</published>
+    </book>
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <genre>Distopía</genre>
+        <published>1949</published>
+    </book>
+    <book>
+        <title>Matar a un ruiseñor</title>
+        <author>Harper Lee</author>
+        <genre>Novela</genre>
+        <published>1960</published>
+    </book>
+    </library>
+
+Si necesita explicar un fragmento de código en múltiples partes de la documentación o si el código es muy extenso, puede guardarlo en un archivo independiente y luego incluirlo de la siguiente manera: ::
+    
+    .. include:: mi_codigo.txt
+
+Los parámetros mencionados anteriormente son los más utilizados. Si tiene alguna duda o necesita información adicional, consulte la documentación sobre `code-block <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#showing-code-examples/>`_ :octicon:`report;1em;sd-text-info`.
+
+Comentarios
+-----------
+
+En reStructuredText, los comentarios se crean utilizando el carácter de dos puntos ``..``. Los comentarios son útiles para incluir notas, aclaraciones o información que no debe aparecer en la documentación final, pero que puede ser útil para los autores o colaboradores del documento.
+
+Aquí hay un ejemplo de como crear comentarios en reST:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        Este es un párrafo normal.
+
+        .. Este es un comentario que no se mostrará en la documentación final.
+            Puede escribir cualquier cosa aquí, y se ignorará al generar la salida.
+
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            
+            Este es un párrafo normal.
+
+            .. Este es un comentario que no se mostrará en la documentación final.
+                Puede escribir cualquier cosa aquí, y se ignorará al generar la salida.
+
+.. attention:: La correcta aplicación de la sangría es esencial para que los comentarios sean interpretados adecuadamente. Los comentarios deben tener la misma sangría que el texto.

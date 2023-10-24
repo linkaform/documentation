@@ -36,6 +36,7 @@ extensions = [
     'sphinxcontrib.youtube',
     'sphinxcontrib.mermaid', #Extensión que permite hacer uso de Mermaind
     'sphinx_copybutton',
+    'sphinx.ext.graphviz',
     #'cards',
     'myst_parser',  #Extensión que permite a Sphinx leer MySt(Markedly Structured Text)
 ]
@@ -47,6 +48,8 @@ source_suffix = ['.rst', '.md']
 #html_theme = 'alabaster'
 #html_theme = 'press'
 
+graphviz_output_format = 'png' 
+#graphviz_output_format = 'svg' 
 html_theme = 'furo'
 locale_dirs = ['locale/']
 gettext_compact = True 
