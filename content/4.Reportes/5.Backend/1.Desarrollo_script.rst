@@ -19,7 +19,7 @@ El desarrollo de scripts se realiza en Python, esta se encuentra dentro de la ca
 Desarrollo de Scripts
 =====================
 
-Para el desarrollo de Scripts es necesario hacer uso de la API de Linkaform, esta se encuentra en su repositorio oficial `api de linkaform <https://github.com/linkaform/linkaform_api/>`_, esta cuenta con algunas ramas, algunas correspondiente a la versión de python que utilizan para su desarrollo. Actualmente se hace uso de la versión 3 de python, para lo que será necesario hacer uso del repositorio con la versión de python 3.0.
+Para el desarrollo de Scripts es necesario hacer uso de la API de Linkaform, esta se encuentra en su repositorio oficial `API <https://github.com/linkaform/linkaform_api/>`_, esta cuenta con algunas ramas, algunas correspondiente a la versión de python que utilizan para su desarrollo. Actualmente se hace uso de la versión 3 de python, para lo que será necesario hacer uso del repositorio con la versión de python 3.0.
 
 Estructura de back
 ==================

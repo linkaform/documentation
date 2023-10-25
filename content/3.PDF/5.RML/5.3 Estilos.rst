@@ -48,12 +48,8 @@ estilos de párrafo. Puede aplicar estos estilos a diferentes partes del
 documento según sea su necesidad.
 
 .. code-block:: xml
-    
-    <paraStyle name="mystyle" string alias="pretty" string parent="oldstyle" string fontname="Courier-Oblique" string fontsize="13" measurement leading="20" measurement leftIndent="1.25in" measurement rightIndent="2.5in" measurement firstLineIndent="0.5in" measurement spaceBefore="0.2in" measurement spaceAfter="3cm" measurement alignment="justify" "left", "right", "center" or "justify" bulletFontName="Courier" string bulletFontsize="13" measurement bulletIndent="0.2in" measurement textColor="red" string backColor="cyan" string />
 
-
-
-
+    <paraStyle name="mystyle" alias="pretty" parent="oldstyle" fontname="Courier-Oblique" fontsize="13" leading="20" leftIndent="1.25in" rightIndent="2.5in" firstLineIndent="0.5in" spaceBefore="0.2in" spaceAfter="3cm" alignment="justify" bulletFontName="Courier" bulletFontsize="13" bulletIndent="0.2in" textColor="red" backColor="cyan" />
 
 blockTableStyle
 ===============

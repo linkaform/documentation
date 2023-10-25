@@ -1,3 +1,107 @@
+.. _generar_HTML:
 ============================
 Generando documentación HTML
 ============================
+
+La generación de documentación HTML implica principalmente la conversión de documentos en formato reStructuredText (rst) a HTML. Este proceso solo es posible después de haber creado los archivos y contenido.
+
+Es importante tener en cuenta que al trabajar en un contenedor de Docker, el proceso de compilación difiere del que se muestra en la documentación principal de Sphinx.
+
+Para hacer build de su documentación siga los siguientes pasos.
+
+1. Asegúrese de que su contenido esté correctamente incluido en el índice principal. Si tiene alguna duda sobre cómo hacerlo, puede regresar a  :ref:`preparar_toctree` :octicon:`report;1em;sd-text-info`.
+
+2. En su terminal, navegue a la carpeta padre que corresponde a la documentación.
+
+.. raw:: html
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Made by 'tree'">
+    <meta name="GENERATOR" content="$Version: $ tree v2.0.2 (c) 1996 - 2022 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+    <style type="text/css">
+    .hov { color: blue;}
+    .hom { color: purple;}
+    </style>
+    </head>
+    <body>
+        <a class="hov">lkf</a><br>
+        ├── <a class="hov">documentation</a><br>
+    <p>
+    </body>
+    </html>
+
+.. image:: /imgs/Contribución/12.png
+    
+3. Ejecute el siguiente comando.
+
+.. code-block::
+
+    docker-compose up -d
+
+O si tiene la versión más reciente de docker, ejecute el siguiente comando.
+
+.. code-block::
+
+    docker compose up -d
+
+La instrucción anterior se utiliza para iniciar y ejecutar el contenedorde la aplicaciópn sin bloquear la terminal y permitir que los contenedores sigan ejecutandose en segundo plano.
+
+.. image:: /imgs/Contribución/13.png
+
+4. Después de ejecutar su contenedor Docker, ejecute el siguiente comando.
+
+.. code-block::
+
+    docker exec -it lkf-documentation bash
+
+La instrucción ``docker exec -it lkf-documentation bash`` se utiliza para abrir una sesión dentro del contenedor "lkf-documentation" utilizando el shell Bash. Esto permite ejecutar comandos dentro del contenedor como si estuviera en una terminal dentro de ese entorno.
+
+.. image:: /imgs/Contribución/14.png
+
+5. Como último paso, ejecute el siguiente comando.
+
+.. code-block::
+
+    local_build
+
+El comando anterior es la que se encarga de hacer build (generar el contenido).
+
+.. image:: /imgs/Contribución/15.png
+
+Comenzará a generar los archivos y, en caso de cometer algún error, podrá verlo en la terminal.
+
+.. image:: /imgs/Contribución/16.png
+
+Para poder ver el resultado, diríjase a la carpeta ``build`` y abra el archivo ``index.html`` en su navegador.
+
+.. raw:: html
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Made by 'tree'">
+    <meta name="GENERATOR" content="$Version: $ tree v2.0.2 (c) 1996 - 2022 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+    <style type="text/css">
+    </style>
+    </head>
+    <body>
+        <a class="hov">lkf</a><br>
+        ├── <a class="hov">build</a><br>
+        │   ├── <a class="hov, hom">index.html</a><br>
+    <p>
+    </body>
+    </html>
+
+Como se puede observar en la siguiente imagen, el contenido que se creó anteriormente ya está presente en el índice principal.
+
+.. image:: /imgs/Contribución/17.png
+
+Podrá navegar a través del contenido.
+
+.. image:: /imgs/Contribución/18.png
+
+Con eso concluimos la sección sobre Sphinx. Como pudo darse cuenta, es una forma sencilla de generar documentación. Si tiene alguna duda, puede regresar al contenido o consultar la documentación de Sphinx. También puede revisar la siguiente sección, que explica algunos errores comunes y ofrece consejos útiles.

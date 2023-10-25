@@ -1,3 +1,54 @@
-=====
-Extra
-=====
+=====================
+Extra Errores comunes
+=====================
+
+En esta sección, hablaremos sobre los errores comunes que podríamos cometer al trabajar con Sphinx y cuáles son las mejores formas de corregirlos.
+
+Afortunadamente, Sphinx es extremadamente flexible y facilita el proceso de identificación de errores, ya que proporciona la ruta exacta del archivo en el que se produce el error y un mensaje breve pero conciso que señala la causa del mismo. Esto simplifica la corrección de errores y la depuración de la documentación.
+
+Secciones
+=========
+
+El error más común que puede surgir al trabajar con Sphinx está relacionado con las secciones, especialmente al trabajar con títulos y subtítulos. 
+
+En la siguiente imagen observe el título y subtítulo:
+
+.. image:: /imgs/Contribución/20.png
+
+Del ejemplo anterior la terminal nos muestra los siguientes errores:
+
+.. image:: /imgs/Contribución/19.png
+
+El mensaje de error :bdg-danger:`CRITICAL: Title overline & underline mismatch` indica que la línea superior y la línea inferior del título no coinciden en longitud. Es importante garantizar que el título principal no presente este error, ya que en el peor de los casos, el contenido no se mostrará en el índice principal.
+
+El mensaje de advertencia :bdg-danger:`WARNING: Title underline too short` indica que la línea que sigue al subtítulo tiene una línea de subrayado demasiado corta para considerarse válido. 
+
+.. tip:: Para solucionar este problema, asegúrese de que las líneas de formato coincidan con la longitud del título o subtítulo.
+
+.. image:: /imgs/Contribución/21.png
+
+
+
+
+
+:bdg-link-primary:`https://example.com`
+
+:bdg-link-primary-line:`explicit title <https://example.com>`
+
+:bdg:`plain badge`
+
+:bdg-primary:`primary`, :bdg-primary-line:`primary-line`
+
+:bdg-secondary:`secondary`, :bdg-secondary-line:`secondary-line`
+
+:bdg-success:`success`, :bdg-success-line:`success-line`
+
+:bdg-info:`info`, :bdg-info-line:`info-line`
+
+:bdg-warning:`warning`, :bdg-warning-line:`warning-line`
+
+:bdg-danger:`danger`, :bdg-danger-line:`danger-line`
+
+:bdg-light:`light`, :bdg-light-line:`light-line`
+
+:bdg-dark:`dark`, :bdg-dark-line:`dark-line`

@@ -4,8 +4,6 @@ Escribiendo en reStructuredText
 
 reStructuredText es el lenguaje de marcado de texto sin formato predeterminado utilizado por Sphinx. Esta sección es una breve introducción a los conceptos y la sintaxis de reStructuredText (reST) que comúnmente se utiliza para crear documentación y cuyo objetivo es proporcionar suficiente información para crear documentos de forma productiva.
 
-Si necesita más detalles puede consultar la guía de Introducción a reStructuredText de Sphinx (HIPERVINCULO).
-
 Creación de archivo
 ===================
 
@@ -58,12 +56,19 @@ A continuación, se muestran ejemplos de títulos y subelementos ::
     Sección 2
     ---------
 
-    EXPLICAR QUE PASA SI LA CADENA NO CIERRA COMPLETAMENTE:
-    QUE PASA SI TENGO Esto
-    pARRAFO DE EFEJMOKI
-    ======(TIRA UN ERROR)
+.. importante:: La longitud de la cadena de texto debe ser igual a la longitud del símbolo que se va a utilizar, por ejemplo:
 
+    .. code-block::
+        :caption: Correcto
 
+        Título con la longitud correcta
+        ===============================
+
+    .. code-block::
+        :caption: Incorrecto
+
+        Título con la longitud incorrecta
+        ===========
 
 Parrafos
 ========
@@ -233,8 +238,6 @@ Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ej
     .. tab-item:: Ejemplo
 
         `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ .
-        `Texto del enlace <URL>`_
-
 
     .. tab-item:: Estructura
 
@@ -291,10 +294,191 @@ Dado que reST no proporciona facilidades para interconectar varios documentos o 
 
 toctree
 ^^^^^^^
+
+La directiva toctree en reStructuredText (reST) se utiliza para crear una tabla de contenidos en su documentación. Permite especificar qué documentos o secciones se incluirán en la tabla de contenidos y la profundidad máxima de la jerarquía de secciones que se mostrará.
+
+**Inicio de la directiva toctree**
+
+Para comenzar a usar la directiva toctree, debe insertar ``.. toctree::`` en su documento. Esta línea inicia la directiva y le dice a reST que se creará una tabla de contenidos en ese punto.
+
+**Parámetros**
+
+:bdg-secondary:`:caption:`: Se utiliza para agregar un título o una leyenda a la tabla de contenidos generada por esa directiva. 
+
+Esto es útil cuando necesita proporcionar una breve descripción o contexto para la tabla de contenidos que está creando, por ejemplo: ::
+
+    .. toctree::
+        :caption: Documentación de Python
+
+        introduccion.rst
+        variables.rst
+        funciones.rst
+        ...
+
+
+:bdg-secondary:`:maxdepth:`: Es un parámetro opcional, se utiliza para limitar la profundidad de la tabla de contenidos. Esto es útil si desea mostrar solo ciertos niveles de secciones. 
+
+Por ejemplo, ``:maxdepth: 2`` mostrará solo las dos primeras capas de secciones en la tabla de contenidos::
+
+    .. toctree::
+        :maxdepth: 2
+
+        archivo1.rst
+        archivo2.rst
+
+:bdg-secondary:`:titlesonly:`: Este parámetro resulta útil cuando se desea mostrar únicamente los títulos de las secciones en la tabla de contenidos, sin incluir enlaces. 
+
+Por ejemplo: ::
+
+    .. toctree::
+        :titlesonly:
+
+        archivo1.rst
+        archivo2.rst
+
+:bdg-secondary:`:hidden:`: Si necesita que la tabla de contenidos se genere, pero no se muestre en la documentación final, puede utilizar hidden. Esto es útil para mantener la tabla de contenidos en segundo plano.
+
+Observe el siguiente ejemplo: ::
+
+    .. toctree::
+        :hidden:
+
+        archivo1.rst
+        archivo2.rst
+
+:bdg-secondary:`:numbered:`: Este parámetro es opcional y se utiliza para numerar automáticamente las entradas de la tabla de contenidos.
+
+Por ejemplo, para que las entradas se numeren utilice el siguiente ejemplo: ::
+
+    .. toctree::
+        :numbered:
+
+        archivo1.rst
+        archivo2.rst
+
+
+Antes de continuar, asegúrese de tener en cuenta la ubicación de sus archivos. En este ejemplo, tenemos dos archivos en nuestro proyecto y dos archivos en carpetas diferentes. ::
+    
+    .. toctree::
+
+        Capitulo1.rst
+        Capitulo2.rst
+        Subcarpeta/Subcapitulo1.rst
+        Subcarpeta/Subcapitulo2.rst
+
+.. important:: Asegúrese de aplicar la sangría de manera adecuada.
+
+    .. code-block::
+        :caption: Correcto
+
+        .. toctree::
+            :maxdepth: 2
+            :titlesonly:
+            :numbered:
+
+            Capitulo1.rst
+            Capitulo2.rst
+            Subcarpeta/Subcapitulo1.rst
+            Subcarpeta/Subcapitulo2.rst
+            
+    .. code-block::
+        :caption: Incorrecto
+
+        .. toctree::
+        :maxdepth: 2
+        :titlesonly:
+        :numbered:
+
+        Capitulo1.rst
+        Capitulo2.rst
+        Subcarpeta/Subcapitulo1.rst
+        Subcarpeta/Subcapitulo2.rst
+
+Observe el siguiente ejemplo. Con fines prácticos, en la siguiente figura se muestra la tabla de contenido del proyecto principal, la cual incluye ``:maxdepth: 2`` y ``:titlesonly:``.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. image:: /imgs/Contribución/11.1.png
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            ==========================
+            Documentación de Linkaform
+            ==========================
+
+            .. toctree::
+                :maxdepth: 2
+                :titlesonly:
+
+                1.Introducción/Introducción
+                2.Módulos/Módulos
+                3.PDF/PDF
+                4.Reportes/Reportes
+                5.Desarrolladores/Index
+                Contribución/Index
+
+En este ejemplo, hemos utilizado ``:maxdepth: 4`` para mostrar las secciones hasta una profundidad de 4, ``:titlesonly:`` para visualizar solo los títulos, y ``:numbered:`` para numerar automáticamente el contenido.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        .. image:: /imgs/Contribución/11.2.png
+            
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            ==========================
+            Documentación de Linkaform
+            ==========================
+
+            .. toctree::
+                :maxdepth: 4
+                :titlesonly:
+                :numbered:
+
+                1.Introducción/Introducción
+                2.Módulos/Módulos
+                3.PDF/PDF
+                4.Reportes/Reportes
+                5.Desarrolladores/Index
+                Contribución/Index
+
+Si requiere información adicional, conocer otros parametros o necesita otros ejemplos puede consultar la documentación de `Sphinx  <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree/>`_ :octicon:`report;1em;sd-text-info`. 
+
+.. _preparar_toctree:
+Preparar toctree
+^^^^^^^^^^^^^^^^
+
+Cuando tenga su contenido organizado y escrito en archivos ``.rst``, debe indicarle a Sphinx dónde debe buscar los documentos. Para ello, edite el archivo ``index.rst`` (está en la raíz del proyecto de documentación) e introduzca los archivos de documentación con su ruta relativa. Los archivos deben ir dentro de la directiva ``.. toctree::``.
+
+A continuación, siga los siguientes pasos para agregar su contenido al índice principal.
+
+1. Anteriormente, se mostró cómo y dónde crear sus archivos  ``.rst``. Ahora, como primer paso, deberá agregar un título a sus archivos. Esto es fundamental, ya que la directiva busca el título principal para incluirlo en el índice.
+
+.. image:: /imgs/Contribución/8.png
+
+2. Una vez que haya añadido el título a sus archivos, deberá incluir la ruta en el archivo ``index.rst`` de su proyecto. En este caso no utilizamos parámetros ya que lo hacemos directamente en el index principal.
+
+.. image:: /imgs/Contribución/9.png
+
+3. Al tener su archivo index listo, deberá incluirlo en el ``index.rst`` del proyecto principal.
+
+.. imagen:: / imgs/Contribución/10.png
+
+Con esto, ha logrado insertar satisfactoriamente su contenido en el índice principal. El siguiente paso es generar sus archivos HTML. Puede avanzar a la siguiente sección :ref:`generar_HTML` :octicon:`report;1em;sd-text-info` o continuar leyendo acerca de cómo escribir instrucciones básicas en reST.
+
 Advertencias
 ------------
 
 Las advertencias son útiles para incorporar contenido adicional en su documentación sin interrumpir significativamente el flujo del documento. Sphinx ofrece varios tipos de advertencias diferentes y permite la inclusión y anidación de contenido arbitrario.
+
+.. important:: Recuerde respetar la indentación.
 
 Nota
 ^^^^
@@ -303,7 +487,7 @@ Nota
 
     .. tab-item:: Ejemplo
 
-        .. note:: Esta es una advertencia más básica.
+        .. note:: Esta es una nota básica.
 
         .. note:: 
             Esta es otra advertencia básica con varios párrafos.
@@ -314,7 +498,7 @@ Nota
 
         .. code-block::
             
-            .. note:: Esta es una advertencia más básica.
+            .. note:: Esta es una nota básica.
 
             .. note:: 
                 Esta es otra advertencia básica con varios párrafos.
@@ -459,7 +643,7 @@ Ver también
             
             .. seealso:: Otra información relevante. 
 
-Si necesita más información a cerca de las tarjetas de advertencia, o en su caso advertencias personalizadas puede consultar la documentación que ofrece el tema furo respecto a las `advertencias  <https://pradyunsg.me/furo/reference/admonitions/#admonition/>`_ :octicon:`report;1em;sd-text-info`.
+Si necesita más información a cerca de las tarjetas de advertencia, o en su caso requiere advertencias personalizadas puede consultar la documentación que ofrece el tema furo respecto a las `advertencias  <https://pradyunsg.me/furo/reference/admonitions/#admonition/>`_ :octicon:`report;1em;sd-text-info`.
 
 Imágenes
 --------
@@ -473,7 +657,7 @@ Opcionalmente, el bloque de la directiva de imagen puede contener una lista de c
     .. tab-item:: Ejemplo
 
         .. image:: /imgs/Contribución/gato.jpg
-            :height: 500px
+            :height: 650px
             :width: 550px
             :scale: 50%
             :alt: texto alternativo
@@ -484,7 +668,7 @@ Opcionalmente, el bloque de la directiva de imagen puede contener una lista de c
         .. code-block::
             
             .. image:: /imgs/Contribución/gato.jpg
-                :height: 300px
+                :height: 650px
                 :width: 550px
                 :scale: 50%
                 :alt: texto alternativo
@@ -702,3 +886,5 @@ Aquí hay un ejemplo de como crear comentarios en reST:
                 Puede escribir cualquier cosa aquí, y se ignorará al generar la salida.
 
 .. attention:: La correcta aplicación de la sangría es esencial para que los comentarios sean interpretados adecuadamente. Los comentarios deben tener la misma sangría que el texto.
+
+En esta sección, ha aprendido a crear sus archivos con la estructura y contenido adecuado. En la próxima sección, aprenderá a convertir sus archivos en formato reStructuredText (rst) a HTML. Esta conversión es un paso importante para publicar su documentación en línea y hacerla accesible a los lectores.

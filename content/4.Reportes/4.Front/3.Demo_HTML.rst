@@ -94,21 +94,21 @@ Esta a su vez anida a los elementos correspondientes al inicio de sesión, puede
 .. tab-set::
 
     .. tab-item:: Ejecutado
-        
+
         .. raw:: html
 
             <div class="row inicio_ses" id="inicio_ses">
                 <div class="errorLogin" id="errorLog"></div>
-                    <div class="control">
-                        <div class="renglon">
-                            <h3>Usuario: </h3>
-                            <input class="form-control ds-input" id="user" name="user" value="">
-                        </div>
-                        <div class="renglon">
-                            <h3>Contraseña: </h3>
-                            <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
-                        </div>
-                        <div class="controlBtn">
+                <div class="control">
+                    <div class="renglon">
+                        <h3>Usuario: </h3>
+                        <input class="form-control ds-input" id="user" name="user" value="">
+                    </div>
+                    <div class="renglon">
+                        <h3>Contraseña: </h3>
+                        <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
+                    </div>
+                    <div class="controlBtn">
                         <div class="btn btn-primary" onclick="login()">Login</div>
                         <div class="btn btn-primary" onclick="reset()">Reset</div>
                     </div>
@@ -121,25 +121,26 @@ Esta a su vez anida a los elementos correspondientes al inicio de sesión, puede
 
     .. tab-item:: Código
 
-		.. code-block:: html
+        .. code-block:: html
             
             <div class="row inicio_ses" id="inicio_ses">
-                <div class="errorLogin" id="errorLog"></div>
-                    <div class="control">
-                        <div class="renglon">
-                            <h3>Usuario: </h3>
-                            <input class="form-control ds-input" id="user" name="user" value="">
-                        </div>
-                        <div class="renglon">
-                            <h3>Contraseña: </h3>
-                            <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
-                        </div>
-                        <div class="controlBtn">
+                <div class "errorLogin" id="errorLog"></div>
+                <div class="control">
+                    <div class="renglon">
+                        <h3>Usuario: </h3>
+                        <input class="form-control ds-input" id="user" name="user" value="">
+                    </div>
+                    <div class="renglon">
+                        <h3>Contraseña:</h3>
+                        <input class="form-control ds-input" type="password" id="pass" name="pass" value="">
+                    </div>
+                    <div class="controlBtn">
                         <div class="btn btn-primary" onclick="login()">Login</div>
                         <div class="btn btn-primary" onclick="reset()">Reset</div>
                     </div>
                 </div>
             </div>
+
 
 
 
