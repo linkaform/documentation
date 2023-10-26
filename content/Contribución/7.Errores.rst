@@ -1,13 +1,780 @@
-=====================
-Extra Errores comunes
-=====================
+===================
+Contenido adicional 
+===================
 
-En esta sección, hablaremos sobre los errores comunes que podríamos cometer al trabajar con Sphinx y cuáles son las mejores formas de corregirlos.
+En esta sección, aprenderá acerca de algunas de las extensiones que Sphinx proporciona para crear una documentación más atractiva visualmente. También podrá identificar errores comunes al trabajar con Sphinx y aprender cuáles son las mejores formas de corregirlos.
 
-Afortunadamente, Sphinx es extremadamente flexible y facilita el proceso de identificación de errores, ya que proporciona la ruta exacta del archivo en el que se produce el error y un mensaje breve pero conciso que señala la causa del mismo. Esto simplifica la corrección de errores y la depuración de la documentación.
+Personalización con extensiones
+===============================
+
+Sphinx proporciona extensiones que no solo enriquecen la documentación técnica, sino que también hacen que el proceso de documentación sea más eficiente y efectivo. Al permitir la personalización y la automatización, las extensiones son herramientas esenciales para crear documentación de alta calidad. Desde correcciones ortográficas, gráficos y ecuaciones complejas, cada extensión tiene su propia documentación detallada que proporciona instrucciones sobre cómo usarla y configurarla.
+
+Las extensiones que se mostrarán a continuación ya se encuentran instaladas y listas para usar. No obstante, si necesita una extensión nueva, se proporcionarán los pasos de configuración dentro del entorno del proyecto.
+
+.. _etiqueta_mermaind:
+
+Sphinxcontrib-mermaid
+^^^^^^^^^^^^^^^^^^^^^
+
+Esta extensión le permite incrustar gráficos Mermaid en su documentación, incluidos diagramas de flujo, diagramas de secuencia, diagramas de Gantt y más. 
+
+Para hacer uso de mermaid, utilice la directiva ``.. mermaid::``. Al crear diagramas Mermaid debe tener en cuenta las siguientes opciones de directivas.
+
+:bdg-secondary:`:alt:`: Texto alternativo para la salida HTML.
+
+:bdg-secondary:`:align:`: Posición de la imagen. Las opciones válidas son ``left``, ``center``, ``right``.
+
+:bdg-secondary:`:caption:`: Título al diagrama. 
+
+:bdg-secondary:`:zoom:`: Se utiliza para habilitar el zoom del diagrama (En caso de que sea muy grande).
+
+En cuanto a los elementos que debe incluir un diagrama Mermaid, generalmente se utilizan:
+
+- Nodos: Representan elementos como procesos, decisiones, objetos, etc. Debe definir los nodos con un nombre único.
+
+- Conexiones: Las conexiones, se crean con :bdg-success-line:`-->, ==> o <--`, indican la dirección en la que fluye la información o el proceso de un nodo a otro.
+
+- Etiquetas y Texto: Puede agregar etiquetas o texto a los nodos o conexiones para proporcionar información adicional o aclaraciones.
+
+- Estilos: Opcionalmente, puede aplicar estilos a los nodos y conexiones para personalizar la apariencia del diagrama, como colores, bordes y anchos de línea.
+
+A continuación, se presentan algunos ejemplos que podrá utilizar. Tenga en cuenta que Mermaid es una herramienta muy flexible que le permitirá crear una amplia variedad de diagramas. Puede personalizar los diagramas según sus necesidades y documentar procesos, estructuras y relaciones de manera efectiva.
+
+**Diagrama de Flujo**
+
+Los diagramas de flujo utilizan ``graph TD`` y ``graph TB``. Puede usar graph TD para un flujo de arriba hacia abajo (Top-Down) y graph TB para un flujo de izquierda a derecha (Left-Right). Estos diagramas son ideales para representar flujos de trabajo, procesos y estructuras.
+
+El siguiente ejemplo es un diagrama de flujo que representa un proceso con decisiones y ramificaciones.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 1
+
+        .. mermaid::
+            :alt: Ejemplo de diagrama de flujo
+            :align: center
+            :zoom:
+
+            graph TB
+
+                A(Inicio) --> B(Proceso 1)
+                B --> C(Subproceso 1)
+                B --> D(Subproceso 2)
+                C --> E(Decisión 1)
+                D --> F(Resultado 1)
+                E --> G(Opción 1)
+                E --> H(Opción 2)
+                G --> I(Resultado 2)
+                H --> I
+                I --> J(Fin)
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. mermaid::
+                :alt: Ejemplo de diagrama de flujo
+                :align: center
+                :zoom:
+
+                graph TB
+
+                    A(Inicio) --> B(Proceso 1)
+                    B --> C(Subproceso 1)
+                    B --> D(Subproceso 2)
+                    C --> E(Decisión 1)
+                    D --> F(Resultado 1)
+                    E --> G(Opción 1)
+                    E --> H(Opción 2)
+                    G --> I(Resultado 2)
+                    H --> I
+                    I --> J(Fin)
+
+Otra forma de crear diagramas de flujo es a través de texto simple. De manera similar, utilice ``graph TD`` o ``graph TB``. La principal diferencia entre el ejemplo anterior y este radica en la forma en que está organizado. En este caso, se emplea una especie de clases para aplicar nodos y conexiones, además de la posibilidad de aplicar estilos personalizados.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 2
+
+        .. mermaid::
+            :alt: Ejemplo de diagrama de flujo
+            :align: center
+            :zoom:
+
+            graph TD
+            
+                %% Formularios
+                form_solicitud_viaticos(#1 Solicitud de viáticos);
+                form_autorizacion_viaticos(#3 Autorización de viáticos);
+                form_entrega_anticipo_efectivo(#1.1 Entrega de anticipo efectivo);
+                form_registros_gastos_viajes(#2 Registro de gastos de viaje);
+                
+                %% Catalogos
+                catalogo_solicitud_gastos([Solicitud de gastos]);
+                
+                %% Conexiones
+                form_solicitud_viaticos == status = pendiente autorización <br> ó gasto = 0 ==> form_autorizacion_viaticos;
+                form_solicitud_viaticos == status = autorizado ==> form_entrega_anticipo_efectivo;
+                form_entrega_anticipo_efectivo == status = autorizado <br> Actualiza ==> catalogo_solicitud_gastos;
+                form_registros_gastos_viajes == Actualiza sets de gasto ==> form_solicitud_viaticos;
+                form_registros_gastos_viajes == Monto actualizado - gasto ==> catalogo_solicitud_gastos;
+                
+                %% Estilos
+                style form_solicitud_viaticos fill:#40c057,stroke:#333,stroke-width:1px;
+                style form_autorizacion_viaticos fill:#40c057,stroke:#333,stroke-width:1px;
+                style form_entrega_anticipo_efectivo fill:#40c057,stroke:#333,stroke-width:1px;
+                style form_registros_gastos_viajes fill:#40c057,stroke:#333,stroke-width:1px;
+                style catalogo_solicitud_gastos fill:#228be6,stroke:#333,stroke-width:1px;
+
+    .. tab-item:: Estructura
+        
+        .. code-block::
+
+            .. mermaid::
+                :alt: Ejemplo de diagrama de flujo
+                :align: center
+                :zoom:
+
+                graph TD
+                
+                    %% Formularios
+                    form_solicitud_viaticos(#1 Solicitud de viáticos);
+                    form_autorizacion_viaticos(#3 Autorización de viáticos);
+                    form_entrega_anticipo_efectivo(#1.1 Entrega de anticipo efectivo);
+                    form_registros_gastos_viajes(#2 Registro de gastos de viaje);
+                    
+                    %% Catalogos
+                    catalogo_solicitud_gastos([Solicitud de gastos]);
+                    
+                    %% Conexiones
+                    form_solicitud_viaticos == status = pendiente autorización <br> ó gasto = 0 ==> form_autorizacion_viaticos;
+                    form_solicitud_viaticos == status = autorizado ==> form_entrega_anticipo_efectivo;
+                    form_entrega_anticipo_efectivo == status = autorizado <br> Actualiza ==> catalogo_solicitud_gastos;
+                    form_registros_gastos_viajes == Actualiza sets de gasto ==> form_solicitud_viaticos;
+                    form_registros_gastos_viajes == Monto actualizado - gasto ==> catalogo_solicitud_gastos;
+                    
+                    %% Estilos
+                    style form_solicitud_viaticos fill:#40c057,stroke:#333,stroke-width:1px;
+                    style form_autorizacion_viaticos fill:#40c057,stroke:#333,stroke-width:1px;
+                    style form_entrega_anticipo_efectivo fill:#40c057,stroke:#333,stroke-width:1px;
+                    style form_registros_gastos_viajes fill:#40c057,stroke:#333,stroke-width:1px;
+                    style catalogo_solicitud_gastos fill:#228be6,stroke:#333,stroke-width:1px;
+
+
+**Diagrama de Gantt**
+
+Los diagramas de gantt hacen uso de ``gantt``.
+
+Este es un diagrama de Gantt, muestra una programación de tareas a lo largo del tiempo.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 3
+
+        .. mermaid::
+            :alt: Ejemplo de diagrama de Gantt
+            :align: center
+            :zoom:
+
+            gantt
+
+                title Diagrama de Gantt
+                dateFormat YYYY-MM-DD
+                section Sección 1
+                Tarea 1 :a1, 2023-01-01, 7d
+                Tarea 2 :after a1, 3d
+                section Sección 2
+                Tarea 3 :2023-01-10, 2d
+                Tarea 4 : 2d
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. mermaid::
+                :alt: Ejemplo de diagrama de Gantt
+                :align: center
+                :zoom:
+
+                gantt
+
+                    title Diagrama de Gantt
+                    dateFormat YYYY-MM-DD
+                    section Sección 1
+                    Tarea 1 :a1, 2023-01-01, 7d
+                    Tarea 2 :after a1, 3d
+                    section Sección 2
+                    Tarea 3 :2023-01-10, 2d
+                    Tarea 4 : 2d
+
+**Diagrama de Clases**
+
+Los diagramas de clase utilizan ``classDiagram`` para inciar.
+
+Este es un diagrama de clases que muestra la herencia y las propiedades de las clases "Perro" y "Gato" en relación con la clase base "Animal".
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 4
+
+        .. mermaid::
+            :alt: Ejemplo de diagrama de Clases
+            :align: center
+            :zoom:
+
+            classDiagram
+
+                class Animal {
+                    - nombre: string
+                    + obtenerNombre(): string
+                }
+                class Perro {
+                    + ladrar(): void
+                }
+                class Gato {
+                    + maullar(): void
+                }
+                Animal <|-- Perro
+                Animal <|-- Gato
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. mermaid::
+                :alt: Ejemplo de diagrama de Clases
+                :align: center
+                :zoom:
+                
+                classDiagram
+
+                    class Animal {
+                        - nombre: string
+                        + obtenerNombre(): string
+                    }
+                    class Perro {
+                        + ladrar(): void
+                    }
+                    class Gato {
+                        + maullar(): void
+                    }
+                    Animal <|-- Perro
+                    Animal <|-- Gato
+
+**Diagrama de Secuencia**          
+
+Los diagramas de secuencia empiezan por ``sequenceDiagram``.
+Se utiliza para crear representar interacciones entre objetos o actores a lo largo del tiempo. 
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 5
+
+        .. mermaid::
+            :alt: Ejemplo de diagrama de Secuencia
+            :align: center
+            :zoom:
+
+            sequenceDiagram
+                participant dotcom
+                participant iframe
+                participant viewscreen
+                dotcom->>iframe: Carga html con URL de iframe
+                iframe->>viewscreen: Plantilla de solicitud
+                viewscreen->>iframe: html & javascript
+                iframe->>dotcom: iframe listo
+                dotcom->>iframe: Establecer datos mermaid en iframe
+                iframe->>iframe: Render mermaid
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. mermaid::
+                :alt: Ejemplo de diagrama de Secuencia
+                :align: center
+                :zoom:
+
+                sequenceDiagram
+                    participant dotcom
+                    participant iframe
+                    participant viewscreen
+                    dotcom->>iframe: Carga html con URL de iframe
+                    iframe->>viewscreen: Plantilla de solicitud
+                    viewscreen->>iframe: html & javascript
+                    iframe->>dotcom: iframe listo
+                    dotcom->>iframe: Establecer datos mermaid en iframe
+                    iframe->>iframe: Render mermaid
+
+Si necesita conocer más acerca de mermaid puede consultar la documentación `Sphinxcontrib-mermaid  <https://github.com/mgaitan/sphinxcontrib-mermaid/>`_ :octicon:`report;1em;sd-text-info`.  
+
+Sphinx.ext.graphviz
+-------------------
+
+Esta extensión le permite representar información estructural como diagramas de redes y gráficos abstractos. Graphviz tiene muchas funciones útiles para diagramas concretos, como opciones de colores, fuentes, diseños de nodos tabulares, estilos de línea, hipervínculos y formas personalizadas.
+
+A diferencia de :ref:`etiqueta_mermaind`, Graphviz utiliza un lenguaje de descripción llamado ``DOT``, que es un lenguaje declarativo para describir gráficos y diagramas.  Es más estructurado, complejo y formal que el formato de texto plano de Mermaid.
+
+Para hacer uso de graphviz, debe utilizar la directiva ``.. graphviz::``. De la misma manera, tenga en cuenta las siguientes directivas.
+
+:bdg-secondary:`:alt:`: Texto alternativo.
+
+:bdg-secondary:`:align:`: Alineación del gráfico (``left``, ``center``, ``right``).
+
+:bdg-secondary:`:caption:`: Título del gráfico. 
+
+:bdg-secondary:`:name:`: Etiqueta.
+
+:bdg-secondary:`:class:`: Nombres de clase (una lista de de clases separados por espacios). `Ver más <https://graphviz.org/docs/attrs/class/>`_ :octicon:`report;1em;sd-text-info`.
+
+:bdg-secondary:`:layout:`: Tipo de gráfico. Especifica el nombre del `motor de diseño  <https://graphviz.org/docs/layouts/>`_ :octicon:`report;1em;sd-text-info`.
+
+Graphviz utiliza atributos para darle un aspecto visual, similar a aplicar estilos CSS en línea. Puede consultar la lista completa de atributos `aquí  <https://graphviz.org/docs/graph/>`_ :octicon:`report;1em;sd-text-info`.
+
+A continuación, se presentan algunos ejemplos complejos de lo que Graphviz es capaz de ofrecer.
+
+**Clústeres**
+
+Este pequeño ejemplo ilustra la característica de usar el punto para dibujar nodos y bordes en grupos o regiones de diseño rectangulares separadas. Los grupos están codificados como subgrafos cuyos nombres tienen el prefijo `clúster  <https://graphviz.org/Gallery/directed/cluster.html/>`_ :octicon:`report;1em;sd-text-info`.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 1
+
+        .. graphviz::
+            :align: center
+
+            digraph G {
+                fontname="Helvetica,Arial,sans-serif"
+                node [fontname="Helvetica,Arial,sans-serif"]
+                edge [fontname="Helvetica,Arial,sans-serif"]
+
+                subgraph cluster_0 {
+                    style=filled;
+                    color=lightgrey;
+                    node [style=filled,color=white];
+                    a0 -> a1 -> a2 -> a3;
+                    label = "process #1";
+                }
+
+                subgraph cluster_1 {
+                    node [style=filled];
+                    b0 -> b1 -> b2 -> b3;
+                    label = "process #2";
+                    color=blue
+                }
+                start -> a0;
+                start -> b0;
+                a1 -> b3;
+                b2 -> a3;
+                a3 -> a0;
+                a3 -> end;
+                b3 -> end;
+
+                start [shape=Mdiamond];
+                end [shape=Msquare];
+            }
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. graphviz::
+                :align: center
+
+                digraph G {
+                    fontname="Helvetica,Arial,sans-serif"
+                    node [fontname="Helvetica,Arial,sans-serif"]
+                    edge [fontname="Helvetica,Arial,sans-serif"]
+
+                    subgraph cluster_0 {
+                        style=filled;
+                        color=lightgrey;
+                        node [style=filled,color=white];
+                        a0 -> a1 -> a2 -> a3;
+                        label = "process #1";
+                    }
+
+                    subgraph cluster_1 {
+                        node [style=filled];
+                        b0 -> b1 -> b2 -> b3;
+                        label = "process #2";
+                        color=blue
+                    }
+                    start -> a0;
+                    start -> b0;
+                    a1 -> b3;
+                    b2 -> a3;
+                    a3 -> a0;
+                    a3 -> end;
+                    b3 -> end;
+
+                    start [shape=Mdiamond];
+                    end [shape=Msquare];
+                }
+
+**Colores parcialmente transparentes**
+
+Este ejemplo ilustra el uso de `colores <https://graphviz.org/Gallery/neato/transparency.html/>`_ :octicon:`report;1em;sd-text-info` parcialmente transparentes para nodo ``fillcolor`` y  para graficar  ``bgcolor``. 
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 2
+
+        .. graphviz::
+            :align: center
+
+            graph Transparency {
+                layout=neato
+                start=11 // empiric value to set orientation
+                bgcolor="#0000ff11"
+                node [shape=circle width=2.22 label="" style=filled]
+                5 [color="#0000ff80"]
+                6 [color="#ee00ee80"]
+                1 [color="#ff000080"]
+                2 [color="#eeee0080"]
+                3 [color="#00ff0080"]
+                4 [color="#00eeee80"]
+                1 -- 2 -- 3 -- 4 -- 5 -- 6 -- 1
+            }
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. graphviz::
+                :align: center
+
+                graph Transparency {
+                    layout=neato
+                    start=11 // empiric value to set orientation
+                    bgcolor="#0000ff11"
+                    node [shape=circle width=2.22 label="" style=filled]
+                    5 [color="#0000ff80"]
+                    6 [color="#ee00ee80"]
+                    1 [color="#ff000080"]
+                    2 [color="#eeee0080"]
+                    3 [color="#00ff0080"]
+                    4 [color="#00eeee80"]
+                    1 -- 2 -- 3 -- 4 -- 5 -- 6 -- 1
+                }
+
+**Gradientes aplicados a una estructura de datos**
+
+Demuestra una aplicación de gradientes para registrar `nodos <https://graphviz.org/Gallery/gradient/datastruct.html/>`_ :octicon:`report;1em;sd-text-info`. 
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo 3
+
+        .. graphviz::
+            :align: center
+
+            digraph g {
+                fontname="Helvetica,Arial,sans-serif"
+                node [fontname="Helvetica,Arial,sans-serif"]
+                edge [fontname="Helvetica,Arial,sans-serif"]
+                graph [
+                rankdir = "LR"
+                bgcolor = "white:lightblue"
+                style="filled"
+                gradientangle = 270];
+                node [
+                fontsize = "16"
+                shape = "ellipse"
+                style="filled"
+                gradientangle=90
+                ];
+                edge [
+                ];
+                "node0" [
+                label = "<f0> 0x10ba8| <f1>"
+                shape = "record"
+                gradientangle="90"
+                fillcolor = "yellow:blue"
+                ];
+                "node1" [
+                label = "<f0> 0xf7fc4380| <f1> | <f2> |-1"
+                shape = "record"
+                fillcolor = "blue:red"
+                gradientangle = 0
+                ];
+                "node2" [
+                label = "<f0> 0xf7fc44b8| | |2"
+                shape = "record"
+                fillcolor = "brown:yellow"
+                gradientangle = 90
+                ];
+                "node3" [
+                label = "<f0> 3.43322790286038071e-06|44.79998779296875|0 | <f1>"
+                shape = "record"
+                fillcolor = "green:red"
+                gradientangle = 90
+                ];
+                "node4" [
+                label = "<f0> 0xf7fc4380| <f1> | <f2> |2"
+                shape = "record"
+                fillcolor = "red:green"
+                gradientangle = 0
+                ];
+                "node5" [
+                label = "<f0> (nil)| | |-1"
+                shape = "record"
+                fillcolor = "red:red"
+                gradientangle = 90
+                ];
+                "node6" [
+                label = "<f0> 0xf7fc4380| <f1> | <f2> |1"
+                shape = "record"
+                fillcolor = "orange:green"
+                ];
+                "node7" [
+                label = "<f0> 0xf7fc4380| <f1> | <f2> |2"
+                shape = "record"
+                fillcolor = "cyan:green"
+                ];
+                "node8" [
+                label = "<f0> (nil)| | |-1"
+                shape = "record"
+                fillcolor = "cyan:cyan"
+                ];
+                "node9" [
+                label = "<f0> (nil)| | |-1"
+                shape = "record"
+                fillcolor = "orange:orange"
+                gradientangle = 90
+                ];
+                "node10" [
+                label = "<f0> (nil)| <f1> | <f2> |-1"
+                shape = "record"
+                fillcolor = "magenta:green"
+                ];
+                "node11" [
+                label = "<f0> (nil)| <f1> | <f2> |-1"
+                shape = "record"
+                fillcolor = "red:green"
+                ];
+                "node12" [
+                label = "<f0> 0xf7fc43e0| | |1"
+                shape = "record"
+                fillcolor = "magenta:magenta"
+                ];
+                "node0":f0 -> "node1":f0 [
+                id = 0
+                ];
+                "node0":f1 -> "node2":f0 [
+                id = 1
+                ];
+                "node1":f0 -> "node3":f0 [
+                id = 2
+                ];
+                "node1":f1 -> "node4":f0 [
+                id = 3
+                ];
+                "node1":f2 -> "node5":f0 [
+                id = 4
+                ];
+                "node4":f0 -> "node3":f1 [
+                id = 5
+                ];
+                "node4":f1 -> "node6":f0 [
+                id = 6
+                ];
+                "node4":f2 -> "node10":f0 [
+                id = 7
+                ];
+                "node6":f0 -> "node3":f1 [
+                id = 8
+                ];
+                "node6":f1 -> "node7":f0 [
+                id = 9
+                ];
+                "node6":f2 -> "node9":f0 [
+                id = 10
+                ];
+                "node7":f0 -> "node3":f1 [
+                id = 11
+                ];
+                "node7":f1 -> "node1":f0 [
+                id = 12
+                ];
+                "node7":f2 -> "node8":f0 [
+                id = 13
+                ];
+                "node10":f1 -> "node11":f0 [
+                id = 14
+                ];
+                "node10":f2 -> "node12":f0 [
+                id = 15
+                ];
+                "node11":f2 -> "node1":f0 [
+                id = 16
+                ];
+            }
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. graphviz::
+                :align: center
+
+                digraph g {
+                    fontname="Helvetica,Arial,sans-serif"
+                    node [fontname="Helvetica,Arial,sans-serif"]
+                    edge [fontname="Helvetica,Arial,sans-serif"]
+                    graph [
+                    rankdir = "LR"
+                    bgcolor = "white:lightblue"
+                    style="filled"
+                    gradientangle = 270];
+                    node [
+                    fontsize = "16"
+                    shape = "ellipse"
+                    style="filled"
+                    gradientangle=90
+                    ];
+                    edge [
+                    ];
+                    "node0" [
+                    label = "<f0> 0x10ba8| <f1>"
+                    shape = "record"
+                    gradientangle="90"
+                    fillcolor = "yellow:blue"
+                    ];
+                    "node1" [
+                    label = "<f0> 0xf7fc4380| <f1> | <f2> |-1"
+                    shape = "record"
+                    fillcolor = "blue:red"
+                    gradientangle = 0
+                    ];
+                    "node2" [
+                    label = "<f0> 0xf7fc44b8| | |2"
+                    shape = "record"
+                    fillcolor = "brown:yellow"
+                    gradientangle = 90
+                    ];
+                    "node3" [
+                    label = "<f0> 3.43322790286038071e-06|44.79998779296875|0 | <f1>"
+                    shape = "record"
+                    fillcolor = "green:red"
+                    gradientangle = 90
+                    ];
+                    "node4" [
+                    label = "<f0> 0xf7fc4380| <f1> | <f2> |2"
+                    shape = "record"
+                    fillcolor = "red:green"
+                    gradientangle = 0
+                    ];
+                    "node5" [
+                    label = "<f0> (nil)| | |-1"
+                    shape = "record"
+                    fillcolor = "red:red"
+                    gradientangle = 90
+                    ];
+                    "node6" [
+                    label = "<f0> 0xf7fc4380| <f1> | <f2> |1"
+                    shape = "record"
+                    fillcolor = "orange:green"
+                    ];
+                    "node7" [
+                    label = "<f0> 0xf7fc4380| <f1> | <f2> |2"
+                    shape = "record"
+                    fillcolor = "cyan:green"
+                    ];
+                    "node8" [
+                    label = "<f0> (nil)| | |-1"
+                    shape = "record"
+                    fillcolor = "cyan:cyan"
+                    ];
+                    "node9" [
+                    label = "<f0> (nil)| | |-1"
+                    shape = "record"
+                    fillcolor = "orange:orange"
+                    gradientangle = 90
+                    ];
+                    "node10" [
+                    label = "<f0> (nil)| <f1> | <f2> |-1"
+                    shape = "record"
+                    fillcolor = "magenta:green"
+                    ];
+                    "node11" [
+                    label = "<f0> (nil)| <f1> | <f2> |-1"
+                    shape = "record"
+                    fillcolor = "red:green"
+                    ];
+                    "node12" [
+                    label = "<f0> 0xf7fc43e0| | |1"
+                    shape = "record"
+                    fillcolor = "magenta:magenta"
+                    ];
+                    "node0":f0 -> "node1":f0 [
+                    id = 0
+                    ];
+                    "node0":f1 -> "node2":f0 [
+                    id = 1
+                    ];
+                    "node1":f0 -> "node3":f0 [
+                    id = 2
+                    ];
+                    "node1":f1 -> "node4":f0 [
+                    id = 3
+                    ];
+                    "node1":f2 -> "node5":f0 [
+                    id = 4
+                    ];
+                    "node4":f0 -> "node3":f1 [
+                    id = 5
+                    ];
+                    "node4":f1 -> "node6":f0 [
+                    id = 6
+                    ];
+                    "node4":f2 -> "node10":f0 [
+                    id = 7
+                    ];
+                    "node6":f0 -> "node3":f1 [
+                    id = 8
+                    ];
+                    "node6":f1 -> "node7":f0 [
+                    id = 9
+                    ];
+                    "node6":f2 -> "node9":f0 [
+                    id = 10
+                    ];
+                    "node7":f0 -> "node3":f1 [
+                    id = 11
+                    ];
+                    "node7":f1 -> "node1":f0 [
+                    id = 12
+                    ];
+                    "node7":f2 -> "node8":f0 [
+                    id = 13
+                    ];
+                    "node10":f1 -> "node11":f0 [
+                    id = 14
+                    ];
+                    "node10":f2 -> "node12":f0 [
+                    id = 15
+                    ];
+                    "node11":f2 -> "node1":f0 [
+                    id = 16
+                    ];
+                }
+
+Hay mucho más contenido que puede explorar y probar. Consulte este `enlace <https://graphviz.org//>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
+
+Archivo conf.py
+---------------
+
+Do officia irure officia fugiat.
+
+Errores comunes
+===============
+
+Afortunadamente, Sphinx es demasiado flexible y facilita el proceso de identificación de errores. Proporciona la ubicación exacta del archivo en el que se produce el error y un mensaje breve pero conciso que señala la causa del mismo. Esto simplifica la corrección de errores y la depuración de la documentación.
 
 Secciones
-=========
+---------
 
 El error más común que puede surgir al trabajar con Sphinx está relacionado con las secciones, especialmente al trabajar con títulos y subtítulos. 
 
@@ -52,3 +819,28 @@ El mensaje de advertencia :bdg-danger:`WARNING: Title underline too short` indic
 :bdg-light:`light`, :bdg-light-line:`light-line`
 
 :bdg-dark:`dark`, :bdg-dark-line:`dark-line`
+
+Sphinx_design
+^^^^^^^^^^^^^
+
+Es una extensión para diseñar componentes web responsivos. Surgió como una mejora de sphinx-panels, con la intención de hacerlo más flexible, más fácil de usar y minimizar los conflictos de CSS con los temas de sphinx. 
+
+Con Sphinx Design, puede trabajar con grids, tarjetas, pestañas, listas desplegables, insignias, botones e iconos. Ofrece CSS libre de conflictos (utiliza prefijos en las clases para evitar conflictos con otros frameworks), funciona sin JavaScript, es bastante flexible y configurable (todos los colores se pueden configurar utilizando variables CSS).
+
+**Grids**
+
+Las cuadrículas se basan en un sistema de 12 columnas, que se pueden adaptar al tamaño de la pantalla de visualización. Para utilizar grids utilice la directiva ``.. grid::``.
+
+Las opciones de directivas que debe tener en cuenta al usar grids son las siguientes:
+
+:bdg-secondary:`:gutter:`: Espaciado entre elementos. Uno o cuatro números enteros (para “xs sm md lg”) entre 0 y 5. 
+
+:bdg-secondary:`:margin:`: Margen exterior de la cuadrícula. Uno (todos) o cuatro (arriba, abajo, izquierda, derecha) valores de: 0, 1, 2, 3, 4, 5, auto. 
+
+:bdg-secondary:`:padding:`: Àrea de relleno Interior del grid. Uno (todos) o cuatro (arriba, abajo, izquierda, derecha) valores de: 0, 1, 2, 3, 4, 5. 
+
+:bdg-secondary:`:outline:`: Crea un borde alrededor de la cuadrícula. 
+
+:bdg-secondary:`:reverse:`: Invierte el orden de los elementos.
+
+:bdg-secondary:`:class-container:`: Nombre de la clase para aplicar estilos. 

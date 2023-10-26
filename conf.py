@@ -37,6 +37,7 @@ extensions = [
     'sphinxcontrib.mermaid', #Extensión que permite hacer uso de Mermaind
     'sphinx_copybutton',
     'sphinx.ext.graphviz',
+    #'sphinxcontrib.spelling',
     #'cards',
     'myst_parser',  #Extensión que permite a Sphinx leer MySt(Markedly Structured Text)
 ]

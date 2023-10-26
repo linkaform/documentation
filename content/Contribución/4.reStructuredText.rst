@@ -223,7 +223,7 @@ Las tablas simples son más fáciles de escribir, pero tienen limitaciones. Debe
             Fresa             Roja        Dulce
             ================  ==========  ==========
 
-Si necesita información más detallada acerca de las tablas, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-directives/>`_ :octicon:`report;1em;sd-text-info`.
+Si necesita información más detallada acerca de las tablas, puede consultar la documentación disponible en `Tables <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#tables/>`_ :octicon:`report;1em;sd-text-info`.
 
 Hipervínculos
 =============
@@ -257,6 +257,7 @@ Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ej
     Sin embargo, la inclusión de este icono es opcional y no es necesario.
 
 .. _mi-etiqueta-de-referencia:
+
 Enlaces internos
 ----------------
 
@@ -452,6 +453,7 @@ En este ejemplo, hemos utilizado ``:maxdepth: 4`` para mostrar las secciones has
 Si requiere información adicional, conocer otros parametros o necesita otros ejemplos puede consultar la documentación de `Sphinx  <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree/>`_ :octicon:`report;1em;sd-text-info`. 
 
 .. _preparar_toctree:
+
 Preparar toctree
 ^^^^^^^^^^^^^^^^
 

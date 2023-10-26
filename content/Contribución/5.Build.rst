@@ -1,4 +1,5 @@
 .. _generar_HTML:
+
 ============================
 Generando documentación HTML
 ============================
@@ -104,4 +105,4 @@ Podrá navegar a través del contenido.
 
 .. image:: /imgs/Contribución/18.png
 
-Con eso concluimos la sección sobre Sphinx. Como pudo darse cuenta, es una forma sencilla de generar documentación. Si tiene alguna duda, puede regresar al contenido o consultar la documentación de Sphinx. También puede revisar la siguiente sección, que explica algunos errores comunes y ofrece consejos útiles.
+Hemos concluido la sección sobre Sphinx. Como pudo percatarse, es una forma sencilla de generar documentación. Si tiene alguna duda, puede regresar al contenido o consultar la documentación de Sphinx. También puede revisar la siguiente sección, que explica algunos errores comunes y ofrece consejos útiles.
