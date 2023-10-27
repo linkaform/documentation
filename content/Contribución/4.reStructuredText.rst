@@ -231,7 +231,7 @@ Hipervínculos
 Enlaces externos
 ----------------
 
-Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ejemplo:: `Texto del enlace <URL>`_
+Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ejemplo:
 
 .. tab-set::
 
