@@ -2,6 +2,165 @@
 Instalación
 ===========
 
-Antes de comenzar a crear documentación con Sphinx, es esencial que tenga la herramienta correctamente instalada en su entorno de desarrollo. La instalación de Sphinx es un proceso sencillo que le permitirá comenzar a generar documentación.
+En esta sección se presentan los pasos necesarios para instalar Sphinx en su sistema, ya sea que esté trabajando en un sistema operativo Windows o Linux.
 
-En esta sección, se presentan los pasos necesarios para instalar Sphinx en su sistema. Ya sea que se encuentre trabajando en un sistema operativo Windows, macOS o Linux, Sphinx es una herramienta versátil que puede adaptarse a sus necesidades.
+.. important:: Como requisito previo, es importante tener conocimientos básicos sobre Git.
+
+Configuración del entorno
+=========================
+
+Linkaform utiliza ``GitHub``, que se basa en ``Git``, para administrar sus repositorios y Git para el control de versiones, lo que permite gestionar y rastrear cambios en el código o el proyecto.
+
+Si ya dispone de una cuenta en GitHub y tiene Git instalado, puede omitir los primeros pasos y continuar con el paso 6 en :ref:`git`, comenzando así a realizar cambios locales en la documentación. De lo contrario, siga las siguientes instrucciones para preparar su entorno.
+
+GitHub
+------
+
+A continuación, se presentan configuraciones básicas sobre GitHub. 
+
+.. _GitHub:
+
+1. Cree una cuenta en `GitHub <https://github.com/join/>`_ :octicon:`report;1em;sd-text-info`. 
+
+2. Genere una `clave SSH <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/>`_ :octicon:`report;1em;sd-text-info` y registrela en su cuenta GitHub. 
+
+.. _git:
+
+Git
+---
+
+Siga los siguientes pasos para la instalación de Git en Windows o Linux:
+
+.. tab-set::
+
+    .. tab-item:: Windows
+
+        1. Descargue el instalador de Git desde el sitio web oficial: `gitforwindows.org <https://gitforwindows.org/>`_ :octicon:`report;1em;sd-text-info`.
+
+        2. Ejecute el instalador y siga las instrucciones. Puede aceptar las configuraciones por defecto o personalizarlas según sus preferencias.
+
+        3. Elija si desea usar Git desde la línea de comandos o con Git Bash durante la instalación.
+
+        .. tip:: Se recomienda usar Git Bash.
+
+        4. Verifique que Git se instaló correctamente abriendo Git Bash o la línea de comandos de Windows y ejecute:
+        
+        .. code-block::
+            
+            git --version
+
+    .. tab-item:: Linux
+
+        1. Abra una terminal en su sistema Linux.
+
+        2. Actualice la lista de paquetes con el comando:
+
+        .. code-block::
+
+            sudo apt update
+
+        3. Instale Git con el siguiente comando:
+
+        .. code-block::
+
+            sudo apt install git
+
+        4. Verifique la instalación usando:
+
+        .. code-block::
+
+            git --version
+
+Después de la instalación, las configuraciones básicas de Git son las mismas en Windows y Linux.
+
+5. Configure Git para su identificacion como autor de futuras contrubuciones.
+
+.. code-block::
+    :caption: Nombre de usuario
+
+    git config --global user.name "Su Nombre"
+
+.. code-block::
+    :caption: Dirección de correo electrónico:
+
+    git config --global user.email "su@email.com"
+
+.. important:: Utilice el mismo correo electrónico que utilizó para registrarse en :ref:`GitHub`.
+
+6. Dirijase al repositorio de la documentación en `github.com/linkaform/documentation <https://github.com/linkaform/documentation/>`_ :octicon:`report;1em;sd-text-info`.
+
+7. Clone el repositorio.
+
+.. image:: /imgs/Contribución/22.png
+
+.. code-block::
+
+    git clone git@github.com:linkaform/documentation.git
+
+Python
+------
+
+Si ya cuenta con la instalación de ``Python`` y ``pip``,  continúe con la configuración de :ref:`docker`. Si aún no los tiene, siga los siguientes pasos para la instalación.
+
+.. tab-set::
+
+    .. tab-item:: Windows
+
+        1. Descargue ``Python`` en el sitio web oficial `python.org <https://www.python.org/downloads/windows/>`_ :octicon:`report;1em;sd-text-info` (seleccione la versión adecuada para su sistema).
+
+        2. Ejecute el instalador y siga las instrucciones del instalador. Marque la opción "Agregar Python X.Y a PATH" (donde ``X.Y`` es la versión de Python que está instalando). Esto agregará Python al PATH del sistema, lo que te permitirá ejecutar Python y pip desde la línea de comandos.
+
+        3. Verifique la instalación abriendo una ventana de comandos y ejecute:
+
+        .. code-block::
+
+            python --version
+            pip --version
+
+    .. tab-item:: Linux
+
+        En sistemas basados en Linux, ``Python 3`` suele venir preinstalado. Sin embargo, para asegurarse de tener la última versión de y ``Python`` y ``pip``, siga los siguientes pasos:
+
+        1. Actualice la lista de paquetes:
+
+        .. code-block::
+
+            sudo apt update
+
+        2. Instale ``Python 3`` y ``pip``.
+
+        .. code-block::
+
+            sudo apt install python3 python3-pip
+
+        3. Verifique la instalación:
+
+        .. code-block::
+
+            python3 --version
+            pip3 --version
+
+.. _docker:
+
+Docker
+------
+
+.. tab-set::
+
+    .. tab-item:: Windows
+
+        Esto es una guía breve de como instalar Docker, sin embargo, para màs detalles consulte la documentación oficial de `Docker Desktop en Windows <https://docs.docker.com/desktop/install/windows-install/>`_ :octicon:`report;1em;sd-text-info`. 
+                    
+        1. Descargue `Docker Desktop <https://docs.docker.com/desktop/install/windows-install/>`_ :octicon:`report;1em;sd-text-info` en el sitio web oficial de Docker.
+
+        2. Ejecuta el instalador y siga las instrucciones del instalador. Durante la instalación, se te pedirá habilitar la virtualización en la BIOS/UEFI de tu computadora, si aún no está habilitada. Docker Desktop incluye Docker Engine, Compose y Kubernetes.
+
+        3. Inicie Docker Desktop.
+
+        4. Verifique la instalación:
+
+        .. code-block::
+
+            docker --version
+
+La instalación de Docker en Linux es más compleja y puede variar según la distribución y sus dependencias. Para una instalación exitosa, consulte la `documentación oficial de Docker Desktop en Linux <https://docs.docker.com/desktop/install/linux-install/>`_ :octicon:`report;1em;sd-text-info` y siga los pasos específicos de su distribución. Cada distribución puede requerir pasos diferentes.
