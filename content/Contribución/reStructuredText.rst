@@ -293,6 +293,8 @@ Tabla de contenidos
 
 Dado que reST no proporciona facilidades para interconectar varios documentos o dividir documentos en múltiples archivos de salida, Sphinx utiliza una directiva personalizada para agregar relaciones entre los distintos archivos que componen la documentación, así como tablas de contenidos. La directiva ``toctree`` es el elemento central en este proceso.
 
+.. _toc:
+
 toctree
 ^^^^^^^
 
