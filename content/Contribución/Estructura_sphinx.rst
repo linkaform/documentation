@@ -72,7 +72,7 @@ En su repositorio podrá encontrar las siguientes carpetas donde:
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
         | Static                               | Carpeta que almacena archivos sobre personalización.                                                                                               |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-        | Conf.py                              | Archivo que contiene la configuración principal de Sphinx. :ref:`conf` :octicon:`report;1em;sd-text-info`                                          |
+        | Conf.py                              | Archivo que contiene la configuración principal de Sphinx. (Consulte :ref:`conf` :octicon:`report;1em;sd-text-info` para más detalles)             |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Carpeta build
@@ -110,11 +110,8 @@ Esta carpeta contiene los archivos generados por Sphinx, como la documentación 
             <body>
                 <p>
                 <a href=".">.</a><br>
-                ├── <a>Introducción</a><br>
-                ├── <a>Módulos</a><br>
-                ├── <a>PDF</a><br>
-                ├── <a>Reportes</a><br>
-                ├── <a>Desarrolladores</a><br>
+                ├── <a>Usuario</a><br>
+                ├── <a>Desarrollador</a><br>
                 ├── <a>Contribución</a><br>
                 ├── <a>genindex.html</a><br>
                 ├── <a>_images</a><br>
@@ -144,8 +141,12 @@ Esta carpeta contiene los archivos generados por Sphinx, como la documentación 
         +-------------+-------------------------------------------------------------------------------------------------------------------------+
         | objects.inv | Se utiliza para generar un índice de objetos en la documentación. Ayuda a vincular y buscar  elementos específicos.     |
         +-------------+-------------------------------------------------------------------------------------------------------------------------+
+        | index.rst   | Archivo principal que debe ejecutar en su navegador (:ref:`generar_HTML` :octicon:`report;1em;sd-text-info`).           |
+        +-------------+-------------------------------------------------------------------------------------------------------------------------+
         | arch.html   | Los archivos que llevan la terminación .html son archivos rst convertidos a html para presentarse en formato web.       |
         +-------------+-------------------------------------------------------------------------------------------------------------------------+
+
+.. _content:
 
 Carpeta content
 ===============
@@ -156,7 +157,7 @@ La carpeta ``content`` alberga archivos fuente de la documentación en formato R
     :gutter: 0
 
     .. grid-item-card::  Directory Tree
-        :columns: 3
+        :columns: 5
 
         .. raw:: html
 
@@ -181,28 +182,42 @@ La carpeta ``content`` alberga archivos fuente de la documentación en formato R
             </head>
             <body>
                 <a>.</a><br>
-                ├── <a>Introducción</a><br>
-                ├── <a>Módulos</a><br>
-                ├── <a>PDF</a><br>
-                ├── <a>Reportes</a><br>
-                ├── <a>Desarrolladores</a><br>
                 ├── <a>Contribución</a><br>
+                │   ├── <a>Errores.rst</a><br>
+                │   ├── <a>Estructura_sphinx.rst</a><br>
+                │   ├── <a>index.rst</a><br>
+                │   ├── <a>Instalación.rst</a><br>
+                │   ├── <a>Introducción_sphinx.rst</a><br>
+                │   ├── <a>Personalización.rst</a><br>
+                │   └── <a>reStructuredText.rst</a><br>
+                ├── <a>Desarrollador</a><br>
+                │   ├── <a>index.rst</a><br>
+                │   ├── <a>Módulos</a><br>
+                │   ├── <a>PDF</a><br>
+                │   └── <a>Reportes</a><br>
                 ├── <a>imgs</a><br>
+                │   ├── <a>Contribución</a><br>
+                │   ├── <a>flecha_roja.png</a><br>
+                │   ├── <a>Linkaform</a><br>
+                │   ├── <a>Modulos</a><br>
+                │   ├── <a>PDF</a><br>
+                │   └── <a>Reportes</a><br>
                 ├── <a>index.rst</a><br>
                 └── <a>locale</a><br>
+                &nbsp;&nbsp;&nbsp; └── <a>en</a><br>
             </body>
             </html>
             
     .. grid-item-card::  
-        :columns: 9
+        :columns: 7
 
         Al comenzar con su proyecto cree una carpeta con un nombre descriptivo.
 
-        .. seealso:: Introducción, Módulos, PDF, Reportes, Desarrolladores y Contribución son carpetas que pertenecen a una sección de la documentación.
+        .. caution:: Independientemente del contenido que desee crear, identifique al público al que va dirigido. Si está elaborando documentación para desarrolladores, cree una carpeta dentro de la sección de ``Desarrollador``. En caso de estar dirigido a los usuarios, cree una carpeta en ``usuario``.
 
-        En caso de utilizar imágenes, cree una nueva carpeta con el nombre de su proyecto dentro de la carpeta ``imgs``. Dentro de esta carpeta, puede organizar las imágenes de la manera que le resulte más cómoda.
+        Si planea utilizar imágenes, cree una nueva carpeta con el nombre de su proyecto dentro de la carpeta  ``imgs``. Dentro de esta carpeta, puede organizar las imágenes de la manera que le resulte más cómoda.
 
-        .. important:: index.rst es el archivo principal que debe ejecutar en su navegador (:ref:`generar_HTML` :octicon:`report;1em;sd-text-info`). Si se encuentra trabajando en una sección nueva asegurese de incluir su indice en el :ref:`toc` :octicon:`report;1em;sd-text-info` del index principal.
+        .. important:: Si se encuentra trabajando en una sección nueva asegúrese de incluir su indice en el :ref:`toc` :octicon:`report;1em;sd-text-info` del index principal.
 
 Carpeta static
 ==============

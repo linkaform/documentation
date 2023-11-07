@@ -2,37 +2,162 @@
 Escribiendo en reStructuredText
 ===============================
 
-reStructuredText es el lenguaje de marcado de texto sin formato predeterminado utilizado por Sphinx. Esta sección es una breve introducción a los conceptos y la sintaxis de reStructuredText (reST) que comúnmente se utiliza para crear documentación y cuyo objetivo es proporcionar suficiente información para crear documentos de forma productiva.
+reStructuredText es el lenguaje de marcado de texto sin formato predeterminado utilizado por Sphinx. Esta sección es una breve introducción a los conceptos y la sintaxis de reStructuredText (reST) que comúnmente se utiliza para crear documentación.
 
 Creación de archivo
 ===================
 
-Antes de adentrarnos en la explicación de reStructuredText, siga estos pasos para crear su primer proyecto.
+Antes de iniciar con la explicación de reStructuredText, siga estos pasos para crear su primer proyecto.
 
-1. Cree la carpeta de su proyecto en ``content``. En este caso llevará el nombre de ``5.Desarrolladores``.
+1. Cree la carpeta de su proyecto en la :ref:`content` :octicon:`report;1em;sd-text-info`.
 
 .. caution:: Asegúrese de que el nombre de su carpeta no contenga espacios, en caso de tener más de dos palabras use ``snake_case``.
 
-2. Cree su archivo ``.rst`` dentro de la carpeta de su proyecto. 
+2. Cree su archivo ``.rst`` dentro de la carpeta de su proyecto.
 
-.. caution:: De la misma manera, asegúrese de que el nombre de su archivo no contenga espacios.
+.. grid:: 2
+    :gutter: 0
 
-.. image:: /imgs/Contribución/5.png
+    .. grid-item-card::  Directory Tree
+        :columns: 4
 
-Si dentro de la carpeta de su proyecto tendrá más de un archivo, cree un ``index.rst``, y los archivos que necesite, por ejemplo:
+        .. raw:: html
 
-.. image:: /imgs/Contribución/6.png
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+                A:visited { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:link    { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:active  { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                .VERSION { font-size: small; font-family : arial, sans-serif; }
+                .NORM  { color: black;  }
+                .FIFO  { color: purple; }
+                .CHAR  { color: yellow; }
+                .DIR   { color: blue;   }
+                .BLOCK { color: yellow; }
+                .LINK  { color: aqua;   }
+                .SOCK  { color: fuchsia;}
+                .EXEC  { color: green;  }
+            </style>
+            </head>
+                <body>
+                <a>.</a><br>
+                ├── <a>carpeta_ejemplo</a><br>
+                │   ├── <a>archivo1.rst</a><br>
+                ├── <a>index.rst</a><br>
+                ├── <a>Módulos</a><br>
+                ├── <a>PDF</a><br>
+                └── <a>Reportes</a><br>
+                </body>
+            </html>
 
-Si necesita otras secciones dentro de su proyecto, cree una carpeta y dentro de ella los archivos que necesite. Como se muestra en la siguiente imagen:
+    .. grid-item-card::   
+        :columns: 8
 
-.. image:: /imgs/Contribución/7.png
+        .. caution:: De la misma manera, asegúrese de que el nombre de su archivo no contenga espacios.
 
-.. note:: Si lo prefiere, puede nombrar los archivos siguiendo una numeración, aunque esto no es obligatorio.
+Si dentro de la carpeta de su proyecto tiene más de un archivo, cree un archivo ``index.rst``, y los archivos que necesite, por ejemplo:
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::  Directory Tree
+        :columns: 4
+                
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+                A:visited { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:link    { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:active  { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                .VERSION { font-size: small; font-family : arial, sans-serif; }
+                .NORM  { color: black;  }
+                .FIFO  { color: purple; }
+                .CHAR  { color: yellow; }
+                .DIR   { color: blue;   }
+                .BLOCK { color: yellow; }
+                .LINK  { color: aqua;   }
+                .SOCK  { color: fuchsia;}
+                .EXEC  { color: green;  }
+            </style>
+            </head>
+                <body>
+                <a>.</a><br>
+                ├── <a>carpeta_ejemplo</a><br>
+                │   ├── <a>archivo1.rst</a><br>
+                │   ├── <a>archivo2.rst</a><br>
+                │   ├── <a>archivo3.rst</a><br>
+                │   ├── <a>index.rst</a><br>
+                ├── <a>index.rst</a><br>
+                ├── <a>Módulos</a><br>
+                ├── <a>PDF</a><br>
+                └── <a>Reportes</a><br>
+                </body>
+            </html>
+
+    .. grid-item-card::   
+        :columns: 8
+
+        .. note:: El archivo ``index.rst`` se crea únicamente cuando se tiene más de un archivo ``.rst``. Este archivo permite agrupar todos los archivos de su carpeta en uno solo y tratarlo como un enlace hacia el contenido principal. (Consulte :ref:`preparar_toctree` :octicon:`report;1em;sd-text-info` para más detalles).
+
+Si necesita otras secciones dentro de su proyecto, cree una subcarpeta y dentro de ella los archivos que necesite.
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::  Directory Tree
+        :columns: 12
+
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+                A:visited { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:link    { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:active  { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                .VERSION { font-size: small; font-family : arial, sans-serif; }
+                .NORM  { color: black;  }
+                .FIFO  { color: purple; }
+                .CHAR  { color: yellow; }
+                .DIR   { color: blue;   }
+                .BLOCK { color: yellow; }
+                .LINK  { color: aqua;   }
+                .SOCK  { color: fuchsia;}
+                .EXEC  { color: green;  }
+            </style>
+            </head>
+                <body>
+                <a>.</a><br>
+                ├── <a>carpeta_ejemplo</a><br>
+                │   ├── <a>archivo1.rst</a><br>
+                │   ├── <a>archivo2.rst</a><br>
+                │   ├── <a>archivo3.rst</a><br>
+                │   ├── <a>index.rst</a><br>
+                │   └── <a>subcarpeta</a><br>
+                │   &nbsp;&nbsp;&nbsp; ├── <a>archivo1.rst</a><br>
+                │   &nbsp;&nbsp;&nbsp; ├── <a>archivo2.rst</a><br>
+                │   &nbsp;&nbsp;&nbsp; ├── <a>archivo3.rst</a><br>
+                │   &nbsp;&nbsp;&nbsp; └── <a>archivo4.rst</a><br>
+                ├── <a>index.rst</a><br>
+                ├── <a>Módulos</a><br>
+                ├── <a>PDF</a><br>
+                └── <a>Reportes</a><br>
+                </body>
+            </html>
 
 Secciones
 =========
 
-Las ecciones son útiles para organizar y estructurar su documentación. Las secciones le permitirán dividir su contenido en partes más pequeñas y darle una jerarquía clara. 
+Las secciones resultan útiles para organizar y estructurar su documentación, ya que permiten dividir el contenido en partes más pequeñas y establecer una jerarquía clara.
 
 En lugar de imponer un número y un orden fijos para el título de la sección, el orden aplicado será el orden encontrado. El primer estilo hallado se considerará como un título principal (similar al HTML H1), el segundo estilo será un subtítulo, el tercero será otro subtítulo, y así sucesivamente.
 
@@ -103,7 +228,7 @@ Listas
 Listas ordenadas y no ordenadas
 -------------------------------
 
-Para utilizar listas en reStructuredText es sencillo: para crear una lista no ordenada, simplemente coloque un asterisco ``*`` al principio del texto y aplique la sangría adecuada. 
+Para crear una lista no ordenada, simplemente coloque un asterisco ``*`` al principio del texto y aplique la sangría adecuada. 
 
 Del mismo modo, las listas numeradas se pueden generar automáticamente utilizando el signo ``#`` al principio de cada elemento o enumerarlas manualmente (1, 2, 3...).
 
@@ -254,8 +379,6 @@ Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ej
 
     `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ :octicon:`report;1em;sd-text-info`. 
 
-    Sin embargo, la inclusión de este icono es opcional y no es necesario.
-
 .. _mi-etiqueta-de-referencia:
 
 Enlaces internos
@@ -269,15 +392,27 @@ Para que esto funcione correctamente, los nombres de las etiquetas deben ser ún
 
     .. tab-item:: Ejemplo
 
-        Se refiere a la sección misma, ver :ref:`mi-etiqueta-de-referencia`.
+        Se refiere a la sección misma, ver :ref:`mi-etiqueta-de-referencia` :octicon:`report;1em;sd-text-info`.
 
     .. tab-item:: Estructura
 
         .. code-block::
+            :caption: Establezca la etiqueta
 
-            Se refiere a la sección misma :ref:`mi-etiqueta-de-referencia`.
+            .. _mi-etiqueta-de-referencia:
 
-.. important:: Las etiquetas de referencia deben comenzar con un guión bajo. Al hacer referencia a una etiqueta, se debe omitir el guión bajo.
+            Enlaces internos
+            ----------------
+
+        .. code-block::
+            :caption: Haga referencia a la etiqueta
+
+            Se refiere a la sección misma :ref:`mi-etiqueta-de-referencia` :octicon:`report;1em;sd-text-info`.
+
+.. important:: 
+    Las etiquetas de referencia deben comenzar con un guion bajo. 
+    
+    Al hacer referencia a una etiqueta, se debe omitir el guion bajo.
 
     Si necesita información más detallada acerca de hipervínculos, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/referencing.html#ref-role/>`_ :octicon:`report;1em;sd-text-info`.
 
@@ -452,30 +587,151 @@ En este ejemplo, hemos utilizado ``:maxdepth: 4`` para mostrar las secciones has
                 5.Desarrolladores/Index
                 Contribución/Index
 
-Si requiere información adicional, conocer otros parametros o necesita otros ejemplos puede consultar la documentación de `Sphinx  <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree/>`_ :octicon:`report;1em;sd-text-info`. 
+Si requiere información adicional, conocer otros parámetros o necesita otros ejemplos puede consultar la documentación de `Sphinx  <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree/>`_ :octicon:`report;1em;sd-text-info`. 
 
 .. _preparar_toctree:
 
 Preparar toctree
 ^^^^^^^^^^^^^^^^
 
-Cuando tenga su contenido organizado y escrito en archivos ``.rst``, debe indicarle a Sphinx dónde debe buscar los documentos. Para ello, edite el archivo ``index.rst`` (está en la raíz del proyecto de documentación) e introduzca los archivos de documentación con su ruta relativa. Los archivos deben ir dentro de la directiva ``.. toctree::``.
+Cuando tenga su contenido organizado y escrito en archivos ``.rst``, debe indicarle a Sphinx dónde debe buscar los documentos. A continuación, siga los siguientes pasos para agregar su contenido al índice.
 
-A continuación, siga los siguientes pasos para agregar su contenido al índice principal.
+.. note:: Para el siguiente ejemplo, tenga en cuenta que se está presentando un proyecto almacenado en la carpeta ``Desarrollador``. En consecuencia, este ya se encuentra en el índice principal, por lo tanto, se mostrará como *llamarla* en el índice de dicha carpeta. Sin embargo, en caso de tener un proyecto independiente, los mismos pasos aplican.
+    
+1. Anteriormente, se mostró cómo y dónde crear sus archivos ``.rst``. Ahora deberá agregar un título a sus archivos. Esto es fundamental, ya que la directiva busca el título principal para incluirlo en el índice.
 
-1. Anteriormente, se mostró cómo y dónde crear sus archivos  ``.rst``. Ahora, como primer paso, deberá agregar un título a sus archivos. Esto es fundamental, ya que la directiva busca el título principal para incluirlo en el índice.
+2. Una vez que haya añadido el título, deberá incluir la ruta de sus archivos en el ``index.rst`` de su proyecto.
 
-.. image:: /imgs/Contribución/8.png
+.. grid:: 2
+    :gutter: 0
 
-2. Una vez que haya añadido el título a sus archivos, deberá incluir la ruta en el archivo ``index.rst`` de su proyecto. En este caso no utilizamos parámetros ya que lo hacemos directamente en el index principal.
+    .. grid-item-card::  Directory Tree
+        :columns: 5
 
-.. image:: /imgs/Contribución/9.png
+        .. raw:: html
 
-3. Al tener su archivo index listo, deberá incluirlo en el ``index.rst`` del proyecto principal.
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+                A:visited { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:link    { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:active  { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                .VERSION { font-size: small; font-family : arial, sans-serif; }
+                .NORM  { color: black;  }
+                .FIFO  { color: purple; }
+                .CHAR  { color: yellow; }
+                .DIR   { color: blue;   }
+                .BLOCK { color: yellow; }
+                .LINK  { color: aqua;   }
+                .SOCK  { color: fuchsia;}
+                .EXEC  { color: green;  }
+                .HIP   { background-color: red; color: white; text-decoration: none; }
+            </style>
+            </head>
+                <body>
+                <a>.</a><br>
+                ├── <a>carpeta_ejemplo</a><br>
+                   ├── <a>archivo1.rst</a><br>
+                   ├── <a>archivo2.rst</a><br>
+                   ├── <a>archivo3.rst</a><br>
+                   ├── <a class="HIP">index.rst</a><br>
+                   └── <a>subcarpeta</a><br>
+                   &nbsp;&nbsp;&nbsp; ├── <a>archivo1.rst</a><br>
+                   &nbsp;&nbsp;&nbsp; ├── <a>archivo2.rst</a><br>
+                   &nbsp;&nbsp;&nbsp; ├── <a>archivo3.rst</a><br>
+                   &nbsp;&nbsp;&nbsp; └── <a>archivo4.rst</a><br>
+                </body>
+            </html>
 
-.. imagen:: / imgs/Contribución/10.png
+    .. grid-item-card::  toctree en index.rst
+        :columns: 7
 
-Con esto, ha logrado insertar satisfactoriamente su contenido en el índice principal. El siguiente paso es generar sus archivos HTML. Puede avanzar a la siguiente sección :ref:`generar_HTML` :octicon:`report;1em;sd-text-info` o continuar leyendo acerca de cómo escribir instrucciones básicas en reST.
+        .. code-block::
+
+            ==============
+            Título ejemplo
+            ==============
+
+            .. toctree::
+               
+                archivo1
+                archivo2
+                archivo3
+                subcarpeta/archivo1
+                subcarpeta/archivo2
+                subcarpeta/archivo3
+                subcarpeta/archivo4
+
+3. Ahora inserte la ruta del ``index`` de su proyecto en la carpeta padre del mismo, en este caso, el ``index`` de la carpeta ``Desarrollador``.
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::  Directory Tree
+        :columns: 5
+
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+                A:visited { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:link    { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                A:active  { text-decoration : none; line-height: 1; margin : 0px; padding : 0px;}
+                .VERSION { font-size: small; font-family : arial, sans-serif; }
+                .NORM  { color: black;  }
+                .FIFO  { color: purple; }
+                .CHAR  { color: yellow; }
+                .DIR   { color: blue;   }
+                .BLOCK { color: yellow; }
+                .LINK  { color: aqua;   }
+                .SOCK  { color: fuchsia;}
+                .EXEC  { color: green;  }
+                .HIP   { background-color: red; color: white; text-decoration: none; }
+            </style>
+            </head>
+                <body>
+                <a>.</a><br>
+                ├── <a>carpeta_ejemplo</a><br>
+                │   ├── <a>archivo1.rst</a><br>
+                │   ├── <a>archivo2.rst</a><br>
+                │   ├── <a>archivo3.rst</a><br>
+                │   ├── <a>index.rst</a><br>
+                │   └── <a>subcarpeta</a><br>
+                │   &nbsp;&nbsp;&nbsp; ├── <a>archivo1.rst</a><br>
+                │   &nbsp;&nbsp;&nbsp; ├── <a>archivo2.rst</a><br>
+                │   &nbsp;&nbsp;&nbsp; ├── <a>archivo3.rst</a><br>
+                │   &nbsp;&nbsp;&nbsp; └── <a>archivo4.rst</a><br>
+                ├── <a class="HIP">index.rst</a><br>
+                ├── <a>Módulos</a><br>
+                ├── <a>PDF</a><br>
+                └── <a>Reportes</a><br>
+                </body>
+            </html>
+
+    .. grid-item-card::  toctree en index.rst
+        :columns: 7
+
+        .. code-block::
+
+            ==================================
+            Documentación para desarrolladores
+            ==================================
+
+            .. toctree::
+                :maxdepth: 1
+                :titlesonly:
+
+                Módulos/index
+                PDF/index
+                Reportes/index
+                carpeta_ejemplo/index
+
+Con esto, ha logrado insertar satisfactoriamente su contenido. Puede probar sus cambios siguiendo :ref:`generar_HTML` :octicon:`report;1em;sd-text-info` o continuar leyendo acerca de cómo escribir en reST.
 
 Advertencias
 ------------

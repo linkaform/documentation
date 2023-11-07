@@ -8,13 +8,9 @@ Documentación de Linkaform
 ==========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
 
-   1.Introducción/Introducción
-   2.Módulos/Módulos
-   3.PDF/PDF
-   4.Reportes/Reportes
-   5.Desarrolladores/Index
-   Contribución/Index
+   Desarrollador/index
+   Contribución/index
 

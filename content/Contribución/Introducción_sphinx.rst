@@ -24,7 +24,7 @@ Utilice distintos niveles de encabezado para estructurar su texto en secciones y
 
 .. tip:: Al comienzo de una sección, inicie con un párrafo introductorio que oriente al lector y le ayude a confirmar que ha llegado a la página correcta.
 
-Imagenes
+Imágenes
 --------
 
 Incorporar algunas imágenes para ilustrar su texto beneficia a los lectores al facilitar la comprensión de su contenido. Sin embargo, es importante evitar la inclusión excesiva de imágenes.
@@ -74,7 +74,7 @@ También asegúrese de cumplir los siguientes puntos:
 
 - **Claridad y Simplicidad**: Utilice un lenguaje claro y sencillo para explicar conceptos técnicos. Por ejemplo: En lugar de *la interfaz de programación de aplicaciones* utilice *herramienta de programación*.
 
-- **Consistencia**: Organice el contenido de forma lógica, utilizando secciones, subtítulos y una introducción clara. Si modifica un texto existente, procure igualar el tono y la presentación ya establecidos o escríbalo de manera que concuerde con su propio estilo.
+- **Consistencia**: Organice el contenido de forma lógica, utilizando secciones, subtítulos y una introducción clara. Si modifica un texto existente, procure igualar el tono y la presentación ya establecidos o escriba de manera que concuerde con su propio estilo.
 
 - **Definición de Términos Técnicos**: Proporcione definiciones claras para términos técnicos o acrónimos. Por ejemplo, *API significa Interfaz de Programación de Aplicaciones*.
 

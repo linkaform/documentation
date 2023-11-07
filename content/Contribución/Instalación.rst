@@ -135,13 +135,15 @@ El contenido principal se encuentra en la rama ``develop``. Por defecto, usted s
 
     git switch develop
 
-Es importante hacer un `git pull <https://git-scm.com/docs/git-pull/>`_ :octicon:`report;1em;sd-text-info` antes de un `git push <https://git-scm.com/docs/git-push/>`_ :octicon:`report;1em;sd-text-info` al trabajar con repositorios compartidos en Git.
 
-.. important:: Una vez que comience sus modificaciones y esté seguro de sus cambios haga ``push`` en la rama ``develop``.
+Una vez que comience sus modificaciones y esté seguro de sus cambios haga ``push`` en la rama ``develop``.
 
-    .. code-block::
+.. code-block::
 
-        git push origin develop
+    git push origin develop
+
+.. important:: Es importante hacer `git pull <https://git-scm.com/docs/git-pull/>`_ :octicon:`report;1em;sd-text-info` antes de `git push <https://git-scm.com/docs/git-push/>`_ :octicon:`report;1em;sd-text-info`.
+
 
 Python
 ------
@@ -219,7 +221,7 @@ Docker
 
             docker --version
 
-        Puede consultar el siguiente video en caso de tener dudas con las co nfiguraciones.
+        Puede consultar el siguiente video en caso de tener dudas con las configuraciones.
 
         .. youtube:: vP3DlhXmsBU
             :aspect: 16:9
@@ -235,7 +237,7 @@ La instalación de Docker en Linux es más compleja y puede variar según la dis
 
     .. tab-item:: Ubuntu
 
-        Para la instalación de docker en la distribuciòn Ubuntu de Linux puede seguir el siguiente video tutorial:
+        Para la instalación de docker en la distribución Ubuntu de Linux puede seguir el siguiente video tutorial:
 
         .. youtube:: mVVepIzpypQ
             :aspect: 16:9
@@ -244,7 +246,6 @@ La instalación de Docker en Linux es más compleja y puede variar según la dis
             :align: center
             :privacy_mode: enable_privacy_mode
             :url_parameters: ?start=150
-
 
 .. _generar_HTML:
 

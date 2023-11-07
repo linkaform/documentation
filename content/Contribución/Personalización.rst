@@ -1900,7 +1900,7 @@ A continuación, se muestran algunos ejemplos:
                 zap: :octicon:`zap`
 
 
-.. _conf:
+.. _nose:
 
 Puede consultar el siguiente enlace sobre `iconos en linea <https://sphinx-design.readthedocs.io/en/furo-theme/badges_buttons.html#inline-icons/>`_ :octicon:`report;1em;sd-text-info` para más información.
 
@@ -1939,25 +1939,25 @@ De forma predeterminada, el vídeo incrustado tiene un tamaño de contenido de 7
 
     .. tab-item:: Ejemplo
 
-        .. youtube:: dQw4w9WgXcQ
+        .. youtube:: 4b0gzFXmtCk
             :aspect: 16:9
             :width: 640
             :height: 360
             :align: center
             :privacy_mode: enable_privacy_mode
-            :url_parameters: ?start=30
+            :url_parameters: ?start=0
 
     .. tab-item:: Estructura
 
         .. code-block::
 
-            .. youtube:: dQw4w9WgXcQ
+            .. youtube:: 4b0gzFXmtCk
                 :aspect: 16:9
                 :width: 640
                 :height: 360
                 :align: center
                 :privacy_mode: enable_privacy_mode
-                :url_parameters: ?start=30
+                :url_parameters: ?start=0
 
 Para obtener más información, consulte el enlace sobre `sphinxcontrib-youtube <https://sphinxcontrib-youtube.readthedocs.io/en/latest/usage.html/>`_ :octicon:`report;1em;sd-text-info`.
 
