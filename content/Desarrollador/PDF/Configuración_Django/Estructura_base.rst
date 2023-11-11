@@ -2,19 +2,29 @@
 Plantillas estructura en Django
 ===============================
 
-Para llevar a cabo la visualización, integración, modificación y desarrollo de una plantilla, es necesario acceder a la administración de Django en pre-producción o producción. 
+Para iniciar la estructura de su PDF, debe realizar algunas configuraciones dentro del entorno de Django. Siga los siguientes pasos:
 
-Una vez autenticado, se muestra la siguiente interfaz.
+1. Inicie sesión en Django.
+  
+  - producción https://preprod.linkaform.com/admin :octicon:`report;1em;sd-text-info`.
+  
+  - preproducción https://app.linkaform.com/admin :octicon:`report;1em;sd-text-info`.
+
+2. Una vez autenticado, se muestra la siguiente interfaz.
 
 .. image:: /imgs/PDF/4/4.1.1.png
   :align: center
 
+La administración de Django permite el acceso a una gran variedad de recursos. No obstante, con el propósito de abordar el desarrollo de archivos PDFs, se continuará por detallar la sección ``Pdfdocuments``, la cual se compone de dos elementos importantes:
 
-Dicha interfaz otorga acceso a una gran variedad de recursos. No obstante, con el propósito de abordar el desarrollo de archivos PDF, se continuará por detallar la sección ``Pdfdocuments``, la cual se compone de dos elementos importantes:
-
--  :bdg-secondary:`Plantillas`: Contiene todas las plantillas generadas en LinkaForm.
--  :bdg-secondary:`Widgets`: Proporciona plantillas adaptadas a los diferentes tipos de datos utilizados.
-
++-----------+---------------------------------------------------------+
+| Opción    | Descripción                                             |
++===========+=========================================================+
+| Plantillas| Contiene todas las plantillas generadas en Linkaform.   |
++-----------+---------------------------------------------------------+
+| Widgets   | Proporciona plantillas adaptadas a los diferentes tipos |
+|           | de datos utilizados.                                    |
++-----------+---------------------------------------------------------+
 
 En cuanto a las ``plantillas``, al ingresar a esta sección se visualiza
 un listado en el que se muestra la opción de ``agregar`` o ``modificar``

@@ -1065,7 +1065,7 @@ Puede agregar títulos dentro del bloque de código utilizando el parámetro ``:
         code ...
 
 
-Montrar números de línea
+Mostrar números de línea
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Puede agregar números de línea a bloques de código con el parámetro ``:linenos:``: ::
@@ -1117,7 +1117,157 @@ Si necesita explicar un fragmento de código en múltiples partes de la document
     
     .. include:: mi_codigo.txt
 
+.. note:: Para guardar su archivos, deberá ubicarlos en la carpeta ``codi`` dentro de la carpeta ``content``.
+
 Los parámetros mencionados anteriormente son los más utilizados. Si tiene alguna duda o necesita información adicional, consulte la documentación sobre `code-block <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#showing-code-examples/>`_ :octicon:`report;1em;sd-text-info`.
+
+.. _codigo-crudo:
+
+Código en crudo
+^^^^^^^^^^^^^^^
+
+El código en crudo es un tipo de marcado sin formato. Se utiliza la directiva ``raw`` junto al lenguaje que va a ejecutar. Esta directiva funciona como una medida provisional que permite omitir el marcado de reStructuredText. 
+
+El siguiente ejemplo permite incrustar código HTML en crudo, es decir, se ejecutará como un HTML normal en un navegador. 
+
+.. tab-set::
+
+    .. tab-item:: HTML en crudo
+
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+            </head>
+            <body>
+                <style>
+                    .ghost{
+                    block-size: 25rem;
+                    inline-size: 17.5rem;
+                    background-color: #de95d6;
+                    border-radius: 10rem 10rem 0 0;
+                    position: relative;
+                    }
+                    .ghost::before{
+                    content: '';
+                    position: absolute;
+                    inset-block-end: -3.5rem;
+                    background-color: transparent;
+                    color: transparent;
+                    inline-size: 5.9rem;
+                    block-size: 6rem;
+                    border-radius: 50%;
+                    box-shadow: 5.9rem 0, 11.6rem 0;
+                    }
+                    .eye{
+                    background-color: white;
+                    color: white;
+                    position: absolute;
+                    inset-inline-end: 1.5rem;
+                    inset-block-start: 5rem;
+                    inline-size: 5rem;
+                    block-size: 5rem;
+                    border-radius: 50%;
+                    box-shadow: -7rem 0;
+                    }
+                    .eye::before{
+                    content: '';
+                    inline-size: 2rem;
+                    block-size: 2rem;
+                    border-radius: 50%;
+                    inset-block-start: 1.5rem;
+                    inset-inline-end: .8rem;
+                    background-color: #0c63bf;
+                    color: #0c63bf;
+                    box-shadow: -7rem 0;
+                    position: absolute;
+                    }
+                </style>
+                <h2>Fantasma</h2>
+                <div class="ghost">
+                    <div class="eye"></div>
+                </div>
+            </body>
+            </html>
+
+    .. tab-item:: Estructura raw
+
+        .. code-block::
+
+            .. raw:: html
+            
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                </head>
+                <body>
+                    <style>
+                        .ghost{
+                        block-size: 25rem;
+                        inline-size: 17.5rem;
+                        background-color: #de95d6;
+                        border-radius: 10rem 10rem 0 0;
+                        position: relative;
+                        }
+                        .ghost::before{
+                        content: '';
+                        position: absolute;
+                        inset-block-end: -3.5rem;
+                        background-color: transparent;
+                        color: transparent;
+                        inline-size: 5.9rem;
+                        block-size: 6rem;
+                        border-radius: 50%;
+                        box-shadow: 5.9rem 0, 11.6rem 0;
+                        }
+                        .eye{
+                        background-color: white;
+                        color: white;
+                        position: absolute;
+                        inset-inline-end: 1.5rem;
+                        inset-block-start: 5rem;
+                        inline-size: 5rem;
+                        block-size: 5rem;
+                        border-radius: 50%;
+                        box-shadow: -7rem 0;
+                        }
+                        .eye::before{
+                        content: '';
+                        inline-size: 2rem;
+                        block-size: 2rem;
+                        border-radius: 50%;
+                        inset-block-start: 1.5rem;
+                        inset-inline-end: .8rem;
+                        background-color: #0c63bf;
+                        color: #0c63bf;
+                        box-shadow: -7rem 0;
+                        position: absolute;
+                        }
+                    </style>
+                    <h2>Fantasma</h2>
+                    <div class="ghost">
+                        <div class="eye"></div>
+                    </div>
+                </body>
+                </html>
+
+En caso de tener un archivo extenso puede utilizar la directiva file y adjuntar la URL de su archivo. Por ejemplo: ::
+
+    .. raw:: html
+        :file: /cod/archivo.html
+
+.. note:: Para guardar su archivo HTML, deberá ubicarlo en la carpeta ``codi`` dentro de la carpeta ``content``.
+
+.. caution:: Tenga cuidado con el uso excesivo de la directiva en crudo. Al permitir la omisión del marcado de reStructuredText hace que su página sea menos portátil, afectando el formato y además, representa un potencial agujero de seguridad.
+
+Para más detalles consulte la documentación sobre `transferencia de datos sin procesar <https://docutils.sourceforge.io/docs/ref/rst/directives.html#raw-data-pass-through/>`_ :octicon:`report;1em;sd-text-info`.
 
 Comentarios
 -----------
@@ -1147,4 +1297,236 @@ Aquí hay un ejemplo de como crear comentarios en reST:
 
 .. attention:: La correcta aplicación de la sangría es esencial para que los comentarios sean interpretados adecuadamente. Los comentarios deben tener la misma sangría que el texto.
 
-En esta sección, ha aprendido a crear sus archivos con la estructura y contenido adecuado. En la próxima sección, aprenderá a convertir sus archivos en formato reStructuredText (rst) a HTML. Esta conversión es un paso importante para publicar su documentación en línea y hacerla accesible a los lectores.
+Directorios
+===========
+
+.. note:: El siguiente contenido no es propio de restructuredtext ni de una extensión de Sphinx. 
+
+Para ilustrar de forma gráfica la estructura de su proyecto, utilice la herramienta ``tree`` basada exclusivamente en sistemas Unix y Linux. Este comando muestra la organización de directorios y archivos en forma de árbol, lo que facilita la navegación y la comprensión de la estructura de datos en el sistema.
+
+Por lo general, ya se encuentra instalado en la mayoría de las distribuciones de Linux. Para verificar si ``tree`` está instalado en su sistema, simplemente abre una terminal y ejecute: ::
+
+    tree --version
+
+Si ``tree`` está instalado, verá la versión del programa. Si no está instalado, puede seguir estos pasos para instalarlo en Debian/Ubuntu:
+
+1. Abra una terminal y ejecute: ::
+
+    sudo apt-get update
+    sudo apt-get install tree
+
+En el caso de tener una distribución de Linux diferente, puede consultar la siguiente `página <https://itslinuxfoss.com/install-tree-linux/>`_ :octicon:`report;1em;sd-text-info` para instalar la herramienta de acuerdo a su sistema operativo.
+
+.. note:: Si está utilizando un sistema operativo Windows y tiene instalado Git Bash, puede utilizar la terminal, ya que básicamente es una emulación del entorno Unix.
+
+Comandos de tree
+----------------
+
+Los comandos de ``tree`` permiten limitar la profundidad de visualización de los directorios. Hay variedad de comandos que puede consultar directamente en la terminal ejecutando: ::
+
+    man tree
+
+Algunos de los comandos más usados son los siguientes.
+
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| Comando                            | Descripción                                                                                              |
++====================================+==========================================================================================================+
+| $ tree                             | Muestra directorios y ficheros.                                                                          |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree -d                          | Muestra solo directorios.                                                                                |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree -L X                        | Muestra hasta X directorios de profundidad.                                                              |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree -f                          | Muestra los archivos con su respectiva ruta.                                                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree -a                          | Muestra todos los archivos, incluidos los ocultos.                                                       |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree /                           | Muestra un árbol de todo nuestro sistema.                                                                |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree -ugh                        | Muestra los ficheros con su respectivo propietario (-u), el grupo (-g) y el tamaño de cada archivo (-h). |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+| $ tree -H . -o nombre_archivo.html | Exporta el árbol del directorio a un archivo HTML.                                                       |
++------------------------------------+----------------------------------------------------------------------------------------------------------+
+
+Para crear un directorio siga los siguientes pasos.
+
+1. Ubique la carpeta deseada, por ejemplo: ::
+
+    cd lkf/documentation
+
+2. Ejecute el comando que necesite. En el siguiente ejemplo solo se muestran los directorios hasta el nivel 2.
+
+.. image:: /imgs/Contribución/5.png
+
+3. Una vez confirmado su directorio exporte el archivo a html. Para ello ejecute: :: 
+
+    -H . -o nombre_archivo.html
+
+.. image:: /imgs/Contribución/6.png
+
+.. important:: Al exportar su archivo HTML, por defecto se ubicará en la carpeta desde la cual esté consultando el directorio. Para evitar tener archivos HTML sueltos, deberá moverlo a la carpeta ``directorios``. Asegúrese de darle un nombre descriptivo a su archivo.
+
+4. Cuando tenga su directorio listo y desee colocarlo en un lugar específico, deberá hacer uso de :ref:`codigo-crudo` y realizar algunas modificaciones necesarias.
+
+El código html que se genera al exportar su directorio es el siguiente: 
+
+.. code-block:: html
+    :emphasize-lines: 8-24, 27, 49 - 60
+    :linenos:
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Made by 'tree'">
+    <meta name="GENERATOR" content="$Version: $ tree v2.0.2 (c) 1996 - 2022 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+    <title>Directory Tree</title>
+    <style type="text/css">
+    BODY { font-family : monospace, sans-serif;  color: black;}
+    P { font-family : monospace, sans-serif; color: black; margin:0px; padding: 0px;}
+    A:visited { text-decoration : none; margin : 0px; padding : 0px;}
+    A:link    { text-decoration : none; margin : 0px; padding : 0px;}
+    A:hover   { text-decoration: underline; background-color : yellow; margin : 0px; padding : 0px;}
+    A:active  { margin : 0px; padding : 0px;}
+    .VERSION { font-size: small; font-family : arial, sans-serif; }
+    .NORM  { color: black;  }
+    .FIFO  { color: purple; }
+    .CHAR  { color: yellow; }
+    .DIR   { color: blue;   }
+    .BLOCK { color: yellow; }
+    .LINK  { color: aqua;   }
+    .SOCK  { color: fuchsia;}
+    .EXEC  { color: green;  }
+    </style>
+    </head>
+    <body>
+        <h1>Directory Tree</h1><p>
+        <a href=".">.</a><br>
+        ├── <a href="./build/">build</a><br>
+        │   ├── <a href="./build/Contribuci%C3%B3n/">Contribución</a><br>
+        │   ├── <a href="./build/Desarrollador/">Desarrollador</a><br>
+        │   ├── <a href="./build/_images/">_images</a><br>
+        │   ├── <a href="./build/_sources/">_sources</a><br>
+        │   ├── <a href="./build/_sphinx_design_static/">_sphinx_design_static</a><br>
+        │   ├── <a href="./build/_static/">_static</a><br>
+        │   └── <a href="./build/_video_thumbnail/">_video_thumbnail</a><br>
+        ├── <a href="./content/">content</a><br>
+        │   ├── <a href="./content/Contribuci%C3%B3n/">Contribución</a><br>
+        │   ├── <a href="./content/Desarrollador/">Desarrollador</a><br>
+        │   └── <a href="./content/imgs/">imgs</a><br>
+        ├── <a href="./directorios/">directorios</a><br>
+        ├── <a href="./extensions/">extensions</a><br>
+        │   └── <a href="./extensions/cards/">cards</a><br>
+        ├── <a href="./locale/">locale</a><br>
+        │   └── <a href="./locale/en/">en</a><br>
+        └── <a href="./static/">static</a><br>
+        &nbsp;&nbsp;&nbsp; ├── <a href="./static/css/">css</a><br>
+        &nbsp;&nbsp;&nbsp; └── <a href="./static/img/">img</a><br>
+    <br><br><p>
+
+    20 directories
+
+    </p>
+        <hr>
+        <p class="VERSION">
+            tree v2.0.2 © 1996 - 2022 by Steve Baker and Thomas Moore <br>
+            HTML output hacked and copyleft © 1998 by Francesc Rocher <br>
+            JSON output hacked and copyleft © 2014 by Florian Sesser <br>
+            Charsets / OS/2 support © 2001 by Kyosuke Tokoro
+        </p>
+    </body>
+    </html>
+
+
+Deberá realizar las siguientes modificaciones:
+
+- Elimine los estilos (líneas 8-24).
+- Elimine el H1 (línea 27).
+- Elimine los créditos (líneas 49-60).
+- En las etiquetas ``a`` elimine la URL de referencia.
+
+Sus modificaciones se verán de la siguiente manera:
+
+.. tab-set::
+
+    .. tab-item:: Directory Tree
+
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta name="Author" content="Made by 'tree'">
+            <meta name="GENERATOR" content="$Version: $ tree v2.0.2 (c) 1996 - 2022 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+            <title>Directory Tree</title>
+            </head>
+            <body>
+                <a>.</a><br>
+                ├── <a>build</a><br>
+                │   ├── <a>Contribución</a><br>
+                │   ├── <a>Desarrollador</a><br>
+                │   ├── <a>_images</a><br>
+                │   ├── <a>_sources</a><br>
+                │   ├── <a>_sphinx_design_static</a><br>
+                │   ├── <a>_static</a><br>
+                │   └── <a>_video_thumbnail</a><br>
+                ├── <a>content</a><br>
+                │   ├── <a>Contribución</a><br>
+                │   ├── <a>Desarrollador</a><br>
+                │   └── <a>imgs</a><br>
+                ├── <a>directorios</a><br>
+                ├── <a>extensions</a><br>
+                │   └── <a>cards</a><br>
+                ├── <a>locale</a><br>
+                │   └── <a>en</a><br>
+                └── <a>static</a><br>
+                &nbsp;&nbsp;&nbsp; ├── <a>css</a><br>
+                &nbsp;&nbsp;&nbsp; └── <a>img</a><br>
+            </body>
+            </html>
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+
+            .. raw:: html
+
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <meta name="Author" content="Made by 'tree'">
+                <meta name="GENERATOR" content="$Version: $ tree v2.0.2 (c) 1996 - 2022 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+                <title>Directory Tree</title>
+                </head>
+                <body>
+                    <a>.</a><br>
+                    ├── <a>build</a><br>
+                    │   ├── <a>Contribución</a><br>
+                    │   ├── <a>Desarrollador</a><br>
+                    │   ├── <a>_images</a><br>
+                    │   ├── <a>_sources</a><br>
+                    │   ├── <a>_sphinx_design_static</a><br>
+                    │   ├── <a>_static</a><br>
+                    │   └── <a>_video_thumbnail</a><br>
+                    ├── <a>content</a><br>
+                    │   ├── <a>Contribución</a><br>
+                    │   ├── <a>Desarrollador</a><br>
+                    │   └── <a>imgs</a><br>
+                    ├── <a>directorios</a><br>
+                    ├── <a>extensions</a><br>
+                    │   └── <a>cards</a><br>
+                    ├── <a>locale</a><br>
+                    │   └── <a>en</a><br>
+                    └── <a>static</a><br>
+                    &nbsp;&nbsp;&nbsp; ├── <a>css</a><br>
+                    &nbsp;&nbsp;&nbsp; └── <a>img</a><br>
+                </body>
+                </html>
+
+Para obtener más información sobre los comandos de ``tree``, puede ejecutar el siguiente comando en su terminal: ::
+
+    man tree
+
+En esta sección, ha aprendido a crear sus archivos con la estructura y contenido básico de restructuredtext. En la próxima sección, aprenderá a mejorar su contenido con la ayuda de extensiones que le proporcionarán un valor potencial más atractivo y funcional.

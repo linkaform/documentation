@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .ghost{
+        block-size: 25rem;
+        inline-size: 17.5rem;
+        background-color: #de95d6;
+        border-radius: 10rem 10rem 0 0;
+        position: relative;
+        }
+        .ghost::before{
+        content: '';
+        position: absolute;
+        inset-block-end: -3.5rem;
+        background-color: transparent;
+        color: transparent;
+        inline-size: 5.9rem;
+        block-size: 6rem;
+        border-radius: 50%;
+        box-shadow: 5.9rem 0, 11.6rem 0;
+        }
+        .eye{
+        background-color: white;
+        color: white;
+        position: absolute;
+        inset-inline-end: 1.5rem;
+        inset-block-start: 5rem;
+        inline-size: 5rem;
+        block-size: 5rem;
+        border-radius: 50%;
+        box-shadow: -7rem 0;
+        }
+        .eye::before{
+        content: '';
+        inline-size: 2rem;
+        block-size: 2rem;
+        border-radius: 50%;
+        inset-block-start: 1.5rem;
+        inset-inline-end: .8rem;
+        background-color: #0c63bf;
+        color: #0c63bf;
+        box-shadow: -7rem 0;
+        position: absolute;
+        }
+    </style>
+    <h2>Fantasma</h2>
+    <div class="ghost">
+        <div class="eye"></div>
+    </div>
+</body>
+</html>

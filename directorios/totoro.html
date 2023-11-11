@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    :root{
+        --colorPelo: #6c6a5a;
+        --colorPeloClaro: #e7e0ac;
+        --colorGarra: #313853;
+        --colorHoja: #3b7e0c;
+    }
+    .totoro{
+        width: 300px;
+        height: 440px;
+        margin-top: 78px;
+        position: relative;
+        background-color: red;
+    }
+    .trebol{
+        position: absolute;
+        left: 101px;
+        width: 100px;
+        z-index: 2;
+    }
+    .hoja, .hoja:last-child{
+        background-color: var(--colorHoja);
+        border: 2px solid black;
+        width: 45px;
+    }
+    .hoja{
+        position: absolute;
+        right: 0;
+        height: 27px;
+        border-radius: 61% 33% 28% 59% / 27% 34% 56% 67%  ;
+        border-left: none;
+        z-index: 1;
+    }
+    .hoja:last-child{
+        position: absolute;
+        top: 2px;
+        left: 12px;
+        height: 25px;
+        transform: skew(32deg, -9deg);
+        border-right: none;
+        border-radius: 16% 83% 48% 28% / 0% 46% 49% 56%;
+        z-index: 0;
+    }
+    .hoja:last-child::before{
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -7px;
+        width: 3px;
+        height: 5px;
+        background-color: #1e4403;
+        transform: rotate(10deg) skew(0deg, -15deg);
+        border: 2px solid black;
+        border-radius: 50% 50% 100% 0% / 100% 100% 0% 0%;
+    }
+    .tallo{
+        position: absolute;
+        top: -32px;
+        left: 50px;
+        background-color: var(--colorHoja);
+        transform: skew(-5deg, -25deg);
+        border: 2px solid black;
+        border-bottom: none;
+        width: 10px;
+        height: 40px;
+        z-index: 2;
+    }
+    .cabeza{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 280px;
+        height: 220px;
+        border: 2px solid black;
+        border-bottom: none;
+        background-color: var(--colorPelo);
+        border-radius: 42% 42% 0% 0% / 100% 100% 0% 0%;
+        z-index: 1;
+    }
+    .oreja{
+        position: absolute;
+        transform: rotate(-12deg);
+        top: -78px;
+        left: 58px;
+        width: 40px;
+        height: 90px;
+        border: 2px solid black;
+        background-color: var(--colorPelo);
+        border-radius: 50% 50% 40% 40% / 80% 80% 10% 10%;
+        z-index: 1;
+    }
+    .oreja:last-child{
+        left: unset;
+        right: 58px;
+        transform: rotate(12deg);
+    }
+    .oreja::before{
+        content: "";
+        position: absolute;
+        top: 82px;
+        left: 7px;
+        width: 22px;
+        height: 20px;
+        border: 2px solid black;
+        background-color: var(--colorPelo);
+        border-top: none;
+        border-bottom: none;
+        transform: skew(0deg, -11deg);
+    }
+    .oreja:last-child:before{
+        transform: skew(0deg, 11deg);
+        left: 5px;
+        top: 83px;
+    }
+    .cara{
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 45px;
+    }
+    .ojo{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid black;
+        position: relative;
+    }
+    .ojo::before{
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+    }
+    .nariz{
+        width: 38px;
+        height: 12px;
+        background-color: var(--colorGarra);
+        border: 2px solid black;
+        border-radius: 50% 50% 50% 50% / 25% 25% 75% 75% ;
+        position: relative;
+    }
+    .nariz::before, .nariz::after{
+        content: "";
+        position: absolute;
+        border-top: 2px solid black;
+        border-radius: 50%;
+    }
+    .nariz::before{
+        top: -10px;
+        left: -9px;
+        width: 50px;
+        height: 10px;
+    }
+    .nariz::after{
+        bottom: -50px;
+        left: 9px;
+        width: 9px;
+        height: 6px;
+        transform: rotate(-16deg);
+    }
+    .fosa, .fosa::before{
+        position: absolute;
+        width: 8px;
+        height: 5px;
+        background-color: black;
+        border-radius: 50% 50% 30% 30% / 75% 75% 20% 20%;
+    }
+    .fosa{
+        top: 3px;
+        left: 4px;
+    }
+    .fosa::before{
+        content: "";
+        top: 0px;
+        left: 18px;
+    }
+    .bigote{
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        width: 65px;
+        height: 10px;
+        border-radius: 50% 20%;
+        border-top: 2px solid black;
+        z-index: 2;
+        transform: rotate(15deg);
+    }
+    .bigote::before,.bigote::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 75px;
+        height: 10px;
+        border-top: 2px solid black;
+        border-radius: 50% 20%;
+    }
+    .bigote::before{
+        top: 10px;
+        transform: rotate(-10deg);
+    }
+    .bigote::after{
+        top: 22px;
+        transform: rotate(-15deg);
+    }
+    .bigote:last-child{
+        left: unset;
+        right: 0;
+        border-radius: 20% 50%;
+        transform: rotate(-15deg);
+    }
+    .bigote:last-child::before{
+        left: unset;
+        right: 0;
+        transform: rotate(10deg);
+        border-radius: 20% 50%;
+    }
+    .bigote:last-child::after{
+        left: unset;
+        right: 0;
+        transform: rotate(15deg);
+        border-radius: 20% 50%;
+    }
+    .brazos{
+        position: absolute;
+        top: 55px;
+        left: -20px;
+        width: 340px;
+        height: 265px;
+        border: 2px solid black;
+        background-color: var(--colorPelo);
+        border-radius: 50% 50% 8% 8% / 80% 80% 18% 18% ;
+    }
+    .brazos::before{
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 18px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--colorPelo);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .garra{
+        position: absolute;
+        left: 2px;
+        top: 240px;
+        width: 8px;
+        height: 30px;
+        border: 2px solid black;
+        background-color: var(--colorGarra);
+        transform: skew(0deg, 40deg);
+        border-radius: 100% 0% 20% 80% / 0% 0% 100% 100%;
+        z-index: -1;
+    }
+    .garra::before{
+        content: "";
+        position: absolute;
+        right: -12px;
+        width: 7px;
+        height: 30px;
+        border: 2px solid black;
+        background-color: var(--colorGarra);
+        border-radius: 100% 0% 20% 80% / 0% 0% 100% 100%;
+    }
+    .garra:last-child{
+        left: unset;
+        right: 2px;
+        transform: skew(0deg, -40deg);
+        border-radius: 100% 0% 80% 20% / 0% 0% 100% 100% ;
+    }
+    .garra:last-child::before{
+        border-radius: 100% 0% 80% 20% / 0% 0% 100% 100% ;
+        left: -12px;
+    }
+    .abdomen{
+        position: absolute;
+        bottom: 5px;
+        width: 290px;
+        height: 300px;
+        border: 2px solid black;
+        background-color: var(--colorPeloClaro);
+        border-radius: 50%;
+        left: 5px;
+        z-index: 2;
+    }
+    .abdomen__sup, .abdomen__inf{
+        position: absolute;
+        width: 100%;
+    }
+    .abdomen__sup .marca, .abdomen__inf .marca{position: absolute;}
+    .abdomen__sup .marca:nth-child(2),.abdomen__sup .marca:nth-child(3){top: 32px;}
+    .abdomen__sup .marca:first-child, .abdomen__sup .marca:last-child{
+        top: 50px;
+        transform: scale(.8);
+    }
+    .abdomen__sup .marca:first-child{left: 55px;}
+    .abdomen__sup .marca:last-child{right: 55px;}
+    .abdomen__sup .marca:nth-child(2){left:112px;}
+    .abdomen__sup .marca:nth-child(3){right: 112px;}
+
+    .abdomen__inf .marca:nth-child(2), .abdomen__inf .marca:nth-child(4){top: 75px;}
+    .abdomen__inf .marca:nth-child(3){
+        top: 65px;
+        left: 142px;
+        transform: scale(1.1);
+    }
+    .abdomen__inf .marca:first-child, .abdomen__inf .marca:last-child{
+        top: 90px;
+        transform: scale(.8);
+    }
+    .abdomen__inf .marca:first-child{left: 35px;}
+    .abdomen__inf .marca:last-child{right: 35px;}
+    .abdomen__inf .marca:nth-child(2){left: 85px;}
+    .abdomen__inf .marca:nth-child(4){right: 85px;}
+    .marca::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 10px;
+        background-color: var(--colorPelo);
+        border-left-color: #a38e84;
+        border: 1px solid black;
+        border-left: none;
+        border-radius: 0% 100% 100% 0% / 100% 55% 45% 0% ;
+        transform: skew(0deg, 20deg);
+    }
+    .marca::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 20px;
+        height: 10px;
+        background-color: var(--colorPelo);
+        border: 1px solid black;
+        border-right: none;
+        border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% ;
+        transform: skew(0deg, -20deg);
+    }
+
+    .pierna{
+        position: absolute;
+        bottom: 0;
+        width: 150px;
+        height: 250px;
+        background-color: var(--colorPelo);
+        border: 2px solid black;
+        border-top: none;
+        z-index: 1;
+        left: 0;
+        border-radius: 12% 0% 3% 55% / 40% 0% 3% 55%;
+    }
+
+    .pierna:last-child{
+        left: unset;
+        right: 0;
+        border-radius: 0% 12% 55% 3% / 0% 40% 55% 3% ;
+    }
+    .pie, .pierna:last-child .pie{
+        position: absolute;
+        bottom: -1.1px;
+        width: 50px;
+        height: 18px;
+        border: 2px solid black;
+        border-top: none;
+        background-color: var(--colorPelo);
+        z-index: 1;
+    }
+    .pie{
+        left: 35px;
+        border-right: none;
+        border-radius: 31% 0% 0% 10% / 82% 0% 0% 10%;
+    }
+    .pierna:last-child .pie{
+        left: unset;
+        right: 35px;
+        border-left: none;
+        border-radius: 0% 30% 10% 0% / 0% 80% 10% 0% ;
+    }
+
+    .pezunia{
+        position: absolute;
+        bottom: -1px;
+        left: -20px;
+        width: 38px;
+        height: 7px;
+        border: 2px solid black;
+        background-color: var(--colorGarra);
+        transform: skew(30deg, 0deg) rotate(-18deg);
+        border-radius: 90% 10% 10% 90% / 48% 50% 49% 51%;
+    }
+    .pezunia::before, .pezunia::after{
+        content: "";
+        position: absolute;
+        border: 2px solid black;
+        background-color: var(--colorGarra);
+        border-radius: 90% 10% 10% 90% / 48% 50% 49% 51%;
+    }
+    .pezunia::before{
+        bottom: -9px;
+        left: 14px;
+        width: 32px;
+        height: 6px;
+    }
+    .pezunia::after{
+        bottom: -15px;
+        left: 28px;
+        width: 28px;
+        height: 4px;
+    }
+    .pierna:last-child .pezunia{
+        left: unset;
+        right: -20px;
+        border-radius: 10% 90% 90% 9% / 50% 50% 50% 50% ;
+        transform: skew(-30deg, 0deg) rotate(18deg);
+    }
+    .pierna:last-child .pezunia::before, .pierna:last-child .pezunia::after{
+        border-radius: 10% 90% 90% 9% / 50% 50% 50% 50% ;
+    }
+    .pierna:last-child .pezunia::before{
+        left: unset;
+        right: 14px;
+    }
+    .pierna:last-child .pezunia::after{
+        left: unset;
+        right: 28px;
+    }
+</style>
+
+<body>
+    <div class="totoro">
+        <div class="trebol">
+            <div class="hoja"></div>
+            <div class="tallo"></div>
+            <div class="hoja"></div>
+        </div>
+        <div class="cabeza"></div>
+        <div>
+            <div class="oreja"></div>
+            <div class="oreja"></div>
+        </div>
+        <div class="cara">
+            <div class="ojo"></div>
+            <div class="nariz">
+                <div class="fosa"></div>
+            </div>
+            <div class="ojo"></div>
+        </div>
+        <div>
+            <div class="bigote"></div>
+            <div class="bigote"></div>
+        </div>
+        <div class="brazos">
+            <div class="garra"></div>
+            <div class="garra"></div>
+        </div>
+        <div class="abdomen">
+            <div class="abdomen__sup">
+                <div class="marca"></div>
+                <div class="marca"></div>
+                <div class="marca"></div>
+                <div class="marca"></div>
+            </div>
+            <div class="abdomen__inf">
+                <div class="marca"></div>
+                <div class="marca"></div>
+                <div class="marca"></div>
+                <div class="marca"></div>
+                <div class="marca"></div>
+            </div>
+        </div>
+        <div>
+            <div class="pierna">
+                <div class="pie">
+                    <div class="pezunia"></div>
+                </div>
+            </div>
+            <div class="pierna">
+                <div class="pie">
+                    <div class="pezunia"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

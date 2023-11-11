@@ -1,11 +1,11 @@
 ==================
-Desarrollo de PDFS
+Desarrollo de PDFs
 ==================
 
 .. toctree::
     :hidden:
 
-    Bases_LinkaForm
+    Bases_Linkaform
     Herramientas_sugeridas
     Configuración_Django/index
     RML/index
