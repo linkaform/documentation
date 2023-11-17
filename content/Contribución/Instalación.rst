@@ -136,7 +136,38 @@ El contenido principal se encuentra en la rama ``develop``. Por defecto, usted s
     git switch develop
 
 
-Una vez que comience sus modificaciones y esté seguro de sus cambios haga ``push`` en la rama ``develop``.
+Una vez que comience sus modificaciones y esté seguro de sus cambios, se tiene que realizar un ``commit`` para luego poder hacer  ``push`` en la rama ``develop``.
+
+Para hacer un ``commit`` uno debe de primero agregar los archivos que desea agregar a dicho commit, para ello puede utilizar el comando ``git status`` para ver que archivos han sufrido cambios
+
+.. code-block::
+
+    git status
+
+Esto te mostrará la lista de archivos que ha sufirdo cambios, de esta lista debes de agregar el o los archivos que deseas subir al repositorio, con ``git add``
+
+.. code-block::
+
+    git add nombre_del_archivo.rst
+
+Posterior mente hacer un commit indicando que cambios ser realizaron. Esto debe de ser algo breve que explique a un alto nivel que ser realizo.
+
+.. code-block::
+
+    git commit -m 'Se extendio la explicacion de como hacer un commit en github'
+
+.. tip:: Si requiere hacer una explicacion mas amplia puede correr el codigo ``git commit`` a secas y darle enter lo que abrirar un editor de texto donde puede poner mas detalle sobre tu commit.
+
+
+Una vez realizado el commit, SIEMPRE es bueno hacer un ``pull`` de la rama en que se esta trabajando para asegurarnos que estamos trabajando sobre la ultima versión antes de subir nuestros cambios ya que de no estar en la ultima versión git nos puede marcar un error.
+
+.. code-block::
+
+    git pull origin develop
+
+.. tip:: Puedes cambiar el nombre de la rama ``develop`` por la palabra ``HEAD`` y automaticamente git hara el pull de la rama actual, esto funciona para cualquier comando que haga referencia de la rama en que se esta trabajando.
+
+Una ver realizado el commit y luego el pull es hora de hacer un push a la rama y publicar nuestros cambios en el repositorio.
 
 .. code-block::
 
