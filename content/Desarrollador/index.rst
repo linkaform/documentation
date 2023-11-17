@@ -8,4 +8,5 @@ Documentación para desarrolladores
 
     Módulos/index
     PDF/index
+    PDFs/index
     Reportes/index
