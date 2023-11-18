@@ -7,6 +7,4 @@ Documentación para desarrolladores
     :titlesonly:
 
     Módulos/index
-    PDF/index
     PDFs/index
-    Reportes/index

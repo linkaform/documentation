@@ -24,32 +24,10 @@ Utilice distintos niveles de encabezado para estructurar su texto en secciones y
 
 .. tip:: Al comienzo de una sección, inicie con un párrafo introductorio que oriente al lector y le ayude a confirmar que ha llegado a la página correcta.
 
-Imágenes
---------
-
-Incorporar algunas imágenes para ilustrar su texto beneficia a los lectores al facilitar la comprensión de su contenido. Sin embargo, es importante evitar la inclusión excesiva de imágenes.
-
-.. caution:: No es necesario ilustrar cada paso y función, ya que esto puede sobrecargar su página.
-
-Capturas de pantalla
-^^^^^^^^^^^^^^^^^^^^
-
-Cuando deba incluir capturas de pantalla en su documentación, asegúrese de cumplir con las siguientes pautas:
-
-- Las imágenes deben ser coherentes con el contenido circundante.
-
-- Ajuste el tamaño de las capturas para mostrar los detalles esenciales.
-
-- Evite capturar la pantalla completa y si es necesario, edite las imágenes para resaltar lo que se quiere demostrar.
-
-- Utilice texto alternativo con nombres cortos (máximo una línea) y evite que sea una repetición de una oración o título previamente mencionado.
-
-.. important:: Para editar sus imágenes, utilice Paint o puede acceder a `jspaint <https://jspaint.app/>`_ :octicon:`report;1em;sd-text-info`. Utilice la herramienta de dibujo con el color rojo para resaltar áreas específicas, y si necesita señalar un elemento, puede utilizar una imagen genérica llamada ``flecha_roja.png`` ubicada en ``documentation/content/imgs``.
-
 Escritura
 ---------
 
-En la documentación, es más probable que los lectores busquen información específica al explorar el contenido. Por lo tanto, es importante recordar que la documentación de usuario tiene como propósito informar y describir, en lugar de convencer o promocionar.
+En la documentación, es más probable que los lectores busquen información específica al explorar el contenido. Por lo tanto, es importante recordar que la documentación de usuario tiene como propósito informar, describir y orientar, en lugar de convencer o promocionar.
 
 Tiempos gramaticales
 ^^^^^^^^^^^^^^^^^^^^
@@ -70,7 +48,7 @@ Cuando se dirija al usuario y proporcione descripciones, pasos e instrucciones, 
 
         Incorrecto: La nueva versión del software se lanza la próxima semana.
 
-También asegúrese de cumplir los siguientes puntos:
+También asegúrese de cumplir las siguientes pautas en su redacción:
 
 - **Claridad y Simplicidad**: Utilice un lenguaje claro y sencillo para explicar conceptos técnicos. Por ejemplo: En lugar de *la interfaz de programación de aplicaciones* utilice *herramienta de programación*.
 
@@ -80,6 +58,50 @@ También asegúrese de cumplir los siguientes puntos:
 
 - **Uso de Ejemplos y Casos de Uso**: Utilice  ejemplos prácticos que ilustren cómo utilizar la tecnología o solución.
 
-.. tip:: Recuerde tener un equilibrio entre texto e imágenes.
+.. Tip:: Si escribe directamente en reStructuredText (rst), tenga cuidado con los errores ortográficos. Puede utilizar alguna herramienta externa o una extensión de su entorno de desarrollo, como |vsc| :octicon:`report;1em;sd-text-info`, para ayudar en la detección y corrección de errores. 
+
+Imágenes
+--------
+
+Incorporar algunas imágenes para ilustrar su texto beneficia a los lectores al facilitar la comprensión de su contenido. Sin embargo, es importante evitar la inclusión excesiva de imágenes.
+
+.. caution:: No es necesario ilustrar cada paso y función. Recuerde mantener un equilibrio adecuado entre el contenido de texto y las imágenes para garantizar una comprensión efectiva. 
+
+Capturas de pantalla
+^^^^^^^^^^^^^^^^^^^^
+
+Cuando deba incluir capturas de pantalla en su documentación, asegúrese de cumplir con las siguientes pautas:
+
+- Las imágenes deben ser coherentes con el contenido circundante.
+
+- Ajuste el tamaño de las capturas para mostrar los detalles esenciales.
+
+- Si la imagen es pequeña, evite centrarla y ajústela a la izquierda.
+
+- Evite capturar la pantalla completa y si es necesario, edite las imágenes para resaltar lo que se quiere demostrar.
+
+.. tip:: Si necesita señalar un elemento, puede utilizar la imagen genérica llamada ``flecha_roja.png`` ubicada en ``documentation/content/imgs/flecha_roja.png``, por ejemplo:
+
+    .. image:: /imgs/Contribución/22.png
+
+- Utilice una notación numérica para explicar un proceso.
+
+.. tip:: Para capturas de pantalla que involucren pasos a seguir utilice colores adecuados, por ejemplo, utilice el rojo para resaltar áreas específicas:
+
+    .. image:: /imgs/Contribución/23.png
+
+- Asegúrese de utilizar datos ficticios y bajo ningún motivo, utilice cuentas pertenecientes a clientes reales. Puede solicitar una cuenta especial para pruebas.
+
+- Utilice texto alternativo con nombres cortos (máximo una línea) y evite que sea una repetición de una oración o título previamente mencionado.
+
+.. important:: Para editar sus imágenes, utilice Paint o puede acceder a `jspaint <https://jspaint.app/>`_ :octicon:`report;1em;sd-text-info`. Utilice la herramienta de dibujo con el color rojo para resaltar áreas específicas, y si necesita señalar un elemento, puede utilizar una imagen genérica llamada ``flecha_roja.png`` ubicada en ``documentation/content/imgs``.
+
+- Asegúrese de utilizar nombres cortos y descriptivos para identificar sus imágenes (puede utilizar una numeración) y guardelas en una carpeta exclusiva a la sección en la que está trabajando.
 
 Es momento de iniciar con la configuración de su entorno, o en su defecto, comience por escribir sus primeros archivos rst.
+
+.. LIGA EXTERNA
+
+.. |vsc| raw:: html
+
+   <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-spanish" target="_blank">Spanish - Code Spell Checker</a>

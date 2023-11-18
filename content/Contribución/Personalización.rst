@@ -778,7 +778,7 @@ Demuestra una aplicación de gradientes para registrar `nodos <https://graphviz.
                     ];
                 }
 
-Hay mucho más contenido que puede explorar y probar. Consulte este `enlace <https://graphviz.org//>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
+Hay más contenido que puede explorar y probar. Consulte esta `liga <https://graphviz.org//>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
 
 Sphinx_design
 =============
@@ -792,7 +792,7 @@ Grids
 
 Los Grids (cuadrillas) se basan en un sistema de 12 columnas, que se pueden adaptar al tamaño de la pantalla de visualización. Para utilizar grids utilice la directiva ``.. grid::``.
 
-Grids utiliza tres opciones de `directivas <https://sphinx-design.readthedocs.io/en/furo-theme/grids.html#grid-options/>`_ :octicon:`report;1em;sd-text-info`. A continuación, se presenta un ejemplo de grids anidadas para crear diseños complejos y adaptables.
+Grids utiliza tres opciones de directivas, consulte todas en la siguiente `página <https://sphinx-design.readthedocs.io/en/furo-theme/grids.html#grid-options/>`_ :octicon:`report;1em;sd-text-info`. A continuación, se presenta un ejemplo de grids anidadas para crear diseños complejos y adaptables.
 
 .. tab-set::
 
@@ -879,11 +879,11 @@ Cards
 
 Las cards (tarjetas) son contenedores de información de un solo tema. Son flexibles y extensibles; se puede formatear con componentes que incluyen encabezados y pies de página, hipervínculos, títulos e imágenes. 
 
-Una Card básica utiliza la directiva ``.. card::``. De la misma manera, Cards proporciona opciones para personalizar sus tarjetas. Puede consultarlas `aquí <https://sphinx-design.readthedocs.io/en/furo-theme/cards.html#card-options/>`_ :octicon:`report;1em;sd-text-info`. 
+Una Card básica utiliza la directiva ``.. card::``. De la misma manera, Cards proporciona opciones para personalizar sus tarjetas. Puede todas en el esta `sección <https://sphinx-design.readthedocs.io/en/furo-theme/cards.html#card-options/>`_ :octicon:`report;1em;sd-text-info`. 
 
 El siguiente ejemplo es una tarjeta con un encabezado, título, contenido y pie de página.
 
-Todo el contenido antes del simbolo ``^^^`` se considera encabezado, y todo el contenido después de ``+++`` se considera pie de página.
+Todo el contenido antes del símbolo ``^^^`` se considera encabezado, y todo el contenido después de ``+++`` se considera pie de página.
 
 .. tab-set::
 
@@ -1108,6 +1108,8 @@ Estos son algunos ejemplos:
                 :expand:
 
 Consulte `Bootstrap <https://getbootstrap.com/docs/5.0/components/buttons/>`_ :octicon:`report;1em;sd-text-info` para más detlles.
+
+.. _icons:
 
 Icons
 -----
@@ -2073,3 +2075,4 @@ Podrá encontrar el archivo en el primer nivel del repositorio. A continuación,
     pygments_dark_style = "zenburn"
     graphviz_output_format = 'png' 
 
+¡Felicitaciones! 🎉 Si ha seguido la documentación secuencialmente, ahora es capaz de realizar contribuciones a Linkaform. Si tiene alguna duda, puede regresar al contenido o consultar la documentación oficial de la sección de su preferencia. También puede revisar la siguiente sección que aborda errores comunes.

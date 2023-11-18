@@ -350,19 +350,23 @@ Las tablas simples son más fáciles de escribir, pero tienen limitaciones. Debe
 
 Si necesita información más detallada acerca de las tablas, puede consultar la documentación disponible en `Tables <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#tables/>`_ :octicon:`report;1em;sd-text-info`.
 
+.. _etiqueta:
+
 Hipervínculos
 =============
 
 Enlaces externos
 ----------------
 
-Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ejemplo:
+Puede crear hipervínculos a sitios externos de dos maneras sencillas, utilizando una función especial de reST o empleando código HTML.
+
+Para utilizar la función que ofrece reST, puede hacerlo de la siguiente manera:
 
 .. tab-set::
 
     .. tab-item:: Ejemplo
 
-        `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ .
+        `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ :octicon:`report;1em;sd-text-info`.
 
     .. tab-item:: Estructura
 
@@ -370,23 +374,44 @@ Puede crear hipervínculos a sitios externos, como se muestra en el siguiente ej
 
             `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_.
 
+.. important:: Tenga en cuenta que debe existir un espacio entre el texto del enlace y la apertura ``<`` de la URL.
 
+.. note:: Se recomienda el uso del :ref:`icons` para destacar al usuario que se trata de un enlace.
 
-.. important:: Tenga en cuenta que debe existir un espacio entre el texto del enlace y la apertura `<` de la URL.
+La función que ofrece reST está está limitada y no hay un atributo que permita abrir el enlace en una nueva página por defecto. Si necesita esta funcionalidad, considere el uso de HTML de la siguiente manera:
 
-.. note:: 
-    Se recomienda el uso del icono de información para destacar al usuario que se trata de un enlace, como se muestra en el siguiente ejemplo: 
+.. tab-set::
 
-    `Documentación oficial de Sphinx <https://www.sphinx-doc.org/en/master/>`_ :octicon:`report;1em;sd-text-info`. 
+    .. tab-item:: Ejemplo
+
+        |nombre_etiqueta| :octicon:`report;1em;sd-text-info`.
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            :caption: Establezca la etiqueta
+
+            .. |nombre_etiqueta| raw:: html
+
+                <a href="https://www.sphinx-doc.org/en/master" target="_blank">Documentación oficial de Sphinx</a>
+
+        .. code-block::
+            :caption: Haga referencia a la etiqueta
+
+            |nombre_etiqueta| :octicon:`report;1em;sd-text-info`.
+
+Observe que simplemente debe crear una etiqueta HTML con el atributo target seguido del nombre que necesita, para después llamarla entre símbolos de barra.
+
+.. note:: Si utiliza enlaces externos con ayuda de HTML, se recomienda colocar las ligas al final de su documento ``rst`` y especificar que se trata de ligas externas mediante un comentario. Esto facilita una mejor organización y permite un mantenimiento más efectivo en posteriores ocasiones.
 
 .. _mi-etiqueta-de-referencia:
 
 Enlaces internos
 ----------------
 
-Si desea enlazar a otra parte de su propia documentación, puede hacerlo utilizando una función reST especial proporcionada por Sphinx. 
+Si desea enlazar a otra parte de su propia documentación, puede hacerlo utilizando dos funciones especiales de reST proporcionada por Sphinx.
 
-Para que esto funcione correctamente, los nombres de las etiquetas deben ser únicos, es decir, si coloca una etiqueta directamente antes del título de una sección, puede hacer referencia a esto. Por ejemplo:
+Para que la función de reST opere correctamente, los nombres de las etiquetas deben ser únicos. Si coloca una etiqueta directamente antes del título de una sección, esta función tomará ese nombre por defecto y lo mostrará; es decir, no podrá modificar el nombre que quiera presentar. Por ejemplo:
 
 .. tab-set::
 
@@ -415,6 +440,31 @@ Para que esto funcione correctamente, los nombres de las etiquetas deben ser ún
     Al hacer referencia a una etiqueta, se debe omitir el guion bajo.
 
     Si necesita información más detallada acerca de hipervínculos, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/referencing.html#ref-role/>`_ :octicon:`report;1em;sd-text-info`.
+
+La otra opción de hipervínculo interno es utilizando etiquetas personalizadas, como se muestra a continuación:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        Se refiere a la sección misma, ver `Personaliza <#etiqueta>`_ :octicon:`report;1em;sd-text-info`
+
+    .. tab-item:: Estructura
+
+        .. code-block::
+            :caption: Establezca la etiqueta
+
+            .. _etiqueta:
+
+            Enlaces internos
+            ----------------
+
+        .. code-block::
+            :caption: Haga referencia a la etiqueta
+
+            Se refiere a la sección misma, ver `Personaliza <#etiqueta>`_ :octicon:`report;1em;sd-text-info`
+
+.. important:: Esta función es más cómoda y permite personalizar el mensaje del hipervínculo. El nombre de la etiqueta debe ser una sola palabra; no puede incluir espacios, por ejemplo, ``nombre_etiqueta`` debe ser ``etiqueta``.
 
 Directivas
 ==========
@@ -1530,3 +1580,10 @@ Para obtener más información sobre los comandos de ``tree``, puede ejecutar el
     man tree
 
 En esta sección, ha aprendido a crear sus archivos con la estructura y contenido básico de restructuredtext. En la próxima sección, aprenderá a mejorar su contenido con la ayuda de extensiones que le proporcionarán un valor potencial más atractivo y funcional.
+
+
+.. LIGAS EXTERNAS
+
+.. |nombre_etiqueta| raw:: html
+
+    <a href="https://www.sphinx-doc.org/en/master" target="_blank">Documentación oficial de Sphinx</a>

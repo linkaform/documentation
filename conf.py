@@ -61,6 +61,7 @@ html_theme_options = {
         "color-brand-primary": "#0c1c49",
         "color-brand-content": "#2c3e50",
         "color-background-hover": "#e1e2e6",
+        'font-stack': "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu",
     },
     'dark_css_variables': {
         "color-background-primary": "#1c262d", 
@@ -69,8 +70,8 @@ html_theme_options = {
         "color-brand-primary": "#FFFFFF",
         "color-brand-content": "#E0E0E0",
         "color-header-text": "#FFFFFF",
+        'font-stack': "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu",
     },
-    'font-stack': "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu",
 }
 pygments_style = "lightbulb"
 pygments_dark_style = "zenburn"

@@ -13,12 +13,12 @@ Linkaform utiliza ``GitHub``, que se basa en ``Git``, para administrar sus repos
 
 Si ya dispone de una cuenta en GitHub y tiene Git instalado, puede omitir los primeros pasos y continuar con el paso 6 en :ref:`git`, comenzando así a realizar cambios locales en la documentación. De lo contrario, siga las siguientes instrucciones para preparar su entorno.
 
+.. _cuenta:
+
 GitHub
 ------
 
 A continuación, se presentan configuraciones básicas sobre GitHub. 
-
-.. _GitHub:
 
 1. Cree una cuenta en `GitHub <https://github.com/join/>`_ :octicon:`report;1em;sd-text-info`. 
 
@@ -83,7 +83,7 @@ Siga los siguientes pasos para la instalación de Git en Windows o Linux:
 
 Después de la instalación, las configuraciones básicas de Git son las mismas en Windows y Linux.
 
-5. Configure Git para su identificacion como autor de futuras contrubuciones.
+5. Configure Git para su identificación como autor de futuras contribuciones.
 
 .. code-block::
     :caption: Nombre de usuario
@@ -95,7 +95,7 @@ Después de la instalación, las configuraciones básicas de Git son las mismas 
 
     git config --global user.email "su@email.com"
 
-.. important:: Utilice el mismo correo electrónico que utilizó para registrarse en :ref:`GitHub`.
+.. important:: Utilice el mismo correo electrónico que utilizó para registrarse en :ref:`cuenta` :octicon:`report;1em;sd-text-info`.
 
 .. youtube:: wHh3IgJvXcE
     :aspect: 16:9
@@ -123,7 +123,7 @@ Después de la instalación, las configuraciones básicas de Git son las mismas 
 
 .. code-block::
 
-    git clone git@github.com:linkaform/documentation.git
+    git clone git@github.com:Linkaform/documentation.git
 
 El contenido principal se encuentra en la rama ``develop``. Por defecto, usted se encontrará en la rama ``main``. Para cambiar de rama puede usar ``checkout`` o ``switch``:
 
@@ -249,8 +249,8 @@ La instalación de Docker en Linux es más compleja y puede variar según la dis
 
 .. _generar_HTML:
 
-Generación de documentación
----------------------------
+Generar documentación
+---------------------
 
 Al tener su entorno listo y configurado correctamente, pruebe el contenido que se encuentra en el repositorio.
 

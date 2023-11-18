@@ -170,7 +170,7 @@ Párrafos
 
 Para incluir párrafos, utilice la etiqueta ``<para>``. Puede incluir texto directamente dentro de la etiqueta o utilizar variables y expresiones de Django para mostrar contenido dinámico.
 
-La etiqueta ``<para>`` utiliza el atributo ``style`` para especificar el nombre de un `estilo <#estilo>`_ :octicon:`report;1em;sd-text-info` definido y usarla para aplicar estilos, similar al atributo ``class`` en HTML.
+La etiqueta ``<para>`` utiliza el atributo ``style`` para especificar el nombre de un estilo (`paraStyle <#estilo>`_ :octicon:`report;1em;sd-text-info`) y usarla posteriormente para aplicar estilos, similar al atributo ``class`` en HTML.
 
 .. code-block:: xml
     :linenos:
@@ -182,9 +182,9 @@ La etiqueta ``<para>`` utiliza el atributo ``style`` para especificar el nombre 
 Tablas
 ------
 
-Definir una tabla en su documento PDF es posible utilizando la etiqueta <blockTable>. Su uso es principalmente para organizar y mostrar datos en forma de filas y columnas. 
+Definir una tabla en su documento PDF es posible utilizando la etiqueta ``<blockTable>``. Su uso es principalmente para organizar y mostrar datos en forma de filas y columnas. 
 
-Los atributos de <blockTable> son:
+Los atributos de ``<blockTable>`` son:
 
 +--------------+------------------------------------------------------------------------------------------------+
 | Atributo     | Descripción                                                                                    |
@@ -200,7 +200,7 @@ Los atributos de <blockTable> son:
 |              | debido al contenido.                                                                           |
 +--------------+------------------------------------------------------------------------------------------------+
 
-.. note:: El nombre del estilo de <blockTable> permite aplicar `estilos personalizados <#type>`_ :octicon:`report;1em;sd-text-info` a su tabla. 
+.. note:: El nombre del estilo (Style) permite aplicar estilos personalizados utilizando `<blockTableStyle> <#table>`_ :octicon:`report;1em;sd-text-info`
 
 Una tabla se compone de dos etiquetas principales: ``<tr>`` y ``<td>``. Estas se utilizan para estructurar y dar forma a las tablas, de manera similar a HTML. Sin embargo, en RML, se utilizan las etiquetas ``<tr>`` y ``<td>`` dentro de la etiqueta ``<blockTable>`` para definir las filas y celdas de la tabla, respectivamente.
 
@@ -270,7 +270,7 @@ Utilizar imágenes es posible utilizando la etiqueta ``<imageAndFlowables>``. Es
         imageSide="left"
     >
 
-.. note:: Si necesita incluir imágenes externas en su documento, obtenga la URL pública almacenada por Linkaform e inclúyala en ``imageName``.
+.. note:: Si necesita incluir imágenes externas en su documento, obtenga la URL pública almacenada por Linkaform e integre en ``imageName``.
 
 Estilos
 =======
@@ -545,22 +545,21 @@ Establece el color que se utilizará para el texto en un bloque de la tabla. Se 
         stop="11" 
     />
 
-
 blockValign
 ^^^^^^^^^^^
 
 Establece cómo se alinea el contenido de un bloque de celdas en dirección vertical. Se puede identificar por sus atributos, que son los siguientes:
 
-+------------+-------------------------------------------------------------------------------------------------+
-| Atributo   | Descripción                                                                                     |
-+============+=================================================================================================+
-| value      | Atributo obligatorio. Establece cómo se alinea el contenido de un bloque de celdas en su        |
-|            | tabla en dirección vertical. Puede ser TOP, MIDDLE, o BOTTOM, el valor predeterminado es BOTTOM.|                                                                                     |
-+------------+-------------------------------------------------------------------------------------------------+
-| start      | Atributo opcional. Indica dónde comienza la secuencia de líneas punteadas o discontinuas.       |
-+------------+-------------------------------------------------------------------------------------------------+
-| stop       | Atributo opcional. Indica dónde termina la secuencia de líneas punteadas o discontinuas.        |
-+------------+-------------------------------------------------------------------------------------------------+
++-------------+---------------------------------------------------------------------------------------------+
+| Atributo    | Descripción                                                                                 |
++=============+=============================================================================================+
+| colorName   | Atributo obligatorio. Establece cómo se alinea el contenido de un bloque de celdas en su    |
+|             | tabla en dirección vertical. Puede ser TOP, MIDDLE, o BOTTOM (predeterminado).              |
++-------------+---------------------------------------------------------------------------------------------+
+| start       | Atributo opcional. Indica dónde comienza la secuencia de líneas punteadas o discontinuas.   |
++-------------+---------------------------------------------------------------------------------------------+
+| stop        | Atributo opcional. Indica dónde termina la secuencia de líneas punteadas o discontinuas.    |
++-------------+---------------------------------------------------------------------------------------------+
 
 .. code-block:: xml
     :linenos:

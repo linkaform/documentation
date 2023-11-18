@@ -39,7 +39,7 @@ Observe que dentro de su repositorio también existen varias carpetas y en cada 
 
 .. note:: Debe crear una carpeta específica para su proyecto, utilizando el nombre del cliente o empresa como identificador.
 
-.. estructura:
+.. _estructura:
 
 Estructura de archivos
 ======================
@@ -274,6 +274,7 @@ La opción ``Agregar plantilla`` también se muestra un el formulario anterior. 
 
         **Properties**: —
 
+.. important:: Tenga en cuenta utilizar un navegador diferente a la página de Linkaform para evitar posibles conflictos con las cookies.
 
 .. _vincular:
 
@@ -289,7 +290,7 @@ Single record
 
 Siga las siguientes instrucciones para configurar la forma y vincular su documento.  
 
-1. Verifique que la plantilla esté configurada para funcionar como un single record (registro único). Para lograr esto, ajuste el atributo `type <#type>`_ :octicon:`report;1em;sd-text-info` en la interfaz de administración de Django. 
+1. Verifique que la plantilla esté configurada para funcionar como un single record (registro único). Para lograr esto, ajuste el atributo `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` en la interfaz de administración de Django. 
 
 2. Inicie sesión en producción o preproducción con sus credenciales.
 
@@ -333,7 +334,7 @@ Multiple record
 
 El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los siguientes pasos para su configuración:
 
-1. Verifique que la configuración del `type <#type>`_ :octicon:`report;1em;sd-text-info` esté establecida en multiple records.
+1. Verifique que la configuración del `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` esté establecida en multiple records.
 
 2. Inicie sesión en producción o preproducción con sus credenciales.
 
@@ -349,6 +350,11 @@ El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los 
 
 .. image:: /imgs/PDF/9.png
   :align: center
+
+
+.. important:: Consideraciones sobre navegación 
+
+    Tenga en cuenta utilizar un navegador diferente al administrador de Django. Dado que ambos entornos comparten la misma autenticación, es aconsejable abrir el Administrador de Django en un navegador y de forma separada, acceder al entorno de formularios en otro navegador. Esto puede evitar posibles conflictos y asegurar un funcionamiento más fluido.
 
 Descargar PDF
 =============
@@ -409,5 +415,11 @@ Una vez seleccionado la opción, se desplegará la siguiente interfaz. Siga el s
 
 .. image:: /imgs/PDF/14.png
   :align: center
+
+.. tip:: Recomendación
+
+    Al haber establecido la configuración entre el documento PDF y el formulario, si al generar el archivo no se descarga como se espera, se sugiere seguir el siguiente procedimiento:
+
+    1. Edite el formulario y reenvíe los datos, incluso si no se realizan modificaciones en los registros existentes.
 
 En esta sección, ha aprendido conceptos necesarios sobre un documento PDF. También ha aprendido a configurar su entorno de trabajo. En la siguiente sección, se abordará cómo comenzar a preparar su documento utilizando el lenguaje de marcado de informes (Report Markup Language, RML) desde el código.

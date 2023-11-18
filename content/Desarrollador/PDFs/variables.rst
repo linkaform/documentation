@@ -20,7 +20,9 @@ Las variables permiten almacenar y representar información. En las plantillas d
 .. code-block:: xml
     :linenos:
 
-    {{ variable }}
+    <story>
+        {{ variable }}
+    <story>
 
 .. important:: El nombre de una variable debe seguir la convención |convención|. 
 
@@ -95,9 +97,11 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting %}                                                                        |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting %}                                                                    |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | !=          | No es igual a                                                                                |
@@ -105,29 +109,35 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting != 1 %}                                                                   |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting != 1 %}                                                               |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | <           | Menor que                                                                                    |
 |             |                                                                                              |
-|             | .. code-block:: xml                                                                          |
+|             | .. code-block::                                                                              |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting < 3 %}                                                                    |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting < 3 %}                                                                |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | <=          | Menor o igual que                                                                            |
 |             |                                                                                              |
-|             | .. code-block:: xml                                                                          |
+|             | .. code-block::                                                                              |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting <= 3 %}                                                                   |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting <= 3 %}                                                               |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | >           | Mayor que                                                                                    |
@@ -135,9 +145,11 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting > 1 %}                                                                    |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting > 1 %}                                                                |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | >=          | Mayor o igual a                                                                              |
@@ -145,9 +157,11 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting >= 1 %}                                                                   |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting >= 1 %}                                                               |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | and         | Para comprobar si más de una condición es verdadera.                                         |
@@ -155,9 +169,11 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting == 1 and day == "Friday" %}                                               |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting == 1 and day == "Friday" %}                                           |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | or          | Para comprobar si una de las condiciones es verdadera.                                       |
@@ -165,9 +181,11 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting == 1 or greeting == 5 %}                                                  |
-|             |         <para>Hola</para>                                                                    |
-|             |     {% endif %}                                                                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting == 1 or greeting == 5 %}                                              |
+|             |             <para>Hola</para>                                                                |
+|             |         {% endif %}                                                                          |
+|             |     </story>                                                                                 |
 |             |                                                                                              |
 +-------------+----------------------------------------------------------------------------------------------+
 | and/or      | Combina and y or.                                                                            |
@@ -175,7 +193,9 @@ Puede utilizar los siguientes operadores lógicos. Consulte la siguiente documen
 |             | .. code-block:: xml                                                                          |
 |             |     :linenos:                                                                                |
 |             |                                                                                              |
-|             |     {% if greeting == 1 and day == "Friday" or greeting == 5 %}                              |
+|             |     <story>                                                                                  |
+|             |         {% if greeting == 1 and day == "Friday" or greeting == 5 %}                          |
+|             |     </story>                                                                                 |
 +-------------+----------------------------------------------------------------------------------------------+
 
 .. code-block:: xml
@@ -252,7 +272,7 @@ Django tiene algunas variables que están disponibles dentro de un bucle. Las m�
 |                  |     <tr>                                                                                                   |
 |                  |       {% for x in fruits %}                                                                                |
 |                  |         <td>                                                                                               |
-|                  |           {% if forloop.last %}                                                                           |
+|                  |           {% if forloop.last %}                                                                            |
 |                  |             <para> ================ </para>                                                                |
 |                  |           {% endif %}                                                                                      |
 |                  |         </td>                                                                                              |
@@ -310,7 +330,7 @@ Utilice la palabra reservada ``answers`` seguida del ``ID`` del campo de la form
 Tags
 ====
 
-Existen etiquetas que regularmente son utilizadas en los documentos. Algunas de las comúnmente utilizadas son las siguientes:
+Existen etiquetas que regularmente son utilizadas en los documentos. Algunas de las comúnmente utilizadas son las siguientes.
 
 Fechas
 ------
@@ -342,6 +362,7 @@ Los formatos de fecha permiten personalizar la presentación de la fecha y la ho
 
         <para> DÍA ACTUAL: {% get_today "%d/%m/%Y %H:%M" %} </para>
     </story>
+
 Cantidades
 ----------
 
@@ -409,11 +430,9 @@ Se refiere a la acción de unir o combinar múltiples cadenas de texto o valores
 Imágenes
 --------
 
-Para tratar imágenes depende de dos factores:
+Para tratar imágenes utilice una condicional para evaluar que exista algo en el campo.
 
-**Imágenes en una forma**
-
-Utilice una condicional para 
+Dentro de la etiqueta ``<imageAndFlowables>`` se utiliza la custom tag ``get_thumbnail`` que permite traer una copia de la imagen real pero con menor peso para evitar que el pdf no pese demasiado.
 
 .. code-block:: xml
     :linenos:
@@ -429,12 +448,10 @@ Utilice una condicional para
         {% endif %}
     </story>
 
-**Imágenes dentro de un set repetitivo**
+.. important:: Al utilizar la condicional ``if answers.64ce10644de130ce4s0b760135cd.0.file_url`` esta dando por hecho que solo hay una imagen o que solamente quiere mostrar la primera imagen que pueda estar en el campo. Si el campo contiene mas de una imagen debe utilizar un bucle for.
 
-.. code-block:: xml
-    :linenos:
+.. Tip:: Recuerde que la etiqueta ``<imageAndFlowables>`` no permite centrar directamente la imagen. Por ello, juegue con los atributos que ofrece. En el caso anterior, tome el siguiente ejemplo: si tiene un ancho de 18 cm y su imagen mide 10 cm por defecto, le sobran 8 cm. Sepárelas utilizando ``imageLeftPadding`` e ``imageRightPadding`` para ajustar.
 
-    continuar
 
 Custom Tags
 ===========
@@ -515,6 +532,10 @@ Las custom tags son etiquetas personalizadas de Linkaform para realizar tareas e
 
             {% endfor %}
         </story>
+
+En esta sección, aprendió el uso de Django Template Language para la creación de plantillas dinámicas, permitiéndole generar documentos adaptados a sus necesidades específicas. Aprendió el uso de variables, declaraciones condicionales y bucles, así como la forma de pasar y acceder a datos en las plantillas. Además, aprendió a cerca de custom tags (etiquetas personalizadas) para tareas específicas y la inclusión de imágenes en los documentos generados.
+
+¡Felicidades! 🎉 Si ha seguido la documentación secuencialmente, ahora es capaz de generar sus propios documentos PDF personalizados. Si tiene alguna duda, puede regresar al contenido o consultar la documentación oficial de la sección de su preferencia.
 
 .. LIGAS EXTERNAS
 
