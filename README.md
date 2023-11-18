@@ -2,8 +2,27 @@ Documentacion de LinkaForm
 
 
 Para hacer el build
+
+1. Para realizar el build es necesario levantar el contendor de lkf-documenation donde vive el proyecto.
 ```
-sphinx-build -c /srv/docs/ content/ static/
+docker compose up -d
+```
+
+2. Una vez con el contenedor corriendo entrar al contenedor 
+```
+docker exec -it lkf-documentation bash
+```
+
+3. Ya dentro del contenedor ejecutar
+
+```
+local_build
+```
+el cual es un pequeño ejecutable que realizamos para hacer las coas mas facil, o bien puedes 
+```
+cd /srv/docs/
+rm -rf /srv/docs/build
+sphinx-build -c /srv/docs/ content/ build/
 ```
 
 ## Build Documentation

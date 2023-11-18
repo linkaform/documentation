@@ -64,13 +64,13 @@ En su repositorio podrá encontrar las siguientes carpetas donde:
         +======================================+====================================================================================================================================================+
         | Build                                | Carpeta que se genera al hacer build de su proyecto.                                                                                               |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-        | Content                              | Carpeta dónde podrá almacenar su documentación escrita en rst.                                                                                     |
+        | Content                              | Carpeta dónde se almacena la documentación escrita en rst.                                                                                     |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
         | Extensions                           | Carpeta que se genera al instalar una extensión nueva.                                                                                             |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
         | Locale                               | Carpeta que contiene archivos .po útiles para traducciones de las páginas.                                                                         |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-        | Static                               | Carpeta que almacena archivos sobre personalización.                                                                                               |
+        | Static                               | Carpeta que almacena archivos sobre las personalizaciones.                                                                                               |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
         | Conf.py                              | Archivo que contiene la configuración principal de Sphinx. (Consulte :ref:`conf` :octicon:`report;1em;sd-text-info` para más detalles)             |
         +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -151,7 +151,7 @@ Esta carpeta contiene los archivos generados por Sphinx, como la documentación 
 Carpeta content
 ===============
 
-La carpeta ``content`` alberga archivos fuente de la documentación en formato ReStructuredText. Sphinx utiliza estos archivos como base para generar la documentación final.
+La carpeta ``content`` alberga archivos fuente de la documentación en formato ReStructuredText. Sphinx utiliza estos archivos como base para generar la documentación final. Es aqui donde se escribe la documentación!!!
 
 .. grid:: 2
     :gutter: 0

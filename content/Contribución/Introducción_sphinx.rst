@@ -10,8 +10,8 @@ Linkaform utiliza el entorno Sphinx y el lenguaje reStructuredText como sus herr
 
 Para obtener detalles adicionales, consulte la guía completa de `Sphinx <https://www.sphinx-doc.org/en/master/>`_ :octicon:`report;1em;sd-text-info`.
 
-Pautas de contenido
-===================
+Pautas y convenciones de contenido
+==================================
 
 Con el fin de ofrecer a la comunidad la mejor documentación posible, se presentan algunas pautas, consejos y trucos que debe tener en cuenta para que su contenido destaque.
 
@@ -54,7 +54,7 @@ También asegúrese de cumplir las siguientes pautas en su redacción:
 
 - **Consistencia**: Organice el contenido de forma lógica, utilizando secciones, subtítulos y una introducción clara. Si modifica un texto existente, procure igualar el tono y la presentación ya establecidos o escriba de manera que concuerde con su propio estilo.
 
-- **Definición de Términos Técnicos**: Proporcione definiciones claras para términos técnicos o acrónimos. Por ejemplo, *API significa Interfaz de Programación de Aplicaciones*.
+- **Definición de Términos Técnicos**: Proporcione definiciones claras para términos técnicos o acrónimos. Por ejemplo, *API (Application Programming Interface) significa Interfaz de Programación de Aplicaciones*.
 
 - **Uso de Ejemplos y Casos de Uso**: Utilice  ejemplos prácticos que ilustren cómo utilizar la tecnología o solución.
 
