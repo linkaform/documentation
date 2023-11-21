@@ -6,5 +6,5 @@ Documentación para desarrolladores
     :maxdepth: 1
     :titlesonly:
 
-    Módulos/index
+    Gastos/index
     PDFs/index
