@@ -8,4 +8,3 @@ Developer
 
     Gastos/index
     PDFs/index
-    Reportes/index

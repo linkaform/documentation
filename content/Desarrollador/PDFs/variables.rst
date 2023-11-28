@@ -499,9 +499,8 @@ Revise el siguiente ejemplo sobre catálogos.
 
         .. code-block:: xml
             :linenos:
-
-            <para> Dirección: </para>
-            <para>{{ answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af }}</para>
+            
+            <para>Dirección: {{ answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af }}</para>
         
         Si ejecuta los códigos anteriores, el resultado de ambas será:  
 
