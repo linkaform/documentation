@@ -12,6 +12,16 @@ Esta sección tiene el objetivo de brindarle suficiente información técnica pa
 
     Para más información consulte la documentación oficial de |Django| :octicon:`report;1em;sd-text-info`.
 
+.. important::
+
+    El siguiente contenido se explicará en base al siguiente ejemplo. Asegúrese de actualizar y modificar según sus necesidades.
+
+    También, tenga en cuenta consultar la documentación sobre formas en la aplicación web de Linkaform.
+
+    .. dropdown:: Ver formulario
+
+        .. image:: /imgs/PDF/ejemplocompleto.png
+
 Variables
 =========
 
@@ -221,65 +231,64 @@ Un bucle ``for`` se utiliza para iterar sobre una secuencia, como recorrer eleme
 
 Django tiene algunas variables que están disponibles dentro de un bucle. Las más utilizadas son las siguientes. Para obtener más información, consulte el siguiente |enlace|.
 
-+------------------+------------------------------------------------------------------------------------------------------------+
-| Atributo         | Descripción                                                                                                |
-+==================+============================================================================================================+
-| forloop.counter  | La iteración actual, comenzando en 1.                                                                      |
-|                  |                                                                                                            |
-|                  | .. code-block:: xml                                                                                        |
-|                  |     :linenos:                                                                                              |
-|                  |                                                                                                            |
-|                  |     <ul>                                                                                                   |
-|                  |       {% for x in fruits %}                                                                                |
-|                  |         <li>{{ forloop.counter }}</li>                                                                     |
-|                  |       {% endfor %}                                                                                         |
-|                  |     </ul>                                                                                                  |
-|                  |                                                                                                            |
-+------------------+------------------------------------------------------------------------------------------------------------+
-| forloop.counter0 | La iteración actual, comenzando en 0.                                                                      |
-|                  |                                                                                                            |
-|                  | .. code-block:: xml                                                                                        |
-|                  |     :linenos:                                                                                              |
-|                  |                                                                                                            |
-|                  |     <ul>                                                                                                   |
-|                  |       {% for x in fruits %}                                                                                |
-|                  |         <li>{{ forloop.counter0 }}</li>                                                                    |
-|                  |       {% endfor %}                                                                                         |
-|                  |     </ul>                                                                                                  |
-|                  |                                                                                                            |
-+------------------+------------------------------------------------------------------------------------------------------------+
-| forloop.first    | Le permite probar si el bucle está en su primera iteración.                                                |
-|                  |                                                                                                            |
-|                  | .. code-block:: xml                                                                                        |
-|                  |     :linenos:                                                                                              |
-|                  |                                                                                                            |
-|                  |     <tr>                                                                                                   |
-|                  |       {% for x in fruits %}                                                                                |
-|                  |         <td>                                                                                               |
-|                  |           {% if forloop.first %}                                                                           |
-|                  |             <para> ================ </para>                                                                |
-|                  |           {% endif %}                                                                                      |
-|                  |         </td>                                                                                              |
-|                  |       {% endfor %}                                                                                         |
-|                  |     </tr>                                                                                                  |
-|                  |                                                                                                            |
-+------------------+------------------------------------------------------------------------------------------------------------+
-| forloop.last     | Le permite probar si el bucle está en su última iteración.                                                 |
-|                  |                                                                                                            |
-|                  | .. code-block:: xml                                                                                        |
-|                  |     :linenos:                                                                                              |
-|                  |                                                                                                            |
-|                  |     <tr>                                                                                                   |
-|                  |       {% for x in fruits %}                                                                                |
-|                  |         <td>                                                                                               |
-|                  |           {% if forloop.last %}                                                                            |
-|                  |             <para> ================ </para>                                                                |
-|                  |           {% endif %}                                                                                      |
-|                  |         </td>                                                                                              |
-|                  |       {% endfor %}                                                                                         |
-|                  |     </tr>                                                                                                  |
-|                  |                                                                                                            |
-+------------------+------------------------------------------------------------------------------------------------------------+
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+   :align: left
+
+   * - Atributo
+     - Descripción
+   * - forloop.counter
+     - La iteración actual, comenzando en 1.
+
+       .. code-block:: xml
+        :linenos:
+       
+        <ul>
+        {% for x in fruits %}
+            <li>{{ forloop.counter }}</li>
+        {% endfor %}
+        </ul>
+
+   * - forloop.counter0
+     - La iteración actual, comenzando en 0.
+
+       .. code-block:: xml
+        :linenos:
+       
+        <ul>
+        {% for x in fruits %}
+            <li>{{ forloop.counter0 }}</li>
+        {% endfor %}
+        </ul>
+
+   * - forloop.first
+     - Le permite probar si el bucle está en su primera iteración.
+
+       .. code-block:: xml
+        :linenos:
+       
+        {% for x in fruits %}
+        <td>
+            {% if forloop.first %}
+            <para> ================ </para>
+            {% endif %}
+        </td>
+        {% endfor %}
+
+   * - forloop.last
+     - Le permite probar si el bucle está en su última iteración.
+
+       .. code-block:: xml
+        :linenos:
+       
+        {% for x in fruits %}
+        <td>
+            {% if forloop.last %}
+            <para> ================ </para>
+            {% endif %}
+        </td>
+        {% endfor %}
 
 Acceso a atributos y métodos
 ============================
@@ -318,7 +327,7 @@ Si la variable es una lista, puede acceder a elementos específicos. Por ejemplo
 Answers
 =======
 
-Utilice la palabra reservada ``answers`` seguida del ``ID`` del campo de la forma para extraer data real. Por ejemplo:
+Utilice la palabra reservada ``answers`` seguida del ``ID`` del campo de la forma para extraer información de sus formularios. Por ejemplo:
 
 .. code-block:: xml
     :linenos:
@@ -326,7 +335,7 @@ Utilice la palabra reservada ``answers`` seguida del ``ID`` del campo de la form
     {% set nombre = answers.646a69d6fb56c3sda00d7b036911216 %}
 
 .. caution:: ``answers`` funciona de manera distinta para fotografías (imágenes), firmas, conjuntos repetitivos y documentos, ya que en estos casos se añade un tercer parámetro que corresponde a las URL.
-
+        
 Tags
 ====
 
@@ -432,6 +441,13 @@ Imágenes
 
 Para tratar imágenes utilice una condicional para evaluar que exista algo en el campo.
 
+.. code-block:: xml
+    :linenos:
+    
+    {% if answers.64c0644e130ce40b760135cd.0.file_url %}
+
+.. important:: Al utilizar la condicional ``if answers.64ce10644de130ce4s0b760135cd.0.file_url`` esta dando por hecho que solo hay una imagen o que solamente quiere mostrar la primera imagen que pueda estar en el campo. Si el campo contiene mas de una imagen debe utilizar un bucle for.
+
 Dentro de la etiqueta ``<imageAndFlowables>`` se utiliza la custom tag ``get_thumbnail`` que permite traer una copia de la imagen real pero con menor peso para evitar que el pdf no pese demasiado.
 
 .. code-block:: xml
@@ -448,10 +464,175 @@ Dentro de la etiqueta ``<imageAndFlowables>`` se utiliza la custom tag ``get_thu
         {% endif %}
     </story>
 
-.. important:: Al utilizar la condicional ``if answers.64ce10644de130ce4s0b760135cd.0.file_url`` esta dando por hecho que solo hay una imagen o que solamente quiere mostrar la primera imagen que pueda estar en el campo. Si el campo contiene mas de una imagen debe utilizar un bucle for.
-
 .. Tip:: Recuerde que la etiqueta ``<imageAndFlowables>`` no permite centrar directamente la imagen. Por ello, juegue con los atributos que ofrece. En el caso anterior, tome el siguiente ejemplo: si tiene un ancho de 18 cm y su imagen mide 10 cm por defecto, le sobran 8 cm. Sepárelas utilizando ``imageLeftPadding`` e ``imageRightPadding`` para ajustar.
 
+Ejemplos
+========
+
+Con la información vista, contemple los siguientes casos de uso.
+
+Catálogos
+---------
+
+Revise el siguiente ejemplo sobre catálogos.
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        Considere el siguiente ejemplo sobre un catálogo de ``Tiendas``.
+
+        .. image:: /imgs/PDF/20.png
+
+    .. tab-item:: Código
+
+        Los catálogos son fáciles de consultar. Simplemente declare una variable seguida de la palabra reservada ``answers``, seguido del ``Id`` del catálogo y luego el ``Id`` del campo, como se muestra a continuación:
+
+        .. code-block:: xml
+            :linenos:
+
+            <para> Dirección: </para>
+            {% set direccion = answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af %}
+            <para>{{ direccion }}</para>
+
+        O de manera simplificada coloque:
+
+        .. code-block:: xml
+            :linenos:
+
+            <para> Dirección: </para>
+            <para>{{ answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af }}</para>
+        
+        Si ejecuta los códigos anteriores, el resultado de ambas será:  
+
+        .. code-block:: 
+            :linenos:
+
+            [u'Tijuana - Tecate, El Refugio, 22253, Plaza Sendero, Tijuana, B.C.']
+        
+        La razón por la que se obtiene así es porque los datos están estructurados e interpretados como listas. 
+
+        Para resolver ese problema, simplemente coloque ``.0``. La notación ``.0`` indica que necesita acceder al primer elemento de una lista o un conjunto. Por ejemplo:
+
+        .. code-block:: xml
+            :linenos:
+
+            <para> Dirección: </para>
+            {% set direccion = answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af.0 %}
+            <para>{{ direccion }}</para>
+
+        A continuación, se presenta el código necesario para imprimir los datos de un catálogo:
+
+        .. code-block:: xml
+            :linenos:  
+
+            <para style="textTitleI"> Cadena: </para>
+            {% set cadena = answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4ac %}
+            <para>{{ cadena }}</para>
+
+            <para style="textTitleI"> Tienda: </para>
+            {% set tienda = answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4ae %}
+            <para>{{ tienda }}</para>
+
+            <para style="textTitleI"> Dirección: </para>
+            {% set direccion = answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af.0 %}
+            <para>{{ direccion }}</para>
+            
+            <para style="textTitleI"> Estado: </para>
+            {% set estado = answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4b0.0 %}
+            <para>{{ estado }}</para>
+
+            <para style="textTitleI"> Municipio: </para>
+            <para>{{ answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4b1.0 }}</para>
+
+    .. tab-item:: Resultado
+
+        El resultado del ejemplo es el siguiente. Para fines prácticos, se muestra de la siguiente manera; sin embargo, considere aplicar los :ref:`estilos` :octicon:`report;1em;sd-text-info` necesarios: 
+
+        .. image:: /imgs/PDF/21.png
+
+        .. seealso:: En Django, al obtener datos de un formulario a veces es necesario acceder a elementos específicos de esa lista. Para saber cómo se presenta su información, puede inspeccionar la página en la que se encuentra su registro e inspeccionar sus datos y corroborar como viene la información.
+
+Grupos repetitivos
+------------------
+
+Contemple el siguiente ejemplo sobre grupos repetitivos:
+
+.. tab-set::
+
+    .. tab-item:: Ejemplo
+
+        Considere el siguiente grupo repetitivo ``Empleados``.
+
+        .. image:: /imgs/PDF/16.png
+
+    .. tab-item:: Código
+
+        Para extraer datos de un grupo repetitivo de un formulario, siga los siguientes pasos:
+
+        1. Especifique la tabla en la que desea representar el grupo repetitivo (linea 2-27).
+        2. Declare un ciclo ``for`` para recorrer los elementos del grupo repetitivo colocando el ``id`` del mismo (linea 8).
+        3. Si el campo es de tipo texto, simplemente llame la variable que utilizo para recorrer el grupo repetitivo seguido del ``id`` del campo (linea 12).
+        4. Si dentro del grupo repetitivo hay imágenes, tenga en cuenta la siguientes consideraciones:
+
+        - Si esta seguro de que el campo solo contendrá una imagen, podrá utilizar el siguiente código; donde está declarando la variable firma e igualándola al contenido de la imagen.
+
+        .. code-block:: xml
+            :linenos:
+
+            {% set firma = item.64dd1d386170e28311ec20ff.file_url %}
+            <imageAndFlowables imageName="{% get_thumbnail firma %}" imageWidth="5cm" imageHeight="2cm" imageSide="left"/>
+
+        .. important:: Recuerde que una una firma es guardada y tratada como una imagen.
+
+        - De lo contrario, si tiene mas de una imagen, deberá crear otro ciclo para mostrar todas las imágenes. 
+
+        .. code-block:: xml
+            :linenos:
+
+            {% for image in item.64dd1c61039ce8cf6a1a91e7 %}
+                {% set img = image.file_url %}
+                <imageAndFlowables imageName="{% get_thumbnail img %}" imageWidth="4cm" imageHeight="2cm" imageSide="left" />
+            {% endfor %}
+
+        .. code-block:: xml
+            :linenos:
+            :emphasize-lines: 2, 8, 12, 27
+
+            <story>
+                <blockTable colWidths="5cm, 6cm, 6cm" style="general">
+                    <tr>
+                        <td><para> Nombre </para></td>
+                        <td><para> Fotografía </para></td>
+                        <td><para> Firma</para></td>
+                    </tr>
+                    {% for item in answers.64dd1bd4fd200a3308ec2140 %}
+                        <tr>
+                            <td>
+                            <para>
+                                    {{ item.64dd1c61039ce8cf6a1a91e6 }} 
+                            </para>
+                            </td>
+                            <td>
+                                {% for image in item.64dd1c61039ce8cf6a1a91e7 %}
+                                    {% set img = image.file_url %}
+                                    <imageAndFlowables imageName="{% get_thumbnail img %}" imageWidth="4cm" imageHeight="2cm" imageSide="left" />
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% set firma = item.64dd1d386170e28311ec20ff.file_url %}
+                                <imageAndFlowables imageName="{% get_thumbnail firma %}" imageWidth="5cm" imageHeight="2cm" imageSide="left"/>
+                            </td>            
+                        </tr>
+                {% endfor %}
+                </blockTable>
+            </story>
+
+    .. tab-item:: Resultado
+        
+        El resultado del ejemplo es el siguiente. Para fines prácticos, se muestra de la siguiente manera, sin embargo, considere aplicar los :ref:`estilos` :octicon:`report;1em;sd-text-info` necesarios:
+        
+        .. image:: /imgs/PDF/19.png
 
 Custom Tags
 ===========

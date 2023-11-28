@@ -272,6 +272,8 @@ Utilizar imágenes es posible utilizando la etiqueta ``<imageAndFlowables>``. Es
 
 .. note:: Si necesita incluir imágenes externas en su documento, obtenga la URL pública almacenada por Linkaform e integre en ``imageName``.
 
+.. _estilos:
+
 Estilos
 =======
 

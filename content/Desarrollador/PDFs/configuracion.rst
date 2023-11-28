@@ -1,11 +1,11 @@
-=========================
-Configuración del entorno
-=========================
+=======================
+Documentación para PDFs
+=======================
 
 En esta sección, se detallan las plantillas disponibles, la estructura de archivos necesaria y la configuración específica en el entorno Django que se requiere para crear sus propios documentos en formato PDF.
 
-Repositorio de PDFs
-===================
+Configuración del entorno
+=========================
 
 Linkaform hace uso de un repositorio especial para el desarrollo de PDFs, proporcionando un control sobre los documentos generados para los clientes. Linkaform utiliza GitLab, si ya cuenta con una cuenta en la misma, siga los pasos a continuación; de lo contrario, consulte el `enlace <https://about.gitlab.com/>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
 
@@ -99,7 +99,7 @@ El cuerpo del documento es la parte más importante, similar a HTML, aquí se es
 
 .. code-block:: xml
     :linenos:
-    :emphasize-lines: 40, 42
+    :emphasize-lines: 42, 45
 
     <?xml version="1.0"?>
 
@@ -148,7 +148,7 @@ El cuerpo del documento es la parte más importante, similar a HTML, aquí se es
         </story>
     </document>
 
-.. important:: El código anterior ya está preparado para su uso; deberá insertar su propio código entre las etiquetas ``<story>`` (línea 40 y 42).
+.. important:: El código anterior ya está preparado para su uso; deberá insertar su propio código entre las etiquetas ``<story>`` (línea 42 y 45).
 
 Style
 -----

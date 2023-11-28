@@ -195,7 +195,7 @@ A continuación, se muestran ejemplos de títulos y subelementos ::
         Título con la longitud incorrecta
         ===========
 
-Parrafos
+Párrafos
 ========
 
 El párrafo es el bloque más básico en un documento ``reST``. Los párrafos son simplemente fragmentos de texto separados por uno o más espacios en blanco. 

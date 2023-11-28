@@ -1,6 +1,6 @@
-==================================
-Documentación para desarrolladores
-==================================
+=========
+Developer
+=========
 
 .. toctree::
     :maxdepth: 1
@@ -8,3 +8,4 @@ Documentación para desarrolladores
 
     Gastos/index
     PDFs/index
+    Reportes/index

@@ -11,6 +11,7 @@ Documentación de Linkaform
    :maxdepth: 1
    :titlesonly:
 
+   Usuario/index
    Desarrollador/index
    Contribución/index
 
