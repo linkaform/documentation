@@ -2,16 +2,30 @@
 Formas
 ======
 
-En este apartado, encontrará información importante sobre el módulo de formas. En Linkaform el módulo de formas sirve como repositorio central para los formularios creados o compartidos en la cuenta. Desde este módulo, se pueden realizar diversas acciones, tales como:
+En Linkaform, el término ``forma`` hace referencia a un formulario digital que posibilita la automatización de procesos. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
 
 #. Crear y editar formas.
-#. Responder formas para generar nuevos registros.
-#. Compartir formas con otros usuarios.
 #. Crear carpetas para organizar y almacenar formas.
+#. Compartir formas con otros usuarios.
+#. Responder formas para generar nuevos registros.
 #. Acceder directamente a los registros de la forma seleccionada.
 #. Realizar búsquedas de formas dentro de la cuenta.
+#. Realizar configuraciones para uso personalizado. 
 
-Para acceder al módulo de formas, ubique el segundo ícono en el menú vertical situado a la izquierda de su pantalla. Dentro de este menú, encontrará la opción ``Mis Formas``.
+Este apartado abarcará todos los aspectos necesarios para diseñar una solución integral y aprovechar al máximo el potencial que Linkaform ofrece a su empresa.
+
+La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están disponibles para que pueda revisar un tema específico en cualquier momento.
+
+Para acceder a las formas, siga los siguientes pasos:
+
+1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con sus credenciales. 
+
+.. note:: En caso de no contar con credenciales, solicítelas al soporte técnico.
+
+3. Seleccione la opción ``Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
+
+Una vez dentro de ``Mis Formas``, podrá comenzar a crear y configurar sus formas según sus necesidades.
 
 Crear forma
 ===========
@@ -51,7 +65,7 @@ Las características que comparten la mayoría de los campos de Linkaform son la
    * - Característica
      - Descripción
    * - ⭐ Favorito
-     - Al activar esta opción, permite visualizar la información de este campo al realizar consultas en Registros completados desde la app o al consultar los registros desde la web en el módulo de registros.
+     - Al activar esta opción, permite visualizar la información de este campo al realizar consultas en registros completados desde la app o al consultar los registros desde la web en el apartado de registros.
    * - Ascendente/Descendente
      - Permite ordenar las respuestas incluidas en este campo en el orden elegido.
    * - Duplicar
@@ -266,10 +280,12 @@ Este campo es útil para recopilar información relacionada con el tiempo. Se ut
   
 .. important:: Si lo requiere, puede agregar estos campos por separado.
 
+.. _grupo_repetitivo:
+
 Campo grupo repetitivo
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Un grupo repetitivo es un campo utilizado para agregar varios campos dentro de él. Considérelo como un campo que permite incluir pequeños formularios dentro del formulario principal, con la ventaja de poder responder las veces que sea necesario.
+Un grupo repetitivo es un campo utilizado para agregar varios sets dentro de él. Considérelo como un campo que permite incluir pequeños formularios dentro del formulario principal, con la ventaja de poder responder las veces que sea necesario.
 
 .. image:: /imgs/Formas/Formas12.jpg
 
@@ -345,6 +361,9 @@ Este campo permite agregar diferentes tipos de archivos al registro de la forma 
 
 Del mismo modo que el campo fotografías, puede configurar los parámetros en `conf <#config>`_ :octicon:`report;1em;sd-text-info`. Sin embargo, aquí tiene la posibilidad de seleccionar qué tipo de archivos son permitidos.
 
+.. image:: /imgs/Formas/Formas16.1.1.png
+
+
 Campo firma
 ^^^^^^^^^^^
 
@@ -363,7 +382,7 @@ Este campo es útil en situaciones donde se requiere una confirmación o autoriz
 Campo catálogo
 ^^^^^^^^^^^^^^
 
-El campo Catálogo es una función diferente, aunque está directamente relacionado con la sección de catálogos que ofrece Linkaform. Consulte catálogos aquí (hipervínculo). En este apartado, se tratará como un campo.
+El campo catálogo es una función diferente, aunque está directamente relacionado con la sección de catálogos que ofrece Linkaform. Consulte catálogos aquí (hipervínculo). En este apartado, se tratará como un campo.
 
 El campo Catálogo se utiliza para mostrar en la forma información correspondiente a un catálogo. Para utilizarla, tenga en cuenta los siguientes aspectos y siga los siguientes pasos:
 
@@ -451,7 +470,7 @@ Podrá encontrar las siguientes configuraciones:
 
 - **Logo de usuario en PDF de registro**: Si se tiene un logotipo definido, esta opción reflejará el logotipo en el PDF del registro.
 
-- **Pública**: Con la activación de esta función, permite que el formulario pueda ser contestado libremente por cualquier persona que no tenga una cuenta en Linkaform. Simplemente copie el enlace que aparecerá a la derecha y compártala, esto permitirá que personas que no utilicen Linkaform puedan generar información.
+- **Pública**: Con la activación de esta función, permite que el formulario pueda ser pública para que sea contestado libremente por cualquier persona que no tenga una cuenta en Linkaform. Simplemente copie el enlace que aparecerá a la derecha y compártala, esto permitirá que personas que no utilicen Linkaform puedan generar información.
 
 .. important:: Responder un formulario de este tipo solo podrá hacerse a través de la aplicación web.
 
@@ -562,6 +581,8 @@ Dentro de **Folio Configurable**, podrá establecer la nomenclatura para los reg
 
 .. important:: Recuerde que después de realizar cada configuración, presione ``OK`` y guarde la forma en su totalidad.
 
+.. _flujos:
+
 Configuración de flujos
 -----------------------
 
@@ -659,14 +680,17 @@ Si después de revisar la información tiene dudas sobre la configuración de ``
 
 De esta manera se realiza la configuración de la sección Triggers. Ahora continúe con la configuración de las acciones.
 
+.. _acciones:
+
 Acciones
 ^^^^^^^^
 
 En ``Acciones``, se especifica lo que se desea que se realice. Aquí puede encontrar varias opciones, como asignar a un usuario, a una conexión, ejecutar un script, enviar un correo, entre otras. Siga los primeros pasos que son necesarios para todas las acciones.
 
-1. Realice la configuración del `trigger <#triggers>`_ :octicon:`report;1em;sd-text-info`.
-2. Haga clic en el botón verde con el símbolo más para ``Agregar acción``. Al hacer esto se agrega una barra verde con el titulo ``Acción vacía``. Haga clic sobre ella.
-3. Presione en el selector de ``Acción`` y elija una opción según su necesidad.
+1. Inicie con la `configuración del flujo <#flujos>`_ :octicon:`report;1em;sd-text-info`.
+2. Realice la `configuración del trigger <#triggers>`_ :octicon:`report;1em;sd-text-info`.
+3. Haga clic en el botón verde con el símbolo más para ``Agregar acción``. Al hacer esto se agrega una barra verde con el titulo ``Acción vacía``. Haga clic sobre ella.
+4. Presione en el selector de ``Acción`` y elija una opción según su necesidad.
 
 .. image:: /imgs/Formas/Formas33.png
 
@@ -681,29 +705,31 @@ Para asignar un registro a una ``Conexión`` por medio de un flujo de trabajo, s
 
 .. important:: Recuerde que una conexión es un usuario que no pertenece a su cuenta de Linkaform.
 
-1. En el campo ``Acción`` seleccione ``Asignar a conexión``.
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+
+2. En el campo ``Acción`` seleccione ``Asignar a conexión``.
 
 .. image:: /imgs/Formas/Formas34.jpg
 
-2. Agregue un título para identificar la acción.
+3. Agregue un título para identificar la acción.
 
 .. image:: /imgs/Formas/Formas35.jpg
 
-3. En el selector ``Asignar a`` seleccione ``Conexión`` del menú.
+4. En el selector ``Asignar a`` seleccione ``Conexión`` del menú.
 
 .. image:: /imgs/Formas/Formas36.jpg
 
-4. Capture el ``Nombre del usuario`` al que se le asignará el registro.
+5. Capture el ``Nombre del usuario`` al que se le asignará el registro.
 
 .. important:: Recuerde que la forma ya debe haberse compartido con ese usuario; de lo contrario, el registro no se asignará. Si la forma está compartida, al ingresar el correo del usuario, Linkaform sugerirá el nombre, que se puede seleccionar para acelerar el proceso.
 
 .. image:: /imgs/Formas/Formas38.jpg
 
-5. Habilite el bullet ``Enviar correo``.
+6. Habilite el bullet ``Enviar correo``.
 
 .. note:: Si habilita esta opción, se enviará un correo electrónico de notificación a la persona a la que se le asignó el registro.
 
-6. Habilite el bullet ``¿Enviar push notificación?``.
+7. Habilite el bullet ``¿Enviar push notificación?``.
 
 .. note:: Al habilitar esta opción, enviará una notificación a la aplicación móvil de Linkaform para el usuario al que se le asignó el registro.
 
@@ -714,23 +740,25 @@ Para asignar un registro a un ``Usuario``, el proceso es similar a asignar a una
 
 .. important:: Recuerde que un usuario es una persona que pertenece a su empresa. 
 
-1. En el campo ``Acción`` seleccione ``Asignar a usuario``.
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+
+2. En el campo ``Acción`` seleccione ``Asignar a usuario``.
 
 .. image:: /imgs/Formas/Formas39.jpg
 
-2. Agregue un título para identificar la acción.
+3. Agregue un título para identificar la acción.
 
-3. En el selector ``Asignar a`` seleccione ``Usuario`` del menú.
+4. En el selector ``Asignar a`` seleccione ``Usuario`` del menú.
 
-4. Capture el ``Nombre del usuario`` al que se le asignará el registro.
+5. Capture el ``Nombre del usuario`` al que se le asignará el registro.
 
 .. important:: Recuerde que la forma ya debe haberse compartido con ese usuario; de lo contrario, el registro no se asignará. Si la forma está compartida, al ingresar el correo del usuario, Linkaform sugerirá el nombre, que se puede seleccionar para acelerar el proceso.
 
-5. Habilite el bullet ``Enviar correo``.
+6. Habilite el bullet ``Enviar correo``.
 
 .. note:: Si habilita esta opción, se enviará un correo electrónico de notificación a la persona a la que se le asignó el registro.
 
-6. Habilite el bullet ``¿Enviar push notificación?``.
+7. Habilite el bullet ``¿Enviar push notificación?``.
 
 .. note:: Al habilitar esta opción, enviará una notificación a la aplicación móvil de Linkaform para el usuario al que se le asignó el registro.
 
@@ -741,15 +769,17 @@ Ejecutar un script permite realizar tareas específicas de manera automatizada.
 
 .. important:: Para tener un script personalizado contacte a soporte técnico y explique su necesidad para su desarrollo. 
 
-1. En el campo ``Acción`` seleccione ``Ejecutar script``.
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+
+2. En el campo ``Acción`` seleccione ``Ejecutar script``.
 
 .. image:: /imgs/Formas/Formas42.jpg
 
-2. Agregue un título para identificar la acción.
+3. Agregue un título para identificar la acción.
 
-3. Escriba el nombre del script en el selector ``Script``.
+4. Escriba el nombre del script en el selector ``Script``.
 
-4. Seleccione ``Configuración del script``. Aparecerá una interfaz nueva, donde podrá configurar los siguientes parámetros.
+5. Seleccione ``Configuración del script``. Aparecerá una interfaz nueva, donde podrá configurar los siguientes parámetros.
 
 En la pestaña ``Usuario`` podrá encontrar:
 
@@ -777,9 +807,10 @@ Enviar correo
 
 Puede configurar esta acción para enviar correos electrónicos con información específica del registro.
 
-1. En el campo ``Acción`` seleccione ``Enviar correo``.
-2. Agregue un título para identificar la acción.
-3. Seleccione ``Configuración de Email``. 
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+2. En el campo ``Acción`` seleccione ``Enviar correo``.
+3. Agregue un título para identificar la acción.
+4. Seleccione ``Configuración de Email``. 
 
 .. image:: /imgs/Formas/Formas46.jpg
 
@@ -854,6 +885,8 @@ A continuación, siga las siguientes configuraciones:
 
 Al estar seguro de sus cambios, seleccione ``Guardar``.
 
+.. _forma_catalogo:
+
 Forma a catálogo
 ~~~~~~~~~~~~~~~~
 
@@ -866,15 +899,16 @@ Esta acción permite insertar el registro de una forma a un catálogo, sin neces
 
 Ahora continue siguiendo los siguientes pasos para configurar la acción:
 
-1. En el campo ``Acción`` seleccione ``Forma a catálogo``.
-2. Agregue un título para identificar la acción.
-3. Escriba el nombre del catálogo en el campo. Al teclear las primeras letras, Linkaform mostrará las coincidencias.
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+2. En el campo ``Acción`` seleccione ``Forma a catálogo``.
+3. Agregue un título para identificar la acción.
+4. Escriba el nombre del catálogo en el campo. Al teclear las primeras letras, Linkaform mostrará las coincidencias.
 
 .. image:: /imgs/Formas/Formas51.jpg
 
 Observe que hay dos columnas: una corresponde al nombre de su forma, en este caso, la forma que se está utilizando se llama ``Prueba básica APP`` y la del lado derecho corresponde al nombre del catálogo, en este caso, ``FAQ``.
 
-4. Seleccione una opción en la columna correspondiente a la forma.
+5. Seleccione una opción en la columna correspondiente a la forma.
 
 .. dropdown:: Opciones
 
@@ -890,8 +924,8 @@ Observe que hay dos columnas: una corresponde al nombre de su forma, en este cas
 
   .. image:: /imgs/Formas/Formas56.jpg
 
-5. Seleccione el campo de la forma a la que desea relacionar con el catalogo. 
-6. Seleccione el campo del catalogo. En la columna del catalogo seleccione el mismo campo que de la forma. 
+6. Seleccione el campo de la forma a la que desea relacionar con el catalogo. 
+7. Seleccione el campo del catalogo. En la columna del catalogo seleccione el mismo campo que de la forma. 
 
 .. admonition:: Ejemplo
   :class: pied-piper
@@ -902,7 +936,7 @@ Observe que hay dos columnas: una corresponde al nombre de su forma, en este cas
 
   .. important:: Agregue todos los campos necesarios. En el ejercicio anterior, solo se necesitaron 2 campos, pero puede añadir los que necesite haciendo clic en el botón verde con el símbolo más.
 
-7. Después de realizar su configuración, haga clic en el botón ``Guardar`` y la automatización para enviar información de una forma a un catálogo estará lista.
+8. Después de realizar su configuración, haga clic en el botón ``Guardar`` y la automatización para enviar información de una forma a un catálogo estará lista.
 
 Consulte el siguiente vídeo para obtener un ejemplo visual.
 
@@ -917,39 +951,310 @@ Consulte el siguiente vídeo para obtener un ejemplo visual.
 Forma a forma
 ~~~~~~~~~~~~~
 
+Esta acción permite enviar información desde una forma hacia otra u otras formas.
+
+.. important:: La estructura y configuración de los campos dentro de la forma deben coincidir con los de la forma a la que se desea conectar.
+
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+2. Ubíquese en la forma principal que generará la conexión.
+3. En el campo ``Acción``, seleccione ``Forma a Forma``.
+4. Agregue un título para identificar la acción.
+5. En el campo ``Forma``, escriba el nombre de la forma con la que desea establecer la conexión.
+
+Tenga en cuenta que hay dos columnas: la izquierda corresponde a la forma actual y la derecha a la forma a la que se desea conectar.
+
+6. ``Seleccione una opción`` en la columna correspondiente a la forma actual.
+
+.. seealso:: Opciones
+
+  - **Usar campo**: Muestra la lista de todos los campos de la forma actual.
+  - **Usar valor**: Establece un valor fijo que siempre se utilizará.
+  - **Usar metadato**: Permite elegir los datos generados desde el servidor.
+
+7. Seleccione el campo, metadato o escriba el valor que desea relacionar con la forma.
+8. En la columna derecha, correspondiente a la forma a la que se desea conectar, seleccione el campo correspondiente.
+
+En el siguiente video podrá encontrar un ejemplo visual sobre el proceso de una acción ``Forma a Forma``.
+
+.. youtube:: o15HvwiHVR8
+  :aspect: 16:9
+  :width: 100%
+  :height: 480
+  :align: center
+  :privacy_mode: enable_privacy_mode
+  :url_parameters: ?start=1771
+
 Grupo a catálogo
 ~~~~~~~~~~~~~~~~
 
-Esta acción es similar a la acción ``Forma a catálogo``. Sin embargo, es específicamente para grupos repetitivos de una forma.   
-permite insertar el registro de una forma a un catálogo, sin necesidad de hacerlo directamente creando un registro en el catálogo
+Esta acción es similar a la acción `forma a catálogo <#forma_catalogo>`_  :octicon:`report;1em;sd-text-info`. Sin embargo, está específicamente diseñada para trabajar con `grupos repetitivos <#grupo_repetitivo>`_  :octicon:`report;1em;sd-text-info` de una forma. Es más sencillo si se necesitan almacenar múltiples registros, ya que un grupo repetitivo permite agregar los sets que se requieran.
 
+.. important:: Consideraciones Importantes:
 
-Grupo a registros
-~~~~~~~~~~~~~~~~~
+    1. Tenga preparado el catálogo al que desea asignar los registros del grupo repetitivo.
+    2. La estructura y configuración de los campos dentro del grupo repetitivo deben coincidir con los del catálogo al que desea asignar los registros.
 
-Sincronización de registros
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Siga los siguientes pasos para hacer la configuración necesaria:
 
+1. Prepare su `flujo de trabajo <#acciones>`_ :octicon:`report;1em;sd-text-info`.
+2. En el campo ``Acción``, seleccione ``Grupo a catálogo``.
+3. Agregue un título para identificar la acción.
 
+Observe que hay dos columnas: en el lado izquierdo podrá encontrar opciones correspondientes al grupo repetitivo, mientras que en el lado derecho podrá encontrar opciones del catálogo al que se hará la conexión.
 
+.. image:: /imgs/Formas/Formas59.jpg
 
+4. En el campo ``Grupo``, seleccione el nombre del grupo repetitivo de su forma.
+5. En el campo ``Catálogo``, escriba el nombre del catálogo al que desea asignar. Al teclear, Linkaform le sugerirá el nombre del catálogo.
+6. ``Seleccione una opción`` en la columna correspondiente al grupo repetitivo. 
 
+.. seealso:: Opciones
 
+  - **Usar campo**: Mostrará la lista de todos los campos de la forma.
+  - **Usar valor**: Establece un valor fijo que siempre se utilizará.
+  - **Usar metadato**: Permite elegir los datos que se generan desde el servidor.
 
+.. note:: Observe que al elegir el grupo repetitivo de la forma, solo aparecerán campos dentro de este, excluyendo a los restantes de la forma. De la misma manera, al seleccionar el catálogo de su preferencia.
 
+7. Seleccione el campo, metadato o escriba el valor que desea relacionar con el catálogo.
+8. Del lado del catálogo, seleccione el campo del catálogo.
 
+En el siguiente video podrá encontrar un ejemplo visual del proceso. 
 
+.. youtube:: o15HvwiHVR8
+  :aspect: 16:9
+  :width: 100%
+  :height: 480
+  :align: center
+  :privacy_mode: enable_privacy_mode
+  :url_parameters: ?start=1600
 
-4. **Enviar Notificación:** Envía notificaciones a usuarios de Linkaform relacionadas con el registro.
+Reglas de Forma
+---------------
 
-5. **Cambiar Estado:** Permite cambiar el estado del registro, lo que puede ser útil para el seguimiento de procesos.
+Las reglas de forma son configuraciones que posibilitan:
 
-6. **Asignar a Grupo:** Similar a la asignación a usuario o conexión, pero para grupos.
+- Mostrar campos
+- Deshabilitar campos
+- Requerir campos
+- Ocultar campos
 
-7. **Insertar Registro:** Permite insertar un nuevo registro en otra forma.
+.. important:: La configuración de las reglas de forma es independiente para cada forma. En otras palabras, si duplica la misma forma, es necesario crear las reglas de forma de manera independiente, ya que no se duplicarán automáticamente.
 
-8. **Actualizar Registro:** Actualiza la información de otro registro en otra forma.
+Siga los siguientes pasos, que son requeridos para cada regla de campo:
 
-9. **Eliminar Registro:** Elimina un registro específico.
+1. Ubíquese en la forma a la que desea aplicar la regla de campo.
+2. Seleccione ``Opciones > Reglas de Forma``.
 
-10. **Generar PDF:** Crea un archivo PDF basado en la información del registro.
+.. image:: /imgs/Formas/Formas62.jpg
+
+3. Haga clic en el botón verde con el icono de más para ``Agregar Regla``.
+
+.. image:: /imgs/Formas/Formas63.jpg
+
+4. Asigne un nombre descriptivo que diferencie su regla, haciendo doble clic en el nombre predeterminado ``Regla N``.
+
+5. En el campo ``Deseo``, seleccione una opción.
+
+.. seealso:: Opciones
+
+  - **Mostrar**: Se utiliza para que, al cumplir una validación configurada, se muestren uno o más campos.
+  - **Deshabilitar**: Funciona para que, al cumplir una validación configurada, se deshabiliten uno o más campos.
+  - **Requerir**: Es útil para que, al cumplir una validación configurada, se requieran de manera obligatoria uno o más campos.
+  - **Ocultar**: Se utiliza para que, al cumplir una validación configurada, se oculten uno o más campos.
+
+6. Seleccione el o los campos que serán afectados por la regla, presionando el botón ``Campos``. Observe que aparecerán los campos de su forma.
+
+.. image:: /imgs/Formas/Formas66.jpg
+
+7. Escriba el nombre del campo que hará la condición que se debe cumplir para la ejecución de la regla de forma.  Observe que aparecerá un recuadro verde con el tipo de campo que representa dicho campo.
+
+.. tip:: Si no recuerda el nombre del campo, teclee dos puntos ``(:)`` y Linkaform mostrará todos los campos de la forma.
+
+  .. image:: /imgs/Formas/Formas67.jpg
+
+8. Seleccione una condición para que se cumpla la regla. 
+
+.. seealso:: Opciones
+
+  - **No está vacío**: Esta opción valida si el campo no está vacío, es decir, si contiene algún valor.
+  - **Está vacío**: Verifica si el campo está vacío, sin contener ningún valor.
+  - **No contiene opción**: Comprueba si el campo no contiene una opción específica.
+  - **Contiene opción**: Evalúa si el campo contiene una opción específica.
+  - **NO es igual a**: Esta opción verifica si el campo no es igual al valor especificado.
+  - **Igual a**: Verifica si el campo es igual al valor especificado.
+
+La elección de las últimas cuatro opciones permitirá seleccionar o escribir contenido para realizar la validación. Puede incluir más de una validación para un campo; sin embargo, debe aplicar una relación lógica ``AND`` o ``OR``.
+
+.. image:: /imgs/Formas/Formas68.1.png
+
+9. Opcionalmente, seleccione el botón ``Duplicar`` para replicar la regla exactamente como está configurada en ese momento (esta opción es útil cuando se desean crear reglas muy similares).
+10. Opcionalmente, seleccione ``Condiciones de usuario`` con el ícono de un solo usuario para incluir o excluir usuarios de esta regla de forma.
+11. Opcionalmente, seleccione ``Condiciones de grupo`` con el ícono de grupo para incluir o excluir un grupo de usuarios de esta regla de forma.
+12. Guarde sus cambios.
+
+Consulte el video a continuación para obtener ejemplos visuales.
+
+.. youtube:: N-eQmvPNo40
+  :aspect: 16:9
+  :width: 100%
+  :height: 480
+  :align: center
+  :privacy_mode: enable_privacy_mode
+  :url_parameters: ?start=23
+
+Embeber forma
+-------------
+
+La funcionalidad de embeber una forma implica exportar código HTML de la forma para integrar el formulario directamente en una página web o aplicación.
+
+Embeber una forma es sencillo, simplemente siga estos pasos:
+
+1. Ingrese a la forma de la que desea obtener el código.
+2. Configure su forma como pública. Diríjase a ``Opciones > Opciones Generales`` y habilite la opción ``Pública``.
+3. Guarde la forma en su totalidad.
+4. Seleccione ``Opciones > Embeber Forma``.
+5. Ingrese la ``URL de destino`` (el sitio web donde desea embeber la forma) o puede dejarla en el valor predeterminado.
+
+.. image:: /imgs/Formas/Formas90.jpg
+
+6. Haga clic en el botón ``Siguiente``.
+7. Copie y pegue el código HTML que Linkaform le proporciona.
+
+.. image:: /imgs/Formas/Formas91.jpg
+
+Consulte el siguiente video para ver un ejemplo:
+
+.. youtube:: 3P-9icCr3vY
+  :aspect: 16:9
+  :width: 100%
+  :height: 480
+  :align: center
+  :privacy_mode: enable_privacy_mode
+  :url_parameters: ?start=65
+
+Imprimir PDF
+------------
+
+Esta funcionalidad permite generar una plantilla únicamente con los campos que conforman la forma, sin necesidad de crear un registro.
+
+Para generar un documento PDF, siga estos sencillos pasos:
+
+1. Ubíquese en la forma de la cual desea obtener el PDF.
+2. Vaya a ``Opciones > Imprimir PDF``.
+3. En el historial de descargas de su navegador, encontrará el archivo PDF con la estructura de su forma.
+
+Botones
+-------
+
+Los botones tienen la función de ejecutar una acción que afecte a un campo. La configuración es la siguiente:
+
+1. Ingrese a la forma en la que desea agregar el botón.
+2. Diríjase a ``Opciones > Botones``.
+3. Haga clic en el botón verde para ``Agregar botón``.
+4. Asigne un nombre descriptivo al botón haciendo doble clic sobre el campo ``Título de la pregunta``.
+
+.. image:: /imgs/Formas/Formas94.jpg
+
+Las características de los botones son las siguientes:
+
++------------------------+----------------------------------------------------------------------------------+
+| Función                | Descripción                                                                      |
++========================+==================================================================================+
+| **Ícono**              | Seleccione la figura que se mostrará como botón en la forma. Para ello, haga     |
+|                        | doble clic en el icono de nave.                                                  |
++------------------------+----------------------------------------------------------------------------------+
+| **Color**              | Establezca el color del botón elegido. Puede utilizar un número hexadecimal o    |
+|                        | incluso usar la barra de colores.                                                |
++------------------------+----------------------------------------------------------------------------------+
+| **Visible en**         | Determine el momento en que se visualizará el botón.                             |
++------------------------+----------------------------------------------------------------------------------+
+| **Esperar respuesta**  | Habilite si está relacionado con un proceso y debe esperar confirmación (por     |
+|                        | ejemplo, en el caso de afectación por Script).                                   |
++------------------------+----------------------------------------------------------------------------------+
+| **Script**             | Habilite para configurarlo con la ejecución de un Script.                        |
++------------------------+----------------------------------------------------------------------------------+
+| **Ayuda**              | Habilite la opción si requiere que brinde ayuda e introduzca el texto de ayuda.  |
++------------------------+----------------------------------------------------------------------------------+
+| **Actualizar valores** | Escriba el nombre del campo que será afectado por el botón cuando se haga clic   |
+|                        | en él. Por ejemplo, al hacer clic en el botón, puede cambiar la respuesta del    |
+|                        | campo ``Estatus`` al valor ``Resuelto``.                                         |
++------------------------+----------------------------------------------------------------------------------+
+|                                                                                                           |
++------------------------+----------------------------------------------------------------------------------+  
+| .. image:: /imgs/Formas/Formas95.jpg                                                                      |
++------------------------+----------------------------------------------------------------------------------+  
+| **Web services**       | Ingrese los parámetros correspondientes a la interacción con un servicio web     |
+|                        | cuando se hace clic en el botón. Esto podría incluir datos que se envían al      |
+|                        | servicio web para realizar alguna acción o solicitar información específica.     |
++------------------------+----------------------------------------------------------------------------------+
+|                                                                                                           |
++------------------------+----------------------------------------------------------------------------------+  
+| .. image:: /imgs/Formas/Formas96.jpg                                                                      |
++------------------------+----------------------------------------------------------------------------------+
+
+Carpetas
+========
+
+Las carpetas permiten organizar y facilitar el acceso y la gestión de las formas. En las siguientes secciones, encontrará más información acerca de cómo trabajar con carpetas.
+
+Crear carpeta
+-------------
+
+La creación de una carpeta en Linkaform sirve para almacenar una o más formas dentro de ella. Siga los siguientes pasos para crear una carpeta:
+
+1. Seleccione la opción ``Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
+2. Haga clic en el ícono de la burbuja con el icono de carpeta, ubicado en la parte superior derecha. Al pasar el ratón sobre ella, podrá ver la funcionalidad que ofrece.
+3. Escriba el nombre de la carpeta. Observe que del lado izquierdo podrá encontrar la carpeta que creó.
+
+.. image:: /imgs/Formas/Formas97.png
+
+Compartir Carpeta
+-----------------
+
+Compartir una carpeta es sencillo, siga los pasos:
+
+1. Identifique la carpeta de su interés.
+2. Haga clic en el segundo ícono de compartir que aparece a la derecha.
+3. En la ventana que aparece, escriba el nombre del usuario con el que desea compartir la carpeta, presione ``Enter`` y el nombre del usuario aparecerá en la parte inferior.
+
+.. image:: /imgs/Formas/Formas98.png
+
+.. _compartir:
+
+4. Defina los permisos que el usuario tendrá en la carpeta:
+
+- **Lectura**: El usuario podrá ver las formas dentro de la carpeta y crear registros.
+- **Compartir**: El usuario podrá ver y responder a las formas, además de poder compartir la carpeta con otros usuarios.
+- **Admin**: El usuario tendrá los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar las formas.
+- **Borrar registros**: Al activar esta opción, el usuario podrá eliminar registros de las formas. Si no se activa, el usuario no podrá eliminar registros incluso si tiene el perfil de ``Admin``.
+
+.. important:: Cuando se comparte una carpeta, las formas que contiene heredan automáticamente los permisos.
+
+.. tip:: Si necesita mover una forma a una carpeta, simplemente arrástrela al lugar que necesite. Si necesita mover una forma fuera de alguna carpeta, a la raíz, simplemente arrástrela a la columna principal.
+
+Opciones de forma
+=================
+
+Las formas proporcionan opciones que permiten una rápida gestión de las mismas, las cuales incluyen;
+
+- **Borrar**
+- **Compartir**: Permite otorgar permisos. Siga los `pasos <#compartir>`_ :octicon:`report;1em;sd-text-info`
+- **Editar**: Permite realizar cambios en la estructura de la forma. Se pueden agregar campos, modificar respuestas, etc.
+- **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo, excepto flujos de trabajo.
+- **Responder**: Permite crear registros de la forma deseada. Simplemente haga clic sobre la opción y se mostrará la estructura de la forma en modo ``Responder``. Al terminar de capturar la información, haga clic en ``Mandar respuestas``.
+
+- **Ver Registros**: Mostrará los registros de la forma. Esta opción tiene dos tipos de resultados:
+
+  * Si la forma se tiene compartida en modo ``Solo Lectura``, el usuario solo podrá ver sus propios registros.
+  * Si la forma se tiene compartida en modo ``Admin``, el usuario podrá ver todos los registros, independientemente del usuario que los haya creado.
+
+.. image:: /imgs/Formas/Formas99.png
+
+¡Felicitaciones! 🎉 Si ha seguido la documentación secuencialmente, ahora es capaz de diseñar y crear sus propios formularios personalizados. Si tiene alguna duda, puede regresar al contenido o preguntar directamente al soporte técnico de Linkaform.
+
+.. LIGAS DE INTERÉS EXTERNO 
+
+.. |app| raw:: html
+
+    <a href="https://app.linkaform.com/" target="_blank">https://app.linkaform.com/</a>
