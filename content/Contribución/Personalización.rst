@@ -1,3 +1,5 @@
+.. _personalizacion:
+
 ===============================
 Personalización con extensiones
 ===============================

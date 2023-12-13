@@ -1,3 +1,5 @@
+.. _doc-usuario:
+
 =============================
 Documentación para el usuario
 =============================

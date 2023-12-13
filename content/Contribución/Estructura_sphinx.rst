@@ -1,3 +1,5 @@
+.. _documentacion:
+
 ===========================
 Estructura de documentación
 ===========================

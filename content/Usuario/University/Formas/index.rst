@@ -1,22 +1,24 @@
+.. _section-forms:
+
 ======
 Formas
 ======
 
 En Linkaform, el término ``forma`` hace referencia a un formulario digital que posibilita la automatización de procesos. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
 
-#. Crear y editar formas.
-#. Crear carpetas para organizar y almacenar formas.
-#. Compartir formas con otros usuarios.
-#. Responder formas para generar nuevos registros.
-#. Acceder directamente a los registros de la forma seleccionada.
-#. Realizar búsquedas de formas dentro de la cuenta.
-#. Realizar configuraciones para uso personalizado. 
+- Crear y editar de formas.
+- Crear carpetas para organizar y almacenar formas.
+- Compartir formas con otros usuarios.
+- Responder formas para generar nuevos registros.
+- Acceder directamente a los registros de la forma seleccionada.
+- Realizar búsquedas de formas dentro de la cuenta.
+- Realizar configuraciones para uso personalizado. 
 
 Este apartado abarcará todos los aspectos necesarios para diseñar una solución integral y aprovechar al máximo el potencial que Linkaform ofrece a su empresa.
 
-La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están disponibles para que pueda revisar un tema específico en cualquier momento.
+La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están preparadas para que pueda revisar un tema específico en cualquier momento.
 
-Para acceder a las formas, siga los siguientes pasos:
+Para acceder a las ``formas``, siga los siguientes pasos:
 
 1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales. 
@@ -43,19 +45,28 @@ Si desea establecer o cambiar el nombre de la forma, haga clic en el título en 
 
 .. important:: Recuerde que después de realizar cualquier cambio en la forma, debe hacer clic en el botón ``Guardar`` para asegurar que las modificaciones se guarden correctamente. 
 
-Nombre de Página en forma
--------------------------
+Páginas en la forma
+-------------------
 
-Definir o cambiar el nombre de una página es sencillo. Seleccione la página a la que desea aplicar esta acción y verá el título actual en la parte superior. Para cambiarlo, haga clic en el ícono de edición, escriba el nuevo nombre y presione Enter.
+Definir o cambiar el nombre de una página es sencillo. Siga las siguientes pasos:
+
+1. Identifique la página en la que se encuentra, que por default contiene el nombre de ``Pagina 1``.
+2. Haga doble clic en el ícono de edición.
+3. Escriba el nuevo nombre.
+4. Presione Enter.
+5. Seleccione el botón verde ``Nueva página`` si necesita una nueva página.
+6. Repita los pasos de 1 al 6 si tiene una nueva pagina.
 
 .. image:: /imgs/Formas/Formas4.jpg
 
-Características de campos
--------------------------
+.. note:: Observe que contiene un campo de búsqueda que permite filtrar las páginas. Esto es útil cuando su formulario es demasiado extenso y necesita filtrar su información.
 
-.. :octicon:`star-fill;1em;sd-text-warning` 
+.. _opciones-campos:
 
-Las características que comparten la mayoría de los campos de Linkaform son las siguientes:
+Campos
+------
+
+Linkaform proporciona campos básicos para personalizar sus formas o :ref:`catalogo` :octicon:`report;1em;sd-text-info`. Ambos comparten las siguientes características y campos.
 
 .. list-table::
    :widths: 25 75
@@ -67,7 +78,7 @@ Las características que comparten la mayoría de los campos de Linkaform son la
    * - ⭐ Favorito
      - Al activar esta opción, permite visualizar la información de este campo al realizar consultas en registros completados desde la app o al consultar los registros desde la web en el apartado de registros.
    * - Ascendente/Descendente
-     - Permite ordenar las respuestas incluidas en este campo en el orden elegido.
+     - Permite ordenar las respuestas del campo en el orden elegido.
    * - Duplicar
      - Crea una copia exacta del campo.
    * - Config
@@ -75,24 +86,19 @@ Las características que comparten la mayoría de los campos de Linkaform son la
    * - Requerido
      - Hace obligatoria la respuesta al campo al crear un registro.
    * - Default
-     - Define una respuesta predeterminada en la forma, la cual se puede modificar al responder la forma.
+     - Define una respuesta predeterminada en la forma o catálogo, la cual se puede modificar al responder.
    * - Enviar email
      - Al activar esta opción, se puede enviar una copia del registro que se está capturando al correo capturado en este campo.
    * - Opción abierta
      - Permite agregar una opción adicional en la respuesta cuando se definen respuestas únicas.
    * - Propiedades
      - En el campo de texto, sirve para habilitar la lectura de códigos de barras o QR. En campos numéricos, esta opción establece parámetros mínimos y máximos aceptados.
-   * - Configuración de la notificación
+   * - Configuración notificación
      - Permite configurar el envío de un correo electrónico al seleccionar una de las opciones de respuesta disponibles.
-   * - Configuración de la ponderación
+   * - Configuración ponderación
      - Establece el puntaje deseado para las respuestas.
    * - Ayuda
      - Habilita una opción de texto adicional en el campo como referencia a la respuesta solicitada.
-
-Campos
-------
-
-Al realizar un formulario, Linkaform proporciona campos básicos para personalizar sus formularios según sus necesidades. 
 
 .. _configuracion:
 
@@ -105,13 +111,17 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
     .. tab-item:: Texto una línea
 
-        Están diseñados para capturar respuestas abiertas de hasta 500 caracteres. También es posible activar la lectura de códigos de barras y códigos QR en las propiedades de este campo.
+        Están diseñados para recopilar respuestas breves, con una limitación de hasta 500 caracteres. Estos campos presentan una interfaz de entrada de una sola línea, ideal para capturar información concisa como nombres, direcciones o números de teléfono.
+        
+        Este campo ofrece la posibilidad de activar la lectura de códigos de barras y códigos QR para una entrada eficiente de datos.
 
         .. image:: /imgs/Formas/Formas6.png
 
     .. tab-item:: Párrafo
 
-        Permiten capturar respuestas abiertas de hasta 500 caracteres. A diferencia del campo de ``Una Línea``, en este campo es posible saltar de línea y copiar vínculos, respetando el enlace.
+        Permiten recopilar respuestas más extensas, también con una restricción de hasta 500 caracteres. A diferencia de los campos de texto ``Una Línea``, estos campos ofrecen un área más amplia que facilita la entrada de textos más largos, como comentarios detallados o descripciones. 
+        
+        En el campo de ``Párrafo``, los usuarios pueden saltar de línea y copiar vínculos, manteniendo la integridad de los enlaces proporcionados en la respuesta.
 
         .. image:: /imgs/Formas/Formas6.1.png
 
@@ -133,21 +143,26 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
     .. tab-item:: Email
 
-        En el campo Email, puede capturar direcciones de correo electrónico. 
+        En el campo ``Email``, puede capturar direcciones de correo electrónico. 
 
-        Cuando este campo se establece como requerido, Linkaform realiza una validación para asegurarse de que la dirección tenga la estructura correspondiente a un correo electrónico. Sin embargo, Linkaform no verifica la existencia real del correo electrónico.
+        .. important:: Cuando este campo se establece como requerido, Linkaform realiza una validación para asegurarse de que la dirección tenga la estructura correspondiente a un correo electrónico. Sin embargo, Linkaform NO verifica la existencia real del correo electrónico.
+          
+        Activar la opción ``Enviar Email`` permitirá enviar una copia del registro capturado al correo que seleccione.
 
         .. image:: /imgs/Formas/Formas6.4.png
-          
-        Además, puede activar la opción ``Enviar Email`` y Linkaform enviará una copia del registro capturado al correo que seleccione.
 
-        Al activar la opción ``Enviar Email``, en las opciones a la derecha de su pantalla, se habilitará la función ``Configuración de Email``. A continuación, siga las siguientes configuraciones:
+        .. caution:: Esta opción está disponible unicamente para formas. 
+
+        Se habilitará el botón ``Configuración de Email``. A continuación, siga las siguientes configuraciones:
         
         .. tab-set::
 
             .. tab-item:: De
 
-                En esta opción, se configura el remitente. Haga clic en el campo y seleccione el remitente deseado.
+                En esta parte, podrá configurar el remitente. 
+                
+                1. Haga clic en el campo.
+                2. Seleccione el remitente deseado.
 
                 .. image:: /imgs/Formas/Formas7.png
 
@@ -155,31 +170,34 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
             .. tab-item:: Para
 
-                Esta opción permite configurar al destinatario y realizar las siguientes acciones:
+                Esta opción permite configurar al destinatario, siga los siguientes pasos:
 
-                - Enviar una copia al correo cada vez que se edite el registro.
-
-                - Activar el envío del PDF.
+                1. Seleccione una opción en el campo ``¿Reenviar correo al editar el campo?`` para enviar una copia cada vez que se edite el registro.
+                2. Active el bullet ``Adjuntar pdf`` si necesita enviar el PDF.
 
                 .. caution:: Si esta opción no se activa, el correo se enviará sin incluir el PDF.
 
-                - Adjuntar el logo de la compañía.
-
-                - Adjuntar los documentos que pueda contener este registro en el envío del correo.
-                
-                - Seleccionar el formato de plantilla deseado para este registro (en el caso de que la forma tenga más de un formato de PDF diseñado).
+                3. Active el bullet ``Adjuntar imagen de compañía`` para incorporar el logo de la compañía.
+                4. Active el bullet ``Enviar Adjuntos`` para incorporar documentos que pueda contener su registro.
+                5. Seleccione el formato de plantilla deseado para este registro (en el caso de que la forma tenga más de un formato de PDF diseñado).
 
                 .. image:: /imgs/Formas/Formas7.1.png
 
             .. tab-item:: Asunto
 
-                En este campo, se define el asunto que mostrará el correo. En la parte inferior, Linkaform permite utilizar metadatos o los campos de la forma para personalizar el asunto. Simplemente seleccione el campo deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
-
+                En este campo, se define el asunto que mostrará el correo, siga los pasos:
+                
+                1. Si lo requiere, personalice el texto del asunto.
+                2. Seleccione el metadato deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
+                3. Seleccione el campo deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
+                
                 .. image:: /imgs/Formas/Formas7.2.png
+
+                .. important:: Puede personalizar el asunto de acuerdo a sus necesidades. 
 
             .. tab-item:: Cuerpo
 
-                De manera similar al caso anterior en el asunto, simplemente seleccione el campo deseado y haga clic en ``Agregar``. 
+                De manera similar al caso anterior en el ``Asunto``, simplemente seleccione el campo deseado y haga clic en ``Agregar``. 
 
                 .. image:: /imgs/Formas/Formas7.3.png
 
@@ -202,7 +220,7 @@ Dos configuraciones comunes que comparten la mayoría de los campos de respuesta
 
 La ponderación es el proceso de asignar un peso o valor relativo a cada opción seleccionada por el usuario.
 
-Para habilitar la opción de ``Configuración de la ponderación``, es necesario realizar una configuración en `Opciones Generales <#ponde>`_ :octicon:`report;1em;sd-text-info`, seguido de los siguientes pasos:
+Para habilitar la opción de ``Configuración de la ponderación``, es necesario realizar una configuración en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info`, seguido de los siguientes pasos:
 
 1. Seleccione el botón ``Configuración de la ponderación``.
 2. Seleccione la respuesta en el selector.
@@ -236,7 +254,7 @@ En el siguiente recuadro, podrá encontrar los tipo de respuesta múltiple. Cons
 
     .. tab-item:: Sí/No
 
-        Este campo simplifica las opciones de respuesta a solo dos: ``Sí`` o ``No``. En este campo sólo se puede elegir una de las respuestas.
+        Este campo simplifica las opciones de respuesta a solo dos: ``Sí`` o ``No``. Es decir, sólo se puede elegir una de las respuestas.
         
         .. image:: /imgs/Formas/Formas9.2.png
 
@@ -249,13 +267,13 @@ En el siguiente recuadro, podrá encontrar los tipo de respuesta múltiple. Cons
 Campo número
 ^^^^^^^^^^^^
 
-Los campos numéricos se utilizan para recopilar información numérica de las formas. Considere las siguientes configuraciones que comparten:
+Los campos numéricos se utilizan para recopilar información numérica. Considere las siguientes configuraciones que comparten:
 
 - Revise y si es necesario, configure la `ponderacion <#pond>`_ :octicon:`report;1em;sd-text-info` del campo.
         
 - Si requiere, habilite la `configuración de Email <#configuracion>`_ :octicon:`report;1em;sd-text-info` en el campo email.
 
-- Establezca parámetros de rango de mínimos y máximos en las propiedades del campo.
+- Establezca parámetros de rango de mínimos y máximos en las ``Propiedades`` del campo.
     
 .. tab-set::
 
@@ -289,6 +307,8 @@ Un grupo repetitivo es un campo utilizado para agregar varios sets dentro de él
 
 .. image:: /imgs/Formas/Formas12.jpg
 
+.. caution:: Esta opción está disponible unicamente para formas. 
+
 Para utilizarlo, siga estos pasos:
 
 1. Agregue el campo.
@@ -298,14 +318,14 @@ Para utilizarlo, siga estos pasos:
 .. important:: Guardar el formulario permitirá habilitar la opción ``Editar``.
 
 4. Seleccione ``Editar`` (se mostrará una plantilla en blanco).
-5. Coloque los campos que formarán parte de este grupo repetitivo (son los mismos vistos en esta sección).
+5. Coloque los campos que formarán parte de este grupo repetitivo (son los mismos vistos en esta sección, excepto los grupos repetitivos).
 
 .. image:: /imgs/Formas/Formas13.jpg
 
 Campo geolocalización
 ^^^^^^^^^^^^^^^^^^^^^
 
-El campo de Geolocalización se utiliza para incluir la ubicación geográfica en el registro capturado. Este campo es editable, por lo que modificarla según sea necesario.
+El campo de geolocalización se utiliza para incluir la ubicación geográfica en el registro capturado. Este campo es editable, por lo que podrá modificarla según sea necesario.
 
 .. image:: /imgs/Formas/Formas14.jpg
     :height: 150px
@@ -346,14 +366,15 @@ En la opción ``Config`` de este campo, se definen parámetros que son posibles 
 
         **Configuración de campos** contiene las siguientes opciones:
 
-        - **Agregar a la imagen:** Permite incluir los parámetros de Geolocalización (ubicación) en la que se tomó o agregó la foto, así como la fecha de captura.
-        - **Campos:** Permite incluir campos correspondientes de la forma para agregarlos impresos en esa imagen. Simplemente teclee el título del campo y Linkaform lo sugerirá; presione ``Enter`` y se agregará.
+        - **Agregar a la imagen:** Permite incluir los parámetros de geolocalización (ubicación) en la que se tomó o agregó la foto, así como la fecha de captura.
+        - **Campos:** Permite incluir campos correspondientes de la forma o catálogo para agregarlos impresos en esa imagen. Simplemente teclee el título del campo y Linkaform lo sugerirá; presione ``Enter`` y se agregará.
         - **Nombre de archivo:** Permite incluir metadatos correspondientes a ese registro en el nombre de archivo o puede introducir un texto para que se imprima en la imagen.
         - **Configurar marca de agua:** Habilitar esta opción permite definir el color, tamaño y la posición de la marca de agua en la foto donde desea que aparezca impresa la información.
 
 Campo documentos
 ^^^^^^^^^^^^^^^^
-Este campo permite agregar diferentes tipos de archivos al registro de la forma en el momento de la captura y/o edición. 
+
+Este campo permite agregar diferentes tipos de archivos en el momento de la captura y/o edición del registro.
 
 .. image:: /imgs/Formas/Formas16.jpg
     :height: 150px
@@ -367,33 +388,35 @@ Del mismo modo que el campo fotografías, puede configurar los parámetros en `c
 Campo firma
 ^^^^^^^^^^^
 
-Este tipo de campo permite a los usuarios firmar digitalmente el formulario.
+Este tipo de campo permite a los usuarios firmar digitalmente, es útil en situaciones donde se requiere una confirmación o autorización.
 
-Si se utiliza desde un formulario en la aplicación web, simplemente podrán utilizar el teclado. Por otro lado, al utilizar dispositivos móviles, podrán dibujar su firma.
-
-Este campo es útil en situaciones donde se requiere una confirmación o autorización.
+Si se contesta o edita el formulario o catálogo desde la aplicación web, simplemente podrán utilizar el teclado. Por otro lado, al utilizar dispositivos móviles, podrán dibujar su firma.
 
 .. image:: /imgs/Formas/Formas16.1.png
     :height: 150px
     :width: 700px
 
-.. important:: Al momento de responder el formulario, la firma se guardará y tratará como un archivo de tipo imagen.
+.. important:: Al momento de responder o editar, la firma se guardará y tratará como un archivo de tipo imagen.
 
 Campo catálogo
 ^^^^^^^^^^^^^^
 
-El campo catálogo es una función diferente, aunque está directamente relacionado con la sección de catálogos que ofrece Linkaform. Consulte catálogos aquí (hipervínculo). En este apartado, se tratará como un campo.
+Este campo se utiliza para mostrar información almacenada en una base de datos (consulte :ref:`catalogo` :octicon:`report;1em;sd-text-info`).
 
-El campo Catálogo se utiliza para mostrar en la forma información correspondiente a un catálogo. Para utilizarla, tenga en cuenta los siguientes aspectos y siga los siguientes pasos:
+Para utilizar dicho campo, tenga en cuenta los siguientes aspectos y siga los siguientes pasos:
 
-1. Primero, considere tener o, en su defecto, crear un catálogo (hipervínculo). En este caso, contemple el catálogo ``Tiendas``.
-2. Agregue el campo catálogo a la forma.
-3. Asigne un nombre al catálogo.
-4. En ``Catalog Name``, coloque el nombre del catálogo previamente preparado. Automáticamente, Linkaform sugerirá el nombre del catálogo.
+1. Primero, considere tener o, en su defecto, cree un catálogo (consulte :ref:`crear-catalogo` :octicon:`report;1em;sd-text-info`). En este caso, contemple el catálogo ``Tiendas``.
+2. Agregue el campo catálogo.
+3. Asigne un nombre al campo catálogo.
+4. En ``Selecciona un catálogo``, coloque el nombre del catálogo previamente preparado. Automáticamente, Linkaform sugerirá el nombre del catálogo.
 
-.. important:: No puede tener dos campos catálogo utilizando el mismo catálogo.
+.. important:: 
+  
+  * No puede tener dos campos de catálogo utilizando el mismo catálogo.
+  * Al crear un catálogo, considere que puede tener múltiples catálogos, e incluso pueden estar anidados.
 
-5. Guarde la forma en su totalidad.
+
+5. Guarde la forma o el catálogo en su totalidad.
 6. Presione el botón ``Editar``.
 
 .. image:: /imgs/Formas/Formas17.png
@@ -406,7 +429,7 @@ El campo Catálogo se utiliza para mostrar en la forma información correspondie
 
       .. image:: /imgs/Formas/Formas17.1.png
 
-      **Editar campos del catálogo:** En la opción ``Editar``, seleccione los campos del catálogo que desea incluir en la forma.
+      **Editar campos del catálogo:** En la opción ``Editar``, seleccione los campos del catálogo que desea incluir.
       
       .. admonition:: Ejemplo
           :class: pied-piper
@@ -436,11 +459,11 @@ El campo Catálogo se utiliza para mostrar en la forma información correspondie
       
       .. important:: Para organizar los campos seleccionados; simplemente haga clic en el campo y arrástralo a la posición deseada.
 
-      - **Geocerca:** Una funcionalidad de catálogos es poder dar de alta ubicaciones mediante coordenadas GPS. Al habilitarse Geocerca, se define la distancia de referencia permitida de las coordenadas, y así solo se mostrará la información si se encuentra en el rango de metros configurado.
+      - **Geocerca:** Una funcionalidad de catálogos es poder dar de alta ubicaciones mediante coordenadas GPS. Al habilitarse ``Geocerca``, se define la distancia de referencia permitida de las coordenadas, y así solo se mostrará la información si se encuentra en el rango de metros configurado.
 
       .. image:: /imgs/Formas/Formas17.3.png
 
-      Al tener tus configuraciones listas, presione ``Guardar`` y regrese al formulario presionando ``Cerrar``.
+      Al tener tus configuraciones listas, presione ``Guardar`` y regrese presionando ``Cerrar``.
 
 Opciones
 --------
@@ -515,7 +538,7 @@ Esta configuración permite personalizar los mensajes al momento de capturar un 
 
 .. image:: /imgs/Formas/Formas23.1.png
 
-.. _ponde:
+.. _ponderacion-conf:
 
 Ponderación 
 ^^^^^^^^^^^
@@ -525,16 +548,14 @@ En esta sección podrá especificar si desea utilizar la ponderación en la form
 1. Active la opción ``Ponderación``.
 2. Defina si se calificará por puntos o porcentaje. 
 
-.. important:: Tenga en cuenta que solo es posible utilizar una de ambas ponderaciones. 
-
 .. note:: Si elige calificar por porcentaje, debe establecer la puntuación máxima.
 
 .. image:: /imgs/Formas/Formas23.2.png
 
+.. important:: Tenga en cuenta que solo es posible utilizar una de ambas ponderaciones. 
+
 Temporizador 
 ^^^^^^^^^^^^
-
-**Opciones Generales - Temporizador**
 
 La funcionalidad del temporizador es utilizada para definir parámetros de tiempo relacionados con la captura de información en la forma. La configuración es la siguiente:
 
@@ -1239,7 +1260,7 @@ Opciones de forma
 Las formas proporcionan opciones que permiten una rápida gestión de las mismas, las cuales incluyen;
 
 - **Borrar**
-- **Compartir**: Permite otorgar permisos. Siga los `pasos <#compartir>`_ :octicon:`report;1em;sd-text-info`
+- **Compartir**: Permite otorgar permisos de la forma a otros usuarios. `Siga los pasos <#compartir>`_ :octicon:`report;1em;sd-text-info`.
 - **Editar**: Permite realizar cambios en la estructura de la forma. Se pueden agregar campos, modificar respuestas, etc.
 - **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo, excepto flujos de trabajo.
 - **Responder**: Permite crear registros de la forma deseada. Simplemente haga clic sobre la opción y se mostrará la estructura de la forma en modo ``Responder``. Al terminar de capturar la información, haga clic en ``Mandar respuestas``.

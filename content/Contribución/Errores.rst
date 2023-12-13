@@ -1,6 +1,8 @@
-===================
+.. _errores-comunes:
+
+===============
 Errores comunes 
-===================
+===============
 
 En esta sección, podrá identificar errores comunes al trabajar con Sphinx y aprender cuáles son las mejores formas de corregirlos.
 

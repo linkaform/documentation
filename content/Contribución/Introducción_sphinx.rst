@@ -1,8 +1,8 @@
-======================
-Documentando LinkaForm
-======================
+.. _inicio:
 
-¡Bienvenido y gracias por considerar contribuir a la documentación de Linkaform! Agradecemos su tiempo y experiencia al hacerlo.
+=============
+Documentación
+=============
 
 Esta guía introductoria le permitirá adquirir las herramientas y el conocimiento que necesita para escribir documentación y desarrollar nuevos módulos para ampliar la funcionalidad de Linkaform. Al crear módulos personalizados y ponerlos a disposición de otros, puede ayudar a hacer crecer el ecosistema de Linkaform y brindar valor adicional a los usuarios de la plataforma.
 

@@ -1,3 +1,5 @@
+.. _instalacion:
+
 ===========
 Instalación
 ===========
@@ -115,7 +117,7 @@ Después de la instalación, las configuraciones básicas de Git son las mismas 
     :privacy_mode: enable_privacy_mode
     :url_parameters: ?start=496
 
-7. Dirijase al repositorio de la documentación en `github.com/linkaform/documentation <https://github.com/linkaform/documentation/>`_ :octicon:`report;1em;sd-text-info`.
+7. Diríjase al repositorio de la documentación en `github.com/linkaform/documentation <https://github.com/linkaform/documentation/>`_ :octicon:`report;1em;sd-text-info`.
 
 8. Clone el repositorio.
 
@@ -144,7 +146,7 @@ Para hacer un ``commit`` uno debe de primero agregar los archivos que desea agre
 
     git status
 
-Esto te mostrará la lista de archivos que ha sufirdo cambios, de esta lista debes de agregar el o los archivos que deseas subir al repositorio, con ``git add``
+Esto te mostrará la lista de archivos que ha sufrido cambios, de esta lista debes de agregar el o los archivos que deseas subir al repositorio, con ``git add``
 
 .. code-block::
 
@@ -154,9 +156,9 @@ Posterior mente hacer un commit indicando que cambios ser realizaron. Esto debe 
 
 .. code-block::
 
-    git commit -m 'Se extendio la explicacion de como hacer un commit en github'
+    git commit -m 'Se extendió la explicación de como hacer un commit en github'
 
-.. tip:: Si requiere hacer una explicacion mas amplia puede correr el codigo ``git commit`` a secas y darle enter lo que abrirar un editor de texto donde puede poner mas detalle sobre tu commit.
+.. tip:: Si requiere hacer una explicación mas amplia puede correr el código ``git commit`` a secas y darle enter lo que abrirá un editor de texto donde puede poner mas detalle sobre tu commit.
 
 
 Una vez realizado el commit, SIEMPRE es bueno hacer un ``pull`` de la rama en que se esta trabajando para asegurarnos que estamos trabajando sobre la ultima versión antes de subir nuestros cambios ya que de no estar en la ultima versión git nos puede marcar un error.
@@ -165,9 +167,9 @@ Una vez realizado el commit, SIEMPRE es bueno hacer un ``pull`` de la rama en qu
 
     git pull origin develop
 
-.. tip:: Puedes cambiar el nombre de la rama ``develop`` por la palabra ``HEAD`` y automaticamente git hara el pull de la rama actual, esto funciona para cualquier comando que haga referencia de la rama en que se esta trabajando.
+.. tip:: Puede cambiar el nombre de la rama ``develop`` por la palabra ``HEAD`` y automáticamente git hará el pull de la rama actual, esto funciona para cualquier comando que haga referencia de la rama en que se esta trabajando.
 
-Una ver realizado el commit y luego el pull es hora de hacer un push a la rama y publicar nuestros cambios en el repositorio.
+Una vez realizado el commit y el pull haga push a la rama y publicar sus cambios en el repositorio.
 
 .. code-block::
 
@@ -309,7 +311,7 @@ O si tiene la versión más reciente de docker, ejecute el siguiente comando.
 
     docker compose up -d
 
-La instrucción anterior se utiliza para iniciar y ejecutar el contenedor de la aplicación sin bloquear la terminal y permitir que los contenedores sigan ejecutandose en segundo plano.
+La instrucción anterior se utiliza para iniciar y ejecutar el contenedor de la aplicación sin bloquear la terminal y permitir que los contenedores sigan ejecutándose en segundo plano.
 
 4. Después de ejecutar su contenedor Docker, ejecute el siguiente comando.
 

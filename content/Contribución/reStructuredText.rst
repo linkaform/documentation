@@ -1,3 +1,5 @@
+.. _escribiendo:
+
 ===============================
 Escribiendo en reStructuredText
 ===============================
@@ -1354,7 +1356,7 @@ Directorios
 
 Para ilustrar de forma gráfica la estructura de su proyecto, utilice la herramienta ``tree`` basada exclusivamente en sistemas Unix y Linux. Este comando muestra la organización de directorios y archivos en forma de árbol, lo que facilita la navegación y la comprensión de la estructura de datos en el sistema.
 
-Por lo general, ya se encuentra instalado en la mayoría de las distribuciones de Linux. Para verificar si ``tree`` está instalado en su sistema, simplemente abre una terminal y ejecute: ::
+Por lo general, ya se encuentra instalado en la mayoría de las distribuciones de Linux. Para verificar si ``tree`` está instalado en su sistema, simplemente abra una terminal y ejecute: ::
 
     tree --version
 
