@@ -1,11 +1,24 @@
+.. _doc-pdfs:
+
 =======================
 Documentación para PDFs
 =======================
 
-En esta sección, se detallan las plantillas disponibles, la estructura de archivos necesaria y la configuración específica en el entorno Django que se requiere para crear sus propios documentos en formato PDF.
+Bienvenido a la guía completa que le proporcionará las herramientas y el conocimiento necesario para desarrollar sus propios documentos PDF personalizados.
+
+En este apartado podrá encontrar:
+
+- Configuraciones básicas.
+- Estructura de archivos.
+- Django.
+- Descargar documentos.
+
+.. Tip:: La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
 
 Configuración del entorno
 =========================
+
+En esta sección, se detallan las plantillas disponibles, la estructura de archivos necesaria y la configuración específica en el entorno Django que se requiere para crear sus propios documentos en formato PDF.
 
 Linkaform hace uso de un repositorio especial para el desarrollo de PDFs, proporcionando un control sobre los documentos generados para los clientes. Linkaform utiliza GitLab, si ya cuenta con una cuenta en la misma, siga los pasos a continuación; de lo contrario, consulte el `enlace <https://about.gitlab.com/>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
 
@@ -58,7 +71,8 @@ Encabezado del documento, que suele contener información como el logotipo y dat
 
     <drawRightString x="12cm" y="25cm"></drawRightString>
 
-Para incluir elementos del ``header`` en el ``body`` utilice etiquetas y custom tags especiales de Django y Linkaform dentro de ``<pageGraphics>``. En la sección de Report Markup Language (RML) se habla más a cerca de las etiquetas.(HACER REFERENCIA A RML)
+Para incluir elementos del ``header`` en el ``body`` utilice etiquetas y custom tags especiales de Django y Linkaform dentro de ``<pageGraphics>``. En la sección :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` se habla más a cerca de las etiquetas.
+
 
 .. code-block:: xml
     :linenos:
@@ -359,7 +373,7 @@ El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los 
 Descargar PDF
 =============
 
-El proceso de descarga de sus documentos PDF difiere según el tipo de documento. El proceso de descarga de sus documentos PDF difiere según el tipo de documento. A continuación, siga los pasos según su necesidad.
+El proceso de descarga de sus documentos PDF difiere según el tipo de documento. A continuación, siga los pasos según su necesidad.
 
 .. important:: Recuerde que el proceso de descarga depende de la configuración que realizó al `vincular su forma y el PDF <#vincular>`_ :octicon:`report;1em;sd-text-info`.
     

@@ -151,7 +151,7 @@ Compartir Carpeta
 Compartir una carpeta es sencillo, siga los pasos:
 
 1. Identifique la carpeta de su interés.
-2. Haga clic en el primer icono ``Opciones > Compartir`` o seleccione segundo ícono de compartir.
+2. Haga clic en el primer icono ``Opciones > Compartir`` o seleccione el segundo ícono de compartir.
 
 .. image:: /imgs/Catálogos/Catálogos14.png
 

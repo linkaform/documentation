@@ -1,3 +1,5 @@
+.. _report_markup_language:
+
 ============================
 Report Markup Language (RML)
 ============================

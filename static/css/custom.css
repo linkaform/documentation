@@ -39,8 +39,12 @@ button.copybtn {
 }
 
 .card-i:hover {
-  border-color: #fbcb04;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -webkit-animation:shadow-drop-2-center .4s cubic-bezier(.25,.46,.45,.94) both;
+  animation:shadow-drop-2-center .4s cubic-bezier(.25,.46,.45,.94) both;
 }
+
+
 
 
 :root {

@@ -472,6 +472,8 @@ Las opciones son configuraciones que se pueden aplicar a la forma. Puede encontr
 
 .. image:: /imgs/Formas/Formas20.jpg
 
+.. _geolozalizacion:
+
 Opciones generales
 ^^^^^^^^^^^^^^^^^^
 
@@ -1230,20 +1232,21 @@ La creación de una carpeta en Linkaform sirve para almacenar una o más formas 
 
 .. image:: /imgs/Formas/Formas97.png
 
-Compartir Carpeta
------------------
+.. _compartir:
 
-Compartir una carpeta es sencillo, siga los pasos:
+Compartir Carpeta / Forma
+-------------------------
 
-1. Identifique la carpeta de su interés.
-2. Haga clic en el segundo ícono de compartir que aparece a la derecha.
-3. En la ventana que aparece, escriba el nombre del usuario con el que desea compartir la carpeta, presione ``Enter`` y el nombre del usuario aparecerá en la parte inferior.
+Compartir una carpeta o una forma es un proceso similar y sencillo, siga los pasos:
+
+1. Seleccione la opción ``Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
+2. Identifique la carpeta o la forma de su interés.
+3. Haga clic en el ícono de compartir.
+4. Escriba el nombre del usuario con el que desea compartir la carpeta o la forma. Observe que el nombre del usuario aparecerá en la parte inferior.
 
 .. image:: /imgs/Formas/Formas98.png
 
-.. _compartir:
-
-4. Defina los permisos que el usuario tendrá en la carpeta:
+5. Defina los permisos que el usuario tendrá:
 
 - **Lectura**: El usuario podrá ver las formas dentro de la carpeta y crear registros.
 - **Compartir**: El usuario podrá ver y responder a las formas, además de poder compartir la carpeta con otros usuarios.
@@ -1272,7 +1275,9 @@ Las formas proporcionan opciones que permiten una rápida gestión de las mismas
 
 .. image:: /imgs/Formas/Formas99.png
 
-¡Felicitaciones! 🎉 Si ha seguido la documentación secuencialmente, ahora es capaz de diseñar y crear sus propios formularios personalizados. Si tiene alguna duda, puede regresar al contenido o preguntar directamente al soporte técnico de Linkaform.
+En esta sección, ha aprendido conceptos necesarios sobre como crear y personalizar sus formas. También ha aprendido a configurar sus formas para realizar tareas específicos.
+
+En la siguiente sección, aprenderá todo lo relacionado con catálogos, una funcionalidad sumamente util para agregar un plus a sus formas. Si tiene alguna duda, del contenido anterior, puede regresar y consultar el contenido o preguntar directamente al soporte técnico de Linkaform.
 
 .. LIGAS DE INTERÉS EXTERNO 
 

@@ -16,7 +16,7 @@ Contribución
     Personalización
     Errores
 
-¡Bienvenido y gracias por considerar contribuir a la documentación de Linkaform! Agradecemos su tiempo y experiencia al hacerlo.
+¡Gracias por considerar contribuir a la documentación de Linkaform! Agradecemos su tiempo y experiencia al hacerlo.
 
 El siguiente indice enumera los temas que le servirán de ayuda.
  
