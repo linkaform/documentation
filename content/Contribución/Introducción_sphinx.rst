@@ -94,9 +94,11 @@ Cuando deba incluir capturas de pantalla en su documentación, asegúrese de cum
 
 - Utilice texto alternativo con nombres cortos (máximo una línea) y evite que sea una repetición de una oración o título previamente mencionado.
 
-.. important:: Para editar sus imágenes, utilice Paint o puede acceder a `jspaint <https://jspaint.app/>`_ :octicon:`report;1em;sd-text-info`. Utilice la herramienta de dibujo con el color rojo para resaltar áreas específicas, y si necesita señalar un elemento, puede utilizar una imagen genérica llamada ``flecha_roja.png`` ubicada en ``documentation/content/imgs``.
+.. seealso:: Para editar sus imágenes, utilice Paint o puede acceder a `excalidraw <https://excalidraw.com/>`_ :octicon:`report;1em;sd-text-info`. Utilice la herramienta de dibujo con el color rojo para resaltar áreas específicas, y si necesita señalar un elemento, puede utilizar una imagen genérica llamada ``flecha_roja.png`` ubicada en ``documentation/content/imgs``.
 
-- Asegúrese de utilizar nombres cortos y descriptivos para identificar sus imágenes (puede utilizar una numeración) y guardelas en una carpeta exclusiva a la sección en la que está trabajando.
+- Asegúrese de utilizar nombres cortos y descriptivos para identificar sus imágenes (puede utilizar una numeración) y guárdelas en una carpeta exclusiva a la sección en la que está trabajando.
+
+.. caution:: El nombre de sus archivos NO debe contener espacios. 
 
 Es momento de iniciar con la configuración de su entorno, o en su defecto, comience por escribir sus primeros archivos rst.
 

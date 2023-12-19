@@ -30,7 +30,7 @@ Documentación para el usuario
             :margin: 0
             :class-card: card-i
 
-            |Formas| Formas
+            |Formas| **Formas**
 
             Diseña formularios personalizados y automatiza tus procesos con facilidad.
             
@@ -43,7 +43,7 @@ Documentación para el usuario
             :margin: 0
             :class-card: card-i
 
-            |Catálogos| Catálogos
+            |Catálogos| **Catálogos**
 
             Almacena y utiliza grandes cantidades de registros según tus necesidades.
     
@@ -56,7 +56,7 @@ Documentación para el usuario
             :margin: 0
             :class-card: card-i
 
-            |Registros| Registros de formas
+            |Registros| **Registros de formas**
             
             Descubre y optimiza la búsqueda de tus registros.
 
@@ -69,7 +69,7 @@ Documentación para el usuario
             :margin: 0
             :class-card: card-i
 
-            |Inbox| Inbox
+            |Inbox| **Inbox**
     
             Mantén un control total identificando el estado de tus registros.
 

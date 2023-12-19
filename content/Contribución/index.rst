@@ -16,9 +16,9 @@ Contribución
     Personalización
     Errores
 
-¡Gracias por considerar contribuir a la documentación de Linkaform! Agradecemos su tiempo y experiencia al hacerlo.
+¡Gracias por considerar contribuir a la mejora de la documentación de Linkaform! Valoramos sinceramente tu tiempo y experiencia al hacerlo. 
 
-El siguiente indice enumera los temas que le servirán de ayuda.
+A continuación, te presentamos un índice que enumera los temas que te serán de gran ayuda. 📚🔍
  
 .. grid:: 2
     :gutter: 0
@@ -34,7 +34,7 @@ El siguiente indice enumera los temas que le servirán de ayuda.
             :margin: 0
             :class-card: card-i
 
-            |Documentacion| Documentación
+            |Documentacion| **Documentación**
 
             Aprenda las pautas necesarias para comenzar a colaborar.
             
@@ -47,7 +47,7 @@ El siguiente indice enumera los temas que le servirán de ayuda.
             :margin: 0
             :class-card: card-i
 
-            |Instalacion| Instalación
+            |Instalacion| **Instalación**
 
             Descargue e instale las herramientas necesarias en su máquina.
     
@@ -60,7 +60,7 @@ El siguiente indice enumera los temas que le servirán de ayuda.
             :margin: 0
             :class-card: card-i
 
-            |Estructura| Estructura de documentación
+            |Estructura| **Estructura de documentación**
 
             Aprenda los recursos disponibles y configure su entorno. 
 
@@ -73,7 +73,7 @@ El siguiente indice enumera los temas que le servirán de ayuda.
             :margin: 0
             :class-card: card-i
 
-            |Escribiendo| Escribiendo en reStructuredText
+            |Escribiendo| **Escribiendo en reStructuredText**
 
             Explore y aprenda a utilizar herramientas que potencien su proyecto
 
@@ -86,7 +86,7 @@ El siguiente indice enumera los temas que le servirán de ayuda.
             :margin: 0
             :class-card: card-i
 
-            |Personalizacion| Personalización con extensiones
+            |Personalizacion| **Personalización con extensiones**
 
             Explore y aprenda a utilizar herramientas que potencien su proyecto.
 
@@ -99,7 +99,7 @@ El siguiente indice enumera los temas que le servirán de ayuda.
             :margin: 0
             :class-card: card-i
 
-            |Bug| Errores comunes             
+            |Bug| **Errores comunes**             
             
             Conozca errores comunes que se generan al paso de contribuir.  
 

@@ -16,7 +16,9 @@ Documentación de Linkaform
    Desarrollador/PDFs/index
    Contribución/index
 
-¡Bienvenido a la documentación de Linkaform , tu guía oficial para dominar cada rincón de nuestra plataforma! Descubre trucos, consejos y todo lo que necesitas para aprovechar al máximo tu experiencia. 🚀✨
+¡Te damos la bienvenido a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
+
+Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para aprovechar al máximo tu experiencia. 🚀✨
 
 .. grid:: 2
     :gutter: 0
@@ -27,12 +29,25 @@ Documentación de Linkaform
         :columns: 6
 
         .. card:: 
-            :link: developer
+            :link: doc-usuario
             :link-type: ref
             :margin: 0
             :class-card: card-i
 
-            |Desarrollador| Desarrollador
+            |Usuario| **Documentación para el usuario**
+
+            Explora nuestra guía exclusiva para usuarios y aprovecha al máximo las funciones de Linkaform.
+
+    .. grid-item-card:: 
+        :columns: 6
+
+        .. card:: 
+            :link: developer
+            :link-type: ref
+            :margin: 0
+            :class-card: card-i
+            
+            |Desarrollador| **Desarrollador**
 
             Desarrolla en Linkaform utilizando nuestra guía para desarrolladores.
     
@@ -45,24 +60,42 @@ Documentación de Linkaform
             :margin: 0
             :class-card: card-i
 
-            |Contribución| Contribución
+            |Contribución| **Contribución**
 
             Inicia tu contribución a Linkaform con nuestros tutoriales y pautas disponibles.
 
-    .. grid-item-card:: 
-        :columns: 6
+|Soporte| **Obtenga ayuda**
 
-        .. card:: 
-            :link: doc-usuario
-            :link-type: ref
-            :margin: 0
-            :class-card: card-i
+.. button-link:: https://www.linkaform.com/soporte-tecnico
+    :color: primary
+    :outline:
 
-            |Usuario| Documentación para el usuario
+    Contactar a soporte
 
-            Explora nuestra guía exclusiva para usuarios y aprovecha al máximo las funciones que Linkaform tiene para ti.
+.. seealso:: Visita la página oficial de Linkaform |linkaform| :octicon:`report;1em;sd-text-info`.
+
+.. image:: /imgs/final.png
+    :align: center
 
 .. ICONOS SOBRE EL ÍNDICE
+
+.. |linkaform| raw:: html
+
+    <a href="https://www.linkaform.com/" target="_blank">Aquí</a>
+
+.. |Soporte| raw:: html
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <i class="fa-solid fa-user-gear fa-2x" style="margin-right:8px; font-size: 15px;"></i>
+            </body>
+        </html>
 
 .. |Usuario| raw:: html
 
@@ -74,7 +107,7 @@ Documentación de Linkaform
                 <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
             </head>
             <body>
-               <i class="fa-solid fa-user fa-2x" style="margin-right:18px"></i>
+                <i class="fa-solid fa-user fa-2x" style="margin-right:18px;"></i>
             </body>
         </html>
 

@@ -22,7 +22,7 @@ Desarrollador
     :margin: 0
     :class-card: card-i
 
-    |Documentacion| Documentación para PDFs
+    |Documentacion| **Documentación para PDFs**
 
     Adquiere las habilidades para crear tus propios documentos PDF personalizados con nuestras herramientas y tutoriales.
             

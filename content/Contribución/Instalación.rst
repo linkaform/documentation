@@ -11,18 +11,16 @@ En esta sección se presentan los pasos necesarios para instalar Sphinx en su si
 Configuración del entorno
 =========================
 
-Linkaform utiliza ``GitHub``, que se basa en ``Git``, para administrar sus repositorios y Git para el control de versiones, lo que permite gestionar y rastrear cambios en el código o el proyecto.
+Linkaform utiliza ``GitHub`` para administrar sus repositorios y ``Git`` para el control de versiones, lo que permite gestionar y rastrear cambios en el código o el proyecto.
 
-Si ya dispone de una cuenta en GitHub y tiene Git instalado, puede omitir los primeros pasos y continuar con el paso 6 en :ref:`git`, comenzando así a realizar cambios locales en la documentación. De lo contrario, siga las siguientes instrucciones para preparar su entorno.
+Si ya dispone de una cuenta en ``GitHub`` y tiene ``Git`` instalado, puede omitir los primeros pasos y continuar con `contribución <#contribucion-git>`_ :octicon:`report;1em;sd-text-info`. De lo contrario, siga las siguientes instrucciones para preparar su entorno.
 
 .. _cuenta:
 
 GitHub
 ------
 
-A continuación, se presentan configuraciones básicas sobre GitHub. 
-
-1. Cree una cuenta en `GitHub <https://github.com/join/>`_ :octicon:`report;1em;sd-text-info`. 
+.. seealso:: Cree una cuenta en `GitHub <https://github.com/join/>`_ :octicon:`report;1em;sd-text-info`. 
 
 .. _git:
 
@@ -117,9 +115,16 @@ Después de la instalación, las configuraciones básicas de Git son las mismas 
     :privacy_mode: enable_privacy_mode
     :url_parameters: ?start=496
 
-7. Diríjase al repositorio de la documentación en `github.com/linkaform/documentation <https://github.com/linkaform/documentation/>`_ :octicon:`report;1em;sd-text-info`.
+.. _contribucion-git:
 
-8. Clone el repositorio.
+Contribución
+============
+
+Las instrucciones siguientes le ayudarán a preparar su entorno para realizar cambios locales en el código base y luego enviarlos a GitHub. 
+
+1. Diríjase al repositorio de la documentación en |documentation| :octicon:`report;1em;sd-text-info`.
+
+2. Clone el repositorio.
 
 .. image:: /imgs/Contribución/22.png
 
@@ -349,3 +354,10 @@ Para poder ver el resultado, diríjase a la carpeta ``build`` y abra el archivo 
     cd documentation/build/index.html
 
 ¡Felicidades! 🎉 Ha logrado configurar su entorno y ejecutar la documentación disponible. Si tiene alguna duda, puede regresar al contenido o consultar la documentación de la sección de su preferencia. También puede comenzar a crear sus primeras secciones personalizadas con la ayuda de la siguiente sección.
+
+
+.. LIGA EXTERNA
+
+.. |documentation| raw:: html
+
+   <a href="https://github.com/linkaform/documentation" target="_blank">github.com/linkaform/documentation</a>
