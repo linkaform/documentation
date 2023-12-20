@@ -123,8 +123,15 @@ Contribución
 Las instrucciones siguientes le ayudarán a preparar su entorno para realizar cambios locales en el código base y luego enviarlos a GitHub. 
 
 1. Diríjase al repositorio de la documentación en |documentation| :octicon:`report;1em;sd-text-info`.
+2. Elija la rama ``develop``.
 
-2. Clone el repositorio.
+.. image:: /imgs/Contribución/24.png
+
+3. Presione ``Fork`` para crear una copia personalizada del repositorio.
+
+.. image:: /imgs/Contribución/25.png
+
+4. Clone el repositorio.
 
 .. image:: /imgs/Contribución/22.png
 
@@ -132,57 +139,79 @@ Las instrucciones siguientes le ayudarán a preparar su entorno para realizar ca
 
     git clone git@github.com:Linkaform/documentation.git
 
-El contenido principal se encuentra en la rama ``develop``. Por defecto, usted se encontrará en la rama ``main``. Para cambiar de rama puede usar ``checkout`` o ``switch``:
+5. Abra una terminal y ubíquese en el directorio del repositorio.
+
+.. code-block::
+
+    cd documentation
+
+6. Cree una rama.
+
+.. code-block:: 
+    :caption: Verifique las ramas actuales
+
+    git branch
+
+.. code-block:: 
+    :caption: Cree la rama nueva
+
+    git branch nombre-de-la-rama
+
+.. code-block:: 
+    :caption: Cambie a la nueva rama
+
+    git checkout nombre-de-la-rama
+
+.. seealso:: 
+
+    Con la versión más actual de ``Git`` cree y cambie a una nueva rama al mismo tiempo.
+
+    .. code-block:: 
+
+        git switch -c nombre-de-la-rama
+
+6. Realice sus modificaciones.
+
+7. Para ver que archivos han sufrido cambios, en una nueva terminal ejecute:
 
 .. code-block:: 
 
-    git checkout develop
-
-.. code-block::
-
-    git switch develop
-
-
-Una vez que comience sus modificaciones y esté seguro de sus cambios, se tiene que realizar un ``commit`` para luego poder hacer  ``push`` en la rama ``develop``.
-
-Para hacer un ``commit`` uno debe de primero agregar los archivos que desea agregar a dicho commit, para ello puede utilizar el comando ``git status`` para ver que archivos han sufrido cambios
-
-.. code-block::
-
     git status
 
-Esto te mostrará la lista de archivos que ha sufrido cambios, de esta lista debes de agregar el o los archivos que deseas subir al repositorio, con ``git add``
+8. Agregue los cambios a su rama.
 
-.. code-block::
+.. code-block:: 
+    :caption: Agregue todos los archivos al mismo tiempo
+
+    git add .
+
+.. code-block:: 
+    :caption: Agregue un archivo a la  vez
 
     git add nombre_del_archivo.rst
 
-Posterior mente hacer un commit indicando que cambios ser realizaron. Esto debe de ser algo breve que explique a un alto nivel que ser realizo.
+9. Confirme sus cambios indicando que cambios se realizaron.
 
 .. code-block::
 
-    git commit -m 'Se extendió la explicación de como hacer un commit en github'
+    git commit -m "Explicación del cambio"
 
-.. tip:: Si requiere hacer una explicación mas amplia puede correr el código ``git commit`` a secas y darle enter lo que abrirá un editor de texto donde puede poner mas detalle sobre tu commit.
+.. tip:: El mensaje debe de ser breve y conciso, pero si requiere hacer una explicación mas amplia, puede ejecutar ``git commit``; abrirá un editor de texto donde podrá dar más detalle sobre su commit.
 
-
-Una vez realizado el commit, SIEMPRE es bueno hacer un ``pull`` de la rama en que se esta trabajando para asegurarnos que estamos trabajando sobre la ultima versión antes de subir nuestros cambios ya que de no estar en la ultima versión git nos puede marcar un error.
-
-.. code-block::
-
-    git pull origin develop
-
-.. tip:: Puede cambiar el nombre de la rama ``develop`` por la palabra ``HEAD`` y automáticamente git hará el pull de la rama actual, esto funciona para cualquier comando que haga referencia de la rama en que se esta trabajando.
-
-Una vez realizado el commit y el pull haga push a la rama y publicar sus cambios en el repositorio.
+10. Envíe sus cambios a GitHub.
 
 .. code-block::
 
-    git push origin develop
+    git push origin [Nombre de la Rama]
 
-.. important:: Es importante hacer `git pull <https://git-scm.com/docs/git-pull/>`_ :octicon:`report;1em;sd-text-info` antes de `git push <https://git-scm.com/docs/git-push/>`_ :octicon:`report;1em;sd-text-info`.
+11. Diríjase de nuevo a GitHub, específicamente a su rama y presione el botón ``Pull request``.
+12. Describa todos los cambios que ha realizado. 
+13. Presione ``Create pull request``.
 
+.. note:: Después de crear un ``Pull request``, solicite a soporte técnico que revise los cambios propuestos. 
 
+.. seealso:: Consulte la documentación oficial de como hacer su primer |pull| :octicon:`report;1em;sd-text-info`
+    
 Python
 ------
 
@@ -361,3 +390,7 @@ Para poder ver el resultado, diríjase a la carpeta ``build`` y abra el archivo 
 .. |documentation| raw:: html
 
    <a href="https://github.com/linkaform/documentation" target="_blank">github.com/linkaform/documentation</a>
+
+.. |pull| raw:: html
+
+    <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?gt=&platform=windows" target="_blank">pull request</a>
