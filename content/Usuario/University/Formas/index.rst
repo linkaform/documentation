@@ -25,21 +25,33 @@ Para acceder a las ``formas``, siga los siguientes pasos:
 
 .. note:: En caso de no contar con credenciales, solicítelas al soporte técnico.
 
-3. Seleccione la opción ``Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
+3. Seleccione la opción ``Formas > Mis Formas`` en el menú.
 
 Una vez dentro de ``Mis Formas``, podrá comenzar a crear y configurar sus formas según sus necesidades.
 
 Crear forma
 ===========
 
-Para crear una forma, identifique el ícono de ``Crear Forma`` ubicado en la parte superior derecha. Al posicionar el cursor sobre el ícono, la ayuda visual proporcionará información sobre su función. Al hacer clic en el ícono, Linkaform presentará una plantilla en blanco, a partir de la cual se inicia el proceso de creación de la forma.
+Para crear una forma siga el procedimiento:
 
-.. image:: /imgs/Formas/Formas2.jpg
+1. Diríjase a ``Formas > Mis formas`` en el menú lateral.
+2. Identifique el ícono de ``Crear Forma`` ubicado en la parte superior derecha. 
+
+.. note:: Al posicionar el cursor sobre el ícono, la ayuda visual proporcionará información sobre su función. 
+
+3. Presione el botón. Linkaform presentará una plantilla en blanco, a partir de la cual podrá estructurar su forma.
+
+.. image:: /imgs/Formas/Formas2.png
 
 Nombre de forma
 ---------------
 
-Si desea establecer o cambiar el nombre de la forma, haga clic en el título en la parte superior izquierda. En esta opción, Linkaform mostrará el ícono de un lápiz para edición, lo que le permitirá modificar el nombre de la forma según sea necesario.
+Si desea establecer o cambiar el nombre de la forma, siga los pasos:
+
+1. Haga clic en el título en la parte superior izquierda. 
+2. Modifique el nombre de la forma.
+3. Presione ``Enter``.
+4. Guarde la forma.
 
 .. image:: /imgs/Formas/Formas3.png
 
@@ -360,7 +372,7 @@ En la opción ``Config`` de este campo, se definen parámetros que son posibles 
     .. grid-item-card:: 
         :columns: 7
 
-        **Cantidad de imágenes:** Mínimo 0, Máximo 15.
+        **Cantidad de imágenes:** Mínimo 0, Máximo 10.
 
         **Seleccionar imágenes de:** Cámara, Galería, Dibujar. Las opciones activadas serán las permitidas para este campo.
 
@@ -468,9 +480,13 @@ Para utilizar dicho campo, tenga en cuenta los siguientes aspectos y siga los si
 Opciones
 --------
 
-Las opciones son configuraciones que se pueden aplicar a la forma. Puede encontrar opciones generales, configuraciones sobre flujos, reglas para aplicar a la forma, embeber la forma, imprimir la forma en formato PDF y utilizar botones. En los siguientes apartados podrá encontrar información más detallada acerca de cada una de ellas.
+Las opciones son configuraciones que se pueden aplicar a la forma. Puede encontrar opciones generales, configuraciones sobre flujos, reglas para aplicar a la forma, embeber la forma, imprimir la forma en formato PDF y utilizar botones.
+
+1. Diríjase a ``Opciones > Opciones generales``.
 
 .. image:: /imgs/Formas/Formas20.jpg
+
+En los siguientes apartados podrá encontrar información más detallada acerca de cada funcionalidad.
 
 .. _geolozalizacion:
 
@@ -1104,7 +1120,7 @@ Siga los siguientes pasos, que son requeridos para cada regla de campo:
   - **Está vacío**: Verifica si el campo está vacío, sin contener ningún valor.
   - **No contiene opción**: Comprueba si el campo no contiene una opción específica.
   - **Contiene opción**: Evalúa si el campo contiene una opción específica.
-  - **NO es igual a**: Esta opción verifica si el campo no es igual al valor especificado.
+  - **No es igual a**: Esta opción verifica si el campo no es igual al valor especificado.
   - **Igual a**: Verifica si el campo es igual al valor especificado.
 
 La elección de las últimas cuatro opciones permitirá seleccionar o escribir contenido para realizar la validación. Puede incluir más de una validación para un campo; sin embargo, debe aplicar una relación lógica ``AND`` o ``OR``.
@@ -1226,7 +1242,7 @@ Crear carpeta
 
 La creación de una carpeta en Linkaform sirve para almacenar una o más formas dentro de ella. Siga los siguientes pasos para crear una carpeta:
 
-1. Seleccione la opción ``Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
+1. Seleccione la opción ``Formas > Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
 2. Haga clic en el ícono de la burbuja con el icono de carpeta, ubicado en la parte superior derecha. Al pasar el ratón sobre ella, podrá ver la funcionalidad que ofrece.
 3. Escriba el nombre de la carpeta. Observe que del lado izquierdo podrá encontrar la carpeta que creó.
 
@@ -1239,7 +1255,7 @@ Compartir Carpeta / Forma
 
 Compartir una carpeta o una forma es un proceso similar y sencillo, siga los pasos:
 
-1. Seleccione la opción ``Mis Formas``, ubicada en el menú vertical a la izquierda de su pantalla.
+1. Diríjase y presione la opción ``Formas > Mis Formas`` en el menú lateral.
 2. Identifique la carpeta o la forma de su interés.
 3. Haga clic en el ícono de compartir.
 4. Escriba el nombre del usuario con el que desea compartir la carpeta o la forma. Observe que el nombre del usuario aparecerá en la parte inferior.
@@ -1265,7 +1281,10 @@ Las formas proporcionan opciones que permiten una rápida gestión de las mismas
 - **Borrar**
 - **Compartir**: Permite otorgar permisos de la forma a otros usuarios. `Siga los pasos <#compartir>`_ :octicon:`report;1em;sd-text-info`.
 - **Editar**: Permite realizar cambios en la estructura de la forma. Se pueden agregar campos, modificar respuestas, etc.
-- **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo, excepto flujos de trabajo.
+- **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo.
+
+.. caution:: Al duplicar una forma, Linkaform NO duplica flujos de trabajo.
+
 - **Responder**: Permite crear registros de la forma deseada. Simplemente haga clic sobre la opción y se mostrará la estructura de la forma en modo ``Responder``. Al terminar de capturar la información, haga clic en ``Mandar respuestas``.
 
 - **Ver Registros**: Mostrará los registros de la forma. Esta opción tiene dos tipos de resultados:

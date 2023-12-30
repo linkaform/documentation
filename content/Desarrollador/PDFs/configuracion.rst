@@ -1,20 +1,4 @@
-.. _doc-pdfs:
-
-=======================
-Documentación para PDFs
-=======================
-
-Bienvenido a la guía completa que le proporcionará las herramientas y el conocimiento necesario para desarrollar sus propios documentos PDF personalizados.
-
-En este apartado podrá encontrar:
-
-- Configuraciones básicas.
-- Estructura de archivos.
-- Django.
-- Descargar documentos.
-
-.. Tip:: La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
-
+=========================
 Configuración del entorno
 =========================
 
@@ -94,7 +78,7 @@ El pie de página puede incluir información adicional, como datos de contacto, 
 
     <drawRightString x="19.5cm" y="0.85cm">Página <pageNumber/> de <getName id="LASTPAGENO"/></drawRightString>
 
-También puede incluir elementos del ``header`` en el ``body`` utilizando:
+También puede incluir elementos del ``footer`` en el ``body`` utilizando:
 
 .. code-block:: xml
     :linenos:

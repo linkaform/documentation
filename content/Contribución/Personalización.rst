@@ -2005,9 +2005,9 @@ Podrá encontrar el archivo en el primer nivel del repositorio. A continuación,
 
 - **extensions** se utiliza para habilitar las extensiones en el proyecto. Si necesita instalar una extensión nueva, consulte la documentación de instalación de su extensión de preferencia y posteriormente colóquela aquí.
 
-- **source_suffix** especifica las extensiones de archivo que Sphinx debe considerar como fuentes de documentación. En este caso, Sphinx procesará archivos con las extensiones .rst y .md, lo que significa que puedes escribir documentos de Sphinx en formato reStructuredText (.rst) o en formato Markdown (.md).
+- **source_suffix** especifica las extensiones de archivo que Sphinx debe considerar como fuentes de documentación. En este caso, Sphinx procesará archivos con las extensiones .rst y .md, lo que significa que puede escribir documentos de Sphinx en formato reStructuredText (.rst) o en formato Markdown (.md).
 
-.. note:: Aunque ``markdown`` es más simple y fácil de usar, se recomienda utilizar ``restructuredtext`` , ya que Sphinx fue originalmente diseñado para funcionar con ``rst`` y proporciona una mayor sopoerte y estabilidad con funciones, extensiones y directivas.
+.. note:: Aunque ``markdown`` es más simple y fácil de usar, se recomienda utilizar ``restructuredtext`` , ya que Sphinx fue originalmente diseñado para funcionar con ``rst`` y proporciona mayor soporte y estabilidad con funciones, extensiones y directivas.
 
 .. code-block:: python
     :caption: Extensiones

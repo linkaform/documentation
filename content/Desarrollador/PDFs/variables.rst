@@ -76,6 +76,8 @@ Una declaración ``if`` evalúa una variable y ejecuta un bloque de código si e
         {% endif %}
     </story>
 
+.. note:: Utilice ``endif`` para cerrar la condición. Es obligatorio.
+
 Utilice ``elif`` si la condición anterior no es verdadera.
 
 .. code-block:: xml

@@ -1418,7 +1418,7 @@ Para crear un directorio siga los siguientes pasos.
 
 .. important:: Al exportar su archivo HTML, por defecto se ubicará en la carpeta desde la cual esté consultando el directorio. Para evitar tener archivos HTML sueltos, deberá moverlo a la carpeta ``directorios``. Asegúrese de darle un nombre descriptivo a su archivo.
 
-4. Cuando tenga su directorio listo y desee colocarlo en un lugar específico, deberá hacer uso de :ref:`codigo-crudo` y realizar algunas modificaciones necesarias.
+4. Cuando tenga su directorio listo y desee colocarlo en un lugar específico, deberá hacer uso de :ref:`codigo-crudo` :octicon:`report;1em;sd-text-info` y realizar algunas modificaciones necesarias.
 
 El código html que se genera al exportar su directorio es el siguiente: 
 

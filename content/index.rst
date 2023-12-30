@@ -13,7 +13,7 @@ Documentación de Linkaform
    :hidden:
 
    Usuario/University/index
-   Desarrollador/PDFs/index
+   Desarrollador/index
    Contribución/index
 
 ¡Te damos la bienvenido a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
@@ -42,7 +42,7 @@ Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para a
         :columns: 6
 
         .. card:: 
-            :link: developer
+            :link: doc-developer
             :link-type: ref
             :margin: 0
             :class-card: card-i

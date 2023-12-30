@@ -426,7 +426,7 @@ Establece la fuente que se utilizará en un bloque de la tabla. Lo que lo define
 +-----------+-----------------------------------------------------------------------------------------------+
 | Atributo  | Descripción                                                                                   |
 +===========+===============================================================================================+
-| nombre    | Establece el nombre de la fuente que se utilizará en un bloque de la tabla.                   |
+| name      | Establece el nombre de la fuente que se utilizará en un bloque de la tabla.                   |
 +-----------+-----------------------------------------------------------------------------------------------+
 | size      | Atributo opcional. Define el tamaño de la fuente.                                             |
 +-----------+-----------------------------------------------------------------------------------------------+
@@ -512,7 +512,7 @@ Establece el interlineado que se utilizará para el texto en un bloque de la tab
 +----------------+---------------------------------------------------------------------------------------------+
 | start          | Atributo opcional. Indica dónde comienza la secuencia de líneas punteadas o discontinuas.   |
 +----------------+---------------------------------------------------------------------------------------------+
-| start          | Atributo opcional. Indica dónde termina la secuencia de líneas punteadas o discontinuas.    |
+| stop           | Atributo opcional. Indica dónde termina la secuencia de líneas punteadas o discontinuas.    |
 +----------------+---------------------------------------------------------------------------------------------+
 
 .. code-block:: xml
@@ -557,7 +557,7 @@ Establece cómo se alinea el contenido de un bloque de celdas en dirección vert
 +-------------+---------------------------------------------------------------------------------------------+
 | Atributo    | Descripción                                                                                 |
 +=============+=============================================================================================+
-| colorName   | Atributo obligatorio. Establece cómo se alinea el contenido de un bloque de celdas en su    |
+| Value       | Atributo obligatorio. Establece cómo se alinea el contenido de un bloque de celdas en su    |
 |             | tabla en dirección vertical. Puede ser TOP, MIDDLE, o BOTTOM (predeterminado).              |
 +-------------+---------------------------------------------------------------------------------------------+
 | start       | Atributo opcional. Indica dónde comienza la secuencia de líneas punteadas o discontinuas.   |
