@@ -98,7 +98,7 @@ Repositorio infosync_scripts
 Bases de Servido
 ================
 
-``Servido`` es una plataforma *Open Source* que facilita el desarrollo de reportes mediante el uso de diversas herramientas, como *bibliotecas*, *scripts* y *APIs*. Estas herramientas se utilizan para procesar información y generar resultados que se presentan a través de *dashboards*, *tablas*, *gráficos*, y otras representaciones visuales.
+``Servido`` es una plataforma *Open Source* que facilita el desarrollo de reportes mediante el uso de diversas herramientas, como *bibliotecas*, *scripts* y *APIs*. Estas herramientas se utilizan para procesar información y generar resultados que se presentan a través de *dashboards*, *tablas*, *gráficos* y otras representaciones visuales.
 
 Las dos partes principales que complementan a ``Servido`` son las siguientes:
 
@@ -183,7 +183,7 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
          
          reporte_nombre_script.py
 
-      .. caution:: Bajo ninguna circunstancia modifique los archivos que NO inicien con ``report``. Estos archivos son scripts que desempeñan funciones importantes para el cliente, aunque no estén directamente relacionados con reportes.
+      .. caution:: Bajo ninguna circunstancia modifique los archivos que NO inicien con ``reporte`` o ``report`` . Estos archivos son scripts que desempeñan funciones importantes para el cliente, aunque no estén directamente relacionados con reportes.
 
       .. important:: Tenga cuidado con el archivo ``account_settings.py``, ya que contiene información sensible de la cuenta del cliente.
 

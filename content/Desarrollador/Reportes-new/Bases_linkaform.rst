@@ -144,7 +144,188 @@ Si necesita editar las configuraciones de su reporte, simplemente presione el ic
 
 .. image:: /imgs/Reportes/Reportes9.png
 
-.. seealso:: Si desea crear su propio reporte personalizado, le sugerimos revisar las siguientes secciones de la documentación que explican cómo crear reportes. En caso contrario, le recomendamos contactar a soporte técnico para que el equipo de Linkaform pueda elaborar una propuesta a la medida.
+.. _generar-api-key:
+
+Generar API key
+===============
+
+Una ``API Key`` (clave de API) es un código alfanumérico único que se utiliza para autenticar y autorizar el acceso a toda la información de la cuenta.
+
+Para generar una ``API Key``, siga las instrucciones:
+
+1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión en la cuenta padre. 
+
+.. caution:: El administrador de la cuenta padre es el único que puede asignar a los usuarios dependientes de él una ``API Key``.
+
+3. Seleccione ``Grupos > Usuarios`` ubicado en el menú lateral.
+
+.. image:: /imgs/Reportes/Reportes20.png
+
+4. Identifique y seleccione al usuario que desea asignar una ``API Key``. Utilice el buscador.
+
+.. image:: /imgs/Reportes/Reportes21.png
+
+De manera detallada, podrá encontrar toda la información del usuario, desde permisos hasta dispositivos conectados, etc.
+
+.. image:: /imgs/Reportes/Reportes22.png
+
+5. Seleccione el menú desplegable ``API Keys``. Si no ha creado una ``API Key`` Simplemente haga clic en el enlace de color azul ``+ Crear api key de Linkaform``, que se muestra a continuación:
+
+.. image:: /imgs/Reportes/Reportes23.png
+
+.. caution:: En caso de tener una ``API Key`` previamente creada, ya no es necesario volver a crear una nueva, ya que es utilizada por el archivo ``account_settings`` y si cambia podría provocar acciones inesperadas. 
+
+.. _log-script:
+
+Log de script
+=============
+
+El ``log`` de script es una herramienta útil que se utiliza para depurar (*debuggear*) y verificar la correcta ejecución de los scripts.
+
+Para visualizar el ``log`` de un script, siga los siguientes pasos:
+
+1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión utilizando sus credenciales.
+3. Seleccione ``Formas > Scripts`` en el menú lateral. Podrá observar todos los scripts cargados en la cuenta.
+
+.. image:: /imgs/Reportes/Reportes24.png
+
+4. Identifique el script del cual desea conocer la información.
+5. Presione el último icono ``Script log``.
+
+.. image:: /imgs/Reportes/Reportes25.png
+
+Observe la siguiente pantalla, que es el historial de los ``logs`` de script cada vez que se ejecuta. En esta ventana, puede ver la fecha y hora de ejecución, el nombre del script y su estatus, que es el más importante, ya que indica si se ejecutó exitosamente.
+
+6. Presione la opción ``log`` para más detalles.
+
+.. image:: /imgs/Reportes/Reportes26.png
+
+.. seealso:: Consulte `la siguiente sección <#interpretacion-log-script>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+.. _interpretacion-log-script:
+
+Interpretación log de script
+----------------------------
+
+La línea ``print(sys.argv)`` imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para depurar (*debuggear*) código en Python.
+
+.. seealso:: Consulte :ref:`main` :octicon:`report;1em;sd-text-info` para más detalles.
+    
+La variable ``sys.argv`` es una lista que contiene los argumentos pasados al script en la línea de comandos. Al imprimir ``sys.argv``, puede verificar si los argumentos que esperaba están siendo pasados correctamente al script y entender la estructura y valores de esos argumentos.
+
+Regularmente, lo que imprime ``sys.argv`` son tres argumentos, de los cuales el tercero o de la ``posición [2]`` es la más importante:
+
+- El primer elemento es la ruta del script Python que se está ejecutando (línea 10).
+- El segundo elemento representa objetos JSON, como el ``jwt`` y ``data`` (línea 12 y 14).
+
+.. important:: El objeto ``data`` es el más importante, ya que contiene los filtros y parámetros utilizados en la ``URL`` que se utilizan para tratar la información. 
+
+    .. code-block:: python
+        :linenos:
+        
+        "data": {"promotor": "", "script_id": 123, "date_from": "2023-11-29", "option": 1, "date_to": "2023-12-29"},
+       
+    En la mayoría de scripts, los filtros más utilizados corresponden a las fechas (``date_to``, ``date_from`` o alguna otra fecha específica). Dependerán de los requerimientos del reporte.
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 10, 12, 14
+
+    ==== LOG FOR SCRIPT reporte_visitas.py ==== 
+    Host: swarm1.lkf.cloud 
+    Running on Image: linkaform/python3_lkf:latest 
+    Start Date: 2023-12-29 16:04:24.796816+00:00 
+    End Date: 2023-12-29 16:04:26.348783+00:00 
+    =========== TRACEBACK ============= 
+    =========== END ============= 
+
+    =========== OUTPUT ============= 
+    ['/srv/backend.linkaform.com/infosync-api/backend/media/uploads/public-client-11702/scripts/reporte_visitas.py', '{}', 
+
+    '{"jwt": "Bearer zI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI0X2lkIjoxMTcwMiwiaXNfbW9iaWxlIjFpbCI6InZhcmVua2FzZkBnbWFpbC5jb20ifQ.b-xZSl8i1EsoCTIf8Oi1Cj8lcg0_79URc6S94UO_pvd20NmG_Ome71vd6pAULSfjxlLjirYHRIwl1w4VzSOumTipN2wVp5JWeFKJ8-hAKCSoSW8CQi9PgSxnlT0UK-pOt6R7olvIbQVE_vWJbQqL4n8r5_FsTXW4jLiRVyQ9AIcmIL_IFfBZtRKAr5dTabTAjfq1wSJtW-3CWPdR_0IcvOlavjPNWfAdlq5R1e6_-Q6rjDyLDzUyXup5N35gHAsLgafZXqybXm_jvSoS30cDpJexnKpTmQ2BOHYd4f4oSVKpcUhC1O_yiOFQ_lSMbOGfzg2-MFW2lsbeMXEz0__IA9eg9HnpkJNDJ-QIi9lO7YbYZX5IN1cIVu41b4fABbbKlXiJ-0IcdfjsRQde_z9JNttdaaZLEp1bGdksoBy-B6y2CALHIjhjcnqOmXLFbL6OSKQGyoVB2hcg-2nA1WXx1yAwddrqix-bBmRPhL0JgVDeMBDmVTd9XRO0Af9qs-AAFJoz3RTJf2X3sZLuFZ0ASmOaVDxCJZ-G5ycLLQ-cs", 
+
+    "data": {"promotor": "", "script_id": 123, "date_from": "2023-11-29", "option": 1, "date_to": "2023-12-29"}, "account_id": 11702, "docker_image": "linkaform/python3_lkf:latest", "name": "reporte_visitas.py"}', 'False'
+    ]
+
+Si experimenta errores durante la ejecución del script, la impresión de ``sys.argv`` puede ayudarle a identificar rápidamente si hay problemas con los argumentos (líneas 6-17).
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-17
+
+    ==== LOG FOR SCRIPT reporte_encuestas.py ==== 
+    Host: swarm0.lkf.cloud 
+    Start Date: 2023-09-04 17:29:43.132755+00:00 
+    End Date: 2023-09-04 17:29:44.578959+00:00 
+    =========== TRACEBACK ============= 
+    Traceback (most recent call last):
+    File "/srv/backend.linkaform.com/infosync-api/backend/media/uploads/public-client-11702/scripts/reporte_encuestas.py", line 737, in <module>
+        response = get_query_visita(date_from, date_to)
+    File "/srv/backend.linkaform.com/infosync-api/backend/media/uploads/public-client-11702/scripts/reporte_encuestas.py", line 604, in get_query_visita
+        match_query.update(get_date_query(date_from=date_from, date_to=date_to))
+    File "/srv/backend.linkaform.com/infosync-api/backend/media/uploads/public-client-11702/scripts/reporte_encuestas.py", line 27, in get_date_query
+        date_to = datetime.strptime('%s 23:59:59'%(date_to), "%Y-%m-%d %H:%M:%S") - timedelta(seconds=tz_offset)
+    File "/usr/local/lib/python3.7/_strptime.py", line 577, in _strptime_datetime
+        tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+    File "/usr/local/lib/python3.7/_strptime.py", line 359, in _strptime
+        (data_string, format))
+    ValueError: time data ' 23:59:59' does not match format '%Y-%m-%d %H:%M:%S'
+    =========== END ============= 
+
+    =========== OUTPUT ============= 
+    es un error del tipo lkf
+    ['/srv/backend.linkaform.com/infosync-api/backend/media/uploads/public-client-11702/scripts/reporte_encuestas.py', '{}', 
+    
+    '{"jwt": "Bearer I1NiIsInR5cCI6IkpXVCJ9.eX2lkIjoxMTcwMiwicGFyjoxNjk0NDUzMzua2FzZkBnbWFpbC5jb20ifQ.Rcoxv3nR3vWJf1S_2ZVdjM12qEeVEWeLkSxVtI8ou_t6MX5F4J2Q4eX6Ot6Y64_MeZji4JILDhynUTsxYn_b5mkm3Adfgq-KVwOG5K_scDloTDsxV_UDzcxWsC7LsadaASNd4D2OyTGqUI0JM5sz3z3xQFel8gsztLE1yHHQoVgDYQ2y0lYzsZCWY0l_Oi8Pa3R9-ONCy5UtVC8V73xMKCrV4uHuUL9XhZ_8ObJdebRErlRihMvUsxI2j2ipEQgM7tRU9q3zLNAws0tTdULne7mKLbrxYqpdV_r-PBR16KEmXpkm-tdmBs0zISy8HunAaQgtuYtaWp-k5R6fiJ-is4UQ8thy67cRaBqQumlDn5inUcTMZFjfwDd1XynNZfDPFos_tdeZILJ-6o03CGpkUORxDvlVzcS9kKyw7xq7VD0T_q8A89R1FVMqpXAhV-zcq1YYd-6YPeop_urvVrRe4STP5ZhdBBn8epWrYIxgNNXQAnsXQZaWCz85kwCiV80z4B1C_VCAA2i5eKezpNsV8W4zkUEfPhGIUP90NjXC-yZKCMRZSjM", 
+    
+    "data": {"script_id": 123, "date_from": "2023-08-28", "option": 0, "date_to": ""}, "account_id": 11702, "name": "reporte_encuestas.py"}', 'False'
+    ]
+
+.. _informacion-cuenta:
+
+Ver información de la cuenta
+============================
+
+Para visualizar la información completa de su cuenta, siga los siguientes pasos:
+
+1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con sus credenciales.
+
+.. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
+
+3. Presione la burbuja ubicada en la parte superior izquierda.
+4. Seleccione la opción ``Cuenta``.
+
+.. image:: /imgs/Reportes/Reportes18.png
+
+Observe el contenido de su cuenta; por privacidad, cierta información se oculta. Tenga en cuenta el ``ID`` de la cuenta padre.
+
+.. image:: /imgs/Reportes/Reportes19.png
+
+.. _ver-id-forma:
+
+Ver ``ID`` de la forma
+======================
+
+Para poder visualizar el ``ID`` de la forma siga los pasos:
+
+1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con sus credenciales.
+
+.. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
+
+3. Presione ``Formas > Mis Formas`` ubicado en el menú lateral.
+4. Identifique la forma y seleccione la opción ``Editar``.
+
+.. image:: /imgs/Reportes/Reportes28.png
+
+5. Observe el ``ID`` ubicado en la parte superior.
+
+.. image:: /imgs/Reportes/Reportes29.png
+
+Si desea crear su propio reporte personalizado, le sugerimos revisar las siguientes secciones de la documentación que explican cómo crear reportes. En caso contrario, le recomendamos contactar a soporte técnico para que el equipo de Linkaform pueda elaborar una propuesta a la medida.
 
 .. LIGAS EXTERNAS
 
@@ -154,7 +335,7 @@ Si necesita editar las configuraciones de su reporte, simplemente presione el ic
 
 .. |Producción| raw:: html
 
-   <a href="https://app.linkaform.com/" target="_blank">Producción</a>
+   <a href="https://app.linkaform.com/" target="_blank">producción</a>
 
 .. |Preproducción| raw:: html
 

@@ -12,6 +12,7 @@ Documentación de reportes
     Bases_linkaform
     Configuración
     Crear_demo
+    Scripts
 
 En esta sección, se detallan las configuraciones necesarias, así como las plantillas disponibles y la estructura de archivos requerida para crear reportes personalizados. Aquí encontrará información sobre:
 

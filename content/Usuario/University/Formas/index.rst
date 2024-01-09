@@ -477,6 +477,8 @@ Para utilizar dicho campo, tenga en cuenta los siguientes aspectos y siga los si
 
       Al tener tus configuraciones listas, presione ``Guardar`` y regrese presionando ``Cerrar``.
 
+.. _menu-opciones-generales:
+
 Opciones
 --------
 
@@ -590,6 +592,8 @@ La funcionalidad del temporizador es utilizada para definir parámetros de tiemp
 - **Mensaje al terminar el tiempo**: Mensaje que se mostrará al estar cerca de finalizar el tiempo para responder.
 
 .. image:: /imgs/Formas/Formas24.jpg
+
+.. _opciones-avanzadas:
 
 Opciones avanzadas
 ^^^^^^^^^^^^^^^^^^

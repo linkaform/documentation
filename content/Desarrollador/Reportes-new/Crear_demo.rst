@@ -788,7 +788,7 @@ Observe el siguiente bloque de código, el cual representa de manera general las
     function get_catalog(){ ...
     };
 
-Las siguientes variables son parte de la *cookie* que se utilizan en el archivo ``servido_utils`` (no se modifican).
+Las siguientes variables globales, pertenecientes a la cuenta que ingrese al reporte y que son parte de la *cookie*, se utilizan en el archivo ``servido_utils`` y no se modifican, siendo la más importante el token del usuario.
 
 .. code-block:: javascript
     :linenos:
@@ -1125,7 +1125,7 @@ Función ``runFirstElement``
 
 La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`` de los filtros. Obtiene las referencias de los filtros para validar que no estén vacíos (línea 10) y poder traer la data correspondiente (línea 12). Por favor, continue leyendo los comentarios dentro del código.
 
-.. attention:: Ajuste esta función de acuerdo a sus filtros. En este caso, los campos (filtros) son de fechas y promotores. Si no están vacíos y están completos, llama a la función `getFirstElement <#funcion-getFirstElement>`_ :octicon:`report;1em;sd-text-info` con los valores de fecha y promotor. Si los campos de fecha están vacíos, muestra una alerta visual utilizando la biblioteca Swal (|sweetalert2| :octicon:`report;1em;sd-text-info`), solicitando al usuario que ingrese un rango de fechas antes de continuar.
+.. attention:: Ajuste esta función de acuerdo a los filtros que necesite. En este caso, los campos (filtros) son de fechas y promotores. Si no están vacíos y están completos, llama a la función `getFirstElement <#funcion-getFirstElement>`_ :octicon:`report;1em;sd-text-info` con los valores de fecha y promotor. Si los campos de fecha están vacíos, muestra una alerta visual utilizando la biblioteca Swal (|sweetalert2| :octicon:`report;1em;sd-text-info`), solicitando al usuario que ingrese un rango de fechas antes de continuar.
 
 .. code-block:: javascript
     :linenos:
@@ -1141,7 +1141,7 @@ La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`
 
     // Verifica si los campos de fecha no están vacíos.
     if (date_from.value != null && date_to.value != null && date_from.value != "" && date_to.value != ""){
-        // Si los campos no están vacios, llama a la función getFirstElement con los valores de fecha y promotor
+        // Si los campos no están vacíos, llama a la función getFirstElement con los valores de fecha y promotor
         getFirstElement(date_to.value, date_from.value, promotor.value);
     }
     else
@@ -1158,7 +1158,7 @@ La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`
 Función ``getFirstElement``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-En términos generales, la función ``getFirstElement()`` obtiene y presenta datos dinámicos del servidor en los elementos del reporte.
+En términos generales, la función ``getFirstElement()`` obtiene los parámetros de los filtros y presenta datos dinámicos del servidor en los elementos del reporte.
 
 La función se encarga de recibir las validaciones de los filtros para realiza una solicitud al servidor (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 9) utilizando el método ``POST``.
 
@@ -1177,7 +1177,7 @@ Observe la línea de código número 40, llama a la `función getDrawTable <#fun
 
 - **columsTable1**: Variable que contiene un array de objetos que representan las columnas de la tabla (biblioteca de tablas |Tabulator| :octicon:`report;1em;sd-text-info`).
 
-.. note:: ``columsTable1`` es la única variable que funciona tanto en el ``reporte demo`` como en el ``reporte operativo final``. Las columnas pueden ser dinámicas o estáticas, sin embargo, al utilizar funciones propias de JavaScript es difícil usar el dinamismo a menos de que todas las columnas lleven la misma estructura. Consulte el archivo `data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+.. caution:: ``columsTable1`` es la única variable que funciona tanto en el ``reporte demo`` como en el ``reporte operativo final``. Las columnas pueden ser dinámicas o estáticas, sin embargo, al utilizar funciones propias de JavaScript es difícil usar el dinamismo a menos de que todas las columnas lleven la misma estructura. Consulte el archivo `data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
 - **res.response.firstElement.tabledata**: Son las filas extraídas del valor, es decir, toda la data real.
 
@@ -1257,15 +1257,24 @@ Función ``getDrawTable``
 
 La función ``getDrawTable()`` se utiliza para dibujar y configurar la tabla interactiva utilizando la biblioteca |Tabulator-doc| :octicon:`report;1em;sd-text-info`. Proporciona opciones para descargar los datos de la tabla en formatos ``XLSX`` y ``CSV``. A continuación, se describe el flujo de la función de manera general:
 
+.. caution:: Esta función NO está estandarizada, pero si está preparada para funcionar con ``n`` cantidad de tablas que se requieran de un mismo reporte. 
+
+Observe la línea 4, donde el ``ID`` es el indicador de HTML que toma el valor de la variable ``id`` y lo concatena con el símbolo de almohadilla (``#``), creando así un selector de identificador completo para seleccionar un elemento específico en el documento HTML basado en su identificador (tabla).
+
+.. admonition:: Ejemplo
+    :class: pied-piper
+    
+    Si ``id`` tiene el valor ``firstElement``, entonces ``#`` + ``id`` se convierte en ``#firstElement`` y eso se utilizará para seleccionar el elemento con el ``ID firstElement`` en el HTML. Es decir, no tendrá que repetir la función por cada tabla y colocar ``firstElement``, ``secondElement`` y así sucesivamente.
+
 Identifique las líneas de código de la 4-15, aquí se crea una instancia de |Tabulator| :octicon:`report;1em;sd-text-info` y se configuran aspectos de la tabla, como la altura, el diseño, los datos, la capacidad de redimensionar filas, la estructura de árbol de datos, la capacidad de copiar al portapapeles, la dirección del texto y las columnas.
 
-En el bloque de código (18-24) verifica si existe un elemento del DOM con el ``ID`` para la descarga de datos en formato ``XLSX`` (botón para descarga ``xls``). Si existe, se reemplaza con una copia para evitar duplicados y se agrega un evento de clic para activar la descarga de datos en formato ``XLSX`` cuando se haga clic en el elemento.
+.. seealso:: Sin embargo, para funciones mas especificas considere revisar las |Tabulator-proprieties| :octicon:`report;1em;sd-text-info`  y ajuste las propiedades según sus necesidades. Revise la documentación correspondiente a la tabla.
 
-Similar al paso anterior, en el bloque 26-32 verifica la existencia de un elemento del DOM con el ``ID`` para la descarga de datos en formato ``CSV`` (botón para descarga ``csv``). Si existe, se reemplaza con una copia y se agrega un evento de clic para activar la descarga de datos en formato ``CSV`` cuando se haga clic en el elemento.
+En los bloques de código (18-27, 29-38) verifica si existe un elemento del DOM para la descarga de datos en formato ``XLSX`` y ``CSV`` (botones para descarga). Si existe, se reemplaza con una copia para evitar duplicados y se agrega un evento de clic para activar la descarga de datos en formato ``XLSX`` y ``CSV`` cuando se haga clic en el elemento.
 
 .. code-block:: javascript
     :linenos:
-    :emphasize-lines: 4-15, 18-24, 26-32
+    :emphasize-lines: 4-15, 18-27, 29-38
 
     //-----TABLES
     function getDrawTable(id, columnsData, tableData, height = 500){
@@ -1285,17 +1294,23 @@ Similar al paso anterior, en el bloque 26-32 verifica la existencia de un elemen
 
     // Configuración para descargar datos en formato XLSX (Excel)
     if (document.getElementById("download_xlsx_"+id)){
-        //trigger download of data.xlsx file
+        // trigger download of data.xlsx file
+        // Reemplaza el elemento actual con una copia clonada del mismo elemento
         document.getElementById("download_xlsx_"+id).replaceWith(document.getElementById("download_xlsx_"+id).cloneNode(true));
+        // Agrega un evento al elemento clonado para la descarga del archivo XLSX
         document.getElementById("download_xlsx_"+id).addEventListener("click", function (){
+        // Utiliza la función "table.download" para descargar el contenido de la tabla en formato XLSX con el nombre de archivo "data.xlsx"
         table.download("xlsx", "data.xlsx", {sheetName:"data"});
         });
     }
     // Configuración para descargar datos en formato CSV
     if (document.getElementById("download_csv_"+id)){
         //trigger download of data.csv file
+        // Reemplaza el elemento actual con una copia clonada del mismo elemento
         document.getElementById("download_csv_"+id).replaceWith(document.getElementById("download_csv_"+id).cloneNode(true));
+        // Agrega un evento al elemento clonado para la descarga del archivo CSV
         document.getElementById("download_csv_"+id).addEventListener("click", function (){
+        // Utiliza la función "table.download" para descargar el contenido de la tabla en formato CSV con el nombre de archivo "data.csv"
         table.download("csv", "data.csv");
         });
     }
@@ -1306,7 +1321,115 @@ Similar al paso anterior, en el bloque 26-32 verifica la existencia de un elemen
 Estructura data.js
 ------------------
 
-Quis anim minim ullamco Lorem minim non.
+La estructura de un archivo ``data.js`` en ``Servido`` tiene el propósito de albergar configuraciones de las librerías utilizadas en el reporte. Es utilizado para proporcionar datos de relleno de tablas, gráficos y otros elementos y visualizar cómo se verá el reporte cuando se complete con datos reales. A continuación, se detalla más acerca de la estructura de un archivo ``data.js``. Al final, encontrará el código completo:
+
+El siguiente bloque de código contiene un array de objetos que representan las columnas de la tabla, continue:
+
+- Ubique la líneas de código 2-4, es una funcion propia de JavaScript diseñada para generar dinámicamente una ``URL`` para un enlace en función del valor del campo ``record_id`` en la fila actual de la tabla. Cada celda en la columna ``Folio`` tendrá un enlace único que apunta a la **página de detalles del registro** (Consulte: :ref:`visualizar-registro` :octicon:`report;1em;sd-text-info`) correspondiente en la aplicación de **Linkaform**. Es decir, la función ``url`` se utiliza como parte del *formateador* para la columna ``Folio`` en Tabulator.
+
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Método/Instrucción                                                      | Descripción                                                                                                                                                                                     |
++=========================================================================+=================================================================================================================================================================================================+
+| ``cell.getData()``                                                      | Se utiliza para obtener los datos asociados con esa celda en la fila actual de la tabla. Asumiendo que la celda está asociada al conjunto de datos que incluye un campo llamado ``record_id``.  |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``record_id``                                                           | Después de obtener los datos de la celda con ``getData()``, se accede al valor específico del campo ``record_id`` y se extrae su valor.                                                         |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``formatter``                                                           | Formateador de la celda por columna.                                                                                                                                                            |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``formateadorParams``                                                   | Parámetros adicionales con el formateador, que debe contener un objeto con información adicional para configurar el formateador.                                                                |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. seealso:: Consulte |Tabulator-format-link| :octicon:`report;1em;sd-text-info` para más detalles o revise otras opciones para |Tabulator-format| :octicon:`report;1em;sd-text-info`.
+
+.. tab-set::
+
+    .. tab-item:: Estructura
+
+        .. code-block:: javascript
+            :linenos:
+            :emphasize-lines: 2-4, 6
+
+            var columsTable1 = [
+            {title:"Folio", field:'folio', hozAlign:"right", formatter:"link", formatterParams:{
+            url:function(cell){return "https://app.linkaform.com/#/records/detail/" + cell.getData().record_id}, 
+            target:"_blank",}, headerFilter:"input",width:100},
+            { title:"Store ID", field:'store_id',hozAlign:"right",width:200},
+            { title:"Merchant", field:'merchant',hozAlign:"left",width:300},
+            { title:"Store", field:'store',hozAlign:"left",width:300},
+            { title:"Promotor", field:'promotor',hozAlign:"left",width:300},
+            { title:"City", field:'city',hozAlign:"left",width:250},
+            { title:"State", field:'state',hozAlign:"left",width:250},
+            { title:"Fecha Inicio de Captura", field:'fecha_captura',hozAlign:"right",width:250},
+            { title:"Coordenadas Latitud", field:'cordenada_latitud',hozAlign:"right",formatter: "money",
+            "formatterParams": {"symbol": "", "symbolAfter": "", "thousand": "",  precision:false},width:250},
+            { title:"Coordenadas Longitud", field:'cordenada_longitud',hozAlign:"right",formatter: "money",
+            "formatterParams": {"symbol": "", "symbolAfter": "", "thousand": "",  precision:1},width:250},
+            { title:"Check In", field:'checkin',hozAlign:"right",width:250},
+            { title:"Check Out", field:'checkout',hozAlign:"right",width:250},
+            { title:"Tiempo Visita", field:'tiempo_visita',hozAlign:"right",width:250},
+            ];
+
+    .. tab-item:: Resultado
+
+        .. image:: /imgs/Reportes/Reportes16.png
+
+        - **title**: Texto de la columna.
+        - **field**: Atributo key que permitirá enlzar las columnas con las filas.
+        - **hozAlign**: Alineación de la data, puede ser ``righth``, ``center`` o ``left``, pero no ``justify``.
+        - **width**: Ancho de la columna en ``px``.
+
+.. caution:: Las columnas pueden ser dinámicas solamente si no se utilizan formateos específicos para la tabla. Es decir, si todas las columnas de la tabla son estáticas y usan la misma estructura (title, field, hozAlign y width), como se muestra en la línea 6.
+
+El siguiente bloque de código representa un array de objetos de la data de la tabla.
+
+.. note:: Cada objeto dentro del arreglo representa una fila de datos con propiedades específicas.
+
+.. tab-set::
+
+    .. tab-item:: Estructura
+
+        .. code-block:: javascript
+            :linenos:
+
+            var dataTable1 = [
+            {
+                "folio": "850-11702", 
+                "record_id": "63eaed385a3ef7414d4899da", 
+                "store_id": "1209250816961081402", 
+                "merchant": "Calvin Klein Instore", 
+                "store": "Ck Parque Lindavista", 
+                "centro_comercial": "Parque Lindavista", 
+                "promotor": "Alberto Torres", 
+                "city": "Gustavo A. Madero", 
+                "fecha_creacion": "2023-02-14 08:08:56", 
+                "checkin": "2023-02-14 08:03:49", 
+                "checkout": "2023-02-14 08:08:45", 
+                "tz_offset": -360.0, 
+                "tiempo_visita": 296.0
+            },
+            {
+                "folio": "850-11702", 
+                "record_id": "63eaed385a3ef7414d4899da", 
+                "store_id": "1209250816961081402", 
+                "merchant": "Calvin Klein Instore", 
+                "store": "Ck Parque Lindavista", 
+                "centro_comercial": "Parque Lindavista", 
+                "promotor": "Alberto Torres", 
+                "city": "Gustavo A. Madero", 
+                "fecha_creacion": "2023-02-14 08:08:56", 
+                "checkin": "2023-02-14 08:03:49", 
+                "checkout": "2023-02-14 08:08:45", 
+                "tz_offset": -360.0, 
+                "tiempo_visita": 296.0
+            },
+            ];
+
+    .. tab-item:: Resultado
+
+        .. image:: /imgs/Reportes/Reportes17.png
+
+Estructura CSS
+==============
 
 .. LIGAS EXTERNAS
 
@@ -1325,6 +1448,18 @@ Quis anim minim ullamco Lorem minim non.
 .. |Tabulator-doc| raw:: html
 
    <a href="https://tabulator.info/" target="_blank">Tabulator</a>
+
+.. |Tabulator-proprieties| raw:: html
+
+   <a href="https://tabulator.info/examples/5.5" target="_blank">opciones de tablas</a>
+
+.. |Tabulator-format-link| raw:: html
+
+   <a href="https://tabulator.info/docs/5.5/format#formatter-link" target="_blank">formateador de tabla con url</a>
+
+.. |Tabulator-format| raw:: html
+
+   <a href="https://tabulator.info/docs/5.5/format" target="_blank">formatear tablas</a>
 
 .. |minificadas| raw:: html
 
