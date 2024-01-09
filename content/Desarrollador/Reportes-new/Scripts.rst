@@ -472,7 +472,9 @@ Aquí hay un ejemplo de un ``pipeline de agregación`` utilizando algunas de las
 
 .. seealso:: Para más información consulte |papeline| :octicon:`report;1em;sd-text-info`.
 
-Un cursor en 
+Cursor
+.. code-block:: python
+    :linenos:
 
     data = []
     result = cr.aggregate(query)
