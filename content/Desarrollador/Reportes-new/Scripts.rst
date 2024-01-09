@@ -92,11 +92,12 @@ Identifique el bloque de código de la 6 a la 15, que procesa un objeto JSON pre
     - Si la clave no existe en el diccionario, ``get`` devuelve ``None`` por defecto.
     - Si se proporciona un valor por defecto como segundo argumento, ese valor se devuelve si la clave no está presente en el diccionario.
 
-Ahora, considere que código presente es un ejemplo básico y puede cambiar según sus necesidades. Por ejemplo, para procesar las ejecuciones, considere aplicar alguna condicional en caso de no recibir un valor, revise los siguientes casos.
+Ahora, considere que el código presente es un ejemplo básico y puede cambiar según sus necesidades. Por ejemplo, para procesar las ejecuciones, considere aplicar alguna condicional en caso de no recibir un valor, revise los siguientes casos.
 
 .. tab-set::
 
     .. tab-item:: Caso 1
+        :sync: key1
         
         .. code-block:: python
             :linenos:
@@ -145,6 +146,7 @@ Ahora, considere que código presente es un ejemplo básico y puede cambiar seg�
                     )
 
     .. tab-item:: Caso 2
+        :sync: key2
 
         El siguiente código contiene una condicional y solamente ejecutará su contenido si recibe una fecha desde (``date_to``) o una fecha hasta (``date_from``) en la línea 14. En caso de que el filtro no contenga ningún valor, lo que va a mostrar será una cadena vacía (línea 30).
 
@@ -230,123 +232,252 @@ Para estructurar una ``query``, dependerá de los requerimientos que necesite. S
 
 A continuación se detallan algunos ejemplos en base a los casos anteriores. 
 
+.. tab-set::
 
+    .. tab-item:: Caso 1
+        :sync: key1
 
+        Contenido 1
 
+    .. tab-item:: Caso 2
+        :sync: key2
 
-Utilice la siguiente función para consultar datos de una forma. Sin embargo, tenga en cuenta las notas y modifique según sea necesario. Siga el siguiente flujo:
+        Utilice la siguiente función para consultar datos de una forma. Sin embargo, tenga en cuenta las notas y modifique según sea necesario. Siga el siguiente flujo:
 
-En la línea de código 1, se define la función ``query_report_first`` que recibe cuatro parámetros correspondientes a los filtros del punto de entrada principal del `script <#main>`_ :octicon:`report;1em;sd-text-info`.
+        En la línea de código 1, se define la función ``query_report_first`` que recibe cuatro parámetros correspondientes a los filtros del punto de entrada principal del `script <#main>`_ :octicon:`report;1em;sd-text-info`.
 
-La variable global ``report_model`` (línea 2) modifica su valor en base a esta función para presentar la estructura de los diccionarios. 
+        La variable global ``report_model`` (línea 2) modifica su valor en base a esta función para presentar la estructura de los diccionarios. 
 
-.. seealso:: consulte la `clase ReportModel <#class-reportModel>`_ :octicon:`report;1em;sd-text-info` para más detalle.
+        .. seealso:: consulte la `clase ReportModel <#class-reportModel>`_ :octicon:`report;1em;sd-text-info` para más detalle.
 
-Identifique el bloque de código 5-8. En este fragmento, se crea un diccionario denominado ``match_query`` que representa las condiciones iniciales de la consulta en ``MongoDB``. Este diccionario actúa como filtros adicionales que especifican las condiciones para extraer datos, complementando los filtros de la solicitud principal.
+        Identifique el bloque de código 5-8. En este fragmento, se crea un diccionario denominado ``match_query`` que representa las condiciones iniciales de la consulta en ``MongoDB``. Este diccionario actúa como filtros adicionales que especifican las condiciones para extraer datos, complementando los filtros de la solicitud principal.
 
-- En la línea 6, especifica el identificador del formulario al que desea extraer la información. Asegúrese de modificar el valor de la clave ``form_id`` de acuerdo a sus necesidades. 
+        - En la línea 6, especifica el identificador del formulario al que desea extraer la información. Asegúrese de modificar el valor de la clave ``form_id`` de acuerdo a sus necesidades. 
 
-.. seealso:: Revise :ref:`ver-id-forma` :octicon:`report;1em;sd-text-info` para más información.
+        .. seealso:: Revise :ref:`ver-id-forma` :octicon:`report;1em;sd-text-info` para más información.
 
-- La clave y valor ``"deleted_at":{"$exists":False}`` en la línea 7, propio de ``MongoDB``, indica que no se desea consultar información previamente eliminada.
+        - La clave y valor ``"deleted_at":{"$exists":False}`` en la línea 7, propio de ``MongoDB``, indica que no se desea consultar información previamente eliminada.
 
-Por lo general, un diccionario contiene las claves ``form_id`` y ``deleted_at``. Sin embargo, considere agregar otros filtros específicos de la consulta según sea necesario. En el siguiente bloque de código, se presentan dos nuevos filtros; por favor, lea detenidamente los comentarios para comprender su función.
+        Por lo general, un diccionario contiene las claves ``form_id`` y ``deleted_at``. Sin embargo, considere agregar otros filtros específicos de la consulta según sea necesario. En el siguiente bloque de código, se presentan dos nuevos filtros; por favor, lea detenidamente los comentarios para comprender su función.
+
+        .. code-block:: python
+            :linenos:
+            :emphasize-lines: 6, 9
+
+            match_query = { 
+                "form_id": 75791,
+                "deleted_at":{"$exists":False},
+
+                # Busca documentos en la colección donde el campo "created_by_name" no contiene ninguno de los siguientes valores
+                "created_by_name":{"$nin":['Luis Marquez', 'Andrea Lopez', 'Jose Chavez', 'Esteban Martinez']},
+
+                # Busca todos los documentos que el campo contenga el valor "montaje_terminado".
+                "answers.11ci37d99a03dd17b1f6ff": "montaje_terminado",
+            }
+
+        .. caution:: Asegúrese de que los nuevos filtros sean constantes, es decir que su valor no cambie. 
+
+        .. seealso:: Un documento ``BSON`` en ``MongoDB`` es un conjunto ordenado de pares *clave-valor*, donde cada ``clave`` es una cadena única que identifica un campo en el *documento* y el ``valor`` puede ser de varios tipos de datos, incluyendo otros documentos ``BSON``, arreglos, valores numéricos, cadenas, booleanos, etc. Es similar a un ``objeto`` en JavaScript.
+
+            - Si no está familiarizado con ``MongoDB``, consulte |mongodb| :octicon:`report;1em;sd-text-info`  para obtener más información.
+
+        Identifique el bloque comprendido entre las líneas 11 y 15, donde se encuentran filtros que pueden variar. Estos filtros son opcionales, es decir, solo se aplican si están presentes en la solicitud; de lo contrario, no afectan la condición de la consulta y se descartan.
+
+        .. note:: Se menciona que son filtros opcionales porque comúnmente se reciben fechas. Por ejemplo, si recibe ``date_from`` (fecha desde), la consulta comprende realizar búsquedas desde la fecha seleccionada hasta el día de la consulta y viceversa.
+
+        Observe que estos bloques de código actualizan condicionalmente la consulta (``match_query``) según los valores de los filtros ``buscador`` y ``variedad``.
+
+        Considere el siguiente ejemplo, donde existen otras formas de aplicar filtros. Por favor lea los comentarios.
+
+        .. code-block:: python
+            :linenos:
+
+            # Si "date_from" tiene algún valor y si no contiene la cadena '--', se actualiza la consulta (match_query) con una condición de rango utilizando $gte (mayor o igual) para el campo específico.
+            if date_from and '--' not in  date_from:
+                match_query.update({"answers.643d9b19b6b0dd38ef4cbdbc": {'$gte': date_from}})
+
+            # Si "date_to" tiene algún valor y si no contiene la cadena '--', se actualiza la consulta (match_query) con una condición de rango utilizando $lte (menor o igual) para el campo específico.
+            if date_to and '--' not in  date_to:
+                match_query.update({"answers.643d9b19b6b0dd38ef4cbdbc": {'$lte': date_to}})
+
+            # Si tanto "date_from" como "date_to" tienen valores y si ninguno de ellos contiene la cadena '--', se actualiza la consulta con una condición de rango utilizando $gte y $lte para abarcar un rango de fechas.
+            if date_from and '--' not in  date_from and date_to and '--' not in  date_to:
+                match_query.update({"answers.643d9b19b6b0dd38ef4cbdbc": {'$gte':date_from,'$lte':date_to}})
+
+        .. seealso:: Consulte la documentación oficial de los |mongo-operadores| :octicon:`report;1em;sd-text-info` o acceda al siguiente enlace que proporciona |tutorial-operadores| :octicon:`report;1em;sd-text-info` para preparar sus propios filtros.
+
+        Con frecuencia, en la mayoría de los reportes, se encontrará la función ``get_date_query`` (línea 17). Esta función actualiza la consulta mediante condiciones de fecha. La razón detrás de esta práctica es que la mayoría de los reportes incorporan, como filtro, tanto ``date_from`` como ``date_to``.
+
+        .. code-block:: python
+            :linenos:
+
+            match_query.update(get_date_query(date_from, date_to))
+
+        .. seealso:: Consulte la `función get_date_query <#date-query>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+        Identifique la ``query`` en el bloque 20-32, es una consulta muy sencilla. En términos generales, se están utilizando `operadores de agregación <#agregacion>`_ :octicon:`report;1em;sd-text-info` para filtrar documentos que cumplen con otros criterios (línea 21).
+
+        Observe la línea de código 24, que hace referencia a un ``documento`` apuntando a un ``metadato``. Los ``metadatos`` permiten mostrar información descriptiva del registro. Sin embargo, en los PDFs, para utilizar un metadato, debe seguir la siguiente nomenclatura:
+
+        .. code-block:: python
+            :linenos:
+            
+            "folio":"meta.$folio",
+
+        En el desarrollo de reportes, simplemente debe especificar el nombre del metadato, por ejemplo:
+
+        .. code-block:: python
+            :linenos:
+
+            "folio":"$folio",
+
+        Los metadatos mas utilizados son los siguientes:
+
+        +-----------------------+----------------------------------------------------------------+
+        | Metadatos             | Descripción                                                    |
+        +=======================+================================================================+
+        | ``created_at``        | Fecha de creación de registro en formato 'YYYY-MM-DD HH:mm:ss'.|
+        +-----------------------+----------------------------------------------------------------+
+        | ``created_by_name``   | Nombre del usuario que creó el registro.                       |
+        +-----------------------+----------------------------------------------------------------+
+        | ``folio``             | Folio del registro.                                            |
+        +-----------------------+----------------------------------------------------------------+
+        | ``version``           | Versión del registro.                                          |
+        +-----------------------+----------------------------------------------------------------+
+
+        .. seealso:: Consulte la sección `query <#doc-query>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+        Posteriormente, la consulta selecciona a los campos para extraer la data de los formularios utilizando el ``ID`` del campo (27-31).
+
+        .. seealso:: Consulte la sección :ref:`menu-opciones-generales` :octicon:`report;1em;sd-text-info` en la documentación para el usuario y consulte específicamente :ref:`opciones-avanzadas` :octicon:`report;1em;sd-text-info` para habilitar la visualización de los ``IDs`` de los campos, copie y pegue según sea necesario. 
+            
+        Por favor, lea los comentarios dentro del código para comprender su funcionamiento.
+
+        .. code-block:: python
+            :linenos:
+            :emphasize-lines: 1, 2, 5-8, 11-15, 17, 20-32
+
+            def query_report_first(date_from, date_to, buscador, variedad):
+                global report_model
+
+                # Construcción de la consulta inicial para MongoDB
+                match_query = { 
+                    "form_id": 98116,
+                    "deleted_at":{"$exists":False},
+                }
+
+                # Actualiza la consulta para incluir el filtro de 'buscador' y 'variedad' si está presente y no contiene '--'
+                if buscador and '--' not in  buscador:
+                    match_query.update({"answers.": buscador})
+
+                if variedad and '--' not in variedad:
+                    match_query.update({"answers.":variedad })
+
+                #match_query.update(get_date_query(date_from, date_to))
+
+                # Definición de la consulta de agregación para MongoDB
+                query = [
+                    # Filtra el documento de acuerdo a los filtros aplicados en "match_query" (id de la forma y la especificación de que no se desea consultar información previamente eliminada.)
+                    {"$match": match_query},
+                    # Selecciona a los campos específicos para extraer la información de los campos del formulario a traves de su ID.
+                    {"$project": {
+                        "_id":1,
+                        "folio":"$folio",
+                        "nombre_usuario":"$answers.64d66dc5d738a20c816b5",
+                        "paterno_usuario":"$answers.64d66dc5d738a20c816b6",
+                        "materno_usuario":"$answers.64d66dc5d738a20c82416b7",
+                        "cantidad":"$answers.64d66dc5d7a20c82416ba",
+                        "fecha":"$answers.64d66dc5d738a20c82416bc",
+                    }},
+                    # Ordena los documentos resultantes en orden ascendente según el metadato "created_at"
+                    {"$sort": {"created_at":1}}
+                ]
+                # Ejecución de la consulta en la colección usando el método aggregate
+                result = cr.aggregate(query)
+                # Llamada a la función para procesar el resultado de la consulta
+                get_format_firstElement(result)
+
+.. _doc-query:
+
+Query
+-----
+
+.. caution:: El siguiente contenido ofrece una visión rápida de los elementos básicos de una consulta en ``MongoDB`` útiles en los reportes, pero no constituye un tutorial completo. Por favor, consulte la documentación oficial de |mongodb-documentation| :octicon:`report;1em;sd-text-info` o visite |mongodb| :octicon:`report;1em;sd-text-info` si aún no está familiarizado.
+
+Una ``query`` es una solicitud estructurada para recuperar información específica de la base de datos de |mongodb-documentation| :octicon:`report;1em;sd-text-info`. Una ``query`` puede ser tan simple o muy estructurada, según lo requiera. 
+
+Un ``documento`` es la representación en formato ``BSON`` de la información almacenada en la base de datos. Puede contener datos jerárquicamente estructurados, similar a un objeto ``JSON``, con una estructura de pares ``clave-valor``. Las claves son cadenas y los valores pueden ser de varios tipos.
+
+Una ``colección`` es un conjunto lógico de documentos, comparable a una tabla en una base de datos relacional. A diferencia de una tabla, no impone un esquema fijo; cada documento puede tener campos diferentes sin necesidad de definir la estructura previamente.
+
+En este ejemplo, cada clave (como nombre, edad, correo) representa un campo en el ``documento`` y los valores asociados son los datos almacenados. Además, el documento puede contener campos anidados (dirección) y un array (intereses).
+
+.. important:: La clave ``_id`` actúa como identificador único del documento. 
 
 .. code-block:: python
     :linenos:
-    :emphasize-lines: 6, 9
+    :emphasize-lines: 2
 
-    match_query = { 
-        "form_id": 75791,
-        "deleted_at":{"$exists":False},
-
-        # Busca documentos en la colección donde el campo "created_by_name" no contiene ninguno de los siguientes valores
-        "created_by_name":{"$nin":['Luis Marquez', 'Andrea Lopez', 'Jose Chavez', 'Esteban Martinez']},
-
-        # Busca todos los documentos que el campo contenga el valor "montaje_terminado".
-        "answers.11ci37d99a03dd17b1f6ff": "montaje_terminado",
+    {
+    "_id": ObjectId("5f7a1efb89f6a74f8c3cf45a"),
+    "nombre": "Juan Pérez",
+    "edad": 30,
+    "correo": "juan.perez@example.com",
+    "direccion": {
+        "calle": "123 Main Street",
+        "ciudad": "Ciudad Ejemplo",
+        "codigo_postal": "12345"
+    },
+    "intereses": ["lectura", "viajes", "tecnología"]
     }
 
-.. caution:: Asegúrese de que los nuevos filtros sean constantes, es decir que su valor no cambie. 
+.. _agregacion:
 
-.. seealso:: Un documento ``BSON`` en ``MongoDB`` es un conjunto ordenado de pares *clave-valor*, donde cada ``clave`` es una cadena única que identifica un campo en el *documento* y el ``valor`` puede ser de varios tipos de datos, incluyendo otros documentos ``BSON``, arreglos, valores numéricos, cadenas, booleanos, etc. Es similar a un ``objeto`` en JavaScript.
+En MongoDB, existe un concepto llamado ``agregación``, donde se utilizan operadores que procesan ``documentos`` y devuelven resultados calculados. Cada etapa realiza una operación específica en los datos durante la ``agregación``. Algunas de las etapas más usadas en los reportes son:
 
-    - Si no está familiarizado con ``MongoDB``, consulte |mongodb| :octicon:`report;1em;sd-text-info`  para obtener más información.
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| Comando                                  | Descripción                                                                                                      |
++==========================================+==================================================================================================================+
+| ``$match``                               | Filtra documentos que cumplen con ciertos criterios.                                                             |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$group``                               | Agrupa documentos según un campo específico y realiza operaciones de agregación en esos grupos.                  |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$sort``                                | Ordena los documentos según un campo especificado. Utilice 1 (orden ascendente) y -1 (orden descendiente).       |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$limit``                               | Limita el número de documentos que pasan a la siguiente etapa.                                                   |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$project``                             | Proyecta (selecciona) campos específicos para el resultado final.                                                |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$count``                               | Cuenta el número de documentos que pasan a través de la etapa.                                                   |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$set``                                 | Asigna un valor a un nuevo campo o modifica un campo existente.                                                  |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| ``$out``                                 | Escribe el resultado de la agregación en una nueva colección.                                                    |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
-Identifique el bloque comprendido entre las líneas 11 y 15, donde se encuentran filtros que pueden variar. Estos filtros son opcionales, es decir, solo se aplican si están presentes en la solicitud; de lo contrario, no afectan la condición de la consulta y se descartan.
+Un ``pipeline de agregación`` es una parte específica del ``proceso de agregación``. Es una serie secuencial de etapas (operadores) que se aplican a los documentos en una colección.
 
-.. note:: Se menciona que son filtros opcionales porque comúnmente se reciben fechas. Por ejemplo, si recibe ``date_from`` (fecha desde), la consulta comprende realizar búsquedas desde la fecha seleccionada hasta el día de la consulta y viceversa.
-
-Observe que estos bloques de código actualizan condicionalmente la consulta (``match_query``) según los valores de los filtros ``buscador`` y ``variedad``.
-
-Considere el siguiente ejemplo, donde existen otras formas de aplicar filtros. Por favor lea los comentarios.
-
-.. code-block:: python
-    :linenos:
-
-    # Si "date_from" tiene algún valor y si no contiene la cadena '--', se actualiza la consulta (match_query) con una condición de rango utilizando $gte (mayor o igual) para el campo específico.
-    if date_from and '--' not in  date_from:
-        match_query.update({"answers.643d9b19b6b0dd38ef4cbdbc": {'$gte': date_from}})
-
-    # Si "date_to" tiene algún valor y si no contiene la cadena '--', se actualiza la consulta (match_query) con una condición de rango utilizando $lte (menor o igual) para el campo específico.
-    if date_to and '--' not in  date_to:
-        match_query.update({"answers.643d9b19b6b0dd38ef4cbdbc": {'$lte': date_to}})
-
-    # Si tanto "date_from" como "date_to" tienen valores y si ninguno de ellos contiene la cadena '--', se actualiza la consulta con una condición de rango utilizando $gte y $lte para abarcar un rango de fechas.
-    if date_from and '--' not in  date_from and date_to and '--' not in  date_to:
-        match_query.update({"answers.643d9b19b6b0dd38ef4cbdbc": {'$gte':date_from,'$lte':date_to}})
-
-.. seealso:: Consulte la documentación oficial de los |mongo-operadores| :octicon:`report;1em;sd-text-info` o acceda al siguiente enlace que proporciona |tutorial-operadores| :octicon:`report;1em;sd-text-info` para preparar sus propios filtros.
-
-Con frecuencia, en la mayoría de los reportes, se encontrará la función ``get_date_query`` (línea 17). Esta función actualiza la consulta mediante condiciones de fecha. La razón detrás de esta práctica es que la mayoría de los reportes incorporan, como filtro, tanto ``date_from`` como ``date_to``.
+Aquí hay un ejemplo de un ``pipeline de agregación`` utilizando algunas de las etapas mencionadas. Este ``pipeline`` realiza una serie de operaciones en una ``colección`` para ``filtrar``, ``agrupar``, ``ordenar``, ``limitar`` y ``proyectar`` datos según las necesidades específicas.
 
 .. code-block:: python
     :linenos:
 
-    match_query.update(get_date_query(date_from, date_to))
+    [
+        { $match: { field1: value1 } },
+        { $group: { _id: "$field2", total: { $sum: "$field3" } } },
+        { $sort: { total: -1 } },
+        { $limit: 10 },
+        { $project: { _id: 0, groupName: "$_id", totalAmount: "$total" } }
+    ]
 
-.. seealso:: Consulte la `función get_date_query <#date-query>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+.. seealso:: Para más información consulte |papeline| :octicon:`report;1em;sd-text-info`.
 
-.. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 2, 5-8, 11-15, 17
+Un cursor en 
 
-    def query_report_first(date_from, date_to, buscador, variedad):
-        global report_model
-
-        # Construcción de la consulta inicial para MongoDB
-        match_query = { 
-            "form_id": 98116,
-            "deleted_at":{"$exists":False},
-        }
-
-        # Actualiza la consulta para incluir el filtro de 'buscador' y 'variedad' si está presente y no contiene '--'
-        if buscador and '--' not in  buscador:
-            match_query.update({"answers.": buscador})
-
-        if variedad and '--' not in variedad:
-            match_query.update({"answers.":variedad })
-
-        #match_query.update(get_date_query(date_from, date_to))
-
-        # Definición de la consulta de agregación para MongoDB
-        query = [
-            {"$match": match_query},
-            {"$project": {
-                "_id":1,
-                "folio":"$folio",
-                "nombre_usuario":"$answers.643d66dc5d738a20c82416b5",
-                "paterno_usuario":"$answers.643d66dc5d738a20c82416b6",
-                "materno_usuario":"$answers.643d66dc5d738a20c82416b7",
-                "cantidad":"$answers.643d66dc5d738a20c82416ba",
-                "fecha":"$answers.643d66dc5d738a20c82416bc",
-            }},
-            {"$sort": {"created_at":1}}
-        ]
-        # Ejecución de la consulta en la colección usando el método aggregate
-        result = cr.aggregate(query)
-        # Llamada a la función para procesar el resultado de la consulta
-        get_format_firstElement(result)
+    data = []
+    result = cr.aggregate(query)
+    data = [x for x in result]
+    return data;
 
 .. _class-reportModel:
 
@@ -514,7 +645,7 @@ Revise la linea 46, ``settings.config.update(config)`` se utiliza para aplicar l
         'USERNAME' : 'correo.cuenta.padre@gmail.com',
         'PASS' : '',
 
-        # Colección de MongoDB para almacenar las respuestas
+        # Colección de MongoDB para almacenar las respuestas de los formularios
         'COLLECTION' : 'form_answer',
 
         # No cambiar
@@ -555,6 +686,10 @@ Revise la linea 46, ``settings.config.update(config)`` se utiliza para aplicar l
 
    <a href="https://learn.mongodb.com/learning-paths/introduction-to-mongodb" target="_blank">MongoDB University</a>
 
+.. |mongodb-documentation| raw:: html
+
+   <a href="https://www.mongodb.com/docs/" target="_blank">MongoDB</a>
+
 .. |mongodb-python| raw:: html
 
    <a href="https://learn.mongodb.com/learning-paths/using-mongodb-with-python" target="_blank">MongoDB con Python</a>
@@ -562,6 +697,10 @@ Revise la linea 46, ``settings.config.update(config)`` se utiliza para aplicar l
 .. |mongo-operadores| raw:: html
 
    <a href="https://www.mongodb.com/docs/manual/reference/operator/query/nin/" target="_blank">operadores relacionales de MongoDB</a>
+
+.. |papeline| raw:: html
+
+   <a href="https://www.mongodb.com/docs/manual/core/aggregation-pipeline/" target="_blank">conjunto de agregación</a>
 
 .. |tutorial-operadores| raw:: html
 
