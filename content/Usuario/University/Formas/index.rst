@@ -396,7 +396,6 @@ Del mismo modo que el campo fotografías, puede configurar los parámetros en `c
 
 .. image:: /imgs/Formas/Formas16.1.1.png
 
-
 Campo firma
 ^^^^^^^^^^^
 
@@ -409,6 +408,8 @@ Si se contesta o edita el formulario o catálogo desde la aplicación web, simpl
     :width: 700px
 
 .. important:: Al momento de responder o editar, la firma se guardará y tratará como un archivo de tipo imagen.
+
+.. _campo-catalogo:
 
 Campo catálogo
 ^^^^^^^^^^^^^^
