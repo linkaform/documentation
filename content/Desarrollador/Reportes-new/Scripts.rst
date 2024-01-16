@@ -1,12 +1,118 @@
+.. _crear-script:
+
 ===================
 Creación de Scripts
 ===================
 
-.. note:: RECUERDE QUE ESTE ES UN ARCHIVO BASADO EN UN REPORTE EN ESPECIFICO, PUEDE CAMBIAR. 
+La creación de scripts es el último paso para el desarrollo de reportes. Un script es el encargado de generar las consultas necesarias a la base de datos y procesar la información aplicando operaciones específicas para mostrar la data solicitada.
 
-El archivo ``py`` en el repositorio ``infosync_scripts`` contiene la lógica encargada de gestionar las solicitudes a la API de Linkaform, así como de procesar y presentar la información correspondiente en la estructura establecida.
+.. caution:: Es un proceso delicado y dependerá de qué y cómo se mostrará la información. Por favor, el siguiente contenido explica el proceso para desarrollar un script, pero está basado en un reporte específico con requerimientos particulares. Tenga en cuenta que todos los reportes son únicos y pueden cambiar.
 
-En la siguiente pestaña desplegable, observe el bloque de código, el cual representa de manera general las variables y funciones principales que componen al ``archivo py``. Sin embargo, en contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar.
+Estructura de archivos
+======================
+
+Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info` encontrarán los archivos correspondientes al back-end del reporte. Por favor, sigan los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
+
+1. Cree una carpeta exclusiva dentro de la carpeta ``infosync-scripts`` para sus reportes en caso de no contar con una.
+
+.. note:: Identifique a la carpeta con el nombre de su empresa o el cliente que lo requiera.
+
+2. Si está creando un reporte y carpeta desde cero, cree los dos archivos correspondientes, las cuales incluyen:
+
+- **account_settings.py**: Configuraciones de la cuenta del cliente (uno por cuenta).
+- **reporte_nombre_script.py**: Consultas a la base de datos. 
+
+.. important:: En las siguientes secciones se explicará el contenido de cada archivo. Sin embargo, considere que NO se tiene un estándar establecido para el contenido. No obstante, utilice los ejemplos como base para sus proyectos futuros.
+
+
+.. _account-settings:
+
+Archivo account settings
+------------------------
+
+.. caution:: El archivo ``account_settings`` escrito en ``python`` contiene información y configuraciones sensibles de la cuenta del cliente. 
+    
+Si requiere hacer actualizaciones en el archivo ``account_settings`` y no encuentra el archivo, lo podrá encontrar con el nombre del cliente seguido de ``settings``, por ejemplo: ``linkaform_settings``.
+
+El contenido de un archivo ``account_settings`` varía dependiendo de lo que el cliente requiera. Sin embargo, lo que un reporte necesita de este archivo es el ``entorno de ejecución`` y lo que contiene el diccionario ``config``.
+
+Identifique las líneas de código 4-5 y 8-9. Si desea apuntar y hacer la petición del script a producción, debe habilitar las líneas de código correspondientes a la misma. En caso contrario, si desea apuntar al script almacenado en preproducción, descomente las líneas de código de preproducción.
+
+Ahora, localice la variable ``MONGODB_PASSWORD`` ubicada en línea de código 28, hace referencia a la contraseña de mongo.
+
+.. note:: Solicite a soporte técnico apoyo para obtener la contraseña correspondiente a mongo.
+
+Identifique las líneas de código 34-35, debe colocar el ``USER_ID`` y ``ACCOUNT_ID`` de la cuenta padre. 
+
+.. seealso:: Consulte el siguiente enlace para :ref:`informacion-cuenta` :octicon:`report;1em;sd-text-info`.
+
+Ubique la variable ``AUTHORIZATION_EMAIL_VALUE`` (línea 42) y ajuste de acuerdo al correo de la cuenta padre.
+
+En la variable ``API_KEY`` (línea 43) copie y pegue la la clave alfanumérica generada. 
+
+.. seealso:: Consulte: a :ref:`generar-api-key` :octicon:`report;1em;sd-text-info` para más información.
+
+Revise la linea 46, ``settings.config.update(config)`` se utiliza para aplicar las configuraciones definidas en el diccionario ``config`` al módulo ``settings``. Esto es útil porque permite modificar dinámicamente las configuraciones de la aplicación sin tener que cambiar el código fuente directamente. 
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 4, 5, 8, 9, 28, 34, 42, 43, 46
+
+    from linkaform_api import settings # Configuraciones de la api
+
+    # --------- ENTORNO PRODUCCIÓN ---------
+    settings.mongo_hosts = 'db2.linkaform.com:27017,db3.linkaform.com:27017,db4.linkaform.com:27017'
+    settings.mongo_port = 27017
+
+    # --------- ENTORNO PREPRODUCCIÓN ---------
+    # settings.mongo_hosts = 'dbs2.lkf.cloud:27918'
+    # settings.mongo_port = 27918
+
+    config = {
+        # Correo de la cuenta padre
+        'USERNAME' : 'correo.cuenta.padre@gmail.com',
+        'PASS' : '',
+
+        # Colección de MongoDB para almacenar las respuestas de los formularios
+        'COLLECTION' : 'form_answer',
+
+        # No cambiar
+        'HOST' : 'app.linkaform.com',
+        'PROTOCOL' : 'https', #http o https
+
+        # Variables definidas para el entorno de ejecución 
+        'MONGODB_PORT': settings.mongo_port,
+        'MONGODB_HOST': settings.mongo_hosts,
+
+        'MONGODB_USER': 'account_id',
+        'MONGODB_PASSWORD': 'pass',
+
+        'PORT' : settings.mongo_port,
+
+        # Id de la cuenta padre
+        'USER_ID' : 123,
+        'ACCOUNT_ID' : 123,
+
+        'KEYS_POSITION' : {},
+        'IS_USING_APIKEY' : False,
+        'USE_JWT' : True,
+        'JWT_KEY':'',
+
+        # Configuración de api key
+        'AUTHORIZATION_EMAIL_VALUE' : 'correo.cuenta.padre@gmail.com'',
+        'API_KEY':"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    }
+
+    settings.config.update(config)
+
+.. attention:: Cualquier cambio dentro de este archivo debe ser ejecutado solamente en su entorno local por ningún motivo son cambios que deben actualizarse en el repositorio.
+
+Archivo ``py``
+--------------
+
+El archivo ``py`` en el repositorio ``infosync_scripts`` contiene las consultas y funciones necesarias para procesar y extraer la información almacenada en la base de datos.
+
+En la siguiente pestaña desplegable, observe el bloque de código, el cual representa de manera general las variables y funciones principales que componen al ``archivo py``. En contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar.
 
 .. dropdown:: Vista general
 
@@ -76,7 +182,7 @@ En la siguiente pestaña desplegable, observe el bloque de código, el cual repr
 .. _main:
 
 Main
-====
+^^^^
 
 Un ``Script`` comienza a ejecutarse a partir del ultimo bloque de código ``main``. Por favor, lea los comentarios dentro del código y considere las siguientes anotaciones.
 
@@ -162,11 +268,17 @@ Ahora, considere que el código presente es un ejemplo básico y puede cambiar s
 
         .. caution:: Si requiere hacer la autenticación por el usuario que abre o ejecuta el reporte, deberá comentar el bloque correspondiente a la ``API key`` y habilitar el ``Token`` para recibirla en la petición.
         
-        En el último bloque del script (línea 38), podrá encontrar las ejecuciones, que básicamente son las funciones encargadas de gestionar la consulta. En este caso, es un reporte con una sola función de consulta (``query_report_first``).
+        En la línea 38, encontrará las ejecuciones, que básicamente son las funciones encargadas de gestionar las consulta a la base de datos. En este caso, se trata de un reporte con una sola función de consulta (`query_report_first`).
+
+        .. note:: Las funciones de consulta no devuelven los datos como tal, sino que son almacenadas en el diccionario ``report_model`` de la función ``get_format_firstElement``. 
+        
+        Identifique la instrucción en la línea 39, se encarga de escribir la representación en formato JSON del diccionario que devuelve la función ``print`` de la clase ``ReportModel`` en la salida. Es decir, recibe un ``json`` con la data de la ``request`` que se hace.
+        
+        .. note:: Por favor, continúe revisando el flujo de la documentación para comprender las funciones.
 
         .. code-block:: python
             :linenos:
-            :emphasize-lines: 19, 22, 23, 26, 27, 30, 31, 38
+            :emphasize-lines: 19, 22, 23, 26, 27, 30, 31, 38, 39
 
             if __name__ == "__main__":
                 # Log del script
@@ -211,7 +323,7 @@ Ahora, considere que el código presente es un ejemplo básico y puede cambiar s
                     sys.stdout.write(simplejson.dumps({"json": {}}))
 
 Funciones
-=========
+^^^^^^^^^
 
 Para definir las funciones encargadas de gestionar las peticiones a la base de datos, deben definirse siguiendo el estándar |snake_case| :octicon:`report;1em;sd-text-info` de Python.
 
@@ -237,7 +349,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
     .. tab-item:: Caso 1
         :sync: key1
 
-        Contenido 1
+        .
 
     .. tab-item:: Caso 2
         :sync: key2
@@ -262,7 +374,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
         .. seealso:: consulte la `clase ReportModel <#class-reportModel>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
-        En el siguiente bloque de código, se crea un diccionario denominado ``match_query`` que representa las condiciones iniciales de la consulta. Este diccionario actúa como filtros adicionales que especifican las condiciones de dónde y cómo extraer los datos.
+        En el siguiente bloque de código, se crea un diccionario denominado ``match_query`` que representa las condiciones iniciales de la consulta. Este diccionario actúa como filtros obligatorios que especifican las condiciones de dónde y cómo extraer los datos.
 
         - Asegúrese de modificar el valor de la clave ``form_id`` de acuerdo al identificador del formulario al que desea extraer la información.
 
@@ -361,7 +473,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
         | ``version``           | Versión del registro.                                          |
         +-----------------------+----------------------------------------------------------------+
         
-        - Observe las líneas de código 9-13. La consulta selecciona a los campos para extraer la data de los formularios utilizando el ``ID`` del campo.
+        - Observe las líneas de código 9-13. La consulta (``query``) selecciona a los campos para extraer la data de los formularios utilizando el ``ID`` del campo.
 
         .. note:: Recuerde que la palabra reservada ``answers`` seguido de la cadena alfanumérica (``ID``) se utiliza para indicar que se está accediendo a un campo especifico del formulario. 
 
@@ -373,7 +485,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
                 "tienda":"$answers.63dc0f1ec29b8336b7b72613.63dc0f1ec29b8336b7b72616",
                 
             Consulte la sección :ref:`menu-opciones-generales` :octicon:`report;1em;sd-text-info` en la documentación para el usuario y consulte :ref:`opciones-avanzadas` :octicon:`report;1em;sd-text-info` para habilitar la visualización de los ``IDs`` de los campos. Copie y pegue según sea necesario. 
-
+        
         .. code-block:: python
             :linenos:
             :emphasize-lines: 9-13
@@ -397,7 +509,9 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
                 {"$sort": {"created_at":1}}
             ]
 
-        .. caution:: Si desconoce de algunos elementos de mongodb, consulte la sección `query <#doc-query>`_ :octicon:`report;1em;sd-text-info` para obtener una breve descripción
+        .. caution:: La ``query`` dependerá de los datos que necesite extraer de sus formularios o si desea aplicar algún tipo de agrupamiento u operación que le permita mongodb.
+            
+            Si desconoce de algunos elementos de mongodb, consulte la sección `query <#doc-query>`_ :octicon:`report;1em;sd-text-info` para obtener una breve descripción
 
         Las siguientes instrucciones son importantes y varían según lo requiera. 
 
@@ -409,7 +523,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
         En este caso, ``result = cr.aggregate(query)`` ejecuta la consulta de `agregación <#proceso-agregacion>`_ :octicon:`report;1em;sd-text-info` y obtiene un `cursor <#mongo-cursor>`_ :octicon:`report;1em;sd-text-info` (``result``) que apunta a los resultados generados por el `pipeline de agregación <#pipeline-agregacion>`_ :octicon:`report;1em;sd-text-info`.
 
-        Con el `método aggregate <#metodo-agregacion>`_ :octicon:`report;1em;sd-text-info` se accede a los *pipelines de agregación* de la consulta (``query``). En lugar de iterar sobre el *cursor* para procesar cada `documento <#mongo-documento>`_ :octicon:`report;1em;sd-text-info`, se pasa directamente el *cursor* como parámetro a la función `método aggregate <#funcion-get-format-firstElement>`_ :octicon:`report;1em;sd-text-info` para aplicar un nuevo formateo.
+        Con el `método aggregate <#metodo-agregacion-aggregate>`_ :octicon:`report;1em;sd-text-info` se accede a los *pipelines de agregación* de la consulta (``query``). En lugar de iterar sobre el *cursor* para procesar cada `documento <#mongo-documento>`_ :octicon:`report;1em;sd-text-info`, se pasa directamente el *cursor* como parámetro a la función `get-format-firstElement <#funcion-get-format-firstElement>`_ :octicon:`report;1em;sd-text-info` para aplicar un nuevo formateo.
         
         En el siguiente caso, se crea una lista vacía llamada  ``data`` para almacenar los resultados obtenidos de la iteración del *cursor*. La expresión ``cr.aggregate(query)`` ejecuta una consulta de *agregación* y devuelve un *cursor* que apunta a los resultados de esa consulta. Luego, utilizando una comprensión de lista ``[x for x in result]``, se itera sobre el *cursor* para extraer todos los *documentos* y se almacenan en la lista `data`. En última instancia, data contiene una lista con la información consultada de la base de datos.
 
@@ -471,44 +585,42 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
                     # Llamada a la función para procesar el resultado de la consulta
                     get_format_firstElement(result)
 
+Funciones personalizadas
+************************
+
+Las funciones personalizadas se crean para hacer cálculos específicos con la data. En otras palabras, independientemente de cómo se obtenga la información a través de los filtros especificados, es posible manipular la información y presentarla de una manera diferente.
+
+Por ejemplo, suponga que tiene una lista con información en un campo que representa las horas trabajadas y desea multiplicar ese valor por el salario por hora, buscando presentar una tabla con los salarios totales. Para lograr esto, se requiere una función personalizada que permita realizar esa operación y obtener una nueva lista con los datos tratados.
+
+.. important:: Este apartado tiene como objetivo explicar ejemplos sobre funciones personalizadas, pero no pretende ser un tutorial detallado sobre cómo crearlas. Recuerde que la creación de dichas funciones dependerá de lo que desee presentar y requerirá utilizar su experiencia en programación para desarrollarlas.
+
 .. _funcion-get-format-firstElement:
 
-funciones de formateo
----------------------
+La función ``get_format_firstElement()`` se encarga de procesar y dar formato a los resultados obtenidos de la consulta.
 
-Esta función toma el cursor de documentos de MongoDB, extrae información específica de cada documento y la estructura en un formato específico dentro del modelo de reporte (report_model).
+Esta función toma el cursor de documentos, extrae información específica de cada documento y la estructura agregándola a la lista dentro de la clave ``firstElement`` del modelo de reporte (``report_model``).
 
-La función recibe el cursor data como parámetro, que se espera que sea un cursor (o algo iterable) que contiene documentos de MongoDB.
+.. note:: Si ejecuta ``report_model.print()``, obtendrá un diccionario que muestra la estructura de ``self.json``, y podrá visualizar cómo la información se organiza dentro de ``firstElement``. 
 
-global report_model: Indica que la función utilizará la variable global report_model.
-
-for x in data:: Itera sobre cada documento (x) en el cursor data.
-
-print(x): Imprime el documento actual para propósitos de depuración.
-
-print('=============='): Imprime una línea divisoria para ayudar a distinguir entre los documentos durante la depuración.
-
-record_id = str(x.get('_id', '')): Extrae el valor del campo "_id" del documento. Si el campo no existe, asigna una cadena vacía. Convierte el valor a cadena.
-
-folio = x.get('folio', ''): Similar al paso anterior, pero para el campo "folio".
-
-Resto de las líneas (nombre_usuario, paterno_usuario, materno_usuario, cantidad, fecha): Realizan la extracción de valores para los campos correspondientes.
-
-La sección final agrega un diccionario con los valores extraídos al modelo de informe (report_model). Cada documento del cursor se representa como un diccionario dentro de la lista bajo la clave 'data' en la sección 'firstElement' del modelo de informe.
+    Consulte la clase `clase ReportModel() <#class-reportModel>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
     def get_format_firstElement(data):
+        # Indica que la función utilizará la variable global report_model.
         global report_model
 
-        # Itera sobre cada documento en el cursor
+        # Itera sobre cada documento en el cursor data
         for x in data:
+            # Imprime el documento actual (utilizada en la depuración).
             print(x);
             print('==============');
 
-            # Extrae valores específicos del documento (si no existen, se asigna un valor predeterminado)
+            # Extrae valores específicos del documento utilizando el método get (si no existen, se asigna un valor predeterminado)
+
+            # Extrae el valor del campo "_id" del documento. Si el campo no existe, asigna una cadena vacía ''. Convierte el valor a cadena.
             record_id = str(x.get('_id',''))
             folio = x.get('folio','')
             nombre_usuario = x.get('nombre_usuario','')
@@ -517,7 +629,7 @@ La sección final agrega un diccionario con los valores extraídos al modelo de 
             cantidad = x.get('cantidad')
             fecha = x.get('fecha','')
 
-            # Agrega un diccionario con los valores extraídos al modelo de informe
+            # Agrega un diccionario con los valores extraídos al modelo de reporte
             report_model.json['firstElement']['data'].append({
                 'record_id':record_id,
                 'folio':folio,
@@ -531,7 +643,7 @@ La sección final agrega un diccionario con los valores extraídos al modelo de 
 .. _doc-query:
 
 Query
------
+*****
 
 .. caution:: El siguiente contenido ofrece una visión rápida de los elementos básicos de una consulta en ``MongoDB`` útiles en los reportes, pero no constituye un tutorial completo. Por favor, consulte la documentación oficial de |mongodb-documentation| :octicon:`report;1em;sd-text-info` o visite |mongodb| :octicon:`report;1em;sd-text-info` si aún no está familiarizado.
 
@@ -545,7 +657,7 @@ Una ``colección`` es un conjunto lógico de documentos, comparable a una tabla 
 
 En este ejemplo, cada clave (como nombre, edad, correo) representa un campo en el ``documento`` y los valores asociados son los datos almacenados. Además, el documento puede contener campos anidados (dirección) y un array (intereses).
 
-.. important:: La clave ``_id`` actúa como identificador único del documento. 
+.. important::  La clave ``_id`` es el identificador único para el documento. Si no se proporciona un ``ID`` al documento, MongoDB asignará automáticamente un ``ObjectId``.
 
 .. code-block:: python
     :linenos:
@@ -607,7 +719,7 @@ Aquí hay un ejemplo de un ``pipeline de agregación`` utilizando algunas de las
 
 .. seealso:: Para más información consulte |papeline| :octicon:`report;1em;sd-text-info`.
 
-.. _metodo-agregacion:
+.. _metodo-agregacion-aggregate:
 
 Un ``método`` generalmente se refiere a una función o procedimiento que se puede invocar para realizar una operación específica en la base de datos. Considere los siguientes métodos:
 
@@ -636,14 +748,45 @@ Un ``cursor`` es un puntero que permite recorrer los resultados de una ``query``
 .. _class-reportModel:
 
 Clase ``ReportModel``
----------------------
+*********************
 
 La clase ``ReportModel()`` es opcional, pero es utilizada para representar una estructura de los diccionarios de datos para formatear y enviar respuestas a alguna petición.
 
+El diccionario ``self.json`` tiene la clave ``firstElement`` que apunta a la estructura de un elemento específico para organizar la data, en este caso se trata de una tabla definida en la estructura html.
+
+.. seealso:: Consulte la sección :ref:`estructura-elementos` :octicon:`report;1em;sd-text-info` si necesita más detalles. 
+
+La función ``print()`` construye y devolve un nuevo diccionario con la misma estructura que ``self.json``, pero sin hacer referencia directa a la instancia de la misma clase. Por favor, lea los comentarios dentro del código.
+
+.. important:: En este caso, la función `print()` en la clase no tiene relación con la funcionalidad incorporada de Python `print` para imprimir en la consola.
+
 .. code-block:: python
     :linenos:
+    :emphasize-lines: 5, 9
 
     class ReportModel():
+        def __init__(self):
+            # Estructura de datos predefinida
+            self.json = {
+                "firstElement":{
+                    "data": [],
+                }
+
+        def print(self):
+            # Crea un nuevo diccionario 'res' con una clave 'json' que apunta a un diccionario vacío (utilizado para almacenar la estructura y datos formateados)
+            res = {'json':{}}
+            # Itera sobre las claves del diccionario self.json para copiar la estructura y datos al nuevo diccionario
+            for x in self.json:
+                # Para cada clave 'x', asigna el valor correspondiente de self.json a res['json'][x]
+                res['json'][x] = self.json[x]
+            # Devuelve el nuevo diccionario 'res'
+            return res
+       
+Considere agregar las claves necesarias según los elementos que defina en la estructura de su reporte. Por ejemplo:
+
+.. code-block:: python
+    :linenos: 
+
         def __init__(self):
             # Estructura de datos predefinida
             self.json = {
@@ -656,27 +799,21 @@ La clase ``ReportModel()`` es opcional, pero es utilizada para representar una e
                 "thirdElement":[],
             }
 
-        def print(self):
-            # Nuevo diccionario para almacenar la estructura y datos
-            res = {'json':{}}
-            # Copia la estructura y datos de self.json al nuevo diccionario
-            for x in self.json:
-                res['json'][x] = self.json[x]
-            return res
+.. caution:: Se dice que la clase ``ReportModel()`` es opcional, ya que se utiliza si aplica algún tipo de formateo a la data obtenida.
 
 .. _date-query:
 
 Función ``get_date_query``
---------------------------
+**************************
 
 Cuando un registro se almacena en los servidores de Linkaform, se utiliza la |utc| :octicon:`report;1em;sd-text-info`. Por ejemplo, si envía su registro el lunes 8 de enero a las 6:42 pm, el registro se almacenará considerando la zona horaria UTC+0, es decir, el martes 9 de enero a las 12:42 am. 
 
-Por este motivo, se utiliza la función ``get_date_query()``, para convertir la fecha y hora a la zona horaria ``America/Monterrey.`` Esta función se encarga de construir y retornar un diccionario que representa una consulta basada en los parámetros ``date_from`` y ``date_to``.
+Por este motivo, se utiliza la función ``get_date_query()``, para convertir la fecha y hora a la zona horaria de donde se encuentran los servidores de Linkaform. Esta función se encarga de construir y retornar un diccionario que representa una consulta basada en los parámetros ``date_from`` y ``date_to``.
 
-.. caution:: Esta función ya está lista para su uso. Si pertenece a una zona horaria diferente o si así lo requiere, modifique la configuración de la zona horaria (``timezone``). Por favor, lea los comentarios.
+.. caution:: Esta función ya está lista para su uso. Si pertenece a una zona horaria diferente o si así lo requiere, modifique la configuración de la misma (``timezone``). Por favor, lea los comentarios.
 
 .. code-block:: python
-    :linenos: 5
+    :linenos: 
 
     def get_date_query(date_from, date_to):
         # Inicializa un diccionario vacío para almacenar las condiciones de fecha
@@ -721,7 +858,7 @@ Por este motivo, se utiliza la función ``get_date_query()``, para convertir la 
         return res
 
 Bibliotecas y módulos
-=====================
+^^^^^^^^^^^^^^^^^^^^^
 
 El primer bloque de código corresponde a las importaciones de varias bibliotecas y módulos. 
 
@@ -751,88 +888,6 @@ El primer bloque de código corresponde a las importaciones de varias biblioteca
 
     # Importa la función "normalize" del módulo "unicodedata", que se utiliza para normalizar cadenas de texto Unicode
     from unicodedata import normalize
-
-.. _account-settings:
-
-Archivo account settings
-========================
-
-Dentro de la carpeta ``infosync_scripts`` debe existir una carpeta por cada cliente que contenga scripts de sus reportes. Dentro de esta carpeta debe contener un archivo con el formato ``account_settings`` escrito en ``python`` por cliente.
-
-.. caution:: Este archivo contiene información y configuraciones sensibles de la cuenta del cliente. Si requiere hacer actualizaciones en el archivo ``account_settings`` de algún cliente y no encuentra el archivo, lo podrá encontrar con el nombre del cliente seguido de ``settings``, por ejemplo: ``linkaform_settings``.
-
-El contenido de un archivo ``account_settings`` varía dependiendo de lo que el cliente requiera. Sin embargo, lo que un reporte necesita de este archivo es el ``entorno de ejecución`` y lo que contiene el diccionario ``config``.
-
-Identifique las líneas de código 4-5 y 8-9. Si desea apuntar y hacer la petición del script a producción, debe habilitar las líneas de código correspondientes a la misma. En caso contrario, si desea apuntar al script almacenado en preproducción, descomente las líneas de código de preproducción.
-
-Ahora, localice la variable ``MONGODB_PASSWORD`` ubicada en línea de código 28, hace referencia a la contraseña de mongo.
-
-.. note:: Solicite a soporte técnico apoyo para obtener la contraseña correspondiente a mongo.
-
-Identifique las líneas de código 34-35, debe colocar el ``USER_ID`` y ``ACCOUNT_ID`` de la cuenta padre. 
-
-.. seealso:: Consulte el siguiente enlace para :ref:`informacion-cuenta` :octicon:`report;1em;sd-text-info`.
-
-Ubique la variable ``AUTHORIZATION_EMAIL_VALUE`` (línea 42) y ajuste de acuerdo al correo de la cuenta padre.
-
-En la variable ``API_KEY`` (línea 43) copie y pegue la la clave alfanumérica generada. 
-
-.. seealso:: Consulte: a :ref:`generar-api-key` :octicon:`report;1em;sd-text-info` para más información.
-
-Revise la linea 46, ``settings.config.update(config)`` se utiliza para aplicar las configuraciones definidas en el diccionario ``config`` al módulo ``settings``. Esto es útil porque permite modificar dinámicamente las configuraciones de la aplicación sin tener que cambiar el código fuente directamente. 
-
-.. code-block:: python
-    :linenos:
-    :emphasize-lines: 4, 5, 8, 9, 28, 34, 42, 43, 46
-
-    from linkaform_api import settings # Configuraciones de la api
-
-    # --------- ENTORNO PRODUCCIÓN ---------
-    settings.mongo_hosts = 'db2.linkaform.com:27017,db3.linkaform.com:27017,db4.linkaform.com:27017'
-    settings.mongo_port = 27017
-
-    # --------- ENTORNO PREPRODUCCIÓN ---------
-    # settings.mongo_hosts = 'dbs2.lkf.cloud:27918'
-    # settings.mongo_port = 27918
-
-    config = {
-        # Correo de la cuenta padre
-        'USERNAME' : 'correo.cuenta.padre@gmail.com',
-        'PASS' : '',
-
-        # Colección de MongoDB para almacenar las respuestas de los formularios
-        'COLLECTION' : 'form_answer',
-
-        # No cambiar
-        'HOST' : 'app.linkaform.com',
-        'PROTOCOL' : 'https', #http o https
-
-        # Variables definidas para el entorno de ejecución 
-        'MONGODB_PORT': settings.mongo_port,
-        'MONGODB_HOST': settings.mongo_hosts,
-
-        'MONGODB_USER': 'account_id',
-        'MONGODB_PASSWORD': 'pass',
-
-        'PORT' : settings.mongo_port,
-
-        # Id de la cuenta padre
-        'USER_ID' : 123,
-        'ACCOUNT_ID' : 123,
-
-        'KEYS_POSITION' : {},
-        'IS_USING_APIKEY' : False,
-        'USE_JWT' : True,
-        'JWT_KEY':'',
-
-        # Configuración de api key
-        'AUTHORIZATION_EMAIL_VALUE' : 'correo.cuenta.padre@gmail.com'',
-        'API_KEY':"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    }
-
-    settings.config.update(config)
-
-.. attention:: Cualquier cambio dentro de este archivo debe ser ejecutado solamente en su entorno local por ningún motivo son cambios que deben actualizarse en el repositorio.
 
 
 .. LIGAS EXTERNAS

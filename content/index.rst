@@ -13,6 +13,7 @@ Documentación de Linkaform
    :hidden:
 
    Usuario/University/index
+   Usuario/AppMóvil/index
    Desarrollador/index
    Contribución/index
 

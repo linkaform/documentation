@@ -2,7 +2,7 @@
 Creación de Demo
 ================
 
-La creación de un reporte comienza con el desarrollo de un **reporte demo** (prototipo). Este prototipo tiene como objetivo mostrar la idea de funcionamiento y demostrar las funcionalidades del reporte al cliente.Esto permite recibir retroalimentación y realizar mejoras en el aspecto visual del reporte y la forma de presentar la información. 
+La creación de un reporte comienza con el desarrollo de un **reporte demo** (prototipo). Este prototipo tiene como objetivo mostrar la idea de funcionamiento y demostrar las funcionalidades del reporte al cliente. Esto permite recibir retroalimentación y realizar mejoras en el aspecto visual del reporte y la forma de presentar la información. 
 
 Una vez que se cuenta con la demo, la integración del script se simplifica, ya que resulta más fácil comprender qué datos se van a utilizar y cómo deben presentarse.
 
@@ -10,17 +10,28 @@ Una vez que se cuenta con la demo, la integración del script se simplifica, ya 
 
 .. _estructura-archivos:
 
-Estructura de archivos (PENDIENTE)
-==================================
+Estructura de archivos
+======================
 
-Dentro de sus archivos, tendrá código genérico el cual puede emplear como base para sus proyectos futuros.
+Dentro del :ref:`repositorio-servido` :octicon:`report;1em;sd-text-info` encontrará los archivos correspondientes al front-end del reporte. Por favor, sigan los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
 
-.. important:: No se tiene un estándar establecido para el contenido de los archivos, ya que cada cliente tiene requisitos específicos de representación.
+1. Cree una carpeta exclusiva dentro de la carpeta ``Apps`` para sus reportes en caso de no contar con una.
+
+.. note:: Identifique a la carpeta con el nombre de su empresa o el cliente que lo requiera.
+
+2. Cree los cuatro archivos correspondientes al front-end del reporte, las cuales incluyen:
+
+- **reporte_nombre.html**: Estructura del reporte.    
+- **reporte_nombre.js**: Lógica encargada de gestionar las solicitudes a la *API*, así como de procesar y presentar la información correspondiente en la estructura establecida.
+- **reporte_nombre_data.js**: Configuraciones de librerías que se utilizan.
+- **style.css**: Estilos generales del reporte (un archivo por carpeta).
+
+.. important:: En las siguientes secciones se explicará el contenido de cada archivo. Sin embargo, considere que NO se tiene un estándar establecido para el contenido. No obstante, utilice los ejemplos como base para sus proyectos futuros.
 
 Estructura html
 ---------------
 
-El archivo ``HTML`` en ``Servido`` se encarga de establecer la estructura del reporte y facilitar la inclusión de archivos y bibliotecas externas que son necesarias. El archivo ``HTML`` se divide en tres partes: el ``head``, el ``body`` y las ``librerías``. 
+El archivo ``html`` se encarga de establecer la estructura del reporte y facilitar la inclusión de archivos y bibliotecas externas que son necesarias. El archivo ``HTML`` se divide en tres partes: el ``head``, el ``body`` y las ``librerías``. 
 
 A continuación, se presentan fragmentos de código HTML con explicaciones detalladas sobre cada parte, destacando los elementos que se pueden personalizar.
 
@@ -63,7 +74,9 @@ Asegúrese de ajustar el contenido ubicado en la línea 7 según sus requerimien
 body
 ^^^^
 
-En el cuerpo (``body``) se establece la estructura visible del reporte, donde se definen elementos como cabeceras, títulos, gráficas, tablas, cards, entre otros. En otras palabras, se incluye todo lo necesario para filtrar y mostrar la información necesaria en el reporte. En el siguiente dropdown, encontrará el código del cuerpo de un reporte.  
+En el cuerpo (``body``) se establece la estructura visible del reporte, donde se definen elementos como cabeceras, títulos, gráficas, tablas, cards, entre otros. Se incluye todo lo necesario para establecer la estructura correspondiente a filtros y elementos donde la información se presentará. 
+
+En el siguiente dropdown, encontrará el código del cuerpo de un reporte.  
 
 .. dropdown:: Código body
 
@@ -185,11 +198,14 @@ A continuación, se detallan por bloques de código el cuerpo del reporte para i
 Header del reporte
 ******************
 
-El primer bloque corresponde al encabezado (``Header``) del reporte. Su función principal es mostrar:
+El primer bloque corresponde al encabezado del reporte. Su función principal es mostrar las siguientes opciones:
  
-- **cerrar sesión**: Consulte la sección :ref:`estructura-js` :octicon:`report;1em;sd-text-info`, específicamente en la función ``window.onload`` línea 64. 
-- **logo de la empresa**: Examine la sección :ref:`estructura-js` :octicon:`report;1em;sd-text-info`, en la función ``window.onload`` línea 65.
-- **nombre del reporte**: Revise la sección :ref:`estructura-js` :octicon:`report;1em;sd-text-info`, en la función ``window.onload`` línea 72. 
+- Opción para cerrar sesión. 
+- Mostrar logo de la empresa.
+
+.. seealso:: Consulte la función `window.onload <#funcion-window-onload>`_ :octicon:`report;1em;sd-text-info` donde se detallan los eventos utilizados.
+    
+- Mostrar nombre del reporte.
 
 .. tab-set::
 
@@ -229,22 +245,24 @@ El primer bloque corresponde al encabezado (``Header``) del reporte. Su función
                 </div> 
             </nav>
 
-        .. caution:: Regularmente, la estructura no cambia. Sin embargo, asegúrese de cambiar el nombre del reporte según sus necesidades (línea 25). Lea los comentarios en el código. 
+        .. caution:: Regularmente, la estructura no cambia. Sin embargo, asegúrese de cambiar el nombre del reporte (línea 25). Lea los comentarios en el código. 
 
     .. tab-item:: Resultado
 
         .. image:: /imgs/Reportes/Reportes11.png
 
+.. _estructura-elementos:
+
 Content del reporte
 *******************
 
-El contenido (``content``) es la parte más importante del código; aquí se establecen los elementos que se utilizan para filtrar y representar la data. Dentro de ``content``, se encuentran bloques de código estandarizados que se explican a continuación.
+El contenido (``content``) es la parte más importante de la estructura html; aquí se establecen los elementos que se utilizan para filtrar y representar la data. Dentro de ``content``, se encuentran bloques de código estandarizados que se explican a continuación.
 
 .. note:: Al final, podrá encontrar el bloque completo del contenido.
 
 El bloque ``Session`` contiene el inicio de sesión del reporte, es decir, cuando se intenta abrir desde :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
 
-.. seealso:: Revise la sección :ref:`estructura-js` :octicon:`report;1em;sd-text-info`, en la función ``window.onload`` lea los comentarios de la línea 86. 
+.. seealso:: Revise la estructura del archivo js, en la función `window.onload <#mostrar-filtro>`_ y lea los comentarios de la línea 36.
 
 .. tab-set::
 
@@ -279,20 +297,30 @@ El bloque ``Session`` contiene el inicio de sesión del reporte, es decir, cuand
 
         .. image:: /imgs/Reportes/Reportes14.png
 
-El bloque ``title Demo`` (línea 4) es simplemente el título que diferencia al reporte, indicando que es solo un ``reporte demo``. Consulte :ref:`link-demo` :octicon:`report;1em;sd-text-info`.
+El bloque ``title Demo``, es simplemente el título que diferencia al reporte, indicando que es solo un ``reporte demo``. 
 
-.. code-block:: html
-    :linenos:
-    :emphasize-lines: 4
+.. seealso:: Consulte :ref:`link-demo` :octicon:`report;1em;sd-text-info`.
 
-    <!--Title Demo -->
-    <div id="title_demo" style="margin-bottom: 20px;">
-        <center>
-            <h1><span>Demo data</span>&nbsp;&nbsp;</h1>
-        </center>
-    </div>
+.. tab-set::
 
-``Options Filter`` (Líneas 3-5) es el botón que permite habilitar u ocultar los filtros disponibles, así como la opción ``Run`` (Línea 6) para ejecutar la consulta.
+    .. tab-item:: Estructura
+
+        .. code-block:: html
+            :linenos:
+            :emphasize-lines: 4
+
+            <!--Title Demo -->
+            <div id="title_demo" style="margin-bottom: 20px;">
+                <center>
+                    <h1><span>Demo data</span>&nbsp;&nbsp;</h1>
+                </center>
+            </div>
+
+    .. tab-item:: Resultado
+
+        .. image:: /imgs/Reportes/Reportes30.png
+
+``Options Filter`` es el botón que permite habilitar u ocultar los filtros disponibles, así como la opción ``Run`` para ejecutar la consulta.
 
 .. tab-set::
 
@@ -355,11 +383,11 @@ El contenido ``Filters`` son las opciones de filtros para tratar la información
 
 Modifique los filtros según sus necesidades. Añada o elimine filtros según sea necesario; estos pueden ser filtros de fecha, rango, opciones, etc.
 
-.. note:: En el ejemplo anterior, hay una tercera opción de filtro llamada ``Promotor`` (líneas 16-21). Solamente asegúrese de asignar un ``id`` al elemento.
+.. note:: En el ejemplo anterior, hay una tercera opción de filtro llamada ``Promotor`` (líneas 16-21). Solamente asegúrese de asignar un ``id`` descriptivo al elemento. El ``id firstParameters`` es utilizado para mostrar todos los filtros. Consulte la función `window.load <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` para conocer más detalles. 
 
 En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráficos, cards, o cualquier otro elemento donde se representará la data.
 
-.. note:: Todo elemento que se incluya debe estar dentro del contenedor ``div`` con la clase ``row`` (Líneas 2-14). El ``id firstParameters`` es utilizado para mostrar todos los filtros. Consulte el siguiente `enlace <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` para conocer más detalles. 
+.. note:: Todo elemento que se incluya debe estar dentro del contenedor ``div`` con la clase ``row`` (Líneas 2-14). 
 
 .. tab-set::
 
@@ -392,9 +420,9 @@ El bloque de código anterior corresponde a las opciones de descarga (``csv`` y 
 
 .. seealso:: Consulte la documentación oficial de |Tabulator-doc| :octicon:`report;1em;sd-text-info`. 
 
-Puede modificar o añadir otras funcionalidades según su necesidad. Sin embargo, identifique y tenga precaución con el uso del atributo ``id`` (Líneas 7-8), ya que este es utilizado por la biblioteca ``Tabulator`` para poblar con datos.
+Puede modificar o añadir otras funcionalidades según su necesidad. Sin embargo, identifique y tenga precaución con el uso del atributo ``id`` (Líneas 7-8), ya que son utilizados por la biblioteca ``Tabulator`` para poblar con datos.
 
-.. warning:: El  código anterior para la tabla está estandarizado. Si necesita otra tabla, puede copiar y pegar. Solo asegúrese de cambiar el ``id`` (Líneas 7, 8, 10, 12) por ``firstElement``, ``secondElement`` y así sucesivamente.
+.. warning:: El  código anterior para una tabla ya se encuentra estandarizada. Si necesita otra tabla, simplemente copie y pegue. Solo asegúrese de cambiar el ``id`` (Líneas 7, 8, 10, 12) por ``firstElement``, ``secondElement`` y así sucesivamente.
   
 .. dropdown:: Código content
 
@@ -534,7 +562,7 @@ También se encuentran archivos propios de ``Servido``, correspondientes a las f
 
 El bloque de código anterior importa el archivo ``servido_utils.js``, que se encarga de configurar el inicio de sesión, gestionar usuarios, contraseñas y configurar las cookies con información sensible como ``sessionId``, ``userId``, ``userJwt``, ``userName`` y ``userParentId``. Además, proporciona funciones útiles como ``getPalleteColors``, ``setSpinner``, ``getChartDownload``, ``getDownload``, ``setDateFilterMonth``.
 
-Finalmente, en el último bloque del archivo se llaman los archivos encargados de gestionar el reporte y el archivo con la data que se verá reflejado en las gráficas, tablas, u algún otro elemento que haya asignado.
+En el último bloque, se llaman a los archivos encargados de gestionar el reporte y el archivo con la *data ficticia* que se verá reflejada en las gráficas, tablas, u algún otro elemento que haya asignado.
 
 .. code-block:: html
     :linenos:
@@ -543,6 +571,8 @@ Finalmente, en el último bloque del archivo se llaman los archivos encargados d
     <script type="text/javascript" src="./reporte_visitas_data.js"></script>
 
 En la siguiente pestaña desplegable, encontrará el código de un archivo HTML.  
+
+.. note:: Por favor, considere leer los comentarios dentro del código para comprender los elementos.
 
 .. dropdown:: Código completo archivo HTML
 
@@ -721,7 +751,6 @@ En la siguiente pestaña desplegable, encontrará el código de un archivo HTML.
         <script type="text/javascript" src="./reporte_visitas_data.js"></script>
         </html>
 
-.. note:: Considere leer los comentarios dentro del código para comprender los elementos.
 
 .. _estructura-js:
 
@@ -730,7 +759,7 @@ Estructura js
 
 El archivo ``js`` en ``Servido`` contiene la lógica encargada de gestionar las solicitudes a la *API de Linkaform*, así como de procesar y presentar la información correspondiente en la estructura establecida.
 
-Observe el siguiente bloque de código, el cual representa de manera general las variables y funciones principales que componen al archivo ``js``. Sin embargo, en contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar.
+Observe el siguiente bloque de código, el cual representa de manera general las variables y funciones principales que componen al archivo ``js``. Sin embargo, en contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar. Por favor, vaya comparando los ``IDs`` y ``clases`` usadas con el archivo HTML para comprender el funcionamiento.
 
 .. note:: Regularmente, las variables y funciones que no tienen ningún comentario como título contienen código genérico que rara vez se modifica; por lo tanto, se mantienen sin cambios.
 
@@ -788,7 +817,9 @@ Observe el siguiente bloque de código, el cual representa de manera general las
     function get_catalog(){ ...
     };
 
-Las siguientes variables globales, pertenecientes a la cuenta que ingrese al reporte y que son parte de la *cookie*, se utilizan en el archivo ``servido_utils`` y no se modifican, siendo la más importante el token del usuario.
+Las siguientes variables globales, pertenecientes a la cuenta que ingrese al reporte y que son parte de la *cookie*, se utilizan en el archivo ``servido_utils``.
+
+.. caution:: Las variables no se modifican. 
 
 .. code-block:: javascript
     :linenos:
@@ -802,7 +833,7 @@ Las siguientes variables globales, pertenecientes a la cuenta que ingrese al rep
     let userParentId = null; //Id de la cuenta padre
     let scriptId = null; //Script del reporte
 
-El siguiente bloque de código corresponde a métodos de ``jQuery``, se utiliza para manipular el *DOM* de la página. Específicamente, oculta varios elementos visuales tanto por su identificador único (``ID``) como por su clase. Por favor, revise los comentarios dentro del código.
+El siguiente bloque de código corresponde a métodos de ``jQuery``,  se utiliza para manipular el *DOM* de la página. Específicamente, oculta varios elementos visuales antes de cualquier interacción con el reporte. Lo hace tanto por su identificador único (ID) como por su clase. Por favor, revise los comentarios dentro del código.
 
 .. code-block:: javascript
     :linenos:
@@ -810,9 +841,9 @@ El siguiente bloque de código corresponde a métodos de ``jQuery``, se utiliza 
     $('#divOptions').hide(); // Oculta el elemento con ID "divOptions"
     $('#title_report').hide(); // Oculta el elemento con ID "title_report"
     $('.title_tables').hide(); // Oculta todos los elementos con la clase "title_tables"
-    hideElement("title_demo"); // Llama a la función para ocultar el elemento con ID "title_demo"
 
     // Llama a la función para ocultar elementos con IDs específicos
+    hideElement("title_demo");
     hideElement("firstParameters");
     hideElement("firstElement");
     hideElement("secondElement");
@@ -825,7 +856,7 @@ Función ``window.onload``
 
 La función ``window.onload()`` se activa siempre que la pantalla se carga por completo. Además, procesa los parámetros de la ``URL`` para actualizar los elementos del reporte en función a esos parámetros. También se encarga de manipular el contenido de los filtros mediante el ``ID`` de los elementos.
 
-En las líneas 6-8, se verifica si la ``clave (key)`` recibida es igual a ``script_id``, es decir, lo que se recibe como parámetro de la ``URL``. 
+En las líneas 6-8, verifica si la ``clave (key)`` recibida es igual a ``script_id``, es decir, lo que se recibe como parámetro de la ``URL``. 
 
 .. seealso::
 
@@ -1027,8 +1058,6 @@ Observe que en la línea 11 se llama a la función ``getDrawTable``, la cual se 
     // Restablece la propiedad "display" (eliminar la propiedad display del estilo del elemento) para mostrar y permitir que el elemento con el ID "firstElement" (tabla) force a abarcar todo el espacio de la página.
     document.getElementById("firstElement").style.removeProperty('display');
     }
-
-EXPLICAR MÁS SOBRE GRAFICOSSSSSSSS
 
 Función ``setDate``
 ^^^^^^^^^^^^^^^^^^^
@@ -1430,6 +1459,39 @@ El siguiente bloque de código representa un array de objetos de la data de la t
 
 Estructura CSS
 ==============
+
+La estructura de un archivo ``CSS`` es simple y básica, son estilos generales aplicados especialmente a los títulos de los elementos. Utilice el siguiente código como base para sus reportes futuros.
+
+.. note:: La mayoría de los estilos del reporte dependen de la herramienta que se esté utilizando, ya que estas contienen sus propios estilos. 
+
+.. code-block:: css
+    :linenos:
+
+    .title_tables h3 {
+    color: black;
+    font: 33px gothambook;
+    margin-top: 30px;
+    text-align: left;
+    }
+
+
+    .hrFirstElement {
+    border-top: 1px solid #707b7c;
+    width: 500px;
+    margin-left: 0%;
+    }
+
+    .hrSecondElement {
+    border-top: 1px solid #707b7c;
+    width: 550px;
+    margin-left: 0%;
+    }
+
+    body{
+    font-family: gothambook;
+    }
+
+En esta sección ha aprendido lo necesario para desarrollar sus reportes demo. Por favor, continúe con la siguiente parte para desarrollar el script necesario y construir las consultas a la base de datos y poblar sus elementos con datos reales.
 
 .. LIGAS EXTERNAS
 

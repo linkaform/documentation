@@ -9,7 +9,6 @@ Documentación para desarrolladores
     :titlesonly:
 
     PDFs/index
-    Reportes/index
     Reportes-new/index
 
 ¡Bienvenido al contenido de desarrollo con Linkaform! Por ahora, Linkaform proporciona solo una guía detallada con instrucciones para documentos PDF.
@@ -36,25 +35,14 @@ Documentación para desarrolladores
         :columns: 6
 
         .. card:: 
-            :link: doc-reportes-aux
-            :link-type: ref
-            :margin: 0
-            :class-card: card-i
-
-            |Reportes| **Desarrollo de Reportes**
-
-            Adquiere las habilidades para crear tus propios reportes a la medida con nuestras herramientas y tutoriales.
-
-    .. grid-item-card:: 
-        :columns: 6
-
-        .. card:: 
             :link: doc-reportes
             :link-type: ref
             :margin: 0
             :class-card: card-i
 
             |Reportes| **Documentación de Reportes**
+
+            Adquiere las habilidades para crear tus propios reportes a la medida con nuestras herramientas y tutoriales.
 
 .. ICONOS SOBRE EL ÍNDICE
 .. <img width="48" height="48" src="https://img.icons8.com/color/48/folder-tree.png" alt="folder-tree"/>

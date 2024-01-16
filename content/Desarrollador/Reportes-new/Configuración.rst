@@ -16,27 +16,29 @@ Antes de comenzar a explicar el desarrollo de reportes, considere los requisitos
 - MongoDB
 - Docker
 
-A lo largo de esta sección, podrá encontrar orientación detallada sobre los aspectos necesarios para la creación de su propio reporte personalizado.
+A lo largo de la documentación, podrá encontrar orientación sobre los aspectos necesarios para la creación de su propio reporte personalizado.
 
 Configuración del entorno
 =========================
 
 Para comenzar el desarrollo de reportes en Linkaform, es importante asegurarse de que su entorno de trabajo esté correctamente configurado. A continuación, encontrará la documentación oficial de las herramientas necesarias para configurar su entorno:
 
-.. seealso::
+- Si no cuenta con experiencia en **Mongodb** revise el curso de |mongodb| :octicon:`report;1em;sd-text-info` y posteriormente, continue con el curso de |mongodb-python| :octicon:`report;1em;sd-text-info`.
 
-    Revise el curso de |mongodb| :octicon:`report;1em;sd-text-info` y posteriormente, continue con el curso de |mongodb-python| :octicon:`report;1em;sd-text-info`.
+- También se sugiere revisar la documentación oficial de |Docker| :octicon:`report;1em;sd-text-info` e instalar la herramienta según sea necesario. Además, revise e instale |Docker-compose| :octicon:`report;1em;sd-text-info`.
 
-    También se sugiere revisar la documentación oficial de |Docker| :octicon:`report;1em;sd-text-info` e instalar la herramienta según sea necesario. Además, revise e instale |Docker-compose|.
+- Si es necesario, revise la documentación de |GitHub| :octicon:`report;1em;sd-text-info` y |Git| :octicon:`report;1em;sd-text-info`.
 
-    Si es necesario, revise la documentación de |GitHub| :octicon:`report;1em;sd-text-info` y |Git| :octicon:`report;1em;sd-text-info`.
+Ahora, clone los repositorios necesarios para el desarrollo de reportes. Linkaform tiene repositorios específicos en GitHub y GitLab. Siga los pasos a continuación:
 
-Ahora, el segundo paso es clonar los repositorios necesarios para el desarrollo de reportes. Linkaform tiene repositorios específicos en GitHub y GitLab. Siga los pasos a continuación:
+.. tip:: Se recomienda crear una carpeta que contenga los repositorios necesarios. En este caso, la carpeta ``lkf`` contendrá los repositorios ``Servido`` e ``infosync_scripts``.
+
+.. _repositorio-servido:
 
 Repositorio servido
 -------------------
 
-1. Solicite acceso al repositorio de ``Servido`` a través del soporte técnico. 
+1. Solicite acceso al repositorio de ``Servido`` en GitHub a través del soporte técnico. 
 2. Ingrese al siguiente enlace |Servido| :octicon:`report;1em;sd-text-info` y clone el repositorio.
 
 .. code-block::
@@ -85,6 +87,8 @@ En caso de contar con una versión actualizada de Docker:
 
 .. note:: Consulte el archivo ``reedme.md`` del repositorio para más información.
 
+.. _repositorio-infosync-scripts:
+
 Repositorio infosync_scripts
 ----------------------------
 
@@ -93,12 +97,12 @@ Repositorio infosync_scripts
 
 .. note:: Consulte el archivo ``reedme.md`` del repositorio para más información.
 
-.. tip:: Se recomienda crear una carpeta que contenga ambos repositorios. En este caso, la carpeta ``lkf`` contendrá los repositorios ``Servido`` e ``infosync_scripts``. Esta organización facilitará la gestión y el acceso a ambos conjuntos de archivos. 
-
 Bases de Servido
 ================
 
 ``Servido`` es una plataforma *Open Source* que facilita el desarrollo de reportes mediante el uso de diversas herramientas, como *bibliotecas*, *scripts* y *APIs*. Estas herramientas se utilizan para procesar información y generar resultados que se presentan a través de *dashboards*, *tablas*, *gráficos* y otras representaciones visuales.
+
+.. note:: Considere que los repositorios de ``Servido`` e ``infosync_scripts`` están contenidas en la carpeta ``lkf``.
 
 Las dos partes principales que complementan a ``Servido`` son las siguientes:
 
@@ -174,9 +178,9 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
    .. grid-item-card:: Infosync_scripts
       :columns: 7
 
-      El contenido de ``infosync_scripts``, ubicado en el repositorio ``infosync_scripts``, contiene información correspondiente al *backend* del reporte. Cada carpeta alberga *scripts* utilizados por los clientes.
+      El contenido de sobre scripts, ubicado en el repositorio ``infosync_scripts``, contiene información correspondiente al *backend* del reporte. Cada carpeta alberga scripts utilizados por los clientes.
 
-      Para nombrar un script específico para un reporte, siga el siguiente estándar de nomenclatura:
+      Si necesita crear un nuevo script para su reporte, siga el siguiente estándar de nomenclatura:
 
       .. code-block::
          :linenos:
@@ -185,7 +189,7 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
 
       .. caution:: Bajo ninguna circunstancia modifique los archivos que NO inicien con ``reporte`` o ``report`` . Estos archivos son scripts que desempeñan funciones importantes para el cliente, aunque no estén directamente relacionados con reportes.
 
-      .. important:: Tenga cuidado con el archivo ``account_settings.py``, ya que contiene información sensible de la cuenta del cliente.
+      .. important:: Tenga cuidado con el :ref:`account-settings` :octicon:`report;1em;sd-text-info`., ya que contiene información sensible de la cuenta del cliente.
 
    .. grid-item-card:: Directory Tree
       :columns: 5
@@ -247,14 +251,14 @@ Si desea obtener una vista previa del reporte antes de realizar la integración 
    
    http://127.0.0.1:8011/nombre_carpeta/reporte_nombre.html
 
-Al modificar esta ``URL`` según su estructura de carpetas y el nombre del reporte específico, podrá visualizar una versión demo del reporte. Esto le brinda la oportunidad de recibir retroalimentación importante antes de la implementación final del script. 
+Al modificar esta ``URL`` según su estructura de carpetas y el nombre del reporte específico, podrá visualizar una versión demo del reporte. 
 
 .. _link-script:
 
 Local con script integrado
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Esta opción le brinda la posibilidad de integrar el script directamente en la ``URL``, indicando al reporte qué script debe utilizar.
+Esta opción le brinda la posibilidad de integrar el script directamente en la ``URL``, indicando al reporte qué script debe utilizar para realizar las consultas necesarias.
 
 .. code-block::
    :linenos:
@@ -268,49 +272,35 @@ Simplemente, añada el parámetro ``script_id`` a la ``URL`` seguido del valor c
 Servido
 ^^^^^^^
 
-Al acceder a través de ``Servido``, se solicitarán credenciales de autenticación debido a que la cookie utilizada para la autenticación no fue encontrada. Este proceso difiere de iniciar sesión en Linkaform y abrir reportes desde allí, donde la autenticación se realiza de manera automática gracias a las cookies.
-
-.. note:: El usuario (correo) y la contraseña son los que se utilizan en producción.
+Al acceder a través de ``Servido``, se solicitarán credenciales de autenticación debido a que la cookie utilizada para la autenticación no es encontrada. Este proceso difiere de iniciar sesión en Linkaform y abrir reportes desde allí, donde la autenticación se realiza de manera automática gracias a las cookies.
 
 .. code-block::
    :linenos:
 
    https://srv.linkaform.com/nombre_carpeta/reporte_nombre.html?script_id=123456
 
+.. note:: El usuario (correo) y la contraseña son los que se utilizan en producción.
+
 .. _link-env:
 
 Entorno de prueba (Test Environment)
 ************************************
 
-Si necesita acceder al entorno de prueba del reporte, asigne un argumento adicional a la ``URL``. Básicamente, se genera una cookie de autenticación, facilitando el desarrollo en un entorno controlado antes de realizar peticiones a producción. Esto es útil para aquellos que no cuentan con la contraseña de producción.
+Si necesita acceder al entorno de prueba del reporte, asigne el argumento ``&env=test`` a la ``URL``. Este método es útil en caso de que no cuente con la contraseña de producción.
+
+Básicamente, se genera una cookie de autenticación para realizar la petición en el entorno de preproducción, facilitando el desarrollo en un entorno controlado antes de realizar peticiones a producción. 
+
+Una vez dentro del entorno de prueba, puede continuar sin la necesidad de incluir ``&env=test`` en futuras peticiones a producción. La contraseña de preproducción actúa como una llave que puede utilizar en cualquier reporte que desarrolle y desee emplear en el entorno de preproducción.
 
 .. code-block::
    :linenos:
 
    http://127.0.0.1:8011/nombre_carpeta/reporte_nombre.html?script_id=123456&env=test 
 
-Este enlace incluye un argumento adicional, ``&env=test``, que genera una cookie de autenticación al realizar la petición en el entorno de preproducción. 
-
-.. note:: Solicite la contraseña de preproducción a soporte técnico.
-
-Una vez dentro del entorno de prueba, puede proceder con normalidad sin la necesidad de incluir ``&env=test`` en futuras peticiones a producción. La contraseña de preproducción actúa como una llave maestra que puede utilizar en cualquier reporte que desarrolle y desee emplear en el entorno de preproducción.
+.. note:: En caso de no contar con las credenciales necesaria de preproducción, solicítelas a soporte técnico.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Si está siguiendo cronológicamente la documentación y encuentra algunas partes confusas en relación con la configuración, específicamente las ``URLs de acceso``, no se preocupe. Durante el desarrollo de su reporte personalizado, estas partes cobrarán más sentido con el tiempo. Por favor, sea paciente, continúe leyendo y considere toda la información proporcionada.
 
 .. LIGAS EXTERNAS
 
@@ -332,11 +322,11 @@ Una vez dentro del entorno de prueba, puede proceder con normalidad sin la neces
 
 .. |GitHub| raw:: html
 
-   <a href="https://docs.github.com/es" target="_blank">Docker compose</a>
+   <a href="https://docs.github.com/es" target="_blank">GitHub</a>
 
 .. |Git| raw:: html
 
-   <a href="https://git-scm.com/doc" target="_blank">Docker compose</a>
+   <a href="https://git-scm.com/doc" target="_blank">Git</a>
 
 .. |Servido| raw:: html
 

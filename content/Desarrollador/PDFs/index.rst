@@ -18,7 +18,8 @@ En este apartado podrá encontrar:
 .. toctree::
     :maxdepth: 1
     :titlesonly:
-
+    :hidden:
+    
     configuracion
     rml
     variables

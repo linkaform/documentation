@@ -2,7 +2,7 @@
 Bases de Linkaform
 ==================
 
-En el módulo ``Reportes`` de Linkaform, tiene la capacidad de explorar visualmente los resultados extraídos de las formas a través de filtros, gráficos y tablas.
+En el módulo ``Reportes`` de Linkaform, tiene la capacidad de explorar visualmente los resultados extraídos de las :ref:`section-forms` :octicon:`report;1em;sd-text-info` a través de filtros, gráficos y tablas.
 
 Para acceder a los ``Reportes``, siga los pasos:
 
@@ -59,9 +59,9 @@ Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:
 
 .. seealso:: 
 
-    La diferencia en las opciones de permisos se debe a que el usuario Omar Vázquez es una conexión. Es decir, pertenece a otra cuenta principal diferente a la suya.
+    La diferencia en las opciones de permisos se debe a que el usuario Omar Vázquez es una conexión. Es decir, pertenece a otra cuenta padre diferente a la suya.
 
-    En cambio, el usuario Erika pertenece a la misma cuenta padre.
+    En cambio, el usuario Israel pertenece a la misma cuenta padre.
 
 5. Establezca al usuario el permiso que requiera. Tenga en cuenta las descripciones:
 
@@ -112,6 +112,8 @@ Crear un reporte en Linkaform es un proceso sencillo. Siga el siguiente procedim
 
 .. caution:: Tenga en cuenta que estos son los pasos que debe seguir para configurar el reporte (previamente preparado) en su cuenta de Linkaform; sin embargo, NO constituyen la totalidad del proceso.
 
+    Antes de realizar esta configuración, asegúrese de `cargar el script <#cargar-script>`_ :octicon:`report;1em;sd-text-info`.
+
 1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en otro caso, en |Preproducción| :octicon:`report;1em;sd-text-info`.
 
 .. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar el proceso de creación de reportes en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
@@ -128,16 +130,16 @@ Crear un reporte en Linkaform es un proceso sencillo. Siga el siguiente procedim
 - **Nombre del Reporte**: Identificador del reporte, no necesariamente es el mismo que se visualiza en el nombre del reporte.
 - **URL**: Dirección del reporte. 
 
-.. note:: En la siguiente figura, observe que se está asignando la ``URL`` de servido, indicando que es un reporte de demostración. 
-
-Consulte la sección :ref:`url-acceso` :octicon:`report;1em;sd-text-info`, específicamente :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
+.. note:: En la siguiente figura, observe que se está asignando la ``URL`` de servido, indicando que es un reporte de demostración. Consulte la sección :ref:`url-acceso` :octicon:`report;1em;sd-text-info`, específicamente :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
  
-- **Script**: Nombre del script previamente escrito en lenguaje Python. 
+- **Script**: Nombre del script previamente desarrollado en lenguaje Python. 
 
-.. note:: Automáticamente e internamente, ya se sabe que el ``ID`` del ``script`` es el que debe enviarse como parámetro en la ``URL``. Por esta razón, el script no se coloca directamente en la ``URL``, ya que es dinámico.
+.. important:: Automáticamente el ``ID`` del ``script`` se envía como parámetro en la ``URL``, especificando al reporte a dónde consultar la data. Por esta razón, el script no se coloca directamente en la ``URL``, ya que es dinámico.
 
 .. image:: /imgs/Reportes/Reportes8.png
 
+.. seealso:: Consulte :ref:`crear-script` :octicon:`report;1em;sd-text-info` para desarrollar su script personalizado. 
+    
 5. Presione el botón ``Cargar``.
 
 Si necesita editar las configuraciones de su reporte, simplemente presione el icono de engranaje, seguido de ``Editar`` y modifique su reporte según las instrucciones anteriores.
