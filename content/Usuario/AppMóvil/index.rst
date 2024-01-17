@@ -85,23 +85,72 @@ Siga los siguientes pasos para descargar la app móvil de ``Linkaform`` en su di
     .. grid-item-card::
         :columns: 4
 
-        .. image:: /imgs/Reportes/new.gif
+        .. image:: /imgs/Móvil/Móvil1.gif
 
 Iniciar sesión
 ==============
 
 Para iniciar sesión en ``Linkaform`` desde su aplicación móvil, siga estos pasos generales:
 
-1. Identifique el ícono de ``Linkaform`` en su pantalla de inicio o en el cajón de aplicaciones.
-2. Seleccione la aplicación.
-3. Escriba el correo y contraseña en el campo correspondiente.
-4. Presione la opción ``Entrar``.
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card:: 
+        :columns: 4
+
+        .. image:: /imgs/Móvil/Móvil2.gif
+
+    .. grid-item-card::
+        :columns: 8
+
+        1. Identifique el ícono de ``Linkaform`` en su pantalla de inicio o en el cajón de aplicaciones.
+        2. Seleccione la aplicación.
+        3. Escriba el correo y contraseña en el campo correspondiente.
+        4. Presione la opción ``Entrar``.
+
+        .. note:: Cuando ingresa por primera vez a la aplicación de Linkaform, la sincronización de su información tomará cierto tiempo. 
+            
+            Por favor, no aborte o salga de la aplicación, ya que la aplicación comenzará a descargar todos los formularios, catálogos y operaciones que están ligados a su cuenta desde la base de datos.
+        
+        .. caution:: Cuando inicia sesión en un dispositivo, por motivos de seguridad, Linkaform vincula su cuenta con ese dispositivo. Si desea iniciar sesión en otro dispositivo, eso no será posible.
 
 .. important:: 
-    
+            
     - Si ha descargado la aplicación móvil y no sabe qué ofrece Linkaform, presione ``Registrarse en Linkaform`` para solicitar una demostración.
-    - Si no cuenta con una cuenta activa, pero su empresa está haciendo uso de los recursos de Linkaform, solicite a su empresa crear su cuenta propia.
+    - Si no cuenta con una cuenta activa, pero su empresa está haciendo uso de las funcionalidades de Linkaform, solicite al administrador de su empresa crear su cuenta propia y seguir los pasos necesarios para activarla.
     - En caso de haber olvidado su contraseña, presione la opción correspondiente y siga los pasos que se solicitan.
+
+Funcionalidades
+===============
+
+Est nulla esse consequat nisi proident non ipsum sit minim commodo.
+
+Crear registro
+--------------
+
+Por medio de la aplicación móvil, podrá crear registros con evidencia fotográfica, coordinación GPS y otras funcionalidades en campo de manera sencilla.
+
+Cuando inicie sesión en la aplicación de Linkaform, en primera instancia podrá observar todas las formas a las que tiene acceso, ya sea propias o formas que alguien más le haya compartido. Por favor, siga los pasos:
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card:: 
+        :columns: 4
+
+        .. image:: /imgs/Móvil/Móvil3.png
+
+    .. grid-item-card::
+        :columns: 8
+        
+        1. Identifique la forma para la cual desea crear el registro.
+
+        .. note:: Observe que las formas pueden estar contenidas dentro de carpetas.
+
+        2. Seleccione la forma que desee tocando la pantalla de su dispositivo.
+
+    
+
 
 .. LIGAS EXTERNAS
 
