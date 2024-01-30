@@ -15,10 +15,14 @@ En este apartado podrá encontrar:
 
 .. Tip:: La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
 
+.. image:: /imgs/PDF/pdf.gif
+    :align: center
+
 .. toctree::
     :maxdepth: 1
     :titlesonly:
-
+    :hidden:
+    
     configuracion
     rml
     variables
