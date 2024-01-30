@@ -996,7 +996,7 @@ Actualizar la aplicación de Linkaform es un proceso sencillo. Siga estos pasos:
 
 ¡Felicidades! 🎉 Ha completado con éxito la introducción y exploración de las funcionalidades de Linkaform a través de la aplicación móvil. 
 
-Ahora, está equipado para capturar, gestionar y enviar registros de manera eficiente, aprovechando características como la geolocalización en tiempo real, la captura de documentos, la gestión de registros guardados y completados y mucho más. 
+Ahora, está equipado para capturar, gestionar y enviar registros de manera eficiente, aprovechando características como la geolocalización en tiempo real, la captura de documentos, la gestión de registros y mucho más. 
 
 Si surgen dudas o necesita más detalles sobre alguna función específica, no dude en volver a revisar la documentación detallada o solicitar apoyo con el equipo de soporte técnico.
 
