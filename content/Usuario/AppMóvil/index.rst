@@ -1,8 +1,10 @@
-==============================
-Documentación aplicación móvil
-==============================
+.. _doc-aplicacion-movil:
 
-La aplicación móvil de Linkaform brinda la libertad de capturar y gestionar información de forma eficiente y rápida, directamente desde su dispositivo móvil. Con un diseño intuitivo y funcionalidades poderosas, podrá:
+================
+Aplicación móvil
+================
+
+La aplicación móvil de Linkaform brinda la libertad de capturar y gestionar información de forma eficiente y rápida, directamente desde su dispositivo móvil. Con un diseño intuitivo y funcionalidades útiles, podrá:
 
 - **Capturar en movimiento**: Registre datos en tiempo real esté donde esté, aprovechando la portabilidad de su dispositivo.
 
@@ -16,7 +18,7 @@ La aplicación móvil de Linkaform brinda la libertad de capturar y gestionar in
 
 Este apartado abarcará todos los aspectos necesarios para aprovechar al máximo el potencial que la aplicación móvil de Linkaform ofrece para su empresa.
 
-.. tip:: Si es la primera vez que tiene contacto con las funcionalidades de Linkaform, le recomendamos echar un vistazo rápido a la documentación de :ref:`section-forms` :octicon:`report;1em;sd-text-info`..
+.. seealso:: Si es la primera vez que tiene contacto con las funcionalidades de Linkaform, le recomendamos revisar la documentación sobre :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
     
 La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están preparadas para que pueda revisar un tema específico en cualquier momento.
 
@@ -79,7 +81,7 @@ Instalación
 
 Siga los siguientes pasos para descargar la app móvil de ``Linkaform`` en su dispositivo android desde la :
 
-.. note:: Antes de instalar la app móvil, tenga en cuenta los `requisitos para dispositivos <#requisitos-previos>`_ :octicon:`report;1em;sd-text-info` py verifique si su dispositivo es compatible.
+.. note:: Antes de instalar la app móvil, tenga en cuenta los `requisitos para dispositivos <#requisitos-previos>`_ :octicon:`report;1em;sd-text-info` y verifique si su dispositivo es compatible.
 
 .. grid:: 2
     :gutter: 0
@@ -139,8 +141,6 @@ Para iniciar sesión en ``Linkaform`` desde su aplicación móvil, siga estos pa
 Funcionalidades
 ===============
 
-Est nulla esse consequat nisi proident non ipsum sit minim commodo.
-
 .. _captura-registro-movil:
 
 Capturar registro
@@ -173,7 +173,7 @@ Cuando inicie sesión en la aplicación de Linkaform, en primera instancia podr�
 
 .. tip:: 
             
-    - Deslice su pantalla a la derecha para continuar a la siguiente página o a la derecha para regresar.
+    - Deslice su pantalla a la derecha para continuar a la siguiente página o a la izquierda para regresar.
     - Seleccione el icono ubicado en la parte superior derecha para visualizar el indice con las páginas que conforman la forma.
         
 4. Conteste la forma con la información correspondiente. Por favor, revise las siguientes pestañas para obtener más información sobre los campos.
@@ -459,7 +459,7 @@ Para guardar el registro actual:
 .. image:: /imgs/Móvil/Móvil16.jpg
     :width: 250px
 
-.. seealso:: Para acceder a los registros guardados, consulte la sección de `registros guardados <#registros-guardados>`_ :octicon:`report;1em;sd-text-info`.
+.. seealso:: Consulte la sección :ref:`registros-guardados` :octicon:`report;1em;sd-text-info`.
 
 Para salir de la forma, siga los pasos:
 
@@ -585,6 +585,83 @@ Para acceder a los registros recuperados, siga estos pasos:
 - Presione ``Renombrar`` para asignar un nombre descriptivo al registro recuperado.
 - Presione ``Reportar problema`` si el registro recuperado no contiene toda la información que estaba capturando.
 
+Reportes
+--------
+
+Los reportes son una funcionalidad que permite visualizar los resultados extraídos de las formas mediante diversos elementos, como filtros, gráficos, tarjetas y tablas. Para visualizar un reporte, siga estos pasos:
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::
+        :columns: 5
+
+        .. image:: /imgs/Móvil/Móvil33.gif
+
+    .. grid-item-card::
+        :columns: 7
+
+        1. Presione el botón de hamburguesa en la esquina superior izquierda.
+        2. Seleccione la opción ``Reportes``.
+        3. Identifique y presione el reporte de su interés.
+
+        .. note:: Si no encuentra un reporte específico, es posible que aún no se le haya compartido. En ese caso, contacte a soporte técnico para recibir asistencia.
+
+        4. Aplique los filtros necesarios y pulse el botón ``Run`` para consultar la información correspondiente.
+
+        .. seealso:: Si necesita crear su propio reporte personalizado, revise la :ref:`doc-reportes` :octicon:`report;1em;sd-text-info` para obtener más información.
+
+Inbox app
+---------
+
+El inbox es un espacio que detalla el estado de los registros asignados a su cuenta. Para acceder al inbox de su cuenta, siga estas instrucciones:
+
+1. Presione el botón hamburguesa en la parte superior izquierda.
+2. Seleccione la opción ``Inbox``. Observe la bandeja donde se encuentran todos los registros asignados.
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::
+        :columns: 4
+
+        .. image:: /imgs/Móvil/Móvil32.gif
+
+    .. grid-item-card::
+        :columns: 8
+
+        **Registros nuevos**
+
+        Los registros nuevos (color verde) son aquellos que han sido asignados por otro usuario a su cuenta y que están en espera de revisión o para continuar con la respuesta según sea necesario.
+
+        **Registros vistos**
+
+        Los registros vistos (color rosa) son aquellos registros que han sido revisados o visualizados en la bandeja de Inbox. Estos registros ya han sido abiertos y vistos, pero no necesariamente se han completado o enviado. Pueden estar en diferentes estados, como en proceso de edición o a la espera de ser enviados. Es una manera de distinguir los registros que ya han sido abiertos.
+
+        **Registros en progreso**
+
+        Los registros  en progreso (icono sobre color azul) son aquellos registros que, al momento de enviar, se encuentran en proceso de envío.
+
+En ocasiones, algunos registros que contienen grandes cantidades de información e imágenes pueden quedar atascados en el proceso de envío. Se recomienda editar estos registros y realizar el envío correspondiente directamente desde la aplicación web.
+
+**Registros guardados**
+
+Los registros guardados (icono guardado color azul)  son aquellos que ha guardado, ya sea en la aplicación web o en otro dispositivo, y que puede continuar capturando y enviar sin problemas desde la aplicación móvil.
+
+- Presione ``Visualizar`` para tener solo una vista previa del registro para darle seguimiento.
+- Presione ``Asignar`` para poder asignar a otro usuario el mismo registro. 
+
+.. seealso:: Por favor, consulte la sección sobre cómo `asignar registro <#asignar-registro-app>`_ :octicon:`report;1em;sd-text-info`, evitando los primeros pasos y proceda directamente al paso 3.
+
+- Seleccione ``Editar`` para hacer nuevas actualizaciones al registro. Una vez que realice los cambios, `envíe el registro <#enviar-registro-app>`_ :octicon:`report;1em;sd-text-info`.
+
+.. note:: Una vez enviado el registro, ya no aparecerá en inbox. 
+
+- Seleccione ``Renombrar`` para cambiar el nombre del registro.
+- Presione ``Eliminar`` para quitar el registro del inbox.
+
+.. important:: Cuando elige esta opción, no necesariamente elimina el registro, sino que simplemente lo quita de la bitácora del Inbox, aunque seguirá teniéndolo asignado.
+
 Registros
 =========
 
@@ -680,7 +757,7 @@ Para editar un registro, asegúrese de identificar y `visualizar el registro <#v
 
         .. warning:: Si se encuentra dentro de un grupo repetitivo, no podrá observar todas las opciones; debe estar al nivel del registro.
 
-        2. Presione la opción ``Editar``. Observe cómo el registro cambia a un color azul, similar a los `registros guardados <#registros-guardados>`_ :octicon:`report;1em;sd-text-info`, ya que la información se ha descargado automáticamente a su dispositivo móvil.
+        2. Presione la opción ``Editar``. Observe cómo el registro cambia a un color azul, similar a los :ref:`registros-guardados` :octicon:`report;1em;sd-text-info`, ya que la información se ha descargado automáticamente a su dispositivo móvil.
         
         3. Realice los cambios necesarios.
         4. Presione el botón ``Enviar`` para actualizar el registro.
@@ -775,83 +852,6 @@ Asignar un registro es útil para proporcionar a un usuario o conexión el permi
         :columns: 4
 
         .. image:: /imgs/Móvil/Móvil31.gif
-
-Inbox app
-=========
-
-El inbox es un espacio que detalla el estado de los registros asignados a su cuenta. Para acceder al inbox de su cuenta, siga estas instrucciones:
-
-1. Presione el botón hamburguesa en la parte superior izquierda.
-2. Seleccione la opción ``Inbox``. Observe la bandeja donde se encuentran todos los registros asignados.
-
-.. grid:: 2
-    :gutter: 0
-
-    .. grid-item-card::
-        :columns: 4
-
-        .. image:: /imgs/Móvil/Móvil32.gif
-
-    .. grid-item-card::
-        :columns: 8
-
-        **Registros nuevos**
-
-        Los registros nuevos (color verde) son aquellos que han sido asignados por otro usuario a su cuenta y que están en espera de revisión o para continuar con la respuesta según sea necesario.
-
-        **Registros vistos**
-
-        Los registros vistos (color rosa) son aquellos registros que han sido revisados o visualizados en la bandeja de Inbox. Estos registros ya han sido abiertos y vistos, pero no necesariamente se han completado o enviado. Pueden estar en diferentes estados, como en proceso de edición o a la espera de ser enviados. Es una manera de distinguir los registros que ya han sido abiertos.
-
-        **Registros en progreso**
-
-        Los registros  en progreso (icono sobre color azul) son aquellos registros que, al momento de enviar, se encuentran en proceso de envío.
-
-En ocasiones, algunos registros que contienen grandes cantidades de información e imágenes pueden quedar atascados en el proceso de envío. Se recomienda editar estos registros y realizar el envío correspondiente directamente desde la aplicación web.
-
-**Registros guardados**
-
-Los registros guardados (icono guardado color azul)  son aquellos que ha guardado, ya sea en la aplicación web o en otro dispositivo, y que puede continuar capturando y enviar sin problemas desde la aplicación móvil.
-
-- Presione ``Visualizar`` para tener solo una vista previa del registro para darle seguimiento.
-- Presione ``Asignar`` para poder asignar a otro usuario el mismo registro. 
-
-.. seealso:: Por favor, consulte la sección sobre cómo `asignar registro <#asignar-registro-app>`_ :octicon:`report;1em;sd-text-info`, evitando los primeros pasos y proceda directamente al paso 3.
-
-- Seleccione ``Editar`` para hacer nuevas actualizaciones al registro. Una vez que realice los cambios, `envíe el registro <#enviar-registro-app>`_ :octicon:`report;1em;sd-text-info`.
-
-.. note:: Una vez enviado el registro, ya no aparecerá en inbox. 
-
-- Seleccione ``Renombrar`` para cambiar el nombre del registro.
-- Presione ``Eliminar`` para quitar el registro del inbox.
-
-.. important:: Cuando elige esta opción, no necesariamente elimina el registro, sino que simplemente lo quita de la bitácora del Inbox, aunque seguirá teniéndolo asignado.
-
-Reportes
-========
-
-La sección de reportes ofrece una manera visual y estructurada de explorar los resultados extraídos de las formas mediante diversos elementos, como filtros, gráficos, tarjetas y tablas. Para visualizar un reporte, siga estos pasos:
-
-.. grid:: 2
-    :gutter: 0
-
-    .. grid-item-card::
-        :columns: 5
-
-        .. image:: /imgs/Móvil/Móvil33.gif
-
-    .. grid-item-card::
-        :columns: 7
-
-        1. Presione el botón de hamburguesa en la esquina superior izquierda.
-        2. Seleccione la opción ``Reportes``.
-        3. Identifique y presione el reporte de su interés.
-
-        .. note:: Si no encuentra un reporte específico, es posible que aún no se le haya compartido. En ese caso, contacte a soporte técnico para recibir asistencia.
-
-        4. Aplique los filtros necesarios y pulse el botón ``Run`` para consultar la información correspondiente.
-
-        .. seealso:: Si necesita crear su propio reporte personalizado, revise la :ref:`doc-reportes` :octicon:`report;1em;sd-text-info` para obtener más información.
 
 Situaciones comunes
 ===================

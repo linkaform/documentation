@@ -1,3 +1,5 @@
+.. _crear-reporte-demo:
+
 ================
 Creación de Demo
 ================
@@ -203,7 +205,7 @@ El primer bloque corresponde al encabezado del reporte. Su función principal es
 - Opción para cerrar sesión. 
 - Mostrar logo de la empresa.
 
-.. seealso:: Consulte la función `window.onload <#funcion-window-onload>`_ :octicon:`report;1em;sd-text-info` donde se detallan los eventos utilizados.
+.. seealso:: Consulte la :ref:`funcion-window-onload` :octicon:`report;1em;sd-text-info` donde se detallan los eventos utilizados.
     
 - Mostrar nombre del reporte.
 
@@ -262,7 +264,7 @@ El contenido (``content``) es la parte más importante de la estructura html; aq
 
 El bloque ``Session`` contiene el inicio de sesión del reporte, es decir, cuando se intenta abrir desde :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
 
-.. seealso:: Revise la estructura del archivo js, en la función `window.onload <#mostrar-filtro>`_ y lea los comentarios de la línea 36.
+.. seealso:: Revise la estructura del archivo js, en la función `window.onload <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` y lea los comentarios de la línea 36.
 
 .. tab-set::
 
@@ -1191,7 +1193,7 @@ En términos generales, la función ``getFirstElement()`` obtiene los parámetro
 
 La función se encarga de recibir las validaciones de los filtros para realiza una solicitud al servidor (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 9) utilizando el método ``POST``.
 
-.. seealso:: El ``scriptId`` es lo que se recibe como parámetro en la ``URL``, línea 12 (Regrese y consulte la `función window.onload <#funcion-window-onload>`_ :octicon:`report;1em;sd-text-info`, específicamente las líneas 6-8, y lea los comentarios).
+.. seealso:: El ``scriptId`` es lo que se recibe como parámetro en la ``URL``, línea 12 (Regrese y consulte la :ref:`funcion-window-onload` :octicon:`report;1em;sd-text-info`, específicamente las líneas 6-8, y lea los comentarios).
 
 Después de procesar la respuesta del servidor, muestra u oculta elementos en la interfaz según el resultado. Si la respuesta es exitosa, se actualiza el elemento (tabla) con los datos recibidos. En caso de error se muestra un mensaje utilizando la biblioteca Swal (|sweetalert2| :octicon:`report;1em;sd-text-info`) líneas 46-60. Lea detenidamente los comentarios dentro del código para comprender el flujo.
 

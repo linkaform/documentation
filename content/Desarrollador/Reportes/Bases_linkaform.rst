@@ -1,3 +1,5 @@
+.. _bases-linkaform-reportes:
+
 ==================
 Bases de Linkaform
 ==================

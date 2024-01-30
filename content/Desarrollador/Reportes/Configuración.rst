@@ -18,6 +18,34 @@ Antes de comenzar a explicar el desarrollo de reportes, considere los requisitos
 
 A lo largo de la documentación, podrá encontrar orientación sobre los aspectos necesarios para la creación de su propio reporte personalizado.
 
+Pasos
+=====
+
+De manera general, los siguientes pasos son los que debe seguir para desarrollar un reporte. Se presentan para que tenga en cuenta que debe seguir un orden cronológico tanto en el desarrollo como si es la primera vez que lee la documentación para desarrollarla. Por favor, continúe leyendo la documentación para obtener información detallada y completa sobre cada uno de estos pasos.
+
+1. Configure su entorno.
+2. Clone los repositorios necesarios.
+
+.. seealso:: Consulte :ref:`configuracion-entorno` :octicon:`report;1em;sd-text-info` y revise los repositorios correspondientes.
+
+3. Desarrolle su reporte de demostración.
+
+.. seealso:: Consulte :ref:`crear-reporte-demo` :octicon:`report;1em;sd-text-info`.
+
+4. Configure su reporte en la aplicación web de Linkaform.
+
+.. seealso:: Revise las :ref:`bases-linkaform-reportes` :octicon:`report;1em;sd-text-info` para cualquier configuración del reporte.
+
+5. Desarrolle el script necesario para las consultas.
+
+.. seealso:: Revise el proceso para la :ref:`crear-script` :octicon:`report;1em;sd-text-info`.
+
+6. Cargue el script en la aplicación web de Linkaform.
+
+.. seealso:: Revise las :ref:`bases-linkaform-reportes` :octicon:`report;1em;sd-text-info` para cualquier configuración del reporte.
+
+.. _configuracion-entorno:
+
 Configuración del entorno
 =========================
 
@@ -307,8 +335,7 @@ Una vez dentro del entorno de prueba, puede continuar sin la necesidad de inclui
 
 .. note:: En caso de no contar con las credenciales necesarias de preproducción, solicítelas a soporte técnico.
 
-
-Si está siguiendo cronológicamente la documentación y encuentra algunas partes confusas en relación con la configuración, específicamente las ``URLs de acceso``, no se preocupe. Durante el desarrollo de su reporte personalizado, estas partes cobrarán más sentido con el tiempo. Por favor, sea paciente, continúe leyendo y considere toda la información proporcionada.
+.. caution:: Si está siguiendo cronológicamente la documentación y encuentra algunas partes confusas en relación con la configuración, específicamente las ``URLs de acceso``, no se preocupe. Durante el desarrollo de su reporte personalizado, estas partes cobrarán más sentido con el tiempo. Por favor, sea paciente, continúe leyendo y considere toda la información proporcionada.
 
 .. LIGAS EXTERNAS
 

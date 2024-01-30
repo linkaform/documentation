@@ -7,11 +7,14 @@ Documentación para desarrolladores
 .. toctree::
     :maxdepth: 1
     :titlesonly:
+    :hidden:
 
     PDFs/index
-    Reportes-new/index
+    Reportes/index
 
-¡Bienvenido al contenido de desarrollo con Linkaform! Por ahora, Linkaform proporciona solo una guía detallada con instrucciones para documentos PDF.
+¡Bienvenido a la documentación para desarrolladores! Aquí encontrarás guías detalladas y completas que te ayudarán a aprovechar al máximo nuestras nuevas funcionalidades, incluyendo la creación y personalización de documentos PDF, así como el desarrollo de reportes personalizados. 
+
+Explora nuestras herramientas de desarrollo y descubre cómo puedes integrar y mejorar la generación de documentos en tus flujos de trabajo. 🛠️📄
 
 .. grid:: 2
     :gutter: 0
@@ -29,8 +32,8 @@ Documentación para desarrolladores
 
             |Pdfs| **Desarrollo de PDFs**
 
-            Adquiere las habilidades para crear tus propios documentos PDF personalizados con nuestras herramientas y tutoriales.
-            
+            Explora cómo diseñar, crear y personalizar documentos PDF a la medida utilizando nuestras herramientas.
+
     .. grid-item-card:: 
         :columns: 6
 
@@ -42,7 +45,7 @@ Documentación para desarrolladores
 
             |Reportes| **Documentación de Reportes**
 
-            Adquiere las habilidades para crear tus propios reportes a la medida con nuestras herramientas y tutoriales.
+            Descubre cómo crear reportes personalizados adaptados a tus necesidades con nuestras herramientas y ejemplos.
 
 .. ICONOS SOBRE EL ÍNDICE
 .. <img width="48" height="48" src="https://img.icons8.com/color/48/folder-tree.png" alt="folder-tree"/>

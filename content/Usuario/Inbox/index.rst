@@ -4,7 +4,9 @@
 Inbox
 =====
 
-En Linkaform, el módulo ``Inbox``, como su nombre indica, es un espacio que detalla el estado de la información asignada a usuarios o la información guardada en ``Registros`` en la aplicación móvil (actualmente, no se cuenta con documentación oficial de la aplicación móvil).
+En Linkaform, ``Inbox`` es un espacio que detalla el estado de la información asignada a usuarios o la información guardada en ``Registros`` en la aplicación móvil.
+
+.. seealso:: Consulte la documentación sobre la :ref:`doc-aplicacion-movil` :octicon:`report;1em;sd-text-info`.
 
 En este apartado, encontrará documentación sobre las siguientes funcionalidades:
 

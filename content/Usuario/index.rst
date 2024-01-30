@@ -1,8 +1,8 @@
 .. _doc-usuario:
 
-=============================
-Documentación para el usuario
-=============================
+===========================
+Documentación para usuarios
+===========================
 
 .. toctree::
     :maxdepth: 1
@@ -13,8 +13,11 @@ Documentación para el usuario
     Catálogos/index
     Registros/index
     Inbox/index
+    AppMóvil/index
 
-¡Bienvenido a la documentación exclusiva a usuarios de Linkaform! Descubre cómo optimizar y simplificar procesos utilizando formularios personalizados, bases de datos y registros organizados.
+¡Bienvenido a la documentación exclusiva para usuarios de Linkaform! Aquí, podrás explorar las funcionalidades avanzadas que ofrecemos para optimizar y simplificar tus procesos tanto en la aplicación web como en la aplicación móvil. 📊📱
+
+Descubre cómo utilizar formularios personalizados, bases de datos eficientes y registros organizados en cualquier lugar y en cualquier momento. Sumérgete en la documentación para desbloquear todo el potencial de Linkaform y mejorar la forma en que gestionas y capturas información.
 
 .. grid:: 2
     :gutter: 0
@@ -73,6 +76,19 @@ Documentación para el usuario
     
             Mantén un control total identificando el estado de tus registros.
 
+    .. grid-item-card:: 
+        :columns: 6
+
+        .. card:: 
+            :link: doc-aplicacion-movil
+            :link-type: ref
+            :margin: 0
+            :class-card: card-i
+
+            |App| **Aplicación móvil**
+     
+            Explora, captura, y gestiona con facilidad desde tu bolsillo
+
 .. ICONOS SOBRE EL ÍNDICE
 
 .. |Formas| raw:: html
@@ -130,3 +146,18 @@ Documentación para el usuario
                 <i class="fa-solid fa-inbox fa-2x" style="margin-right:18px"></i>
             </body>
         </html>
+
+.. |App| raw:: html
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <i class="fa-solid fa-mobile fa-2x" style="margin-right:18px"></i>
+            </body>
+        </html>
+

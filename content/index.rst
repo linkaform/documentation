@@ -12,14 +12,13 @@ Documentación de Linkaform
    :titlesonly:
    :hidden:
 
-   Usuario/University/index
-   Usuario/AppMóvil/index
+   Usuario/index
    Desarrollador/index
    Contribución/index
 
-¡Te damos la bienvenido a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
+¡Te damos la bienvenida a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
 
-Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para aprovechar al máximo tu experiencia. 🚀✨
+Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para aprovechar al máximo tu experiencia. 🚀📊
 
 .. grid:: 2
     :gutter: 0
@@ -75,7 +74,7 @@ Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para a
 
 .. seealso:: Visita la página oficial de Linkaform |linkaform| :octicon:`report;1em;sd-text-info`.
 
-.. image:: /imgs/final.png
+.. image:: /imgs/Extras/final.png
     :align: center
 
 .. ICONOS SOBRE EL ÍNDICE

@@ -6,7 +6,11 @@ Creación de Scripts
 
 La creación de scripts es el último paso para el desarrollo de reportes. Un script es el encargado de generar las consultas necesarias a la base de datos y procesar la información aplicando operaciones específicas para mostrar la data solicitada.
 
-.. caution:: Es un proceso delicado y dependerá de qué y cómo se mostrará la información. Por favor, el siguiente contenido explica el proceso para desarrollar un script, pero está basado en un reporte específico con requerimientos particulares. Tenga en cuenta que todos los reportes son únicos y pueden cambiar.
+.. caution:: El desarrollo de un script es un proceso delicado y dependerá de qué y cómo se mostrará la información. Por favor, el siguiente contenido explica el proceso para desarrollar un script, pero está basado en un reporte específico con requerimientos particulares. Tenga en cuenta que todos los reportes son únicos y pueden cambiar.
+
+Una vez que haya desarrollado y esté seguro de su script, cárguelo en la aplicación web.
+
+.. seealso:: Consulte :ref:`cargar-script` :octicon:`report;1em;sd-text-info` para más información.
 
 Estructura de archivos
 ======================
@@ -112,7 +116,9 @@ Archivo ``py``
 
 El archivo ``py`` en el repositorio ``infosync_scripts`` contiene las consultas y funciones necesarias para procesar y extraer la información almacenada en la base de datos.
 
-En la siguiente pestaña desplegable, observe el bloque de código, el cual representa de manera general las variables y funciones principales que componen al ``archivo py``. En contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar.
+En la siguiente pestaña desplegable, observe el bloque de código, el cual representa de manera general las variables y funciones principales que componen a un ``archivo py``. 
+
+En contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar.
 
 .. dropdown:: Vista general
 
@@ -128,56 +134,46 @@ En la siguiente pestaña desplegable, observe el bloque de código, el cual repr
         from account_settings import *
         from unicodedata import normalize
 
-        table_data = []
-        plants = {}
-        WEEKS = []
+        class ReportModel(): ...
 
-        def get_date_query(date_from=None, date_to=None, date_field_id=None): ...
+        def get_date_query(date_from, date_to): ...
 
-        def get_visitas(date_from, date_to, promotor): ...
+        #---FORMAT
+        def get_format_firstElement(data): ...
 
-        def get_format_minutes(checkout, checkin): ...
-
-        def get_report(date_from, date_to, promotor): ... 
-
-        def get_catalog_promotor(catalogo_id): ...
+        #-- FUNCTION QUERYS
+        def query_report_first(date_from, date_to, buscador, variedad): ...
 
         if __name__ == "__main__":
             print(sys.argv)
             all_data = simplejson.loads(sys.argv[2])
-            data = all_data.get("data", {})
-            date_from = data.get("date_from")
-            date_to = data.get("date_to")
-            option = data.get("option")
-            promotor = data.get("promotor")
-
+            #--Filtros
+            data = all_data.get("data", {})    
+            date_to = data.get("date_to",'')
+            date_from = data.get("date_from",'')
+            buscador = data.get("buscador",'')
+            variedad = data.get("variedad",'')
             #--Report Model
             report_model = ReportModel()
 
-            lkf_api = utils.Cache(settings)
-            jwt_parent = lkf_api.get_jwt(api_key=config["API_KEY"])
-            config["USER_JWT_KEY"] = jwt_parent
+            if date_to or date_from :
+                #--CREDENCIAL
+                settings.config.update(config)
+                lkf_api = utils.Cache(settings)
+                net = network.Network(settings)
+                #--TOKEN
+                #jwt_complete = simplejson.loads(sys.argv[2])
+                #config["USER_JWT_KEY"] = jwt_complete
+                #--KEY
+                jwt_key = lkf_api.get_jwt(api_key=settings.config['API_KEY'])
+                config["USER_JWT_KEY"] = jwt_key
+                cr = net.get_collections()
+                #--EJECUCIONES
+                query_report_first(date_from, date_to, buscador, variedad)
+                sys.stdout.write(simplejson.dumps(report_model.print()))
+            else:
+                sys.stdout.write(simplejson.dumps({"json": {}}))
             
-            settings.config.update(config)
-            lkf_api = utils.Cache(settings)
-            net = network.Network(settings)
-            cr = net.get_collections()
-
-            if option == 1:
-                response = get_report(date_from, date_to, promotor)
-                sys.stdout.write(simplejson.dumps(
-                    {"firstElement":{
-                        'tabledata':response
-                        },
-                    })
-                )
-            elif option == 0:
-                response = get_catalog_promotor(95211)
-                sys.stdout.write(simplejson.dumps(
-                    {
-                        "catalog":response,
-                    })
-                )
 
 .. _main:
 
@@ -190,7 +186,7 @@ Observe la línea de código 3, ``print(sys.argv)``, que se encarga principalmen
 
 .. caution:: Por ningún motivo comente o elimine esta línea de código. Consulte :ref:`log-script` :octicon:`report;1em;sd-text-info` y revise la interpretación de la misma.
 
-Identifique el bloque de código de la 6 a la 15, que procesa un objeto JSON presente en el tercer elemento de la lista ``sys.argv``. Revise :ref:`interpretacion-log-script` :octicon:`report;1em;sd-text-info`.
+Identifique el bloque de código de la 7 a la 11, que procesa un objeto JSON presente en el tercer elemento de la lista ``sys.argv``. Revise :ref:`interpretacion-log-script` :octicon:`report;1em;sd-text-info`.
 
 .. seealso:: El ``método get`` se utiliza para obtener el valor asociado con una clave en un diccionario. 
 
@@ -198,61 +194,12 @@ Identifique el bloque de código de la 6 a la 15, que procesa un objeto JSON pre
     - Si la clave no existe en el diccionario, ``get`` devuelve ``None`` por defecto.
     - Si se proporciona un valor por defecto como segundo argumento, ese valor se devuelve si la clave no está presente en el diccionario.
 
-Ahora, considere que el código presente es un ejemplo básico y puede cambiar según sus necesidades. Por ejemplo, para procesar las ejecuciones, considere aplicar alguna condicional en caso de no recibir un valor, revise los siguientes casos.
+Ahora, considere que el código presente es un ejemplo básico y puede cambiar según sus necesidades. Por ejemplo, para procesar las ejecuciones, considere aplicar alguna condicional en caso de no recibir un valor, con en el caso actual.
 
 .. tab-set::
 
     .. tab-item:: Caso 1
         :sync: key1
-        
-        .. code-block:: python
-            :linenos:
-            :emphasize-lines: 3, 6-15
-
-            if __name__ == "__main__":
-                # Log del script
-                print(sys.argv)
-                #---FILTROS
-                # Carga el objeto JSON desde el tercer elemento de sys.argv. Por ejemplo, considere al objeto "data": {"promotor": "", "script_id": 123, "date_from": "2023-11-29", "option": 1, "date_to": "2023-12-29"}
-                all_data = simplejson.loads(sys.argv[2])
-
-                # Obtiene el diccionario asociado con la clave "data", o un diccionario vacío si no está presente
-                data = all_data.get("data", {})
-
-                # Obtiene valores específicos del diccionario "data" (puede ser None si la clave no está presente)
-                date_from = data.get("date_from")
-                date_to = data.get("date_to")
-                option = data.get("option")
-                promotor = data.get("promotor")
-
-                lkf_api = utils.Cache(settings)
-                jwt_parent = lkf_api.get_jwt(api_key=config["API_KEY"])
-                config["USER_JWT_KEY"] = jwt_parent
-                # print('jwot', jwt_parent)
-                
-                settings.config.update(config)
-                lkf_api = utils.Cache(settings)
-                net = network.Network(settings)
-                cr = net.get_collections()
-
-                if option == 1:
-                    response = get_report(date_from, date_to, promotor)
-                    sys.stdout.write(simplejson.dumps(
-                        {"firstElement":{
-                            'tabledata':response
-                            },
-                        })
-                    )
-                elif option == 0:
-                    response = get_catalog_promotor(95211)
-                    sys.stdout.write(simplejson.dumps(
-                        {
-                            "catalog":response,
-                        })
-                    )
-
-    .. tab-item:: Caso 2
-        :sync: key2
 
         El siguiente código contiene una condicional y solamente ejecutará su contenido si recibe una fecha desde (``date_to``) o una fecha hasta (``date_from``) en la línea 14. En caso de que el filtro no contenga ningún valor, lo que va a mostrar será una cadena vacía (línea 30).
 
@@ -348,11 +295,6 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
     .. tab-item:: Caso 1
         :sync: key1
-
-        .
-
-    .. tab-item:: Caso 2
-        :sync: key2
 
         La siguiente función se utiliza para consultar datos de un formulario. Utilice este ejemplo como base para preparar su propia consulta personalizada, pero tenga mucho cuidado y preste atención a las notas para realizar modificaciones según lo requiera.
 
@@ -889,6 +831,9 @@ El primer bloque de código corresponde a las importaciones de varias biblioteca
     # Importa la función "normalize" del módulo "unicodedata", que se utiliza para normalizar cadenas de texto Unicode
     from unicodedata import normalize
 
+¡Felicidades! 🎉 Si ha seguido la documentación de reportes de manera secuencial, ahora es capaz de generar sus propios reportes personalizados. Si tiene alguna duda, puede regresar al contenido o consultar la documentación oficial de la sección de su preferencia.
+
+Si lo necesita, puede solicitar una capacitación personalizada a través del soporte técnico.
 
 .. LIGAS EXTERNAS
 
