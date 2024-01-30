@@ -221,6 +221,8 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
         Al estar seguro de sus cambios, seleccione ``Guardar``.
 
+.. _campo-respuesta-multiple:
+
 Campo respuesta múltiple
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -275,6 +277,8 @@ En el siguiente recuadro, podrá encontrar los tipo de respuesta múltiple. Cons
         Se utiliza para crear menús desplegables o listas de opciones donde los usuarios deben seleccionar una respuesta.
 
         .. image:: /imgs/Formas/Formas9.3.png
+
+.. _campo-numerico:
 
 Campo número
 ^^^^^^^^^^^^

@@ -42,7 +42,7 @@ Ahora, localice la variable ``MONGODB_PASSWORD`` ubicada en línea de código 28
 
 .. note:: Solicite a soporte técnico apoyo para obtener la contraseña correspondiente a mongo.
 
-Identifique las líneas de código 34-35, debe colocar el ``USER_ID`` y ``ACCOUNT_ID`` de la cuenta padre. 
+Identifique las líneas de código 33-34, debe colocar el ``USER_ID`` y ``ACCOUNT_ID`` de la cuenta padre. 
 
 .. seealso:: Consulte el siguiente enlace para :ref:`informacion-cuenta` :octicon:`report;1em;sd-text-info`.
 
@@ -372,8 +372,8 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
             global report_model
 
-        .. seealso:: consulte la `clase ReportModel <#class-reportModel>`_ :octicon:`report;1em;sd-text-info` para más detalles.
-
+        .. seealso:: consulte la :ref:`class-reportModel` :octicon:`report;1em;sd-text-info` para más detalles.
+            
         En el siguiente bloque de código, se crea un diccionario denominado ``match_query`` que representa las condiciones iniciales de la consulta. Este diccionario actúa como filtros obligatorios que especifican las condiciones de dónde y cómo extraer los datos.
 
         - Asegúrese de modificar el valor de la clave ``form_id`` de acuerdo al identificador del formulario al que desea extraer la información.
@@ -427,7 +427,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
             #match_query.update(get_date_query(date_from, date_to))
 
-        Considere el siguiente ejemplo, observe las condicionales que actualizan la consulta (``match_query``) según los valores de los filtros ``date_from`` y ``date_from``.
+        Considere el siguiente ejemplo, observe las condicionales que actualizan la consulta (``match_query``) según los valores de los filtros ``date_from`` y ``date_to``.
 
         .. code-block:: python
             :linenos:
@@ -448,7 +448,7 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
         .. seealso:: Consulte la documentación oficial de los |mongo-operadores| :octicon:`report;1em;sd-text-info` o acceda al siguiente enlace que proporciona |tutorial-operadores| :octicon:`report;1em;sd-text-info` para preparar sus propios filtros.
 
-        Con frecuencia, en la mayoría de los reportes, encontrará la función `get_date_query <#get_date_query>`_ :octicon:`report;1em;sd-text-info`. Esta función actualiza la consulta mediante condiciones de fecha. La razón detrás de esta práctica es que, como se mencionó anteriormente, la mayoría de los reportes incorporan tanto ``date_from`` como ``date_to`` como filtros.
+        Con frecuencia, en la mayoría de los reportes, encontrará la función `get_date_query <#date-query>`_ :octicon:`report;1em;sd-text-info`. Esta función actualiza la consulta mediante condiciones de fecha. La razón detrás de esta práctica es que, como se mencionó anteriormente, la mayoría de los reportes incorporan tanto ``date_from`` como ``date_to`` como filtros.
 
         .. code-block:: python
             :linenos:
@@ -523,9 +523,9 @@ A continuación se detallan algunos ejemplos en base a los casos anteriores.
 
         En este caso, ``result = cr.aggregate(query)`` ejecuta la consulta de `agregación <#proceso-agregacion>`_ :octicon:`report;1em;sd-text-info` y obtiene un `cursor <#mongo-cursor>`_ :octicon:`report;1em;sd-text-info` (``result``) que apunta a los resultados generados por el `pipeline de agregación <#pipeline-agregacion>`_ :octicon:`report;1em;sd-text-info`.
 
-        Con el `método aggregate <#metodo-agregacion-aggregate>`_ :octicon:`report;1em;sd-text-info` se accede a los *pipelines de agregación* de la consulta (``query``). En lugar de iterar sobre el *cursor* para procesar cada `documento <#mongo-documento>`_ :octicon:`report;1em;sd-text-info`, se pasa directamente el *cursor* como parámetro a la función `get-format-firstElement <#funcion-get-format-firstElement>`_ :octicon:`report;1em;sd-text-info` para aplicar un nuevo formateo.
+        Con el `método aggregate <#metodo-agregacion-aggregate>`_ :octicon:`report;1em;sd-text-info` se accede a los *pipelines de agregación* de la consulta (``query``). En lugar de iterar sobre el *cursor* para procesar cada `documento <#mongo-documento>`_ :octicon:`report;1em;sd-text-info`, se pasa directamente el *cursor* como parámetro a la función `get_format_firstElement <#funcion-get>`_ :octicon:`report;1em;sd-text-info` para aplicar un nuevo formateo.
         
-        En el siguiente caso, se crea una lista vacía llamada  ``data`` para almacenar los resultados obtenidos de la iteración del *cursor*. La expresión ``cr.aggregate(query)`` ejecuta una consulta de *agregación* y devuelve un *cursor* que apunta a los resultados de esa consulta. Luego, utilizando una comprensión de lista ``[x for x in result]``, se itera sobre el *cursor* para extraer todos los *documentos* y se almacenan en la lista `data`. En última instancia, data contiene una lista con la información consultada de la base de datos.
+        En el siguiente caso, se crea una lista vacía llamada ``data`` para almacenar los resultados obtenidos de la iteración del *cursor*. La expresión ``cr.aggregate(query)`` ejecuta una consulta de *agregación* y devuelve un *cursor* que apunta a los resultados de esa consulta. Luego, utilizando una comprensión de lista ``[x for x in result]``, se itera sobre el *cursor* para extraer todos los *documentos* y se almacenan en la lista `data`. En última instancia, data contiene una lista con la información consultada de la base de datos.
 
         .. code-block:: python
             :linenos:     
@@ -594,7 +594,7 @@ Por ejemplo, suponga que tiene una lista con información en un campo que repres
 
 .. important:: Este apartado tiene como objetivo explicar ejemplos sobre funciones personalizadas, pero no pretende ser un tutorial detallado sobre cómo crearlas. Recuerde que la creación de dichas funciones dependerá de lo que desee presentar y requerirá utilizar su experiencia en programación para desarrollarlas.
 
-.. _funcion-get-format-firstElement:
+.. _funcion-get:
 
 La función ``get_format_firstElement()`` se encarga de procesar y dar formato a los resultados obtenidos de la consulta.
 
@@ -602,7 +602,7 @@ Esta función toma el cursor de documentos, extrae información específica de c
 
 .. note:: Si ejecuta ``report_model.print()``, obtendrá un diccionario que muestra la estructura de ``self.json``, y podrá visualizar cómo la información se organiza dentro de ``firstElement``. 
 
-    Consulte la clase `clase ReportModel() <#class-reportModel>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+    Consulte la :ref:`class-reportModel` :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. code-block:: python
     :linenos:
@@ -756,7 +756,7 @@ El diccionario ``self.json`` tiene la clave ``firstElement`` que apunta a la est
 
 .. seealso:: Consulte la sección :ref:`estructura-elementos` :octicon:`report;1em;sd-text-info` si necesita más detalles. 
 
-La función ``print()`` construye y devolve un nuevo diccionario con la misma estructura que ``self.json``, pero sin hacer referencia directa a la instancia de la misma clase. Por favor, lea los comentarios dentro del código.
+La función ``print()`` construye y devuelve un nuevo diccionario con la misma estructura que ``self.json``, pero sin hacer referencia directa a la instancia de la misma clase. Por favor, lea los comentarios dentro del código.
 
 .. important:: En este caso, la función `print()` en la clase no tiene relación con la funcionalidad incorporada de Python `print` para imprimir en la consola.
 

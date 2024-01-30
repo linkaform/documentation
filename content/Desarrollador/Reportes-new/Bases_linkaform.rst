@@ -6,7 +6,7 @@ En el módulo ``Reportes`` de Linkaform, tiene la capacidad de explorar visualme
 
 Para acceder a los ``Reportes``, siga los pasos:
 
-1. Ingrese a la aplicación web oficial de |Linkaform| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales.
 
 .. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
@@ -114,7 +114,7 @@ Crear un reporte en Linkaform es un proceso sencillo. Siga el siguiente procedim
 
     Antes de realizar esta configuración, asegúrese de `cargar el script <#cargar-script>`_ :octicon:`report;1em;sd-text-info`.
 
-1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en otro caso, en |Preproducción| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en otro caso, en |Preproducción| :octicon:`report;1em;sd-text-info`.
 
 .. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar el proceso de creación de reportes en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
 
@@ -155,7 +155,7 @@ Una ``API Key`` (clave de API) es un código alfanumérico único que se utiliza
 
 Para generar una ``API Key``, siga las instrucciones:
 
-1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión en la cuenta padre. 
 
 .. caution:: El administrador de la cuenta padre es el único que puede asignar a los usuarios dependientes de él una ``API Key``.
@@ -187,7 +187,7 @@ El ``log`` de script es una herramienta útil que se utiliza para depurar (*debu
 
 Para visualizar el ``log`` de un script, siga los siguientes pasos:
 
-1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión utilizando sus credenciales.
 3. Seleccione ``Formas > Scripts`` en el menú lateral. Podrá observar todos los scripts cargados en la cuenta.
 
@@ -285,6 +285,95 @@ Si experimenta errores durante la ejecución del script, la impresión de ``sys.
     "data": {"script_id": 123, "date_from": "2023-08-28", "option": 0, "date_to": ""}, "account_id": 11702, "name": "reporte_encuestas.py"}', 'False'
     ]
 
+.. _cargar-script:
+
+Cargar script
+=============
+
+Para cargar un script en la aplicación web de Linkaform, siga los siguientes pasos y lea las recomendaciones necesarias.
+
+.. caution:: Tenga en cuenta que los siguientes pasos son necesarios para configurar el script previamente desarrollado.
+
+    Antes de realizar esta configuración, asegúrese de haber creado su script de acuerdo a sus necesidades. Revise la sección sobre :ref:`crear-script` :octicon:`report;1em;sd-text-info`.
+
+1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con sus credenciales.
+
+.. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
+
+3. Seleccione ``Formas > Scripts`` en el menú lateral.
+4. Seleccione el icono de documento ubicado en la parte superior derecha para cargar el script.
+
+.. image:: /imgs/Reportes/Reportes31.png
+
+Complete el formulario de acuerdo a los siguientes pasos:
+
+1. Seleccione el archivo correspondiente al script. Automáticamente, se rellenará el nombre del script.
+2. Seleccione la imagen de Docker (versiones de las herramientas):
+
+- ``python:development`` no se usa para scripts actuales; utiliza la version 2 de python.
+- ``python3_lkf:latest`` es la imagen que actualmente se utiliza; usa la version 3 de python.
+
+3. Seleccione los bullets que considere:
+
+- **Activity**: Active el bullet si desea que la actividad (ejecuciones exitosas o fallas) del script le sea notificada por correo electrónico de la cuenta padre.
+- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
+
+.. note:: Regularmente, los bullet están desactivados.
+
+.. image:: /imgs/Reportes/Reportes32.png
+
+.. _visualizar-id-script:
+
+Ver ``ID`` del script
+---------------------
+
+Hay dos maneras para consultar el id de un script.
+
+**Log de script**
+
+Para consultar a través del log de flujo, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de scripts.
+2. Identifique el script del cual necesita conocer el ``id``.
+3. Seleccione el icono ``Ejecutar script`` para generar el log del script.
+
+.. note:: Solo ejecute si aún no tienen ningún log.
+
+4. Presione el icono ``Log de script``.
+
+.. image:: /imgs/Reportes/Reportes35.png
+
+5. Seleccione ``Log``.
+6. Presione ``Ctrl + f`` para abrir el buscador de la página.
+7. Escriba:
+
+.. code-block::
+
+    script_id.
+
+8. Copie y pegue el ``script_id`` según lo requiera. 
+
+.. image:: /imgs/Reportes/Reportes36.png
+
+**Herramientas de desarrollador**
+
+Para utilizar las herramientas de desarrollador, siga los pasos:
+
+1. Ubíquese en la interfaz de scripts.
+2. Presione ``Clic derecho > Inspeccionar`` o bien presione ``F12``.
+3. Ubíquese en la pestaña ``Network``.
+4. Recargue la página sin cerrar la ventana de inspección.
+5. Identifique el script que necesite saber el ``id``.
+6. Seleccione la opción ``Compartir``. 
+
+.. image:: /imgs/Reportes/Reportes33.png
+
+7. Identifique la línea ``file_shared_email/?file_shared=`` en el inspector de código.
+8. Copie y pegue el ``id``.
+
+.. image:: /imgs/Reportes/Reportes34.png
+
 .. _informacion-cuenta:
 
 Ver información de la cuenta
@@ -292,7 +381,7 @@ Ver información de la cuenta
 
 Para visualizar la información completa de su cuenta, siga los siguientes pasos:
 
-1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales.
 
 .. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
@@ -313,7 +402,7 @@ Ver ``ID`` de la forma
 
 Para poder visualizar el ``ID`` de la forma siga los pasos:
 
-1. Ingrese a la aplicación web oficial de Linkaform en |Producción| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales.
 
 .. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
@@ -341,4 +430,4 @@ Si desea crear su propio reporte personalizado, le sugerimos revisar las siguien
 
 .. |Preproducción| raw:: html
 
-   <a href="https://preprod.linkaform.com/" target="_blank">Preproducción</a>
+   <a href="https://preprod.linkaform.com/" target="_blank">preproducción</a>

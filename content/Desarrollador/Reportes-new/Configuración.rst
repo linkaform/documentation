@@ -102,7 +102,7 @@ Bases de Servido
 
 ``Servido`` es una plataforma *Open Source* que facilita el desarrollo de reportes mediante el uso de diversas herramientas, como *bibliotecas*, *scripts* y *APIs*. Estas herramientas se utilizan para procesar información y generar resultados que se presentan a través de *dashboards*, *tablas*, *gráficos* y otras representaciones visuales.
 
-.. note:: Considere que los repositorios de ``Servido`` e ``infosync_scripts`` están contenidas en la carpeta ``lkf``.
+.. attention:: Considere que los repositorios de ``Servido`` e ``infosync_scripts`` están contenidas en la carpeta ``lkf``.
 
 Las dos partes principales que complementan a ``Servido`` son las siguientes:
 
@@ -136,11 +136,13 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
             │   │   ├── <a>reporte_nombre.py</a><br>
             └── <a class="print">servido</a><br>
             &nbsp;&nbsp;&nbsp; ├── <a  class="printf">apps</a><br>
-            &nbsp;&nbsp;&nbsp; │   ├── <a>Nombre_carpeta</a><br>
-            &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_nombre_data.js</a><br>
-            &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_nombre.html</a><br>
-            &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_nombre.js</a><br>
+            &nbsp;&nbsp;&nbsp; │   ├── <a>frecuencias</a><br>
+            &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_auditorias_data.js</a><br>
+            &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_auditorias.html</a><br>
+            &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_auditorias.js</a><br>
             &nbsp;&nbsp;&nbsp; │   │   └── <a>style.css</a><br>
+            &nbsp;&nbsp;&nbsp; │   ├── <a>rh</a><br>
+            &nbsp;&nbsp;&nbsp; │   ├── <a>encuestas</a><br>
             &nbsp;&nbsp;&nbsp; ├── <a>docker</a><br>
             &nbsp;&nbsp;&nbsp; ├── <a>Dockerfile</a><br>
             &nbsp;&nbsp;&nbsp; ├── <a>libs</a><br>
@@ -156,13 +158,17 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
 
       La carpeta ``Apps`` contenida en el repositorio de ``Servido`` alberga la totalidad del *front-end* (HTML, CSS, JavaScript vanilla y jQuery) del reporte. 
       
-      .. note:: Cada carpeta está asignada a cada cliente, las cuales contienen sus propios reportes. 
+      .. note:: 
 
-      Dentro de ``Apps`` cree su propia carpeta exclusiva para sus reportes.
-      
-      .. important:: En caso de que ya cuente con una carpeta, asegúrese de crear los archivos correspondientes para el desarrollo de su nuevo reporte.
+         En servido, los archivos se almacenan en carpetas correspondientes al tipo de reporte que desea generar. 
 
-      Cada carpeta contiene los siguientes archivos:
+         - Por ejemplo, en la carpeta ``frecuencias`` se encuentran archivos de reportes que muestran frecuencias de alguna actividad u otro contenido específico. 
+
+         - En la carpeta ``rh`` se encuentran reportes como facturación, desempeño jornal, etc.
+
+         Ajuste o cree una carpeta descriptiva y lógica según lo requiera.
+
+      Cada reporte debe estar constituida por los siguientes archivos:
 
       - **style.css**: Contiene estilos generales del reporte (un archivo por carpeta).
 
@@ -178,7 +184,7 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
    .. grid-item-card:: Infosync_scripts
       :columns: 7
 
-      El contenido de sobre scripts, ubicado en el repositorio ``infosync_scripts``, contiene información correspondiente al *backend* del reporte. Cada carpeta alberga scripts utilizados por los clientes.
+      El contenido sobre scripts, ubicado en el repositorio ``infosync_scripts``, contiene información correspondiente al *backend* del reporte. Cada carpeta alberga scripts utilizados por los clientes.
 
       Si necesita crear un nuevo script para su reporte, siga el siguiente estándar de nomenclatura:
 
@@ -189,7 +195,7 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
 
       .. caution:: Bajo ninguna circunstancia modifique los archivos que NO inicien con ``reporte`` o ``report`` . Estos archivos son scripts que desempeñan funciones importantes para el cliente, aunque no estén directamente relacionados con reportes.
 
-      .. important:: Tenga cuidado con el :ref:`account-settings` :octicon:`report;1em;sd-text-info`., ya que contiene información sensible de la cuenta del cliente.
+      .. important:: Tenga cuidado con el :ref:`account-settings` :octicon:`report;1em;sd-text-info`, ya que contiene información sensible de la cuenta del cliente.
 
    .. grid-item-card:: Directory Tree
       :columns: 5
@@ -267,6 +273,8 @@ Esta opción le brinda la posibilidad de integrar el script directamente en la `
 
 Simplemente, añada el parámetro ``script_id`` a la ``URL`` seguido del valor correspondiente al script. Esto le indicará al script de JavaScript a dónde debe realizar la petición.
 
+.. seealso:: Consulte :ref:`visualizar-id-script` :octicon:`report;1em;sd-text-info` o :ref:`crear-script` :octicon:`report;1em;sd-text-info`.
+
 .. _link-servido:
 
 Servido
@@ -297,7 +305,7 @@ Una vez dentro del entorno de prueba, puede continuar sin la necesidad de inclui
 
    http://127.0.0.1:8011/nombre_carpeta/reporte_nombre.html?script_id=123456&env=test 
 
-.. note:: En caso de no contar con las credenciales necesaria de preproducción, solicítelas a soporte técnico.
+.. note:: En caso de no contar con las credenciales necesarias de preproducción, solicítelas a soporte técnico.
 
 
 Si está siguiendo cronológicamente la documentación y encuentra algunas partes confusas en relación con la configuración, específicamente las ``URLs de acceso``, no se preocupe. Durante el desarrollo de su reporte personalizado, estas partes cobrarán más sentido con el tiempo. Por favor, sea paciente, continúe leyendo y considere toda la información proporcionada.

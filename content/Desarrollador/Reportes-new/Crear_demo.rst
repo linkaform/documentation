@@ -13,7 +13,7 @@ Una vez que se cuenta con la demo, la integración del script se simplifica, ya 
 Estructura de archivos
 ======================
 
-Dentro del :ref:`repositorio-servido` :octicon:`report;1em;sd-text-info` encontrará los archivos correspondientes al front-end del reporte. Por favor, sigan los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
+Dentro del :ref:`repositorio-servido` :octicon:`report;1em;sd-text-info` encontrará los archivos correspondientes al front-end del reporte. Por favor, sigan los siguientes pasos para crear los archivos necesarios y continúe revisando cada sección correspondiente a la explicación sobre su contenido.
 
 1. Cree una carpeta exclusiva dentro de la carpeta ``Apps`` para sus reportes en caso de no contar con una.
 
@@ -1038,7 +1038,7 @@ Observe que en la línea 11 se llama a la función ``getDrawTable``, la cual se 
 
 .. seealso:: Consulte el archivo data.js, donde está ubicada la variable que se mencionó anteriormente. 
 
-- **350**: Es la altura máxima que medirá la tabla.
+- **350**: Es la altura máxima en píxeles que medirá la tabla.
 
 .. code-block:: javascript
     :linenos:
@@ -1210,7 +1210,7 @@ Observe la línea de código número 40, llama a la `función getDrawTable <#fun
 
 - **res.response.firstElement.tabledata**: Son las filas extraídas del valor, es decir, toda la data real.
 
-- **450**: Es la altura máxima que medirá la tabla.
+- **450**: Es la altura máxima en píxeles que medirá la tabla.
 
 .. code-block:: javascript
     :linenos:

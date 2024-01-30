@@ -44,6 +44,8 @@ Para acceder a los ``registros``, siga los siguientes pasos:
 
 Explore las secciones siguientes para obtener una descripción más detallada sobre las funcionalidades que los registros ofrecen.
 
+.. _crear-filtro-formas:
+
 Filtros
 =======
 
