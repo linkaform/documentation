@@ -585,6 +585,8 @@ Para acceder a los registros recuperados, siga estos pasos:
 - Presione ``Renombrar`` para asignar un nombre descriptivo al registro recuperado.
 - Presione ``Reportar problema`` si el registro recuperado no contiene toda la información que estaba capturando.
 
+.. note:: Al presionar la opción ``Reportar problema``, la aplicación toma ese registro y envía un correo a soporte técnico de Linkaform utilizando el correo actual de su dispositivo móvil.
+
 Reportes
 --------
 
@@ -610,6 +612,8 @@ Los reportes son una funcionalidad que permite visualizar los resultados extraí
         4. Aplique los filtros necesarios y pulse el botón ``Run`` para consultar la información correspondiente.
 
         .. seealso:: Si necesita crear su propio reporte personalizado, revise la :ref:`doc-reportes` :octicon:`report;1em;sd-text-info` para obtener más información.
+
+.. _inbox-app:
 
 Inbox app
 ---------
@@ -646,7 +650,15 @@ En ocasiones, algunos registros que contienen grandes cantidades de información
 
 **Registros guardados**
 
-Los registros guardados (icono guardado color azul)  son aquellos que ha guardado, ya sea en la aplicación web o en otro dispositivo, y que puede continuar capturando y enviar sin problemas desde la aplicación móvil.
+Los registros guardados (icono guardado color azul) son aquellos que ha guardado, ya sea en la aplicación web o en otro dispositivo, y que puede continuar capturando y enviar sin problemas desde la aplicación móvil.
+
+**Opciones**
+
+Los registros permiten las siguientes opciones:
+
+- Presione el selector  ``Campos de la Forma`` para visualizar los campos y registros marcados como ``favoritos`` desde la configuración de la forma.
+
+.. seealso:: Consulte las características de los :ref:`opciones-campos` :octicon:`report;1em;sd-text-info` en la documentación de :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
 
 - Presione ``Visualizar`` para tener solo una vista previa del registro para darle seguimiento.
 - Presione ``Asignar`` para poder asignar a otro usuario el mismo registro. 

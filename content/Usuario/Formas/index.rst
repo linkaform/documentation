@@ -88,7 +88,7 @@ Linkaform proporciona campos básicos para personalizar sus formas o :ref:`catal
    * - Característica
      - Descripción
    * - ⭐ Favorito
-     - Al activar esta opción, permite visualizar la información de este campo al realizar consultas en registros completados desde la app o al consultar los registros desde la web en el apartado de registros.
+     - Al activar esta opción, permite visualizar la información de este campo al realizar consultas en registros completados desde el :ref:`inbox-app` :octicon:`report;1em;sd-text-info`  o al consultar los registros desde la web en el apartado de registros.
    * - Ascendente/Descendente
      - Permite ordenar las respuestas del campo en el orden elegido.
    * - Duplicar

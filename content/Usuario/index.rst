@@ -61,7 +61,7 @@ Descubre cómo utilizar formularios personalizados, bases de datos eficientes y 
 
             |Registros| **Registros de formas**
             
-            Descubre y optimiza la búsqueda de tus registros.
+            Descubre herramientas para optimizar la búsqueda de tus registros.
 
     .. grid-item-card:: 
         :columns: 6
@@ -87,7 +87,7 @@ Descubre cómo utilizar formularios personalizados, bases de datos eficientes y 
 
             |App| **Aplicación móvil**
      
-            Explora, captura, y gestiona con facilidad desde tu bolsillo
+            Explora, captura y gestiona con facilidad desde tu bolsillo
 
 .. ICONOS SOBRE EL ÍNDICE
 
