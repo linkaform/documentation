@@ -4,7 +4,7 @@
 Catálogos
 =========
 
-En Linkaform, el término ``catálogo`` es una especie de base de datos que facilita la organización, almacenamiento y acceso de datos, permitiendo la creación, consulta, actualización y eliminación de información.
+En Linkaform, el término **catálogo** es una especie de base de datos que facilita la organización, almacenamiento y acceso de datos, permitiendo la creación, consulta, actualización y eliminación de información.
 
 En este apartado, encontrará documentación sobre las funcionalidades que ofrece un catálogo, tales como:
 
@@ -16,9 +16,9 @@ En este apartado, encontrará documentación sobre las funcionalidades que ofrec
 
 La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
 
-Para acceder a los ``catálogos``, siga los siguientes pasos:
+Para acceder a los **catálogos**, siga los siguientes pasos:
 
-1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
+1. Ingrese a la aplicación web de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales. 
 
 .. note:: En caso de no contar con credenciales, solicítelas al soporte técnico.
@@ -493,4 +493,4 @@ Si ha seguido la guía paso a paso, ahora cuenta con la habilidad para elaborar 
 
 .. |app| raw:: html
 
-    <a href="https://app.linkaform.com/" target="_blank">https://app.linkaform.com/</a>
+    <a href="https://app.linkaform.com/" target="_blank">app.linkaform.com</a>

@@ -4,7 +4,7 @@
 Formas
 ======
 
-En Linkaform, el término ``forma`` hace referencia a un formulario digital que posibilita la automatización de procesos. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
+En Linkaform, el término **forma** hace referencia a un formulario digital que posibilita la automatización de procesos. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
 
 - Crear y editar de formas.
 - Crear carpetas para organizar y almacenar formas.
@@ -18,7 +18,7 @@ Este apartado abarcará todos los aspectos necesarios para diseñar una solució
 
 La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están preparadas para que pueda revisar un tema específico en cualquier momento.
 
-Para acceder a las ``formas``, siga los siguientes pasos:
+Para acceder a las **formas**, siga los siguientes pasos:
 
 1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales. 
@@ -1311,4 +1311,4 @@ En la siguiente sección, aprenderá todo lo relacionado con catálogos, una fun
 
 .. |app| raw:: html
 
-    <a href="https://app.linkaform.com/" target="_blank">https://app.linkaform.com/</a>
+    <a href="https://app.linkaform.com/" target="_blank">app.linkaform.com</a>

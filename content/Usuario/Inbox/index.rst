@@ -4,7 +4,7 @@
 Inbox
 =====
 
-En Linkaform, ``Inbox`` es un espacio que detalla el estado de la información asignada a usuarios o la información guardada en ``Registros`` en la aplicación móvil.
+En Linkaform, **inbox** es un espacio que detalla el estado de la información asignada a usuarios o la información guardada en ``Registros`` en la aplicación móvil.
 
 .. seealso:: Consulte la documentación sobre la :ref:`doc-aplicacion-movil` :octicon:`report;1em;sd-text-info`.
 
@@ -107,4 +107,4 @@ Consulte el siguiente video para obtener una guía visual y más detallada sobre
 
 .. |app| raw:: html
 
-    <a href="https://app.linkaform.com/" target="_blank">https://app.linkaform.com/</a>
+    <a href="https://app.linkaform.com/" target="_blank">app.linkaform.com</a>

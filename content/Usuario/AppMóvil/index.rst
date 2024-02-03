@@ -4,7 +4,7 @@
 Aplicación móvil
 ================
 
-La aplicación móvil de Linkaform brinda la libertad de capturar y gestionar información de forma eficiente y rápida, directamente desde su dispositivo móvil. Con un diseño intuitivo y funcionalidades útiles, podrá:
+La **aplicación móvil** de Linkaform brinda la libertad de capturar y gestionar información de forma eficiente y rápida, directamente desde su dispositivo móvil. Con un diseño intuitivo y funcionalidades útiles, podrá:
 
 - **Capturar en movimiento**: Registre datos en tiempo real esté donde esté, aprovechando la portabilidad de su dispositivo.
 

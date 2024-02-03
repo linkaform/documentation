@@ -9,11 +9,13 @@ Documentación para usuarios
     :titlesonly:
     :hidden:
 
+    Inicio/index
     Formas/index
     Catálogos/index
     Registros/index
     Inbox/index
     AppMóvil/index
+
 
 ¡Bienvenido a la documentación exclusiva para usuarios de Linkaform! Aquí, podrás explorar las funcionalidades avanzadas que ofrecemos para optimizar y simplificar tus procesos tanto en la aplicación web como en la aplicación móvil. 📊📱
 
@@ -24,6 +26,19 @@ Descubre cómo utilizar formularios personalizados, bases de datos eficientes y 
     :padding: 0
     :margin: 0
 
+    .. grid-item-card:: 
+        :columns: 6
+
+        .. card:: 
+            :link: inicio-lkf
+            :link-type: ref
+            :margin: 0
+            :class-card: card-i
+
+            |Inicio| **Inicio**
+
+            Explora los elementos principales para gestionar a tu equipo.
+            
     .. grid-item-card:: 
         :columns: 6
 
@@ -90,6 +105,20 @@ Descubre cómo utilizar formularios personalizados, bases de datos eficientes y 
             Explora, captura y gestiona con facilidad desde tu bolsillo
 
 .. ICONOS SOBRE EL ÍNDICE
+
+.. |Inicio| raw:: html
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <i class="fa-solid fa-house fa-2x" style="margin-right:18px"></i>
+            </body>
+        </html>
 
 .. |Formas| raw:: html
 

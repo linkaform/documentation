@@ -4,9 +4,9 @@
 Registros de formas
 ===================
 
-En Linkaform, el apartado ``registros`` actúa como repositorio principal de la información generada de las :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
+En Linkaform, el apartado **registros** actúa como repositorio principal de la información generada de las :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
 
-Los ``Registros de formas`` ofrecen una vista detallada de la información almacenada en un formulario específico. En esta sección, los usuarios tienen la posibilidad de visualizar, editar, eliminar y agregar nuevos registros, según los permisos asignados. Además, cuentan con funciones específicas, como realizar búsquedas, aplicar filtros o generar documentos personalizados.
+Los **registros de formas** ofrecen una vista detallada de la información almacenada en un formulario específico. En esta sección, los usuarios tienen la posibilidad de visualizar, editar, eliminar y agregar nuevos registros, según los permisos asignados. Además, cuentan con funciones específicas, como realizar búsquedas, aplicar filtros o generar documentos personalizados.
 
 Aquí, podrá encontrar documentación sobre las funcionalidades que ofrece los registros de las formas, tales como:
 
@@ -1050,4 +1050,4 @@ En el próximo apartado podrá encontrar información relacionada con los ``Inbo
 
 .. |app| raw:: html
 
-    <a href="https://app.linkaform.com/" target="_blank">https://app.linkaform.com/</a>
+    <a href="https://app.linkaform.com/" target="_blank">app.linkaform.com</a>
