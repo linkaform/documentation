@@ -14,8 +14,6 @@ En este apartado, encontrará documentación sobre las funcionalidades que ofrec
 - Relacionar catálogos.
 - Cargar registros de información al catálogos desde web.
 
-La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
-
 Para acceder a los **catálogos**, siga los siguientes pasos:
 
 1. Ingrese a la aplicación web de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
@@ -145,17 +143,18 @@ La creación de una carpeta es útil para almacenar uno o más catálogos dentro
 
 .. _compartir-cat:
 
-Compartir Carpeta
------------------
+Compartir Carpeta / Catálogo
+----------------------------
 
-Compartir una carpeta es sencillo, siga los pasos:
+Compartir una carpeta o un catálog es un proceso similar y sencillo, siga los pasos:
 
-1. Identifique la carpeta de su interés.
-2. Haga clic en el primer icono ``Opciones > Compartir`` o seleccione el segundo ícono de compartir.
+1. Seleccione la opción ``Catálogos``, ubicada en el menú vertical a la izquierda de su pantalla.
+2. Identifique la carpeta o el catálogo de su interés.
+3. Haga clic en el primer icono ``Opciones > Compartir`` o seleccione el segundo ícono de compartir.
 
 .. image:: /imgs/Catálogos/Catálogos14.png
 
-3. Escriba el nombre del usuario con el que desea compartir la carpeta, presione ``Enter`` y el nombre del usuario aparecerá en la parte inferior.
+4. Escriba el nombre del usuario con el que desea compartir la carpeta o el catálogo, presione ``Enter`` y el nombre del usuario aparecerá en la parte inferior.
 
 .. image:: /imgs/Catálogos/Catálogos15.png
 
@@ -167,7 +166,7 @@ Compartir una carpeta es sencillo, siga los pasos:
 
 .. _compartir:
 
-4. Defina los permisos que el usuario tendrá en la carpeta:
+5. Defina los permisos que el usuario tendrá en la carpeta:
 
 - **Lectura**: El usuario podrá ver los catálogos dentro de la carpeta y crear registros.
 - **Compartir**: El usuario podrá ver y responder a los catálogos, además de poder compartir la carpeta con otros usuarios.

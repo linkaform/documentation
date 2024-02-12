@@ -17,8 +17,6 @@ En este apartado, encontrará documentación sobre las siguientes funcionalidade
 5. Registros recibidos
 6. Todos
 
-.. tip:: La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
-
 Para acceder al ``Inbox`` de su cuenta, siga las instrucciones:
 
 1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.

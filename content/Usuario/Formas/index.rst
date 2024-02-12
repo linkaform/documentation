@@ -16,8 +16,6 @@ En Linkaform, el término **forma** hace referencia a un formulario digital que 
 
 Este apartado abarcará todos los aspectos necesarios para diseñar una solución integral y aprovechar al máximo el potencial que Linkaform ofrece a su empresa.
 
-La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están preparadas para que pueda revisar un tema específico en cualquier momento.
-
 Para acceder a las **formas**, siga los siguientes pasos:
 
 1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.

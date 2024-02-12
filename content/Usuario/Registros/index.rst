@@ -17,8 +17,6 @@ Aquí, podrá encontrar documentación sobre las funcionalidades que ofrece los 
 - Mostrar columnas
 - Visualizar Registro
 
-La documentación está dividida en diferentes secciones, las cuales podrá acceder a través del menú lateral en el lado derecho de su pantalla. Aunque se sugiere seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
-
 Para acceder a los ``registros``, siga los siguientes pasos:
 
 1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
@@ -209,8 +207,17 @@ Es posible aplicar filtros para buscar datos específicos correspondientes a los
 Grupos en líneas
 ----------------
 
+Esta función es útil para mostrar los registros creados por los miembros de un grupo. 
+
 .. image:: /imgs/Registros/Registros11.png
 
+1. Diríjase a la opción ``Registros`` en el menú lateral. Por defecto, se mostrarán todos los registros de las formas que actualmente están relacionadas con la cuenta.
+2. Si desea obtener información sobre los registros de una forma específica, ingrese el nombre de la forma en el campo de búsqueda. Si desea visualizar los registros de todas las formas sin especificar una en particular, omita este paso.
+3. Active la casilla de ``Grupos en línea``.
+4. Presione el botón ``Filtrar``. Se mostrarán todos los registros creados por los usuarios que son miembros del grupo seleccionado.
+
+.. attention:: Esta funcionalidad está disponible unicamente para el perfil de :ref:`perfil-admin` :octicon:`report;1em;sd-text-info`.
+    
 Archivados
 ----------
 

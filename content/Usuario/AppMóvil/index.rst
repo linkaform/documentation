@@ -20,8 +20,6 @@ Este apartado abarcará todos los aspectos necesarios para aprovechar al máximo
 
 .. seealso:: Si es la primera vez que tiene contacto con las funcionalidades de Linkaform, le recomendamos revisar la documentación sobre :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
     
-La estructura de la documentación está organizada en secciones, visibles en el menú lateral ubicado al lado derecho de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están preparadas para que pueda revisar un tema específico en cualquier momento.
-
 .. _requisitos-previos:
 
 Requisitos para el dispositivo
@@ -63,7 +61,7 @@ Para formularios con mayor complejidad, los requisitos obligatorios son los sigu
 
 .. attention::
 
-    - Al usar la app móvil de ``Linkaform`` es necesario desactivar el modo de |modoAhorro| :octicon:`report;1em;sd-text-info`, ya que hay procesos que se ejecutan en segundo plano para la sincronización de datos e imágenes y si se tiene este modo activado, en muchos casos estos procesos no se lanzan o no se completan.
+    - Al usar la **app móvil de Linkaform** es necesario desactivar el modo de |modoAhorro| :octicon:`report;1em;sd-text-info`, ya que hay procesos que se ejecutan en segundo plano para la sincronización de datos e imágenes y si se tiene este modo activado, en muchos casos estos procesos no se lanzan o no se completan.
 
     - En dispositivos personales, tenga en cuenta que los |launcher| :octicon:`report;1em;sd-text-info` pueden afectar el uso de la aplicación debido a problemas de rendimiento del dispositivo, así como a la administración de recursos y tareas del propio ``launcher``.
 
@@ -71,7 +69,7 @@ Para formularios con mayor complejidad, los requisitos obligatorios son los sigu
 
     - Se ha detectado que la aplicación se comporta de manera inestable en dispositivos ``Xiaomi`` debido a problemas relacionados con la |MIUI| :octicon:`report;1em;sd-text-info`.
 
-    Dispositivos que se ha detectado no ser compatibles con nuestra aplicación:
+    Dispositivos que se ha detectado **no ser compatibles** con nuestra aplicación:
 
     - Redmi 9 en sus variantes A, C y S
     - Dispositivos con versión de Android GO
@@ -130,7 +128,13 @@ Para iniciar sesión en ``Linkaform`` desde su aplicación móvil, siga estos pa
             
             Por favor, no aborte o salga de la aplicación, ya que la aplicación comenzará a descargar todos los formularios, catálogos y operaciones que están ligados a su cuenta desde la base de datos.
         
-        .. attention:: Cuando inicia sesión en un dispositivo, por motivos de seguridad, Linkaform vincula su cuenta con ese dispositivo. Si desea iniciar sesión en otro dispositivo, eso no será posible.
+.. attention:: Cuando inicia sesión en un dispositivo, Linkaform vincula su cuenta con ese dispositivo.
+
+    Si necesita iniciar sesión en otro dispositivo, podrá hacerlo, pero no de forma simultánea. Además, se recomienda que no cambie de dispositivo móvil hasta después de cinco días para no causar acciones inesperadas y garantizar la seguridad de su cuenta.
+
+    Si es administrador, tiene la capacidad de desvincular la cuenta de los usuarios de la aplicación móvil. 
+    Revise la documentación de la :ref:`informacion-usuario-administrador` :octicon:`report;1em;sd-text-info` ``> Información del dispositivo móvil > Desvincular``.
+
 
 .. important:: 
             
