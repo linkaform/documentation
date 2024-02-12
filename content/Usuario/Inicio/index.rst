@@ -4,53 +4,9 @@
 Inicio
 ======
 
-Linkaform es una plataforma de gestión de formularios en línea que permite controlar y mejorar la operación de las empresas con múltiples sucursales o ubicaciones.
+En esta sección, encontrará una introducción detallada a las funcionalidades que ofrece **Linkaform**, así como toda la información necesaria para comprender y aprovechar al máximo su uso.
 
-El enfoque de Linkaform es mejorar la experiencia de compra de los clientes, facilitando el seguimiento de un estricto control de operaciones.
-
-- Controla, mejora y estandariza tus procesos en ubicaciones remotas (sucursales).
-- Centraliza la información de tus ubicaciones remotas en un solo lugar.
-- Lleva el control de cada actividad y tarea realizada.
-- Recibe alertas que te ayuden a reaccionar en tiempo y forma.
-- Obtén reportes gráficos para la toma de decisiones de toda tu información, con nuestra base de datos NSQL (Bigdata).
-
-Linkaform está indicado para empresas de cualquier giro que tengan múltiples sucursales o ubicaciones.
-
-.. card-carousel:: 2
-
-    .. card:: Tiendas de ropa
-
-        |clothes|
-
-    .. card:: Bancos
-
-        |bank|
-
-    .. card:: Ferreterías
-
-        |tools|
-        
-    .. card:: Restaurantes
-
-    .. card:: Farmacias
-
-    .. card:: Gasolineras
-
-    .. card:: Hospitales
-
-    .. card:: Franquicias
-
-    .. card:: Almacenes
-
-    .. card:: Granjas
-
-    .. card:: Supermercados
-
-    .. card:: Zapaterías
-
-.. hint:: La documentación está dividida en diferentes secciones, las cuales podrá acceder a través del menú lateral en el lado derecho de su pantalla. Aunque se sugiere seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
-
-En esta sección, encontrará una introducción detallada a las funcionalidades que ofrece Linkaform, así como toda la información necesaria para comprender y aprovechar al máximo su uso.
+.. hint:: La estructura de la documentación está organizada en secciones, accesibles desde el menú lateral ubicado a la derecha de su pantalla. Aunque se recomienda seguir un orden cronológico, las secciones están diseñadas para que pueda revisar un tema específico en cualquier momento.
 
 .. _perfiles:
 
