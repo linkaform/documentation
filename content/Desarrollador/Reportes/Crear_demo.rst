@@ -31,7 +31,7 @@ Dentro del :ref:`repositorio-servido` :octicon:`report;1em;sd-text-info` encontr
 .. important:: En las siguientes secciones se explicará el contenido de cada archivo. Sin embargo, considere que NO se tiene un estándar establecido para el contenido. No obstante, utilice los ejemplos como base para sus proyectos futuros.
 
 Estructura html
----------------
+===============
 
 El archivo ``html`` se encarga de establecer la estructura del reporte y facilitar la inclusión de archivos y bibliotecas externas que son necesarias. El archivo ``HTML`` se divide en tres partes: el ``head``, el ``body`` y las ``librerías``. 
 
@@ -40,7 +40,7 @@ A continuación, se presentan fragmentos de código HTML con explicaciones detal
 .. note:: El código completo se encuentra al final de la sección.
 
 head
-^^^^
+----
 
 El encabezado (``head``) contiene información y metadatos que influyen en la interpretación del navegador. También incluye enlaces a CDNs para bibliotecas de estilos como Bootstrap y Font Awesome (íconos), además de estilos propios de Linkaform.
 
@@ -74,7 +74,7 @@ Asegúrese de ajustar el contenido ubicado en la línea 7 según sus requerimien
 .. note:: Analice el código y lea los comentarios para comprender su funcionalidad.
 
 body
-^^^^
+----
 
 En el cuerpo (``body``) se establece la estructura visible del reporte, donde se definen elementos como cabeceras, títulos, gráficas, tablas, cards, entre otros. Se incluye todo lo necesario para establecer la estructura correspondiente a filtros y elementos donde la información se presentará. 
 
@@ -198,7 +198,7 @@ En el siguiente dropdown, encontrará el código del cuerpo de un reporte.
 A continuación, se detallan por bloques de código el cuerpo del reporte para indicar qué elementos se pueden personalizar.
 
 Header del reporte
-******************
+^^^^^^^^^^^^^^^^^^
 
 El primer bloque corresponde al encabezado del reporte. Su función principal es mostrar las siguientes opciones:
  
@@ -256,15 +256,15 @@ El primer bloque corresponde al encabezado del reporte. Su función principal es
 .. _estructura-elementos:
 
 Content del reporte
-*******************
+^^^^^^^^^^^^^^^^^^^
 
 El contenido (``content``) es la parte más importante de la estructura html; aquí se establecen los elementos que se utilizan para filtrar y representar la data. Dentro de ``content``, se encuentran bloques de código estandarizados que se explican a continuación.
 
 .. note:: Al final, podrá encontrar el bloque completo del contenido.
-
+ 
 El bloque ``Session`` contiene el inicio de sesión del reporte, es decir, cuando se intenta abrir desde :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
 
-.. seealso:: Revise la estructura del archivo js, en la función `window.onload <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` y lea los comentarios de la línea 36.
+.. seealso:: Revise la estructura del archivo js, en la `función window.onload <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` y lea los comentarios de la línea 36.
 
 .. tab-set::
 
@@ -346,6 +346,9 @@ El bloque ``title Demo``, es simplemente el título que diferencia al reporte, i
 
 .. attention:: Tenga en cuenta que este botón NO funciona si está accediendo con la ``URL local con datos demo``, para ello debe complementar la ``URL`` con el ``id_script``. Consulte :ref:`url-acceso` :octicon:`report;1em;sd-text-info`.
 
+Filtros
+*******
+
 El contenido ``Filters`` son las opciones de filtros para tratar la información, siendo las más comunes las ``Fechas Desde`` y ``Fecha Hasta``. 
 
 .. tab-set::
@@ -387,45 +390,301 @@ Modifique los filtros según sus necesidades. Añada o elimine filtros según se
 
 .. note:: En el ejemplo anterior, hay una tercera opción de filtro llamada ``Promotor`` (líneas 16-21). Solamente asegúrese de asignar un ``id`` descriptivo al elemento. El ``id firstParameters`` es utilizado para mostrar todos los filtros. Consulte la función `window.load <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` para conocer más detalles. 
 
+Elementos de representación
+***************************
+
 En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráficos, cards, o cualquier otro elemento donde se representará la data.
 
-.. note:: Todo elemento que se incluya debe estar dentro del contenedor ``div`` con la clase ``row`` (Líneas 2-14). 
+.. attention:: Todo elemento que se incluya debe estar dentro del contenedor ``div`` con la clase ``row``. 
 
 .. tab-set::
 
-    .. tab-item:: Estructura
+    .. tab-item:: Tablas
 
-        .. code-block:: html
-            :linenos:
-            :emphasize-lines: 2, 7-8, 10, 12, 14
+        Las tablas son generadas por la biblioteca |Tabulator-doc| :octicon:`report;1em;sd-text-info`, que permite la creación de tablas interactivas y dinámicas. Existen varios tipos de tablas. En este caso, se muestra la estructura de una tabla con filtros de datos en el encabezado, así como una tabla con filas anidadas.
 
-            <!--Content -->
-            <div class="row" style="margin-top:20px;"  id="divContent">
-                <!--Primer Elemento -->
-                <div class="col-sm-12 col-md-12 col-lg-12" style="align-items: center;overflow-y: scroll;">
-                    <section class="title_tables">
-                        <h3><span>Recepción Visitas</span>&nbsp;&nbsp;
-                            <button class="btn btn-primary" id="download_csv_firstElement"><i class="fa-solid fa-file-csv"></i></button>
-                            <button class="btn btn-success" id="download_xlsx_firstElement"><i class="fa-regular fa-file-excel"></i></button>
-                        </h3>
-                        <hr class="hrFirstElement">
-                    </section>
-                    <div id="firstElement" ></div>
-                </div>
-            </div>
+        .. warning:: En los resultados de los siguientes bloques de código se visualiza la estructura de las tablas (cómo se verían), sin embargo, la generación de su estructura se realiza en el `archivo data.js  <#archivo-data>`_ :octicon:`report;1em;sd-text-info`. Aquí simplemente se establecen títulos, opciones relacionadas con las mismas y se especifica que habrá una tabla.
+        
+        **Tabla con filtro**
 
-    .. tab-item:: Resultado
+        El siguiente bloque de código corresponde al título de la tabla y las opciones de descarga (``csv`` y ``xls``) de la información de una tabla. Estas funcionalidades son proporcionadas por la biblioteca |Tabulator| :octicon:`report;1em;sd-text-info`.
 
-        .. image:: /imgs/Reportes/Reportes13.png
+        .. tab-set::
 
-El bloque de código anterior corresponde a las opciones de descarga (``csv`` y ``xls``) de la información de una tabla. Estas funcionalidades son proporcionadas por la biblioteca |Tabulator| :octicon:`report;1em;sd-text-info`.
+            .. tab-item:: Estructura
 
-.. seealso:: Consulte la documentación oficial de |Tabulator-doc| :octicon:`report;1em;sd-text-info`. 
+                .. code-block:: html
+                    :linenos:
+                    :emphasize-lines: 2, 7-8, 10, 12, 14
 
-Puede modificar o añadir otras funcionalidades según su necesidad. Sin embargo, identifique y tenga precaución con el uso del atributo ``id`` (Líneas 7-8), ya que son utilizados por la biblioteca ``Tabulator`` para poblar con datos.
+                    <!--Content -->
+                    <div class="row" style="margin-top:20px;"  id="divContent">
+                        <!--Primer Elemento -->
+                        <div class="col-sm-12 col-md-12 col-lg-12" style="align-items: center;overflow-y: scroll;">
+                            <section class="title_tables">
+                                <h3><span>Recepción Visitas</span>&nbsp;&nbsp;
+                                    <button class="btn btn-primary" id="download_csv_firstElement"><i class="fa-solid fa-file-csv"></i></button>
+                                    <button class="btn btn-success" id="download_xlsx_firstElement"><i class="fa-regular fa-file-excel"></i></button>
+                                </h3>
+                                <hr class="hrFirstElement">
+                            </section>
+                            <div id="firstElement" ></div>
+                        </div>
+                    </div>
 
-.. warning:: El  código anterior para una tabla ya se encuentra estandarizada. Si necesita otra tabla, simplemente copie y pegue. Solo asegúrese de cambiar el ``id`` (Líneas 7, 8, 10, 12) por ``firstElement``, ``secondElement`` y así sucesivamente.
-  
+            .. tab-item:: Resultado
+
+                .. image:: /imgs/Reportes/Reportes13.png
+
+        **Tabla anidada**
+
+        Del mismo modo, el siguiente bloque de código corresponde al título de la tabla y las opciones de descarga. Observe el atributo ``id``
+
+        .. warning:: La función de descarga de CSV no admite encabezados de columnas agrupados, grupos de filas o cálculos de columnas, debido a la limitada forma de representar estos en datos CSV.
+        
+        .. tab-set::
+
+            .. tab-item:: Estructura
+
+                .. code-block:: html
+                    :linenos:
+                    :emphasize-lines: 2, 7-8, 10, 12, 14
+
+                    <!--Content -->
+                    <div class="row" style="margin-top:20px;"  id="divContent">
+                        <!--Segundo elemento-->
+                        <div class="col-sm-12 col-md-12 col-lg-12" style="align-items: center;overflow-y: scroll;">
+                            <section class="title_tables">
+                                <h3 ><span>Report</span>&nbsp;&nbsp;
+                                    <button  class="btn btn-primary" id="download_csv_secondElement"><i class="fa-solid fa-file-csv"></i></button>
+                                    <button  class="btn btn-success" id="download_xlsx_secondElement"><i class="fa-regular fa-file-excel"></i></button>
+                                </h3>
+                                <hr class="stock-HrsecondElement">
+                            </section>
+                            <div id="secondElement" > </div>
+                        </div>
+                    </div>
+
+            .. tab-item:: Resultado
+
+                .. image:: /imgs/Reportes/Reportes37.png
+    
+        .. attention:: 
+            
+            Identifique y tenga precaución con el uso del atributo ``id``, ya que son utilizados por la biblioteca ``Tabulator`` para poblar con datos.
+            
+            Los bloques de código anteriores para una tabla ya se encuentran estandarizados. Si necesita otra tabla, simplemente copie y pegue. Solo asegúrese de colocar el código dentro de la clase ``row`` y cambiar el ``id`` (Líneas 7, 8, 10, 12) por ``firstElement``, ``secondElement``, ``thirdElement`` y así sucesivamente.
+        
+    .. tab-item:: Cards
+
+        Una **card** (tarjeta) es un elemento visual que presenta información relevante de manera resumida y atractiva en un reporte. La mayoría de los reportes que utilizan tarjetas ya tienen una estructura mayormente estandarizada. Observe los ejemplos.
+        
+        .. important:: Asegúrese de colocar el código dentro de la clase ``row`` y cambiar los ``ids`` necesarios.
+
+        **Cards**
+
+        El siguiente bloque de código, podrá observar la estructura de seis tarjetas. 
+        
+        .. important:: Asegúrese de ajustar los títulos y los ids de los títulos y textos. Observe los comentarios dentro del código y el resultado.
+
+        .. tab-set::
+
+            .. tab-item:: Estructura
+
+                .. code-block:: html
+                    :linenos:
+                    :emphasize-lines: 10, 11, 23, 24, 36, 37, 51, 52, 64, 65, 77, 78
+
+                    <!-- Content-->
+                    <div class="row" style="margin-top:20px;" id="divContent">
+                        <!-- CARDS PRIMER NIVEL -->
+                        <!-- CARD 1 -->
+                        <div class="col-xs-12 col-md-12 col-lg-4 pr-0 mb-2 div-card">
+                            <div class="card card-stats mb-4 mb-xl-0 rounded-7">
+                                <div class="card-body plan_production_subcard_headerI">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="card-title text-uppercase text-dark mb-0" id="titleCard1">Card 1</h6> <!-- Título -->
+                                            <span class="h4 font-weight-bold mb-0 text-dark" id="textCard1">0</span> <!-- Texto (modificable) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARD 2 -->
+                        <div class="col-xs-12 col-md-12 col-lg-4 pr-0 mb-2 div-card">
+                            <div class="card card-stats mb-4 mb-xl-0 rounded-7">
+                                <div class="card-body plan_production_subcard_headerI">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="card-title text-uppercase text-dark mb-0"  id="titleCard2">Card 2</h6> <!-- Título -->
+                                            <span class="h4 font-weight-bold mb-0 text-dark" id="textCard2">0</span> <!-- Texto (modificable) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARD 3 -->
+                        <div class="col-xs-12 col-md-12 col-lg-4 pr-0 mb-2 div-card">
+                            <div class="card card-stats mb-4 mb-xl-0 rounded-7">
+                                <div class="card-body plan_production_subcard_headerI">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="card-title text-uppercase text-dark mb-0"  id="titleCard3">Card 3</h6> <!-- Título -->
+                                            <span class="h4 font-weight-bold mb-0 text-dark" id="textCard3">0</span> <!-- Texto (modificable) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARDS SEGUNDO NIVEL -->
+                        <!-- CARD 4 -->
+                        <div class="col-xs-12 col-md-12 col-lg-4 pr-0 mb-2 div-card">
+                            <div class="card card-stats mb-4 mb-xl-0 rounded-7">
+                                <div class="card-body plan_production_subcard_headerI">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="card-title text-uppercase text-dark mb-0"  id="titleCard4">Card 4</h6> <!-- Título -->
+                                            <span class="h4 font-weight-bold mb-0 text-dark" id="textCard4">0</span> <!-- Texto (modificable) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARD 5 -->
+                        <div class="col-xs-12 col-md-12 col-lg-4 pr-0 mb-2 div-card">
+                            <div class="card card-stats mb-4 mb-xl-0 rounded-7">
+                                <div class="card-body plan_production_subcard_headerI">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="card-title text-uppercase text-dark mb-0"  id="titleCard5">Card 5</h6> <!-- Título -->
+                                            <span class="h4 font-weight-bold mb-0 text-dark" id="textCard5">0</span> <!-- Texto (modificable) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARD 6 -->
+                        <div class="col-xs-12 col-md-12 col-lg-4 pr-0 mb-2 div-card">
+                            <div class="card card-stats mb-4 mb-xl-0 rounded-7">
+                                <div class="card-body plan_production_subcard_headerI">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="card-title text-uppercase text-dark mb-0"  id="titleCard6">Card 6</h6> <!-- Título -->
+                                            <span class="h4 font-weight-bold mb-0 text-dark" id="textCard6">0</span> <!-- Texto (modificable) -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            .. tab-item:: Resultado
+
+                .. image:: /imgs/Reportes/Reportes38.png
+
+        **Indicador gauge**
+
+        Un **indicador gauge** tiene el propósito de mostrar visualmente un valor numérico en relación con un rango específico o un objetivo. Aunque el **indicador gauge** tiene una apariencia similar a una card, esta utiliza la biblioteca |plotly| :octicon:`report;1em;sd-text-info` para su funcionamiento.
+
+        El siguiente código contiene la estructura de dos tarjetas y un **indicador gauge**. Revise los comentarios dentro del código.
+
+        .. attention:: Asegúrese de ajustar los títulos, iconos (si los necesita), IDs de los títulos y textos. Observe los comentarios dentro del código y el resultado.
+
+        .. tab-set::
+
+            .. tab-item:: Estructura
+
+                .. code-block:: html
+                    :linenos:
+                    :emphasize-lines: 5, 9-11, 17, 21-23, 29, 32, 34
+
+                    <div class="row" style="margin-top:20px;" id="divContent">
+                        <!-- CARDS-->
+                        <div class="col-sm-12 col-md-12 col-lg-12 row" style="margin:auto;">
+                            <!-- CARD1-->
+                            <div class="col-sm-12 col-md-4 col-lg-4" id="div_alert1"> <!-- Identificador de la card-->
+                                <div class="card border-info m-2">
+                                    <div class="card-body" style="margin:auto;">
+                                        <center>
+                                            <h2 class="card-title">Total de Ajustes Entrantes</h2> <!-- Título -->
+                                            <p class="card-text" style="font-size: 25px;" id="textAlert1">0</p> <!-- Texto (modificable) -->
+                                            <i class="fas fa-building" style="font-size:30px;"></i> <!-- Ícono (opcional) -->
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD2-->
+                            <div class="col-sm-12 col-md-4 col-lg-4" id="div_alert2"> <!-- Identificador de la card-->
+                                <div class="card border-info m-2" >
+                                    <div class="card-body" style="margin:auto;">
+                                        <center>
+                                            <h2 class="card-title">Total de Ajustes Salientes</h2> <!-- Título -->
+                                            <p class="card-text" style="font-size: 25px;" id="textAlert2">0</p> <!-- Texto (modificable) -->
+                                            <i class="fas fa-check" style="font-size:30px;"></i> <!-- Ícono (opcional) -->
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 3 (Indicador gauge)-->
+                            <div class="col-sm-12 col-md-4 col-lg-4" id="div_alert3"> <!-- Identificador de la card-->
+                                <div class="card border-info m-2" >
+                                    <div class="card card_border_none">
+                                    <div id='gaugeFirst' style="margin:auto;align-items: center;"></div> <!-- Identificador del gauge -->
+                                    <div style="text-align:center;">
+                                        <span class="text-dark" id="text_gaugeFirst"></span> <!-- Texto (modificable) -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+            .. tab-item:: Resultado
+
+                .. image:: /imgs/Reportes/Reportes39.png
+
+
+    .. tab-item:: Gráficos
+
+        Un gráfico proporciona una representación visual de datos o información. Su propósito es facilitar la comprensión y el análisis de datos mediante representaciones visuales, lo que permite identificar patrones, tendencias y relaciones de manera rápida y clara. 
+
+        Para el desarrollo de un gráfico, se utiliza la biblioteca |chartjs| :octicon:`report;1em;sd-text-info`. Aunque existen muchos tipos de gráficos, en el siguiente ejemplo se presenta una gráfica de barras, la cual es la más utilizada en reportes.
+
+        .. important:: Asegúrese de colocar el código dentro de la clase ``row`` y cambiar los ``ids`` necesarios.
+
+        El siguiente bloque de código presenta la definición del *canvas* y el contenedor donde se presentará la gráfica. Considere lo siguiente:
+
+        - Aunque no es recomendable utilizar estilos en línea, incluya el atributo ``overflow-y: scroll;`` para indicar que el elemento debe desplazarse verticalmente si excede el espacio disponible dentro del contenedor para que el diseño no se vea afectado.        
+        - Independientemente del número de elementos que ocupe dentro del ``divContent`` (contenedor de los elementos), asegúrese de que el id de su elemento tenga un orden. Por ejemplo, en el siguiente bloque de código, la gráfica ocupará el primer lugar, por lo tanto, su id es ``firstElemento``. Si tiene otra gráfica, card o tabla, llevará el número de elemento del lugar que tiene dentro del **DOM**.
+        - Asegúrese de establecer un ancho y alto fijo al contenedor de la gráfica en base al contenedor padre (línea 4).
+        - Asegúrese de aplicar un **ID** claro al canvas para dibujar el gráfico. Este también puede llevar un orden en caso de tener más de una gráfica.(línea 5)
+
+        .. note:: Recuerde que la estructura y el relleno de la gráfica, así como cualquier otro elemento, se especifican en el archivo `data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`.
+
+        .. tab-set::
+
+            .. tab-item:: Estructura
+
+                .. code-block:: html
+                    :linenos:
+                    :emphasize-lines: 3, 4, 6
+
+                    <!-- Content -->
+                    <div class="row" style="margin-top:20px;" id="divContent">
+                        <div class="col-sm-12 col-md-12 col-lg-12 div_class mt-2" style="align-items: center; overflow-y: scroll;"> <!-- Scroll -->
+                            <div id="firstElement"> <!-- Identificador del contenedor de la gráfica -->
+                                <div style="width: 1000px;height: 500px;margin: auto;">
+                                    <canvas id="graphicFirst"></canvas> <!-- Identificador del gráfico -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            .. tab-item:: Resultado
+
+                .. image:: /imgs/Reportes/Reportes40.png
+
 .. dropdown:: Código content
 
     .. code-block:: html
@@ -508,9 +767,9 @@ Puede modificar o añadir otras funcionalidades según su necesidad. Sin embargo
         </div>
 
 Librerías
-^^^^^^^^^
+---------
 
-Este bloque se localiza en la sección final de la etiqueta ``body``, donde se especifican las rutas de los archivos JavaScript para las bibliotecas utilizadas en las funcionalidades del reporte. Entre estas bibliotecas se incluyen ``Tabulator``, ``Chart.js``, ``jQuery``, ``Bootstrap``, ``Select2``, así como los ``Utils`` de Linkaform y ``Servido``. Además, se especifica la ubicación de los archivos JavaScript encargados de procesar y mostrar la información. 
+Este bloque se localiza en la sección final de la etiqueta ``body``, donde se especifican las rutas de los archivos JavaScript para las bibliotecas utilizadas en las funcionalidades del reporte. Entre estas bibliotecas se incluyen ``Tabulator``, ``Chart.js``, ``jQuery``, ``Bootstrap``, ``Select2``, ``Plotly``, así como los ``Utils`` de Linkaform y ``Servido``. Además, se especifica la ubicación de los archivos JavaScript encargados de procesar y mostrar la información. 
 
 .. note:: Los ``Utils`` son funciones propias de Linkaform, que se emplean para ciertas tareas como descargas de gráficos, imágenes, enviar peticiones al backend, entre otras.
 
@@ -545,6 +804,9 @@ Regularmente, los *links* no cambian, a excepción de la llamada de sus ``archiv
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!-- Jquery Gauge -->
+    <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
 
 A excepción de ``utils``, aquí se encuentran algunas librerías minificadas, como ``chroma``, que permite crear paletas de colores automáticamente, útil cuando se necesitan ciertos colores para gráficos. Además, la librería ``sweetalert2`` permite crear alertas atractivas y personalizadas.
 
@@ -757,7 +1019,7 @@ En la siguiente pestaña desplegable, encontrará el código de un archivo HTML.
 .. _estructura-js:
 
 Estructura js
--------------
+=============
 
 El archivo ``js`` en ``Servido`` contiene la lógica encargada de gestionar las solicitudes a la *API de Linkaform*, así como de procesar y presentar la información correspondiente en la estructura establecida.
 
@@ -854,7 +1116,7 @@ El siguiente bloque de código corresponde a métodos de ``jQuery``,  se utiliza
 .. _funcion-window-onload:
 
 Función ``window.onload``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 La función ``window.onload()`` se activa siempre que la pantalla se carga por completo. Además, procesa los parámetros de la ``URL`` para actualizar los elementos del reporte en función a esos parámetros. También se encarga de manipular el contenido de los filtros mediante el ``ID`` de los elementos.
 
@@ -1000,7 +1262,7 @@ Si el parámetro ``scriptId`` es *nulo*, el entorno se configurará como ``demo`
     }
 
 Función ``unHideReportElements``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 La siguiente función ``unHideReportElements()`` se encarga de mostrar los elementos específicos en la página que son necesarios para el reporte al iniciar sesión. Lea los comentarios.
 
@@ -1023,22 +1285,22 @@ La siguiente función ``unHideReportElements()`` se encarga de mostrar los eleme
     loading.style.display = 'none';
 
 Función ``loadDemoData``
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 La función ``loadDemoData()`` está diseñada para cargar datos de demostración y otros elementos como tablas y gráficos en el reporte.
 
 .. attention:: Esta es una de las funciones más importantes que debe adaptar. Continuando con el ejemplo del reporte que hemos seguido desde el principio, encontrará únicamente el código correspondiente a una tabla dentro del siguiente bloque de código. Sin embargo, después de este bloque, verá un ejemplo en caso de incluir algún otro elemento como gráficos.
 
-Observe que en la línea 11 se llama a la función ``getDrawTable``, la cual se utiliza para para obtener datos y elementos de una tabla, enviando los siguientes cuatro parámetros:
+Observe que en la línea 11 se llama a la función ``getDrawTable``, la cual se utiliza para obtener datos y elementos de una tabla, enviando los siguientes cuatro parámetros:
 
 - **firstElement**: Es el ``ID`` del div donde se necesita colocar la tabla.
 - **columsTable1**: Variable que contiene un array de objetos que representan las columnas de la tabla (biblioteca de tablas Tabulator).
 
-.. seealso:: Consulte el archivo data.js, donde está ubicada la variable mencionada anteriormente.
-
+.. seealso:: Consulte el `archivo data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`, donde está ubicada la variable mencionada anteriormente.
+ 
 - **dataTable1**: Variable que contiene un array de objetos que representan los datos de la tabla. Recuerde que, dado que es un reporte demo, se llena con información ficticia que no se extrae de la base de datos con registros reales.
 
-.. seealso:: Consulte el archivo data.js, donde está ubicada la variable que se mencionó anteriormente. 
+.. seealso:: Consulte el `archivo data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`, donde está ubicada la variable mencionada anteriormente.
 
 - **350**: Es la altura máxima en píxeles que medirá la tabla.
 
@@ -1062,7 +1324,7 @@ Observe que en la línea 11 se llama a la función ``getDrawTable``, la cual se 
     }
 
 Función ``setDate``
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 La función ``setDate()`` está diseñada para establecer valores iniciales en los filtros de tipo fecha del reporte. Estos son los inputs con los IDs ``date_to`` y ``date_from`` que existen en la estructura de los filtros establecidos en el archivo HTML. Lea los comentarios del código. 
 
@@ -1096,7 +1358,7 @@ La función ``setDate()`` está diseñada para establecer valores iniciales en l
     }
 
 Función ``get_catalog``
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 La función ``get_catalog()`` se encarga de realizar una petición (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 5) para traer la data única de un catálogo. Por favor, lea detenidamente los comentarios.
 
@@ -1152,7 +1414,7 @@ Cada usuario que inicia sesión en su cuenta tiene un token (``Jwt``) línea 13,
     }
 
 Función ``runFirstElement``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`` de los filtros. Obtiene las referencias de los filtros para validar que no estén vacíos (línea 10) y poder traer la data correspondiente (línea 12). Por favor, continue leyendo los comentarios dentro del código.
 
@@ -1187,7 +1449,7 @@ La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`
 .. _funcion-getFirstElement:
 
 Función ``getFirstElement``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 En términos generales, la función ``getFirstElement()`` obtiene los parámetros de los filtros y presenta datos dinámicos del servidor en los elementos del reporte.
 
@@ -1284,7 +1546,7 @@ Observe la línea de código número 40, llama a la `función getDrawTable <#fun
 .. _funcion-getDrawTable:
 
 Función ``getDrawTable``
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 La función ``getDrawTable()`` se utiliza para dibujar y configurar la tabla interactiva utilizando la biblioteca |Tabulator-doc| :octicon:`report;1em;sd-text-info`. Proporciona opciones para descargar los datos de la tabla en formatos ``XLSX`` y ``CSV``. A continuación, se describe el flujo de la función de manera general:
 
@@ -1350,7 +1612,7 @@ En los bloques de código (18-27, 29-38) verifica si existe un elemento del DOM 
 .. _archivo-data:
 
 Estructura data.js
-------------------
+==================
 
 La estructura de un archivo ``data.js`` en ``Servido`` tiene el propósito de albergar configuraciones de las librerías utilizadas en el reporte. Es utilizado para proporcionar datos de relleno de tablas, gráficos y otros elementos y visualizar cómo se verá el reporte cuando se complete con datos reales. A continuación, se detalla más acerca de la estructura de un archivo ``data.js``. Al final, encontrará el código completo:
 
@@ -1507,7 +1769,7 @@ En esta sección ha aprendido lo necesario para desarrollar sus reportes demo. P
 
 .. |Tabulator| raw:: html
 
-   <a href="https://tabulator.info/docs/5.5/download" target="_blank">Tabulator</a>
+   <a href="https://tabulator.info/docs/5.6/download" target="_blank">Tabulator Download Data</a>
 
 .. |Tabulator-doc| raw:: html
 
@@ -1515,15 +1777,15 @@ En esta sección ha aprendido lo necesario para desarrollar sus reportes demo. P
 
 .. |Tabulator-proprieties| raw:: html
 
-   <a href="https://tabulator.info/examples/5.5" target="_blank">opciones de tablas</a>
+   <a href="https://tabulator.info/examples/5.6" target="_blank">opciones de tablas</a>
 
 .. |Tabulator-format-link| raw:: html
 
-   <a href="https://tabulator.info/docs/5.5/format#formatter-link" target="_blank">formateador de tabla con url</a>
+   <a href="https://tabulator.info/docs/5.6/format#formatter-link" target="_blank">formateador de tabla con url</a>
 
 .. |Tabulator-format| raw:: html
 
-   <a href="https://tabulator.info/docs/5.5/format" target="_blank">formatear tablas</a>
+   <a href="https://tabulator.info/docs/5.6/format" target="_blank">formatear tablas</a>
 
 .. |minificadas| raw:: html
 
@@ -1532,3 +1794,12 @@ En esta sección ha aprendido lo necesario para desarrollar sus reportes demo. P
 .. |sweetalert2| raw:: html
 
    <a href="https://sweetalert2.github.io/" target="_blank">SweetAlert2</a>
+
+.. |plotly| raw:: html
+
+   <a href="https://plotly.com/javascript/" target="_blank">plotly</a>
+
+.. |chartjs| raw:: html
+
+   <a href="https://www.chartjs.org/docs/latest/" target="_blank">chartjs</a>
+
