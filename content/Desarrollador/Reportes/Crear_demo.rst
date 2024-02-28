@@ -258,7 +258,7 @@ El primer bloque corresponde al encabezado del reporte. Su función principal es
 Content del reporte
 ^^^^^^^^^^^^^^^^^^^
 
-El contenido (``content``) es la parte más importante de la estructura html; aquí se establecen los elementos que se utilizan para filtrar y representar la data. Dentro de ``content``, se encuentran bloques de código estandarizados que se explican a continuación.
+El contenido (``content``) es la parte más importante de la estructura html; aquí se establecen los elementos que se utilizan para filtrar y representar la data. Dentro de ``content``, se encuentran bloques de código mayormente estandarizados que se explican a continuación.
 
 .. note:: Al final, podrá encontrar el bloque completo del contenido.
  
@@ -390,20 +390,26 @@ Modifique los filtros según sus necesidades. Añada o elimine filtros según se
 
 .. note:: En el ejemplo anterior, hay una tercera opción de filtro llamada ``Promotor`` (líneas 16-21). Solamente asegúrese de asignar un ``id`` descriptivo al elemento. El ``id firstParameters`` es utilizado para mostrar todos los filtros. Consulte la función `window.load <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` para conocer más detalles. 
 
+.. _elementos-rep:
+
 Elementos de representación
 ***************************
 
 En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráficos, cards, o cualquier otro elemento donde se representará la data.
 
-.. attention:: Todo elemento que se incluya debe estar dentro del contenedor ``div`` con la clase ``row``. 
+.. attention:: 
+    
+    - Todo elemento que se incluya debe estar dentro del contenedor ``div`` con la clase ``row`` y el id ``divContent``. 
+
+    - Independientemente del número de elementos que ocupe dentro del **divContent** (contenedor de los elementos), asegúrese de que el **id** de su elemento tenga un orden. 
 
 .. tab-set::
 
     .. tab-item:: Tablas
 
-        Las tablas son generadas por la biblioteca |Tabulator-doc| :octicon:`report;1em;sd-text-info`, que permite la creación de tablas interactivas y dinámicas. Existen varios tipos de tablas. En este caso, se muestra la estructura de una tabla con filtros de datos en el encabezado, así como una tabla con filas anidadas.
+        Las **tablas** son generadas por la biblioteca |Tabulator-doc| :octicon:`report;1em;sd-text-info`, que permite la creación de tablas interactivas y dinámicas. Existen varios tipos de tablas. En este caso, se muestra la estructura de una tabla con filtros de datos en el encabezado, así como una tabla con filas anidadas.
 
-        .. warning:: En los resultados de los siguientes bloques de código se visualiza la estructura de las tablas (cómo se verían), sin embargo, la generación de su estructura se realiza en el `archivo data.js  <#archivo-data>`_ :octicon:`report;1em;sd-text-info`. Aquí simplemente se establecen títulos, opciones relacionadas con las mismas y se especifica que habrá una tabla.
+        .. warning:: En los resultados de los siguientes ejemplos se visualiza la estructura completa de las tablas (cómo se verían), sin embargo, la generación de su estructura se realiza en el `archivo data.js  <#archivo-data>`_ :octicon:`report;1em;sd-text-info`. Aquí simplemente se establecen títulos, opciones relacionadas con las mismas y se especifica que habrá una tabla.
         
         **Tabla con filtro**
 
@@ -415,7 +421,7 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
 
                 .. code-block:: html
                     :linenos:
-                    :emphasize-lines: 2, 7-8, 10, 12, 14
+                    :emphasize-lines: 2, 7-8, 10, 12
 
                     <!--Content -->
                     <div class="row" style="margin-top:20px;"  id="divContent">
@@ -440,15 +446,18 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
 
         Del mismo modo, el siguiente bloque de código corresponde al título de la tabla y las opciones de descarga. Observe el atributo ``id``
 
-        .. warning:: La función de descarga de CSV no admite encabezados de columnas agrupados, grupos de filas o cálculos de columnas, debido a la limitada forma de representar estos en datos CSV.
-        
+        .. warning:: 
+
+            - La función de descarga de CSV no admite encabezados de columnas agrupados, grupos de filas o cálculos de columnas, debido a la limitada forma de representar estos en datos CSV.
+            - Para descargar los registros de una tabla anidada en un archivo **xls**, debe expandir todas las filas que desee extraer; de lo contrario, solo podrá descargar el registro del primer nivel.
+
         .. tab-set::
 
             .. tab-item:: Estructura
 
                 .. code-block:: html
                     :linenos:
-                    :emphasize-lines: 2, 7-8, 10, 12, 14
+                    :emphasize-lines: 2, 7-8, 10, 12
 
                     <!--Content -->
                     <div class="row" style="margin-top:20px;"  id="divContent">
@@ -471,21 +480,23 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
     
         .. attention:: 
             
-            Identifique y tenga precaución con el uso del atributo ``id``, ya que son utilizados por la biblioteca ``Tabulator`` para poblar con datos.
+            Identifique y tenga precaución con el uso del atributo ``id`` de los botones (líneas 7-8), ya que son utilizados por la biblioteca ``Tabulator`` para poblar con datos.
             
-            Los bloques de código anteriores para una tabla ya se encuentran estandarizados. Si necesita otra tabla, simplemente copie y pegue. Solo asegúrese de colocar el código dentro de la clase ``row`` y cambiar el ``id`` (Líneas 7, 8, 10, 12) por ``firstElement``, ``secondElement``, ``thirdElement`` y así sucesivamente.
-        
+            Los bloques de código anteriores ya se encuentran mayormente estandarizados. Si necesita otra tabla, simplemente copie y pegue, pero asegúrese de colocar el código dentro de la clase ``row`` y cambiar el ``id`` (Líneas 7, 8, 10, 12) por el número de elemento que ocupe dentro del ``divContent``. Por ejemplo, puede utilizar ``firstElement``, ``secondElement``, ``thirdElement`` y así sucesivamente.
+    
     .. tab-item:: Cards
 
         Una **card** (tarjeta) es un elemento visual que presenta información relevante de manera resumida y atractiva en un reporte. La mayoría de los reportes que utilizan tarjetas ya tienen una estructura mayormente estandarizada. Observe los ejemplos.
-        
-        .. important:: Asegúrese de colocar el código dentro de la clase ``row`` y cambiar los ``ids`` necesarios.
+   
+        .. attention:: 
 
+            - Asegúrese de colocar el código dentro de la clase ``row`` y cambiar los ``ids`` necesarios. 
+            - Si lo requiere, especifique el dato demo directamente en el ``span`` correspondiente o en la `función <#function-load>`_ :octicon:`report;1em;sd-text-info` necesaria.
+            - Para el uso de tarjetas, **no** es necesario especificar el número de elemento que representa dentro **divContent** debido a la simplicidad de representar un valor en específico. Es decir, regularmente, una tarjeta representa un solo valor y esta información se puede obtener de datos relacionados, como por ejemplo una tabla. Por lo tanto, realizar otra operación que dará el mismo resultado es innecesario. Dentro del mismo diccionario se puede calcular la información requerida.
+        
         **Cards**
 
-        El siguiente bloque de código, podrá observar la estructura de seis tarjetas. 
-        
-        .. important:: Asegúrese de ajustar los títulos y los ids de los títulos y textos. Observe los comentarios dentro del código y el resultado.
+        El siguiente bloque de código, podrá observar la estructura de seis tarjetas. Asegúrese de ajustar los títulos y los **ids** de los títulos y textos. Observe los comentarios dentro del código y el resultado.
 
         .. tab-set::
 
@@ -590,7 +601,7 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
 
         El siguiente código contiene la estructura de dos tarjetas y un **indicador gauge**. Revise los comentarios dentro del código.
 
-        .. attention:: Asegúrese de ajustar los títulos, iconos (si los necesita), IDs de los títulos y textos. Observe los comentarios dentro del código y el resultado.
+        .. attention:: Asegúrese de ajustar los títulos, iconos (si los necesita), **ids** de los títulos y textos. Observe los comentarios dentro del código y el resultado.
 
         .. tab-set::
 
@@ -647,7 +658,7 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
 
     .. tab-item:: Gráficos
 
-        Un gráfico proporciona una representación visual de datos o información. Su propósito es facilitar la comprensión y el análisis de datos mediante representaciones visuales, lo que permite identificar patrones, tendencias y relaciones de manera rápida y clara. 
+        Un **gráfico** proporciona una representación visual de datos o información. Su propósito es facilitar la comprensión y el análisis de datos mediante representaciones visuales, lo que permite identificar patrones, tendencias y relaciones de manera rápida y clara. 
 
         Para el desarrollo de un gráfico, se utiliza la biblioteca |chartjs| :octicon:`report;1em;sd-text-info`. Aunque existen muchos tipos de gráficos, en el siguiente ejemplo se presenta una gráfica de barras, la cual es la más utilizada en reportes.
 
@@ -655,10 +666,9 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
 
         El siguiente bloque de código presenta la definición del *canvas* y el contenedor donde se presentará la gráfica. Considere lo siguiente:
 
-        - Aunque no es recomendable utilizar estilos en línea, incluya el atributo ``overflow-y: scroll;`` para indicar que el elemento debe desplazarse verticalmente si excede el espacio disponible dentro del contenedor para que el diseño no se vea afectado.        
-        - Independientemente del número de elementos que ocupe dentro del ``divContent`` (contenedor de los elementos), asegúrese de que el id de su elemento tenga un orden. Por ejemplo, en el siguiente bloque de código, la gráfica ocupará el primer lugar, por lo tanto, su id es ``firstElemento``. Si tiene otra gráfica, card o tabla, llevará el número de elemento del lugar que tiene dentro del **DOM**.
-        - Asegúrese de establecer un ancho y alto fijo al contenedor de la gráfica en base al contenedor padre (línea 4).
-        - Asegúrese de aplicar un **ID** claro al canvas para dibujar el gráfico. Este también puede llevar un orden en caso de tener más de una gráfica.(línea 5)
+        - Aunque **no** es recomendable utilizar estilos en línea, incluya el atributo ``overflow-y: scroll`` (línea 3) para indicar que el elemento debe desplazarse verticalmente si excede el espacio disponible dentro del contenedor para que el diseño no se vea afectado.        
+        - Asegúrese de establecer un ancho y alto fijo al contenedor de la gráfica en base al contenedor padre (línea 5).
+        - Asegúrese de aplicar un ``id`` claro al *canvas* para dibujar el gráfico. Este también puede llevar un orden en caso de tener más de una gráfica (línea 6).
 
         .. note:: Recuerde que la estructura y el relleno de la gráfica, así como cualquier otro elemento, se especifican en el archivo `data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`.
 
@@ -668,7 +678,7 @@ En el bloque ``Content``, se incluyen elementos del reporte como tablas, gráfic
 
                 .. code-block:: html
                     :linenos:
-                    :emphasize-lines: 3, 4, 6
+                    :emphasize-lines: 3, 4, 5, 6
 
                     <!-- Content -->
                     <div class="row" style="margin-top:20px;" id="divContent">
@@ -1021,9 +1031,13 @@ En la siguiente pestaña desplegable, encontrará el código de un archivo HTML.
 Estructura js
 =============
 
-El archivo ``js`` en ``Servido`` contiene la lógica encargada de gestionar las solicitudes a la *API de Linkaform*, así como de procesar y presentar la información correspondiente en la estructura establecida.
+El archivo ``js`` en ``Servido`` contiene la lógica encargada de gestionar las solicitudes a la **API de Linkaform**, así como de procesar y presentar la información correspondiente en la estructura establecida.
 
-Observe el siguiente bloque de código, el cual representa de manera general las variables y funciones principales que componen al archivo ``js``. Sin embargo, en contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar. Por favor, vaya comparando los ``IDs`` y ``clases`` usadas con el archivo HTML para comprender el funcionamiento.
+Observe el siguiente bloque de código, el cual representa de manera general las variables y funciones principales que componen al ``archivo js``. 
+
+.. attention:: Tenga en cuenta que el siguiente código está basado en un ejemplo para un reporte específico con una tabla. Sin embargo, consulte las tabs para identificar el funcionamiento para elementos como **cards** o **gráficos**.
+
+En el contenido posterior podrá encontrar detalles sobre las funciones más relevantes, resaltando los elementos que puede personalizar. Por favor, compare los ``ids`` y ``clases`` usadas con el archivo HTML para comprender el funcionamiento.
 
 .. note:: Regularmente, las variables y funciones que no tienen ningún comentario como título contienen código genérico que rara vez se modifica; por lo tanto, se mantienen sin cambios.
 
@@ -1081,9 +1095,12 @@ Observe el siguiente bloque de código, el cual representa de manera general las
     function get_catalog(){ ...
     };
 
-Las siguientes variables globales, pertenecientes a la cuenta que ingrese al reporte y que son parte de la *cookie*, se utilizan en el archivo ``servido_utils``.
+Variables globales y métodos
+----------------------------
 
-.. caution:: Las variables no se modifican. 
+Las variables globales siguientes se utilizan para retener información asociada a la cuenta que accede al reporte o al script y forman parte de las **cookies**. Estas variables se utilizan en el archivo ``servido_utils``.
+
+.. warning:: Las variables no se modifican. 
 
 .. code-block:: javascript
     :linenos:
@@ -1097,21 +1114,33 @@ Las siguientes variables globales, pertenecientes a la cuenta que ingrese al rep
     let userParentId = null; //Id de la cuenta padre
     let scriptId = null; //Script del reporte
 
-El siguiente bloque de código corresponde a métodos de ``jQuery``,  se utiliza para manipular el *DOM* de la página. Específicamente, oculta varios elementos visuales antes de cualquier interacción con el reporte. Lo hace tanto por su identificador único (ID) como por su clase. Por favor, revise los comentarios dentro del código.
+El siguiente bloque de código corresponde a métodos de ``jQuery``,  se utiliza para manipular el **DOM** de la página. Específicamente, oculta varios elementos visuales antes de cualquier interacción con el reporte. Lo hace tanto por su identificador único (id) como por su clase. 
+
+Independientemente del número de elementos en su reporte, incluya los elementos que debe ocultar. O en su defecto, si no tiene elementos agrupados, oculte según lo requiera. Por favor, revise los comentarios dentro del código.
 
 .. code-block:: javascript
-    :linenos:
+            :linenos:
 
-    $('#divOptions').hide(); // Oculta el elemento con ID "divOptions"
-    $('#title_report').hide(); // Oculta el elemento con ID "title_report"
-    $('.title_tables').hide(); // Oculta todos los elementos con la clase "title_tables"
+            $('#divOptions').hide(); // Oculta el elemento con ID "divOptions" (botón Run)
+            $('#title_report').hide(); // Oculta el elemento con ID "title_report" (título del reporte)
+            $('.title_tables').hide(); // Oculta el elemento con ID "title_tables" (Título de las tablas) 
 
-    // Llama a la función para ocultar elementos con IDs específicos
-    hideElement("title_demo");
-    hideElement("firstParameters");
-    hideElement("firstElement");
-    hideElement("secondElement");
-    hideElement("thirdElement");
+            // Oculta el elementos con la identificación proporcionada para que no se muestre en la pantalla.
+            hideElement("title_demo"); // Oculta el elemento con ID "title_demo" (titulo que especifica que el reporte contiene datos demo)
+            hideElement("firstParameters"); // Oculta el elemento con ID "firstParameters" (botón de filtros)
+            hideElement("firstElement"); // Oculta el primer elemento del reporte
+
+            // Ajuste el numero de elementos de su reporte
+            hideElement("secondElement"); // Oculta el segundo elemento del reporte
+            hideElement("thirdElement"); // Oculta el tercer elemento del reporte
+            hideElement("fourthElement"); // Oculta el cuarto elemento del reporte
+            hideElement("thirdElement"); // Oculta el quinto elemento del reporte
+            hideElement("fiveElement"); // Oculta el sexto elemento del reporte
+            
+            // Oculta elemento por elemento 
+            hideElement("div_alert1"); // Card1
+            hideElement("div_alert2"); // Card2 línea 5) para traer la data única de un catálogo. Por favor, lea detenidamente los comentarios.
+            hideElement("div_alert3"); // Card3
 
 .. _funcion-window-onload:
 
@@ -1210,8 +1239,8 @@ Si el parámetro ``scriptId`` es *nulo*, el entorno se configurará como ``demo`
     userParentId = getCookie("userParentId");
 
     // Oculta elementos con los IDs "close_sesion" y "firstParameters".
-    hideElement("close_sesion");
-    hideElement("firstParameters");
+    hideElement("close_sesion"); // opción para cerrar sesión.
+    hideElement("firstParameters");// opción para mostrar filtros.
 
     // Verifica si las cookies "userId" y "userJwt" no están vacías o si "scriptId" es nulo.
     if(us != "" && jw != "" || scriptId===null){
@@ -1284,44 +1313,93 @@ La siguiente función ``unHideReportElements()`` se encarga de mostrar los eleme
     // Oculta visualmente el elemento seleccionado estableciendo su propiedad de estilo 'display' en 'none'.
     loading.style.display = 'none';
 
+.. _function-load:
+
 Función ``loadDemoData``
 ------------------------
 
-La función ``loadDemoData()`` está diseñada para cargar datos de demostración y otros elementos como tablas y gráficos en el reporte.
+La función ``loadDemoData()`` está diseñada para cargar datos de demostración y otros elementos como tablas, tarjetas y gráficas en el reporte.
 
-.. attention:: Esta es una de las funciones más importantes que debe adaptar. Continuando con el ejemplo del reporte que hemos seguido desde el principio, encontrará únicamente el código correspondiente a una tabla dentro del siguiente bloque de código. Sin embargo, después de este bloque, verá un ejemplo en caso de incluir algún otro elemento como gráficos.
+.. attention:: Esta es una de las funciones más importantes que debe adaptar. Revise las siguientes pestañas que ejemplifican escenarios con diferentes elementos. Considere los mismos ejemplos que en los `elementos de representación <#elementos-rep>`_ :octicon:`report;1em;sd-text-info`, a medida que avance revise y compare **ids** y **clases** del código con la documentación.
 
-Observe que en la línea 11 se llama a la función ``getDrawTable``, la cual se utiliza para obtener datos y elementos de una tabla, enviando los siguientes cuatro parámetros:
+.. tab-set::
 
-- **firstElement**: Es el ``ID`` del div donde se necesita colocar la tabla.
-- **columsTable1**: Variable que contiene un array de objetos que representan las columnas de la tabla (biblioteca de tablas Tabulator).
+    .. tab-item:: Tablas
 
-.. seealso:: Consulte el `archivo data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`, donde está ubicada la variable mencionada anteriormente.
- 
-- **dataTable1**: Variable que contiene un array de objetos que representan los datos de la tabla. Recuerde que, dado que es un reporte demo, se llena con información ficticia que no se extrae de la base de datos con registros reales.
+        En esta pestaña encontrará únicamente el código correspondiente a una tabla.
 
-.. seealso:: Consulte el `archivo data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`, donde está ubicada la variable mencionada anteriormente.
+        Observe que en la línea 11 se llama a la `función getDrawTable <#funcion-getDrawTable>`_ :octicon:`report;1em;sd-text-info`, la cual se utiliza para obtener datos y elementos de una tabla, enviando los siguientes cuatro parámetros:
 
-- **350**: Es la altura máxima en píxeles que medirá la tabla.
+        - **firstElement**: Id de la tabla.
+        - **columsTable1**: Variable que contiene un array de objetos que representan las columnas de la tabla (biblioteca de tablas Tabulator).
 
-.. code-block:: javascript
-    :linenos:
-    :emphasize-lines: 11
+        .. seealso:: Consulte el `archivo data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`, donde está ubicada la variable mencionada anteriormente.
+            
+        - **dataTable1**: Variable que contiene un array de objetos que representan los datos de la tabla. Recuerde que, dado que es un reporte demo, se llena con información ficticia que no se extrae de la base de datos con registros reales.
 
-    //-----DEMO 
-    // Detecta si el entorno es la demo, en caso de serlo muestra ciertos elementos pertenecientes al mismo.
-    function loadDemoData(){ 
-    $('.title_tables').show();// Muestra todos los elementos con la clase "title_tables". En este caso, el titulo de la o las tablas (dependiendo de cuantas tablas haya establecido).
-    unhideElement("title_demo")// Muestra el elemento con la clase "title_demo". En este caso, coloca "Demo data" debajo del titulo del reporte para indicar que es un reporte de demostración.
-    
-    // Restablece la propiedad "display" (eliminar la propiedad display del estilo del elemento) para mostrar y permitir que el elemento con el ID "firstParameters" (opciones y botones de filtros) force a la regla de estilo predeterminada o hojas de estilo externas a abarcar todo el espacio de la página.
-    document.getElementById("firstParameters").style.removeProperty('display');
+        .. seealso:: Consulte el `archivo data.js <#archivo-data>`_ :octicon:`report;1em;sd-text-info`, donde está ubicada la variable mencionada anteriormente.
 
-    // Llama a la función "getDrawTable" para obtener y mostrar una tabla.
-    getDrawTable('firstElement', columsTable1, dataTable1, 350);
-    // Restablece la propiedad "display" (eliminar la propiedad display del estilo del elemento) para mostrar y permitir que el elemento con el ID "firstElement" (tabla) force a abarcar todo el espacio de la página.
-    document.getElementById("firstElement").style.removeProperty('display');
-    }
+        - **350**: Es la altura máxima en píxeles que medirá la tabla.
+
+        .. code-block:: javascript
+            :linenos:
+            :emphasize-lines: 11
+
+            //-----DEMO 
+            // Verifica si el entorno es la demo, en caso de serlo muestra ciertos elementos pertenecientes al mismo.
+            function loadDemoData(){ 
+            unhideElement("title_demo")// Muestra el elemento con la clase "title_demo". En este caso, coloca "Demo data" debajo del titulo del reporte para indicar que es un reporte de demostración.
+            $('.title_tables').show();// Muestra todos los elementos con la clase "title_tables". En este caso, el titulo de la o las tablas (dependiendo de cuantas tablas haya establecido).
+
+            // Restablece la propiedad "display" (elimina la propiedad display del estilo del elemento) para mostrar y permitir que el elemento con el ID "firstParameters" (opciones y botones de filtros) force a la regla de estilo predeterminada a abarcar todo el espacio de la página.
+            document.getElementById("firstParameters").style.removeProperty('display');
+
+            // Llama a la función "getDrawTable" para obtener y mostrar una tabla.
+            getDrawTable('firstElement', columsTable1, dataTable1, 350);
+            // Restablece la propiedad "display" (eliminar la propiedad display del estilo del elemento) para mostrar y permitir que el elemento con el ID "firstElement" (tabla) force a abarcar todo el espacio de la página.
+            document.getElementById("firstElement").style.removeProperty('display');
+            }
+
+    .. tab-item:: Cards
+
+        En esta pestaña encontrará el código necesario para presentar datos de demostración para tarjetas (cards). Aunque anteriormente se recalcó que estos datos pueden aplicarse directamente en el ``span`` correspondiente.
+
+        Observe la línea de código 16, donde se llama a la `función getDrawGauge <#function-getDrawGauge>`_ :octicon:`report;1em;sd-text-info`, que se utiliza para obtener datos y elementos de un indicador Gauge. Esta función envía dos parámetros:
+
+        - **gaugeFirst**: Id de la tarjeta (indicador Gauge).
+        - **dataGauge1**: Variable que contiene la data del medidor.
+
+        .. code-block:: javascript
+            :linenos:
+            :emphasize-lines: 16
+
+            function loadDemoData(){
+            
+            unhideElement("title_demo"); // Muestra el titulo que especifica que es un reporte demo.
+            unhideElement("div_alert1"); // Muestra la tarjeta 1
+            unhideElement("div_alert2"); // Muestra la tarjeta 2
+            unhideElement("div_alert3"); // Muestra el indicador Gauge
+
+            // Restablece la propiedad "display" (elimina la propiedad display del estilo del elemento) para mostrar y permitir que el elemento con el ID "firstParameters" (opciones y botones de filtros) force a la regla de estilo predeterminada a abarcar todo el espacio de la página.
+            document.getElementById("firstParameters").style.removeProperty('display');
+
+            // Establecen su contenido de texto interno utilizando la propiedad innerText.
+            document.getElementById("textAlert1").innerText = 50;
+            document.getElementById("textAlert2").innerText = 10;
+
+            // Llama a la función getDrawGauge() 
+            getDrawGauge('gaugeFirst', dataGauge1)
+            document.getElementById("firstGauge").style.removeProperty('display');
+            }
+
+    .. tab-item:: Gráficos
+
+        En esta pestaña encontrará el código correspondiente a una gráfica.
+
+drawFirstElement(data1, setOptions1)
+document.getElementById("secondElement").style.removeProperty('display');
+document.getElementById("graphicFirst").style.removeProperty('display');
+
 
 Función ``setDate``
 -------------------
@@ -1360,58 +1438,74 @@ La función ``setDate()`` está diseñada para establecer valores iniciales en l
 Función ``get_catalog``
 -----------------------
 
-La función ``get_catalog()`` se encarga de realizar una petición (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 5) para traer la data única de un catálogo. Por favor, lea detenidamente los comentarios.
+La función ``get_catalog()`` se encarga de realizar una petición (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 5) al servidor para traer la data única de un catálogo. 
 
 .. caution:: La siguiente función está diseñada para realizar una petición para el selector ``Promotor`` (filtro) correspondiente a un catálogo. Puede usarla como referencia en caso de que necesite extraer información para un filtro de un catalogo. Consulte la sección :ref:`catalogo` :octicon:`report;1em;sd-text-info` para más detalles.
 
-.. seealso:: Revise el código del script en ``infosync_scripts`` que detalla más a cerca del ``option: 0`` ubicado en la línea 9. (FALTA REFERENCIAA)
-
 Cada usuario que inicia sesión en su cuenta tiene un token (``Jwt``) línea 13, el cual se envía en la petición del ``script``. Si el usuario tiene acceso al ``script``, ya sea porque se le compartió o pertenece al grupo de la cuenta padre, podrá ejecutarlo. En caso contrario, se le indicará a través de un mensaje que no tiene acceso y se le sugerirá iniciar sesión.
 
-.. code-block:: javascript
-    :linenos:
-    :emphasize-lines: 5, 9, 13
+.. seealso:: Consulte :ref:`visualizar-id-script` :octicon:`report;1em;sd-text-info` (línea 8).
 
-    //-----CATALOG
-    // Función para obtener datos de un catálogo a través de una solicitud fetch
-    function get_catalog(){ 
-    // Realiza una solicitud fetch usando el método POST
-    fetch(url + 'infosync/scripts/run/', {
-        method: 'POST',
-        body: JSON.stringify({ // Convierte a un JSON
-            script_id: 95556, // Id del script al que debe apuntar
-            option: 0, // Determina que consulta debe realizar, en este caso 0 le indica que debe realizar una consulta a un catalogo, en el caso de que fuera 1 seria una petición normal a la forma. 
-        }),
-        headers:{
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer '+userJwt
-        },
-        })
-        // Procesa la respuesta en formato JSON
-        .then(res => res.json())
-        .then(res => {
-        // Verifica si la petición fue exitosa (success = true)
-        if (res.success) {
-            // Verifica si hay elementos en el catálogo devuelto
-            if (res.response.catalog.length){
-            array_value = []
-            // Itera sobre los elementos del catálogo para extraer valores únicos
-            for (i = 0; i < res.response.catalog.length; i++) {
-                if (!array_value.includes(res.response.catalog[i]['63dc0f1ec29b8336b7b72615'])) {
-                array_value.push(res.response.catalog[i]['63dc0f1ec29b8336b7b72615'])
+Observe la condicional en el bloque de código entre las líneas 20-39. Aquí es donde se extrae la información del catálogo. Por favor, lea detenidamente los comentarios.
+
+.. seealso:: Recuerde colocar el **id** correspondiente del campo de su forma. Consulte :ref:`opciones-avanzadas` :octicon:`report;1em;sd-text-info` para conocer el id del campo.
+
+    .. image:: /imgs/Reportes/Reportes41.png
+
+.. tab-set::
+
+    .. tab-item:: Código
+
+        .. code-block:: javascript
+            :linenos:
+            :emphasize-lines: 5, 8, 9, 13, 26, 27
+
+            //-----CATALOG
+            // Función para obtener datos de un catálogo a través de una solicitud fetch
+            function get_catalog(){ 
+            // Realiza una solicitud fetch usando el método POST
+            fetch(url + 'infosync/scripts/run/', {
+                method: 'POST',
+                body: JSON.stringify({ // Convierte a un JSON
+                    script_id: 95556, // Id del script al que debe apuntar
+                    option: 0, // Determina que consulta debe realizar, en este caso 0 le indica que debe realizar una consulta a un catalogo, en el caso de que fuera 1 seria una petición normal a la forma. 
+                }),
+                headers:{
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer '+userJwt
+                },
+                })
+                // Procesa la respuesta en formato JSON
+                .then(res => res.json())
+                .then(res => {
+                // Verifica si la petición fue exitosa (success = true)
+                if (res.success) {
+                    // Verifica si hay elementos en el catálogo devuelto
+                    if (res.response.catalog.length){
+                    array_value = []
+                    // Itera sobre los elementos del catálogo para extraer valores únicos
+                    for (i = 0; i < res.response.catalog.length; i++) {
+                        if (!array_value.includes(res.response.catalog[i]['63dc0f1ec29b8336b7b72615'])) {
+                        array_value.push(res.response.catalog[i]['63dc0f1ec29b8336b7b72615'])
+                        }
+                    }
+                    // Ordena los valores únicos en el array
+                    array_value.sort();
+                    // Limpia y actualiza un elemento del DOM (select con ID "promotor" (filtro))
+                    $("#promotor").empty();
+                    $('#promotor').append('<option value="--">--Seleccione--</option>');
+                    // Itera sobre los valores únicos y agregar opciones al elemento "promotor"
+                    for (i = 0; i <array_value.length; i++) {
+                        $('#promotor').append('<option value="'+ array_value[i] +'">'+array_value[i]+'</option>');
+                    }
                 }
             }
-            // Ordena los valores únicos en el array
-            array_value.sort();
-            // Limpia y actualiza un elemento del DOM (select con ID "promotor" (filtro))
-            $("#promotor").empty();
-            $('#promotor').append('<option value="--">--Seleccione--</option>');
-            // Itera sobre los valores únicos y agregar opciones al elemento "promotor"
-            for (i = 0; i <array_value.length; i++) {
-                $('#promotor').append('<option value="'+ array_value[i] +'">'+array_value[i]+'</option>');
-            }
-        }
-    }
+
+    .. tab-item:: Resultado
+
+        .. image:: /imgs/Reportes/Reportes42.png
+
+.. _funcion-runFirstElement:
 
 Función ``runFirstElement``
 ---------------------------
@@ -1420,6 +1514,10 @@ La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`
 
 .. attention:: Ajuste esta función de acuerdo a los filtros que necesite. En este caso, los campos (filtros) son de fechas y promotores. Si no están vacíos y están completos, llama a la función `getFirstElement <#funcion-getFirstElement>`_ :octicon:`report;1em;sd-text-info` con los valores de fecha y promotor. Si los campos de fecha están vacíos, muestra una alerta visual utilizando la biblioteca Swal (|sweetalert2| :octicon:`report;1em;sd-text-info`), solicitando al usuario que ingrese un rango de fechas antes de continuar.
 
+    .. image:: /imgs/Reportes/Reportes43.png
+        :width: 300px
+        :height: 100px
+        
 .. code-block:: javascript
     :linenos:
     :emphasize-lines: 10, 12
@@ -1427,7 +1525,7 @@ La función ``runFirstElement()`` se ejecuta cuando se presiona el botón ``Run`
     //-----EXCUTION
     // Se encarga de gestionar los filtros existentes, toma los valores de "date_to" (de esta fecha) y "date_from" (a esta fecha) y las almacena en las variables.
     function runFirstElement(){
-    // Obtiene referencias a los elementos HTML con los IDs "date_from" y "date_to".
+    // Obtiene referencias a los elementos HTML con los IDs "date_from", "date_to" y "promotor".
     let date_from = document.getElementById("date_from");
     let date_to = document.getElementById("date_to");  
     let promotor = document.getElementById("promotor");  
@@ -1453,7 +1551,7 @@ Función ``getFirstElement``
 
 En términos generales, la función ``getFirstElement()`` obtiene los parámetros de los filtros y presenta datos dinámicos del servidor en los elementos del reporte.
 
-La función se encarga de recibir las validaciones de los filtros para realiza una solicitud al servidor (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 9) utilizando el método ``POST``.
+La función se encarga de recibir las validaciones de los filtros (:ref: `funcion-runFirstElement` :octicon:`report;1em;sd-text-info`) para realiza una solicitud al servidor (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 9) utilizando el método ``POST``.
 
 .. seealso:: El ``scriptId`` es lo que se recibe como parámetro en la ``URL``, línea 12 (Regrese y consulte la :ref:`funcion-window-onload` :octicon:`report;1em;sd-text-info`, específicamente las líneas 6-8, y lea los comentarios).
 
@@ -1510,7 +1608,7 @@ Observe la línea de código número 40, llama a la `función getDrawTable <#fun
         if (res.success) {
         //----Hide and show
         $('.load-wrapp').hide(); // Oculta la animación del spinner para cargar la data
-        $("#divContent").show(); // Ahora ya muestra todos los elementos (tablas, gráficos, etc.)
+        $("#divContent").show(); // Muestra todos los elementos (tablas, gráficos, etc.)
         $('.title_tables').show(); // Se habilitan títulos de la o las tablas que estaban ocultas
 
         // Observe en la consola del navegador la data extraída, almacenada en un objeto
@@ -1561,7 +1659,7 @@ Observe la línea 4, donde el ``ID`` es el indicador de HTML que toma el valor d
 
 Identifique las líneas de código de la 4-15, aquí se crea una instancia de |Tabulator| :octicon:`report;1em;sd-text-info` y se configuran aspectos de la tabla, como la altura, el diseño, los datos, la capacidad de redimensionar filas, la estructura de árbol de datos, la capacidad de copiar al portapapeles, la dirección del texto y las columnas.
 
-.. seealso:: Sin embargo, para funciones mas especificas considere revisar las |Tabulator-proprieties| :octicon:`report;1em;sd-text-info`  y ajuste las propiedades según sus necesidades. Revise la documentación correspondiente a la tabla.
+.. seealso:: Para funciones más personalizadas considere revisar las |Tabulator-proprieties| :octicon:`report;1em;sd-text-info`  y ajuste las propiedades según sus necesidades. Revise la documentación correspondiente a la tabla.
 
 En los bloques de código (18-27, 29-38) verifica si existe un elemento del DOM para la descarga de datos en formato ``XLSX`` y ``CSV`` (botones para descarga). Si existe, se reemplaza con una copia para evitar duplicados y se agrega un evento de clic para activar la descarga de datos en formato ``XLSX`` y ``CSV`` cuando se haga clic en el elemento.
 
@@ -1607,6 +1705,42 @@ En los bloques de código (18-27, 29-38) verifica si existe un elemento del DOM 
         table.download("csv", "data.csv");
         });
     }
+    }
+
+.. _function-getDrawGauge:
+
+Función ``getDrawGauge``
+------------------------
+
+La función ``getDrawGauge()`` utiliza la biblioteca |plotly| :octicon:`report;1em;sd-text-info` para dibujar y configurar un gráfico de tipo Gauge (medidor).
+
+La función recibe dos parámetros:
+
+- **id**: El id del contenedor donde se dibujará el gráfico de Gauge.
+- **data**: Los datos necesarios para dibujar el gráfico de Gauge.
+
+En la línea 3 se define un objeto ``layout`` que especifica las propiedades del diseño del gráfico. En este caso, se establecen el ancho, el alto y los márgenes del gráfico.
+
+..  note:: En el objeto ``layout``, las propiedades ``t`` y ``b`` en el atributo ``margin`` especifican el margen superior (``t`` de **top**) y el margen inferior (``b`` de **bottom**).
+
+Luego, se utiliza ``Plotly.newPlot()`` para crear un nuevo gráfico de Gauge. Se pasa el **id**, **data** y **layout** definido anteriormente como argumentos.
+
+.. code-block:: javascript
+    :linenos:
+    :emphasize-lines: 3
+
+    //-----GAUGE
+    function getDrawGauge(id, data){
+    var layout = { 
+    width: 340, 
+    height: 190, 
+    margin: { 
+        t: 42 , 
+        b: 0 
+        } 
+    };
+
+    Plotly.newPlot(id, data, layout);
     }
 
 .. _archivo-data:

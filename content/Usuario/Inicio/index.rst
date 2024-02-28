@@ -83,7 +83,7 @@ Activar una cuenta es el proceso que debe realizar el usuario que ha sido dado d
 
 1. Acceda a la bandeja de entrada de su correo y localice los correos enviados por *donotreply@linkaform.com*. 
 
-.. note:: Si no encuentra los correos correspondientes, verifique la bandeja de spam. Si aún así no los encuentra, puede solicitar al administrador de su empresa que le reenvíe el correo. Si es usuario administrador, puede solicitarlo al equipo de soporte de Linkaform.
+.. note:: Si no encuentra los correos correspondientes, verifique la bandeja de spam. Si aún así no los encuentra, solicite al administrador de su empresa el reenvío del correo. Si es usuario administrador, puede solicitarlo al equipo de soporte de Linkaform.
 
 2. Abra y lea el primer correo de bienvenida.
 3. Abra el segundo correo de confirmación y seleccione el enlace proporcionado. Será redirigido a una nueva ventana.
@@ -97,7 +97,7 @@ Activar una cuenta es el proceso que debe realizar el usuario que ha sido dado d
 
 .. attention:: 
     
-    Si al iniciar sesión recibe un mensaje de error indicando que no tiene una licencia válida, solicite a su administrador que le asigne una licencia. La licencia es el permiso que le permite utilizar las funcionalidades de Linkaform.
+    Si al iniciar sesión recibe un mensaje de error indicando que no tiene una licencia válida, solicite a su administrador que le asigne una. La licencia es el permiso necesario para utilizar las funcionalidades de Linkaform.
 
     .. image:: /imgs/Inicio/Inicio4.png
 
@@ -108,7 +108,7 @@ Activar una cuenta es el proceso que debe realizar el usuario que ha sido dado d
 Iniciar sesión
 ==============
 
-Para iniciar sesión en la aplicación web de Linkaform, siga estos pasos:
+Para iniciar sesión en la plataforma web de Linkaform, siga estos pasos:
 
 .. grid:: 2
     :gutter: 0
@@ -121,7 +121,7 @@ Para iniciar sesión en la aplicación web de Linkaform, siga estos pasos:
         1. En su navegador favorito, escriba **Linkaform** para acceder a la página web oficial.
         2. Haga clic en el botón ``Iniciar sesión`` ubicado en la parte superior derecha. Será redirigido al inicio de sesión de la plataforma.
 
-        .. seealso:: Ingrese directamente aquí |app| :octicon:`report;1em;sd-text-info`.
+        .. seealso:: Ingrese directamente en |app| :octicon:`report;1em;sd-text-info`.
 
         3. Complete los campos de **correo electrónico** y **contraseña**.
 
@@ -139,13 +139,11 @@ Para iniciar sesión en la aplicación web de Linkaform, siga estos pasos:
 Dashboard
 =========
 
-El **dashboard** es una interfaz visual que proporciona un resumen de la información relacionada con el uso y la actividad dentro de la plataforma. 
+El **dashboard**  es la primera interfaz que verá al iniciar sesión. Esta interfaz visual proporciona un resumen de la información relacionada con el uso y la actividad dentro de la plataforma.
 
 Esta interfaz se ajusta según el filtro seleccionado en la barra superior, que permite visualizar la información para diferentes períodos de tiempo, en múltiplos de 5 días, hasta un máximo de 40 días. 
 
 .. image:: /imgs/Inicio/Inicio11.png
-
-Para acceder al dashboard, siga los pasos:
 
 .. grid:: 2
     :gutter: 0
@@ -155,12 +153,13 @@ Para acceder al dashboard, siga los pasos:
     .. grid-item-card:: 
         :columns: 8
 
-        1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info`. 
-        2. Seleccione ``Dashboard`` en el menú lateral.
+        Para acceder al dashboard, siga:
 
-        .. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.
+        1. Seleccione ``Dashboard`` en el menú lateral.
 
-        .. note:: Si no es administrador, podrá visualizar la información de la **cuenta padre**.
+        .. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.     
+
+        .. note:: Si no es administrador, podrá visualizar la información de la **cuenta padre** en los elementos del dashboard.   
 
     .. grid-item-card:: 
         :columns: 4
@@ -183,11 +182,11 @@ Aquí se presentan métricas generales sobre la plataforma, incluyendo el númer
 
 **Registros por forma**
 
-Esta sección muestra las formas en un gráfico de círculos, lo que permite visualizar la actividad de cada forma con el tiempo.
-
-.. image:: /imgs/Inicio/Inicio9.png
+Esta sección muestra los registros por forma en un gráfico de burbujas, lo que permite visualizar la actividad de cada forma con el tiempo. Entre más registros tenga la forma, mayor será el tamaño de la burbuja.
 
 .. tip:: Pase el cursor sobre la forma de su interés para ver la cantidad de registros asociados a esa forma.
+
+.. image:: /imgs/Inicio/Inicio9.png
 
 **Registros por usuario**
 
@@ -200,7 +199,9 @@ En esta sección, los usuarios se ordenan según la cantidad de registros que ha
 Cuenta
 ======
 
-En la sección de **cuenta**, se presenta la información del usuario en sesión. Aquí, tiene la capacidad de acceder y ajustar información relacionada exclusivamente con su cuenta, como preferencias personales y configuraciones individuales.
+En la sección de **cuenta**, se presenta la información del usuario en sesión. 
+
+Aquí, tiene la capacidad de acceder y ajustar información relacionada exclusivamente con su cuenta, como preferencias personales y configuraciones individuales.
 
 .. _pasos-inicio-sesion:
 
@@ -209,8 +210,6 @@ Para acceder a su cuenta siga los pasos:
 1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Seleccione la burbuja ubicada en la parte inferior izquierda.
 3. Presione la opción ``Cuenta``. Será redirigido a la página correspondiente.
-
-Dentro de la interfaz de **cuenta**, tendrá acceso a la visualización y configuración de su cuenta (figura). Continúe revisando las siguientes secciones de la documentación para obtener más detalles.
 
 .. image:: /imgs/Inicio/Inicio12.png
 
@@ -223,18 +222,16 @@ Actualizar la contraseña de su cuenta es un proceso sencillo. Siga los pasos:
 2. Presione la ``burbuja > Cuenta``.
 3. Presione el botón verde ``Actualizar contraseña``.
 4. Ingrese la nueva contraseña en los campos correspondientes.
-5. presione ``Enviar`` para confirmar el cambio o en su defecto, presione ``Cerrar`` para cancelar la actualización.
+5. Presione ``Enviar`` para confirmar el cambio o en su defecto, presione ``Cerrar`` para cancelar la actualización.
 
 .. image:: /imgs/Inicio/Inicio13.png
-
-.. attention::  Al actualizar la contraseña, asegúrese de recordarla, ya que deberá utilizarla para iniciar sesión posteriormente.
 
 Cambiar imagen
 --------------
 
 Para actualizar tanto la imagen de perfil como el logo de su empresa, siga estos pasos:
 
-1. Acceda a la aplicación de |lkf| :octicon:`report;1em;sd-text-info` e inicie sesión utilizando sus credenciales oficiales.
+1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Presione la ``burbuja > Cuenta``.
 3. Presione el botón rojo ``Cambiar imagen``. Se abrirá la ventana de sus archivos.
 
@@ -242,11 +239,26 @@ Para actualizar tanto la imagen de perfil como el logo de su empresa, siga estos
 
 4. Elija la imagen de su preferencia. La imagen se actualizará automáticamente.
 
-.. warning:: La funcionalidad para cambiar la imagen del logo está disponible únicamente para el `perfil de administrador <#perfil-admin>`_ :octicon:`report;1em;sd-text-info`. 
+.. warning:: 
     
-    La imagen debe tener unas dimensiones de 175px de ancho por 40px de alto.
-    
-    .. image:: /imgs/Inicio/Inicio15.png
+    .. grid:: 2
+        :gutter: 0
+        :padding: 0
+        :margin: 0
+
+        .. grid-item-card:: 
+            :columns: 8
+
+            La funcionalidad para cambiar la imagen del logo está disponible únicamente para el `perfil de administrador <#perfil-admin>`_ :octicon:`report;1em;sd-text-info`. Siga los pasos 3 y 4. 
+
+            La imagen debe tener unas dimensiones de 175px de ancho por 40px de alto.
+
+        .. grid-item-card:: 
+            :columns: 4
+        
+            .. image:: /imgs/Inicio/Inicio15.png
+                :width: 185px
+                :height: 100px
 
 .. important:: 
     
@@ -254,7 +266,7 @@ Para actualizar tanto la imagen de perfil como el logo de su empresa, siga estos
     
     - Cada vez que cambie la imagen de su perfil, deberá cerrar sesión y volver a ingresar para visualizar su nueva imagen en la burbuja ubicada en la parte superior.
 
-    - Lo mismo aplica para la :ref:`doc-aplicacion-movil` :octicon:`report;1em;sd-text-info`. Si desea ver los cambios reflejados, cierre sesión y vuelva a iniciarla.
+    - Lo mismo aplica para la :ref:`doc-aplicacion-movil` :octicon:`report;1em;sd-text-info`. Para ver los cambios reflejados, cierre sesión y vuelva a iniciarla.
 
 Actualizar información
 ----------------------
@@ -262,6 +274,8 @@ Actualizar información
 Es importante que antes de actualizar su información, identifique los detalles proporcionados en su cuenta. 
 
 Independientemente del `perfil <#perfiles>`_ :octicon:`report;1em;sd-text-info` que tenga, encontrará los siguientes datos, aunque tenga en cuenta que no toda esta información es modificable:
+
+**Nombre**: Nombre del usuario que hace uso de la cuenta.
 
 .. grid:: 2
     :gutter: 0
@@ -271,13 +285,11 @@ Independientemente del `perfil <#perfiles>`_ :octicon:`report;1em;sd-text-info` 
     .. grid-item-card:: 
         :columns: 8
 
-        **Nombre**: Nombre del usuario que hace uso de la cuenta.
-
         Para actualizar el nombre:
 
         1. Presione el icono de lápiz o haga clic en el nombre actual.
         2. Ingrese el nuevo nombre.
-        3. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción.
+        3. Presione el botón verde o directamente pulse ``Enter`` para aplicar los cambios. Seleccione el botón gris para cancelar la acción.
 
     .. grid-item-card:: 
         :columns: 4
@@ -288,11 +300,11 @@ Independientemente del `perfil <#perfiles>`_ :octicon:`report;1em;sd-text-info` 
 
 **Id**: Identificador único de su cuenta.
 
-**Cuenta padre**: ID y nombre de la **cuenta padre** a la que pertenece.
+**Cuenta padre**: Id y nombre de la **cuenta padre** a la que pertenece.
 
-.. important:: 
+.. tip:: 
     
-    Si en la cuenta padre encuentra un ID y un nombre diferentes a los suyos, entonces tiene un perfil de usuario. En cambio, si el ID y el nombre coinciden con los de su cuenta, posee un perfil de administrador.
+    Si en la cuenta padre encuentra un id y un nombre diferentes a los suyos, entonces tiene un perfil de usuario. En cambio, si el id y el nombre coinciden con los de su cuenta, posee un perfil de administrador.
 
     .. image:: /imgs/Inicio/Inicio22.png
 
@@ -307,11 +319,9 @@ Para actualizar el teléfono:
 
 .. note:: El campo solo acepta caracteres numéricos, con un límite de 10 dígitos.
 
-3. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción.
+3. Presione el botón verde o pulse ``Enter`` para guardar los cambios. Para cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
 .. image:: /imgs/Inicio/Inicio18.png
-
-.. note:: Una vez que se complete la actualización, observará un mensaje de confirmación exitosa en la parte superior derecha.
 
 **Usuario desde**: Fecha y hora desde la cual ha sido usuario de Linkaform.
 
@@ -319,29 +329,37 @@ Para actualizar el teléfono:
 
 **Puesto**: Designación laboral en su empresa.
 
-.. important:: La designación de **puesto** no guarda relación con el tipo de perfil que posee en la plataforma de Linkaform.
+.. warning:: La designación de **puesto** no guarda relación con el tipo de perfil que posee en la plataforma de Linkaform.
 
 Para actualizar el puesto:
 
 1. Presione el icono de lápiz o haga clic en el puesto actual.
 2. Ingrese su nuevo puesto.
-3. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción.
+3. Pulse el botón verde o presione ``Enter``  para confirmar los cambios. Seleccione el botón gris para cancelar la acción. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
 .. image:: /imgs/Inicio/Inicio19.png
 
-.. note:: Una vez que se complete la actualización, observará un mensaje de confirmación exitosa en la parte superior derecha.
-
-**Permisos**: Indica qué funcionalidades están disponibles en su cuenta, según el tipo de permisos asignados por el administrador.
+**Permisos**: Según el tipo de permisos asignados por el administrador, indica qué funcionalidades están disponibles en su cuenta.
 
 .. image:: /imgs/Inicio/Inicio23.png
 
-- Administrador: Tiene acceso total a todas las funciones. Con una cuenta de administrador, podrá crear, editar, responder y eliminar formas, catálogos, registros, reportes, usuarios, grupos, conexiones y licencias.
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+   :align: left
 
-- Usuario sin restricciones: Puede crear, editar, responder y eliminar sus propias formas, catálogos, registros y reportes, o según los permisos que le hayan sido otorgados.
+   * - Perfil
+     - Permisos
+   * - Administrador
+     - Tiene acceso total a todas las funciones. Con una cuenta de administrador, podrá crear, editar, responder y eliminar formas, catálogos, registros, reportes, usuarios, grupos, conexiones y licencias.
+   * - Usuario sin restricción
+     - Puede crear, editar, responder y eliminar sus propias formas, catálogos, registros y reportes o los elementos según los permisos que le hayan sido otorgados por otros usuarios.
+   * - Usuario con restricción 
+     - Solo podrá crear registros de las formas que le hayan sido compartidas y consultar los registros a los que se le haya asignado permiso. Además, puede crear, editar, responder y eliminar sus propios catálogos y reportes.
+       
+       Cuando el campo **Permisos** se encuentra vació es un usuario con restricción. 
 
-- Usuario con restricciones: Solo podrá crear registros de las formas que le hayan sido compartidas y consultar los registros a los que se le haya asignado permiso. Además, puede crear, editar, responder y eliminar sus propios catálogos y reportes.
-
-.. attention:: EStos permisos son asignados solamente por el administrador.
+.. attention:: Estos permisos son asignados solamente por el **administrador**.
 
 **Lenguaje**: Idioma en el que se muestra la plataforma de Linkaform. Actualmente disponible en español e inglés.
 
@@ -351,7 +369,7 @@ Para cambiar el idioma:
 2. Elimine el idioma actual.
 3. Haga clic sobre el campo para ver las opciones disponibles.
 4. Seleccione el idioma de su preferencia.
-5. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción. Observe el mensaje de confirmación exitosa en la parte superior derecha.
+5. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
 .. image:: /imgs/Inicio/Inicio20.png
 
@@ -363,7 +381,7 @@ Para cambiar el idioma:
 2. Elimine la zona horaria actual.
 3. Haga clic sobre el campo para ver las opciones disponibles.
 4. Seleccione la zona horaria de su preferencia.
-5. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción. Observe el mensaje de confirmación exitosa en la parte superior derecha.
+5. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
 .. image:: /imgs/Inicio/Inicio21.png
 
@@ -372,7 +390,7 @@ Para cambiar el idioma:
 Usuarios
 ========
 
-La sección de **usuarios** está disponible exclusivamente para el `perfil de administrador <#perfil-admin>`_ :octicon:`report;1em;sd-text-info`. Esta sección le brinda el control total sobre la gestión de usuarios dependientes de su cuenta.
+El apartado de **usuarios** está dirigida y disponible exclusivamente para el `perfil de administrador <#perfil-admin>`_ :octicon:`report;1em;sd-text-info`. Esta sección le brinda el control total sobre la gestión de usuarios dependientes de su cuenta.
 
 Para acceder a los usuarios siga los pasos:
 
@@ -381,19 +399,37 @@ Para acceder a los usuarios siga los pasos:
 
 .. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.
 
-En la interfaz de Usuarios, encontrará:
+En la interfaz de usuarios, encontrará:
 
 - Buscador para localizar usuarios por nombre, usuario o correo.
-- Lista ordenada alfabéticamente de usuarios actuales en su cuenta.
+- Lista ordenada alfabéticamente de usuarios actuales dependientes de su cuenta.
 - Información detallada de los usuarios.
 - Opciones para dar de alta, baja y editar usuarios.
 
 .. image:: /imgs/Inicio/Inicio24.png
 
+Proceso de Alta de Usuarios
+---------------------------
+
+Considere los siguientes puntos y pasos importantes como administrador para dar de alta a un nuevo usuario:
+
+1. Cree un nuevo `nuevo usuario <#usuario-nuevo>`_ :octicon:`report;1em;sd-text-info`.
+
+.. hint:: 
+
+    - Al crear un usuario nuevo, Linkaform enviará automáticamente un correo electrónico al nuevo usuario para que inicie el proceso de `activación <#activar-cuenta-usuario>`_ :octicon:`report;1em;sd-text-info` de la cuenta, que consiste en la confirmación del correo.
+    - Si el usuario no recibe el correo para activar la cuenta, simplemente reenvíe el correo presionando el botón de reenvío ubicado en la ``Información del usuario >  Información de la cuenta``.
+
+2. Asigne una `licencia <#asignar-licencia>`_ :octicon:`report;1em;sd-text-info`.
+
+.. hint:: Una vez que el usuario haya completado el proceso de activación, asigne una licencia. Sin una licencia el usuario no podrá utilizar las funcionalidades de Linkaform.
+
+.. _usuario-nuevo:
+
 Crear usuario
 -------------
 
-Para dar de alta un nuevo usuario, siga los pasos:
+Para crear un usuario, siga los pasos:
 
 1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Seleccione ``Grupos > Usuarios`` en el menú lateral.
@@ -403,14 +439,22 @@ Para dar de alta un nuevo usuario, siga los pasos:
 
 4. Ingrese los datos correspondientes en el formulario. 
 
-.. note:: Considere los siguientes puntos importantes:
+.. important:: Considere los siguientes puntos importantes:
 
-    - Asegúrese de que la información sea auténtica y verdadera, especialmente en el correo electrónico, ya que el usuario deberá realizar el proceso de activación para utilizar la plataforma.
-    - Para usuarios con mayor rotación, dé de alta correos genéricos evitando los correos personalizados para evitar que si hay un cambio de personal, solo se actualice el nombre del usuario y evitar crear un usuario nuevo para seguir conservando el contenido dentro de la cuenta.
-
-5. Presione el botón ``Enviar`` para crear el usuario o ``Cerrar`` para cancelar el proceso. 
+    - Asegúrese de que la información sea auténtica y verdadera, especialmente en el correo electrónico.
+    - Para usuarios con mayor rotación, es recomendable dar de alta correos genéricos en lugar de correos personalizados. 
+    
+      Por ejemplo, promotor1@dominiodesuempresa.com
+     
+      De esta manera, si hay un cambio de personal, solo será necesario actualizar el nombre del usuario en lugar de crear un nuevo usuario, lo que permitirá conservar el contenido dentro de la cuenta.
 
 .. image:: /imgs/Inicio/Inicio26.png
+
+5. Presione el botón ``Enviar`` para crear el usuario o ``Cerrar`` para cancelar el proceso.
+
+Observe la información de confirmación. 
+
+.. image:: /imgs/Inicio/Inicio51.png
 
 .. _informacion-usuario-administrador:
 
@@ -461,7 +505,11 @@ La información del usuario se divide en tres secciones, consulte las siguientes
 
         **Version de App**: Versión de la aplicación actualmente instalada en el dispositivo.
 
-        **Ultima sincronización**: Fecha y hora de la última sincronización desde la aplicación móvil.
+        **Última sincronización**: Fecha y hora de la última sincronización desde la aplicación móvil.
+
+        .. note:: Sincronizar implica actualizar y concordar la información entre la plataforma web y la aplicación móvil de Linkaform, asegurando que ambas cuenten con los mismos datos actualizados. 
+            
+            Los usuarios pueden realizar este proceso desde la :ref:`doc-aplicacion-movil` :octicon:`report;1em;sd-text-info`.
 
         **Cambiar imagen**
 
@@ -476,17 +524,18 @@ La información del usuario se divide en tres secciones, consulte las siguientes
 
         Este proceso implica romper la conexión entre la cuenta y la aplicación móvil.
 
-        .. important:: Cuando inicia sesión en un dispositivo, Linkaform vincula su cuenta con ese dispositivo.
-
         Si necesita desvincular el dispositivo, siga este paso:
 
         1. Presione el botón rojo ``Desvincular``. Esto eliminará la información del dispositivo automáticamente.
 
-        .. note:: Cuando la cuenta inicie sesión nuevamente en un dispositivo, se reflejará aquí.
+        .. note:: 
+            
+            - Cuando la cuenta inicie sesión nuevamente en un dispositivo, se reflejará aquí.
+            - Cuando inicia sesión en un dispositivo, Linkaform vincula su cuenta con ese dispositivo.
 
     .. tab-item:: Información de la cuenta
 
-        Describe información personal y de la cuenta del usuario. Los elementos que la componen son las siguientes:
+        Describe información personal y sobre la cuenta del usuario. Los elementos que la componen son las siguientes:
 
         .. grid:: 2
             :gutter: 0
@@ -500,30 +549,32 @@ La información del usuario se divide en tres secciones, consulte las siguientes
 
                 **Activo**: Estado del usuario
 
-                .. attention:: Por defecto, el estado de un nuevo usuario es ``No`` (inactivo). 
+                .. attention:: 
+                    
+                    Por defecto, el estado de un nuevo usuario es ``No`` (inactivo). 
 
-                **Correo**: Dirección de correo electrónico asociada a la cuenta.
+                    Si el usuario no ha recibido el correo de activación, reenvíe el correo pulsando el botón correspondiente.
 
-                .. tip:: Utilice el botón portapapeles para copiar el correo electrónico.
+                    .. image:: /imgs/Inicio/Inicio52.png
         
             .. grid-item-card:: 
                 :columns: 6
 
                 .. image:: /imgs/Inicio/Inicio28.png
 
+        **Correo**: Dirección de correo electrónico asociada a la cuenta.
+
+        .. tip:: Utilice el botón portapapeles para copiar el correo electrónico.
+
         **Puesto**: Cargo laboral en la empresa.
 
         .. important:: La designación de **puesto** no está relacionado con el tipo de `perfil <#perfiles>`_ :octicon:`report;1em;sd-text-info` que posee en la plataforma de Linkaform.
 
-            Para activar una cuenta, el propietario de la cuenta debe realizar la activación. Por favor, siga el siguiente enlace para `activar la cuenta <#activar-cuenta-usuario>`_ :octicon:`report;1em;sd-text-info`.
-                
         Para actualizar el puesto:
 
         1. Haga clic en el icono de edición (lápiz) o en el puesto actual.
         2. Ingrese el nuevo puesto.
-        3. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción.
-
-        .. note:: Una vez que se complete la actualización, observará un mensaje de confirmación exitosa en la parte superior derecha.
+        3. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
         **Teléfono**: Número de teléfono asociado a la cuenta.
 
@@ -534,9 +585,7 @@ La información del usuario se divide en tres secciones, consulte las siguientes
 
         .. note:: El campo solo acepta caracteres numéricos, con un límite de 10 dígitos.
 
-        3. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción.
-
-        .. note:: Una vez que se complete la actualización, observará un mensaje de confirmación exitosa en la parte superior derecha.
+        3. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
         **Lenguaje**: Idioma en el que se muestra la plataforma de Linkaform. Actualmente, las opciones disponibles son español e inglés. 
 
@@ -546,7 +595,7 @@ La información del usuario se divide en tres secciones, consulte las siguientes
         2. Elimine el idioma actual.
         3. Haga clic sobre el campo para ver las opciones disponibles.
         4. Seleccione el idioma de su preferencia.
-        5. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción. Observe el mensaje de confirmación exitosa en la parte superior derecha.
+        5. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
         **Zona Horaria**: Configuración del huso horario.
 
@@ -554,7 +603,7 @@ La información del usuario se divide en tres secciones, consulte las siguientes
         2. Elimine la zona horaria actual.
         3. Haga clic sobre el campo para ver las opciones disponibles.
         4. Seleccione la zona horaria de su preferencia.
-        5. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción. Observe el mensaje de confirmación exitosa en la parte superior derecha.
+        5. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
         **Permisos**: Controla las funcionalidades disponibles para los usuarios a través de sus cuentas. Puede otorgar permisos de administrador, crear formas o establecer usuarios sin permisos.
 
@@ -562,15 +611,23 @@ La información del usuario se divide en tres secciones, consulte las siguientes
 
         1. Haga clic en el icono de edición (lápiz) o en el permiso actual.
         2. Marque las casillas de los permisos deseados.
-        3. Presione el botón verde para aplicar los cambios. Puede presionar ``Enter`` o utilizar el botón gris para cancelar la acción. Observe el mensaje de confirmación exitosa en la parte superior derecha.
+        3. Presione el botón verde o pulse ``Enter``. Si desea cancelar la acción, seleccione el botón gris. Observe el mensaje de confirmación exitosa en la parte superior derecha.
 
         .. image:: /imgs/Inicio/Inicio30.png
 
-        - Administrador: Tiene acceso total a todas las funciones. Con una cuenta de administrador, el usuario puede crear, editar, responder y eliminar formas, catálogos, registros, reportes, usuarios, grupos, conexiones y licencias.
+        .. list-table::
+            :widths: 25 75
+            :header-rows: 1
+            :align: left
 
-        - Crear formas: El usuario puede crear, editar, responder y eliminar sus propias formas, catálogos, registros y reportes, o según los permisos que le hayan sido otorgados al compartir por otros usuarios.
-
-        - Usuario sin permisos: El usuario solo podrá crear registros de las formas que le hayan sido compartidas y consultar los registros a los que se le haya asignado permiso, pero podrá crear, editar, responder y eliminar sus propios catálogos y reportes.
+            * - Permisos
+              - Descripción
+            * - Administrador
+              - Tiene acceso total a todas las funciones. Con una cuenta de administrador, el usuario puede crear, editar, responder y eliminar formas, catálogos, registros, reportes, usuarios, grupos, conexiones y licencias.
+            * - Crear formas
+              - El usuario puede crear, editar, responder y eliminar sus propias formas, catálogos, registros y reportes, o según los permisos que le hayan sido otorgados al compartir por otros usuarios.
+            * - Usuario sin permisos
+              - El usuario solo podrá crear registros de las formas que le hayan sido compartidas y consultar los registros a los que se le haya asignado permiso, pero podrá crear, editar, responder y eliminar sus propios catálogos y reportes.
 
         .. attention:: Para un usuario sin permisos, simplemente no seleccione ninguna casilla, pero asegúrese de guardar los cambios.
 
@@ -643,7 +700,11 @@ Para eliminar a un usuario, siga estos pasos:
 
 .. image:: /imgs/Inicio/Inicio34.png
 
-.. attention:: Tenga  en cuenta que cuando un usuario tiene formas de su propiedad, puede transferir estas formas a otro usuario. La interfaz le proporcionará el número de formas que el usuario posee.
+.. attention:: Tenga  en cuenta que cuando un usuario tiene formas de su propiedad, puede transferir estas formas a otro usuario. 
+    
+    Si decide realizar la transferencia de las formas, siga los pasos del 6 al 8. Observa que la misma interfaz le proporciona el número de formas que el usuario posee.
+
+    Si opta por borrar el usuario sin realizar la transferencia de formas, simplemente haga clic en el botón ``Borrar``.
 
 6. Seleccione el usuario al que desea transferir las formas del usuario a eliminar.
 7. Presione ``Transferir``.
@@ -656,13 +717,9 @@ Para eliminar a un usuario, siga estos pasos:
 
 .. image:: /imgs/Inicio/Inicio36.png
 
-.. note:: 
-    
-    En la cuenta del usuario seleccionado como receptor, se creará una carpeta con el nombre del usuario eliminado, la cual contendrá todas las formas de su propiedad.
+En la cuenta del usuario seleccionado como receptor, se creará una carpeta con el nombre del usuario eliminado, la cual contendrá todas las formas de su propiedad.
 
-    .. image:: /imgs/Inicio/Inicio37.png
-
-    Si decide borrar el usuario sin realizar la transferencia de formas, simplemente haga clic en el botón ``Borrar``.
+.. image:: /imgs/Inicio/Inicio37.png
 
 .. _grupos-usuarios:
 
@@ -736,10 +793,22 @@ Compartir una carpeta o una forma es un proceso similar y sencillo. Siga los pas
 
 6. Defina los permisos que el grupo tendrá:
 
-- **Lectura**: Los miembros del grupo podrán ver las formas dentro de la carpeta y crear registros.
-- **Compartir**: Los miembros del grupo podrán ver y responder a las formas, además de poder compartir la carpeta con otros usuarios.
-- **Admin**: Los miembros del grupo tendrán los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar las formas.
-- **Borrar registros**: Al activar esta opción, los miembros del grupo podrán eliminar registros de las formas. Si no se activa, no podrán eliminar registros incluso si tiene el perfil de ``Admin``.
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+   :align: left
+
+   * - Permiso
+     - Descripción
+   * - Lectura
+     - Los miembros del grupo podrán ver las formas dentro de la carpeta y crear registros.
+   * - Compartir
+     - Los miembros del grupo podrán ver y responder a las formas, además de poder compartir la carpeta con otros usuarios.
+   * - Admin
+     - Los miembros del grupo tendrán los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar las formas.
+   * - Borrar registros
+     - Al activar esta opción, los miembros del grupo podrán eliminar registros de las formas. Si no se activa, no podrán eliminar registros incluso si tienen el perfil de ``Admin``.
+
 
 7. Presione el botón ``Compartir``.
 
@@ -769,11 +838,24 @@ Compartir una carpeta o una catalogo es un proceso sencillo. Siga los pasos:
 
 6. Defina los permisos del grupo:
 
-- **Lectura**: Los miembros del grupo podrán ver los catálogos dentro de la carpeta y crear registros.
-- **Compartir**: Los miembros del grupo podrán ver y responder a los catálogos, además de poder compartir la carpeta con otros usuarios.
-- **Admin**: Los miembros del grupo tendrán los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar los catálogos.
-- **Filtros**: Filtros para los registros del catálogo. Consulte el siguiente enlace para :ref:`crear-filtro` :octicon:`report;1em;sd-text-info`.
-- **Borrar registros**: Al activar esta opción, los miembros del grupo podrán eliminar registros de los catálogos. Si no se activa, no podrá eliminar registros incluso si tiene el perfil de ``Admin``.
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+   :align: left
+
+   * - Perfil
+     - Descripción
+   * - Lectura
+     - Los miembros del grupo podrán ver los catálogos dentro de la carpeta y crear registros.
+   * - Compartir
+     - Los miembros del grupo podrán ver y responder a los catálogos, además de poder compartir la carpeta con otros usuarios.
+   * - Admin
+     - Los miembros del grupo tendrán los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar los catálogos.
+   * - Filtros
+     - Filtros para los registros del catálogo. Consulte el siguiente enlace para :ref:`crear-filtro` :octicon:`report;1em;sd-text-info`.
+   * - Borrar registros
+     - Al activar esta opción, los miembros del grupo podrán eliminar registros de los catálogos. Si no se activa, no podrán eliminar registros incluso si tienen el perfil de ``Admin``.
+
 
 .. important:: 
     
@@ -839,6 +921,8 @@ Para eliminar un grupo, siga los perros pasos:
 
 .. image:: /imgs/Inicio/Inicio47.png
 
+.. _asignar-licencia:
+
 Licencias
 =========
 
@@ -856,13 +940,28 @@ Una licencia es la que permite la autorización a los usuarios de acceder y util
 
 6. Seleccione la burbuja ubicada en la parte inferior izquierda seguido de la opción ``Licencias``. Observe la interfaz de licencias donde:
 
-- **Dueño**: Propietario de la licencia.
-- **Código de licencia**: Identificador único asociado a cada licencia.
-- **Licencia**: Tipo de licencia que se está utilizando.
-- **Usuario**: Usuario al que se ha asignado la licencia.
-- **Conexión**: Correo del usuario.
-- **Expiración**: Fecha de vencimiento de la licencia.
-- **Estatus**: Estado actual de la licencia.
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+   :align: left
+
+   * - Campo
+     - Descripción
+   * - Dueño
+     - Propietario de la licencia.
+   * - Código de licencia
+     - Identificador único asociado a cada licencia.
+   * - Licencia
+     - Tipo de licencia que se está utilizando.
+   * - Usuario
+     - Usuario al que se ha asignado la licencia.
+   * - Conexión
+     - Correo del usuario.
+   * - Expiración
+     - Fecha de vencimiento de la licencia.
+   * - Estatus
+     - Estado actual de la licencia.
+
 
 .. image:: /imgs/Inicio/Inicio49.png
 
@@ -879,10 +978,7 @@ Una licencia es la que permite la autorización a los usuarios de acceder y util
     
     - **Quitar licencia**: Para eliminar la licencia de un usuario, simplemente edite la licencia y elimine el correo asociado.
 
-    - **Eliminar licencia**: Para eliminar una licencia, presione el botón rojo ``Cancelar``.
-    
-    .. caution:: Tenga precaución al eliminar una licencia, ya que esta acción es irreversible y requerirá la adquisición de una nueva licencia.
-
+    - **Eliminar licencia**: Para eliminar una licencia, presione el botón rojo ``Cancelar``. Tenga en cuenta que eliminar una licencia es una acción irreversible, por lo tanto, requerirá la adquisición de una nueva licencia.
     - **Búsqueda avanzada**: Si posee un gran número de licencias, utilice los buscadores correspondientes para encontrar la licencia o usuario deseado.
 
 .. LIGAS DE INTERÉS EXTERNO 
