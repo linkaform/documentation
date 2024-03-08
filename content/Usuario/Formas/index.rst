@@ -4,7 +4,7 @@
 Formas
 ======
 
-En Linkaform, el término **forma** hace referencia a un formulario digital que posibilita la automatización de procesos. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
+En Linkaform, el término **forma** hace referencia a un formulario digital que posibilita la recopilación de información. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
 
 - Crear y editar de formas.
 - Crear carpetas para organizar y almacenar formas.
@@ -21,55 +21,68 @@ Para acceder a las **formas**, siga los siguientes pasos:
 1. Ingrese a la aplicación web oficial de Linkaform en |app| :octicon:`report;1em;sd-text-info`.
 2. Inicie sesión con sus credenciales. 
 
-.. note:: En caso de no contar con credenciales, solicítelas al soporte técnico.
+.. note:: Si no cuenta con credenciales, solicítelas al administrador de su empresa o al soporte técnico de Linkaform, según sea el caso.
 
-3. Seleccione la opción ``Formas > Mis Formas`` en el menú.
+3. Seleccione la opción ``Formas > Mis Formas`` en el menú. Será redirigido a la interfaz correspondiente, donde podrá comenzar a crear y configurar sus propios formularios. 
 
-Una vez dentro de ``Mis Formas``, podrá comenzar a crear y configurar sus formas según sus necesidades.
+.. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.  
+  
+Por favor, siga leyendo las siguientes secciones de la documentación sobre formas.
 
 Crear forma
 ===========
 
 Para crear una forma siga el procedimiento:
 
-1. Diríjase a ``Formas > Mis formas`` en el menú lateral.
-2. Identifique el ícono de ``Crear Forma`` ubicado en la parte superior derecha. 
+1. |iniciar-sesion| :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
+2. Diríjase a ``Formas > Mis formas`` en el menú lateral.
+3. Identifique y presione el ícono de ``Archivo`` ubicado en la parte superior derecha. 
 
-.. note:: Al posicionar el cursor sobre el ícono, la ayuda visual proporcionará información sobre su función. 
+.. hint:: Posicione el cursor sobre el ícono y la ayuda visual proporcionará información sobre su función.
 
-3. Presione el botón. Linkaform presentará una plantilla en blanco, a partir de la cual podrá estructurar su forma.
+Linkaform presentará una plantilla en blanco, a partir de la cual podrá estructurar su formulario.
 
 .. image:: /imgs/Formas/Formas2.png
 
 Nombre de forma
 ---------------
 
-Si desea establecer o cambiar el nombre de la forma, siga los pasos:
+Para establecer o cambiar el nombre de una forma, siga los pasos:
 
-1. Haga clic en el título en la parte superior izquierda. 
-2. Modifique el nombre de la forma.
+1. Presione el icono de lápiz o haga clic en el título actual en la parte superior izquierda. 
+2. Ingrese el nuevo nombre de la forma.
 3. Presione ``Enter``.
 4. Guarde la forma.
 
 .. image:: /imgs/Formas/Formas3.png
 
-.. important:: Recuerde que después de realizar cualquier cambio en la forma, debe hacer clic en el botón ``Guardar`` para asegurar que las modificaciones se guarden correctamente. 
+.. important:: Después de realizar cualquier cambio en la forma, debe guardar los cambios. Para ello, haga clic en el botón ``Guardar`` ubicado en la parte superior derecha.
 
 Páginas en la forma
 -------------------
 
-Definir o cambiar el nombre de una página es sencillo. Siga las siguientes pasos:
+El propósito de las páginas dentro de la forma es dividirla para organizar la información de manera clara y fácil de navegar. Es especialmente útil si su formulario es extenso. Puede crear las páginas necesarias, que por defecto van tomando el número de página por orden de creación, es decir, página 1, página 2, etc.
 
-1. Identifique la página en la que se encuentra, que por default contiene el nombre de ``Pagina 1``.
-2. Haga doble clic en el ícono de edición.
-3. Escriba el nuevo nombre.
+Para definir o cambiar el nombre de una página es sencillo. Siga las siguientes pasos:
+
+1. Identifique la página en la que se encuentra, que por defecto al abrir la forma es la **Pagina 1**.
+2. Haga doble clic en el título o ícono de edición de la página ubicado en la parte superior.
+3. Ingrese el nuevo nombre.
 4. Presione Enter.
-5. Seleccione el botón verde ``Nueva página`` si necesita una nueva página.
-6. Repita los pasos de 1 al 6 si tiene una nueva pagina.
 
 .. image:: /imgs/Formas/Formas4.jpg
 
-.. note:: Observe que contiene un campo de búsqueda que permite filtrar las páginas. Esto es útil cuando su formulario es demasiado extenso y necesita filtrar su información.
+Para agregar una nueva página, simplemente presione el botón verde ``Nueva página``. 
+
+.. image:: /imgs/Formas/Formas103.png
+
+Para eliminar una página haga clic en el icono ``x`` ubicado al lado del nombre de la página.
+
+.. image:: /imgs/Formas/Formas105.png
+
+Si tiene un formulario extenso utilice el buscador que permite filtrar las páginas. 
+
+.. image:: /imgs/Formas/Formas104.png
 
 .. _opciones-campos:
 
@@ -1310,3 +1323,7 @@ En la siguiente sección, aprenderá todo lo relacionado con catálogos, una fun
 .. |app| raw:: html
 
     <a href="https://app.linkaform.com/" target="_blank">app.linkaform.com</a>
+
+.. |iniciar-sesion| raw:: html
+
+    <a href="https://app.linkaform.com/" target="_blank">Inicie sesión</a>

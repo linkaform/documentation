@@ -72,7 +72,7 @@ El usuario tiene acceso a funciones asignadas por el administrador, dependiendo 
         - Cuenta
         - Conexiones
 
-.. attention:: En Linkaform, es importante comprender el término **cuenta padre** ya que influye en diversas funciones de la aplicación, especialmente en configuraciones. Un usuario siempre dependerá de su **cuenta padre**, que corresponde al administrador de la cuenta. 
+.. attention:: En Linkaform, es importante comprender el término **cuenta padre** ya que influye en diversas funciones de la plataforma, especialmente en configuraciones. Un usuario siempre dependerá de su **cuenta padre**, que corresponde al administrador de la cuenta. 
 
 .. _activar-cuenta-usuario:
 
@@ -154,7 +154,7 @@ Esta interfaz se ajusta según el filtro seleccionado en la barra superior, que 
         :columns: 8
 
         Para acceder al dashboard, siga:
-
+      
         1. Seleccione ``Dashboard`` en el menú lateral.
 
         .. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.     
@@ -928,17 +928,19 @@ Licencias
 
 La sección de **licencias** está disponible exclusivamente para el `perfil de administrador <#perfil-admin>`_ :octicon:`report;1em;sd-text-info`.
 
-Una licencia es la que permite la autorización a los usuarios de acceder y utilizar ciertas funcionalidades la plataforma. Para asignar una licencia a un usuario, siga los siguientes pasos:
+Una licencia es la que permite la autorización a los usuarios de acceder y utilizar las funcionalidades de la plataforma de Linkaform. Para asignar una licencia a un usuario, siga los siguientes pasos:
 
 1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Seleccione ``Grupos > Usuarios`` en el menú lateral.
 3. Busque al usuario de su interés para asignar la licencia utilizando la barra de búsqueda, ya sea por el nombre, usuario o correo.
 4. Seleccione al usuario.
-5. Haga clic en el icono de copiar para obtener el correo electrónico del usuario.
+5. Haga clic en el botón portapapeles para copiar el correo electrónico del usuario.
 
 .. image:: /imgs/Inicio/Inicio48.png
 
 6. Seleccione la burbuja ubicada en la parte inferior izquierda seguido de la opción ``Licencias``. Observe la interfaz de licencias donde:
+
+.. image:: /imgs/Inicio/Inicio49.png
 
 .. list-table::
    :widths: 25 75
@@ -962,12 +964,9 @@ Una licencia es la que permite la autorización a los usuarios de acceder y util
    * - Estatus
      - Estado actual de la licencia.
 
-
-.. image:: /imgs/Inicio/Inicio49.png
-
 .. attention:: Para obtener una nueva licencia, solicite al equipo de Linkaform el número necesario y realice el pago correspondiente.
 
-7. Busque una licencia con la leyenda ``Sin usuario`` en la columna usuario.
+7. Busque una licencia con la leyenda ``Sin usuario`` en la columna **usuario**.
 8. Presione sobre el icono de edición (lápiz).
 9. Pegue el correo electrónico del usuario previamente copiado.
 10. Presione el botón verde o ``Enter`` para asignar la licencia. Verifique el mensaje de confirmación en la parte superior derecha.
