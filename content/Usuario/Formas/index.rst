@@ -61,35 +61,39 @@ Para establecer o cambiar el nombre de una forma, siga los pasos:
 Páginas en la forma
 -------------------
 
-El propósito de las páginas dentro de la forma es dividirla para organizar la información de manera clara y fácil de navegar. Es especialmente útil si su formulario es extenso. Puede crear las páginas necesarias, que por defecto van tomando el número de página por orden de creación, es decir, página 1, página 2, etc.
-
-Para definir o cambiar el nombre de una página es sencillo. Siga las siguientes pasos:
-
-1. Identifique la página en la que se encuentra, que por defecto al abrir la forma es la **Pagina 1**.
-2. Haga doble clic en el título o ícono de edición de la página ubicado en la parte superior.
-3. Ingrese el nuevo nombre.
-4. Presione Enter.
-
-.. image:: /imgs/Formas/Formas4.jpg
+Las páginas son útiles para organizar la información de formularios extensas de manera clara y fácil de navegar.
 
 Para agregar una nueva página, simplemente presione el botón verde ``Nueva página``. 
 
 .. image:: /imgs/Formas/Formas103.png
 
-Para eliminar una página haga clic en el icono ``x`` ubicado al lado del nombre de la página.
+.. note:: Puede crear las páginas necesarias, que por defecto van tomando el número de página por orden de creación, es decir, página 1, página 2, etc.
+
+Para definir o cambiar el nombre de una página es sencillo. Siga los siguientes pasos:
+
+1. Identifique la página en la que se encuentra, que por defecto al abrir la forma es la **Pagina 1**.
+2. Haga doble clic en el título o ícono de edición de la página ubicado en la parte superior media.
+3. Ingrese el nuevo nombre.
+4. Presione Enter.
+
+.. image:: /imgs/Formas/Formas4.jpg
+
+Para eliminar una página haga clic en el icono ``x`` ubicado a un costado del nombre de la página.
 
 .. image:: /imgs/Formas/Formas105.png
 
-Si tiene un formulario extenso utilice el buscador que permite filtrar las páginas. 
+.. hint:: Si tiene un formulario extenso, utilice el buscador que permite filtrar las páginas.
 
-.. image:: /imgs/Formas/Formas104.png
+  .. image:: /imgs/Formas/Formas104.png
 
 .. _opciones-campos:
 
 Campos
 ------
 
-Linkaform proporciona campos básicos para personalizar sus formas o :ref:`catalogo` :octicon:`report;1em;sd-text-info`. Ambos comparten las siguientes características y campos.
+Los campos son elementos del formulario que permiten recopilar y almacenar la información. Para preparar su propio formulario, Linkaform proporciona campos básicos para personalizar sus formas o :ref:`catalogo` :octicon:`report;1em;sd-text-info`.
+
+En la siguiente tabla, encontrará características que están disponibles para algunos campos y que realizan acciones específicas dependiendo del campo.
 
 .. list-table::
    :widths: 25 75
@@ -105,7 +109,7 @@ Linkaform proporciona campos básicos para personalizar sus formas o :ref:`catal
    * - Duplicar
      - Crea una copia exacta del campo.
    * - Config
-     - Establece cantidades límites, orígenes de archivos permitidos, impresión de fechas y localizaciones.
+     - Configuraciones para establecer cantidades límite de imágenes o documentos, orígenes de archivos permitidos, impresión de fechas y localizaciones.
    * - Requerido
      - Hace obligatoria la respuesta al campo al crear un registro.
    * - Default
@@ -123,6 +127,8 @@ Linkaform proporciona campos básicos para personalizar sus formas o :ref:`catal
    * - Ayuda
      - Habilita una opción de texto adicional en el campo como referencia a la respuesta solicitada.
 
+.. importante:: Actualizar el nombre es una opción disponible para **todos** los campos. Cuando crea un campo nuevo, por defecto tiene el nombre ``Título de la pregunta``. Pulse sobre él o sobre el icono de edición, ingrese el nuevo nombre y pulse ``Enter`` para identificar el campo.
+
 .. _configuracion:
 
 Campo texto 
@@ -134,9 +140,11 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
     .. tab-item:: Texto una línea
 
-        Están diseñados para recopilar respuestas breves, con una limitación de hasta 500 caracteres. Estos campos presentan una interfaz de entrada de una sola línea, ideal para capturar información concisa como nombres, direcciones o números de teléfono.
+        El campo de texto en línea está diseñado para recopilar respuestas breves, con una limitación de hasta 500 caracteres. 
         
-        Este campo ofrece la posibilidad de activar la lectura de códigos de barras y códigos QR para una entrada eficiente de datos.
+        Estos campos presentan una interfaz de entrada de una sola línea, ideal para capturar información concisa como nombres, direcciones o números de teléfono.
+        
+        Este campo ofrece la posibilidad de activar la lectura de códigos de barras y códigos QR para una entrada eficiente de datos. Para utilizarlo, simplemente active la opción correspondiente como se muestra en la imagen.        
 
         .. image:: /imgs/Formas/Formas6.png
 
