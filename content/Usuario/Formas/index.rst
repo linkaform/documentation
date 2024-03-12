@@ -44,8 +44,8 @@ Linkaform presentará una plantilla en blanco, a partir de la cual podrá estruc
 
 .. image:: /imgs/Formas/Formas2.png
 
-Nombre de forma
----------------
+Nombre de la forma
+------------------
 
 Para establecer o cambiar el nombre de una forma, siga los pasos:
 
@@ -65,9 +65,15 @@ Las páginas son útiles para organizar la información de formularios extensas 
 
 Para agregar una nueva página, simplemente presione el botón verde ``Nueva página``. 
 
+.. note:: Puede crear las páginas necesarias, que por defecto van tomando el número de página por orden de creación, es decir, página 1, página 2, etc.
+
 .. image:: /imgs/Formas/Formas103.png
 
-.. note:: Puede crear las páginas necesarias, que por defecto van tomando el número de página por orden de creación, es decir, página 1, página 2, etc.
+Para duplicar la página, presione el botón ``Duplicar Página`` ubicado en la parte superior derecha. 
+
+.. note:: Al duplicar, se creará una copia exacta de la página actual, incluido el nombre seguido de la leyenda **copy**, lo que identificará a la página como una copia.
+
+.. image:: /imgs/Formas/Formas106.png
 
 Para definir o cambiar el nombre de una página es sencillo. Siga los siguientes pasos:
 
@@ -82,9 +88,9 @@ Para eliminar una página haga clic en el icono ``x`` ubicado a un costado del n
 
 .. image:: /imgs/Formas/Formas105.png
 
-.. hint:: Si tiene un formulario extenso, utilice el buscador que permite filtrar las páginas.
+Si tiene un formulario extenso, utilice el buscador que permite filtrar las páginas.
 
-  .. image:: /imgs/Formas/Formas104.png
+.. image:: /imgs/Formas/Formas104.png
 
 .. _opciones-campos:
 
@@ -127,20 +133,33 @@ En la siguiente tabla, encontrará características que están disponibles para 
    * - Ayuda
      - Habilita una opción de texto adicional en el campo como referencia a la respuesta solicitada.
 
-.. importante:: Actualizar el nombre es una opción disponible para **todos** los campos. Cuando crea un campo nuevo, por defecto tiene el nombre ``Título de la pregunta``. Pulse sobre él o sobre el icono de edición, ingrese el nuevo nombre y pulse ``Enter`` para identificar el campo.
-
 .. _configuracion:
+
+Nombre de los campos
+^^^^^^^^^^^^^^^^^^^^
+
+La opción de actualizar el nombre está disponible para **todos** los campos. Cuando crea un nuevo campo, el nombre predeterminado es ``Título de la pregunta``. Para actualizar, siga estos pasos:
+
+1. Presione el icono de lápiz o haga clic en el título actual del campo.
+2. Ingrese el nuevo nombre del campo.
+3. Presione el botón verde ``✓`` o directamente ``Enter`` para completar los cambios.
+
+.. image:: /imgs/Formas/Formas108.png
+
+.. attention:: Recuerde que es muy importante guardar cambios después de realizar cualquier modificación dentro de la forma. Para hacerlo, simplemente presione el botón ``Guardar`` ubicado en la parte superior derecha.
+
+  .. image:: /imgs/Formas/Formas107.png
 
 Campo texto 
 ^^^^^^^^^^^
 
-Los campos de tipo texto son utilizados para capturar datos que consisten en caracteres alfabéticos, numéricos o alfanuméricos, tales como nombres, descripciones, comentarios u otra información textual. En las siguientes pestañas, podrá encontrar información útil acerca de su uso.
+Los campos de tipo texto son utilizados para capturar datos que consisten en caracteres alfabéticos, numéricos o alfanuméricos, tales como nombres, descripciones, comentarios u otra información textual. En las siguientes pestañas, podrá encontrar información detallada acerca de su uso.
 
 .. tab-set::
 
     .. tab-item:: Texto una línea
 
-        El campo de texto en línea está diseñado para recopilar respuestas breves, con una limitación de hasta 500 caracteres. 
+        Está diseñado para recopilar respuestas breves, con una limitación de hasta 255 caracteres. 
         
         Estos campos presentan una interfaz de entrada de una sola línea, ideal para capturar información concisa como nombres, direcciones o números de teléfono.
         
@@ -150,39 +169,37 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
     .. tab-item:: Párrafo
 
-        Permiten recopilar respuestas más extensas, también con una restricción de hasta 500 caracteres. A diferencia de los campos de texto ``Una Línea``, estos campos ofrecen un área más amplia que facilita la entrada de textos más largos, como comentarios detallados o descripciones. 
+        Permiten recopilar respuestas más extensas, con una restricción de hasta 500 caracteres. A diferencia de los campos de texto ``Una Línea``, estos campos ofrecen un área más amplia que facilita la entrada de textos más largos, como comentarios detallados o descripciones. 
         
-        En el campo de ``Párrafo``, los usuarios pueden saltar de línea y copiar vínculos, manteniendo la integridad de los enlaces proporcionados en la respuesta.
+        Este campo permite a los usuarios saltar de línea y copiar vínculos, manteniendo la integridad de los enlaces proporcionados en la respuesta.
 
         .. image:: /imgs/Formas/Formas6.1.png
 
     .. tab-item:: Secreto
 
-        Se utiliza para capturar información sin que la respuesta sea visible durante la captura. 
+        Se utiliza para capturar información sin que la respuesta sea visible durante la captura. La información capturada solo se revelará una vez que se haya enviado el registro.
 
         .. image:: /imgs/Formas/Formas6.2.png
       
-        .. important:: La información capturada solo se revelará una vez que se haya enviado el registro.
-
     .. tab-item:: Descripción
 
         Este campo se utiliza para incluir texto en la forma y que sirva como referencia al momento de capturar información. Puede contener recomendaciones o instrucciones a seguir.
 
         .. image:: /imgs/Formas/Formas6.3.png
         
-        .. caution:: La información capturada en este campo será visible al responder, pero no estará presente en el PDF final.
+        .. note:: Si requiere un PDF del registro, este campo no estará presente en el documento; solo será visible al responder la forma.
 
     .. tab-item:: Email
 
-        En el campo ``Email``, puede capturar direcciones de correo electrónico. 
+        Este campo es útil para capturar únicamente direcciones de correo electrónico. 
 
-        .. important:: Cuando este campo se establece como requerido, Linkaform realiza una validación para asegurarse de que la dirección tenga la estructura correspondiente a un correo electrónico. Sin embargo, Linkaform NO verifica la existencia real del correo electrónico.
-          
-        Activar la opción ``Enviar Email`` permitirá enviar una copia del registro capturado al correo que seleccione.
-
-        .. image:: /imgs/Formas/Formas6.4.png
+        .. important:: Cuando este campo se establece como requerido, Linkaform realiza una validación para asegurarse de que la dirección tenga la estructura correspondiente a un correo electrónico. Sin embargo, Linkaform **no** verifica la existencia real del correo electrónico.
+        
+        El campo **Email** permite configurar la forma para enviar una copia del registro capturado por correo. Para activar esta función, seleccione la opción ``Enviar Email``.
 
         .. caution:: Esta opción está disponible unicamente para formas. 
+
+        .. image:: /imgs/Formas/Formas6.4.png
 
         Se habilitará el botón ``Configuración de Email``. A continuación, siga las siguientes configuraciones:
         
@@ -192,16 +209,16 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
                 En esta parte, podrá configurar el remitente. 
                 
-                1. Haga clic en el campo.
-                2. Seleccione el remitente deseado.
-
-                .. image:: /imgs/Formas/Formas7.png
+                1. Seleccione el remitente deseado.
 
                 .. important:: Todos los correos generados llegan de la dirección de correo que se elija en esta configuración.
 
+                .. image:: /imgs/Formas/Formas7.png
+
             .. tab-item:: Para
 
-                Esta opción permite configurar al destinatario, siga los siguientes pasos:
+                Esta opción permite configurar opciones de los registros al ser enviados, podrá configurar al destinatario en la ``Configuración de Email`` de toda la forma.
+                siga los siguientes pasos:
 
                 1. Seleccione una opción en el campo ``¿Reenviar correo al editar el campo?`` para enviar una copia cada vez que se edite el registro.
                 2. Active el bullet ``Adjuntar pdf`` si necesita enviar el PDF.
@@ -209,7 +226,7 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
                 .. caution:: Si esta opción no se activa, el correo se enviará sin incluir el PDF.
 
                 3. Active el bullet ``Adjuntar imagen de compañía`` para incorporar el logo de la compañía.
-                4. Active el bullet ``Enviar Adjuntos`` para incorporar documentos que pueda contener su registro.
+                4. Active el bullet ``Enviar Adjuntos`` para incorporar documentos que pueda contener el registro.
                 5. Seleccione el formato de plantilla deseado para este registro (en el caso de que la forma tenga más de un formato de PDF diseñado).
 
                 .. image:: /imgs/Formas/Formas7.1.png
@@ -500,6 +517,91 @@ Para utilizar dicho campo, tenga en cuenta los siguientes aspectos y siga los si
       .. image:: /imgs/Formas/Formas17.3.png
 
       Al tener tus configuraciones listas, presione ``Guardar`` y regrese presionando ``Cerrar``.
+
+Configuración de Email
+----------------------
+
+La configuración de correo electrónico permite establecer y personalizar cómo se gestionan y entregan los correos electrónicos para notificar al destinatario según determinadas acciones.
+
+Para acceder y realizar la configuración necesaria, siga estos pasos:
+
+1. Seleccione ``Configuración de Email`` y siga las siguientes configuraciones:
+
+.. tab-set::
+
+  .. tab-item:: De
+
+      En esta opción, configure al remitente. Haga clic en el campo y seleccione el remitente deseado.
+
+      .. image:: /imgs/Formas/Formas7.png
+
+  .. tab-item:: Para
+
+      En este apartado configure al destinatario y opciones sobre el envío de los registros. Siga los siguientes pasos:
+    
+      1. Escriba el nombre del usuario destinatario al que se le notificará y presione Enter.
+      2. Si lo requiere puede seleccionar una opción determinada en el campo ``Enviar A`` Si elige una opcion de este campo orpima el boton ``Agregar`` cada vez que seleccione una opcion. Para eliminar alguna opcion oprima el icono ``x``.
+      3. Seleccione una opcion al momento de editar un registro.
+      5. Active la opción ``Adjuntar PDF`` si necesita que el registro sea enviado en un documento pdf.Seguido de una opcion de una plantilla,
+      
+       por defecto hay plantillas genricaspero si necesita una personalizada consulte la doucmentacion necesartia
+
+      6. Active la opción ``Adjuntar imagen de compañía`` para que el pdf contenga el logo de su empresa.
+      7. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
+       
+
+      .. image:: /imgs/Formas/Formas47.jpg
+
+      .. note:: En la imagen anterior, se eligió la opción Móvil Android (campo Respuesta Múltiple)
+
+
+      5. Active la opción ``Adjuntar PDF`` si es necesario.
+      6. Active la opción ``Adjuntar imagen de compañía`` si es necesario.
+      7. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
+       
+      .. image:: /imgs/Formas/Formas48.jpg
+      
+      .. note:: En la imagen anterior, se agregó el correo ``soporte@linkaform.com`` como ejemplo. Continuamos con la configuración de ``Reenvío`` (si es necesario), Adjuntar, elegir la plantilla PDF, así como si se adjuntan en el correo el logotipo de la empresa y datos adjuntos. Los datos adjuntos corresponden a si el registro capturado tiene imágenes, se agregarán en el correo de manera adjunta.
+
+  .. tab-item:: Asunto
+
+      En este campo, se define el asunto que mostrará el correo. 
+                
+      1. Si lo requiere, personalice el texto del asunto.
+              
+      En la parte inferior, Linkaform permite utilizar metadatos y campos de la forma para personalizar el asunto. 
+                
+      1. Seleccione el metadato deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
+
+      Del lado derecho, podrá insertar una respuesta del campo.
+
+      1. Seleccione el campo deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
+
+      .. admonition:: Ejemplo
+          :class: pied-piper
+
+          Considere el siguiente ejemplo, es un texto personalizado donde:
+
+          .. image:: /imgs/Formas/Formas48.1.png
+
+          - ``{{record.folio}}`` es el metadato que muestra el numero de folio del registro.
+          - ``{{record.answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4ae}}`` es el campo, tienda de tipo texto, como identificador utiliza su ``ID``.
+          - ``{{record.answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af}}`` es otro campo correspondiente al campo dirección. 
+
+
+  .. tab-item:: Cuerpo
+
+      De manera similar al caso anterior, simplemente seleccione el campo o metadato deseado y haga clic en ``Agregar``. 
+
+      .. image:: /imgs/Formas/Formas48.2.png
+
+  .. tab-item:: Vista previa
+
+      En vista previa, podrá revisar el resultado final de las configuraciones que realizó anteriormente.
+                
+      .. image:: /imgs/Formas/Formas7.4.png
+
+Al estar seguro de sus cambios, seleccione ``Guardar``.
 
 .. _menu-opciones-generales:
 
