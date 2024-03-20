@@ -23,11 +23,11 @@ Para acceder a las **formas**, siga los siguientes pasos:
 
 .. note:: Si no cuenta con credenciales, solicítelas al administrador de su empresa o al soporte técnico de Linkaform, según sea el caso.
 
-3. Seleccione la opción ``Formas > Mis Formas`` en el menú. Será redirigido a la interfaz correspondiente, donde podrá comenzar a crear y configurar sus propios formularios. 
+3. Seleccione la opción ``Formas > Mis Formas`` en el menú. Será redirigido a la interfaz correspondiente, donde podrá comenzar a crear y configurar sus propios formularios. Siga leyendo las siguientes secciones de la documentación sobre formas.
 
 .. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.  
   
-Por favor, siga leyendo las siguientes secciones de la documentación sobre formas.
+.. image:: /imgs/Formas/Formas1.1.png
 
 Crear forma
 ===========
@@ -78,7 +78,7 @@ Para duplicar la página, presione el botón ``Duplicar Página`` ubicado en la 
 Para definir o cambiar el nombre de una página es sencillo. Siga los siguientes pasos:
 
 1. Identifique la página en la que se encuentra, que por defecto al abrir la forma es la **Pagina 1**.
-2. Haga doble clic en el título o ícono de edición de la página ubicado en la parte superior media.
+2. Haga clic en el título o ícono de edición de la página.
 3. Ingrese el nuevo nombre.
 4. Presione Enter.
 
@@ -169,7 +169,7 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
     .. tab-item:: Párrafo
 
-        Permiten recopilar respuestas más extensas, con una restricción de hasta 500 caracteres. A diferencia de los campos de texto ``Una Línea``, estos campos ofrecen un área más amplia que facilita la entrada de textos más largos, como comentarios detallados o descripciones. 
+        Permiten recopilar respuestas más extensas, con una restricción de hasta 500 caracteres. A diferencia del campo ``texto una línea``, estos campos ofrecen un área más amplia que facilita la entrada de textos más largos, como comentarios detallados o descripciones. 
         
         Este campo permite a los usuarios saltar de línea y copiar vínculos, manteniendo la integridad de los enlaces proporcionados en la respuesta.
 
@@ -193,7 +193,7 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
 
         Este campo es útil para capturar únicamente direcciones de correo electrónico. 
 
-        .. important:: Cuando este campo se establece como requerido, Linkaform realiza una validación para asegurarse de que la dirección tenga la estructura correspondiente a un correo electrónico. Sin embargo, Linkaform **no** verifica la existencia real del correo electrónico.
+        .. important:: Linkaform realiza una validación para asegurarse de que la dirección tenga la estructura correspondiente a un correo electrónico. Sin embargo, Linkaform **no** verifica la existencia real del correo electrónico.
         
         El campo **Email** permite configurar la forma para enviar una copia del registro capturado por correo. Para activar esta función, seleccione la opción ``Enviar Email``.
 
@@ -202,60 +202,91 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
         .. image:: /imgs/Formas/Formas6.4.png
 
         Se habilitará el botón ``Configuración de Email``. A continuación, siga las siguientes configuraciones:
-        
+
         .. tab-set::
 
-            .. tab-item:: De
+          .. tab-item:: De
 
-                En esta parte, podrá configurar el remitente. 
-                
-                1. Seleccione el remitente deseado.
+              En este apartado, configure al remitente. Haga clic en el campo y seleccione el remitente deseado.
 
-                .. important:: Todos los correos generados llegan de la dirección de correo que se elija en esta configuración.
+              .. list-table::
+                :widths: 30 70
+                :header-rows: 1
+                :align: left
 
-                .. image:: /imgs/Formas/Formas7.png
+                * - Campo
+                  - Descripción
+                * - Dueño de la forma
+                  - Usuario que creó la forma.
+                * - Dueño de la cuenta
+                  - Propietario de la cuenta.
+                * - Usuarios que contestan
+                  - Usuarios que responden el formulario.
+                * - Usuario que creó el registro
+                  - Usuarios que creó el registro.
+                * - Conexión del registro
+                  - Usuario que no pertenece a la misma cuenta padre pero tiene acceso a visualizar el registro.
+                * - Email personalizado
+                  - Si elige esta opción, ingrese el correo electrónico.
+                * - Respuesta a campo de correo
+                  - La dirección de correo electrónico proporcionada en un campo email del formulario.
 
-            .. tab-item:: Para
+              .. image:: /imgs/Formas/Formas7.png
 
-                Esta opción permite configurar opciones de los registros al ser enviados, podrá configurar al destinatario en la ``Configuración de Email`` de toda la forma.
-                siga los siguientes pasos:
+          .. tab-item:: Para
 
-                1. Seleccione una opción en el campo ``¿Reenviar correo al editar el campo?`` para enviar una copia cada vez que se edite el registro.
-                2. Active el bullet ``Adjuntar pdf`` si necesita enviar el PDF.
+              Esta opción permite configurar las acciones que se llevarán a cabo cuando se envíe el registro. 
+              
+              .. attention:: Por defecto, el correo capturado o especificado en el campo al enviar el registro se toma como destinatario . Para configurar al destinatario, debe hacerlo en la :ref:`configurar-correo-email` :octicon:`report;1em;sd-text-info` de toda la forma. 
+              
+              Siga los siguientes pasos:
+              
+              1. Seleccione una acción al editar un registro.
+              2. Active la opción ``Adjuntar PDF`` si necesita enviar el registro en un documento PDF y seleccione una plantilla.
+              
+              .. seealso::  Por defecto, la lista de opciones contienen plantillas genéricas que se adaptan a cualquier formulario. Si necesita un documento personalizado, consulte la documentación sobre :ref:`doc-pdfs` :octicon:`report;1em;sd-text-info`
+        
+              3. Active la opción ``Adjuntar imagen de compañía`` para que el PDF contenga el logo de su empresa.
+              4. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
 
-                .. caution:: Si esta opción no se activa, el correo se enviará sin incluir el PDF.
+              .. image:: /imgs/Formas/Formas7.1.png
 
-                3. Active el bullet ``Adjuntar imagen de compañía`` para incorporar el logo de la compañía.
-                4. Active el bullet ``Enviar Adjuntos`` para incorporar documentos que pueda contener el registro.
-                5. Seleccione el formato de plantilla deseado para este registro (en el caso de que la forma tenga más de un formato de PDF diseñado).
+          .. tab-item:: Asunto
 
-                .. image:: /imgs/Formas/Formas7.1.png
+              En este apartado, defina el asunto que mostrará el correo. En la parte inferior, Linkaform permite utilizar metadatos y campos de la forma para personalizar el asunto. 
+              
+              Para seleccionar un metadato o campo, elija y haga clic en ``Agregar``. Al hacerlo, aparecerá el **metadato** o el ``id`` correspondiente al **campo** seleccionado.
 
-            .. tab-item:: Asunto
+              .. admonition:: Ejemplo
+                  :class: pied-piper
 
-                En este campo, se define el asunto que mostrará el correo, siga los pasos:
-                
-                1. Si lo requiere, personalice el texto del asunto.
-                2. Seleccione el metadato deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
-                3. Seleccione el campo deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
-                
-                .. image:: /imgs/Formas/Formas7.2.png
+                  En este ejemplo, ``{{record.form.name}}`` es el metadato que muestra el nombre de la forma.
 
-                .. important:: Puede personalizar el asunto de acuerdo a sus necesidades. 
+                  .. image:: /imgs/Formas/Formas111.png
 
-            .. tab-item:: Cuerpo
+          .. tab-item:: Cuerpo
 
-                De manera similar al caso anterior en el ``Asunto``, simplemente seleccione el campo deseado y haga clic en ``Agregar``. 
+              Este apartado es para definir el cuerpo del correo. El cuerpo de un correo es útil para agregar una descripción más detallada y extensa. 
+              
+              De manera similar al caso anterior, puede utilizar **metadatos** y **campos** de la forma para personalizar el cuerpo. 
+              
+              Simplemente seleccione el **metadato** o el **campo** deseado y haga clic en ``Agregar``.
 
-                .. image:: /imgs/Formas/Formas7.3.png
+              .. admonition:: Ejemplo
+                  :class: pied-piper
 
-            .. tab-item:: Vista previa
+                  En este ejemplo, ``{{record.answers.65a72ad10e0c..}}`` representa los identificadores únicos de los campos asociados al formulario. Observe la diferencia entre un metadato y un campo.
 
-                En la vista previa, podrá revisar el resultado final de las configuraciones que realizó anteriormente.
-                
-                .. image:: /imgs/Formas/Formas7.4.png
+                  .. image:: /imgs/Formas/Formas112.png
 
-        Al estar seguro de sus cambios, seleccione ``Guardar``.
+          .. tab-item:: Vista previa
+
+              En vista previa, podrá revisar el resultado final de las configuraciones que realizó anteriormente.
+
+              Al estar seguro de sus cambios, seleccione ``Guardar``.
+                        
+              .. image:: /imgs/Formas/Formas115.png
+
 
 .. _campo-respuesta-multiple:
 
@@ -264,25 +295,27 @@ Campo respuesta múltiple
 
 Un campo de respuesta múltiple resulta útil cuando se busca recopilar datos sobre preferencias, habilidades o situaciones en las que las respuestas no son excluyentes entre sí. 
 
-Dos configuraciones comunes que comparten la mayoría de los campos de respuesta múltiple son la ponderación y el envío de notificaciones.
+Dos configuraciones comunes que comparten la mayoría de los campos de respuesta múltiple son la ponderación y el envío de notificaciones:
 
 .. _pond:
 
+**Ponderación**
+
 La ponderación es el proceso de asignar un peso o valor relativo a cada opción seleccionada por el usuario.
 
-Para habilitar la opción de ``Configuración de la ponderación``, es necesario realizar una configuración en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info`, seguido de los siguientes pasos:
+Para habilitar la opción de ``Configuración de la ponderación``, debe comenzar por la configuración en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info`, seguido de los siguientes pasos:
 
 1. Seleccione el botón ``Configuración de la ponderación``.
-2. Seleccione la respuesta en el selector.
-3. En el recuadro inferior, especifique el puntaje o porcentaje.
-4. Haga clic en ``Agregar opción``. La respuesta aparecerá en el recuadro inferior.
+2. Elija la respuesta en el selector correspondiente.
+3. Especifique el puntaje (si seleccionó por puntos) en el recuadro inferior.
+4. Haga clic en ``Agregar opción``. La respuesta aparecerá en el recuadro inferior. Repita el proceso según el número de respuestas del campo.
 5. Presione ``Guardar``.
 
 .. image:: /imgs/Formas/Formas9.jpg
     :height: 400px
     :width: 600px
 
-.. important:: Este proceso se repite según sea necesario, en función de las respuestas disponibles en el campo.
+**Envío de notificaciones**
 
 Para configurar las notificaciones y habilitar el envío de notificaciones, consulte la `configuración de Email <#configuracion>`_ :octicon:`report;1em;sd-text-info` en el campo email.
         
@@ -518,90 +551,133 @@ Para utilizar dicho campo, tenga en cuenta los siguientes aspectos y siga los si
 
       Al tener tus configuraciones listas, presione ``Guardar`` y regrese presionando ``Cerrar``.
 
+.. _configurar-correo-email:
+
 Configuración de Email
 ----------------------
 
-La configuración de correo electrónico permite establecer y personalizar cómo se gestionan y entregan los correos electrónicos para notificar al destinatario según determinadas acciones.
+La configuración de correo electrónico permite establecer y personalizar cómo se gestionan y entregan los correos electrónicos para notificar al destinatario según se responda la forma.
 
-Para acceder y realizar la configuración necesaria, siga estos pasos:
+.. seealso:: Para personalizar el envío de un correo electrónico de acuerdo a una acción más específica, puede crear un flujo de trabajo personalizado. Consulte la sección `enviar correo <#personalizar-envio-correo>`_ :octicon:`report;1em;sd-text-info` para mas detalles.
 
-1. Seleccione ``Configuración de Email`` y siga las siguientes configuraciones:
+Para acceder y realizar la configuración necesaria, consulte las siguientes pestañas:
+
+1. Seleccione ``Configuración de Email``.
+
+.. image:: /imgs/Formas/Formas109.png
 
 .. tab-set::
 
   .. tab-item:: De
 
-      En esta opción, configure al remitente. Haga clic en el campo y seleccione el remitente deseado.
+      En este apartado, configure al remitente. Haga clic en el campo y seleccione el remitente deseado.
+
+      .. list-table::
+        :widths: 30 70
+        :header-rows: 1
+        :align: left
+
+        * - Campo
+          - Descripción
+        * - Dueño de la forma
+          - Usuario que creó la forma.
+        * - Dueño de la cuenta
+          - Propietario de la cuenta.
+        * - Usuarios que contestan
+          - Usuarios que responden el formulario.
+        * - Usuario que creó el registro
+          - Usuarios que creó el registro.
+        * - Conexión del registro
+          - Usuario que no pertenece a la misma cuenta padre pero tiene acceso a visualizar el registro.
+        * - Email personalizado
+          - Si elige esta opción, ingrese el correo electrónico.
+        * - Respuesta a campo de correo
+          - La dirección de correo electrónico proporcionada en un campo email del formulario.
 
       .. image:: /imgs/Formas/Formas7.png
 
   .. tab-item:: Para
 
-      En este apartado configure al destinatario y opciones sobre el envío de los registros. Siga los siguientes pasos:
-    
-      1. Escriba el nombre del usuario destinatario al que se le notificará y presione Enter.
-      2. Si lo requiere puede seleccionar una opción determinada en el campo ``Enviar A`` Si elige una opcion de este campo orpima el boton ``Agregar`` cada vez que seleccione una opcion. Para eliminar alguna opcion oprima el icono ``x``.
-      3. Seleccione una opcion al momento de editar un registro.
-      5. Active la opción ``Adjuntar PDF`` si necesita que el registro sea enviado en un documento pdf.Seguido de una opcion de una plantilla,
+      En este apartado, configure al destinatario y las opciones de envío de los registros. Siga los siguientes pasos:
+
+      1. Si necesita notificar a un usuario específico de su empresa, ingrese el nombre o correo del destinatario y presione ``Enter``.
+
+      .. note:: Al ingresar el nombre, Linkaform proporcionará coincidencias automáticamente. Si el usuario de su interés tiene una cuenta vigente, aparecerá en la lista desplegable. De lo contrario, no se mostrará ninguna sugerencia.
+
+      2. Si lo requiere, puede seleccionar una opción determinada en el campo ``Enviar A``. Si elige una opción de este campo, oprima el botón ``Agregar`` cada vez que seleccione una opción. Para eliminar alguna opción, oprima el icono ``x``.
       
-       por defecto hay plantillas genricaspero si necesita una personalizada consulte la doucmentacion necesartia
+      .. list-table::
+        :widths: 30 70
+        :header-rows: 1
+        :align: left
 
-      6. Active la opción ``Adjuntar imagen de compañía`` para que el pdf contenga el logo de su empresa.
-      7. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
-       
+        * - Campo
+          - Descripción
+        * - Dueño de la forma
+          - Usuario que creó la forma.
+        * - Dueño de la cuenta
+          - Propietario de la cuenta.
+        * - Usuarios que contestan
+          - Usuarios que responden el formulario.
+        * - Usuario que creó el registro
+          - Usuarios que creó el registro.
+        * - Conexión del registro
+          - Usuario que no pertenece a la misma cuenta padre pero tiene acceso a visualizar el registro.
+        * - Respuesta a campo de correo
+          - La dirección de correo electrónico proporcionada en un campo email del formulario.
 
-      .. image:: /imgs/Formas/Formas47.jpg
-
-      .. note:: En la imagen anterior, se eligió la opción Móvil Android (campo Respuesta Múltiple)
-
-
-      5. Active la opción ``Adjuntar PDF`` si es necesario.
-      6. Active la opción ``Adjuntar imagen de compañía`` si es necesario.
-      7. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
-       
-      .. image:: /imgs/Formas/Formas48.jpg
+      3. Seleccione una acción al editar un registro.
+      4. Active la opción ``Adjuntar PDF`` si necesita enviar el registro en un documento PDF y seleccione una plantilla.
       
-      .. note:: En la imagen anterior, se agregó el correo ``soporte@linkaform.com`` como ejemplo. Continuamos con la configuración de ``Reenvío`` (si es necesario), Adjuntar, elegir la plantilla PDF, así como si se adjuntan en el correo el logotipo de la empresa y datos adjuntos. Los datos adjuntos corresponden a si el registro capturado tiene imágenes, se agregarán en el correo de manera adjunta.
+      .. seealso::  Por defecto, la lista de opciones contienen plantillas genéricas que se adaptan a cualquier formulario. Si necesita un documento personalizado, consulte la documentación sobre :ref:`doc-pdfs` :octicon:`report;1em;sd-text-info`
+ 
+      5. Active la opción ``Adjuntar imagen de compañía`` para que el PDF contenga el logo de su empresa.
+      6. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
+
+      .. image:: /imgs/Formas/Formas110.png
 
   .. tab-item:: Asunto
 
-      En este campo, se define el asunto que mostrará el correo. 
-                
-      1. Si lo requiere, personalice el texto del asunto.
-              
-      En la parte inferior, Linkaform permite utilizar metadatos y campos de la forma para personalizar el asunto. 
-                
-      1. Seleccione el metadato deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
-
-      Del lado derecho, podrá insertar una respuesta del campo.
-
-      1. Seleccione el campo deseado y haga clic en ``Agregar``. Al hacerlo, aparecerá un código correspondiente al campo seleccionado.
+      En este apartado, defina el asunto que mostrará el correo. En la parte inferior, Linkaform permite utilizar metadatos y campos de la forma para personalizar el asunto. 
+      
+      Para seleccionar un metadato o campo, elija y haga clic en ``Agregar``. Al hacerlo, aparecerá el **metadato** o el ``id`` correspondiente al **campo** seleccionado.
 
       .. admonition:: Ejemplo
           :class: pied-piper
 
-          Considere el siguiente ejemplo, es un texto personalizado donde:
+          En este ejemplo, ``{{record.form.name}}`` es el metadato que muestra el nombre de la forma.
 
-          .. image:: /imgs/Formas/Formas48.1.png
-
-          - ``{{record.folio}}`` es el metadato que muestra el numero de folio del registro.
-          - ``{{record.answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4ae}}`` es el campo, tienda de tipo texto, como identificador utiliza su ``ID``.
-          - ``{{record.answers.6564fc4b7abbbbec1ea2b4ab.6564fc4b7abbbbec1ea2b4af}}`` es otro campo correspondiente al campo dirección. 
-
+          .. image:: /imgs/Formas/Formas111.png
 
   .. tab-item:: Cuerpo
 
-      De manera similar al caso anterior, simplemente seleccione el campo o metadato deseado y haga clic en ``Agregar``. 
+      Este apartado es para definir el cuerpo del correo. El cuerpo de un correo es útil para agregar una descripción más detallada y extensa. 
+      
+      De manera similar al caso anterior, puede utilizar **metadatos** y **campos** de la forma para personalizar el cuerpo. 
+      
+      Simplemente seleccione el **metadato** o el **campo** deseado y haga clic en ``Agregar``.
 
-      .. image:: /imgs/Formas/Formas48.2.png
+      .. admonition:: Ejemplo
+          :class: pied-piper
+
+          En este ejemplo, ``{{record.answers.65a72ad10e0c..}}`` representa los identificadores únicos de los campos asociados al formulario. Observe la diferencia entre un metadato y un campo.
+
+          .. image:: /imgs/Formas/Formas112.png
+
 
   .. tab-item:: Vista previa
 
       En vista previa, podrá revisar el resultado final de las configuraciones que realizó anteriormente.
-                
-      .. image:: /imgs/Formas/Formas7.4.png
 
-Al estar seguro de sus cambios, seleccione ``Guardar``.
+      Al estar seguro de sus cambios, seleccione ``Guardar``.
+                
+      .. image:: /imgs/Formas/Formas113.png
+
+  .. tab-item:: Resultado
+
+      Observe el resultado del ejemplo donde se personalizó el remitente, los destinatarios, el asunto, el cuerpo y las configuraciones relacionadas con el envío del correo electrónico.
+
+      .. image:: /imgs/Formas/Formas114.png
 
 .. _menu-opciones-generales:
 
@@ -689,16 +765,18 @@ Esta configuración permite personalizar los mensajes al momento de capturar un 
 Ponderación 
 ^^^^^^^^^^^
 
-En esta sección podrá especificar si desea utilizar la ponderación en la forma. 
+Esta configuración le permitirá especificar si desea utilizar alguna puntuación de los campos de la forma. Para acceder a la ponderación, ubíquese en la ``forma de su interés > Opciones > Opciones generales > Ponderación``.
 
-1. Active la opción ``Ponderación``.
-2. Defina si se calificará por puntos o porcentaje. 
+.. attention:: Esta configuración es exclusiva para las opciones de un campo de respuesta múltiple. 
 
-.. note:: Si elige calificar por porcentaje, debe establecer la puntuación máxima.
+Para definir el tipo de valor, siga los pasos:
+
+1. Active el bullet ``Ponderación`` para habilitar la configuración.
+2. Defina si calificará por puntos o porcentaje. Tenga en cuenta que solo puede elegir una opción.
+
+.. note:: Si elige calificar por puntos, los puntos deben ser especificados individualmente en el campo de opción múltiple. Si elige calificar por porcentaje, debe establecer la puntuación máxima.
 
 .. image:: /imgs/Formas/Formas23.2.png
-
-.. important:: Tenga en cuenta que solo es posible utilizar una de ambas ponderaciones. 
 
 Temporizador 
 ^^^^^^^^^^^^
@@ -971,6 +1049,8 @@ En la pestaña ``Argumentos`` se establecen valores específicos para el Script.
   Este enfoque es útil, por ejemplo, si luego pone el script en otra forma y ahí el ``precio`` lo puede cambiar a ``10``. Si desea hacer una validación sobre ese ``precio`` en la Forma 1, la validación se realizará sobre el ``valor 5``, y en la Forma 2, sobre el ``valor 10``. 
   De esta manera, puede configurar los argumentos para la validación de datos.
 
+.. _personalizar-envio-correo:
+
 Enviar correo
 ~~~~~~~~~~~~~
 
@@ -1016,7 +1096,7 @@ A continuación, siga las siguientes configuraciones:
 
   .. tab-item:: Asunto
 
-      En este campo, se define el asunto que mostrará el correo. 
+      En este apartado, se define el asunto que mostrará el correo. 
                 
       1. Si lo requiere, personalice el texto del asunto.
               
