@@ -295,57 +295,76 @@ Campo respuesta múltiple
 
 Un campo de respuesta múltiple resulta útil cuando se busca recopilar datos sobre preferencias, habilidades o situaciones en las que las respuestas no son excluyentes entre sí. 
 
-Dos configuraciones comunes que comparten la mayoría de los campos de respuesta múltiple son la ponderación y el envío de notificaciones:
-
-.. _pond:
-
-**Ponderación**
-
-La ponderación es el proceso de asignar un peso o valor relativo a cada opción seleccionada por el usuario.
-
-Para habilitar la opción de ``Configuración de la ponderación``, debe comenzar por la configuración en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info`, seguido de los siguientes pasos:
-
-1. Seleccione el botón ``Configuración de la ponderación``.
-2. Elija la respuesta en el selector correspondiente.
-3. Especifique el puntaje (si seleccionó por puntos) en el recuadro inferior.
-4. Haga clic en ``Agregar opción``. La respuesta aparecerá en el recuadro inferior. Repita el proceso según el número de respuestas del campo.
-5. Presione ``Guardar``.
-
-.. image:: /imgs/Formas/Formas9.jpg
-    :height: 400px
-    :width: 600px
-
-**Envío de notificaciones**
-
-Para configurar las notificaciones y habilitar el envío de notificaciones, consulte la `configuración de Email <#configuracion>`_ :octicon:`report;1em;sd-text-info` en el campo email.
-        
-En el siguiente recuadro, podrá encontrar los tipo de respuesta múltiple. Considere los puntos anteriores:
+Consulte las siguientes pestañas donde podrá encontrar los tipos de respuesta múltiple disponibles:
 
 .. tab-set::
 
     .. tab-item:: Respuesta única
 
-        Este campo se utiliza para seleccionar una sola opción de una lista de opciones proporcionadas. Considere activar la ``opción abierta`` para que el usuario pueda ingresar otra respuesta.
+        Este campo se utiliza para seleccionar **una opción** de una lista de opciones proporcionadas. 
+        
+        - Para añadir una nueva respuesta, presione ``Agregar otra opción``.
+        - Para permitir al usuario ingresar una respuesta personalizada, active el bullet ``Opción abierta``.
+        - Para ordenar alfabéticamente (A-Z o de la Z-A) las respuestas, presione ``Ascendente`` o ``Descendente``.
+        - Si lo necesita, ordene manualmente las respuestas arrastrando la opción al lugar deseado.
+        - Para eliminar una respuesta, presione el botón ``x`` ubicado al lado de la opción.
         
         .. image:: /imgs/Formas/Formas9.0.png
           
     .. tab-item:: Respuesta múltiple
 
-        Permite seleccionar más de una opción de la lista proporcionada. De la misma forma, tenga en consideración activar la ``opción abierta`` para que el usuario pueda ingresar otra respuesta.
+        Este campo permite seleccionar **más de una opción** de la lista proporcionada. 
+
+        - Para agregar otra respuesta, use ``Agregar otra opción``.
+        - Active ``Opción abierta`` para respuestas personalizadas.
+        - Ordene alfabéticamente con ``Ascendente`` o ``Descendente``.
+        - Reordene arrastrando las respuestas.
+        - Elimine opciones con el botón ``x``.
 
         .. image:: /imgs/Formas/Formas9.1.png
 
     .. tab-item:: Sí/No
 
-        Este campo simplifica las opciones de respuesta a solo dos: ``Sí`` o ``No``. Es decir, sólo se puede elegir una de las respuestas.
-        
+        Este campo simplifica las opciones de respuesta a solo **Sí** o **No**,  donde solo se puede elegir una respuesta.
+
+        - Ordene alfabéticamente con ``Ascendente`` o ``Descendente``.
+        - Ordene manualmente arrastrando las respuestas.
+        - Elimine una respuesta con el botón ``x``.
+
         .. image:: /imgs/Formas/Formas9.2.png
 
     .. tab-item:: Selecciona un campo
 
-        Se utiliza para crear menús desplegables o listas de opciones donde los usuarios deben seleccionar una respuesta.
+        Este campo se utiliza para mostrar las opciones en un selector desplegable, donde los usuarios deben seleccionar una respuesta.
+
+        - Para agregar otra respuesta, use ``Agregar otra opción``.
+        - Ordene alfabéticamente con ``Ascendente`` o ``Descendente``.
+        - Reordene arrastrando las respuestas.
+        - Elimine opciones con el botón ``x``.
 
         .. image:: /imgs/Formas/Formas9.3.png
+
+.. _pond:
+
+Ponderación
+~~~~~~~~~~~
+
+La ponderación es el proceso de asignar un peso o valor relativo a cada opción seleccionada por el usuario. Esta configuración es exclusiva de los campos de respuesta múltiple. Siga los siguientes pasos:
+
+1. Habilite la opción de la configuración de la ponderación en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info` y seleccione el método de calificación.
+2. Seleccione ``Configuración de la ponderación`` del campo de respuesta multiple.
+3. Elija la respuesta en el selector correspondiente.
+4. Especifique el puntaje (si seleccionó por puntos) en el recuadro inferior.
+5. Haga clic en ``Agregar opción``. La respuesta aparecerá en el recuadro inferior. Repita el proceso según el número de respuestas del campo.
+6. Presione ``Guardar``.
+
+.. image:: /imgs/Formas/Formas9.png
+
+Envío de notificaciones
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Para configurar las notificaciones y habilitar el envío de notificaciones, consulte la `configuración de Email <#configuracion>`_ :octicon:`report;1em;sd-text-info` en el campo email.
+        
 
 .. _campo-numerico:
 
