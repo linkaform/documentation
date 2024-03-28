@@ -344,27 +344,208 @@ Consulte las siguientes pestañas donde podrá encontrar los tipos de respuesta 
 
         .. image:: /imgs/Formas/Formas9.3.png
 
+Revise las siguientes configuraciones:
+
 .. _pond:
 
-Ponderación
-~~~~~~~~~~~
+.. dropdown:: Configuración de la ponderación
+  
+  La ponderación es el proceso de asignar un peso o valor relativo a cada opción del campo. Esta configuración es útil para obtener una calificación al responder la forma, lo que puede ser útil para auditorías u otros fines de evaluación. Para configurar la ponderación, siga los siguientes pasos:
 
-La ponderación es el proceso de asignar un peso o valor relativo a cada opción seleccionada por el usuario. Esta configuración es exclusiva de los campos de respuesta múltiple. Siga los siguientes pasos:
+  1. Habilite la opción de la configuración de la ponderación en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info` y seleccione el método de ponderación.
+  2. Seleccione ``Configuración de la ponderación`` del campo.
+  3. Elija la respuesta en el selector correspondiente.
+  4. Especifique el puntaje (si seleccionó por puntos) en el recuadro.
+  5. Haga clic en ``Agregar opción``. La respuesta aparecerá en el recuadro inferior. 
+  6. Presione ``Guardar``.
 
-1. Habilite la opción de la configuración de la ponderación en `Opciones Generales <#ponderacion-conf>`_ :octicon:`report;1em;sd-text-info` y seleccione el método de calificación.
-2. Seleccione ``Configuración de la ponderación`` del campo de respuesta multiple.
-3. Elija la respuesta en el selector correspondiente.
-4. Especifique el puntaje (si seleccionó por puntos) en el recuadro inferior.
-5. Haga clic en ``Agregar opción``. La respuesta aparecerá en el recuadro inferior. Repita el proceso según el número de respuestas del campo.
-6. Presione ``Guardar``.
+  .. note:: Repita el proceso según el número de respuestas del campo.
 
-.. image:: /imgs/Formas/Formas9.png
+  .. image:: /imgs/Formas/Formas9.png
 
-Envío de notificaciones
-~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Configuración de la notificación
+  :open:
 
-Para configurar las notificaciones y habilitar el envío de notificaciones, consulte la `configuración de Email <#configuracion>`_ :octicon:`report;1em;sd-text-info` en el campo email.
+  La configuración de correo electrónico permite establecer y personalizar cómo se gestionan y entregan los correos electrónicos para notificar al destinatario según se responda la forma.
+
+  .. seealso:: Para personalizar el envío de un correo electrónico de acuerdo a una acción más específica, puede crear un flujo de trabajo personalizado. Consulte la sección `enviar correo <#personalizar-envio-correo>`_ :octicon:`report;1em;sd-text-info` para mas detalles.
+
+  Para acceder y realizar la configuración necesaria, consulte las siguientes pestañas:
+
+  1. Seleccione ``Configuración de Email``.
+
+  .. image:: /imgs/Formas/Formas109.png
+
+  .. tab-set::
+
+    .. tab-item:: De
+
+        En este apartado, configure al remitente. 
         
+        Haga clic en el selector y elija la opción según lo requiera, teniendo en cuenta la siguiente información:
+
+        .. list-table::
+          :widths: 30 70
+          :header-rows: 1
+          :align: left
+
+          * - Campo
+            - Descripción
+          * - Dueño de la forma
+            - Usuario que creó la forma.
+          * - Dueño de la cuenta
+            - Propietario de la cuenta.
+          * - Usuarios que contestan
+            - Usuarios que responden el formulario.
+          * - Usuario que creó el registro
+            - Usuarios que creó el registro.
+          * - Conexión del registro
+            - Usuario que no pertenece a la misma cuenta padre pero tiene acceso a visualizar el registro.
+          * - Email personalizado
+            - Si elige esta opción, ingrese el correo electrónico.
+
+        .. image:: /imgs/Formas/Formas7.png
+
+    .. tab-item:: Para
+
+        En este apartado, configure a los destinatarios que recibirán la notificación cuando se seleccione una opción del campo de respuesta múltiple. Siga los siguientes pasos:
+
+        1. Seleccione la opción del campo para la cual se enviará la notificación y presione ``Agregar opción``. Para eliminar una opción, presione el botón ``x``.
+        2. Si necesita notificar a un usuario específico de su empresa, ingrese el nombre o correo del destinatario y presione ``Enter``.
+
+        .. note:: Al ingresar el nombre, Linkaform proporcionará coincidencias automáticamente. Si el usuario de su interés tiene una cuenta vigente, aparecerá en la lista desplegable. De lo contrario, no se mostrará ninguna sugerencia.
+
+        3. Si lo requiere, puede seleccionar una opción determinada. Si elige una opción de este campo, oprima el botón ``Agregar`` cada vez que seleccione una opción. Para eliminar alguna opción, oprima el icono ``x``.
+
+        .. list-table::
+          :widths: 30 70
+          :header-rows: 1
+          :align: left
+
+          * - Campo
+            - Descripción
+          * - Dueño de la forma
+            - Usuario que creó la forma.
+          * - Dueño de la cuenta
+            - Propietario de la cuenta.
+          * - Usuarios que contestan
+            - Usuarios que responden el formulario.
+
+        4. Seleccione una acción al editar un registro.
+        5. Active la opción ``Adjuntar PDF`` si necesita enviar el registro en un documento PDF y seleccione una plantilla.
+          
+        .. seealso::  Por defecto, la lista de opciones contienen plantillas genéricas que se adaptan a cualquier formulario. Si necesita un documento personalizado, consulte la documentación sobre :ref:`doc-pdfs` :octicon:`report;1em;sd-text-info`
+
+        6. Active la opción ``Adjuntar imagen de compañía`` para que el PDF contenga el logo de su empresa.
+        7. Active la opción ``Enviar adjuntos`` si necesita incluir algunos campos de su interés.
+
+        .. image:: /imgs/Formas/Formas117.png
+
+    .. tab-item:: Asunto
+
+        En este apartado, defina el asunto que mostrará el correo. 
+        
+        En la parte inferior, Linkaform permite utilizar metadatos y campos de la forma para personalizar el asunto. 
+        
+        Para seleccionar un metadato o campo, elija y haga clic en ``Agregar``. Al hacerlo, aparecerá el **metadato** o el ``id`` correspondiente al **campo** seleccionado.
+
+        .. admonition:: Ejemplo
+            :class: pied-piper
+
+            En este ejemplo, ``{{record.form.name}}`` es el metadato que muestra el nombre de la forma.
+
+            .. image:: /imgs/Formas/Formas111.png
+
+    .. tab-item:: Cuerpo
+
+        En este apartado, defina el cuerpo del correo, que es útil para agregar una descripción más detallada y extensa. 
+
+        De manera similar al caso anterior, utilice **metadatos** y/o **campos** de la forma para personalizar el cuerpo, seleccionando y haciendo clic en ``Agregar``.
+
+        .. admonition:: Ejemplo
+            :class: pied-piper
+
+            En este ejemplo, ``{{record.answers.65a72ad10e0c..}}`` representa los identificadores únicos de los campos asociados al formulario. Observe la diferencia entre un metadato y un campo.
+
+            .. image:: /imgs/Formas/Formas112.png
+
+
+    .. tab-item:: Vista previa
+
+        En vista previa, podrá revisar el resultado final de las configuraciones que realizó anteriormente.
+
+        Al estar seguro de sus cambios, seleccione ``Guardar``.
+                  
+        .. image:: /imgs/Formas/Formas113.png
+
+    .. tab-item:: Resultado
+
+        Observe el resultado del ejemplo donde se personalizó el remitente, los destinatarios, el asunto, el cuerpo y las configuraciones relacionadas con el envío del correo electrónico.
+
+        .. image:: /imgs/Formas/Formas114.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .. _campo-numerico:
 

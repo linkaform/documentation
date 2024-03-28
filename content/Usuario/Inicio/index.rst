@@ -72,7 +72,7 @@ El usuario tiene acceso a funciones asignadas por el administrador, dependiendo 
         - Cuenta
         - Conexiones
 
-.. attention:: En Linkaform, es importante comprender el término **cuenta padre** ya que influye en diversas funciones de la plataforma, especialmente en configuraciones. Un usuario siempre dependerá de su **cuenta padre**, que corresponde al administrador de la cuenta. 
+.. attention:: Es muy importante que comprenda el término **cuenta padre** ya que influye en diversas funciones de la plataforma, especialmente en configuraciones. Un usuario siempre dependerá de su **cuenta padre**, que corresponde al administrador de la cuenta. 
 
 .. _activar-cuenta-usuario:
 
@@ -415,14 +415,14 @@ Considere los siguientes puntos y pasos importantes como administrador para dar 
 
 1. Cree un nuevo `nuevo usuario <#usuario-nuevo>`_ :octicon:`report;1em;sd-text-info`.
 
-.. hint:: 
+.. note:: 
 
     - Al crear un usuario nuevo, Linkaform enviará automáticamente un correo electrónico al nuevo usuario para que inicie el proceso de `activación <#activar-cuenta-usuario>`_ :octicon:`report;1em;sd-text-info` de la cuenta, que consiste en la confirmación del correo.
     - Si el usuario no recibe el correo para activar la cuenta, simplemente reenvíe el correo presionando el botón de reenvío ubicado en la ``Información del usuario >  Información de la cuenta``.
 
 2. Asigne una `licencia <#asignar-licencia>`_ :octicon:`report;1em;sd-text-info`.
 
-.. hint:: Una vez que el usuario haya completado el proceso de activación, asigne una licencia. Sin una licencia el usuario no podrá utilizar las funcionalidades de Linkaform.
+.. note:: Una vez que el usuario haya completado el proceso de activación, asigne una licencia. Sin una licencia el usuario no podrá utilizar las funcionalidades de Linkaform.
 
 .. _usuario-nuevo:
 
