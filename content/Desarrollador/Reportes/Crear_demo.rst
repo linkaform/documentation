@@ -205,7 +205,7 @@ El primer bloque corresponde al encabezado del reporte. Su función principal es
 - Opción para cerrar sesión. 
 - Mostrar logo de la empresa.
 
-.. seealso:: Consulte la :ref:`funcion-window-onload` :octicon:`report;1em;sd-text-info` donde se detallan los eventos utilizados.
+.. seealso:: Consulte la :ref:`funcion-window` :octicon:`report;1em;sd-text-info` donde se detallan los eventos utilizados.
     
 - Mostrar nombre del reporte.
 
@@ -264,7 +264,7 @@ El contenido (``content``) es la parte más importante de la estructura html; aq
  
 El bloque ``Session`` contiene el inicio de sesión del reporte, es decir, cuando se intenta abrir desde :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
 
-.. seealso:: Revise la estructura del archivo js, en la `función window.onload <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` y lea los comentarios de la línea 36.
+.. seealso:: Revise la estructura del archivo js, en la función `window.onload <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` y lea los comentarios de la línea 36.
 
 .. tab-set::
 
@@ -388,7 +388,7 @@ El contenido ``Filters`` son las opciones de filtros para tratar la información
 
 Modifique los filtros según sus necesidades. Añada o elimine filtros según sea necesario; estos pueden ser filtros de fecha, rango, opciones, etc.
 
-.. note:: En el ejemplo anterior, hay una tercera opción de filtro llamada ``Promotor`` (líneas 16-21). Solamente asegúrese de asignar un ``id`` descriptivo al elemento. El ``id firstParameters`` es utilizado para mostrar todos los filtros. Consulte la función `window.load <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` para conocer más detalles. 
+.. note:: En el ejemplo anterior, hay una tercera opción de filtro llamada ``Promotor`` (líneas 16-21). Solamente asegúrese de asignar un ``id`` descriptivo al elemento. El ``id firstParameters`` es utilizado para mostrar todos los filtros. Consulte la `función window-load <#mostrar-filtro>`_ :octicon:`report;1em;sd-text-info` para conocer más detalles. 
 
 .. _elementos-rep:
 
@@ -1142,7 +1142,7 @@ Independientemente del número de elementos en su reporte, incluya los elementos
             hideElement("div_alert2"); // Card2 línea 5) para traer la data única de un catálogo. Por favor, lea detenidamente los comentarios.
             hideElement("div_alert3"); // Card3
 
-.. _funcion-window-onload:
+.. _funcion-window:
 
 Función ``window.onload``
 -------------------------
@@ -1392,15 +1392,6 @@ La función ``loadDemoData()`` está diseñada para cargar datos de demostració
             document.getElementById("firstGauge").style.removeProperty('display');
             }
 
-    .. tab-item:: Gráficos
-
-        En esta pestaña encontrará el código correspondiente a una gráfica.
-
-drawFirstElement(data1, setOptions1)
-document.getElementById("secondElement").style.removeProperty('display');
-document.getElementById("graphicFirst").style.removeProperty('display');
-
-
 Función ``setDate``
 -------------------
 
@@ -1553,7 +1544,7 @@ En términos generales, la función ``getFirstElement()`` obtiene los parámetro
 
 La función se encarga de recibir las validaciones de los filtros (:ref: `funcion-runFirstElement` :octicon:`report;1em;sd-text-info`) para realiza una solicitud al servidor (puede ser a producción o a preproducción dependiendo del parámetro que contenga en la ``URL``, línea 9) utilizando el método ``POST``.
 
-.. seealso:: El ``scriptId`` es lo que se recibe como parámetro en la ``URL``, línea 12 (Regrese y consulte la :ref:`funcion-window-onload` :octicon:`report;1em;sd-text-info`, específicamente las líneas 6-8, y lea los comentarios).
+.. seealso:: El ``scriptId`` es lo que se recibe como parámetro en la ``URL``, línea 12 (Regrese y consulte la :ref:`funcion-window` :octicon:`report;1em;sd-text-info`, específicamente las líneas 6-8, y lea los comentarios).
 
 Después de procesar la respuesta del servidor, muestra u oculta elementos en la interfaz según el resultado. Si la respuesta es exitosa, se actualiza el elemento (tabla) con los datos recibidos. En caso de error se muestra un mensaje utilizando la biblioteca Swal (|sweetalert2| :octicon:`report;1em;sd-text-info`) líneas 46-60. Lea detenidamente los comentarios dentro del código para comprender el flujo.
 

@@ -413,7 +413,7 @@ Revise las siguientes configuraciones:
         1. Seleccione la opción del campo para la cual se enviará la notificación y presione ``Agregar opción``. Para eliminar una opción, presione el botón ``x``.
         2. Si necesita notificar a un usuario específico de su empresa, ingrese el nombre o correo del destinatario y presione ``Enter``.
 
-        .. note:: Al ingresar el nombre, Linkaform proporcionará coincidencias automáticamente. Si el usuario de su interés tiene una cuenta vigente, aparecerá en la lista desplegable. De lo contrario, no se mostrará ninguna sugerencia.
+        .. note:: Al ingresar el nombre, Linkaform proporcionará coincidencias automáticamente. Si el usuario de su interés tiene un a cuenta vigente, aparecerá en la lista desplegable. De lo contrario, no se mostrará ninguna sugerencia.
 
         3. Si lo requiere, puede seleccionar una opción determinada. Si elige una opción de este campo, oprima el botón ``Agregar`` cada vez que seleccione una opción. Para eliminar alguna opción, oprima el icono ``x``.
 
@@ -477,15 +477,6 @@ Revise las siguientes configuraciones:
         Al estar seguro de sus cambios, seleccione ``Guardar``.
                   
         .. image:: /imgs/Formas/Formas113.png
-
-    .. tab-item:: Resultado
-
-        Observe el resultado del ejemplo donde se personalizó el remitente, los destinatarios, el asunto, el cuerpo y las configuraciones relacionadas con el envío del correo electrónico.
-
-        .. image:: /imgs/Formas/Formas114.png
-
-
-
 
 
 
@@ -863,8 +854,7 @@ Para acceder y realizar la configuración necesaria, consulte las siguientes pes
           En este ejemplo, ``{{record.answers.65a72ad10e0c..}}`` representa los identificadores únicos de los campos asociados al formulario. Observe la diferencia entre un metadato y un campo.
 
           .. image:: /imgs/Formas/Formas112.png
-
-
+            
   .. tab-item:: Vista previa
 
       En vista previa, podrá revisar el resultado final de las configuraciones que realizó anteriormente.
@@ -872,12 +862,6 @@ Para acceder y realizar la configuración necesaria, consulte las siguientes pes
       Al estar seguro de sus cambios, seleccione ``Guardar``.
                 
       .. image:: /imgs/Formas/Formas113.png
-
-  .. tab-item:: Resultado
-
-      Observe el resultado del ejemplo donde se personalizó el remitente, los destinatarios, el asunto, el cuerpo y las configuraciones relacionadas con el envío del correo electrónico.
-
-      .. image:: /imgs/Formas/Formas114.png
 
 .. _menu-opciones-generales:
 
