@@ -4,6 +4,9 @@ Configuración del entorno
 
 En esta sección, se detallan las plantillas disponibles, la estructura de archivos necesaria y la configuración específica en el entorno Django que se requiere para crear sus propios documentos en formato PDF.
 
+Repositorio reportes
+====================
+
 Linkaform hace uso de un repositorio especial para el desarrollo de PDFs, proporcionando un control sobre los documentos generados para los clientes. Linkaform utiliza GitLab, si ya cuenta con una cuenta en la misma, siga los pasos a continuación; de lo contrario, consulte el `enlace <https://about.gitlab.com/>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
 
 1. Solicite acceso al repositorio de PDFs a través de soporte técnico.
@@ -163,6 +166,8 @@ El archivo ``style`` también juega un rol importante. Este establece los parám
     <blockValign value="middle"/>
     </blockTableStyle>
 
+.. _conf-django:
+
 Configuración en Django
 =======================
 
@@ -274,145 +279,12 @@ La opción ``Agregar plantilla`` también se muestra un el formulario anterior. 
 
 .. important:: Tenga en cuenta utilizar un navegador diferente a la página de Linkaform para evitar posibles conflictos con las cookies.
 
-.. _vincular:
 
-Configuración de forma
-======================
-
-La configuración implica la vinculación del PDF con el formulario. Al enlazar un PDF, se especifica que es exclusivo para las necesidades del formulario. Ya sea que esté trabajando con un solo registro o múltiples registros, la vinculación difiere.
-
-.. important:: De manera similar a la configuración de Django, se recomienda utilizar preproducción para probar sus cambios. Una vez que esté listo, puede llevar a cabo la transición a producción.
-
-Single record
--------------
-
-Siga las siguientes instrucciones para configurar la forma y vincular su documento.  
-
-1. Verifique que la plantilla esté configurada para funcionar como un single record (registro único). Para lograr esto, ajuste el atributo `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` en la interfaz de administración de Django. 
-
-2. Inicie sesión en producción o preproducción con sus credenciales.
-
-- `preprod.linkaform.com <https://preprod.linkaform.com/>`_ :octicon:`report;1em;sd-text-info`
-
-- `app.linkaform.com <https://app.linkaform.com/>`_ :octicon:`report;1em;sd-text-info`
-
-3. Seleccione y edite la forma a la que desea vincular el PDF. 
-
-4. Seleccione ``opciones > opciones generales > Plantillas de PDF``. 
-
-5. Seleccione el nombre que haya asignado a la plantilla previamente definida en la administración de Django.
-
-.. image:: /imgs/PDF/1.png
-  :align: center
-
-6. Presione ``Agregar`` para incluir la plantilla y automáticamente se rellenará el campo ``Descripción``, seguido del ``nombre de la plantilla``, junto con dos alternativas: un ``botón azul`` y la opción de ``eliminar`` (símbolo X). A continuación, haga clic en ``OK``, regrese al formulario y guarde los cambios.
-
-.. image:: /imgs/PDF/2.png
-  :align: center
-
-7. Seleccione el ``Nombre de la plantilla`` o el ``botón azul``. Se habilitará la escritura del campo ``Nombre de PDF``.
-
-8. Escriba el nombre del PDF (no incluya el nombre del cliente), seguido de un guion medio ``-``.
-
-.. image:: /imgs/PDF/3.png
-
-9. En la opción ``Campo`` seleccione el metadato ``Folio del registro`` y presione ``Agregar``; automáticamente llenará el nombre del PDF con doble corchete ``{{}}``. 
-
-.. note:: Puede seleccionar cualquier metadato disponible. Sin embargo, por defecto, suele usarse ``folio del registro``.
-
-.. image:: /imgs/PDF/8.png
-  :align: center
-
-10. Seleccione la opción ``Guardar`` y haga clic en ``OK``.
-
-11. Finalmente, guarde la forma.
-
-Multiple record
----------------
-
-El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los siguientes pasos para su configuración:
-
-1. Verifique que la configuración del `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` esté establecida en multiple records.
-
-2. Inicie sesión en producción o preproducción con sus credenciales.
-
-3. Elija y edite la forma a la que desea vincular el PDF. 
-
-4. Seleccione ``opciones > opciones generales > Plantillas de PDF``. 
-
-5. En el selector, elija el nombre que haya asignado a la plantilla previamente definida. Notará que se resalta una etiqueta verde con el texto ``multiple``.
-
-6. Presione ``Agregar``.
-
-7. Finalmente haga clic en ``OK`` y guarde la forma en su totalidad.
-
-.. image:: /imgs/PDF/9.png
-  :align: center
 
 
 .. important:: Consideraciones sobre navegación 
 
     Tenga en cuenta utilizar un navegador diferente al administrador de Django. Dado que ambos entornos comparten la misma autenticación, es aconsejable abrir el Administrador de Django en un navegador y de forma separada, acceder al entorno de formularios en otro navegador. Esto puede evitar posibles conflictos y asegurar un funcionamiento más fluido.
-
-Descargar PDF
-=============
-
-El proceso de descarga de sus documentos PDF difiere según el tipo de documento. A continuación, siga los pasos según su necesidad.
-
-.. important:: Recuerde que el proceso de descarga depende de la configuración que realizó al `vincular su forma y el PDF <#vincular>`_ :octicon:`report;1em;sd-text-info`.
-    
-Single record
--------------
-
-Para descargar documentos con registros únicos, siga los siguientes pasos:
-
-#. Seleccione el registro que desea descargar.
-
-#. Seleccione la opción con el icono de documento en la esquina superior derecha.
-
-#. En la sección de descargas de su navegador, podrá observar su documento PDF.
-
-.. image:: /imgs/PDF/10.png
-  :align: center
-
-Multiple record
----------------
-
-En el caso de múltiples registros, el proceso varía ligeramente. Siga los siguientes pasos:
-
-1. Ingrese a la interfaz de registros. 
-
-2. En el campo ``Nombre de la forma``, escriba el nombre de la forma de la cual desea descargar los registros. 
-
-.. important:: Es importante verificar la forma de los registros que necesita descargar. De lo contrario, seleccionar registros provenientes de diferentes formas podría resultar en errores.
-
-3. Seleccione la opción con el icono de documento en la esquina superior derecha. 
-
-.. image:: /imgs/PDF/11.png
-  :align: center
-
-Una vez seleccionado la opción, se desplegará la siguiente interfaz. Siga el siguiente procedimiento:
-
-1. Si no ha aplicado ningún filtro, seleccione la opción ``Registros seleccionados``.
-
-.. important:: La opción de ``Registros filtrados`` solo es posible si el código de su documento está preparado para recibir y tratar el filtro.
-
-2. Seleccione el nombre de la plantilla.
-
-3. Proporcione un nombre descriptivo para identificar la descarga de sus registros.
-
-4. Haga clic en la opción ``Descargar``.
-
-.. image:: /imgs/PDF/12.png
-
-5. Ahora diríjase a la opción ``Descargas`` ubicada en el menú en el lado izquierdo.
-
-.. image:: /imgs/PDF/13.png
-
-6. Identifique el nombre de su descarga y presione ``Descargar``. El navegador abrirá una pestaña nueva con su documento.
-
-.. image:: /imgs/PDF/14.png
-  :align: center
 
 .. tip:: Recomendación
 
