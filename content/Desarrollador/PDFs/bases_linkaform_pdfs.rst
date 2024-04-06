@@ -27,41 +27,39 @@ Un pdf single record está preparado unicamente para extraer y presentar un solo
 3. Seleccione y edite la forma a la que desea vincular el pdf. 
 4. Seleccione ``opciones > opciones generales > Plantillas de PDF``. 
 5. Seleccione el nombre que haya asignado a la plantilla previamente definida en la :ref:`conf-django` :octicon:`report;1em;sd-text-info`.
-6. Presione ``Agregar``. Automáticamente se incluirá la plantilla y se rellenará el campo ``Descripción``, seguido del **nombre de la plantilla**, junto con dos alternativas: un ``botón azul`` y la opción de ``eliminar (x)``.
+6. Presione ``Agregar``. Automáticamente se incluirá la ``Descripción`` definida previamente en el atributo **Description** en la :ref:`conf-django` :octicon:`report;1em;sd-text-info`, seguido del **nombre de la plantilla**, junto con dos alternativas: un ``botón azul`` y la opción de ``eliminar (x)`` en el recuadro medio.
 7. Haga clic en ``OK`` y guarde la forma en su totalidad.
-8. Regrese a la configuración y seleccione el ``Nombre de la plantilla`` o el ``botón azul``. Se habilitará la escritura del campo ``Nombre de PDF``.
 
 .. image:: /imgs/PDF/2.png
-  :align: center
 
+8. Regrese a la configuración y seleccione la fila, el ``Nombre de la plantilla`` o el ``botón azul`` en el recuadro medio. Se habilitará la escritura del campo ``Nombre de PDF`` y otros campos posteriores.
 9. Ingrese el nombre que desee al momento de descargar el pdf. Regularmente, se utiliza el nombre de la plantilla, pero **no** se incluye el nombre del cliente, seguido de un guion medio.
-10. En la opción ``Campo``, seleccione el metadato o campo de su preferencia. 
+10. En la opción ``Campo``, seleccione un metadato o campo.
 
-.. note:: Regularmente, al seleccionar la opción de campo, se elige el metadato o campo que se necesita al momento de descargar el PDF. Usualmente se selecciona el metadato de ``Folio del registro``.
-  
-11. Presione ``Agregar``; automáticamente llenará el ``Nombre de PDF`` con doble corchete ``{{}}``. 
-12. Presione ``Guardar`` seguido de ``OK`` y guarde la forma en su totalidad. 
+.. note:: Regularmente, al seleccionar la opción de campo, se elige el metadato o campo que se necesita al momento de descargar el pdf. Este campo forma parte del nombre de la descarga. Usualmente, se selecciona el metadato de ``Folio del registro``.
 
-.. image:: /imgs/PDF/3.1.png
+11. Presione ``Agregar``; automáticamente el campo o metadato seleccionado pasará a ser complemento del ``Nombre de PDF``.
 
+.. image:: /imgs/PDF/2.1.png
+
+12. Presione ``Guardar``; la actualización se verá reflejada en el recuadro medio.
+13. Finalmente, presione ``OK`` y guarde la forma en su totalidad. 
+
+.. image:: /imgs/PDF/3.2.png
 
 Multiple record
 ---------------
 
+Un PDF de múltiples registros está diseñado para extraer y presentar datos de varios registros, todos ellos **dependientes de una misma forma**.
+
 El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los siguientes pasos para su configuración:
 
-1. Verifique que la configuración del `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` esté establecida en multiple records.
-
-2. Inicie sesión en producción o preproducción con sus credenciales.
-
-3. Elija y edite la forma a la que desea vincular el PDF. 
-
+1. Verifique que la configuración del **type** en la :ref:`conf-django` :octicon:`report;1em;sd-text-info` esté establecida en **multiple records**.
+2. Inicie sesión en |prod| :octicon:`report;1em;sd-text-info` o |preprod| :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
+3. Elija y edite la forma a la que desea vincular el pdf. 
 4. Seleccione ``opciones > opciones generales > Plantillas de PDF``. 
-
-5. En el selector, elija el nombre que haya asignado a la plantilla previamente definida. Notará que se resalta una etiqueta verde con el texto ``multiple``.
-
-6. Presione ``Agregar``.
-
+5. Seleccione el nombre que haya asignado a la plantilla previamente definida en la :ref:`conf-django` :octicon:`report;1em;sd-text-info`. Notará que se resalta una etiqueta verde con el texto ``Multiple``, indicando que está preparado para mostrar múltiples registros.
+6. Presione ``Agregar``. El **nombre de la plantilla** pasara al recuadro medio, dónde encontrara dos opciones: un ``botón azul`` y la opción de ``eliminar (x)``.
 7. Finalmente haga clic en ``OK`` y guarde la forma en su totalidad.
 
 .. image:: /imgs/PDF/9.png
@@ -70,24 +68,28 @@ El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los 
 Descargar PDF
 =============
 
-El proceso de descarga de documentos PDF difiere según el tipo de descarga. A continuación, revise las siguientes secciones según la descarga que necesite.
+El proceso para descargar documentos pdf varía según el tipo de descarga. A continuación, revise las siguientes secciones según lo requiera.
 
-.. important:: El proceso de descarga depende de la configuración que realiza al `vincular la forma y el PDF <#vincular>`_ :octicon:`report;1em;sd-text-info`.
-    
-Registro único
---------------
+.. note:: Asegúrese de que la configuración al `vincular la forma y el pdf <#vincular>`_ :octicon:`report;1em;sd-text-info` esté correctamente establecida. 
 
-Para descargar documentos con registros únicos, siga los siguientes pasos:
+Single record
+-------------
 
-1. Diríjase a ``Registros``, filtre según sus necesidades y seleccione **el registro** de su interés.
+Para descargar el PDF de un registro único, siga los siguientes pasos:
 
-.. seealso:: Si tiene dudas sobre cómo acceder al registro, consulte :ref: `registros-formas` para obtener más información.
+1. Diríjase a ``Registros`` en el menú lateral.
+2. Ingrese el nombre de la forma a la cual desea ver sus registros.
+3. Filtre los registros según lo requiera.
+4. Busque y seleccione el registro de su interés presionando el icono para visualizar al instante o en una nueva ventana.
 
-2. Haga clic en la opción con el ícono de documento en la esquina superior derecha.
-3. En la sección de descargas de su navegador, podrá observar su documento PDF.
+.. seealso:: Si tiene dudas sobre cómo acceder y filtrar registros, consulte :ref:`registros-formas` :octicon:`report;1em;sd-text-info` para obtener más información.
 
 .. image:: /imgs/PDF/10.png
-  :align: center
+
+5. Haga clic en el ícono de documento en la esquina superior derecha.
+6. En la sección de descargas de su navegador, podrá observar su documento PDF.
+
+.. image:: /imgs/PDF/10.1.png
 
 Multiple record
 ---------------
