@@ -9,28 +9,10 @@ Configuración del entorno
 
 Para comenzar el desarrollo de PDFs en Linkaform, es importante que prepare y configure su entorno de trabajo. Siga los siguientes apartados para más información.
 
-Repositorio de PDFs
--------------------
-
-El repositorio que contiene los PDFs actuales se encuentra en un repositorio de GitLab. Este repositorio es exclusivo para usuarios de Linkaform, utilice git para realizar cambios y contribuciones locales. 
-
-.. seealso:: Git es una herramienta util para el control de versiones de un repositorio. Si aun no está familiarizado con Git, se recomienda que revise la documentación oficial de |git| :octicon:`report;1em;sd-text-info` para obtener más detalles.
-
-Si su empresa desea realizar PDFs personalizados en Linkaform, podrá hacerlo sin necesidad de clonar el repositorio. Simplemente necesitará acceso al administrador de Django. El repositorio es útil para proporcionarle una base, sin embargo, en contenido posterior podrá encontrar dicho bloque de código.
-
-.. caution:: En el repositorio de PDFs, podrá encontrar diferentes carpetas pertenecientes a diferentes clientes. Si tiene acceso, es importante que sepa que la información contenida es de suma importancia y secreta. Por lo tanto, se le solicita que tenga discreción con la información.
-
-Si ya cuenta con una cuenta en GitLab, siga los pasos a continuación; de lo contrario, consulte el siguiente |gitlab| :octicon:`report;1em;sd-text-info` para obtener más información.
-
-1. Solicite acceso al repositorio de PDFs a través del soporte técnico.
-2. Ingrese al siguiente |gitPDF| :octicon:`report;1em;sd-text-info` y clone el repositorio.
-
-.. tip:: Se recomienda tener una carpeta exclusiva para repositorios pertenecientes a Linkaform. En este caso, la carpeta ``lkf`` contendrá el repositorio ``PDFTemplates``.
-
 .. _conf-django:
 
 Administración de Django
-========================
+------------------------
 
 La administración de Django es la interfaz que permite realizar operaciones CRUD (crear, leer, actualizar, borrar) con los registros de las formas. Para configurar la administración de Django, siga los siguientes pasos:
 
@@ -45,7 +27,7 @@ La administración de Django es la interfaz que permite realizar operaciones CRU
 Una vez autenticado, se muestra la interfaz principal de la administración de Django. Observe que tiene acceso a una variedad de recursos, sin embargo, con el propósito de abordar el desarrollo de archivos PDF, la explicación se centra en la sección ``Pdfdocuments``, que consta de dos elementos clave: 
 
 .. list-table::
-   :widths: 30 70
+   :widths: 20 80
    :header-rows: 1
    :align: left
 
@@ -133,57 +115,70 @@ La opción ``Agregar`` permite configurar una nueva plantilla. Siga los siguient
 
         **Style**: Código de los estilos usados en formato ``XML`` (requerido).
 
+        .. note:: Los campos relacionados al ``XML`` son archivos que se desarrollan según el requerimiento del boceto del cliente o el diseño realizado.
+            
         **Owner**: Nombre de la cuenta padre a la que se va asignar la plantilla.
 
-        Debido a que el selector de ``Owner`` contiene muchas opciones de cuentas de usuarios actuales, puedes simplificar la búsqueda siguiendo estos pasos:
+        .. dropdown:: Tip selector **Owner**
 
-        1. Inspeccione la pagina haciendo ``clic derecho > Inspeccionar`` o presionando directamente ``F12``.
-        2. Seleccione la opción de seleccionar elementos del DOM en la parte superior izquierda.
-        3. Haga clic en el selector de ``Owner``.
+            Debido a que el selector ``Owner`` contiene muchas opciones de cuentas de usuarios actuales, puede llevar tiempo buscar la cuenta de su interés entre tantas opciones. Para simplificar la búsqueda, siga estos pasos:
 
-        .. image:: /imgs/PDF/pdf19.png
-        
-        4. Abra el elemento que contiene a las opciones del selector.
+            1. Inspeccione la pagina haciendo ``clic derecho > Inspeccionar`` o presionando directamente ``F12``.
+            2. Presione la opción de seleccionar y ubíquese en la pestaña de ``Elements`` de la página para inspeccionar los elementos del DOM en la parte superior izquierda o presione directamente ``Ctrl + Shift + C``.
+
+            .. image:: /imgs/PDF/pdf22.png
+
+            3. Haga clic en el selector de ``Owner``.
+
+            .. image:: /imgs/PDF/pdf19.png
             
-        .. image:: /imgs/PDF/pdf20.png
+            4. Abra el elemento que contiene a las opciones del selector.
+                
+            .. image:: /imgs/PDF/pdf20.png
+                :width: 500px
+                :height: 150px
 
-        5. Presione ``Ctrl + F`` e ingrese el nombre o Valor del ``ID`` de la cuenta de su interés para buscar entre las opciones.
-        6. Haga doble clic en la opción de su interés e ingrese la palabra ``selected`` y presione ``Enter``. Automáticamente la opción sera seleccionada.
+            5. Presione ``Ctrl + F`` e ingrese el nombre o Valor del ``ID`` de la cuenta de su interés para buscar entre las opciones.
+            6. Haga doble clic en la opción de su interés e ingrese la palabra ``selected`` y presione ``Enter``. Automáticamente la opción sera seleccionada.
 
-        .. note:: Revise que el ``ID`` de la opción corresponda a la de su interés.
+            .. important:: Revise que el ``ID`` de la opción corresponda a la cuenta de su interés.
 
-        .. image:: /imgs/PDF/pdf21.png
+            .. image:: /imgs/PDF/pdf21.png
 
+Repositorio de PDFs
+-------------------
 
+El repositorio que contiene los PDFs actuales se encuentra en un repositorio de GitLab. Este repositorio es exclusivo para usuarios de Linkaform, utilice git para realizar cambios y contribuciones locales. 
 
+.. seealso:: Git es una herramienta util para el control de versiones de un repositorio. Si aun no está familiarizado con Git, se recomienda que revise la documentación oficial de |git| :octicon:`report;1em;sd-text-info` para obtener más detalles.
 
+Si ya cuenta con una cuenta en GitLab, siga los pasos a continuación; de lo contrario, consulte el siguiente |gitlab| :octicon:`report;1em;sd-text-info` para obtener más información.
 
+1. Solicite acceso al repositorio de PDFs a través de soporte técnico.
+2. Ingrese al siguiente |gitPDF| :octicon:`report;1em;sd-text-info` y clone el repositorio.
 
-
-
-
-
-
-
+.. tip:: Se recomienda tener una carpeta exclusiva para repositorios pertenecientes a Linkaform. En este caso, la carpeta ``lkf`` contendrá el repositorio ``PDFTemplates``.
 
 Plantillas
 ==========
 
-Para el desarrollo de un PDF, se necesitan estrictamente cuatro archivos que incluyen un encabezado, cuerpo, pie de página y estilos. 
+Para el desarrollo de un PDF, se requieren cuatro archivos: un **encabezado**, **cuerpo**, **pie de página** y un archivo de **estilos**.
 
-.. attention:: Se dice que es necesario contar con cuatro archivos para el desarrollo de un PDF. Sin embargo, es válido insertar directamente el encabezado y el pie de página en el cuerpo del documento. No obstante, se recomienda tener los archivos separados por la necesidad del administrador de Django, encargado de ejecutar los PDFs.
+Aunque es posible insertar el encabezado, pie de página y estilos directamente en el cuerpo del PDF, así como tener un único archivo de estilos para todos los PDFs de un cliente en específico, se recomienda separar los archivos para mantener un orden y cumplir con los requisitos del `administrador de Django <#conf-django>`_ :octicon:`report;1em;sd-text-info`.
 
 .. mermaid::
 
    graph TB
      
    A(PDF)
-   A --> B[Header]
-   A --> C[Body]
-   A --> D[Footer]
-   A --> E[Style]
+   A --> B[header.xml]
+   A --> C[body.xml]
+   A --> D[footer.xml]
+   A --> E[style.xml]
 
-Al tener el repositorio de PDFs clonado, podrá consultar plantillas genéricas que le servirán como base para la creación de sus propios PDFs personalizados. Podrá encontrarlos en la carpeta :bdg-secondary:`Básico`. Dentro de esta carpeta, podrá encontrar los archivos correspondientes.
+.. caution:: El repositorio en GitLab **PDFTemplates** contiene todas las plantillas desarrolladas pertenecientes a diferentes clientes. Si tiene acceso, es importante que sepa que la información contenida es de suma importancia y confidencial. Por lo tanto, se solicita que tenga discreción con la información.
+
+En el repositorio **PDFTemplates**, identifique la carpeta ``Básico``, aquí podrá encontrar plantillas que servirán como base para la creación de nuevos PDFs.
 
 .. grid:: 1
     :gutter: 0
@@ -202,7 +197,7 @@ Al tener el repositorio de PDFs clonado, podrá consultar plantillas genéricas 
             </head>
             <style>
                 .print{
-                background-color: #E36414
+                background-color: #627254
                 }
             </style>
             <body>
@@ -213,12 +208,27 @@ Al tener el repositorio de PDFs clonado, podrá consultar plantillas genéricas 
                 │   └── <a class="printf">example_header.xml</a><br>
                 │   └── <a class="printf">example_style.xml</a><br>                
             </body>
-            </html>    
+            </html>
 
-Si ya contiene una carpeta correspondiente a su empresa, cree los archivos necesarios para el nuevo PDF. Si no la tiene, cree una nueva carpeta utilizando el nombre del cliente o empresa como identificador. Luego, cree los archivos necesarios como se muestra en el siguiente ejemplo:
+Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF. De lo contrario, cree una nueva carpeta utilizando el nombre de la empresa o cliente como identificador y agregue los archivos necesarios dentro de ella. Por ejemplo:
 
 .. grid:: 2
-    :gutter: 0
+    :gutter: 0  
+
+    .. grid-item-card:: 
+        :columns: 8
+        
+        Para nombrar los archivos, utilice el nombre de la empresa o cliente seguido del tipo de archivo. Por ejemplo: ::
+
+            [nombre_cliente] [_] [tipo_archivo] [.xml]
+
+            Comercializadora_header.xml
+
+        Si dentro de su carpeta tiene más de un PDF, utilice el nombre del PDF seguido del tipo de archivo. Por ejemplo: ::
+
+            [nombre_pdf] [_] [tipo_archivo] [.xml]
+
+            gastos_body.xml
 
     .. grid-item-card:: Directory Tree
         :columns: 4
@@ -245,134 +255,40 @@ Si ya contiene una carpeta correspondiente a su empresa, cree los archivos neces
                 │   └── <a class="printf">gastos_header.xml</a><br>
                 │   └── <a class="printf">gastos_style.xml</a><br>                
             </body>
-            </html>    
-
-    .. grid-item-card:: 
-        :columns: 8
-        
-        Para el nombre de los archivos utilice la siguiente estructura: ::
-
-            [nombre_pdf] [_] [tipo_archivo] [.xml]
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </html>  
 
 .. _estructura:
 
 Estructura de archivos
-======================
-
-Dencódigo genérico el cual puede emplear como base para sus proyectos futuros.
-
- 
-Header
-------
-
-Encabezado del documento, que suele contener información como el logotipo y datos de identificación del cliente. El código base es el siguiente:
-
-.. code-block:: xml
-    :linenos:
-
-    <drawRightString x="12cm" y="25cm"></drawRightString>
-
-Para incluir elementos del ``header`` en el ``body`` utilice etiquetas y custom tags especiales de Django y Linkaform dentro de ``<pageGraphics>``. En la sección :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` se habla más a cerca de las etiquetas.
+----------------------
 
 
-.. code-block:: xml
-    :linenos:
+Revise las siguientes secciones sobre la estructura de los archivos que componen un PDF. El código es genérico y puede ser utilizado para proyectos futuros según sea necesario.
 
-    <pageGraphics>
+.. important::
 
-    <!-- Cabecera de documento -->
-    {% Header company_logo parent user form Template meta %}
+    En los siguientes ejemplos, observe que se utilizan etiquetas similares a HTML, estas pertenecen a RML. Consulte :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` en la documentación para obtener más detalles.
 
-    </pageGraphics>
+    También encontrará líneas que contienen ``{% %}`` o ``{{ }}``, las cuales representan etiquetas y variables del lenguaje de plantillas de Django. Para obtener más información consulte la sección :ref:`rml_django` :octicon:`report;1em;sd-text-info` en la documentación.
 
-Footer
-------
+Estructura body
+^^^^^^^^^^^^^^^
 
-El pie de página puede incluir información adicional, como datos de contacto, notas importantes o número de páginas. Aunque comúnmente los documentos PDF no cuentan con un pie de página, es importante adjuntar algo en el administrador de Django. Para ello, puede utilizar la siguiente etiqueta:
+El cuerpo del documento es la parte más importante. Similar a HTML, aquí se especifica la estructura de los elementos que compondrán al PDF, tales como tablas, imágenes, texto, etc.
+
+El siguiente bloque de código solamente representa la configuración del documento, que incluyen propiedades como el tamaño de la página, márgenes, tipografía, etc. Sin embargo, para estructurar los elementos del PDF, deberá insertar su propio código entre las etiquetas ``<story>`` (líneas 40, 42).
+
+.. hint:: Dentro del bloque de código, asegúrese de revisar los comentarios para obtener más contexto sobre cómo se estructura y configura el documento PDF.
 
 .. code-block:: xml
     :linenos:
-
-    <drawRightString x="19.5cm" y="0.85cm">Página <pageNumber/> de <getName id="LASTPAGENO"/></drawRightString>
-
-También puede incluir elementos del ``footer`` en el ``body`` utilizando:
-
-.. code-block:: xml
-    :linenos:
-
-    <pageGraphics>
-
-    <!-- Pie del documento -->
-    {% Footer user form Template meta %}
-
-    </pageGraphics>
-
-Body
-----
-
-El cuerpo del documento es la parte más importante, similar a HTML, aquí se especifica la estructura principal del PDF. La estructura base del cuerpo utiliza el siguiente código:
-
-.. code-block:: xml
-    :linenos:
-    :emphasize-lines: 42, 45
+    :emphasize-lines: 40, 42
 
     <?xml version="1.0"?>
-
     <!-- Variables de Django - No se mueve-->
     {% load PrintFields %}
     {% load set_var %}
     {% load custom_tags %}
-
     <!-- Configuración del documento -->
     <document filename="Example" xmlns:doc="http://namespaces.zope.org/rml/doc">
         <!-- Propiedades informativas del documento -->
@@ -394,9 +310,9 @@ El cuerpo del documento es la parte más importante, similar a HTML, aquí se es
                     <drawCenteredString x="10.5cm" y="27.8cm">
                     {{direccion}}
                     </drawCenteredString>
-                    <!-- Cabecera de documento -->
+                    <!-- Cabecera de documento (opcional) -->
                     {% Header company_logo parent user form Template meta %}
-                    <!-- Pie del documento -->
+                    <!-- Pie del documento (opcional) -->
                     {% Footer user form Template meta %}
                 </pageGraphics>
             </pageTemplate>
@@ -408,17 +324,49 @@ El cuerpo del documento es la parte más importante, similar a HTML, aquí se es
             {% endautoescape %}
         </stylesheet>
         <story>
-            <!-- Aquí va el código del cuerpo de la plantilla -->
+            <!-- Aquí va el código de los elementos del pdf -->
             <para>Hello world</para>
         </story>
     </document>
 
-.. important:: El código anterior ya está preparado para su uso; deberá insertar su propio código entre las etiquetas ``<story>`` (línea 42 y 45).
+Estructura header y footer
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Style
------
+El encabezado del documento suele contener información como el logotipo, títulos y datos de identificación del cliente o del registro.Para rellenar el campo en el administrador de Django, utilice el siguiente código base:
 
-El archivo ``style`` también juega un rol importante. Este establece los parámetros estéticos necesarios para cada plantilla, definiendo aspectos como colores, dimensiones y otras características estéticas.
+.. code-block:: xml
+    :linenos:
+
+    <drawRightString x="12cm" y="25cm"></drawRightString>
+
+El pie de página del documento puede incluir información adicional, como datos de contacto, notas importantes o número de páginas. Aunque regularmente los documentos PDF no cuentan con un pie de página, es importante adjuntar algo en el administrador de Django. Para ello, puede utilizar la siguiente etiqueta:
+
+.. code-block:: xml
+    :linenos:
+
+    <drawRightString x="19.5cm" y="0.85cm">Página <pageNumber/> de <getName id="LASTPAGENO"/></drawRightString>
+
+Para incluir elementos del ``header`` y ``footer`` en el cuerpo del documento, utilice **etiquetas** y **custom tags** especiales de Django y Linkaform dentro de ``<pageGraphics>``. 
+
+En la sección :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` se habla más a cerca de las etiquetas.
+
+.. code-block:: xml
+    :linenos:
+
+    <pageGraphics>
+
+    <!-- Cabecera de documento -->
+    {% Header company_logo parent user form Template meta %}
+
+    <!-- Pie del documento -->
+    {% Footer user form Template meta %}
+
+    </pageGraphics>
+
+Estructura style
+^^^^^^^^^^^^^^^^
+
+El archivo ``style`` establece los parámetros estéticos necesarios para cada plantilla, definiendo aspectos como colores, dimensiones y otras características estéticas.
 
 .. code-block:: xml
     :linenos:
@@ -429,20 +377,6 @@ El archivo ``style`` también juega un rol importante. Este establece los parám
     <blockAlignment value="center" start="0,0" stop="-1,-1"/>
     <blockValign value="middle"/>
     </blockTableStyle>
-
-.. important:: Tenga en cuenta utilizar un navegador diferente a la página de Linkaform para evitar posibles conflictos con las cookies.
-
-.. important:: Consideraciones sobre navegación 
-
-    Tenga en cuenta utilizar un navegador diferente al administrador de Django. Dado que ambos entornos comparten la misma autenticación, es aconsejable abrir el Administrador de Django en un navegador y de forma separada, acceder al entorno de formularios en otro navegador. Esto puede evitar posibles conflictos y asegurar un funcionamiento más fluido.
-
-.. tip:: Recomendación
-
-    Al haber establecido la configuración entre el documento PDF y el formulario, si al generar el archivo no se descarga como se espera, se sugiere seguir el siguiente procedimiento:
-
-    1. Edite el formulario y reenvíe los datos, incluso si no se realizan modificaciones en los registros existentes.
-
-En esta sección, ha aprendido conceptos necesarios sobre un documento PDF. También ha aprendido a configurar su entorno de trabajo. En la siguiente sección, se abordará cómo comenzar a preparar su documento utilizando el lenguaje de marcado de informes (Report Markup Language, RML) desde el código.
 
 .. LIGAS DE INTERÉS
 

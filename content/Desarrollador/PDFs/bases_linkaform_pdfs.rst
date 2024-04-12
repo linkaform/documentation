@@ -34,20 +34,17 @@ Accesos
 
 Para el desarrollo de PDFs en Linkaform, necesitará acceso a cuentas y formas específicas. A continuación, se detallan los accesos necesarios:
 
-**Cuenta del cliente**
+**Cuenta de usuario**
 
+La cuenta del usuario es necesaria para configurar, visualizar y generar PDFs de las formas y registros asociados a dicha cuenta. Si desea generar PDFs para otra cuenta diferente a la suya, deberá solicitar acceso al soporte técnico.
 
-Debe contar con acceso y autorización a la cuenta del cliente para el cual desea crear el PDF. Esto le permitirá configurar, visualizar y generar PDFs de las formas y registros asociados a dicho cliente.
-
-En producción, puede acceder mediante el bypass-login. Para obtener autorización, acceso y detalles sobre el funcionamiento del bypass, comuníquese con el soporte técnico.
+En producción, puede acceder mediante el **bypass-login** utilizando solamente el correo de la cuenta de su interés. Para obtener autorización, acceso y detalles sobre el funcionamiento del **bypass**, comuníquese con el soporte técnico.
 
 .. attention:: Si tiene acceso a cuentas de terceros, es importante que la información tratada sea confidencial y en ningún caso debe divulgarse.
 
 **Forma de logotipos**
 
-En su cuenta personal, necesitará acceso a la forma llamada ``Logotipo de Clients``. Solicite al soporte técnico que comparta esta forma con su cuenta. 
-
-Esta forma le permitirá obtener la URL del logotipo de los clientes de Linkaform para utilizarla en los PDF.
+Opcionalmente, si forma parte del equipo de desarrollo de Linkaform, solicite que le compartan la forma llamada ``Logotipo de Clients`` a su cuenta. Esta forma le permitirá obtener la URL de los logotipos y algunas otras imágenes de los clientes de Linkaform para utilizarlas en los PDFs.
 
 .. image:: /imgs/PDF/pdf1.png
 

@@ -1,6 +1,8 @@
-=======================
-Programación con Django
-=======================
+.. _rml_django:
+
+==========================
+Potenciando RML con Django
+==========================
 
 Esta sección tiene el objetivo de brindarle suficiente información técnica para comprender la sintaxis del lenguaje del sistema de plantillas Django.
 
