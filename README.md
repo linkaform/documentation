@@ -50,6 +50,24 @@ o si tienes la version mas acutal de docker correr
 docker compose up 
 ```
 
+Entrar al contenedor y hacer el build local
+```
+```
+
+una vez realizada la compilacion hacer un tar de la carpeta build
+
+```
+tar -czvf documentacion.tar.gz build
+```
+copiar tar  a server
+```
+scp documentacion.tar.gz docs.linkaform.com:
+```
+
+En el servidor correr estos comandos
+```
+tar xzvf documentacion.tar.gz 
+cp -a build/* /srv/docs/
+```
 
 https://www.sphinx-doc.org/en/master/
-
