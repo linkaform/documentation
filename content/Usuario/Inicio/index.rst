@@ -748,7 +748,7 @@ Observe la interfaz sobre grupos.
 Crear grupo
 -----------
 
-Para crear un grupo, siga los perros pasos:
+Para crear un grupo, siga los pasos:
 
 1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Seleccione ``Grupos > Grupos`` en el menú lateral. Será redirigido a la interfaz correspondiente.
@@ -768,7 +768,7 @@ Para crear un grupo, siga los perros pasos:
 
 8. Presione ``Guardar`` para crear el grupo o ``Cancelar`` para anular la operación.
 
-.. image:: /imgs/Inicio/Inicio40.png
+.. image:: /imgs/Inicio/Inicio400.png
 
 Operaciones con grupos
 ----------------------

@@ -38,126 +38,137 @@ Una vez autenticado, se muestra la interfaz principal de la administración de D
    * - Widgets
      - Proporciona plantillas adaptadas a los diferentes tipos de datos utilizados.
 
-En cuanto a las plantillas, encontrará dos opciones:
+.. image:: /imgs/PDF/pdf15.png
 
-**Modificar** 
+En cuanto a las plantillas, encontrará la siguientes opciones:
 
-La opción ``Modificar`` presenta una lista de plantillas existentes actualmente utilizadas por clientes de Linkaform. Para editar una plantilla existente, simplemente seleccione el nombre de la plantilla de su preferencia.
+.. tab-set::
 
-Para agregar y configurar una nueva plantilla presione la opción ``Agregar plantilla``.
-
-.. image:: /imgs/PDF/pdf17.png
-
-Para eliminar una plantilla, seleccione la casilla o casillas correspondientes y seleccione la opción en el selector seguido del botón ``Ejecutar``.
-
-.. image:: /imgs/PDF/pdf18.png
-
-**Agregar** 
-
-La opción ``Agregar`` permite configurar una nueva plantilla. Siga los siguientes pasos para configurar la plantilla:
-
-.. grid:: 2
-    :gutter: 0
-    :padding: 0
-    :margin: 0
-
-    .. grid-item-card::
-        :columns: 6
-        :padding: 0
-        :margin: 0
+    .. tab-item:: Agregar
         
-        **Name**: Nombre de la plantilla.
+        La opción ``Agregar`` permite configurar una nueva plantilla. Siga los siguientes pasos:
 
-        .. note:: Para el nombre de una plantilla se sigue el siguiente estándar: ::
-            
-            [nombre_cliente] [-] [nombre_PDF]
+        .. grid:: 2
+            :gutter: 0
+            :padding: 0
+            :margin: 0
 
-        .. _type:
-
-        **Type**:
-
-        - Single Record (registro único): Plantilla que se centra en un solo conjunto de datos. Es decir, presenta información de un solo registro del formulario.
-
-        - Multiple Records (múltiples registros): Plantilla para presentar información de múltiples registros pertenecientes al mismo formulario
-
-        .. important:: Es obligatorio que seleccione el tipo de PDF. Aunque el proceso de configuración es el mismo, la programación difiere según el tipo seleccionado.
-        
-        **Paginate:** Permite agregar paginación al documento. Es opcional ya que se puede personalizar en la programación.
-
-    .. grid-item-card::  
-        :columns: 6
-        :padding: 0
-        :margin: 0
-
-        .. image:: /imgs/PDF/4.png
-            :align: center
-
-    .. grid-item-card::
-        :columns: 12
-        :padding: 0
-        :margin: 0
-
-        **Description**: Descripción breve que ayuda a diferenciar entre documentos.
-
-        .. note:: La descripción de un documento está estandarizada con la siguiente notación: ::
-            
-            [Template] [de] [nombre_PDF] [para] [nombre_cliente]
-
-        **Default**: Define la plantilla por defecto para la forma cuando no se ha seleccionado ninguna en la :ref:`vincular` :octicon:`report;1em;sd-text-info`.
-
-        .. attention:: Este campo suele estar establecido en *falso* de manera predeterminada.
-
-        **Header**: Código del encabezado del documento en formato ``XML`` (requerido).
-
-        **Body**: Código del cuerpo del documento en formato ``XML`` (requerido).
-
-        **Footer**: Código del pie de página del documento en formato ``XML`` (requerido).
-
-        **Style**: Código de los estilos usados en formato ``XML`` (requerido).
-
-        .. note:: Los campos relacionados al ``XML`` son archivos que se desarrollan según el requerimiento del boceto del cliente o el diseño realizado.
-            
-        **Owner**: Nombre de la cuenta padre a la que se va asignar la plantilla.
-
-        .. dropdown:: Tip selector **Owner**
-
-            Debido a que el selector ``Owner`` contiene muchas opciones de cuentas de usuarios actuales, puede llevar tiempo buscar la cuenta de su interés entre tantas opciones. Para simplificar la búsqueda, siga estos pasos:
-
-            1. Inspeccione la pagina haciendo ``clic derecho > Inspeccionar`` o presionando directamente ``F12``.
-            2. Presione la opción de seleccionar y ubíquese en la pestaña de ``Elements`` de la página para inspeccionar los elementos del DOM en la parte superior izquierda o presione directamente ``Ctrl + Shift + C``.
-
-            .. image:: /imgs/PDF/pdf22.png
-
-            3. Haga clic en el selector de ``Owner``.
-
-            .. image:: /imgs/PDF/pdf19.png
-            
-            4. Abra el elemento que contiene a las opciones del selector.
+            .. grid-item-card::
+                :columns: 6
+                :padding: 0
+                :margin: 0
                 
-            .. image:: /imgs/PDF/pdf20.png
-                :width: 500px
-                :height: 150px
+                **Name**: Nombre de la plantilla.
 
-            5. Presione ``Ctrl + F`` e ingrese el nombre o Valor del ``ID`` de la cuenta de su interés para buscar entre las opciones.
-            6. Haga doble clic en la opción de su interés e ingrese la palabra ``selected`` y presione ``Enter``. Automáticamente la opción sera seleccionada.
+                .. note:: Para el nombre de una plantilla se sigue el siguiente estándar: ::
+                    
+                    [nombre_cliente] [-] [nombre_PDF]
 
-            .. important:: Revise que el ``ID`` de la opción corresponda a la cuenta de su interés.
+                .. _type:
 
-            .. image:: /imgs/PDF/pdf21.png
+                **Type**:
+
+                - Single Record (registro único): Plantilla que se centra en un solo conjunto de datos. Es decir, presenta información de un solo registro del formulario.
+
+                - Multiple Records (múltiples registros): Plantilla para presentar información de múltiples registros pertenecientes al mismo formulario
+
+                .. important:: Es obligatorio que seleccione el tipo de PDF. Aunque el proceso de configuración es el mismo, la programación difiere según el tipo seleccionado.
+                
+                **Paginate:** Permite agregar paginación al documento. Es opcional ya que se puede personalizar en la programación.
+
+            .. grid-item-card::  
+                :columns: 6
+                :padding: 0
+                :margin: 0
+
+                .. image:: /imgs/PDF/4.png
+                    :align: center
+
+            .. grid-item-card::
+                :columns: 12
+                :padding: 0
+                :margin: 0
+
+                **Description**: Descripción breve que ayuda a diferenciar entre documentos.
+
+                .. note:: La descripción de un documento está estandarizada con la siguiente notación: ::
+                    
+                    [Template] [de] [nombre_PDF] [para] [nombre_cliente]
+
+                **Default**: Define la plantilla por defecto para la forma cuando no se ha seleccionado ninguna en la :ref:`vincular` :octicon:`report;1em;sd-text-info`.
+
+                .. attention:: Este campo suele estar establecido en *falso* de manera predeterminada.
+
+                **Header**: Código del encabezado del documento en formato ``XML`` (requerido).
+
+                **Body**: Código del cuerpo del documento en formato ``XML`` (requerido).
+
+                **Footer**: Código del pie de página del documento en formato ``XML`` (requerido).
+
+                **Style**: Código de los estilos usados en formato ``XML`` (requerido).
+
+                .. note:: Los campos relacionados al ``XML`` son archivos que se desarrollan según el requerimiento del boceto del cliente o el diseño realizado.
+                    
+                **Owner**: Nombre de la cuenta padre a la que se va asignar la plantilla.
+
+                .. dropdown:: Tip selector **Owner**
+
+                    Debido a que el selector ``Owner`` contiene muchas opciones de cuentas de usuarios actuales, puede llevar tiempo buscar la cuenta de su interés entre tantas opciones. Para simplificar la búsqueda, siga estos pasos:
+
+                    1. Inspeccione la pagina haciendo ``clic derecho > Inspeccionar`` o presionando directamente ``F12``.
+                    2. Presione la opción de seleccionar y ubíquese en la pestaña de ``Elements`` de la página para inspeccionar los elementos del DOM en la parte superior izquierda o presione directamente ``Ctrl + Shift + C``.
+
+                    .. image:: /imgs/PDF/pdf22.png
+
+                    3. Haga clic en el selector de ``Owner``.
+
+                    .. image:: /imgs/PDF/pdf19.png
+                    
+                    4. Abra el elemento que contiene a las opciones del selector.
+                        
+                    .. image:: /imgs/PDF/pdf20.png
+                        :width: 500px
+                        :height: 150px
+
+                    5. Presione ``Ctrl + F`` e ingrese el nombre o Valor del ``ID`` de la cuenta de su interés para buscar entre las opciones.
+                    6. Haga doble clic en la opción de su interés e ingrese la palabra ``selected`` y presione ``Enter``. Automáticamente la opción sera seleccionada.
+
+                    .. important:: Revise que el ``ID`` de la opción corresponda a la cuenta de su interés.
+
+                    .. image:: /imgs/PDF/pdf21.png
+
+    .. tab-item:: Modificar
+
+        La opción ``Modificar`` presenta una lista de plantillas existentes actualmente utilizadas por clientes de Linkaform. Para editar una plantilla, simplemente seleccione el nombre de la plantilla de su preferencia.
+
+        Para agregar y configurar una nueva plantilla presione la opción ``Agregar plantilla``.
+
+        .. image:: /imgs/PDF/pdf17.png
+
+    .. tab-item:: Eliminar
+
+        Para eliminar una plantilla, seleccione la casilla o casillas correspondientes y elija la opción en el selector, seguido del botón ``Ejecutar``.
+
+        .. warning:: Tenga cuidado y verifique que haya seleccionado la plantilla correcta. Una vez ejecutada la acción, no podrá deshacerse.
+
+        .. image:: /imgs/PDF/pdf18.png
 
 Repositorio de PDFs
 -------------------
 
-El repositorio que contiene los PDFs actuales se encuentra en un repositorio de GitLab. Este repositorio es exclusivo para usuarios de Linkaform, utilice git para realizar cambios y contribuciones locales. 
+El repositorio que contiene los PDFs actuales se encuentra en un repositorio de |github| :octicon:`report;1em;sd-text-info`. Este repositorio es exclusivo para usuarios de Linkaform, utilice git para realizar cambios y contribuciones locales. 
 
-.. seealso:: Git es una herramienta util para el control de versiones de un repositorio. Si aun no está familiarizado con Git, se recomienda que revise la documentación oficial de |git| :octicon:`report;1em;sd-text-info` para obtener más detalles.
+.. seealso:: Si aún no está familiarizado con Git, se recomienda que revise la |git| :octicon:`report;1em;sd-text-info` para obtener más detalles.
 
-Si ya cuenta con una cuenta en GitLab, siga los pasos a continuación; de lo contrario, consulte el siguiente |gitlab| :octicon:`report;1em;sd-text-info` para obtener más información.
+Siga las siguientes instrucciones para clonar el repositorio:
 
 1. Solicite acceso al repositorio de PDFs a través de soporte técnico.
 2. Ingrese al siguiente |gitPDF| :octicon:`report;1em;sd-text-info` y clone el repositorio.
+3. Clone directamente utilizando: ::
 
-.. tip:: Se recomienda tener una carpeta exclusiva para repositorios pertenecientes a Linkaform. En este caso, la carpeta ``lkf`` contendrá el repositorio ``PDFTemplates``.
+    git@github.com:linkaform/PDFTemplates.git
+
+.. tip:: Se recomienda tener una carpeta exclusiva para repositorios pertenecientes a Linkaform.
 
 Plantillas
 ==========
@@ -175,8 +186,6 @@ Aunque es posible insertar el encabezado, pie de página y estilos directamente 
    A --> C[body.xml]
    A --> D[footer.xml]
    A --> E[style.xml]
-
-.. caution:: El repositorio en GitLab **PDFTemplates** contiene todas las plantillas desarrolladas pertenecientes a diferentes clientes. Si tiene acceso, es importante que sepa que la información contenida es de suma importancia y confidencial. Por lo tanto, se solicita que tenga discreción con la información.
 
 En el repositorio **PDFTemplates**, identifique la carpeta ``Básico``, aquí podrá encontrar plantillas que servirán como base para la creación de nuevos PDFs.
 
@@ -210,7 +219,9 @@ En el repositorio **PDFTemplates**, identifique la carpeta ``Básico``, aquí po
             </body>
             </html>
 
-Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF. De lo contrario, cree una nueva carpeta utilizando el nombre de la empresa o cliente como identificador y agregue los archivos necesarios dentro de ella. Por ejemplo:
+.. caution:: El repositorio **PDFTemplates** contiene plantillas e información perteneciente a clientes de Linkaform. Si tiene acceso, es importante que considere que la información contenida es de suma importancia y confidencial. Por lo tanto, se solicita que tenga discreción con la información.
+
+Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF. De lo contrario, cree una nueva carpeta utilizando el nombre de la empresa o cliente como identificador y agregue los archivos necesarios dentro de ella.
 
 .. grid:: 2
     :gutter: 0  
@@ -218,7 +229,7 @@ Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF
     .. grid-item-card:: 
         :columns: 8
         
-        Para nombrar los archivos, utilice el nombre de la empresa o cliente seguido del tipo de archivo. Por ejemplo: ::
+        Para nombrar a los archivos, utilice el nombre de la empresa o cliente seguido del tipo de archivo. Por ejemplo: ::
 
             [nombre_cliente] [_] [tipo_archivo] [.xml]
 
@@ -261,7 +272,6 @@ Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF
 
 Estructura de archivos
 ----------------------
-
 
 Revise las siguientes secciones sobre la estructura de los archivos que componen un PDF. El código es genérico y puede ser utilizado para proyectos futuros según sea necesario.
 
@@ -380,13 +390,9 @@ El archivo ``style`` establece los parámetros estéticos necesarios para cada p
 
 .. LIGAS DE INTERÉS
 
-.. |gitlab| raw:: html
+.. |github| raw:: html
 
-   <a href="https://docs.gitlab.com/" target="_blank">enlace</a>
-
-.. |python| raw:: html
-
-   <a href="https://www.python.org/" target="_blank">documentación de python</a>
+   <a href="https://docs.github.com/es" target="_blank">GitHub</a>
 
 .. |git| raw:: html
 
@@ -398,7 +404,7 @@ El archivo ``style`` establece los parámetros estéticos necesarios para cada p
    
 .. |gitPDF| raw:: html
 
-   <a href="https://gitlab.linkaform.com/develop/PDFTemplates/" target="_blank">enlace</a>
+   <a href="https://github.com/linkaform/PDFTemplates" target="_blank">enlace</a>
 
 .. |prodDjango| raw:: html
 
