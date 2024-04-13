@@ -884,7 +884,7 @@ El proceso para buscar registros por grupo es el siguiente:
 Editar grupo
 ------------
 
-Para modificar un grupo, siga los perros pasos:
+Para modificar un grupo, siga los pasos:
 
 1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Seleccione ``Grupos > Grupos`` en el menú lateral. Será redirigido a la interfaz correspondiente.
@@ -911,7 +911,7 @@ Para modificar un grupo, siga los perros pasos:
 Eliminar grupo
 --------------
 
-Para eliminar un grupo, siga los perros pasos:
+Para eliminar un grupo, siga los pasos:
 
 1. `Inicie sesión <#iniciar-sesion>`_ :octicon:`report;1em;sd-text-info` utilizando sus credenciales.
 2. Seleccione ``Grupos`` en el menú lateral. Será redirigido a la interfaz correspondiente.
