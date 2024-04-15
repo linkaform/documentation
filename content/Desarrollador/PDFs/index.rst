@@ -23,6 +23,7 @@ En este apartado podrá encontrar:
     :titlesonly:
     :hidden:
     
+    bases_linkaform_pdfs
     configuracion
     rml
     variables

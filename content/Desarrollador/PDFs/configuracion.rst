@@ -1,111 +1,304 @@
-=========================
+==================
+Desarrollo de PDFs
+==================
+
+En esta sección, encontrará plantillas disponibles, la estructura de archivos necesaria y la configuración requerida para crear sus propios documentos en formato pdf. Además, podrá encontrar ejemplos prácticos, sugerencias y mejores prácticas para mejorar la calidad de sus documentos.
+
 Configuración del entorno
 =========================
 
-En esta sección, se detallan las plantillas disponibles, la estructura de archivos necesaria y la configuración específica en el entorno Django que se requiere para crear sus propios documentos en formato PDF.
+Para comenzar el desarrollo de PDFs en Linkaform, es importante que prepare y configure su entorno de trabajo. Siga los siguientes apartados para más información.
 
-Linkaform hace uso de un repositorio especial para el desarrollo de PDFs, proporcionando un control sobre los documentos generados para los clientes. Linkaform utiliza GitLab, si ya cuenta con una cuenta en la misma, siga los pasos a continuación; de lo contrario, consulte el `enlace <https://about.gitlab.com/>`_ :octicon:`report;1em;sd-text-info` para obtener más información.
+.. _conf-django:
+
+Administración de Django
+------------------------
+
+La administración de Django es la interfaz que permite realizar operaciones CRUD (crear, leer, actualizar, borrar) con los registros de las formas. Para configurar la administración de Django, siga los siguientes pasos:
+
+1. Inicie sesión en |prodDjango| :octicon:`report;1em;sd-text-info` o desde |preprodDjango| :octicon:`report;1em;sd-text-info`.
+
+.. note:: Solicite a soporte técnico el acceso y las credenciales necesarias de la administración de Django. 
+    
+    El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar la configuración en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
+
+.. image:: /imgs/PDF/pdf16.png
+
+Una vez autenticado, se muestra la interfaz principal de la administración de Django. Observe que tiene acceso a una variedad de recursos, sin embargo, con el propósito de abordar el desarrollo de archivos PDF, la explicación se centra en la sección ``Pdfdocuments``, que consta de dos elementos clave: 
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+   :align: left
+
+   * - Opción
+     - Descripción
+   * - Plantillas
+     - Contiene todas las plantillas creadas en la plataforma.
+   * - Widgets
+     - Proporciona plantillas adaptadas a los diferentes tipos de datos utilizados.
+
+.. image:: /imgs/PDF/pdf15.png
+
+En cuanto a las plantillas, encontrará la siguientes opciones:
+
+.. tab-set::
+
+    .. tab-item:: Agregar
+        
+        La opción ``Agregar`` permite configurar una nueva plantilla. Siga los siguientes pasos:
+
+        .. grid:: 2
+            :gutter: 0
+            :padding: 0
+            :margin: 0
+
+            .. grid-item-card::
+                :columns: 6
+                :padding: 0
+                :margin: 0
+                
+                **Name**: Nombre de la plantilla.
+
+                .. note:: Para el nombre de una plantilla se sigue el siguiente estándar: ::
+                    
+                    [nombre_cliente] [-] [nombre_PDF]
+
+                .. _type:
+
+                **Type**:
+
+                - Single Record (registro único): Plantilla que se centra en un solo conjunto de datos. Es decir, presenta información de un solo registro del formulario.
+
+                - Multiple Records (múltiples registros): Plantilla para presentar información de múltiples registros pertenecientes al mismo formulario
+
+                .. important:: Es obligatorio que seleccione el tipo de PDF. Aunque el proceso de configuración es el mismo, la programación difiere según el tipo seleccionado.
+                
+                **Paginate:** Permite agregar paginación al documento. Es opcional ya que se puede personalizar en la programación.
+
+            .. grid-item-card::  
+                :columns: 6
+                :padding: 0
+                :margin: 0
+
+                .. image:: /imgs/PDF/4.png
+                    :align: center
+
+            .. grid-item-card::
+                :columns: 12
+                :padding: 0
+                :margin: 0
+
+                **Description**: Descripción breve que ayuda a diferenciar entre documentos.
+
+                .. note:: La descripción de un documento está estandarizada con la siguiente notación: ::
+                    
+                    [Template] [de] [nombre_PDF] [para] [nombre_cliente]
+
+                **Default**: Define la plantilla por defecto para la forma cuando no se ha seleccionado ninguna en la :ref:`vincular` :octicon:`report;1em;sd-text-info`.
+
+                .. attention:: Este campo suele estar establecido en *falso* de manera predeterminada.
+
+                **Header**: Código del encabezado del documento en formato ``XML`` (requerido).
+
+                **Body**: Código del cuerpo del documento en formato ``XML`` (requerido).
+
+                **Footer**: Código del pie de página del documento en formato ``XML`` (requerido).
+
+                **Style**: Código de los estilos usados en formato ``XML`` (requerido).
+
+                .. note:: Los campos relacionados al ``XML`` son archivos que se desarrollan según el requerimiento del boceto del cliente o el diseño realizado.
+                    
+                **Owner**: Nombre de la cuenta padre a la que se va asignar la plantilla.
+
+                .. dropdown:: Tip selector **Owner**
+
+                    Debido a que el selector ``Owner`` contiene muchas opciones de cuentas de usuarios actuales, puede llevar tiempo buscar la cuenta de su interés entre tantas opciones. Para simplificar la búsqueda, siga estos pasos:
+
+                    1. Inspeccione la pagina haciendo ``clic derecho > Inspeccionar`` o presionando directamente ``F12``.
+                    2. Presione la opción de seleccionar y ubíquese en la pestaña de ``Elements`` de la página para inspeccionar los elementos del DOM en la parte superior izquierda o presione directamente ``Ctrl + Shift + C``.
+
+                    .. image:: /imgs/PDF/pdf22.png
+
+                    3. Haga clic en el selector de ``Owner``.
+
+                    .. image:: /imgs/PDF/pdf19.png
+                    
+                    4. Abra el elemento que contiene a las opciones del selector.
+                        
+                    .. image:: /imgs/PDF/pdf20.png
+                        :width: 500px
+                        :height: 150px
+
+                    5. Presione ``Ctrl + F`` e ingrese el nombre o Valor del ``ID`` de la cuenta de su interés para buscar entre las opciones.
+                    6. Haga doble clic en la opción de su interés e ingrese la palabra ``selected`` y presione ``Enter``. Automáticamente la opción sera seleccionada.
+
+                    .. important:: Revise que el ``ID`` de la opción corresponda a la cuenta de su interés.
+
+                    .. image:: /imgs/PDF/pdf21.png
+
+    .. tab-item:: Modificar
+
+        La opción ``Modificar`` presenta una lista de plantillas existentes actualmente utilizadas por clientes de Linkaform. Para editar una plantilla, simplemente seleccione el nombre de la plantilla de su preferencia.
+
+        Para agregar y configurar una nueva plantilla presione la opción ``Agregar plantilla``.
+
+        .. image:: /imgs/PDF/pdf17.png
+
+    .. tab-item:: Eliminar
+
+        Para eliminar una plantilla, seleccione la casilla o casillas correspondientes y elija la opción en el selector, seguido del botón ``Ejecutar``.
+
+        .. warning:: Tenga cuidado y verifique que haya seleccionado la plantilla correcta. Una vez ejecutada la acción, no podrá deshacerse.
+
+        .. image:: /imgs/PDF/pdf18.png
+
+Repositorio de PDFs
+-------------------
+
+El repositorio que contiene los PDFs actuales se encuentra en un repositorio de |github| :octicon:`report;1em;sd-text-info`. Este repositorio es exclusivo para usuarios de Linkaform, utilice git para realizar cambios y contribuciones locales. 
+
+.. seealso:: Si aún no está familiarizado con Git, se recomienda que revise la |git| :octicon:`report;1em;sd-text-info` para obtener más detalles.
+
+Siga las siguientes instrucciones para clonar el repositorio:
 
 1. Solicite acceso al repositorio de PDFs a través de soporte técnico.
-2. Ingrese a la siguiente dirección `gitlab.linkaform.com/develop/PDFTemplates <https://gitlab.linkaform.com/develop/PDFTemplates/>`_ :octicon:`report;1em;sd-text-info` y clone el repositorio.
+2. Ingrese al siguiente |gitPDF| :octicon:`report;1em;sd-text-info` y clone el repositorio.
+3. Clone directamente utilizando: ::
 
-Estos pasos le permitirán acceder al repositorio de PDFs en GitLab, brindándole la capacidad de realizar cambios y contribuciones locales.
+    git@github.com:linkaform/PDFTemplates.git
+
+.. tip:: Se recomienda tener una carpeta exclusiva para repositorios pertenecientes a Linkaform.
 
 Plantillas
 ==========
 
-Al tener su repositorio clonado, podrá visualizar plantillas genéricas que le servirán como base para la creación de sus propios archivos en formato PDF. El propósito de estas plantillas es establecer una estructura estandarizada para el proyecto, asegurando que cada cliente disponga de un archivo único que incluya encabezado, cuerpo, pie de página y estilos.
+Para el desarrollo de un PDF, se requieren cuatro archivos: un **encabezado**, **cuerpo**, **pie de página** y un archivo de **estilos**.
+
+Aunque es posible insertar el encabezado, pie de página y estilos directamente en el cuerpo del PDF, así como tener un único archivo de estilos para todos los PDFs de un cliente en específico, se recomienda separar los archivos para mantener un orden y cumplir con los requisitos del `administrador de Django <#conf-django>`_ :octicon:`report;1em;sd-text-info`.
 
 .. mermaid::
 
    graph TB
      
-   A(Cliente)
-   A --> B[Header]
-   A --> C[Body]
-   A --> D[Footer]
-   A --> E[Style]
+   A(PDF)
+   A --> B[header.xml]
+   A --> C[body.xml]
+   A --> D[footer.xml]
+   A --> E[style.xml]
 
-La estructura estándar de los archivos utilizan la siguiente notación: :: 
-    
-    [nombre_cliente] [_] [tipo_archivo] [.xml]
+En el repositorio **PDFTemplates**, identifique la carpeta ``Básico``, aquí podrá encontrar plantillas que servirán como base para la creación de nuevos PDFs.
 
-.. image:: /imgs/PDF/4/4.1.5.png
+.. grid:: 1
+    :gutter: 0
 
-Observe que dentro de su repositorio también existen varias carpetas y en cada una de ellas se encuentran los archivos correspondientes a los PDFs. 
+    .. grid-item-card:: Directory Tree
+        :columns: 12
 
-.. note:: Debe crear una carpeta específica para su proyecto, utilizando el nombre del cliente o empresa como identificador.
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+            </style>
+            </head>
+            <style>
+                .print{
+                background-color: #627254
+                }
+            </style>
+            <body>
+                <a>.</a><br>
+                ├── <a class="print">Básico</a><br>
+                │   └── <a class="printf">example_body.xml</a><br>
+                │   └── <a class="printf">example_footer.xml</a><br>
+                │   └── <a class="printf">example_header.xml</a><br>
+                │   └── <a class="printf">example_style.xml</a><br>                
+            </body>
+            </html>
+
+.. caution:: El repositorio **PDFTemplates** contiene plantillas e información perteneciente a clientes de Linkaform. Si tiene acceso, es importante que considere que la información contenida es de suma importancia y confidencial. Por lo tanto, se solicita que tenga discreción con la información.
+
+Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF. De lo contrario, cree una nueva carpeta utilizando el nombre de la empresa o cliente como identificador y agregue los archivos necesarios dentro de ella.
+
+.. grid:: 2
+    :gutter: 0  
+
+    .. grid-item-card:: 
+        :columns: 8
+        
+        Para nombrar a los archivos, utilice el nombre de la empresa o cliente seguido del tipo de archivo. Por ejemplo: ::
+
+            [nombre_cliente] [_] [tipo_archivo] [.xml]
+
+            Comercializadora_header.xml
+
+        Si dentro de su carpeta tiene más de un PDF, utilice el nombre del PDF seguido del tipo de archivo. Por ejemplo: ::
+
+            [nombre_pdf] [_] [tipo_archivo] [.xml]
+
+            gastos_body.xml
+
+    .. grid-item-card:: Directory Tree
+        :columns: 4
+
+        .. raw:: html
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css">
+            </style>
+            </head>
+            <style>
+                .print{
+                background-color: #E36414
+                }
+            </style>
+            <body>
+                <a href=>.</a><br>
+                ├── <a class="print">Comercializadora Pánfilo</a><br>
+                │   └── <a class="printf">gastos_body.xml</a><br>
+                │   └── <a class="printf">gastos_footer.xml</a><br>
+                │   └── <a class="printf">gastos_header.xml</a><br>
+                │   └── <a class="printf">gastos_style.xml</a><br>                
+            </body>
+            </html>  
 
 .. _estructura:
 
 Estructura de archivos
-======================
+----------------------
 
-Dentro de sus archivos, tendrá código genérico el cual puede emplear como base para sus proyectos futuros.
+Revise las siguientes secciones sobre la estructura de los archivos que componen un PDF. El código es genérico y puede ser utilizado para proyectos futuros según sea necesario.
 
-.. note:: Es opcional contar con archivos separados para el encabezado (header) y el pie de página (footer), ya que es válido insertar directamente el encabezado y el pie de página en el archivo del cuerpo (body). No obstante, el propósito de proporcionar archivos distintos es lograr una organización más eficiente mediante la separación de código para obtener una estructura más clara y mantenible.
-    
-Header
-------
+.. important::
 
-Encabezado del documento, que suele contener información como el logotipo y datos de identificación del cliente. El código base es el siguiente:
+    En los siguientes ejemplos, observe que se utilizan etiquetas similares a HTML, estas pertenecen a RML. Consulte :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` en la documentación para obtener más detalles.
 
-.. code-block:: xml
-    :linenos:
+    También encontrará líneas que contienen ``{% %}`` o ``{{ }}``, las cuales representan etiquetas y variables del lenguaje de plantillas de Django. Para obtener más información consulte la sección :ref:`rml_django` :octicon:`report;1em;sd-text-info` en la documentación.
 
-    <drawRightString x="12cm" y="25cm"></drawRightString>
+Estructura body
+^^^^^^^^^^^^^^^
 
-Para incluir elementos del ``header`` en el ``body`` utilice etiquetas y custom tags especiales de Django y Linkaform dentro de ``<pageGraphics>``. En la sección :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` se habla más a cerca de las etiquetas.
+El cuerpo del documento es la parte más importante. Similar a HTML, aquí se especifica la estructura de los elementos que compondrán al PDF, tales como tablas, imágenes, texto, etc.
 
+El siguiente bloque de código solamente representa la configuración del documento, que incluyen propiedades como el tamaño de la página, márgenes, tipografía, etc. Sin embargo, para estructurar los elementos del PDF, deberá insertar su propio código entre las etiquetas ``<story>`` (líneas 40, 42).
 
-.. code-block:: xml
-    :linenos:
-
-    <pageGraphics>
-
-    <!-- Cabecera de documento -->
-    {% Header company_logo parent user form Template meta %}
-
-    </pageGraphics>
-
-Footer
-------
-
-El pie de página puede incluir información adicional, como datos de contacto, notas importantes o número de páginas. Aunque comúnmente los documentos PDF no cuentan con un pie de página, es importante adjuntar algo en el administrador de Django. Para ello, puede utilizar la siguiente etiqueta:
+.. hint:: Dentro del bloque de código, asegúrese de revisar los comentarios para obtener más contexto sobre cómo se estructura y configura el documento PDF.
 
 .. code-block:: xml
     :linenos:
-
-    <drawRightString x="19.5cm" y="0.85cm">Página <pageNumber/> de <getName id="LASTPAGENO"/></drawRightString>
-
-También puede incluir elementos del ``footer`` en el ``body`` utilizando:
-
-.. code-block:: xml
-    :linenos:
-
-    <pageGraphics>
-
-    <!-- Pie del documento -->
-    {% Footer user form Template meta %}
-
-    </pageGraphics>
-
-Body
-----
-
-El cuerpo del documento es la parte más importante, similar a HTML, aquí se especifica la estructura principal del PDF. La estructura base del cuerpo utiliza el siguiente código:
-
-.. code-block:: xml
-    :linenos:
-    :emphasize-lines: 42, 45
+    :emphasize-lines: 40, 42
 
     <?xml version="1.0"?>
-
     <!-- Variables de Django - No se mueve-->
     {% load PrintFields %}
     {% load set_var %}
     {% load custom_tags %}
-
     <!-- Configuración del documento -->
     <document filename="Example" xmlns:doc="http://namespaces.zope.org/rml/doc">
         <!-- Propiedades informativas del documento -->
@@ -127,9 +320,9 @@ El cuerpo del documento es la parte más importante, similar a HTML, aquí se es
                     <drawCenteredString x="10.5cm" y="27.8cm">
                     {{direccion}}
                     </drawCenteredString>
-                    <!-- Cabecera de documento -->
+                    <!-- Cabecera de documento (opcional) -->
                     {% Header company_logo parent user form Template meta %}
-                    <!-- Pie del documento -->
+                    <!-- Pie del documento (opcional) -->
                     {% Footer user form Template meta %}
                 </pageGraphics>
             </pageTemplate>
@@ -141,17 +334,49 @@ El cuerpo del documento es la parte más importante, similar a HTML, aquí se es
             {% endautoescape %}
         </stylesheet>
         <story>
-            <!-- Aquí va el código del cuerpo de la plantilla -->
+            <!-- Aquí va el código de los elementos del pdf -->
             <para>Hello world</para>
         </story>
     </document>
 
-.. important:: El código anterior ya está preparado para su uso; deberá insertar su propio código entre las etiquetas ``<story>`` (línea 42 y 45).
+Estructura header y footer
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Style
------
+El encabezado del documento suele contener información como el logotipo, títulos y datos de identificación del cliente o del registro.Para rellenar el campo en el administrador de Django, utilice el siguiente código base:
 
-El archivo ``style`` también juega un rol importante. Este establece los parámetros estéticos necesarios para cada plantilla, definiendo aspectos como colores, dimensiones y otras características estéticas.
+.. code-block:: xml
+    :linenos:
+
+    <drawRightString x="12cm" y="25cm"></drawRightString>
+
+El pie de página del documento puede incluir información adicional, como datos de contacto, notas importantes o número de páginas. Aunque regularmente los documentos PDF no cuentan con un pie de página, es importante adjuntar algo en el administrador de Django. Para ello, puede utilizar la siguiente etiqueta:
+
+.. code-block:: xml
+    :linenos:
+
+    <drawRightString x="19.5cm" y="0.85cm">Página <pageNumber/> de <getName id="LASTPAGENO"/></drawRightString>
+
+Para incluir elementos del ``header`` y ``footer`` en el cuerpo del documento, utilice **etiquetas** y **custom tags** especiales de Django y Linkaform dentro de ``<pageGraphics>``. 
+
+En la sección :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` se habla más a cerca de las etiquetas.
+
+.. code-block:: xml
+    :linenos:
+
+    <pageGraphics>
+
+    <!-- Cabecera de documento -->
+    {% Header company_logo parent user form Template meta %}
+
+    <!-- Pie del documento -->
+    {% Footer user form Template meta %}
+
+    </pageGraphics>
+
+Estructura style
+^^^^^^^^^^^^^^^^
+
+El archivo ``style`` establece los parámetros estéticos necesarios para cada plantilla, definiendo aspectos como colores, dimensiones y otras características estéticas.
 
 .. code-block:: xml
     :linenos:
@@ -163,261 +388,31 @@ El archivo ``style`` también juega un rol importante. Este establece los parám
     <blockValign value="middle"/>
     </blockTableStyle>
 
-Configuración en Django
-=======================
+.. LIGAS DE INTERÉS
 
-Antes de empezar con los detalles de la configuración en Django para el desarrollo de PDFs, es importante conocer a cerca de Django. 
+.. |github| raw:: html
 
-.. seealso::
+   <a href="https://docs.github.com/es" target="_blank">GitHub</a>
 
-    Django es un marco de desarrollo web de alto nivel y de código abierto en Python que fomenta la creación rápida y eficiente de aplicaciones web robustas y escalables. Para más información consulte la documentación oficial `aqui <https://www.djangoproject.com/>`_ :octicon:`report;1em;sd-text-info`. 
+.. |git| raw:: html
 
-Ahora, continúe con las configuraciones necesarias dentro del entorno de Django, siguiendo los siguientes pasos:
+   <a href="https://git-scm.com/doc" target="_blank">documentación de git</a>
 
-1. Solicite a soporte técnico el acceso a la administración de Django.
+.. |djangoproject| raw:: html
 
-.. note:: Soporte le proporcionará las credenciales necesarias para ingresar, uselas con precaucion. 
+   <a href="https://www.djangoproject.com/" target="_blank">Django</a>
+   
+.. |gitPDF| raw:: html
 
-2. Inicie sesión en producción o preproducción.
+   <a href="https://github.com/linkaform/PDFTemplates" target="_blank">enlace</a>
 
-- `app.linkaform.com/admin <https://app.linkaform.com/admin/>`_ :octicon:`report;1em;sd-text-info`
+.. |prodDjango| raw:: html
 
-- `preprod.linkaform.com/admin <https://preprod.linkaform.com/admin/>`_ :octicon:`report;1em;sd-text-info`
+   <a href="https://app.linkaform.com/admin" target="_blank">prod Administración de Django</a>
 
-.. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar la creación de un documento PDF en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
+.. |preprodDjango| raw:: html
 
-Una vez autenticado, se muestra la interfaz de administración de Django.
+   <a href="https://preprod.linkaform.com/admin/" target="_blank">preprod Administración de Django</a>
 
-.. image:: /imgs/PDF/4/4.1.2.png
-  :align: center
-
-La administración de Django ofrece acceso a una variedad de recursos. Sin embargo, con el propósito de abordar el desarrollo de archivos PDF, se explica la sección ``Pdfdocuments``, que consta de dos elementos clave: 
-
-+-----------+---------------------------------------------------------+
-| Opción    | Descripción                                             |
-+===========+=========================================================+
-| Plantillas| Contiene todas las plantillas generadas en Linkaform.   |
-+-----------+---------------------------------------------------------+
-| Widgets   | Proporciona plantillas adaptadas a los diferentes tipos |
-|           | de datos utilizados.                                    |
-+-----------+---------------------------------------------------------+
-
-En cuanto a las plantillas, se muestra la opción de ``agregar`` o ``modificar``. En la opción ``Modificar``, se presenta una lista de plantillas existentes actualmente utilizadas por clientes de Linkaform. De igual manera, se brinda la opción de agregar una nueva plantilla.
-
-.. image:: /imgs/PDF/4/4.1.4.png
-  :align: center
-
-La opción ``Agregar plantilla`` también se muestra un el formulario anterior. Las siguientes opciones de una nueva plantilla deberá completarla según sus necesidades:
-
-.. grid:: 2
-    :gutter: 0
-    :padding: 0
-    :margin: 0
-
-    .. grid-item-card::  Descripciones
-        :columns: 6
-        :padding: 0
-        :margin: 0
-        
-        **Name**: Nombre de la plantilla.
-
-        .. note:: El estándar utilizado para el nombre de una plantilla es: ::
-            
-            [nombre_cliente] [-] [nombre_PDF]
-
-        .. _type:
-
-        **Type**:
-
-        - Single Record (registro único): Plantilla que se centra en un solo conjunto de datos. Diseñadas para recibir y presentar información personalizada de manera clara y detallada. Al llenar la plantilla con los datos de un solo registro, se crea un PDF que captura los datos únicos de ese elemento.
-
-        - Multiple Records (múltiples registros): Plantilla para presentar información de múltiples registros. Está preparada para recibir y organizar datos de varios registros en una estructura coherente.
-
-        .. important:: Es obligatorio seleccionar  el tipo de PDF. Después de seleccionar el tipo de documento, el proceso de configuración es el mismo.
-
-    .. grid-item-card::  
-        :columns: 6
-        :padding: 0
-        :margin: 0
-
-        .. image:: /imgs/PDF/4.png
-            :align: center
-
-    .. grid-item-card::
-        :columns: 12
-        :padding: 0
-        :margin: 0
-
-        **Paginate**: Permite colocar el número de página del documento (Opcional).
-
-        **Description**: Descripción breve que ayuda a diferenciar entre documentos.
-
-        .. note:: Descripción está estandarizada con la siguiente estructura: ::
-            
-            [Template] [de] [nombre_PDF] [para] [nombre_cliente]
-
-        **Default**: Define la plantilla por defecto para la forma cuando no se ha seleccionado ninguna.
-
-        **Preview**: —
-
-        **Header**: Código del encabezado del documento (requerido).
-
-        **Body**: Código del cuerpo del documento (requerido).
-
-        **Footer**: Código del pie de página del documento (requerido).
-
-        **Style**: Código de los estilos usados (requerido).
-
-        **Owner**: Cuenta padre a la que se va asignar la plantilla.
-
-        **Properties**: —
-
-.. important:: Tenga en cuenta utilizar un navegador diferente a la página de Linkaform para evitar posibles conflictos con las cookies.
-
-.. _vincular:
-
-Configuración de forma
-======================
-
-La configuración implica la vinculación del PDF con el formulario. Al enlazar un PDF, se especifica que es exclusivo para las necesidades del formulario. Ya sea que esté trabajando con un solo registro o múltiples registros, la vinculación difiere.
-
-.. important:: De manera similar a la configuración de Django, se recomienda utilizar preproducción para probar sus cambios. Una vez que esté listo, puede llevar a cabo la transición a producción.
-
-Single record
--------------
-
-Siga las siguientes instrucciones para configurar la forma y vincular su documento.  
-
-1. Verifique que la plantilla esté configurada para funcionar como un single record (registro único). Para lograr esto, ajuste el atributo `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` en la interfaz de administración de Django. 
-
-2. Inicie sesión en producción o preproducción con sus credenciales.
-
-- `preprod.linkaform.com <https://preprod.linkaform.com/>`_ :octicon:`report;1em;sd-text-info`
-
-- `app.linkaform.com <https://app.linkaform.com/>`_ :octicon:`report;1em;sd-text-info`
-
-3. Seleccione y edite la forma a la que desea vincular el PDF. 
-
-4. Seleccione ``opciones > opciones generales > Plantillas de PDF``. 
-
-5. Seleccione el nombre que haya asignado a la plantilla previamente definida en la administración de Django.
-
-.. image:: /imgs/PDF/1.png
-  :align: center
-
-6. Presione ``Agregar`` para incluir la plantilla y automáticamente se rellenará el campo ``Descripción``, seguido del ``nombre de la plantilla``, junto con dos alternativas: un ``botón azul`` y la opción de ``eliminar`` (símbolo X). A continuación, haga clic en ``OK``, regrese al formulario y guarde los cambios.
-
-.. image:: /imgs/PDF/2.png
-  :align: center
-
-7. Seleccione el ``Nombre de la plantilla`` o el ``botón azul``. Se habilitará la escritura del campo ``Nombre de PDF``.
-
-8. Escriba el nombre del PDF (no incluya el nombre del cliente), seguido de un guion medio ``-``.
-
-.. image:: /imgs/PDF/3.png
-
-9. En la opción ``Campo`` seleccione el metadato ``Folio del registro`` y presione ``Agregar``; automáticamente llenará el nombre del PDF con doble corchete ``{{}}``. 
-
-.. note:: Puede seleccionar cualquier metadato disponible. Sin embargo, por defecto, suele usarse ``folio del registro``.
-
-.. image:: /imgs/PDF/8.png
-  :align: center
-
-10. Seleccione la opción ``Guardar`` y haga clic en ``OK``.
-
-11. Finalmente, guarde la forma.
-
-Multiple record
----------------
-
-El proceso de vinculación de un ``multiple record`` es más sencillo. Siga los siguientes pasos para su configuración:
-
-1. Verifique que la configuración del `type de su plantilla <#type>`_ :octicon:`report;1em;sd-text-info` esté establecida en multiple records.
-
-2. Inicie sesión en producción o preproducción con sus credenciales.
-
-3. Elija y edite la forma a la que desea vincular el PDF. 
-
-4. Seleccione ``opciones > opciones generales > Plantillas de PDF``. 
-
-5. En el selector, elija el nombre que haya asignado a la plantilla previamente definida. Notará que se resalta una etiqueta verde con el texto ``multiple``.
-
-6. Presione ``Agregar``.
-
-7. Finalmente haga clic en ``OK`` y guarde la forma en su totalidad.
-
-.. image:: /imgs/PDF/9.png
-  :align: center
-
-
-.. important:: Consideraciones sobre navegación 
-
-    Tenga en cuenta utilizar un navegador diferente al administrador de Django. Dado que ambos entornos comparten la misma autenticación, es aconsejable abrir el Administrador de Django en un navegador y de forma separada, acceder al entorno de formularios en otro navegador. Esto puede evitar posibles conflictos y asegurar un funcionamiento más fluido.
-
-Descargar PDF
-=============
-
-El proceso de descarga de sus documentos PDF difiere según el tipo de documento. A continuación, siga los pasos según su necesidad.
-
-.. important:: Recuerde que el proceso de descarga depende de la configuración que realizó al `vincular su forma y el PDF <#vincular>`_ :octicon:`report;1em;sd-text-info`.
-    
-Single record
--------------
-
-Para descargar documentos con registros únicos, siga los siguientes pasos:
-
-#. Seleccione el registro que desea descargar.
-
-#. Seleccione la opción con el icono de documento en la esquina superior derecha.
-
-#. En la sección de descargas de su navegador, podrá observar su documento PDF.
-
-.. image:: /imgs/PDF/10.png
-  :align: center
-
-Multiple record
----------------
-
-En el caso de múltiples registros, el proceso varía ligeramente. Siga los siguientes pasos:
-
-1. Ingrese a la interfaz de registros. 
-
-2. En el campo ``Nombre de la forma``, escriba el nombre de la forma de la cual desea descargar los registros. 
-
-.. important:: Es importante verificar la forma de los registros que necesita descargar. De lo contrario, seleccionar registros provenientes de diferentes formas podría resultar en errores.
-
-3. Seleccione la opción con el icono de documento en la esquina superior derecha. 
-
-.. image:: /imgs/PDF/11.png
-  :align: center
-
-Una vez seleccionado la opción, se desplegará la siguiente interfaz. Siga el siguiente procedimiento:
-
-1. Si no ha aplicado ningún filtro, seleccione la opción ``Registros seleccionados``.
-
-.. important:: La opción de ``Registros filtrados`` solo es posible si el código de su documento está preparado para recibir y tratar el filtro.
-
-2. Seleccione el nombre de la plantilla.
-
-3. Proporcione un nombre descriptivo para identificar la descarga de sus registros.
-
-4. Haga clic en la opción ``Descargar``.
-
-.. image:: /imgs/PDF/12.png
-
-5. Ahora diríjase a la opción ``Descargas`` ubicada en el menú en el lado izquierdo.
-
-.. image:: /imgs/PDF/13.png
-
-6. Identifique el nombre de su descarga y presione ``Descargar``. El navegador abrirá una pestaña nueva con su documento.
-
-.. image:: /imgs/PDF/14.png
-  :align: center
-
-.. tip:: Recomendación
-
-    Al haber establecido la configuración entre el documento PDF y el formulario, si al generar el archivo no se descarga como se espera, se sugiere seguir el siguiente procedimiento:
-
-    1. Edite el formulario y reenvíe los datos, incluso si no se realizan modificaciones en los registros existentes.
-
-En esta sección, ha aprendido conceptos necesarios sobre un documento PDF. También ha aprendido a configurar su entorno de trabajo. En la siguiente sección, se abordará cómo comenzar a preparar su documento utilizando el lenguaje de marcado de informes (Report Markup Language, RML) desde el código.
+.. - **Django**: No es necesario instalar Django, sin embargo, se recomienda revisar la documentación de |djangoproject| :octicon:`report;1em;sd-text-info` para obtener más información.
+.. - **Python**: Instale Python según sea necesario. Revise la |python| :octicon:`report;1em;sd-text-info` para obtener más información. En la mayoría de los sistemas operativos Linux, Python ya viene preinstalado, sin embargo, se recomienda verificar y actualizar la versión.

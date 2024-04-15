@@ -15,7 +15,6 @@ Documentación de Linkaform
    Usuario/index
    Desarrollador/index
    Contribución/index
-   Katusak
 
 ¡Te damos la bienvenida a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
 
