@@ -2,7 +2,7 @@
 Desarrollo de PDFs
 ==================
 
-En esta sección, encontrará plantillas disponibles, la estructura de archivos necesaria y la configuración requerida para crear sus propios documentos en formato pdf. Además, podrá encontrar ejemplos prácticos, sugerencias y mejores prácticas para mejorar la calidad de sus documentos.
+En esta sección, encontrará plantillas disponibles, la estructura de archivos necesaria y la configuración requerida para crear sus propios documentos en formato pdf. 
 
 Configuración del entorno
 =========================
@@ -223,26 +223,30 @@ En el repositorio **PDFTemplates**, identifique la carpeta ``Básico``, aquí po
 
 Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF. De lo contrario, cree una nueva carpeta utilizando el nombre de la empresa o cliente como identificador y agregue los archivos necesarios dentro de ella.
 
+.. note:: Para nombrar a los archivos utilice la convención |snake_case| :octicon:`report;1em;sd-text-info`.
+
+Si dentro de su carpeta solo tiene un proyecto, utilice el nombre de la empresa o cliente seguido del tipo de archivo. Por ejemplo: 
+
+.. code:: html
+
+    [nombre_cliente] [_] [tipo_archivo] [.xml]
+
+    pintasco_header.xml
+
 .. grid:: 2
     :gutter: 0  
 
     .. grid-item-card:: 
-        :columns: 8
-        
-        Para nombrar a los archivos, utilice el nombre de la empresa o cliente seguido del tipo de archivo. Por ejemplo: ::
+        :columns: 6
 
-            [nombre_cliente] [_] [tipo_archivo] [.xml]
-
-            Comercializadora_header.xml
-
-        Si dentro de su carpeta tiene más de un PDF, utilice el nombre del PDF seguido del tipo de archivo. Por ejemplo: ::
+        Si dentro de su carpeta tiene más de un PDF, utilice el nombre del PDF como identificador. Por ejemplo: ::
 
             [nombre_pdf] [_] [tipo_archivo] [.xml]
 
-            gastos_body.xml
+            gastos_semanales_body.xml
 
     .. grid-item-card:: Directory Tree
-        :columns: 4
+        :columns: 6
 
         .. raw:: html
 
@@ -260,11 +264,11 @@ Si ya dispone con una carpeta, agregue los archivos necesarios para el nuevo PDF
             </style>
             <body>
                 <a href=>.</a><br>
-                ├── <a class="print">Comercializadora Pánfilo</a><br>
-                │   └── <a class="printf">gastos_body.xml</a><br>
-                │   └── <a class="printf">gastos_footer.xml</a><br>
-                │   └── <a class="printf">gastos_header.xml</a><br>
-                │   └── <a class="printf">gastos_style.xml</a><br>                
+                ├── <a class="print">Pintasco</a><br>
+                │   └── <a class="printf">gastos_semanales_body.xml</a><br>
+                │   └── <a class="printf">gastos_semanales_footer.xml</a><br>
+                │   └── <a class="printf">gastos_semanales_header.xml</a><br>
+                │   └── <a class="printf">gastos__semanales_style.xml</a><br>                
             </body>
             </html>  
 
@@ -286,13 +290,13 @@ Estructura body
 
 El cuerpo del documento es la parte más importante. Similar a HTML, aquí se especifica la estructura de los elementos que compondrán al PDF, tales como tablas, imágenes, texto, etc.
 
-El siguiente bloque de código solamente representa la configuración del documento, que incluyen propiedades como el tamaño de la página, márgenes, tipografía, etc. Sin embargo, para estructurar los elementos del PDF, deberá insertar su propio código entre las etiquetas ``<story>`` (líneas 40, 42).
+El siguiente bloque de código solamente representa la configuración del documento, que incluyen propiedades como el tamaño de la página, márgenes, tipografía, etc. Sin embargo, para estructurar los elementos del PDF, deberá insertar su propio código entre las etiquetas ``<story>`` (líneas 40, 43).
 
 .. hint:: Dentro del bloque de código, asegúrese de revisar los comentarios para obtener más contexto sobre cómo se estructura y configura el documento PDF.
 
 .. code-block:: xml
     :linenos:
-    :emphasize-lines: 40, 42
+    :emphasize-lines: 40, 43
 
     <?xml version="1.0"?>
     <!-- Variables de Django - No se mueve-->
@@ -342,14 +346,14 @@ El siguiente bloque de código solamente representa la configuración del docume
 Estructura header y footer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-El encabezado del documento suele contener información como el logotipo, títulos y datos de identificación del cliente o del registro.Para rellenar el campo en el administrador de Django, utilice el siguiente código base:
+El encabezado del documento suele contener información como el logotipo, títulos y datos de identificación del cliente o del registro. Para rellenar el campo en el `administrador de Django <#conf-django>`_ :octicon:`report;1em;sd-text-info`, utilice el siguiente código base:
 
 .. code-block:: xml
     :linenos:
 
     <drawRightString x="12cm" y="25cm"></drawRightString>
 
-El pie de página del documento puede incluir información adicional, como datos de contacto, notas importantes o número de páginas. Aunque regularmente los documentos PDF no cuentan con un pie de página, es importante adjuntar algo en el administrador de Django. Para ello, puede utilizar la siguiente etiqueta:
+El pie de página del documento puede incluir información adicional, como datos de contacto, notas importantes o número de páginas. Aunque regularmente los documentos PDF no cuentan con un pie de página, es importante adjuntar algo en el `administrador de Django <#conf-django>`_ :octicon:`report;1em;sd-text-info`. Para ello, puede utilizar la siguiente etiqueta:
 
 .. code-block:: xml
     :linenos:
@@ -376,7 +380,7 @@ En la sección :ref:`report_markup_language` :octicon:`report;1em;sd-text-info` 
 Estructura style
 ^^^^^^^^^^^^^^^^
 
-El archivo ``style`` establece los parámetros estéticos necesarios para cada plantilla, definiendo aspectos como colores, dimensiones y otras características estéticas.
+El archivo ``style`` establece los parámetros estéticos necesarios para cada elemento de la plantilla, definiendo aspectos como colores, dimensiones y otras características estéticas. Del mismo modo, es importante adjuntar código en el `administrador de Django <#conf-django>`_ :octicon:`report;1em;sd-text-info`.  El siguiente bloque de código muestra un estilo para una tabla básica.
 
 .. code-block:: xml
     :linenos:
@@ -413,6 +417,11 @@ El archivo ``style`` establece los parámetros estéticos necesarios para cada p
 .. |preprodDjango| raw:: html
 
    <a href="https://preprod.linkaform.com/admin/" target="_blank">preprod Administración de Django</a>
+
+.. |snake_case| raw:: html
+
+   <a href="https://developer.mozilla.org/en-US/docs/Glossary/Snake_case" target="_blank">snake_case</a>
+
 
 .. - **Django**: No es necesario instalar Django, sin embargo, se recomienda revisar la documentación de |djangoproject| :octicon:`report;1em;sd-text-info` para obtener más información.
 .. - **Python**: Instale Python según sea necesario. Revise la |python| :octicon:`report;1em;sd-text-info` para obtener más información. En la mayoría de los sistemas operativos Linux, Python ya viene preinstalado, sin embargo, se recomienda verificar y actualizar la versión.

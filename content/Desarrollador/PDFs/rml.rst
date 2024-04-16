@@ -4,15 +4,56 @@
 Report Markup Language (RML)
 ============================
 
-Linkaform utiliza RML (Report Markup Language) para simplificar el proceso y permitir la creación automatizada y personalizada de documentos PDF.
+En esta sección, encontrará información detallada sobre **Report Markup Language (RML)**, el lenguaje de marcado de informes utilizado para estructurar los elementos que componen a un PDF. También encontrará ejemplos prácticos, sugerencias y mejores prácticas para mejorar la calidad de sus documentos.
 
-.. seealso:: ¿Qué es RML?
+.. seealso:: **Acerca de RML**
 
-    RML (Report Markup Language), es un miembro de la familia de los lenguajes XML, su dialecto XML es utilizado por rml2pdf para producir documentos en formato de Adobe’s Portable Document (PDF). RML permite crear documentos en PDF de forma tan simple como HTML o cualquier otro lenguaje de marcado como XML. 
+    Report Markup Language (RML) es un lenguaje de estilo XML utilizado para describir el diseño de documentos. Permite definir y manipular cualquier aspecto de un documento, incluido el contenido y el estilo, mediante el uso de etiquetas. Muchas de estas etiquetas son similares a las utilizadas en HTML.
 
-    Para más información consulte la guía oficial de RML |reportlab| :octicon:`report;1em;sd-text-info`.
+    La generación de un documento PDF a partir de RML se realiza mediante el módulo de Python llamado ``rml2pdf``. Sin embargo, es importante tener en cuenta que ``rml2pdf`` forma parte de la versión de paga de ``ReportLab``. Para evitar esta dependencia, Linkaform utiliza la alternativa de código abierto llamada ``z3c``.
 
-Anteriormente, en la sección sobre :ref:`estructura` :octicon:`report;1em;sd-text-info`, se presentó brevemente el contenido de los archivos base para un documento PDF. En el siguiente código, se explica con más detalle algunas etiquetas que debe tener en cuenta para sus futuros proyectos.
+    También es importante señalar que la alternativa |z3c| :octicon:`report;1em;sd-text-info` no es totalmente compatible con RML de |reportlab| :octicon:`report;1em;sd-text-info`, por lo que pueden existir partes del código que no sean compatibles. Revise las diferencias de implementación de ``rml2pdf`` y ``z3c.rml`` |diferencias| :octicon:`report;1em;sd-text-info`.
+
+    Para más información sobre las etiquetas consulte la guía oficial de |RML| :octicon:`report;1em;sd-text-info`.
+
+Anteriormente, en la sección :ref:`estructura` :octicon:`report;1em;sd-text-info`, se presentaron brevemente las plantillas para un documento PDF. 
+En el siguiente bloque de código, encontrará detalles sobre el archivo **body**, el encargado de establecer la estructura del PDF. Revise la siguiente tabla y compárela con el bloque de código. Estas etiquetas son importantes para la base del archivo y deben tenerse en cuenta para las plantillas futuras.
+
+.. list-table::
+   :widths: 15 85
+   :header-rows: 1
+   :align: left
+
+   * - Elemento
+     - Descripción
+   * - version
+     - Versión de xml.
+   * - document
+     - Configuración del documento.
+
+       - filename: Nombre del documento (cambiar).
+
+   * - pageInfo
+     - Propiedades informativas del documento.
+
+       - pageSize: Tamaño de la página.
+
+   * - docinit
+     - Fuentes del documento.
+   * - template
+     - Definiciones para todas las hojas que se generen.
+
+       - title: Título del documento.
+
+       - pageSize: Tamaño que se establece a la página.
+
+       - author: Autor del documento.
+   * - stylesheet
+     - Define la totalidad de estilos que se van a implementar.
+   * - story
+     - Dentro se desarrolla todo el cuerpo del PDF.
+
+.. seealso:: Utilice la herramienta diferenciadora de tamaños de papel para obtener medidas reales sobre los tamaños de papel. Para más información, ingrese |diferenciador| :octicon:`report;1em;sd-text-info`.
 
 .. code-block:: xml
     :linenos: 
@@ -42,30 +83,6 @@ Anteriormente, en la sección sobre :ref:`estructura` :octicon:`report;1em;sd-te
             <!-- Aquí va el código del cuerpo de la plantilla -->
         </story>
     </document>
-
-**version**: Versión de xml.
-
-**document**: Configuración del documento.
-
-- **filename**: Nombre del documento.
-
-**pageInfo**: Propiedades informativas del documento.
-
-- **pageSize**: Tamaño de la página.
-
-.. seealso:: Si necesita ajustar el tamaño de su página con medidas reales, utilice la herramienta diferenciadora de tamaños de papel. Ingrese al siguiente |diferenciador| para obtener más información.
-
-**docinit**: Fuentes del documento.
-
-**template**: Definiciones para todas las hojas que se generen.
-
-- **title**: Título del documento.
-- **pageSize**: Tamaño que se establece a la página.
-- **author**: Autor del documento.
-
-**stylesheet**: Define la totalidad de estilos que se van a implementar.
-
-**story**: Dentro se desarrolla todo el cuerpo del PDF.
 
 Conceptos básicos
 =================
@@ -578,10 +595,24 @@ En esta sección, aprendió acerca de los componentes que conforman un archivo r
  
 .. LIGAS EXTERNAS
 
+.. |rml| raw:: html
+
+   <a href="https://www.reportlab.com/docs/rml2pdf-userguide.pdf" target="_blank">RML</a>
+
 .. |reportlab| raw:: html
 
-   <a href="https://www.reportlab.com/docs/rml2pdf-userguide.pdf" target="_blank">aquí</a>
+   <a href="https://docs.reportlab.com/rmlfornewbies/" target="_blank">ReportLab</a>
+
+.. |diferencias| raw:: html
+
+   <a href="https://github.com/zopefoundation/z3c.rml/blob/master/RML-DIFFERENCES.rst" target="_blank">aquí</a>
 
 .. |diferenciador| raw:: html
 
    <a href="https://www.diferenciador.com/tamanos-de-papel-carta-oficio-letter-legal-tabloide" target="_blank">enlace</a>
+
+.. |z3c| raw:: html
+
+   <a href="https://github.com/zopefoundation/z3c.rml/" target="_blank">z3c</a>
+
+   

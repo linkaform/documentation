@@ -702,7 +702,7 @@ Para eliminar a un usuario, siga estos pasos:
 
 .. attention:: Tenga  en cuenta que cuando un usuario tiene formas de su propiedad, puede transferir estas formas a otro usuario. 
     
-    Si decide realizar la transferencia de las formas, siga los pasos del 6 al 8. Observa que la misma interfaz le proporciona el número de formas que el usuario posee.
+    Si decide realizar la transferencia de las formas, siga los pasos del 6 al 8. Observe que la misma interfaz le proporciona el número de formas que el usuario posee.
 
     Si opta por borrar el usuario sin realizar la transferencia de formas, simplemente haga clic en el botón ``Borrar``.
 
@@ -768,7 +768,7 @@ Para crear un grupo, siga los pasos:
 
 8. Presione ``Guardar`` para crear el grupo o ``Cancelar`` para anular la operación.
 
-.. image:: /imgs/Inicio/Inicio400.png
+.. image:: /imgs/Inicio/Inicio40.png
 
 Operaciones con grupos
 ----------------------

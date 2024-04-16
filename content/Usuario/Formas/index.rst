@@ -1677,7 +1677,7 @@ Las formas proporcionan opciones que permiten una rápida gestión de las mismas
 - **Editar**: Permite realizar cambios en la estructura de la forma. Se pueden agregar campos, modificar respuestas, etc.
 - **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo.
 
-.. caution:: Al duplicar una forma, Linkaform NO duplica flujos de trabajo.
+.. warning:: Al duplicar una forma, Linkaform **no** duplica flujos de trabajo.
 
 - **Responder**: Permite crear registros de la forma deseada. Simplemente haga clic sobre la opción y se mostrará la estructura de la forma en modo ``Responder``. Al terminar de capturar la información, haga clic en ``Mandar respuestas``.
 
