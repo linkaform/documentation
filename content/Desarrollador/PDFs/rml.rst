@@ -4,7 +4,9 @@
 Report Markup Language (RML)
 ============================
 
-En esta sección, encontrará información detallada sobre **Report Markup Language (RML)**, el lenguaje de marcado de informes utilizado para estructurar los elementos que componen a un PDF. También encontrará ejemplos prácticos, sugerencias y mejores prácticas para mejorar la calidad de sus documentos.
+En esta sección, encontrará una guía sobre **Report Markup Language (RML)**, el lenguaje de marcado de informes utilizado para estructurar los elementos que componen un PDF. 
+
+Este apartado no pretende ser un tutorial completo y detallado, pero sí cubre todos los aspectos relevantes para el desarrollo de plantillas. Encontrará ejemplos prácticos, sugerencias y buenas prácticas para el desarrollo de reportes en formato PDF. 
 
 .. seealso:: **Acerca de RML**
 
@@ -53,7 +55,7 @@ En el siguiente bloque de código, encontrará detalles sobre el archivo **body*
    * - story
      - Dentro se desarrolla todo el cuerpo del PDF.
 
-.. seealso:: Utilice la herramienta diferenciadora de tamaños de papel para obtener medidas reales sobre los tamaños de papel. Para más información, ingrese |diferenciador| :octicon:`report;1em;sd-text-info`.
+.. seealso:: Para definir el atributo ``pageSize``, utilicé la herramienta diferenciadora de tamaños de papel para obtener medidas reales sobre los tamaños. Para más información, ingrese al siguiente |diferenciador| :octicon:`report;1em;sd-text-info`.
 
 .. code-block:: xml
     :linenos: 
@@ -87,12 +89,57 @@ En el siguiente bloque de código, encontrará detalles sobre el archivo **body*
 Conceptos básicos
 =================
 
-En esta sección, se presentan los elementos que comúnmente se utilizan para la elaboración de código en las plantillas de los PDF de Linkaform. Para obtener más detalles, consulte la documentación oficial |reportlab| :octicon:`report;1em;sd-text-info`.
+En esta sección, encontrará los elementos y aspectos comúnmente utilizados en la elaboración de plantillas. Para más información, consulte la guía de usuario de |RML| :octicon:`report;1em;sd-text-info`.
+
+Convenciones
+------------
+
+Las prácticas comúnmente más usadas y admitidas por RML son las siguientes:
+
+1. Los colores se pueden especificar de tres maneras: 
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+   :align: left
+
+   * - Elemento
+     - Ejemplo
+   * - nombre
+     - Red
+   * - hexadecimal
+     - #FF0000
+   * - CMYK
+     - #ff99001f
+
+.. note:: Regularmente se utiliza el formato hexadecimal.
+
+2. Las coordenadas ``X`` e ``Y`` generalmente se refieren a puntos específicos dentro de la plantilla. Revise `coordenadas cartesianas <#coordenadas>`_ :octicon:`report;1em;sd-text-info` para más detalle.
+
+3. Las medidas predeterminadas son puntos, pero pueden ser:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+   :align: left
+
+   * - Medida
+     - Ejemplo
+   * - milímetros (mm)
+     - y='10mm'
+   * - centímetros (cm)
+     - height='2cm'
+   * - pulgadas (pulg)
+     - width='2in'
+   * - puntos (pto)
+     - size='7.5'
+
+.. note:: Regularmente se utilizan las medidas en centímetros(cm).
 
 Fonts
 -----
 
-Las fuentes permiten dar una apariencia más agradable al contenido escrito del documento. Las fuentes comúnmente usadas son ``montserrat`` y ``PT Sans``; sin embargo, en la siguiente lista se incluyen otras fuentes compatibles.
+Las fuentes son útiles para determinar el tipo de letra utilizado en el contenido. Algunas de las fuentes comúnmente utilizadas en las plantillas son ``Montserrat`` y ``PT Sans``. En la siguiente lista encontrará otras fuentes compatibles:
 
 .. dropdown:: Fonts
 
@@ -128,7 +175,7 @@ Las fuentes permiten dar una apariencia más agradable al contenido escrito del 
         Montserrat-ThinItalic.ttf
         times-new-roman-italic.ttf
 
-Para incluir una fuente, puede hacerlo dentro de la etiqueta ``docinit``, haciendo referencia a la API donde se encuentra almacenada. Simplemente cambie el nombre de la fuente, como se muestra en el siguiente ejemplo:
+Para incluir una de las fuentes anteriores, simplemente copie una de las líneas de ``registerTTFont``, edite el nombre y ajuste la URL, y colóquela dentro de la etiqueta ``<docinit>`` como se muestra a continuación:
 
 .. code-block:: xml
     :linenos:
@@ -139,6 +186,8 @@ Para incluir una fuente, puede hacerlo dentro de la etiqueta ``docinit``, hacien
         <registerTTFont faceName="Montserrat-Bold" fileName="/srv/backend.linkaform.com/infosync-api/backend/staticfiles/fonts/Montserrat-Bold.ttf" />
         <registerTTFont faceName="Montserrat-BoldItalic" fileName="/srv/backend.linkaform.com/infosync-api/backend/staticfiles/fonts/Montserrat-BoldItalic.ttf" />
     </docinit>
+
+.. _coordenadas:
 
 Coordenadas cartesianas
 -----------------------

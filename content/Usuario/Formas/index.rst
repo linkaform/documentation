@@ -6,7 +6,7 @@ Formas
 
 En Linkaform, el término **forma** hace referencia a un formulario digital que posibilita la recopilación de información. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
 
-- Crear y editar de formas.
+- Crear y editar formas.
 - Crear carpetas para organizar y almacenar formas.
 - Compartir formas con otros usuarios.
 - Responder formas para generar nuevos registros.
@@ -197,7 +197,7 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
         
         El campo **Email** permite configurar la forma para enviar una copia del registro capturado por correo. Para activar esta función, seleccione la opción ``Enviar Email``.
 
-        .. caution:: Esta opción está disponible unicamente para formas. 
+        .. attention:: Esta opción está disponible unicamente para formas. 
 
         .. image:: /imgs/Formas/Formas6.4.png
 
@@ -364,7 +364,6 @@ Revise las siguientes configuraciones:
   .. image:: /imgs/Formas/Formas9.png
 
 .. dropdown:: Configuración de la notificación
-  :open:
 
   La configuración de correo electrónico permite establecer y personalizar cómo se gestionan y entregan los correos electrónicos para notificar al destinatario según se responda la forma.
 
@@ -583,7 +582,7 @@ Un grupo repetitivo es un campo utilizado para agregar varios sets dentro de él
 
 .. image:: /imgs/Formas/Formas12.jpg
 
-.. caution:: Esta opción está disponible unicamente para formas. 
+.. attention:: Esta opción está disponible unicamente para formas. 
 
 Para utilizarlo, siga estos pasos:
 
