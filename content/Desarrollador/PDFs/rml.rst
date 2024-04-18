@@ -6,7 +6,7 @@ Report Markup Language (RML)
 
 En esta sección, encontrará una guía sobre **Report Markup Language (RML)**, el lenguaje de marcado de informes utilizado para estructurar los elementos que componen un PDF. 
 
-Este apartado no pretende ser un tutorial completo y detallado, pero sí cubre todos los aspectos relevantes para el desarrollo de plantillas. Encontrará ejemplos prácticos, sugerencias y buenas prácticas para el desarrollo de reportes en formato PDF. 
+Este apartado **no** pretende ser un tutorial completo y detallado, pero sí cubre todos los aspectos relevantes para el desarrollo de plantillas de Linkaform. Encontrará ejemplos prácticos, sugerencias y buenas prácticas para el desarrollo de reportes en formato PDF. 
 
 .. seealso:: **Acerca de RML**
 
@@ -18,78 +18,97 @@ Este apartado no pretende ser un tutorial completo y detallado, pero sí cubre t
 
     Para más información sobre las etiquetas consulte la guía oficial de |RML| :octicon:`report;1em;sd-text-info`.
 
-Anteriormente, en la sección :ref:`estructura` :octicon:`report;1em;sd-text-info`, se presentaron brevemente las plantillas para un documento PDF. 
-En el siguiente bloque de código, encontrará detalles sobre el archivo **body**, el encargado de establecer la estructura del PDF. Revise la siguiente tabla y compárela con el bloque de código. Estas etiquetas son importantes para la base del archivo y deben tenerse en cuenta para las plantillas futuras.
-
-.. list-table::
-   :widths: 15 85
-   :header-rows: 1
-   :align: left
-
-   * - Elemento
-     - Descripción
-   * - version
-     - Versión de xml.
-   * - document
-     - Configuración del documento.
-
-       - filename: Nombre del documento (cambiar).
-
-   * - pageInfo
-     - Propiedades informativas del documento.
-
-       - pageSize: Tamaño de la página.
-
-   * - docinit
-     - Fuentes del documento.
-   * - template
-     - Definiciones para todas las hojas que se generen.
-
-       - title: Título del documento.
-
-       - pageSize: Tamaño que se establece a la página.
-
-       - author: Autor del documento.
-   * - stylesheet
-     - Define la totalidad de estilos que se van a implementar.
-   * - story
-     - Dentro se desarrolla todo el cuerpo del PDF.
-
-.. seealso:: Para definir el atributo ``pageSize``, utilicé la herramienta diferenciadora de tamaños de papel para obtener medidas reales sobre los tamaños. Para más información, ingrese al siguiente |diferenciador| :octicon:`report;1em;sd-text-info`.
-
-.. code-block:: xml
-    :linenos: 
-    :emphasize-lines: 1,4,6,9-10,13-14
-    :caption: Archivo Body
-
-
-    <?xml version="1.0"?>
-
-    <!-- Configuración del documento -->
-    <document filename="Name" xmlns:doc="http://namespaces.zope.org/rml/doc">
-        <!-- Propiedades informativas -->
-        <pageInfo pageSize="(21cm,27.5cm)" doc:example="" />
-
-        <docinit>
-            <!-- Fuentes -->
-        </docinit>
-
-        <!-- Definiciones de la plantilla -->
-        <template title="Name" pageSize="(22cm,28cm)" author="Linkaform"></template>
-
-        <!-- Estilos -->
-        <stylesheet>
-        </stylesheet>
-
-        <story>
-            <!-- Aquí va el código del cuerpo de la plantilla -->
-        </story>
-    </document>
-
 Conceptos básicos
 =================
 
 En esta sección, encontrará los elementos y aspectos comúnmente utilizados en la elaboración de plantillas. Para más información, consulte la guía de usuario de |RML| :octicon:`report;1em;sd-text-info`.
+
+Etiquetas y atributos
+---------------------
+
+Las **etiquetas** son elementos que se utilizan para estructurar y organizar el contenido. Por otro lado, los **atributos** son características o propiedades que se pueden asignar a las etiquetas para proporcionar más información sobre ellos o modificar su comportamiento.
+
+Al igual que con cualquier dialecto XML, RML requiere una sintaxis XML correcta. Si está familiarizado con HTML, preste atención a las diferencias entre la sintaxis XML y algunas de las construcciones más permisivas permitidas en HTML.
+
+Los **valores** de atributos deben estar encerrados entre comillas.
+
+.. code-block:: xml
+    :caption: Correcto
+    :linenos:
+
+    <document filename="outfile.pdf">
+
+.. code-block:: xml
+    :caption: Incorrecto
+
+    <document filename=outfile.pdf>
+
+Un **elemento no vacío** debe tener tanto una etiqueta de apertura como una de cierre.
+
+.. code-block:: xml
+    :caption: Ejemplo
+    :linenos:
+
+    <document> </document>
+ 
+Los **elementos vacíos** son aquellos que no tienen ningún contenido y se cierran con ``/>`` al final de la misma etiqueta en lugar de tener una etiqueta de cierre separada.
+
+.. code-block:: xml
+    :caption: Ejemplo
+    :linenos:
+
+    <getName id="Header.Title"/>
+
+Las etiquetas deben estar anidadas correctamente.
+
+.. code-block:: xml
+    :caption: Correcto
+    :linenos:
+
+    <b>
+        <i>texto</i>
+    </b>
+
+.. code-block:: xml
+    :caption: Incorrecto
+    :linenos:
+
+    <b>
+        <i>texto
+    </b>
+    </i>
+
+En general, los **espacios** en blanco se ignoran en RML. Excepto dentro de cadenas de texto, puede formatear e indentar documentos RML de la manera que considere más legible. 
+
+Dentro de cadenas de texto, el espacio en blanco se considera equivalente a un solo espacio y los saltos de línea se agregan automáticamente según sea necesario durante el formateo.
+
+Por ejemplo, considere el siguiente fragmento de código RML:
+
+.. code-block:: xml
+    :caption: Ejemplo
+    :linenos:
+
+    <para>
+        Esto es      un    ejemplo de
+        texto   con   varios espacios
+        y saltos
+        de línea.
+    </para>
+
+.. code-block:: xml
+    :caption: Resultado
+
+    Esto es un ejemplo de texto con varios espacios y saltos de línea.
+
+RML es **case sensitive**, lo que significa que distingue entre mayúsculas y minúsculas.  La capitalización en los nombres de las etiquetas y variables es importante y significativa.
+
+.. code-block:: xml
+    :caption: Ejemplo
+    :linenos:
+
+    {% set nombre %}
+    {% set NOMBRE %}
+    {% set Nombre %}
 
 Convenciones
 ------------
@@ -109,12 +128,16 @@ Las prácticas comúnmente más usadas y admitidas por RML son las siguientes:
      - Red
    * - hexadecimal
      - #FF0000
+   * - rgb
+     - (255,255,255)
    * - CMYK
      - #ff99001f
 
 .. note:: Regularmente se utiliza el formato hexadecimal.
 
-2. Las coordenadas ``X`` e ``Y`` generalmente se refieren a puntos específicos dentro de la plantilla. Revise `coordenadas cartesianas <#coordenadas>`_ :octicon:`report;1em;sd-text-info` para más detalle.
+2. Las coordenadas cartesianas son un sistema de localización en un plano usando dos números, uno para la posición horizontal ``(x)`` y otro para la posición vertical ``(y)``. En los documentos PDF las coordenadas cartesianas se utilizan como referencia para ubicar elementos.
+
+.. image:: /imgs/PDF/5/5.1.png
 
 3. Las medidas predeterminadas son puntos, pero pueden ser:
 
@@ -145,6 +168,7 @@ Las fuentes son útiles para determinar el tipo de letra utilizado en el conteni
 
     .. code-block:: xml
         :caption: Fonts
+        :linenos:
 
         Symbola_hint.ttf
         DejaVuSans.ttf
@@ -175,7 +199,12 @@ Las fuentes son útiles para determinar el tipo de letra utilizado en el conteni
         Montserrat-ThinItalic.ttf
         times-new-roman-italic.ttf
 
-Para incluir una de las fuentes anteriores, simplemente copie una de las líneas de ``registerTTFont``, edite el nombre y ajuste la URL, y colóquela dentro de la etiqueta ``<docinit>`` como se muestra a continuación:
+Para incluir una de las fuentes anteriores, siga los pasos:
+
+1. Copie una de las líneas de ``registerTTFont``.
+2. Edite el nombre de la fuente en ``faceName``.
+3. Ajuste el final de ``fileName``.
+4. Coloque la linea dentro de la etiqueta ``<docinit>``.
 
 .. code-block:: xml
     :linenos:
@@ -187,30 +216,19 @@ Para incluir una de las fuentes anteriores, simplemente copie una de las líneas
         <registerTTFont faceName="Montserrat-BoldItalic" fileName="/srv/backend.linkaform.com/infosync-api/backend/staticfiles/fonts/Montserrat-BoldItalic.ttf" />
     </docinit>
 
-.. _coordenadas:
-
-Coordenadas cartesianas
------------------------
-
-Las coordenadas cartesianas son un sistema de localización en un plano usando dos números, uno para la posición horizontal ``(x)`` y otro para la posición vertical ``(y)``. En los documentos PDF las coordenadas cartesianas se utilizan como referencia para ubicar elementos.
-
-.. image:: /imgs/PDF/5/5.1.png
-
 Graphics vs Flowables
 ---------------------
 
-En RML, las etiquetas que posicionan elementos se llaman ``Graphics``. El otro grupo principal de etiquetas son los ``Flowables``, a continuación se explican algunos ejemplos.
+Al diseñar un documento en RML, es importante comprender que existen dos tipos de elementos: ``Graphics`` y ``Flowables``.
 
-Los ``Graphics`` son etiquetas que requieren coordenadas específicas (x, y), como es el caso de ``<blockTableStyle>``.
+Los elementos ``Graphics`` están fijos en la página y se posicionan utilizando coordenadas (``x``, ``y``), como es el caso de los elementos que componen al ``header`` y el ``footer``. 
 
 .. code-block:: xml
     :linenos:
 
-    <blockTableStyle id="general">
-        <blockAlignment value="center" start="0,0" stop="-1,-1"/>
-    </blockTableStyle>
+    <drawString x="1.5cm" y="27.4cm">{{ form.name }} </drawString>
 
-Por otro lado, los ``Flowables`` son etiquetas que no requieren un posicionamiento preciso e incluyen párrafos, separadores y tablas, entre otros. Estos elementos se colocan en secuencia descendente en un marco y se desplazan al siguiente cuando el marco no tiene más espacio y así sucesivamente. No se colocan explícitamente por coordenadas. Por ejemplo:
+Por otro lado, los elementos ``Flowables`` fluyen dentro de un **Frame**. Esto significa que no requieren posicionamiento explícito en coordenadas cartesianas. En lugar de eso, los elementos se colocan en secuencia descendente en el **Frame** y se desplazan automáticamente al siguiente cuando el **Frame** no tiene más espacio, y así sucesivamente. Ejemplos de estos elementos son párrafos, espacios, tablas, entre otros.
 
 .. code-block:: xml
     :linenos:
@@ -223,10 +241,24 @@ Por otro lado, los ``Flowables`` son etiquetas que no requieren un posicionamien
         </tr>
     </blockTable>
 
+Comentarios
+-----------
+
+RML permite el uso de comentarios en el código para documentar fragmentos importantes. Los comentarios no se mostrarán en el archivo PDF de salida. Para comentar dentro de las plantillas, utilice la siguiente sintaxis:
+
+.. code-block:: xml
+    :linenos:
+
+    <!-- Su comentario aquí -->
+
+.. warning:: Tenga en cuenta que los comentarios no pueden estar anidados. Además, no se pueden utilizar los caracteres ``--`` dentro de la sección de comentarios.
+
 Espacios
 --------
 
-La etiqueta ``<spacer>`` se utiliza para agregar espacios en blanco verticalmente entre elementos del documento. ``<spacer>`` utiliza el atributo ``length`` para definir el tamaño del espacio en blanco, utilizando unidades como píxeles, puntos, milímetros, etc.
+Para agregar espacios en blanco verticalmente entre elementos del documento, utilice la etiqueta ``<spacer>``. Esta etiqueta utiliza el atributo ``length`` para definir el tamaño del espacio, utilizando unidades como píxeles, puntos, milímetros, etc.
+
+.. note:: Regularmente, se utilizan centímetros (cm).
 
 .. code-block:: xml
     :linenos:
@@ -236,9 +268,66 @@ La etiqueta ``<spacer>`` se utiliza para agregar espacios en blanco verticalment
 Párrafos
 --------
 
-Para incluir párrafos, utilice la etiqueta ``<para>``. Puede incluir texto directamente dentro de la etiqueta o utilizar variables y expresiones de Django para mostrar contenido dinámico.
+Para incluir textos en linea o párrafos, utilice la etiqueta ``<para>``. Puede incluir texto directamente dentro de la etiqueta o utilizar variables y expresiones propios de Django para mostrar contenido dinámico.
 
-La etiqueta ``<para>`` utiliza el atributo ``style`` para especificar el nombre de un estilo (`paraStyle <#estilo>`_ :octicon:`report;1em;sd-text-info`) y usarla posteriormente para aplicar estilos, similar al atributo ``class`` en HTML.
+.. seealso:: Consulte :ref:`rml_django` :octicon:`report;1em;sd-text-info` para mas información. 
+
+.. code-block:: xml
+    :linenos:
+
+    <para>Texto</para>
+
+    <para>{{ nombre_variable }}</para>
+
+Cuando trabaje con tablas u otros elementos que incluyan texto, asegúrese de incluirlo dentro de la etiqueta ``<para>``. Esta etiqueta se encarga de mantener el texto dentro del **frame**  sin desbordarse. 
+
+Por ejemplo, al especificar el nombre de las columnas en una tabla, es común saber la longitud del texto estático. Sin embargo, para el contenido dinámico, como los párrafos de texto, la longitud puede variar y no siempre se conoce de antemano. Si simplemente incluye el texto entre las etiquetas de la tabla, es probable que el contenido se desborde.
+
+En cambio, al utilizar la etiqueta ``<para>`` dentro de las etiquetas de la tabla, el contenido se ajustará automáticamente dentro de las dimensiones de la tabla. Observe los siguientes ejemplos visuales:
+
+.. tab-set::
+
+    .. tab-item:: Incorrecto
+
+        .. code-block:: xml
+            :linenos:
+
+            <blockTable>
+                    <tr>
+                        <td>
+                            Detalle
+                        </td>
+                        <td>
+                            {{ set.6492412ec0d7d35fe4a66dd7 }}
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+            </blockTable>
+
+        .. image:: /imgs/PDF/pdf23.png
+
+    .. tab-item:: Correcto
+
+        .. code-block:: xml
+            :linenos:
+
+            <blockTable>
+                    <tr>
+                        <td>
+                            <para>Detalle<para>
+                        </td>
+                        <td>
+                            <para>{{ set.6492412ec0d7d35fe4a66dd7 }}<para>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+            </blockTable>
+
+        .. image:: /imgs/PDF/pdf24.png
+
+La etiqueta ``<para>`` utiliza el atributo ``style`` para especificar el nombre de un estilo y usarla posteriormente para aplicar estilos, similar al atributo ``class`` en HTML. Consulte `paraStyle <#estilo>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. code-block:: xml
     :linenos:
@@ -250,7 +339,7 @@ La etiqueta ``<para>`` utiliza el atributo ``style`` para especificar el nombre 
 Tablas
 ------
 
-Definir una tabla en su documento PDF es posible utilizando la etiqueta ``<blockTable>``. Su uso es principalmente para organizar y mostrar datos en forma de filas y columnas. 
+Definir una tabla en la plantilla es posible utilizando la etiqueta ``<blockTable>``. Su uso es principalmente para organizar y mostrar datos en forma de filas y columnas. 
 
 Los atributos de ``<blockTable>`` son:
 
@@ -260,26 +349,52 @@ Los atributos de ``<blockTable>`` son:
 | style        | Define el nombre del estilo de la tabla definido con ``<blockTableStyle>``.                    |
 +--------------+------------------------------------------------------------------------------------------------+
 | colWidths    | Define el ancho de las columnas en la tabla, lo que afectará la distribución y el diseño de los|
-|              | datos en esas columnas.                                                                        |
+|              | datos en esas columnas. Regularmente se expresa en centímetros (cm).                           |
 +--------------+------------------------------------------------------------------------------------------------+
-| rowHeights   | Define la altura de las filas en la tabla.                                                     |
+| rowHeights   | Define la altura de las filas en la tabla. Regularmente se expresa en centímetros (cm).        |
 +--------------+------------------------------------------------------------------------------------------------+
 | repeatRows   | Se utiliza para controlar la repetición de filas cuando una tabla se divide en varias páginas  |
 |              | debido al contenido.                                                                           |
 +--------------+------------------------------------------------------------------------------------------------+
 
-.. note:: El nombre del estilo (Style) permite aplicar estilos personalizados utilizando `<blockTableStyle> <#table>`_ :octicon:`report;1em;sd-text-info`
+La etiqueta ``<blockTable>`` utiliza el atributo ``style`` para especificar el nombre de un estilo y usarla posteriormente para aplicar estilos, similar al atributo ``class`` en HTML. Consulte `<blockTableStyle> <#table>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
-Una tabla se compone de dos etiquetas principales: ``<tr>`` y ``<td>``. Estas se utilizan para estructurar y dar forma a las tablas, de manera similar a HTML. Sin embargo, en RML, se utilizan las etiquetas ``<tr>`` y ``<td>`` dentro de la etiqueta ``<blockTable>`` para definir las filas y celdas de la tabla, respectivamente.
+.. code-block:: xml
+    :linenos:
 
--  ``<tr>`` (Tabla Row): Se utiliza para definir una fila en una tabla. Dentro de esta etiqueta, se pueden colocar una o más etiquetas ``<td>`` que representarán las celdas en esa fila.
+    <blockTable colWidths="4.8cm, 9.4cm, 4.8cm" style="nombre_estilo">
 
--  ``<td>`` (Tabla Data): Se utiliza para definir una columna en una tabla. Puede aplicar estilos y atributos específicos a las celdas utilizando las propiedades de estilo de RML.
+En RML, se utilizan las etiquetas ``<tr>`` y ``<td>`` dentro de la etiqueta ``<blockTable>`` para definir las filas y celdas de la tabla, respectivamente.
 
-.. tip:: El ancho del atributo ``colWidths`` depende del tamaño de su página. Por ejemplo, suponga que el ``pageSize`` de su página es de 21 cm x 27.5 cm con un margen de 1.5 cm por lado. Por lo tanto, su página ya no contará con 3 cm, y ahora tendrá un tamaño de 19 cm x 25 cm, por lo que su tabla no podrá medir más de 19 cm. De esos 19 cm, puede distribuir el ancho según su necesidad.
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::
+        :columns: 7
+
+        ``<td>`` (Tabla Data): Define una columna en una tabla.
+        
+        .. note:: Puede aplicar estilos y atributos específicos a las celdas utilizando las propiedades de estilo de `<blockTableStyle> <#table>`_ :octicon:`report;1em;sd-text-info`.
+
+        ``<tr>`` (Tabla Row): Define una fila en una tabla. 
+        
+        .. note:: Coloque las etiquetas ``<td>`` necesarias para representar las celdas en esa fila.
+
+    .. grid-item-card::
+        :columns: 5
+
+        .. image:: /imgs/PDF/pdf25.png
+
+.. attention:: El ancho del atributo ``colWidths`` depende del tamaño de la página.
+
+    Por ejemplo, supongamos que el ``pageSize`` de la página es de **21 cm x 27.5 cm** con un margen de **1.5 cm** por lado. Restando el espacio del margen, la página ya no contará con **3 cm**, por lo que tendrá un espacio utilizable de **19 cm x 25 cm**. En consecuencia, la tabla no podrá medir más de **19 cm**. Dentro de esos **19 cm**, deberá distribuir el ancho según sus necesidades.
 
     .. code-block:: xml
         :linenos:
+
+        <pageTemplate id="first" pagesize="21cm, 27.5cm">
+            <frame id="first" x1="1cm" y1="1.5cm" width="19cm" height="23cm"/>
+        </pageTemplate>
 
         <blockTable colWidths="6cm, 8cm, 5cm">
             <tr>
@@ -294,7 +409,7 @@ Una tabla se compone de dos etiquetas principales: ``<tr>`` y ``<td>``. Estas se
             </tr>
         </blockTable>
 
-    En el ejemplo anterior, se está definiendo una tabla con dos filas (``<tr>``) y tres columnas (``<td>``).
+    En el ejemplo anterior, se definió una tabla con dos filas (``<tr>``) y tres columnas (``<td>``).
 
 Imágenes
 --------
@@ -394,24 +509,66 @@ La etiqueta ``<paraStyle>`` se utiliza para definir el estilo de uno o varios p�
 | backColor           | Define el color de fondo del párrafo.                                                       |
 +---------------------+---------------------------------------------------------------------------------------------+
 
-Estos atributos permiten personalizar y controlar la apariencia de los párrafos en el documento. Puede aplicar estos estilos a diferentes partes del documento según sea su necesidad.
+Los atributos anteriores permiten personalizar y controlar la apariencia del texto utilizado en el documento. 
 
 .. code-block:: xml
     :linenos:
 
     <paraStyle name="mystyle" alias="pretty" parent="oldstyle" fontname="Courier-Oblique" fontsize="13" leading="20" leftIndent="1.25in" rightIndent="2.5in" firstLineIndent="0.5in" spaceBefore="0.2in" spaceAfter="3cm" alignment="justify" bulletFontName="Courier" bulletFontsize="13" bulletIndent="0.2in" textColor="red" backColor="cyan" />
 
-Ya se tienen estilos previamente preparados, simplemente llame el nombre de ``<paraStyle>`` en la etiqueta ``<para>`` del archivo ``<body>``.
+Actualmente, existen estilos previamente preparados para párrafos y textos. En el siguiente bloque de código, copie, modifique y pegue según sea necesario. Asegurase de que los nombres del ``<paraStyle>`` y ``<para>`` sean las mismas. observe los siguientes ejemplos:
 
-.. code-block:: xml
-    :linenos:
+.. note:: Si no asigna ningún color, por defecto se tomará el color negro.
 
-    <paraStyle name="textTitleI" fontName="Montserrat-Bold" fontSize="16" alignment="center" />
-    <paraStyle name="textTitleII" fontName="Montserrat-Regular" fontSize="10" alignment="right" />
-    <paraStyle name="textSubTitleI" fontName="Montserrat-Bold" fontSize="12" alignment="left" />
-    <paraStyle name="textParaI" fontName="Montserrat-Regular" fontSize="10" alignment="left" />
-    <paraStyle name="textParaII" fontName="Montserrat-Bold" fontSize="10" alignment="center" />
-    <paraStyle name="textParaIII" fontName="Montserrat-Bold" fontSize="10" alignment="left" />
+.. tab-set::
+
+    .. tab-item:: Estructura
+
+        .. code-block:: xml
+            :linenos:
+
+            <story>
+
+                <para style="textTitleI">textTitleI</para>
+                <para style="textSubtitleI">textSubtitleI</para>
+
+                <para style="textParaI">textParaI</para>
+                <para style="textParaII">textParaII</para>
+
+                <para style="textParaIII">textParaIII</para>
+                <para style="textParaIV">textParaIV</para>
+
+                <para style="textParaV">textParaV</para>
+                <para style="textParaVI">textParaVI</para>
+                
+                <para style="textParaVII">textParaVII</para>
+                <para style="textParaVIII">textParaVIII</para>
+
+            </story>
+
+    .. tab-item:: Estilos
+
+        .. code-block:: xml
+            :linenos:
+
+            <paraStyle name="textTitleI" fontName="Montserrat-Bold" fontSize="12" alignment="left" textColor="red"/>
+            <paraStyle name="textSubtitleI" fontName="Montserrat-Bold" fontSize="10" alignment="left" textColor="blue"/>
+
+            <paraStyle name="textParaI" fontName="Montserrat-Regular" fontSize="8" alignment="left" textColor="#803D3B"/>
+            <paraStyle name="textParaII" fontName="Montserrat-Bold" fontSize="8" alignment="left" textColor="#0E46A3"/>
+
+            <paraStyle name="textParaIII" fontName="Montserrat-Regular" fontSize="8" alignment="center" textColor="#DD5746"/>
+            <paraStyle name="textParaIV" fontName="Montserrat-Bold" fontSize="8" alignment="center" textColor="#DD5746"/>
+
+            <paraStyle name="textParaV" fontName="Montserrat-Regular" fontSize="8" alignment="right" textColor="#B3C8CF"/>
+            <paraStyle name="textParaVI" fontName="Montserrat-Bold" fontSize="8" alignment="right" textColor="#8B322C"/>
+
+            <paraStyle name="textParaVII" fontName="Montserrat-Regular" fontSize="8" alignment="justify" textColor="#1C1678"/>
+            <paraStyle name="textParaVIII" fontName="Montserrat-Bold" fontSize="8" alignment="justify" textColor="#007F73"/>
+
+    .. tab-item:: Resultado
+        
+        .. image:: /imgs/PDF/pdf26.png
 
 .. _table:
 
@@ -639,6 +796,78 @@ Establece cómo se alinea el contenido de un bloque de celdas en dirección vert
         start="4" 
         stop="11" 
     />
+
+Template
+========
+
+Anteriormente, en la sección :ref:`estructura` :octicon:`report;1em;sd-text-info`, se presentaron brevemente las plantillas para un documento PDF. 
+
+En el siguiente bloque de código, encontrará detalles sobre el archivo **body**, el encargado de establecer la estructura del PDF. Revise la siguiente tabla y compárela con el bloque de código. Estas etiquetas son importantes para la base del archivo y deben tenerse en cuenta para las plantillas futuras.
+
+.. list-table::
+   :widths: 15 85
+   :header-rows: 1
+   :align: left
+
+   * - Elemento
+     - Descripción
+   * - version
+     - Versión de xml.
+   * - document
+     - Configuración del documento.
+
+       - filename: Nombre del documento (cambiar).
+
+   * - pageInfo
+     - Propiedades informativas del documento.
+
+       - pageSize: Tamaño de la página.
+
+   * - docinit
+     - Fuentes del documento.
+   * - template
+     - Definiciones para todas las hojas que se generen.
+
+       - title: Título del documento.
+
+       - pageSize: Tamaño que se establece a la página.
+
+       - author: Autor del documento.
+   * - stylesheet
+     - Define la totalidad de estilos que se van a implementar.
+   * - story
+     - Dentro se desarrolla todo el cuerpo del PDF.
+
+.. seealso:: Para definir el atributo ``pageSize``, utilicé la herramienta diferenciadora de tamaños de papel para obtener medidas reales sobre los tamaños. Para más información, ingrese al siguiente |diferenciador| :octicon:`report;1em;sd-text-info`.
+
+.. code-block:: xml
+    :linenos: 
+    :emphasize-lines: 1,4,6,9-10,13-14
+    :caption: Archivo Body
+
+
+    <?xml version="1.0"?>
+
+    <!-- Configuración del documento -->
+    <document filename="Name" xmlns:doc="http://namespaces.zope.org/rml/doc">
+        <!-- Propiedades informativas -->
+        <pageInfo pageSize="(21cm,27.5cm)" doc:example="" />
+
+        <docinit>
+            <!-- Fuentes -->
+        </docinit>
+
+        <!-- Definiciones de la plantilla -->
+        <template title="Name" pageSize="(22cm,28cm)" author="Linkaform"></template>
+
+        <!-- Estilos -->
+        <stylesheet>
+        </stylesheet>
+
+        <story>
+            <!-- Aquí va el código del cuerpo de la plantilla -->
+        </story>
+    </document>
 
 En esta sección, aprendió acerca de los componentes que conforman un archivo rml. Similar a HTML y CSS estas etiquetas permiten integrar una estructura y dar un formato agradable. En la siguiente sección, aprenderá acerca de las variables que ofrece Django para hacer el documento dinámico.
  
