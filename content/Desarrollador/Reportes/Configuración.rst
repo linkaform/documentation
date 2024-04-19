@@ -308,7 +308,9 @@ Simplemente, añada el parámetro ``script_id`` a la ``URL`` seguido del valor c
 Servido
 ^^^^^^^
 
-Al acceder a través de ``Servido``, se solicitarán credenciales de autenticación debido a que la cookie utilizada para la autenticación no es encontrada. Este proceso difiere de iniciar sesión en Linkaform y abrir reportes desde allí, donde la autenticación se realiza de manera automática gracias a las cookies.
+La ``URL`` de servido es la dirección web del reporte de demostración en el servidor, es decir, cuando tiene la estructura del reporte terminada y sube esa versión al servidor, la ``URL`` de servido se convierte en una copia de la estructura del reporte en el servidor.
+
+Cuando intenta acceder a través de Servido, se solicitarán credenciales de autenticación debido a que la cookie utilizada para la autenticación no es encontrada. Este proceso difiere de iniciar sesión en Linkaform y abrir reportes desde allí, donde la autenticación se realiza de manera automática gracias a las cookies.
 
 .. code-block::
    :linenos:
