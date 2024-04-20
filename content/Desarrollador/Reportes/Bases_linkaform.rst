@@ -40,7 +40,7 @@ FAQ
 
 Es la página donde podrá encontrar preguntas frecuentes sobre funcionalidades especificas de LinkaForm. Aquí podrá realizar sus preguntas a través de publicaciones o consultas con otros usuarios relacionados. 
 
-Para acceder, ingrese a |faq| :octicon:`report;1em;sd-text-info`..
+Para acceder, ingrese a |faq| :octicon:`report;1em;sd-text-info`.
 
 Acceder a reportes
 ==================
@@ -51,9 +51,9 @@ Para acceder a los ``Reportes``, siga los pasos:
 2. Inicie sesión con sus credenciales.
 3. Seleccione la opción ``Reportes`` en el menú lateral. 
 
-.. image:: /imgs/Reportes/Reportes1.png
-
 .. tip:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.
+
+.. image:: /imgs/Reportes/Reportes1.png
 
 Ver reporte
 ===========
@@ -248,12 +248,13 @@ En el modal encontrará el historial e información útil, como fechas de ejecuc
 
 Interpretación log de script
 ----------------------------
+El registro(log) del script le proporciona información util de la ejecución del script.
 
-La línea ``print(sys.argv)`` imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para depurar (*debuggear*) código en Python.
+En la interpretación del log, es sumamente util analizar las consultas a la base de datos, errores de ejecución, peticiones, manejo de tokens JWT y otros datos relevantes relacionados con el script.
 
-.. seealso:: Consulte :ref:`main` :octicon:`report;1em;sd-text-info` para más detalles.
-    
-La variable ``sys.argv`` es una lista que contiene los argumentos pasados al script en la línea de comandos. Al imprimir ``sys.argv``, puede verificar si los argumentos que esperaba están siendo pasados correctamente al script y entender la estructura y valores de esos argumentos.
+Toda la información en el log del registro se genera gracias a la línea de código ``print(sys.argv)`` del script. Esta línea imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para depurar (debuggear) código en Python.
+
+La variable sys.argv es una lista que contiene los argumentos pasados al script en la línea de comandos. Al imprimir sys.argv, se puede verificar si los argumentos que esperaba están siendo pasados correctamente al script y entender la estructura y valores de esos argumentos.
 
 Regularmente, lo que imprime ``sys.argv`` son tres argumentos, de los cuales el tercero o de la ``posición [2]`` es la más importante:
 

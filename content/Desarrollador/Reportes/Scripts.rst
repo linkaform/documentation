@@ -15,7 +15,7 @@ Una vez que haya desarrollado y esté seguro de su script, cárguelo en la aplic
 Estructura de archivos
 ======================
 
-Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info` encontrarán los archivos correspondientes al back-end del reporte. Por favor, sigan los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
+Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info` encontrarán los archivos correspondientes al back-end del reporte. Por favor, siga los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
 
 1. Cree una carpeta exclusiva dentro de la carpeta ``infosync-scripts`` para sus reportes en caso de no contar con una.
 
