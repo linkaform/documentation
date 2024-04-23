@@ -146,7 +146,7 @@ La creación de una carpeta es útil para almacenar uno o más catálogos dentro
 Compartir Carpeta / Catálogo
 ----------------------------
 
-Compartir una carpeta o un catálog es un proceso similar y sencillo, siga los pasos:
+Compartir una carpeta o un catálogo es un proceso similar y sencillo, siga los pasos:
 
 1. Seleccione la opción ``Catálogos``, ubicada en el menú vertical a la izquierda de su pantalla.
 2. Identifique la carpeta o el catálogo de su interés.

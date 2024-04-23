@@ -88,7 +88,7 @@ Crear una carpeta le permitirá almacenar uno o más reportes dentro de ella. Si
 Compartir Carpeta/Reporte
 =========================
 
-Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:
+Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:    
 
 1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
 2. Diríjase y presione la opción ``Reportes`` en el menú lateral.
@@ -99,13 +99,15 @@ Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:
 
 5. Ingrese el nombre del usuario con el que desea compartir la carpeta o el reporte y presione ``Enter``. Observe que el nombre del usuario aparecerá en la parte inferior de la ventana.
 
+.. attention:: Compartir un reporte es útil para que otros usuarios puedan visualizar y consultar datos de una o varias formas, según la finalidad del reporte. Sin embargo, al compartir un reporte, también es necesario compartir los elementos que lo componen, es decir, la forma, catálogos o cualquier otro recurso del cual el reporte consulte la información.
+    
+    Revise :ref:`compartir` :octicon:`report;1em;sd-text-info` y :ref:`compartir-cat` :octicon:`report;1em;sd-text-info` para más detalles. 
+
 .. image:: /imgs/Reportes/Reportes5.png
 
-.. seealso:: 
+.. note:: Observe la diferencia entre los permisos permitidos para diferentes usuarios: 
 
-    La diferencia en las opciones de permisos se debe a que el usuario Omar Vázquez es una conexión. Es decir, pertenece a otra cuenta padre diferente a la suya.
-
-    En cambio, el usuario Israel pertenece a la misma cuenta padre.
+    Cuando comparte cualquier elemento con algún miembro perteneciente a la misma cuenta padre que la suya, puede otorgarle el permiso de ``Admin``. Sin embargo, al compartir un elemento con un usuario perteneciente a otra cuenta padre diferente a la suya pero dentro del mismo sistema de Linkaform, se establece una **conexión**, lo que significa que se limita a otorgarle permisos que puedan afectar al elemento compartido.
 
 6. Establezca al usuario el permiso que requiera. Tenga en cuenta las descripciones:
 
@@ -114,7 +116,7 @@ Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:
 - **Admin**: El usuario tiene los mismos privilegios que los perfiles anteriores, pero puede modificar y eliminar los reportes o la carpeta.
 - **Borrar registros**: Al activar esta opción, el usuario puede eliminar los reportes. Si no se activa, el usuario no puede eliminar los reportes, incluso si tiene el perfil de ``Admin``.
 
-.. warning:: Cuando se comparte una carpeta, los reportes que contiene heredan automáticamente los permisos. Sin embargo, compartir un reporte e intentar moverlo a una carpeta puede causar problemas.
+.. warning:: Cuando comparte una carpeta, los reportes que contiene heredan automáticamente los permisos. Sin embargo, tenga cuidado al compartir un reporte e intentar moverlo a una carpeta diferente, ya que esto puede causar problemas con los permisos y otras acciones inesperadas.
 
 .. tip:: 
     
@@ -157,9 +159,7 @@ Crear un reporte en Linkaform es un proceso sencillo. Siga el siguiente procedim
 
 .. warning:: Tenga en cuenta que estos son los pasos que debe seguir para configurar el reporte (previamente preparado) en su cuenta de Linkaform; sin embargo, **no** constituyen la totalidad del proceso.
 
-    Antes de realizar esta configuración, asegúrese de `cargar el script <#cargar-script>`_ :octicon:`report;1em;sd-text-info`.
-
-1. Ingrese a la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en otro caso, en |Preproducción| :octicon:`report;1em;sd-text-info`.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
 
 .. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar el proceso de creación de reportes en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
 
@@ -191,68 +191,153 @@ Si necesita editar las configuraciones de su reporte, simplemente presione el ic
 
 .. image:: /imgs/Reportes/Reportes9.png
 
-.. _generar-api-key:
+.. _cargar-script:
 
-Generar API key
-===============
+Cargar script
+=============
 
-Una ``API Key`` (clave de API) es un código alfanumérico único que se utiliza para autenticar y autorizar el acceso a toda la información de la cuenta.
+Para cargar un script en la plataforma de Linkaform, siga los siguientes pasos y lea las recomendaciones necesarias.
 
-.. warning:: El usuario con perfil de administrador es el único que puede generar una ``API Key``.
+.. caution:: Tenga en cuenta que los siguientes pasos son necesarios para configurar el script previamente desarrollado.
 
-Para generar una ``API Key``, siga las instrucciones:
+    Antes de realizar esta configuración, asegúrese de haber creado el script de acuerdo a sus requerimientos. Revise la sección :ref:`crear-script` :octicon:`report;1em;sd-text-info` para más detalles.
 
-1. Inicie sesión en la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en |Preproducción| :octicon:`report;1em;sd-text-info`.
-2. Seleccione ``Grupos > Usuarios`` ubicado en el menú lateral.
-3. Identifique y seleccione su cuenta. Observe la información que le proporciona. 
-4. Identifique el campo ``ApiKey``.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
 
-- Presione el icono en forma de rueda para generar una nueva key.
-- Presione el icono de la papelera para eliminar la key actual.
-- Presione el icono del portapapeles para copiar la key.
+.. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar el proceso de creación de reportes en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
 
-.. image:: /imgs/Reportes/Reportes23.png
+2. Seleccione ``Formas > Scripts`` en el menú lateral.
+3. Seleccione el icono de documento ubicado en la parte superior derecha.
 
-.. warning:: En caso de que ya existe una ``API Key``, no es necesario crear una nueva, ya que probablemente esté siendo utilizada para otras operaciones. Cambiarla podría provocar acciones inesperadas.
+.. image:: /imgs/Reportes/Reportes31.png
 
-    En el desarrollo de reportes, utilizará esta ``API Key`` en el :ref:`account-settings` :octicon:`report;1em;sd-text-info`.
+Complete el formulario de acuerdo a los siguientes pasos:
+
+1. Seleccione el archivo correspondiente al script. Automáticamente, se rellenará el nombre del script.
+2. Seleccione la imagen de Docker (versión del contenedor de scripts):
+
+- ``python3_lkf:latest`` es la imagen que actualmente se utiliza; usa la version 3 de python.
+- ``python:development`` **no** se usa para scripts actuales; utiliza la version 2 de python.
+
+.. hint:: Ingrese el número 3, automáticamente aparecerá la opción utilizada.
+
+    .. image:: /imgs/Reportes/Reportes32.1.png
+
+3. Seleccione los bullets que considere:
+
+- **Activity**: Active el bullet si desea que la actividad (ejecuciones exitosas o fallas) del script le sea notificada por correo electrónico a la cuenta padre.
+- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. 
+Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
+
+Active el bullet si deasea que 
+
+.. image:: /imgs/Reportes/Reportes32.png
+
+.. _visualizar-id-script:
+
+Ver ``ID`` del script
+---------------------
+
+Hay dos maneras para consultar el id de un script.
+
+**Log de script**
+
+Para consultar a través del log de flujo, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de scripts.
+2. Identifique el script del cual necesita conocer el ``id``.
+3. Seleccione el icono ``Ejecutar script`` para generar el log del script.
+
+.. note:: Solo ejecute si aún no tienen ningún log.
+
+4. Presione el icono ``Log de script``.
+
+.. image:: /imgs/Reportes/Reportes35.png
+
+5. Seleccione ``Log``.
+6. Presione ``Ctrl + f`` para abrir el buscador de la página.
+7. Escriba:
+
+.. code-block::
+
+    script_id.
+
+8. Copie y pegue el ``script_id`` según lo requiera. 
+
+.. image:: /imgs/Reportes/Reportes36.png
+
+**Herramientas de desarrollador**
+
+Para utilizar las herramientas de desarrollador, siga los pasos:
+
+1. Ubíquese en la interfaz de scripts.
+2. Presione ``Clic derecho > Inspeccionar`` o bien presione ``F12``.
+3. Ubíquese en la pestaña ``Network``.
+4. Recargue la página sin cerrar la ventana de inspección.
+5. Identifique el script que necesite saber el ``id``.
+6. Seleccione la opción ``Compartir``. 
+
+.. image:: /imgs/Reportes/Reportes33.png
+
+7. Identifique la línea ``file_shared_email/?file_shared=`` en el inspector de código.
+8. Copie y pegue el ``id``.
+
+.. image:: /imgs/Reportes/Reportes34.png
 
 .. _log-script:
 
 Log de script
 =============
 
-El ``log`` de script es una herramienta útil que se utiliza para depurar y verificar la correcta ejecución de los scripts.
+El registro de script es una funcionalidad útil que se utiliza para depurar y verificar la correcta ejecución de los scripts.
 
-Para visualizar el ``log`` de un script, siga los siguientes pasos:
+Para visualizar el log de un script, siga los siguientes pasos:
 
-1. Inicie sesión en la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en |Preproducción| :octicon:`report;1em;sd-text-info`.
-2. Seleccione ``Formas > Scripts`` en el menú lateral. Podrá observar todos los scripts cargados en la cuenta.
+.. grid:: 2
+    :gutter: 0
+    :padding: 0
+    :margin: 0
 
-.. image:: /imgs/Reportes/Reportes24.png
+    .. grid-item-card:: 
+        :columns: 8
+        :padding: 0
+        :margin: 0
 
-3. Identifique el script de su interés.
-4. Presione el último icono ``Log de Script``. 
+        1. Inicie sesión en la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en |Preproducción| :octicon:`report;1em;sd-text-info`.
+        2. Seleccione ``Formas > Scripts`` en el menú lateral. Podrá observar todos los scripts cargados en la cuenta.
+        3. Identifique el script de su interés.
+
+    .. grid-item-card:: 
+        :columns: 4
+        :padding: 0
+        :margin: 0
+
+        .. image:: /imgs/Reportes/Reportes24.png
+
+4. Presione el icono play para ejecutar el script.
 
 .. image:: /imgs/Reportes/Reportes25.png
 
-En el modal encontrará el historial e información útil, como fechas de ejecución y estado del script. Preste mucha atención al estado, ya que le indicará si la ejecución del script fue exitosa o no.
+5. Presione el último icono, ``Log de Script``. Esto abrirá un modal donde encontrará el historial e información útil, como fechas de ejecución y estado del script. Preste mucha atención al estado, ya que le indicará si la ejecución del script fue exitosa o no.
 
-5. Presione la opción ``log`` para más detalles.
+.. image:: /imgs/Reportes/Reportes25.1.png
 
-.. image:: /imgs/Reportes/Reportes26.png
+6. Presione la opción ``log`` para más detalles.
 
 .. seealso:: Consulte la siguiente sección sobre la `interpretación del log <#interpretacion-log-script>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+.. image:: /imgs/Reportes/Reportes26.png
 
 .. _interpretacion-log-script:
 
 Interpretación log de script
 ----------------------------
-El registro(log) del script le proporciona información util de la ejecución del script.
 
-En la interpretación del log, es sumamente util analizar las consultas a la base de datos, errores de ejecución, peticiones, manejo de tokens JWT y otros datos relevantes relacionados con el script.
+El registro del script le proporciona información util de la ejecución del script.
 
-Toda la información en el log del registro se genera gracias a la línea de código ``print(sys.argv)`` del script. Esta línea imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para depurar (debuggear) código en Python.
+Regularmente, en la interpretación del log se analizan las consultas a la base de datos (querys), errores de ejecución, peticiones y otros datos relevantes relacionados con el script.
+
+Toda la información en el log del registro se genera gracias a la línea de código ``print(sys.argv)`` del script. Esta línea imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para debuggear código en Python.
 
 La variable sys.argv es una lista que contiene los argumentos pasados al script en la línea de comandos. Al imprimir sys.argv, se puede verificar si los argumentos que esperaba están siendo pasados correctamente al script y entender la estructura y valores de esos argumentos.
 
@@ -324,94 +409,31 @@ Si experimenta errores durante la ejecución del script, la impresión de ``sys.
     "data": {"script_id": 123, "date_from": "2023-08-28", "option": 0, "date_to": ""}, "account_id": 11702, "name": "reporte_encuestas.py"}', 'False'
     ]
 
-.. _cargar-script:
+.. _generar-api-key:
 
-Cargar script
-=============
+Generar API key
+===============
 
-Para cargar un script en la aplicación web de Linkaform, siga los siguientes pasos y lea las recomendaciones necesarias.
+Una ``API Key`` (clave de API) es un código alfanumérico único que se utiliza para autenticar y autorizar el acceso a toda la información de la cuenta.
 
-.. caution:: Tenga en cuenta que los siguientes pasos son necesarios para configurar el script previamente desarrollado.
+.. warning:: El usuario con perfil de administrador es el único que puede generar una ``API Key``.
 
-    Antes de realizar esta configuración, asegúrese de haber creado su script de acuerdo a sus necesidades. Revise la sección sobre :ref:`crear-script` :octicon:`report;1em;sd-text-info`.
+Para generar una ``API Key``, siga las instrucciones:
 
-1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
-2. Inicie sesión con sus credenciales.
+1. Inicie sesión en la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Seleccione ``Grupos > Usuarios`` ubicado en el menú lateral.
+3. Identifique y seleccione su cuenta. Observe la información que le proporciona. 
+4. Identifique el campo ``ApiKey``.
 
-.. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
+- Presione el icono en forma de rueda para generar una nueva key.
+- Presione el icono de la papelera para eliminar la key actual.
+- Presione el icono del portapapeles para copiar la key.
 
-3. Seleccione ``Formas > Scripts`` en el menú lateral.
-4. Seleccione el icono de documento ubicado en la parte superior derecha para cargar el script.
+.. image:: /imgs/Reportes/Reportes23.png
 
-.. image:: /imgs/Reportes/Reportes31.png
+.. warning:: En caso de que ya exista una ``API Key``, no es necesario crear una nueva, ya que probablemente esté siendo utilizada para otras operaciones. Cambiarla podría provocar acciones inesperadas.
 
-Complete el formulario de acuerdo a los siguientes pasos:
-
-1. Seleccione el archivo correspondiente al script. Automáticamente, se rellenará el nombre del script.
-2. Seleccione la imagen de Docker (versiones de las herramientas):
-
-- ``python:development`` no se usa para scripts actuales; utiliza la version 2 de python.
-- ``python3_lkf:latest`` es la imagen que actualmente se utiliza; usa la version 3 de python.
-
-3. Seleccione los bullets que considere:
-
-- **Activity**: Active el bullet si desea que la actividad (ejecuciones exitosas o fallas) del script le sea notificada por correo electrónico de la cuenta padre.
-- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
-
-.. note:: Regularmente, los bullet están desactivados.
-
-.. image:: /imgs/Reportes/Reportes32.png
-
-.. _visualizar-id-script:
-
-Ver ``ID`` del script
----------------------
-
-Hay dos maneras para consultar el id de un script.
-
-**Log de script**
-
-Para consultar a través del log de flujo, siga los siguientes pasos:
-
-1. Ubíquese en la interfaz de scripts.
-2. Identifique el script del cual necesita conocer el ``id``.
-3. Seleccione el icono ``Ejecutar script`` para generar el log del script.
-
-.. note:: Solo ejecute si aún no tienen ningún log.
-
-4. Presione el icono ``Log de script``.
-
-.. image:: /imgs/Reportes/Reportes35.png
-
-5. Seleccione ``Log``.
-6. Presione ``Ctrl + f`` para abrir el buscador de la página.
-7. Escriba:
-
-.. code-block::
-
-    script_id.
-
-8. Copie y pegue el ``script_id`` según lo requiera. 
-
-.. image:: /imgs/Reportes/Reportes36.png
-
-**Herramientas de desarrollador**
-
-Para utilizar las herramientas de desarrollador, siga los pasos:
-
-1. Ubíquese en la interfaz de scripts.
-2. Presione ``Clic derecho > Inspeccionar`` o bien presione ``F12``.
-3. Ubíquese en la pestaña ``Network``.
-4. Recargue la página sin cerrar la ventana de inspección.
-5. Identifique el script que necesite saber el ``id``.
-6. Seleccione la opción ``Compartir``. 
-
-.. image:: /imgs/Reportes/Reportes33.png
-
-7. Identifique la línea ``file_shared_email/?file_shared=`` en el inspector de código.
-8. Copie y pegue el ``id``.
-
-.. image:: /imgs/Reportes/Reportes34.png
+    En el desarrollo de reportes, utilizará esta ``API Key`` en el :ref:`account-settings` :octicon:`report;1em;sd-text-info`.
 
 .. _informacion-cuenta:
 

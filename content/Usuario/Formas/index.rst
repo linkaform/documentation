@@ -1646,7 +1646,7 @@ La creación de una carpeta en Linkaform sirve para almacenar una o más formas 
 Compartir Carpeta / Forma
 -------------------------
 
-Compartir una carpeta o una forma es un proceso similar y sencillo, siga los pasos:
+Compartir una carpeta o una forma es un proceso sencillo, siga los pasos:
 
 1. Diríjase y presione la opción ``Formas > Mis Formas`` en el menú lateral.
 2. Identifique la carpeta o la forma de su interés.
@@ -1662,7 +1662,7 @@ Compartir una carpeta o una forma es un proceso similar y sencillo, siga los pas
 - **Admin**: El usuario tendrá los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar las formas.
 - **Borrar registros**: Al activar esta opción, el usuario podrá eliminar registros de las formas. Si no se activa, el usuario no podrá eliminar registros incluso si tiene el perfil de ``Admin``.
 
-.. important:: Cuando se comparte una carpeta, las formas que contiene heredan automáticamente los permisos.
+.. warning:: Cuando se comparte una carpeta, las formas que contiene heredan automáticamente los permisos.
 
 .. tip:: Si necesita mover una forma a una carpeta, simplemente arrástrela al lugar que necesite. Si necesita mover una forma fuera de alguna carpeta, a la raíz, simplemente arrástrela a la columna principal.
 

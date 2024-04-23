@@ -77,7 +77,7 @@ Para formularios con mayor complejidad, los requisitos obligatorios son los sigu
 Instalación
 ===========
 
-Siga los siguientes pasos para descargar la app móvil de ``Linkaform`` en su dispositivo android desde la :
+Siga los siguientes pasos para descargar la app móvil de ``Linkaform`` en su dispositivo:
 
 .. note:: Antes de instalar la app móvil, tenga en cuenta los `requisitos para dispositivos <#requisitos-previos>`_ :octicon:`report;1em;sd-text-info` y verifique si su dispositivo es compatible.
 
@@ -106,7 +106,7 @@ Siga los siguientes pasos para descargar la app móvil de ``Linkaform`` en su di
 Iniciar sesión
 ==============
 
-Para iniciar sesión en ``Linkaform`` desde su aplicación móvil, siga estos pasos generales:
+Para iniciar sesión en ``Linkaform`` desde su aplicación móvil, siga los siguientes pasos:
 
 .. grid:: 2
     :gutter: 0
@@ -124,7 +124,7 @@ Para iniciar sesión en ``Linkaform`` desde su aplicación móvil, siga estos pa
         3. Escriba el correo y contraseña en el campo correspondiente.
         4. Presione la opción ``Entrar``.
 
-        .. note:: Cuando ingresa por primera vez a la aplicación de Linkaform, la sincronización de su información tomará cierto tiempo. 
+        .. warning:: Cuando ingresa por primera vez a la aplicación de Linkaform, la sincronización de su información tomará cierto tiempo. 
             
             Por favor, no aborte o salga de la aplicación, ya que la aplicación comenzará a descargar todos los formularios, catálogos y operaciones que están ligados a su cuenta desde la base de datos.
         
@@ -165,22 +165,20 @@ Cuando inicie sesión en la aplicación de Linkaform, en primera instancia podr�
     .. grid-item-card::
         :columns: 8
         
-        1. Identifique la forma a la cual desee crear el registro.
+        1. Identifique la forma a la cual desea crear el registro. Observe que las formas pueden estar contenidas dentro de carpetas.
 
-        .. note:: Observe que las formas pueden estar contenidas dentro de carpetas.
+        .. warning:: Si es necesario, permita que la aplicación acceda a su ubicación. De lo contrario, no podrá abrir la forma. Observe la alerta.
 
-        2. Si es necesario, permita que la aplicación acceda a su ubicación. De lo contrario, no podrá abrir la forma. Observe la alerta.
-        
-        .. image:: /imgs/Móvil/Móvil3.1.png
+            .. image:: /imgs/Móvil/Móvil3.1.png
 
-        3. Seleccione la forma que desee tocando la pantalla de su dispositivo. Observe el formulario con los campos.
+        2. Seleccione la forma que desee tocando la pantalla de su dispositivo. Observe el formulario con los campos.
 
 .. tip:: 
-            
+                    
     - Deslice su pantalla a la derecha para continuar a la siguiente página o a la izquierda para regresar.
     - Seleccione el icono ubicado en la parte superior derecha para visualizar el indice con las páginas que conforman la forma.
-        
-4. Conteste la forma con la información correspondiente. Por favor, revise las siguientes pestañas para obtener más información sobre los campos.
+                
+3. Conteste la forma con la información correspondiente. Por favor, revise las siguientes pestañas para obtener más información sobre los campos.
 
 .. tab-set::
 
