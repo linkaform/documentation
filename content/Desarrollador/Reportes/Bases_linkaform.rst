@@ -226,10 +226,7 @@ Complete el formulario de acuerdo a los siguientes pasos:
 3. Seleccione los bullets que considere:
 
 - **Activity**: Active el bullet si desea que la actividad (ejecuciones exitosas o fallas) del script le sea notificada por correo electrónico a la cuenta padre.
-- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. 
-Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
-
-Active el bullet si deasea que 
+- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
 
 .. image:: /imgs/Reportes/Reportes32.png
 

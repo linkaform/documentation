@@ -635,7 +635,7 @@ La información del usuario se divide en tres secciones, consulte las siguientes
 
         **Última conexión**: Fecha y hora en la que el usuario cerró sesión por última vez en Linkaform.
 
-        **ApiKey**: Código único alfanumérico utilizado para autenticar y autorizar el acceso a la **API de Linkaform**, es útil para procesos de **reportes personalizados**.
+        **ApiKey**: Código único alfanumérico utilizado para autenticar y autorizar el acceso a la **API de Linkaform**, es útil para procesos en **reportes personalizados**, **módulos** o **scripts personalizados**.
 
         Para generar una API Key:
 

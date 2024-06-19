@@ -64,6 +64,19 @@ Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para a
 
             Inicia tu contribución a Linkaform con nuestros tutoriales y pautas disponibles.
 
+    .. grid-item-card:: 
+        :columns: 6
+
+        .. card:: 
+            :link: doc-modules
+            :link-type: ref
+            :margin: 0
+            :class-card: card-i
+
+            |Contribución| **Modulos**
+
+            Inicia tu contribución a Linkaform con nuestros tutoriales y pautas disponibles.
+
 |Soporte| **Obtenga ayuda**
 
 .. button-link:: https://www.linkaform.com/soporte-tecnico
