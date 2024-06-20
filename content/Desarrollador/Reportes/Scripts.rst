@@ -28,13 +28,12 @@ Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info
 
 .. important:: En las siguientes secciones se explicará el contenido de cada archivo. Sin embargo, considere que NO se tiene un estándar establecido para el contenido. No obstante, utilice los ejemplos como base para sus proyectos futuros.
 
-
 .. _account-settings:
 
 Archivo account settings
 ------------------------
 
-.. caution:: El archivo ``account_settings`` escrito en ``python`` contiene información y configuraciones sensibles de la cuenta del cliente. 
+.. caution:: El archivo ``account_settings`` desarrollado en ``python`` contiene información y configuraciones sensibles de la cuenta del cliente. 
     
 Si requiere hacer actualizaciones en el archivo ``account_settings`` y no encuentra el archivo, lo podrá encontrar con el nombre del cliente seguido de ``settings``, por ejemplo: ``linkaform_settings``.
 
