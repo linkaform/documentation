@@ -431,8 +431,8 @@ Siga los siguientes pasos y considere los siguientes puntos antes de utilizar la
         
     .. _mi-etiqueta-de-referencia:
 
-    Enlaces internos
-    ----------------
+Enlaces internos
+----------------
 
 3. Para llamar a la etiqueta de referencia utilice la siguiente estructura:
 

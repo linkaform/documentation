@@ -163,7 +163,7 @@ Las dos partes principales que complementan a ``Servido`` son las siguientes:
             │   ├── <a>Nombre_carpeta</a><br>
             │   │   ├── <a>reporte_nombre.py</a><br>
             └── <a class="print">servido</a><br>
-            &nbsp;&nbsp;&nbsp; ├── <a  class="printf">apps</a><br>
+            &nbsp;&nbsp;&nbsp; ├── <a class="printf">apps</a><br>
             &nbsp;&nbsp;&nbsp; │   ├── <a>frecuencias</a><br>
             &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_auditorias_data.js</a><br>
             &nbsp;&nbsp;&nbsp; │   │   ├── <a>reporte_auditorias.html</a><br>
