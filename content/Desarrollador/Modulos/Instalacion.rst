@@ -429,8 +429,8 @@ El siguiente código permite configurar sus propias claves para su autenticació
    # Llama a la función 'update_settings' para actualizar las configuraciones y las devuelve
    settings = update_settings(settings)
 
-Configuración archivos API Key
-==============================
+Configuración archivos Linkaform API
+====================================
 
 Concéntrese en el repositorio **linkaform_api** y ubique el archivo **base.py** dentro de la carpeta **lkf_base** y el archivo **lkf_object.py** los cuales contienen configuraciones y funciones útiles al momento de instalar o crear nuevos módulos. Siga las siguientes secciones para conocer más a detalle lo que compone cada archivo.
 
@@ -553,52 +553,136 @@ La clase ``LKFBaseObject`` (linea 19), utilizada en `base <#arch-base>`_:octicon
 Archivo base
 ------------
 
-En este archivo tenemos a la clase ``LKF_Base`` esta clase contiene varios métodos útiles al momento de programar nuevos módulos. Dentro de las más interesantes podrá encontrar:
+En este archivo tenemos a la clase ``LKF_Base`` (linea 13) esta clase contiene varios métodos útiles al momento de programar nuevos módulos. Dentro de las más interesantes podrá encontrar:
 
 - cache_get
 - cache_read
 - cache_set (crea o actualiza dependiendo. Simplemente hago el self.create y solo se le pasa el id y lo va  a crear)
 - cache_update 
 
-.. tip:: Consulte todos los métodos en el repositorio correspondiente.
+Observe que dentro de este archivo se establece la conexion a la base de datos y se utiliza la APi de Linkaform, cuando se invoca la clase LKF_Base por consiguiente puede acceder a estos metodos 
 
-.. code-block:: python
-   :linenos:
-   :emphasize-lines: 12
+.. tip:: Lea los comentarios dentro del codigo y Consulte todos los métodos en el repositorio correspondiente.
 
-   # -*- coding: utf-8 -*-
-   import sys, simplejson, arrow, time
-   from datetime import datetime, date
-   from bson import ObjectId
-   import importlib
-   from datetime import datetime
-   from pytz import timezone
+.. dropdown:: Código
 
-   from ..lkf_object import LKFBaseObject
+   .. code-block:: python
+      :linenos:
+      :emphasize-lines: 13, 15, 87
 
-   from linkaform_api import settings, network, utils, lkf_models
+      # -*- coding: utf-8 -*-
+      import sys, simplejson, arrow, time
+      from datetime import datetime, date
+      from bson import ObjectId
+      import importlib
+      from datetime import datetime
+      from pytz import timezone
 
-   class LKF_Base(LKFBaseObject):
+      from ..lkf_object import LKFBaseObject
 
-      def __init__(self, settings, sys_argv=None, use_api=False): ...
+      from linkaform_api import settings, network, utils, lkf_models #API de Linkaform
 
-      def _set_connections(self, settings):
-         self.lkf_api = utils.Cache(settings)
-         self.net = network.Network(settings)
-         self.cr = self.net.get_collections()
-         self.cr_wkf = self.net.get_collections('workflow_log')
-         self.lkm = lkf_models.LKFModules(settings)
-         return True
+      class LKF_Base(LKFBaseObject):
 
-      def cache_get(self, values, **kwargs): ...
+         def __init__(self, settings, sys_argv=None, use_api=False):
+            # Obtiene la configuración del objeto settings
+            config = settings.config
 
-      def cache_read(self, values, **kwargs): ...
+            # Diccionario vacío para almacenar instancias base de LKF
+            self.lkf_base = {}
 
-      def cache_set(self, values, **kwargs): ...
-      
-      def cache_update(self, values): ...
+            # Establece las conexiones utilizando el método _set_connections
+            self._set_connections(settings)
 
-3. Correr el contenedor de addons con 
+            # Estados de apertura y cierre
+            self.open_status = 'open'
+            self.close_status = 'close'
+            self.open_status = 'new'
+
+            # Define un ID de estado
+            self.status_id = '0000000000000000000aaaaa'
+
+            # Actualiza las configuraciones con el método update_settings
+            self.settings = self.update_settings(settings, use_api=use_api)
+
+            # Diccionario vacío para todos los campos a través de los módulos
+            self.f = {} #all fields accrose modules
+            if sys_argv:
+               # Si se pasan argumentos, carga el registro actual y los datos desde estos argumentos
+               self.current_record =  simplejson.loads( sys_argv[1] )
+               self.argv = sys_argv
+               self.data = simplejson.loads( sys_argv[2] )
+
+               # Si no se utiliza la API, actualiza las claves JWT en la configuración
+               if not use_api:
+                  config['JWT_KEY'] = self.data.get("jwt",'').split(' ')[1]
+                  config['USER_JWT_KEY'] = self.data.get("jwt",'').split(' ')[1]
+                  self.settings.config.update(config)
+
+               # Si hay una clave JWT en la configuración, decodifica el JWT para obtener los datos del usuario
+               if config.get('JWT_KEY'):
+                  self.user = self.decode_jwt()
+               
+               # Obtiene las respuestas del registro actual
+               self.answers = self.current_record.get('answers',{})
+
+               # Obtiene el registro actual mediante el método get_current_record
+               self.current_record = self.get_current_record(sys_argv)
+
+               # Establece las propiedades basadas en el registro actual
+               self.folio = self.current_record.get('folio',{})
+               self.form_id = self.current_record.get('form_id',{})
+               self.record_user_id = self.current_record.get('user_id')
+
+               # Determina el ID del registro actual
+               if self.current_record.get('_id') or self.current_record.get('record_id'):
+                  if self.current_record.get('record_id'):
+                     self.record_id = self.current_record['record_id']
+                  elif type(self.current_record['_id']) == dict:
+                     self.record_id = self.current_record['_id'].get('$oid') \
+                        if self.current_record['_id'].get('$oid') else self.current_record['_id']
+                  else:
+                     self.record_id = self.current_record['_id']
+               else:
+                  self.record_id = None
+
+               # Si no se pudo determinar el ID del registro, intenta obtenerlo del ID de conexión del registro actual
+               if not self.record_id:
+                  conneciont_id = self.current_record.get('connection_record_id')
+                  if type(conneciont_id) == dict:
+                     conneciont_id = conneciont_id.get('$oid')
+                  self.record_id = conneciont_id
+               
+               # Establece las conexiones nuevamente con las configuraciones actualizadas
+               self._set_connections(settings)
+            
+         def _set_connections(self, settings):
+            self.lkf_api = utils.Cache(settings)
+
+            # Inicializa la conexión del network con la configuración (settings)
+            self.net = network.Network(settings)
+
+            # Obtiene las colecciones de la base de datos
+            self.cr = self.net.get_collections()
+
+            # Obtiene una colección específica ('workflow_log') de la base de datos
+            self.cr_wkf = self.net.get_collections('workflow_log')
+
+            # Inicializa los módulos de LKF con la configuración proporcionada
+            self.lkm = lkf_models.LKFModules(settings)
+
+            # Devuelve True para indicar que las conexiones se han establecido correctamente
+            return True
+
+         def cache_get(self, values, **kwargs): ...
+
+         def cache_read(self, values, **kwargs): ...
+
+         def cache_set(self, values, **kwargs): ...
+         
+         def cache_update(self, values): ...
+
+3. Correr el contenedor de ``addons`` con 
 
 .. code-block:: 
     :linenos:
@@ -610,6 +694,166 @@ En este archivo tenemos a la clase ``LKF_Base`` esta clase contiene varios méto
 4. Crear archivo local_settings y colocar correo, apikey 
 
 .. seealso:: Consulte el siguiente apartado :ref:`generar-api-key` :octicon:`report;1em;sd-text-info` para consultar la API Key.
+
+Contenedor addons
+=================
+
+Correr contenedor
+-----------------
+
+Para correr el contenedor de ``addons`` siga los siguientes pasos:
+
+1. Desde la terminal, ubíquese en la carpeta ``addons``:
+
+.. code-block::
+   :linenos:
+
+   cd lkf/addons/
+
+2. Ejecute el siguiente comando, donde será dirigido a la terminal del contenedor:
+
+.. code-block::
+   :linenos:
+
+   ./lkf -ar start addons
+
+Actualizar Imagen del Contenedor
+--------------------------------
+
+Para actualizar la imagen del contenedor siga los pasos:
+
+1. Ejecute el siguiente comando para visualizar las imágenes actuales dentro del proyecto:
+
+.. code-block::
+   :linenos:
+
+   docker ps
+
+2. Ejecute el siguiente comando para deshacerse de la imagen actual y actualizarla. Tenga en cuenta el entorno de ejecución, que puede ser:
+
+- local
+- preprod
+- prod
+
+.. code-block::
+   :linenos:
+
+   ./lkf build preprod
+
+Scripts
+=======
+
+Actualizar Script desde la terminal
+-----------------------------------
+
+Para actualizar un script con ayuda del instalador, siga los siguientes pasos:
+
+1. En la terminal, diríjase a la carpeta ``addons``:
+
+.. code-block::
+   :linenos:
+
+   cd lkf/addons
+
+2. Ejecute el contenedor de ``addons``:
+
+.. code-block::
+   :linenos:
+
+   ./lkf start addons
+
+3. En el instalador, ejecute el siguiente comando para ver las acciones de ayuda:
+
+.. code-block::
+   :linenos:
+
+   lkfaddons -h
+
+4. Para actualizar el script, ejecute la siguiente instrucción, donde:
+
+- ``-m employee``: es el nombre del módulo al cual desea actualizar el script.
+- ``-e prod``: es el entorno de ejecución, puede ser local, prod o preprod.
+
+.. code-block::
+   :linenos:
+
+   lkfaddons install -m employee -i scripts -e prod
+
+Al ejecutar, automáticamente busca los scripts dependiendo del entorno. Si es en preprod, busca todos los scripts que estén en el entorno y los actualiza. Observe el detalle.
+
+Ejecutar Script desde la terminal
+---------------------------------
+
+1. Asegúrese de actualizar el script.
+2. Ejecute el script desde la plataforma de Linkaform.
+3. Diríjase al log del script.
+4. Copie el código Python que se entrega.
+5. En la terminal, ejecute el contenedor y ubíquese en la carpeta del ``módulo`` correspondiente > ``items`` > ``scripts``, por ejemplo:
+
+.. code-block::
+   :linenos:
+
+   cd expenses/items/scripts/
+
+.. code-block::
+   :linenos:
+   :caption: Resultado
+
+   root@lkf-addons:/srv/scripts/addons/modules/expenses/items/scripts#
+
+6. Pegue el código Python que copió del log del script y ejecútelo en la terminal.
+
+Actualización de Formas desde la terminal
+-----------------------------------------
+
+Manipulación de XML
+^^^^^^^^^^^^^^^^^^^
+
+La manipulación de un archivo XML implica la modificación de la estructura completa de la forma en la plataforma de Linkaform.
+
+Puede modificar directamente el XML y luego volver a instalar y actualizar la forma. Estos cambios se verán reflejados en la forma de la plataforma. Siga los pasos:
+
+1. Realice las modificaciones necesarias en el XML y guarde el archivo.
+2. Ejecute el contenedor de ``addons``:
+
+.. code-block::
+   :linenos:
+
+   cd lkf/addons
+   ./lkf start addons
+
+3. Diríjase a la carpeta ``modules``:
+
+.. code-block::
+   :linenos:
+
+   cd modules
+
+4. Ejecute el siguiente comando para visualizar las herramientas de ayuda:
+
+.. code-block::
+   :linenos:
+
+   lkfaddons -h
+
+5. Ejecute el siguiente comando para instalar y actualizar la forma. Observe que le pregunta si desea instalar **todo**, incluyendo el módulo, el entorno, formas, catálogos y scripts:
+
+.. code-block::
+   :linenos:
+
+   lkfaddons download 
+
+Opcionalmente, y adecuado a lo que requiera, ejecute el siguiente comando para instalar solamente lo necesario, donde:
+
+- ``-i forms``: lo que requiere instalar.
+- ``-m expenses``: nombre del módulo.
+
+.. note:: Observe que ya no pregunta qué instalar; simplemente instala todas las formas.
+
+.. code-block::
+   :linenos:
+
+   lkfaddons install -i forms -m expenses
 
 .. LIGAS EXTERNAS
 

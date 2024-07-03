@@ -1,7 +1,7 @@
 .. _doc-modules:
 
 ========================
-Documentación de módulos
+Documentación de Módulos
 ========================
 
 .. toctree::
