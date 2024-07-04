@@ -5,6 +5,7 @@ Módulo Viáticos
 .. toctree::
    :hidden:
 
+   ind
    Resumen
    Configuración_inicial
    Solicitar_viáticos
