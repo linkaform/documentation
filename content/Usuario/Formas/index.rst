@@ -1020,17 +1020,13 @@ La configuración de flujos se utiliza para automatizar procesos en las formas.
 
 Si desea configurar un flujo para una acción específica, siga estos pasos:
 
-1. Diríjase a ``Opciones > Configuración de Flujos``.
-
-En esta sección, Linkaform presenta una página en blanco donde se agregarán los flujos deseados para esta forma.
-
-2. Haga clic en el botón verde para ``Agregar Regla``.
+1. Edite la forma a la que desea aplicar una configuración de flujo.
+2. Seleccione ``Opciones > Configuración de Flujos``. Será redirigido a otra página.
+3. Haga clic en el botón verde para ``Agregar Regla``.
 
 .. image:: /imgs/Formas/Formas26.png
 
-Ahora continúe con la configuración siguiendo las recomendaciones y teniendo en cuenta las secciones que la componen.
-
-3. Asigne un nombre al flujo. Para hacerlo, simplemente haga clic en ``Nombre de regla`` y establezca el nombre.
+4. Asigne un nombre al flujo. Para hacerlo, simplemente haga clic en ``Nombre de regla`` y establezca el nombre.
 
 .. important:: Es importante establecer un nombre para el flujo, ya que facilita la identificación y modificación rápida cuando sea necesario editar este flujo, especialmente si hay muchos flujos configurados.
 

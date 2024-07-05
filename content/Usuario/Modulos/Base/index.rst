@@ -1,3 +1,5 @@
+.. _doc-base:
+
 ===========
 Módulo Base
 ===========
@@ -50,8 +52,8 @@ Los catálogos que componen al módulo base son los siguientes:
 
     .. seealso:: Consulte :ref:`campo-catalogo` :octicon:`report;1em;sd-text-info` para más detalles sobre la configuración del catálogo.
 
-Catálogo Timezones
-------------------
+Timezones
+---------
 
 El catálogo **Timezones** contiene registros de las diferentes zonas horarias del mundo. 
 
@@ -67,8 +69,8 @@ El catálogo **Timezones** contiene registros de las diferentes zonas horarias d
 
         .. image:: /imgs/Modulos/Base/Base12.png
 
-Catálogo Países
----------------
+Países
+------
 
 El catálogo **Países** contiene registros de los 250 países del mundo. Observe que el catálogo proporciona el nombre del país, el código del país y el código de marcación.
 
@@ -84,8 +86,8 @@ El catálogo **Países** contiene registros de los 250 países del mundo. Observ
 
         .. image:: /imgs/Modulos/Base/Base13.png
 
-Catálogo Estados
-----------------
+Estados
+-------
 
 Actualmente, el catálogo **Estados** contiene únicamente registros de los 32 estados que componen a México. 
 
@@ -105,8 +107,8 @@ Si los estados, provincias, distritos, o divisiones políticas de su país no se
  
 .. seealso:: Consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para una carga masiva de registros al catálogo.
 
-Catálogo Compañía
------------------
+Compañía
+--------
 
 El catálogo **Compañía** contiene registros sobre diferentes compañías, lo cual es útil para el :ref:`doc-employee` :octicon:`report;1em;sd-text-info`, facilitando la administración y la relación entre empleados y la empresa.
 
@@ -131,8 +133,8 @@ El formulario que compone al módulo base es el siguiente:
 
 .. image:: /imgs/Modulos/Base/Base3.png
 
-Forma Contacto
---------------
+Contacto
+--------
 
 La forma **Contacto** ofrece una funcionalidad similar a la de la lista de contactos en un teléfono. Sirve para almacenar y gestionar la información de contacto de personas y empresas. 
 
