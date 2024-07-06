@@ -92,7 +92,7 @@ Configuración de Departamentos y Puestos
 
 Este catálogo contiene la relación entre departamentos y puestos.
 
-.. caution:: Este catálogo debe contener los mismos registros que la forma `Configuración de Departamentos y Puestos <#id4>`_ :octicon:`report;1em;sd-text-info`. Revise la documentación correspondiente para más detalles importantes sobre este catálogo.
+.. caution:: Este catálogo debe contener los mismos registros que la forma `Configuración de Departamentos y Puestos <#id3>`_ :octicon:`report;1em;sd-text-info`. Revise la documentación correspondiente para más detalles importantes sobre este catálogo.
 
 .. tab-set::
 
@@ -104,12 +104,12 @@ Este catálogo contiene la relación entre departamentos y puestos.
 
         .. image:: /imgs/Modulos/Empleados/Empleados8.png
 
-Catálogo Empleados
-------------------
+Empleados
+---------
 
-El catálogo **Empleados** contiene los mismos registros detallados de los empleados que de la `forma empleados <#empleado>`_ :octicon:`report;1em;sd-text-info`. Este catálogo es de suma útilidad, ya que es utilizado por otros módulos. 
+El catálogo **Empleados** contiene los mismos registros detallados de los empleados que de la `forma empleados <#id5>`_ :octicon:`report;1em;sd-text-info`. Este catálogo es de suma utilidad, ya que es utilizado por otros módulos. 
 
-.. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `empleados <#empleado>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
+.. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `empleados <#id5>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
 .. tab-set::
 
@@ -128,7 +128,7 @@ Empleados Jefes Directos
 
 El catálogo **Empleados Jefes Directos** contiene registros de los empleados de la empresa.  
 
-.. caution:: Este catálogo contiene la misma información que la forma `empleados <#forma-empleados>`_ :octicon:`report;1em;sd-text-info`. Este catálogo está preparado para recibir un registro derivado de la forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo.
+.. caution:: Este catálogo contiene los mismos registros que la forma `empleado <#id5>`_ :octicon:`report;1em;sd-text-info`. Este catálogo está preparado para recibir un registro derivado de la forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo.
 
 .. tab-set::
 
@@ -173,15 +173,16 @@ Esta forma le permitirá relacionar los registros del departamento con los regis
 
         .. image:: /imgs/Modulos/Empleados/Empleados15.png
 
-Forma Empleados
----------------
+Empleados
+---------
 
 Esta forma permite almacenar y gestionar la información personal y laboral de los empleados. 
 
-Cuando crea un nuevo registro en la forma, este se encarga de sincronizar el mismo registro en dos catálogos distintos:
+Cuando crea un nuevo registro en la forma, este se encarga de sincronizar el mismo registro en dos catálogos distintos, observe el siguiente diagrama.
 
-- Empleados
-- Empleados Jefes Directos.
+
+.. image:: /imgs/Modulos/Empleados/Empleados24.png
+    :align: center
 
 Para sincronizar el registro con el catálogo ``Empleados`` utiliza la acción ``Sync Catalog Records`` en la configuración de flujo.
 

@@ -9,11 +9,11 @@ Cómo ubicar los registros de autorización de viáticos
 
 1. Deberás dirigirte a :bdg-success-line:`success-linmenú > Registros > Autorización de Viaticos`.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/1-autorizar-gastos.png
 
 O bien, en :bdg-success-line:`Mis Formas > Módulo Viáticos > Autorización de Viáticos`, haz clic en el ícono de configuración y selecciona **Ver registros**.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/2-autorizar-gastos.png
 
 Cómo autorizar un gasto
 =======================
@@ -22,51 +22,51 @@ Una vez ubicado en los registros de autorización de gastos:
 
 1. Selecciona el registro de autorización de gastos que deseas revisar.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-1-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/2-1-autorizar-gastos.png
 
 Siguiendo los pasos de la sección anterior, podrás seleccionar en la parte superior derecha y hacer clic en el ícono de **Editar**.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-ver-registro-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/2-ver-registro-gastos.png
 
 Por defecto, el estado de cada registro de gastos está en **Autorizado**. Si deseas editarlo, sigue los siguientes pasos:
 
 - 2.1 Desliza hacia abajo hasta llegar a la tabla de **Gastos de viaje**.
 - 2.2 Haz clic sobre la fila que desees editar en la columna **Set**.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-editar-registro-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/1-editar-registro-gastos.png
 
 A continuación, el set seleccionado expandirá sus campos para que puedas proceder a revisar el registro de gasto, como se muestra a continuación.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-1-editar-registro-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/1-1-editar-registro-gastos.png
 
 Si deseas cambiar el estatus de un set a **No autorizado**, deberás especificar el motivo en un campo adicional.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-2-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/1-2-autorizar-gastos.png
 
 Después de haber revisado los sets de gastos, recuerda:
 
 3. Actualizar el estado de la Autorización de Viáticos.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/3-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/3-autorizar-gastos.png
 
 4. **Firmar** la autorización: :bdg-success-line:`Firmar > Aceptar firma`, espera a que Linkaform procese tu firma.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/5-autorizar-gastos.png 
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/5-autorizar-gastos.png 
 
 5. **Enviar solicitud**.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/6-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/6-autorizar-gastos.png
 
 Una vez realizado este proceso, aparecerá en pantalla un mensaje de confirmación, como el que se muestra a continuación.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/7-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/7-autorizar-gastos.png
 
 Al hacer clic en :bdg-success-line:`Volver al registro`, los cambios relacionados con la autorización se verán reflejados.
 
 Si deseas generar un PDF de la autorización, haz clic en el ícono de PDF.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-2-pdf-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/1-2-pdf-autorizar-gastos.png
 
 Tu PDF tendrá un formato similar al que se muestra a continuación.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-3-pdf-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/1-3-pdf-autorizar-gastos.png

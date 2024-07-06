@@ -20,7 +20,7 @@ Agregar un solo usuario
 
 1. Dirígete a :bdg-success-line:`Grupos > Usuarios > haz clic en el icono "Agregar Usuarios"`.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/001-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/001-catalogo-empleados.png
    :alt: Agregar usuario individual
    :align: center
       
@@ -28,7 +28,7 @@ Figura 1. Ubicación de la sección para agregar usuarios.
 
 2. Completa los campos requeridos y haz clic en el botón **Crear**.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/002-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/002-catalogo-empleados.png
    :alt: Formulario para registrar un usuario
    :align: center
 
@@ -50,14 +50,14 @@ Cargar lotes de usuarios desde un archivo de Google Sheets
    - En **Acceso general**, selecciona **Cualquier usuario que tenga el vínculo**.
    - Haz clic en **Copiar vínculo**.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/0-catalogo-empleados.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/0-catalogo-empleados.png
       :alt: Configurar enlace de hoja de cálculo
       :align: center
 
    Figura 3. Configuración del enlace de la hoja de cálculo.
 
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/0-1-catalogo-empleados.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/0-1-catalogo-empleados.png
       :alt: Datos de ejemplo
       :align: center
 
@@ -67,7 +67,7 @@ Una vez que tengas preparados los registros y el enlace de la hoja de cálculo:
 
 1. Dirígete a :bdg-success-line:`Catálogos > Catálogo de Empleados > Botón "Editar"`.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/1-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/1-catalogo-empleados.png
    :alt: Ubicación para cargar lotes de empleados
    :align: center
 
@@ -75,7 +75,7 @@ Figura 5. Ubicación del "Catálogo empleados".
 
 2. Una vez en el catálogo de empleados, ve a :bdg-success-line:`Opciones > Opciones Generales`.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/2-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/2-catalogo-empleados.png
    :alt: Catálogo de empleados
    :align: center
 
@@ -83,7 +83,7 @@ Figura 6. Catálogo de empleados.
 
 Aparecerá una ventana emergente, donde debes seleccionar **Opciones avanzadas**.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/3-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/3-catalogo-empleados.png
    :alt: Ventana emergente Opciones avanzadas
    :align: center
 
@@ -91,7 +91,7 @@ Figura 7. Opciones avanzadas del catálogo de empleados.
 
 3. En el campo **Cargar Catálogo de Google Sheets**, pega el enlace de tu documento y luego haz clic en **Buscar columnas**.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/4-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/4-catalogo-empleados.png
    :alt: Ubicación para cargar lotes de empleados
    :align: center
 
@@ -100,7 +100,7 @@ Figura 8. Botón **Agregar** activado.
 .. note::
   Si tu enlace se configuró correctamente, se habilitará el botón **Agregar**.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/4-1-catalogo-empleados.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/4-1-catalogo-empleados.png
       :alt: Campo **Key** y opciones avanzadas del catálogo de empleados
       :align: center
 
@@ -108,7 +108,7 @@ Figura 8. Botón **Agregar** activado.
 
    En el opción **Campo**, introduce el título correspondiente a ese campo en el catálogo.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/4-2-catalogo-empleados.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/4-2-catalogo-empleados.png
       :alt: Campo a relacionar del catálogo de empleados
       :align: center
 
@@ -116,7 +116,7 @@ Figura 8. Botón **Agregar** activado.
 
 4. Después de relacionar todos los campos correctamente, haz clic en el botón **Cargar columnas**.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/5-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/5-catalogo-empleados.png
    :alt: Botón **Cargar columnas**
    :align: center
 
@@ -124,7 +124,7 @@ Figura 11. Botón **Cargar columnas**.
 
 Espera la confirmación exitosa de los registros.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/6-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/6-catalogo-empleados.png
    :alt: Mensaje de confirmación "Registro exitoso"
    :align: center
 
@@ -132,7 +132,7 @@ Figura 12. Mensaje de confirmación "Registro exitoso".
 
 En la sección :bdg-success-line:`Catálogos > Registros de catálogo > Catálogo de Empleados`, podrás consultar los registros que acabas de cargar.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/7-catalogo-empleados.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/7-catalogo-empleados.png
    :alt: Catálogo de empleados con el nuevo lote cargado
    :align: center
 
@@ -155,7 +155,7 @@ Configurar documento de Google Sheets
    - En **Acceso general**, selecciona **Cualquier usuario que tenga el vínculo**.
    - Haz clic en **Copiar vínculo**.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/1-moneda.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/1-moneda.png
       :alt: Configuración inicial catálogo moneda
       :align: center
 
@@ -175,7 +175,7 @@ Subir lista de monedas
    - Haz clic en el ícono de **Engrane**.
    - Selecciona la opción **Editar**.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/2-moneda.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/2-moneda.png
       :alt: Configuración inicial catálogo moneda
       :align: center
 
@@ -183,7 +183,7 @@ Subir lista de monedas
 
    Una vez completado este proceso, verás la siguiente en pantalla.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/3-moneda.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/3-moneda.png
       :alt: Configuración inicial catálogo moneda
       :align: center
 
@@ -198,7 +198,7 @@ Subir lista de monedas
    - Pega el enlace de tu documento con los datos de la moneda a registrar.
    - Haz clic en **Buscar columnas**.
 
-   .. image:: /imgs/Modulos/Viaticos/Configuración/4-moneda.png
+   .. image:: /imgs/Modulos/Viaticosss/Configuración/4-moneda.png
       :alt: Configuración inicial catálogo moneda
       :align: center
 
@@ -217,7 +217,7 @@ Cargar datos de responsables de autorizar gastos
 
    - Haz clic en el ícono de respuesta.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/1-responsables-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/1-responsables-autorizar-gastos.png
    :alt: Configuración inicial catálogo responsables de autorizar gastos
    :align: center
 
@@ -225,7 +225,7 @@ Figura 18. Configuración inicial del catálogo de responsables de autorizar gas
 
 2. Ingresa el nombre y el correo electrónico en los campos correspondientes. Luego, haz clic en **Mandar respuestas**.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/2-responsables-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/2-responsables-autorizar-gastos.png
    :alt: Configuración inicial catálogo responsables de autorizar gastos
    :align: center
 
@@ -233,7 +233,7 @@ Figura 19. Configuración inicial del catálogo de responsables de autorizar gas
 
 Una vez realizado este paso, verás un mensaje de confirmación en pantalla, como el que se muestra a continuación.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/2-1-responsables-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/2-1-responsables-autorizar-gastos.png
    :alt: Configuración inicial catálogo responsables de autorizar gastos
    :align: center
 
@@ -241,7 +241,7 @@ Figura 20. Mensaje de confirmación.
 
 Ahora podrás ver en el campo de autorizadores de gastos al nuevo usuario que acabas de crear.
 
-.. image:: /imgs/Modulos/Viaticos/Configuración/3-responsables-autorizar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/Configuración/3-responsables-autorizar-gastos.png
    :alt: Configuración inicial catálogo responsables de autorizar gastos
    :align: center
 

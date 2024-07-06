@@ -18,11 +18,11 @@ Proceso para registrar tus gastos
 
 1. Indica la fecha en que se realizó el gasto.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/1-registrar-gastos.png
 
 2. Se mostrará el destino y el folio de tu solicitud.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/2-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/2-registrar-gastos.png
 
 Al seleccionar un folio, Linkaform mostrará los datos asociados a tu solicitud. Los campos **Gasto ejecutado** y **Monto restante** se calcularán automáticamente y se actualizarán automáticamente.
 
@@ -34,41 +34,41 @@ Al seleccionar un folio, Linkaform mostrará los datos asociados a tu solicitud.
 
 A continuación, el campo **Tipo de** te ofrecerá un listado basado en el concepto que hayas seleccionado.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/3-registrar-gastos.png
 
 Si seleccionaste **Comida** en **Concepto**, deberás indicar el **tipo de comida** en un campo adicional, como se muestra a continuación.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-1-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/3-1-registrar-gastos.png
 
 .. note::
    La lista de opciones en **Tipo de gasto** es configurable y podrás agregar o eliminar las que necesites.
 
 4. Indica el nombre del comercio.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/3-2-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/3-2-registrar-gastos.png
 
 5. Describe los detalles del gasto.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/4-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/4-registrar-gastos.png
 
 6. Selecciona el tipo de moneda en que se realizó el gasto.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/5-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/5-registrar-gastos.png
 
 7. Indica el subtotal.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/6-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/6-registrar-gastos.png
 
 8. Selecciona el método de pago.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/8-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/8-registrar-gastos.png
 
 .. note::
    El método por defecto es **Efectivo - Débito**, pero puede ser modificado. En caso de efectuar un gasto en efectivo o débito, este gasto aplicará para el anticipo previamente solicitado.
 
 9. Sube imágenes y/o archivos de comprobación.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/9-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/9-registrar-gastos.png
 
 .. note::
    Ambas opciones están activadas, puedes usar una o ambas según sea necesario.
@@ -78,7 +78,7 @@ Si seleccionaste **Comida** en **Concepto**, deberás indicar el **tipo de comid
 
 10. Indica una página para descargar factura.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/12-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/12-registrar-gastos.png
 
 .. note::
    Puedes dejar en blanco este campo a menos que necesites descargar tu factura.
@@ -87,13 +87,13 @@ Si seleccionaste **Comida** en **Concepto**, deberás indicar el **tipo de comid
 
 Haz clic en el botón :bdg-success-line:`Mandar respuestas > Permitir conocer ubicación`.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/14-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/14-registrar-gastos.png
 
 12. Mensaje de confirmación.
 
 Al finalizar tu registro, verás en pantalla un mensaje de confirmación como este. Además, podrás ver tu registro y realizar otras acciones.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/15-registrar-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/15-registrar-gastos.png
 
 
 ¿Dónde ver un resumen de los registros de gastos?
@@ -111,7 +111,7 @@ Siguiendo estos pasos, podrás ver la información de la solicitud de viáticos 
 
 Como puedes observar, todos los registros de gastos están vinculados a un folio de solicitud de viaje.
 
-.. image:: /imgs/Modulos/Viaticos/forms/registrar-gastos/1-ver-registro-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/registrar-gastos/1-ver-registro-gastos.png
 
 .. note::
    El estado de cada gasto por defecto es **Por autorizar** hasta que la persona encargada de autorizarlo lo cambie a **autorizado**.
@@ -128,7 +128,7 @@ Como puedes observar, todos los registros de gastos están vinculados a un folio
 
 Verás una pantalla como la que se muestra a continuación.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/1-genera-pdf-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/1-genera-pdf-gastos.png
 
 En esta pantalla se muestran los registros de gastos que se hicieron el día de ayer.
 
@@ -138,17 +138,17 @@ En esta pantalla se muestran los registros de gastos que se hicieron el día de 
    3.2 Introduce el nombre de tu archivo a generar.
    3.3 Selecciona la plantilla a usar y haz clic en el botón de **descargar**.
 
-.. image:: /imgs/Modulos/Viaticos/forms/autorizar-gastos/2-genera-pdf-gastos.png
+.. image:: /imgs/Modulos/Viaticosss/forms/autorizar-gastos/2-genera-pdf-gastos.png
 
 4. Después de esto, espera un momento y dirígete a la sección de :bdg-success-line:`Registros > Descargas`.
 
-.. image:: /imgs/Modulos/Viaticos/forms/solicitar-viatico/2-2-genera-multiple-pdf_Solicitud-viatico.png
+.. image:: /imgs/Modulos/Viaticosss/forms/solicitar-viatico/2-2-genera-multiple-pdf_Solicitud-viatico.png
 
 En esta sección, podrás ver que tu archivo está listo para descargar.
 
-.. image:: /imgs/Modulos/Viaticos/forms/solicitar-viatico/2-3-genera-multiple-pdf_Solicitud-viatico.png
+.. image:: /imgs/Modulos/Viaticosss/forms/solicitar-viatico/2-3-genera-multiple-pdf_Solicitud-viatico.png
 
 Una vez descargado, tu documento se verá de la siguiente forma:
 El número de páginas y contenido dependerán de la cantidad de registros que hayas seleccionado.
 
-.. image:: /imgs/Modulos/Viaticos/forms/solicitar-viatico/2-4-genera-multiple-pdf_Solicitud-viatico.png
+.. image:: /imgs/Modulos/Viaticosss/forms/solicitar-viatico/2-4-genera-multiple-pdf_Solicitud-viatico.png
