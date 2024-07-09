@@ -4,13 +4,15 @@
 Módulo Base
 ===========
 
-El **Módulo Base** proporciona las configuraciones y datos básicos necesarios para la operación de otros módulos. Con las formas y catálogos del módulo puede gestionar información relacionada con:
+El **Módulo Base** proporciona las formas y catálogos necesarios para:
 
-- **Zonas Horarias (Timezones)**: Configuración y administración de diferentes zonas horarias.
-- **Países**: Registro y gestión de países para facilitar la organización de datos y procesos específicos por región.
-- **Estados**: Administración de divisiones geográficas dentro de los países.
-- **Compañías**: Registro de compañías, lo que permite la gestión de datos específicos de cada empresa.
-- **Contactos**: Gestión de contactos asociados con las compañías y otras entidades.
+- Configurar y administrar diferentes zonas horarias.
+- Registrar y gestionar países para facilitar la organización de datos y procesos específicos por región.
+- Administrar divisiones geográficas dentro de los países.
+- Registrar compañías, lo que permite la gestión de datos específicos de cada empresa.
+- Gestionar contactos asociados con las compañías y otras entidades.
+
+.. note:: Este módulo es importante y sumamente útil para el funcionamiento de otros módulos dentro de LinkaForm.
 
 Observe y analice el siguiente diagrama de flujo del módulo base. Este diagrama representa el flujo de acciones que ocurren al realizar el registro de un contacto.
 

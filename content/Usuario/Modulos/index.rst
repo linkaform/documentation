@@ -12,6 +12,7 @@ Módulos
     Base/index
     Empleados/index
     Viaticos/index
+    Contratistas/index
     Accesos/index
 
 En Linkaform, el término **módulo** hace referencia a un conjunto de formas y catálogos que se centran en ofrecer una funcionalidad para procesos específicos. 
@@ -25,6 +26,7 @@ En este apartado, encontrará documentación sobre el flujo y configuración de 
 - Módulo Viáticos
 - Módulo Gastos
 - Módulo Ubicaciones
+- Módulo Contratistas
 - Módulo Accesos
 - Módulo Stock
 

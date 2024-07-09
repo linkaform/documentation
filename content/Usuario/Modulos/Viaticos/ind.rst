@@ -4,11 +4,11 @@
 Módulo Viáticos
 ================
 
-El **Módulo Viáticos** proporciona las configuraciones y datos necesarios para la gestión y control de gastos. Con las formas y catálogos del módulo puede gestionar información relacionada con:
+El **Módulo Viáticos** proporciona las configuraciones y datos necesarios para la gestión y control eficiente de los gastos de viaje. Con las formas y catálogos del módulo, podrá:
 
-- **Solicitud de Viáticos**: Registro y administración de solicitudes de viáticos por parte de los empleados.
-- **Autorización de Viáticos**: Proceso de autorización de las solicitudes de viáticos.
-- **Registros de Gastos de Viaje**: Registro de los gastos realizados durante los viajes.
+- Registrar y administrar solicitudes de viáticos presentadas por parte de los empleados.
+- Autorizar solicitudes de viáticos.
+- Controlar gastos de viaje a traves del seguimiento detallado de los gastos realizados durante los viajes de los empleados.
 
 Observe y analice el siguiente diagrama de flujo del módulo viáticos. Este diagrama representa el flujo de acciones necesarias para realizar la solicitud, autorización y registro de gastos de viáticos.
 
@@ -35,16 +35,16 @@ Observe y analice el siguiente diagrama de flujo del módulo viáticos. Este dia
         end;
         T[CATÁLOGO Teams];
 
-.. warning:: Antes de utilizar el módulo de viáticos, asegúrese de contar con las configuraciones y registros necesarios del :ref:`doc-employee` :octicon:`report;1em;sd-text-info`.
+.. warning:: Para utilizar el módulo de viáticos, asegúrese de contar con las configuraciones y registros necesarios en el :ref:`doc-employee` :octicon:`report;1em;sd-text-info`.
 
 Catálogos del Módulo Viáticos
 =============================
 
 Este módulo cuenta con los siguientes catálogos:
 
-- **Conceptos de Gastos**: Contiene registros sobre posibles conceptos de gastos vaya,
+- **Conceptos de Gastos**: Contiene registros sobre posibles conceptos de gastos.
 - **Moneda**: Proporciona información sobre las diferentes monedas aceptadas para los gastos.
-- **Responsables de Auto Gastos**: Incluye una lista de responsables que pueden autorizar y gestionar los gastos.
+- **Responsables de Autorizar Gastos**: Incluye una lista de responsables que pueden autorizar y gestionar los gastos.
 - **Solicitud de Gastos**: Almacena los registros de las solicitudes de viáticos realizadas por los empleados.
 
 .. image:: /imgs/Modulos/Viaticos/Viaticos2.png
@@ -77,61 +77,63 @@ Conceptos de Gastos
 
 El catálogo **Conceptos de Gastos** está diseñado para gestionar y registrar los diferentes tipos de gastos que pueden ser solicitados dentro de una solicitud de gasto. Este catálogo permite a los empleados seleccionar el concepto adecuado al realizar sus solicitudes de viáticos. 
 
-Este catálogo incluye los siguientes campos principales:
-
-- **Concepto**: Describe el tipo de gasto o el motivo por el cual se realiza la solicitud de viáticos.
-- **Cuenta Contable**: Especifica la cuenta contable asociada al concepto de gasto.
-
-.. note:: Al instalar el módulo, encontrará registros demo de posibles conceptos de gasto. Considere que son solo opciones y siempre puede modificar los campos del catálogo y/o registros. 
-
 .. tab-set::
 
     .. tab-item:: Registros
 
+        .. note:: Al instalar el módulo, encontrará registros demo de posibles conceptos de gasto. Considere que son solo opciones y siempre puede modificar los campos del catálogo y/o registros. 
+
         .. image:: /imgs/Modulos/Viaticos/Viaticos3.png
 
     .. tab-item:: Estructura
+
+        Este catálogo incluye los siguientes campos principales:
+
+        - **Concepto**: Describe el tipo de gasto o el motivo por el cual se realiza la solicitud de viáticos.
+        - **Cuenta Contable**: Especifica la cuenta contable asociada al concepto de gasto.
 
         .. image:: /imgs/Modulos/Viaticos/Viaticos4.png
 
 Moneda
 ------
 
-El catálogo **Moneda** contiene información sobre las diferentes monedas aceptadas para los gastos. Este catálogo permite a los usuarios seleccionar la moneda adecuada al realizar o autorizar solicitudes de gastos.
-
-.. note:: Al instalar el módulo, encontrará registros que muestran posibles denominaciones de monedas. Tenga en cuenta que puede ajustar los campos del catálogo y modificar los registros según lo requiera.
-
-Este catálogo incluye:
-
-- **Moneda**: Representa el símbolo o abreviatura utilizado para identificar la moneda (por ejemplo, USD para dólar estadounidense, COP para pesos colombianos, etc.).
+El catálogo **Moneda** contiene información sobre las diferentes denominaciones aceptadas para los gastos. Este catálogo permite a los usuarios seleccionar la moneda adecuada al realizar o autorizar solicitudes de gastos.
 
 .. tab-set::
 
     .. tab-item:: Registros
+        
+        .. note:: Al instalar el módulo, encontrará registros que muestran posibles denominaciones de monedas. Tenga en cuenta que puede ajustar los campos del catálogo y modificar los registros según lo requiera.
 
         .. image:: /imgs/Modulos/Viaticos/Viaticos5.png
 
     .. tab-item:: Estructura
+
+        Este catálogo incluye:
+
+        - **Moneda**: Representa el símbolo o abreviatura utilizado para identificar la moneda (por ejemplo, USD para dólar estadounidense, COP para pesos colombianos, etc.).
 
         .. image:: /imgs/Modulos/Viaticos/Viaticos6.png
 
 Responsables de Autorizar Gastos
 --------------------------------
 
-Este catálogo contiene la información sobre las personas responsables de autorizar y gestionar los gastos. Este catálogo incluye campos como:
-
-- **Nombre**: Responsable de autorizar gastos.                                                                                                                                   
-- **Correo Electrónico**: Dirección de correo electrónico del responsable.
-
-.. warning:: Tenga precaución con la veracidad de los datos de este catálogo, ya que son utilizados para notificar al responsable de manera electrónica para autorizar los gastos.
+Este catálogo contiene la información sobre las personas responsables de autorizar y gestionar los gastos. 
 
 .. tab-set::
 
     .. tab-item:: Registros
 
+        .. warning:: Tenga cuidado con la veracidad de los datos de este catálogo, ya que son utilizados para notificar al responsable de manera electrónica para autorizar los gastos.
+
         .. image:: /imgs/Modulos/Viaticos/Viaticos7.png
 
     .. tab-item:: Estructura
+
+        Este catálogo incluye campos como:
+
+        - **Nombre**: Responsable de autorizar gastos.                                                                                                                                   
+        - **Correo Electrónico**: Dirección de correo electrónico del responsable.
 
         .. image:: /imgs/Modulos/Viaticos/Viaticos8.png
 
@@ -140,7 +142,7 @@ Solicitud de Gastos
 
 El catálogo **Solicitud de Gastos** contiene los registros de las solicitudes de viáticos realizadas por los empleados.
 
-.. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `Solicitud de Gastos <#id-solicitud-gastos>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
+.. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `Solicitud de Gastos <#solicitud-de-gastos>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
 Formularios del Módulo Viáticos
 ===============================

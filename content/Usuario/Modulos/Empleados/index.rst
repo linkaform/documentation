@@ -4,11 +4,10 @@
 Módulo Empleados
 ================
 
-El **Módulo Empleados** proporciona las configuraciones y datos necesarios para la gestión de empleados, útil para otros módulos. Con las formas y catálogos del módulo puede gestionar información relacionada con:
+El **Módulo Empleados** proporciona las configuraciones y datos necesarios para la gestión de empleados, útil para otros módulos. Con las formas y catálogos del módulo, podrá:
 
-- **Empleados**: Registro y administración de datos personales y laborales de los empleados.
-- **Departamentos**: Gestión de departamentos dentro de la empresa.
-- **Puestos**: Asignación y administración de puestos y permisos de empleados.
+- Registrar y administrar datos personales y laborales de los empleados.
+- Gestionar y asignar departamentos y puestos dentro de la empresa.
 
 Observe y analice el siguiente diagrama de flujo del módulo empleados. Este diagrama representa el flujo de acciones necesarias para realizar el registro de un empleado.
 
