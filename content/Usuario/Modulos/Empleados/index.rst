@@ -25,7 +25,7 @@ Los catálogos que componen el módulo de empleados son los siguientes:
 - **Configuración de Departamentos y Puestos**: Contiene registros sobre la relación entre departamentos y puestos.
 - **Teams**: Contiene información sobre los diferentes equipos de trabajo.
 - **Empleados**: Almacena los registros de los empleados.
-- **Empleados Jefes Directos**: Es otra copia del catálogo empleados, almacena los registros de los empleados.
+- **Empleados Jefes Directos**: Copia del catálogo empleados.
 
 .. image:: /imgs/Modulos/Empleados/Empleados2.png
 
