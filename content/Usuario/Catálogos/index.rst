@@ -428,9 +428,7 @@ Los filtros se utilizan para reducir o extraer información específica. Para ap
     En el siguiente ejemplo
         
     Campo = Nombre
-
     Condición = Contiene
-
     Valor = Ernesto
         
     El resultado de este filtro mostrará todos los registros que tengan nombre Ernesto.

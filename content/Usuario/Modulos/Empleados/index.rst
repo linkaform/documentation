@@ -106,7 +106,7 @@ Este catálogo contiene la relación entre departamentos y puestos.
 Empleados
 ---------
 
-El catálogo **Empleados** contiene los mismos registros detallados de los empleados que de la `forma empleados <#id5>`_ :octicon:`report;1em;sd-text-info`. Este catálogo es de suma utilidad, ya que es utilizado por otros módulos. 
+Este catálogo contiene los mismos registros que la `forma empleados <#id5>`_ :octicon:`report;1em;sd-text-info` y es de gran utilidad para otros módulos.
 
 .. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `empleados <#id5>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
@@ -177,22 +177,6 @@ Empleados
 
 Esta forma permite almacenar y gestionar la información personal y laboral de los empleados. 
 
-Cuando crea un nuevo registro en la forma, este se encarga de sincronizar el mismo registro en dos catálogos distintos, observe el siguiente diagrama.
-
-
-.. image:: /imgs/Modulos/Empleados/Empleados24.png
-    :align: center
-
-Para sincronizar el registro con el catálogo ``Empleados`` utiliza la acción ``Sync Catalog Records`` en la configuración de flujo.
-
-.. attention:: Si modifica la forma de ``Empleados``, asegúrese de modificar el catálogo de ``Empleados`` y revise que el ``id`` del campo de la forma sea el mismo que el ``id`` del campo del catálogo. 
-
-Mientras que para la sincronización con el catálogo ``Empleados Jefes Directos`` utiliza la acción ``Forma a Catálogo``.
-
-.. attention:: Si modifica la forma de ``Empleados``, asegúrese de modificar el catálogo de ``Empleados Jefes Directos``. A diferencia de la acción ``Sync Catalog Records``, al utilizar la acción ``Forma a Catálogo`` no obliga a que los ``ids`` de los campos sean los mismos, pero tenga cuidado al configurar el flujo. 
-    
-.. seealso:: Para más detalles sobre configuraciones de flujos de trabajo consulte :ref:`flujos` :octicon:`report;1em;sd-text-info`.
-    
 Al responder la forma, considere las diferentes secciones de las páginas que contienen la forma.
 
 .. tab-set::
@@ -259,6 +243,21 @@ Al responder la forma, considere las diferentes secciones de las páginas que co
         .. seealso:: Consulte el módulo de accesos si desea conocer más detalles.
 
         .. image:: /imgs/Modulos/Empleados/Empleados23.png
+
+Al crear un nuevo registro en la forma, este se sincroniza automáticamente en dos catálogos distintos, como se muestra en el siguiente diagrama.
+
+.. image:: /imgs/Modulos/Empleados/Empleados24.png
+    :align: center
+
+Para sincronizar el registro con el catálogo **Empleados**, se utiliza la acción ``Sync Catalog Records`` en la configuración de flujo.
+
+.. warning:: Si modifica la forma, asegúrese de actualizar el catálogo correspondiente y verifique que el **id** del campo en la forma coincida con el **id** del campo en el catálogo. 
+
+Para la sincronización con el catálogo **Empleados Jefes Directos**, se utiliza la acción ``Forma a Catálogo``.
+
+.. warning:: Si modifica la forma, también asegúrese de actualizar el catálogo **Empleados Jefes Directos**. A diferencia de la acción ``Sync Catalog Records``, la acción ``Forma a Catálogo`` no requiere que los **ids** de los campos sean los mismos, pero tenga cuidado al configurar el flujo. 
+    
+.. seealso:: Para más detalles sobre configuraciones de flujos de trabajo, consulte :ref:`flujos` :octicon:`report;1em;sd-text-info`.
 
 Ha completado con éxito el proceso de configuración y utilización del módulo de empleados. Recuerde que este módulo es adaptable a sus necesidades, lo que significa que puede ajustarlo según lo requiera.
 
