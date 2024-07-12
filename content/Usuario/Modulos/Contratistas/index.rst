@@ -8,7 +8,7 @@ El **Módulo Contratistas** proporciona los elementos base necesarios para gesti
 
 Observe y analice el siguiente diagrama de flujo del módulo compañía. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar la información de los contratistas.
 
-.. image:: /imgs/Contratistas/Contratistas1.png
+.. image:: /imgs/Modulos/Contratistas/Contratistas1.png
     :align: center
 
 .. _form-contratistas:
@@ -20,11 +20,11 @@ La forma **Contratistas** permite ingresar y gestionar toda la información rele
 
 Para acceder a la forma, seleccione la opción ``Formas > Mis Formas`` en el menú lateral y ubique la carpeta ``Contratistas``.
 
-.. image:: /imgs/Contratistas/Contratistas2.png
+.. image:: /imgs/Modulos/Contratistas/Contratistas2.png
 
 Al crear un nuevo registro en esta forma, se sincroniza automáticamente con el `catálogo contratistas <#catalog-contratistas>`_ :octicon:`report;1em;sd-text-info`. Observe el flujo de acciones necesario en el siguiente diagrama.
 
-.. image:: /imgs/Contratistas/Contratistas1.png
+.. image:: /imgs/Modulos/Contratistas/Contratistas1.png
     :align: center
 
 Para la sincronización del registro con el catálogo, la forma está configurada para utilizar la acción ``Sync Catalog Records``.
@@ -65,13 +65,13 @@ Una vez completada la solicitud, proceda con la autorización dentro de la empre
            - Identificación del Representante Legal.
            - Comprobante de Domicilio.
 
-        .. image:: /imgs/Contratistas/Contratistas3.png
+        .. image:: /imgs/Modulos/Contratistas/Contratistas3.png
 
     .. tab-item:: Registros
         
         Observe el siguiente ejemplo de registro.
 
-        .. image:: /imgs/Contratistas/Contratistas4.png
+        .. image:: /imgs/Modulos/Contratistas/Contratistas4.png
 .. _catalog-contratistas:
 
 Catálogo del Módulo Contratistas
@@ -83,17 +83,17 @@ El catálogo **Contratistas** contiene los mismos registros que de la `forma con
 
 Para acceder al catálogo, seleccione la opción ``Catálogos > Catálogos`` en el menú lateral y ubique la carpeta ``Contratistas``.
 
-.. image:: /imgs/Contratistas/Contratistas9.png
+.. image:: /imgs/Modulos/Contratistas/Contratistas9.png
 
 .. tab-set::
 
     .. tab-item:: Estructura
 
-       .. image:: /imgs/Contratistas/Contratistas7.png
+       .. image:: /imgs/Modulos/Contratistas/Contratistas7.png
 
     .. tab-item:: Registros
 
-        .. image:: /imgs/Contratistas/Contratistas8.png
+        .. image:: /imgs/Modulos/Contratistas/Contratistas8.png
 
 .. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
 
@@ -109,7 +109,7 @@ Si es contratista, siga siga los siguientes pasos para completar su alta:
 1. Diríjase a su |gmail| :octicon:`report;1em;sd-text-info`.
 2. Identifique el correo de la empresa que solicita sus servicios. Observe la siguiente imagen como referencia, puede variar dependiendo de la empresa.
 
-.. image:: /imgs/Contratistas/Contratistas5.png
+.. image:: /imgs/Modulos/Contratistas/Contratistas5.png
 
 3. Presione el hipervínculo al final del correo. Será redirigido a una nueva pestaña con una forma prellenada.
 4. Revise que los datos generales registrados sean correctos, de lo contrario, actualícelos.
@@ -118,7 +118,7 @@ Si es contratista, siga siga los siguientes pasos para completar su alta:
 
 .. hint:: Considere que no es necesario completar el registro en una sola sesión. Puede enviar las respuestas parciales y acceder a la misma URL en cualquier momento para continuar con la captura.
 
-.. image:: /imgs/Contratistas/Contratistas6.png
+.. image:: /imgs/Modulos/Contratistas/Contratistas6.png
 
 .. warning:: Por ningún motivo modifique el ``Estatus del contratista``. Este campo solo puede ser modificado por la empresa que solicitó sus servicios.
 

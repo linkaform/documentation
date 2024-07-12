@@ -10,7 +10,7 @@ El **Módulo Ubicaciones** proporciona las herramientas necesarias para gestiona
 
 Observe y analice el siguiente diagrama de flujo del módulo ubicaciones. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar información de ubicaciones y áreas.
 
-.. image:: /imgs/Ubicaciones/Ubicaciones1.png
+.. image:: /imgs/Modulos/Ubicaciones/Ubicaciones1.png
 
 Formas del Módulo Ubicaciones
 =============================
@@ -22,14 +22,14 @@ Las formas que componen el módulo de ubicaciones son las siguientes:
 
 Para acceder a las formas, seleccione la opción ``Formas > Mis Formas`` en el menú lateral y ubique la carpeta ``Ubicaciones``.
 
-.. image:: /imgs/Ubicaciones/Ubicaciones9.png
+.. image:: /imgs/Modulos/Ubicaciones/Ubicaciones9.png
 
 .. _form-ubicaciones:
 
 Ubicaciones
 -----------
 
-Esta forma permite registrar múltiples ubicaciones, útil para gestionar sucursales derivadas de una misma empresa.
+Esta forma permite registrar múltiples ubicaciones, útil para administrar diversas sucursales pertenecientes a una misma empresa.
 
 Al crear un nuevo registro en esta forma, se sincroniza automáticamente con el `catálogo ubicaciones <#catalog-ubicaciones>`_ :octicon:`report;1em;sd-text-info`. Para sincronizar el registro con el catálogo, la forma utiliza la acción ``Sync Catalog Records`` en la configuración de flujo.
 
@@ -46,13 +46,13 @@ Al crear un nuevo registro en esta forma, se sincroniza automáticamente con el 
         - **Ubicación**: Nombre descriptivo de la ubicación.
         - **Dirección**: Dirección de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones10.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones10.png
 
     .. tab-item:: Registros
 
         Analice el siguiente registro.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones11.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones11.png
 
 .. _form-areas-ubicacion:
 
@@ -75,7 +75,7 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
         - **Estatus**: Estado administrativo del área (**activa** o **inactiva**).
         - **QR Área**: Código QR asociado al área para su identificación y acceso.
         
-        .. image:: /imgs/Ubicaciones/Ubicaciones12.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones12.png
 
     .. tab-item:: Registros
 
@@ -85,11 +85,11 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
 
         Para casetas de vigilancia, que se encuentran en diferentes puntos fuera de la instalación, asegúrese de asignar una dirección específica para cada una. Observe la siguiente imagen.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones13.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones13.png
 
         Cuando crea un nuevo registro en la forma, este se sincroniza automáticamente en dos catálogos distintos, como se muestra en el siguiente diagrama.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones14.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones14.png
             :align: center
 
         Para sincronizar el registro con el catálogo **Áreas de las Ubicaciones**, se utiliza la acción ``Sync Catalog Records`` en la configuración de flujo. Para la sincronización con el catálogo **Áreas de las Ubicaciones Salidas**, se emplea la acción ``Forma a Catálogo``.
@@ -112,7 +112,7 @@ Los catálogos que componen el módulo de ubicaciones son los siguientes:
 
 Para acceder a los catálogos, seleccione la opción ``Catálogos > Catálogos`` en el menú lateral y ubique la carpeta ``Ubicaciones``.
 
-.. image:: /imgs/Ubicaciones/Ubicaciones2.png
+.. image:: /imgs/Modulos/Ubicaciones/Ubicaciones2.png
 
 .. _catalog-ubicaciones:
 
@@ -132,7 +132,7 @@ Este catálogo contiene los mismos registros que la `forma ubicaciones <#form-ub
         - **Ubicación**: Nombre descriptivo de la ubicación.
         - **Dirección**: Dirección de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones5.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones5.png
 
     .. tab-item:: Registros
 
@@ -140,7 +140,7 @@ Este catálogo contiene los mismos registros que la `forma ubicaciones <#form-ub
 
         .. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones6.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones6.png
 
 .. _catalog-tipo-areas:
 
@@ -157,7 +157,7 @@ Este catálogo clasifica las diferentes áreas dentro de una ubicación.
 
         - **Tipo de Área**: Nombre descriptivo del tipo de área.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones3.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones3.png
 
     .. tab-item:: Registros
 
@@ -165,7 +165,7 @@ Este catálogo clasifica las diferentes áreas dentro de una ubicación.
 
         .. note:: Al instalar el módulo, encontrará registros de ejemplo en este catálogo. Estos son solo opciones sugeridas y puede modificar los campos y registros según sea necesario.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones4.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones4.png
 
 .. _catalog-areas-ubicacion:
 
@@ -173,8 +173,6 @@ Este catálogo clasifica las diferentes áreas dentro de una ubicación.
 ----------------------------
 
 Este catálogo contiene los mismos registros que la `forma áreas dentro de la ubicación <#form-areas-ubicacion>`_ :octicon:`report;1em;sd-text-info`.
-
-.. important:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente responda la forma `áreas dentro de la ubicación <#form-areas-ubicacion>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
 .. attention:: El catálogo **Áreas de las Ubicaciones Salidas** replica la estructura, campos y configuraciones del catálogo **Áreas de las Ubicaciones**.
 
@@ -192,7 +190,7 @@ Este catálogo contiene los mismos registros que la `forma áreas dentro de la u
         - **Estatus**: Estado administrativo del área (**activa** o **inactiva**).
         - **QR Área**: Código QR asociado al área para su identificación y acceso.
         
-        .. image:: /imgs/Ubicaciones/Ubicaciones7.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones7.png
 
     .. tab-item:: Registros
 
@@ -200,27 +198,29 @@ Este catálogo contiene los mismos registros que la `forma áreas dentro de la u
 
         .. important:: Este catálogo se actualiza automáticamente a partir de los registros de la forma `áreas dentro de la ubicación <#form-areas-ubicacion>`_ :octicon:`report;1em;sd-text-info`, por lo que no es necesario ingresar datos manualmente. Simplemente complete la forma y Linkaform sincronizará los registros en este catálogo.
 
-        .. image:: /imgs/Ubicaciones/Ubicaciones8.png
+        .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones8.png
         
         Observe que el catálogo cuenta con algunos filtros. Al instalar el módulo, es importante que verifique la existencia de estos filtros, ya que son utilizados por el módulo de accesos.
 
         En caso de que no encuentre los filtros necesarios, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` para obtener más detalles y aplicarlos con los siguientes valores:
-    
-        Guarde el filtro con el nombre ``Filtro_areas_comunes``. Este filtro mostrará todos los registros de áreas comunes, excepto las de las casetas.
 
         .. code-block::
-            
+            :caption: Guarde el filtro con el nombre ``Filtro_areas_comunes``
+
             Campo = Tipo De Area
             Condición = NO es igual a
             Valor = Caseta
 
-        Guarde el filtro con el nombre ``Filtro_casetas``. Este filtro mostrará todos los registros de casetas.
+            // Este filtro mostrará todos los registros de áreas, excepto las de las casetas.
 
         .. code-block::
+            :caption: Guarde el filtro con el nombre ``Filtro_casetas``
 
             Campo = Tipo De Area
             Condición = Igual a
             Valor = Caseta
+
+            // Este filtro mostrará todos los registros de casetas.
 
         .. warning:: Asegúrese de revisar y aplicar los mismos filtros para el catálogo **Áreas de las Ubicaciones Salidas**. 
 
