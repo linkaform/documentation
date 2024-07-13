@@ -49,6 +49,306 @@ Observe y analice el siguiente diagrama del módulo viáticos y siga los puntos 
         end;
         T[CATÁLOGO Teams];
 
+Formularios del Módulo Viáticos
+===============================
+
+Los formularios que componen el módulo de viáticos son los siguientes:
+
+- **Solicitud de Viáticos**: Permite a los empleados solicitar un monto económico para el gasto de viáticos.
+- **Entrega de Efectivo**: Registra la entrega de anticipos en efectivo, en caso de que se hay solicitado efectivo.
+- **Reservas de Viáticos**: Facilita la reserva de aspectos logísticos del viaje, como transporte, alojamiento y comida.
+- **Registros de Gastos**: Permite a los empleados registrar los gastos incurridos durante el viaje. 
+- **Autorización de Viáticos**: Utilizado por el área administrativa para verificar y aprobar todos los gastos registrados una vez que el viaje ha finalizado y todos los gastos han sido reportados.
+
+Para acceder a las formas, seleccione la opción ``Formas > Mis Formas`` en el menú lateral y ubique la carpeta ``Viáticos``.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos30.png
+
+.. _solicitud-viaticos:
+
+Solicitud de Viáticos
+---------------------
+
+Esta forma está diseñada para ser utilizada tanto por el **empleado** que realiza la solicitud del monto económico para los viáticos del viaje como por el **autorizador** que aprueba dicha solicitud.
+
+Siga el flujo para comprender el proceso que ocurre al responder la forma.
+
+1. **El empleado** realiza una **solicitud de viáticos** mediante la forma **Solicitud de Viáticos**.
+2. La solicitud pasa a un estado de **Solicitado**.
+3. El **responsable** revisa la solicitud y puede autorizarla.
+4. Si la solicitud es autorizada, cambia su estado a **Autorizado**.
+5. Una vez autorizada:
+
+   - La solicitud genera un folio de viaje, la cual contiene toda la información de la solicitud.
+   - Se genera un registro en la forma `Entrega de Efectivo <#entrega-efectivo>`_ :octicon:`report;1em;sd-text-info` solo si se solicita y se asigna al responsable seleccionado.
+   - Se genera un registro en la forma `Reservas de Viaje <#reservas-viajes>`_ :octicon:`report;1em;sd-text-info`.
+   - Se genera un registra en el catálogo `Solicitudes de Gastos <#solicitudes-gastos>`_ :octicon:`report;1em;sd-text-info`.
+
+Observe y analice el siguiente diagrama y consulte los puntos anteriores:
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos29.png
+
+Consulte la estructura de la forma. La cual se compone de tres secciones principales:
+
+.. tab-set::
+
+    .. tab-item:: Generales
+
+        Esta sección contiene los detalles básicos de la solicitud, como quién, cuándo, cuánto y para qué se solicitan los viáticos.
+
+        Campos a rellenar por el **empleado**:
+
+        **Empleado**: Nombre del empleado que hace la solicitud 
+        
+        .. seealso:: La lista de empleados es configurable, revise el catálogo **Empleados** del :ref:`doc-employee` :octicon:`report;1em;sd-text-info` para más detalles.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos11.png
+
+        **Destino**: Ubicación al cual se dirige el empleado.
+
+        .. seealso:: La lista de estados no se limita a las actuales, para más detalles consulte el catálogo **Estados** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos12.png
+
+        **Motivo**: Motivo de la solicitud de viáticos. Si no encuentra un motivo en la lista de opciones, seleccione ``Otros``. 
+
+        .. seealso:: El listado de motivos es configurable y puede modificarse según lo requiera. Consulte la sección `conceptos de gastos <#conceptos-gastos>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+ 
+        .. image:: /imgs/Modulos/Viaticos/Viaticos13.png
+
+        **Fecha de Salida**: Fecha en que el empleado saldrá.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos14.png
+
+        **Fecha de Regreso**: Fecha en que el empleado regresará.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos15.png
+
+        **Cantidad de días**: Calculado automáticamente basado en las fechas de salida y regreso.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos16.png
+
+        **Medio de transporte**: Medio de transporte que utilizará.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos17.png
+
+        **Moneda**: Denominación en la que se solicita el viático. 
+
+        .. seealso:: Consulte el catálogo `moneda <#denominacion-moneda>`_ :octicon:`report;1em;sd-text-info` para más detalles. 
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos18.png
+
+        **Monto solicitado**: Presupuesto estimado para cubrir los gastos del viaje.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos19.png
+
+        **Anticipo en efectivo solicitado**: Indica si se requiere un anticipo en efectivo como parte del presupuesto. 
+        
+        .. warning:: Si no requiere de algún anticipo en efectivo, indique el campo como vacío o con el valor de 0.
+        
+        .. image:: /imgs/Modulos/Viaticos/Viaticos22.png
+
+        **Autorizar por**: Responsable que autorizará la solicitud.
+
+        .. seealso:: Para agregar o modificar un responsable consulte el catálogo **Empleados Jefes Directos** del :ref:`doc-employee` :octicon:`report;1em;sd-text-info` 
+
+        .. important:: Al enviar el registro, Linkaform asignará automáticamente el registro de la solicitud al responsable seleccionado para su autorización.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos21.png
+
+        **Firma del empleado solicitante**: Firma del solicitante. 
+        
+        Para firmar siga estos pasos:
+
+        1. Escriba algún indicador que identifique su firma.
+        2. Presione el botón ``Aceptar firma`` y espere a que la firma se cargue.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos23.png
+
+        **Status**: Estado de la solicitud.
+
+        .. warning:: De manera predeterminada, el estatus será ``Solicitado``. No modifique este estatus bajo ninguna circunstancia. 
+            
+            Finalmente, envíe la solicitud presionando el botón **Enviar a Aprobación** o el botón flotante a la derecha de su pantalla. Posteriormente, deberá esperar a que el responsable designado revise y autorice su solicitud de viáticos.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos24.png
+
+        Campos para el **autorizador**:
+
+        Para visualizar el registro de la solicitud de viáticos, siga estos pasos:
+
+        1. Seleccione el botón de ``Inbox`` en la esquina inferior izquierda de su pantalla.
+        2. Identifique el inbox asignado.
+        3. Presione ``Editar`` para abrir el registro.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos27.png
+
+        4. Revise la solicitud y edite los siguientes campos:
+
+        **Monto autorizado**: Cantidad del monto solicitado que se aprueba.
+
+        .. note:: Si considera que la cantidad solicitada no es la adecuada, escriba la cifra que autoriza. Si coincide con el monto solicitado, coloque la misma cifra.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos25.png
+
+        **Firma del autorizador**: Firma de confirmación para autorizar los viáticos.
+
+        Para firmar siga estos pasos:
+
+        1. Escriba algún indicador que identifique su firma.
+        2. Presione el botón ``Aceptar firma`` y espere a que la firma se cargue.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos26.png
+
+        **Status**: Estado actual de la solicitud.
+
+        .. warning:: Al recibir la solicitud de viáticos, el estatus será ``Solicitado``. 
+            
+            - Presione el botón ``Autorizar`` si está de acuerdo con la solicitud.
+            - Utilice el botón ``Cerrar Solicitud`` **solo** cuando se haya finalizado el proceso de aprobación del gasto.
+            
+            Para enviar el registro, presione el botón flotante ubicado en la esquina derecha de su pantalla.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos28.png
+
+    .. tab-item:: Gastos
+        
+        Esta sección muestra detalles de todos los montos y gastos actuales del empleado.
+
+        .. attention:: Esta sección está oculta para el empleado y visible únicamente para los responsables. Los registros se generan automáticamente solo cuando se autoriza la solicitud. No modifique esta parte bajo ninguna circunstancia si la visualiza.
+            
+        Campos incluidos:
+
+        - **Folio**: Identificador de la solicitud de viáticos.
+        - **Anticipo efectivo**: Efectivo entregado anticipadamente.
+        - **Gasto efectivo**: Gasto realizado con el efectivo entregado.
+        - **Gasto por empleado**: Gastos pagados directamente por el empleado.
+        - **Gasto a nombre de compañía**: Gastos pagados directamente por la empresa.
+        - **Saldo a favor del empleado**: Monto adicional gastado por el empleado que la empresa debe reembolsar.
+        - **Presupuesto restante**: Dinero disponible restante del presupuesto autorizado.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos31.png
+
+        El grupo repetitivo refleja los movimientos de los gastos generados desde la forma `Registros de Gastos <#registros-gastos>`_ :octicon:`report;1em;sd-text-info`.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos32.png
+        
+        Para entender mejor los campos, considere el siguiente ejemplo:
+
+        .. admonition:: Ejemplo
+            :class: pied-piper
+
+            Un empleado debe ir a CDMX para una cita con un cliente y solicita un viático de $5,000. La empresa reserva un hotel por $2,000, que se registra como gasto a nombre de la compañía. El empleado utiliza los $5,000 para cubrir otros gastos, pero debe quedarse un día más, gastando $2,000 adicionales de su propio dinero. Estos $2,000 se registran como saldo a favor del empleado para reembolso posterior.
+
+    .. tab-item:: Configuración
+
+        Esta sección permite ajustar la configuración relacionada con el presupuesto. Por defecto, la configuración está definida para evitar sobregiros. Modifique según sea necesario.
+
+        .. attention:: Esta sección está oculta para el empleado y visible únicamente para los responsables.             
+
+        Campos de configuración:
+
+        **Puede ser sobregirada**: Permite registrar gastos adicionales si el presupuesto se ha agotado.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos33.png
+
+        **Límite de sobregiro**: Especifica el monto máximo permitido para el sobregiro. Si está vacío, no hay límite.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos34.png
+
+        **Cerrar solicitud en sobregiro**: Permite cerrar la solicitud cuando se alcanza el límite de sobregiro.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos35.png
+
+.. _entrega-efectivo: 
+
+Entrega de Efectivo
+-------------------
+
+Esta forma está diseñada para que algún departamento o responsable realice la entrega del efectivo solicitado. La mayoría de los campos vienen prellenados con la información proveniente de la solicitud de viáticos.
+
+.. warning:: Si en la `solicitud de viáticos <#solicitud-viaticos>`_ :octicon:`report;1em;sd-text-info` no se ha solicitado un monto en efectivo, no se creará un registro en esta forma. 
+
+Para visualizar al registro de la entrega de efectivo, siga estos pasos:
+
+1. Seleccione el botón ``Inbox`` en la esquina inferior izquierda de su pantalla.
+2. Identifique el inbox asignado.
+3. Presione ``Editar`` para abrir el registro.
+4. Revise la solicitud y actualice los siguientes campos:
+
+.. hint:: Observe que el folio es el mismo que el de la solicitud de viáticos. Este folio permite extraer y mostrar toda la información prellenada en está forma.
+
+    .. image:: /imgs/Modulos/Viaticos/Viaticos36.png
+
+**Fecha del Anticipo**: Fecha actual de entrega del anticipo.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos37.png
+
+**Anticipo entregado**: Cantidad del monto solicitado que se aprueba.
+
+.. note:: Si considera que la cantidad solicitada no es la adecuada, escriba la cifra que autoriza. Si coincide con el monto solicitado, coloque la misma cifra.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos38.png
+
+**Método de pago**: Método utilizado para realizar la entrega del anticipo.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos39.png
+
+**Comprobantes**: Documentación que respalda la entrega del anticipo.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos40.png
+
+**Status del Anticipo**: Estado actual del proceso de entrega del anticipo.
+
+.. warning:: Por defecto, el estatus será ``En Proceso``. Cambie el estado presionando el botón ``Realizado`` si está conforme.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos41.png
+
+Finalmente, envíe la entrega de efectivo presionando el botón flotante a la derecha de su pantalla.
+
+.. _reservas-viajes:
+
+Reservas de Viajes
+--------------------
+
+Este formulario facilita la reserva de aspectos logísticos del viaje, como transporte y alojamiento, asegurando que todos los elementos necesarios para el viaje estén cubiertos. Los campos principales incluyen:
+
+- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
+- **Tipo de Reserva**: Tipo de reserva realizada (por ejemplo, "Vuelo", "Hotel").
+- **Proveedor**: Nombre del proveedor del servicio.
+- **Costo de la Reserva**: Costo total de la reserva realizada.
+- **Fecha de Reserva**: Fecha en la que se realiza la reserva.
+- **Estado de la Reserva**: Estado actual de la reserva (por ejemplo, "Confirmada", "Pendiente").
+
+.. .. image:: /imgs/Modulos/Viaticos/ViaticosReserva.png
+
+.. _form-gastos-viaje: 
+
+Registros de Gastos
+-------------------
+
+Este formulario permite a los empleados registrar los gastos incurridos durante el viaje. En este formulario se puede visualizar un resumen detallado de todos los gastos realizados. Los campos principales incluyen:
+
+- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
+- **Tipo de Gasto**: Tipo de gasto realizado (por ejemplo, "Comida", "Transporte").
+- **Monto del Gasto**: Cantidad de dinero gastada.
+- **Fecha del Gasto**: Fecha en la que se realizó el gasto.
+- **Descripción del Gasto**: Detalles adicionales sobre el gasto.
+
+.. .. image:: /imgs/Modulos/Viaticos/ViaticosGastos.png
+
+.. _form-autorizacion:
+
+Autorización de Viáticos
+------------------------
+
+Este formulario es utilizado por el área administrativa para verificar y aprobar todos los gastos registrados una vez que el viaje ha finalizado y todos los gastos han sido reportados. Los campos principales incluyen:
+
+- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
+- **Monto Total Autorizado**: Cantidad total de dinero autorizada para los gastos del viaje.
+- **Estado de la Autorización**: Estado actual de la autorización (por ejemplo, "Aprobado", "Rechazado").
+- **Fecha de Autorización**: Fecha en la que se realiza la autorización final.
+- **Comentarios del Aprobador**: Observaciones
 
 Catálogos del Módulo Viáticos
 =============================
@@ -57,10 +357,13 @@ Este módulo cuenta con los siguientes catálogos:
 
 - **Conceptos de Gastos**: Contiene registros sobre posibles conceptos de gastos.
 - **Moneda**: Proporciona información sobre las diferentes monedas aceptadas para los gastos.
-- **Responsables de Autorizar Gastos**: Incluye una lista de responsables que pueden autorizar y gestionar los gastos.
 - **Solicitud de Gastos**: Almacena los registros de las solicitudes de viáticos realizadas por los empleados.
 
+Para acceder a los catálogos, seleccione la opción ``Catálogos > Catálogos`` en el menú lateral y ubique la carpeta ``Viáticos``.
+
 .. image:: /imgs/Modulos/Viaticos/Viaticos2.png
+
+.. _conceptos-gastos:
 
 Conceptos de Gastos
 -------------------
@@ -84,10 +387,12 @@ Este catálogo registra los diferentes tipos de gastos que pueden ser solicitado
 
         .. image:: /imgs/Modulos/Viaticos/Viaticos3.png
 
+.. _denominacion-moneda:
+
 Moneda
 ------
 
-Este catálogo proporciona información sobre las diferentes denominaciones aceptadas para los gastos relacionados. 
+Este catálogo proporciona información sobre las diferentes denominaciones aceptadas para las solicitudes y gastos relacionados. 
 
 .. tab-set::
 
@@ -107,34 +412,10 @@ Este catálogo proporciona información sobre las diferentes denominaciones acep
 
         .. image:: /imgs/Modulos/Viaticos/Viaticos5.png
 
-.. _responsable-autorizador:
+.. _solicitudes-gastos:
 
-Responsables de Autorizar Gastos
---------------------------------
-
-Este catálogo contiene información sobre las personas responsables de autorizar y gestionar los gastos, como jefes de departamento, finanzas o recursos humanos.
-
-.. note:: Este catálogo es adecuado si no requiere muchas especificaciones sobre el responsable de autorizar los gastos. Sin embargo, si necesita más detalles sobre dicho responsable, utilice el :ref:`doc-employee` :octicon:`report;1em;sd-text-info`.
-
-.. tab-set::
-
-    .. tab-item:: Estructura
-
-        Este catálogo incluye campos como:
-
-        - **Nombre**: Responsable de autorizar gastos.                                                                                                                                   
-        - **Correo Electrónico**: Dirección de correo electrónico del responsable.
-
-        .. image:: /imgs/Modulos/Viaticos/Viaticos8.png
-
-    .. tab-item:: Registros
-
-        .. warning:: Revise la veracidad de los datos de este catálogo, ya que son utilizados para notificar y asignar registros al responsable y autorizar los gastos.
-
-        .. image:: /imgs/Modulos/Viaticos/Viaticos7.png
-
-Solicitud de Gastos
--------------------
+Solicitudes de Gastos
+---------------------
 
 Este catálogo contiene todas las solicitudes autorizadas. Aquí se reflejan todos los gastos del empleado relacionados con cada solicitud. 
 
@@ -152,7 +433,7 @@ Es útil para visualizar la matemática de los gastos, ya que permite ver el mon
 
         Ejemplo de registros en el catálogo de **Solicitud de Gastos**:
 
-        .. important:: Este catálogo se actualiza automáticamente a partir de los registros de la forma `solicitud de gastos <#form-solicitud-gastos>`_ :octicon:`report;1em;sd-text-info`, la cual realizará los cálculos necesarios para reflejarlos en este catálogo.
+        .. important:: Este catálogo se actualiza automáticamente a partir de los registros de la forma `solicitud de gastos <#>`_ :octicon:`report;1em;sd-text-info`, la cual realizará los cálculos necesarios para reflejarlos en este catálogo.
 
         .. .. image:: /imgs/Modulos/Viaticos/Viaticos10.png
 
@@ -168,154 +449,6 @@ Es útil para visualizar la matemática de los gastos, ya que permite ver el mon
             Valor = Autorizado
 
             //Este filtro mostrará todos los registros de los gastos autorizados.
-
-Formularios del Módulo Viáticos
-===============================
-
-Los formularios que componen el módulo de viáticos son los siguientes:
-
-- **Solicitud de Viáticos**: Permite a los empleados solicitar un monto económico para el gasto de viáticos.
-- **Entrega de Efectivo**: Registra la entrega de anticipos en efectivo, en caso de que se hay solicitado efectivo.
-- **Reservas de Viáticos**: Facilita la reserva de aspectos logísticos del viaje, como transporte, alojamiento y comida.
-- **Registros de Gastos**: Permite a los empleados registrar los gastos incurridos durante el viaje. 
-- **Autorización de Viáticos**: Utilizado por el área administrativa para verificar y aprobar todos los gastos registrados una vez que el viaje ha finalizado y todos los gastos han sido reportados.
-
-Para estructurar el contenido sobre la **Solicitud de Viáticos** de manera clara y concisa, se pueden utilizar secciones y subsecciones. A continuación, te presento una estructura mejorada que incorpora las ideas mencionadas:
-
-Solicitud de Viáticos
----------------------
-
-La forma **Solicitud de Viáticos** permite a los empleados crear una solicitud de viáticos, generando un folio de viaje y asignando un presupuesto específico del cual se irán descontando los gastos. Esta forma está diseñada para ser utilizada tanto por el empleado que realiza la solicitud como por el autorizador que aprueba la solicitud.
-
-1. **Creación de Solicitud**: El empleado realiza la solicitud de viáticos.
-2. **Asignación al Autorizador**: La solicitud se envía al autorizador a través del inbox.
-3. **Autorización**: El autorizador revisa y aprueba la solicitud de viáticos.
-
-La solicitud de viáticos se compone de tres secciones principales:
-
-.. tab-set::
-
-    .. tab-item:: Generales
-
-        Esta sección contiene los detalles básicos de la solicitud, como quién, cuándo, cuánto y para qué se solicitan los viáticos.
-
-        Campos a rellenar por el empleado:
-        - **Empleado**: Nombre del empleado que hace la solicitud (usa el catálogo **Empleados** del :ref:`doc-employee` :octicon:`report;1em;sd-text-info`).
-
-        - **Destino**: Destino al cual se dirige el empleado (usa el catálogo **Estados** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
-
-        - **Motivo**: Motivo de la solicitud de viáticos.
-        - **Fecha de Salida**: Fecha en que el empleado saldrá.
-        - **Fecha de Regreso**: Fecha en que el empleado regresará.
-        - **Cantidad de días**: Calculado automáticamente basado en las fechas de salida y regreso.
-        - **Medio de transporte**: Medio de transporte que se utilizará.
-        - **Moneda**: Moneda en la que se solicita el viático. Permite seleccionar la moneda adecuada y realizar conversiones automáticas.
-        - **Monto solicitado**: Presupuesto estimado para cubrir los gastos del viaje.
-        - **Autorizar por**: Responsable que autorizará la solicitud (usa el catálogo **Responsables de Autorizar Gastos** :octicon:`report;1em;sd-text-info`).
-
-        - **Anticipo en efectivo solicitado**: Indica si se requiere un anticipo en efectivo como parte del presupuesto.
-        - **Firma del empleado solicitante**: Firma del solicitante.
-        - **Status**: Estado de la solicitud (solicitado, autorizado, en aprobación, vencida, sobregirada, cerrada).
-
-        Botones disponibles:
-
-        - **Autorizar**: Solo visible para el autorizador.
-        - **Enviar a Aprobación**: Envía la solicitud a la etapa de aprobación.
-        - **Cerrar Solicitud**: Solo visible para el autorizador.
-
-        Campos para el autorizador:
-
-        - **Monto autorizado**: Cantidad del monto solicitado que se aprueba.
-        - **Firma del autorizador**: Firma de confirmación para autorizar los viáticos.
-
-    .. tab-item:: Gastos
-
-        Esta sección muestra un resumen de todos los gastos del empleado, reflejados automáticamente desde la forma `Solicitud de Gastos <#registros-gastos>`_ :octicon:`report;1em;sd-text-info`.
-
-        Campos incluidos:
-
-        - **Folio**: Identificador de la solicitud de viáticos.
-        - **Anticipo efectivo**: Efectivo entregado anticipadamente.
-        - **Gasto efectivo**: Gasto realizado con el efectivo entregado.
-        - **Gasto por empleado**: Gastos pagados directamente por el empleado.
-        - **Gasto a nombre de compañía**: Gastos pagados directamente por la empresa.
-        - **Saldo a favor del empleado**: Monto adicional gastado por el empleado que la empresa debe reembolsar.
-        - **Presupuesto restante**: Dinero disponible restante del presupuesto autorizado.
-
-        Ejemplo:
-
-        Un empleado debe ir a CDMX para una cita con un cliente y solicita un viático de $5,000. La empresa reserva un hotel por $2,000, que se registra como gasto a nombre de la compañía. El empleado utiliza los $5,000 para cubrir otros gastos, pero debe quedarse un día más, gastando $2,000 adicionales de su propio dinero. Estos $2,000 se registran como saldo a favor del empleado para reembolso posterior.
-
-    .. tab-item:: Configuración
-
-        Esta sección permite ajustar la configuración relacionada con el presupuesto.
-
-        Campos de configuración:
-
-        - **Puede ser sobregirada**: Permite registrar gastos adicionales si el presupuesto se ha agotado.
-        - **Límite de sobregiro**: Especifica el monto máximo permitido para el sobregiro. Si está vacío, no hay límite.
-        - **Cerrar solicitud en sobregiro**: Permite cerrar la solicitud cuando se alcanza el límite de sobregiro.
-
-        .. warning:: Cuando se crea un nuevo registro en esta forma, asegúrese de sincronizarlo con el catálogo `Solicitud de Gastos <#solicitud-de-gastos>`_ :octicon:`report;1em;sd-text-info`. Verifique que la configuración de sincronización esté correctamente definida.
-
-.. _form-solicitud-gastos:
-
-Solicitud de Gastos
--------------------
-
-lorem 
-
-Entrega de Efectivo
--------------------
-
-Este formulario se utiliza para registrar la entrega de anticipos en efectivo. Una vez realizada la entrega, el sistema actualiza automáticamente el estatus de la solicitud a "Autorizado". Los campos principales incluyen:
-
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Monto Entregado**: Cantidad de dinero entregada al empleado.
-- **Fecha de Entrega**: Fecha en la que se realiza la entrega del anticipo.
-- **Responsable de Entrega**: Nombre de la persona que realiza la entrega del dinero.
-
-.. image:: /imgs/Modulos/Viaticos/ViaticosEntrega.png
-
-Reservas de Viáticos
---------------------
-
-Este formulario facilita la reserva de aspectos logísticos del viaje, como transporte y alojamiento, asegurando que todos los elementos necesarios para el viaje estén cubiertos. Los campos principales incluyen:
-
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Tipo de Reserva**: Tipo de reserva realizada (por ejemplo, "Vuelo", "Hotel").
-- **Proveedor**: Nombre del proveedor del servicio.
-- **Costo de la Reserva**: Costo total de la reserva realizada.
-- **Fecha de Reserva**: Fecha en la que se realiza la reserva.
-- **Estado de la Reserva**: Estado actual de la reserva (por ejemplo, "Confirmada", "Pendiente").
-
-.. image:: /imgs/Modulos/Viaticos/ViaticosReserva.png
-
-.. _registros-gastos:
-
-Registros de Gastos de Viaje
-----------------------------
-
-Este formulario permite a los empleados registrar los gastos incurridos durante el viaje. En este formulario se puede visualizar un resumen detallado de todos los gastos realizados. Los campos principales incluyen:
-
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Tipo de Gasto**: Tipo de gasto realizado (por ejemplo, "Comida", "Transporte").
-- **Monto del Gasto**: Cantidad de dinero gastada.
-- **Fecha del Gasto**: Fecha en la que se realizó el gasto.
-- **Descripción del Gasto**: Detalles adicionales sobre el gasto.
-
-.. image:: /imgs/Modulos/Viaticos/ViaticosGastos.png
-
-Autorización de Viáticos
-------------------------
-
-Este formulario es utilizado por el área administrativa para verificar y aprobar todos los gastos registrados una vez que el viaje ha finalizado y todos los gastos han sido reportados. Los campos principales incluyen:
-
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Monto Total Autorizado**: Cantidad total de dinero autorizada para los gastos del viaje.
-- **Estado de la Autorización**: Estado actual de la autorización (por ejemplo, "Aprobado", "Rechazado").
-- **Fecha de Autorización**: Fecha en la que se realiza la autorización final.
-- **Comentarios del Aprobador**: Observaciones
 
 .. LIGAS EXTERNAS
 
