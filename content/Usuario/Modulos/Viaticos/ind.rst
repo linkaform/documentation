@@ -265,9 +265,9 @@ Consulte la estructura de la forma. La cual se compone de tres secciones princip
 Entrega de Efectivo
 -------------------
 
-Esta forma está diseñada para que algún departamento o responsable realice la entrega del efectivo solicitado. La mayoría de los campos vienen prellenados con la información proveniente de la solicitud de viáticos.
+Esta forma está diseñada para que algún departamento o responsable realice la entrega del efectivo solicitado al empleado. La mayoría de los campos vienen prellenados con la información proveniente de la solicitud de viáticos.
 
-.. warning:: Si en la `solicitud de viáticos <#solicitud-viaticos>`_ :octicon:`report;1em;sd-text-info` no se ha solicitado un monto en efectivo, no se creará un registro en esta forma. 
+.. note:: Si en la `solicitud de viáticos <#solicitud-viaticos>`_ :octicon:`report;1em;sd-text-info` no se ha solicitado un monto en efectivo, no se creará un registro en esta forma. 
 
 Para visualizar al registro de la entrega de efectivo, siga estos pasos:
 
@@ -306,36 +306,184 @@ Para visualizar al registro de la entrega de efectivo, siga estos pasos:
 
 Finalmente, envíe la entrega de efectivo presionando el botón flotante a la derecha de su pantalla.
 
+.. note:: Cuando se autoriza y entrega el monto de efectivo solicitado, se refleja en la sección de **Gastos** de la `forma solicitud de viáticos <#solicitud-viaticos>`_ :octicon:`report;1em;sd-text-info` y en el `catálogo Solicitudes de Gastos <#solicitudes-gastos>`_ :octicon:`report;1em;sd-text-info`. Observe las siguientes imágenes:
+
+    .. image:: /imgs/Modulos/Viaticos/Viaticos42.png
+
+    .. image:: /imgs/Modulos/Viaticos/Viaticos43.png
+
 .. _reservas-viajes:
 
 Reservas de Viajes
 --------------------
 
-Este formulario facilita la reserva de aspectos logísticos del viaje, como transporte y alojamiento, asegurando que todos los elementos necesarios para el viaje estén cubiertos. Los campos principales incluyen:
+Este formulario facilita la reserva de aspectos logísticos del viaje, como transporte y alojamiento. Aunque **no es obligatorio**, la idea es que cuando un empleado haga una solicitud de viaje, un responsable de logística o personal de la empresa reserve el medio de transporte y el hospedaje del empleado al llegar a su destino. Esta forma se divide en tres partes:
 
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Tipo de Reserva**: Tipo de reserva realizada (por ejemplo, "Vuelo", "Hotel").
-- **Proveedor**: Nombre del proveedor del servicio.
-- **Costo de la Reserva**: Costo total de la reserva realizada.
-- **Fecha de Reserva**: Fecha en la que se realiza la reserva.
-- **Estado de la Reserva**: Estado actual de la reserva (por ejemplo, "Confirmada", "Pendiente").
+.. tab-set::
 
-.. .. image:: /imgs/Modulos/Viaticos/ViaticosReserva.png
+    .. tab-item:: Generales
 
-.. _form-gastos-viaje: 
+        Contiene la información que identifica al empleado, fechas y destino del viaje. Observe el registro:
+
+        .. note:: Esta sección ya viene prellenada.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos44.png
+
+    .. tab-item:: Reservas de Transporte
+
+        En esta sección debe colocar los datos del servicio del transportista que recogerá al empleado. Es similar a un servicio tipo ``Uber``. Los campos que la componen son:
+
+        **Proveedor**: Nombre de la empresa de transporte.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos48.png
+
+        **Dirección de Origen del Servicio**: La ubicación de donde recogerán al empleado.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos46.png
+
+        **Dirección del Servicio**: La geolocalización de la ubicación del transportista, como su estación.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos47.png
+        
+        **Fecha y Hora Programada**: Fecha y hora en la que debe recoger al empleado.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos48.png
+
+        .. grid:: 2
+            :gutter: 0
+
+            .. grid-item-card:: 
+                :columns: 4
+
+                .. image:: /imgs/Modulos/Viaticos/Viaticos49.png
+
+            .. grid-item-card:: 
+                :columns: 8
+
+                - **Teléfono del Usuario**: Número de contacto del empleado.
+                - **Número de Reservación**: Identificador de la reservación del transporte.
+                - **Nombre del Chofer**: Nombre del conductor asignado.
+                - **Teléfono del Chofer**: Número de contacto del conductor.
+                - **Vehículo del Chofer**: Descripción del vehículo del conductor.
+                - **Placas del Vehículo**: Matrícula del vehículo del conductor.
+                - **Comprobante/Boleto**: Archivo del comprobante del servicio de transporte.
+
+        **Estatus de la Reserva de Transporte**: Estado actual de la reserva (Pendiente o Confirmada).
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos50.png
+
+    .. tab-item:: Reservas de Hotel
+
+        En esta sección debe colocar los datos del servicio del hotel en el que se quedará el empleado. Los campos son:
+
+        - **Nombre del Hotel**: Nombre del hotel donde se hospedará el empleado.
+        - **Número de Reservación**: Identificador de la reservación del hotel.
+        - **Fecha de Entrada**: Fecha de check-in en el hotel.
+        - **Fecha de Salida**: Fecha de check-out del hotel.
+        - **Estatus de la Reserva del Hotel**: Estado actual de la reserva (Pendiente o Confirmada).
+        - **Comprobante de Reservación del Hotel**: Archivo del comprobante de la reservación del hotel.
+
+        .. image:: /imgs/Modulos/Viaticos/Viaticos51.png
+
+.. _form-registro-gastos: 
 
 Registros de Gastos
 -------------------
 
-Este formulario permite a los empleados registrar los gastos incurridos durante el viaje. En este formulario se puede visualizar un resumen detallado de todos los gastos realizados. Los campos principales incluyen:
+Esta forma está diseñada para ser utilizada tanto por el **empleado** que realiza el registro del gasto como por el **autorizador** que aprueba dicho gasto.
 
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Tipo de Gasto**: Tipo de gasto realizado (por ejemplo, "Comida", "Transporte").
-- **Monto del Gasto**: Cantidad de dinero gastada.
-- **Fecha del Gasto**: Fecha en la que se realizó el gasto.
-- **Descripción del Gasto**: Detalles adicionales sobre el gasto.
+Este formulario permite a los empleados registrar los gastos incurridos durante el viaje. Del monto autorizado en la solicitud `de viáticos <#solicitud-viaticos>`_ :octicon:`report;1em;sd-text-info` se empezarán a descontar. A continuación, se detalla cómo llenar los campos:
+ 
+Campos para el empleado que gasta:
 
-.. .. image:: /imgs/Modulos/Viaticos/ViaticosGastos.png
+**Fecha del gasto**: Fecha en que se realizó el gasto.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos52.png
+
+**Solicitud de Gastos**: Este catálogo muestra únicamente los viajes activos.
+
+- **Destino**: Seleccione el destino para el cual se solicitó el viático.
+- **Folio**: Seleccione el folio correspondiente.
+
+.. hint:: Si hay más de un folio, identifique el folio de la solicitud de viáticos y compárelo con el del catálogo. 
+    
+.. image:: /imgs/Modulos/Viaticos/Viaticos53.png
+
+.. note:: Cuando realice un gasto, el catálogo le proporcionará información actualizada sobre los montos restantes y los gastos ejecutados. Observe el siguiente ejemplo, donde el gasto ejecutado es de $3,250 y el monto restante es de $750.
+
+    .. image:: /imgs/Modulos/Viaticos/Viaticos64.png
+
+**Concepto**: Seleccione un concepto de gasto.
+
+.. note:: Dependiendo del concepto, variarán los campos adicionales. Sin embargo, hay ciertos campos obligatorios para todos los conceptos:
+
+    - **Comercio**: Nombre del comercio donde se realizó el gasto.
+    - **Detalle del gasto**: Descripción adicional del gasto.
+
+    Por ejemplo, si selecciona el concepto de comida, aparecerá el campo ``Tipo de comida``.
+
+    .. image:: /imgs/Modulos/Viaticos/Viaticos54.png
+
+**Moneda**: Denominación en la que se solicita el viático.
+
+.. note:: La denominación no siempre puede ser la misma con la que solicitó el viático. Puede solicitar un viático en una moneda y gastar en otro tipo de moneda, lo cual es regular si sale fuera del país.
+    
+.. image:: /imgs/Modulos/Viaticos/Viaticos55.png
+
+**Subtotal**: Monto total del gasto, incluyendo impuestos y propinas.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos56.png
+
+.. **Total gasto**: Monto total del gasto, incluyendo impuestos y propinas.
+.. .. image:: /imgs/Modulos/Viaticos/Viaticos57.png
+
+**Pagado por**
+
+- **Empleado**: Gasto pagado con dinero del empleado. Considerado para reembolso.
+- **Compañía**: Gasto pagado con dinero de la compañía, utilizando el anticipo proporcionado por la empresa.
+
+.. important:: Regularmente, **Pagado por empleado** se selecciona cuando ha agotado el presupuesto del viático y aún tiene gastos adicionales. En este caso, los gastos registrados serán reembolsados posteriormente. 
+    
+    Es importante comprender que esta opción depende de la configuración del sobregiro en la solicitud del viatico. Si la configuración permite sobregiros, podrá seguir presentando gastos incluso si ha agotado el presupuesto de la empresa. Sin embargo, si no se permite el sobregiro, esta opción no estará disponible. 
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos58.png
+
+**Comprobante**: Archivo del comprobante del gasto (factura, ticket, etc.). El comprobante puede ser en formato de imagen o archivo. 
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos59.png
+
+**Página para descargar factura**: URL de la página donde se puede descargar la factura, si la solicita.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos60.png
+
+**Status del gasto**: Estado del gasto.
+
+.. warning:: Por defecto, el estatus está en ``Por autorizar``. Por ningún motivo lo modifique.
+
+Finalmente, envíe la solicitud presionando el botón flotante a la derecha de su pantalla.
+
+.. image:: /imgs/Modulos/Viaticos/Viaticos61.png
+
+.. hint:: Cada vez que registre un gasto, podrá visualizar los detalles en la sección de **Gastos** dentro de la Solicitud de `Viáticos <#solicitud-viaticos>`_ :octicon:`report;1em;sd-text-info`. Para obtener una visión general de los montos totales sin detalles específicos, consulte el catálogo de Solicitudes `de Gastos <#solicitudes-gastos>`_ :octicon:`report;1em;sd-text-info`. Observe las siguientes imágenes, que muestran un ejemplo del primer gasto registrado.
+    
+    .. image:: /imgs/Modulos/Viaticos/Viaticos63.png
+
+    .. image:: /imgs/Modulos/Viaticos/Viaticos62.png
+        :height: 52px
+        :width: 780px
+
+.. important:: Dependiendo de la configuración de la solicitud, si no se permiten sobregiros, al realizar su último registro de gasto de viaje, ya no podrá continuar registrando más gastos. 
+    
+    En ese punto, todos los registros de gastos pasarán a la etapa de **Aprobación**, donde el departamento correspondiente revisará y aprobará sus gastos.
+
+Campos para el autorizador:
+
+**Impuestos**: Monto de los impuestos incluidos en el gasto.
+**Propina**: Monto de la propina incluida en el gasto.
+**Total gasto en moneda solicitud**: Total del gasto convertido a la moneda en la que se solicitó el viático.
+**Motivo no autorizado**: Razón por la cual el gasto no es autorizado (si aplica).
+**Monto autorizado**: Cantidad del gasto que se aprueba.
+**Comentarios**: Comentarios adicionales del autorizador.
 
 .. _form-autorizacion:
 
@@ -417,38 +565,36 @@ Este catálogo proporciona información sobre las diferentes denominaciones acep
 Solicitudes de Gastos
 ---------------------
 
-Este catálogo contiene todas las solicitudes autorizadas. Aquí se reflejan todos los gastos del empleado relacionados con cada solicitud. 
+Este catálogo refleja los montos totales de los gastos actuales del empleado. Aquí podrá visualizar los montos totales asignados, cuánto se ha gastado y cuánto queda disponible.
 
-Es útil para visualizar la matemática de los gastos, ya que permite ver el monto total asignado, cuánto se ha gastado y cuánto queda disponible.
+.. warning:: Por ningún motivo, modifique este catálogo. Es actualizado automáticamente por un script al `registrar un gasto <#form-registro-gastos>`_ :octicon:`report;1em;sd-text-info`, el cual realiza los cálculos necesarios para reflejar la información precisa.
 
-.. tab-set::
+La estructura de este catálogo es similar a la de un registro de gastos, pero se centra en montos totales, gastos ejecutados, saldos y presupuestos restantes. Observa el siguiente ejemplo de registro:
 
-    .. tab-item:: Estructura
-        
-        El catálogo **Solicitud de Gastos** incluye los siguientes campos:
+.. image:: /imgs/Modulos/Viaticos/Viaticos62.png
+    :height: 52px
+    :width: 780px
 
-        .. .. image:: /imgs/Modulos/Viaticos/Viaticos9.png
+.. important:: El campo más importante que debe verificar es el **estatus**. Este estado debe coincidir exactamente con el que se refleja en la solicitud de viáticos.
 
-    .. tab-item:: Registros
+Cuando se realiza el último registro de gasto con el monto autorizado para el viático, el estatus cambia a **En Aprobación**.
 
-        Ejemplo de registros en el catálogo de **Solicitud de Gastos**:
+.. image:: /imgs/Modulos/Viaticos/Viaticos65.png
+   :height: 52px
+   :width: 780px
 
-        .. important:: Este catálogo se actualiza automáticamente a partir de los registros de la forma `solicitud de gastos <#>`_ :octicon:`report;1em;sd-text-info`, la cual realizará los cálculos necesarios para reflejarlos en este catálogo.
+Asegúrese de que el catálogo incluya el filtro necesario al instalar el módulo, especialmente si es responsable de verificar su configuración.
 
-        .. .. image:: /imgs/Modulos/Viaticos/Viaticos10.png
+Si no encuentra el filtro, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` y aplique estos valores:
 
-        Observe que el catálogo cuenta con un filtro. Verifique que el catálogo tenga el filtro necesario al instalar el módulo.
+.. code-block::
+    :caption: Guarde el filtro como ``Autorizados``.
 
-        Si no encuentra el filtro, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` y aplique estos valores:
+    Campo = Estatus
+    Condición = Igual a
+    Valor = Autorizado
 
-        .. code-block::
-            :caption: Guarde el filtro como ``Autorizados``.
-
-            Campo = Estatus
-            Condición = Igual a
-            Valor = Autorizado
-
-            //Este filtro mostrará todos los registros de los gastos autorizados.
+    //Este filtro mostrará todos los registros de los gastos autorizados.
 
 .. LIGAS EXTERNAS
 
