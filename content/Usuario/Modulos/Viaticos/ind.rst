@@ -479,24 +479,26 @@ Finalmente, envíe la solicitud presionando el botón flotante a la derecha de s
 Campos para el autorizador:
 
 **Impuestos**: Monto de los impuestos incluidos en el gasto.
+
 **Propina**: Monto de la propina incluida en el gasto.
+
 **Total gasto en moneda solicitud**: Total del gasto convertido a la moneda en la que se solicitó el viático.
+
 **Motivo no autorizado**: Razón por la cual el gasto no es autorizado (si aplica).
+
 **Monto autorizado**: Cantidad del gasto que se aprueba.
+
 **Comentarios**: Comentarios adicionales del autorizador.
+
 
 .. _form-autorizacion:
 
 Autorización de Viáticos
 ------------------------
 
-Este formulario es utilizado por el área administrativa para verificar y aprobar todos los gastos registrados una vez que el viaje ha finalizado y todos los gastos han sido reportados. Los campos principales incluyen:
+Este formulario es utilizado por el área administrativa para verificar y aprobar todos los gastos registrados una vez que el viaje ha finalizado y todos los gastos han sido reportados.
 
-- **Folio de Solicitud**: Número de identificación de la solicitud de viáticos asociada.
-- **Monto Total Autorizado**: Cantidad total de dinero autorizada para los gastos del viaje.
-- **Estado de la Autorización**: Estado actual de la autorización (por ejemplo, "Aprobado", "Rechazado").
-- **Fecha de Autorización**: Fecha en la que se realiza la autorización final.
-- **Comentarios del Aprobador**: Observaciones
+
 
 Catálogos del Módulo Viáticos
 =============================
