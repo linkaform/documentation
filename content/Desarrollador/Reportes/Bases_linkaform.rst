@@ -4,16 +4,54 @@
 Bases de Linkaform
 ==================
 
-En el módulo ``Reportes`` de Linkaform, tiene la capacidad de explorar visualmente los resultados extraídos de las :ref:`section-forms` :octicon:`report;1em;sd-text-info` a través de filtros, gráficos y tablas.
+Los reportes son una funcionalidad que brinda a los clientes de Linkaform una perspectiva visual, resumida y agradable de los datos recopilados de las **formas** a través de elementos como filtros, gráficos y tablas.
 
-Para acceder a los ``Reportes``, siga los pasos:
+A lo largo de la documentación, encontrará orientación sobre los aspectos necesarios para la creación de sus propios reportes personalizados.
 
-1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
-2. Inicie sesión con sus credenciales.
+.. important:: Tenga en cuenta que el desarrollo de reportes se basa en la información recopilada de las formas (formularios digitales), por lo que es importante que comprenda su funcionamiento. Consulte el siguiente :ref:`section-forms` :octicon:`report;1em;sd-text-info` para más información.
+
+Subdominios
+===========
+
+Linkaform cuenta con una serie de subdominios que le serán útiles al momento de desarrollar reportes.
+
+Producción
+----------
+
+Es la versión que está en línea y disponible para los clientes finales en tiempo real. Para acceder, siga los pasos:
+
+1. Ingrese a la plataforma web en |Producción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con sus credenciales habituales.
 
 .. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
 
+Preproducción
+-------------
+
+Es una copia de producción en su estado más reciente, utilizada para realizar pruebas sin riesgos en caso de cometer errores. Para acceder, siga los pasos:
+
+1. Ingrese a la plataforma web en |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con su correo habitual, pero solicite a soporte la contraseña necesaria.
+
+.. warning:: Tenga en cuenta que cada proceso que realice en **producción** y **preproducción** es similar. Sin embargo, es importante que considere que todo lo que se haga en **preproducción** será reemplazado por los datos de **producción** en cargas que se realizan cada semana. 
+
+FAQ
+---
+
+Es la página donde podrá encontrar preguntas frecuentes sobre funcionalidades especificas de LinkaForm. Aquí podrá realizar sus preguntas a través de publicaciones o consultas con otros usuarios relacionados. 
+
+Para acceder, ingrese a |faq| :octicon:`report;1em;sd-text-info`.
+
+Acceder a reportes
+==================
+
+Para acceder a los ``Reportes``, siga los pasos:
+
+1. Ingrese a la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Inicie sesión con sus credenciales.
 3. Seleccione la opción ``Reportes`` en el menú lateral. 
+
+.. tip:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.
 
 .. image:: /imgs/Reportes/Reportes1.png
 
@@ -22,8 +60,10 @@ Ver reporte
 
 Para examinar un reporte en detalle, siga los siguientes pasos:
 
-1. Seleccione la opción ``Reportes`` en el menú lateral. 
-2. Presione el icono de engrane, seguido de ``Ver reportes`` o elija el tercer icono.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Seleccione la opción ``Reportes`` en el menú lateral. 
+3. Identifique el reporte de su interés.
+4. Presione el icono de engrane, seguido de ``Ver reportes`` o elija el tercer icono. Será redirigido al reporte correspondiente. 
 
 .. image:: /imgs/Reportes/Reportes2.png
 
@@ -34,45 +74,49 @@ En términos generales, observe la siguiente imagen que describe los elementos b
 Crear carpeta
 =============
 
-Crear una carpeta le permitirá almacenar uno o más reportes dentro de ella. Siga los pasos para crear una carpeta:
+Crear una carpeta le permitirá almacenar uno o más reportes dentro de ella. Siga los siguientes pasos:
 
-1. Diríjase y seleccione la opción ``Reportes``.
-2. Haga clic en el icono sobre ``Carpeta`` ubicada en el menú superior derecho.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Diríjase y seleccione la opción ``Reportes``.
+3. Haga clic en el icono sobre ``Carpeta`` ubicada en el menú superior derecho.
 
 .. image:: /imgs/Reportes/Reportes6.png
 
-3. Escriba el nombre de la ``Carpeta``.
-4. Presione ``Crear``.
+4. Escriba el nombre de la ``Carpeta``.
+5. Presione ``Crear``.
 
 Compartir Carpeta/Reporte
 =========================
 
-Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:
+Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:    
 
-1. Diríjase y presione la opción ``Reportes`` en el menú lateral.
-2. Identifique la carpeta o la forma de su interés.
-3. Presione el icono de engrane, seguido de ``Compartir`` o haga clic en el segundo ícono de compartir.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Diríjase y presione la opción ``Reportes`` en el menú lateral.
+3. Identifique la carpeta o reporte de su interés.
+4. Presione el icono de engrane, seguido de la opción ``Compartir`` o haga clic en el segundo ícono de compartir.
 
 .. image:: /imgs/Reportes/Reportes4.png
 
-4. Escriba el nombre del usuario con el que desea compartir la carpeta o el reporte y presione ``Enter``. Observe que el nombre del usuario aparecerá en la parte inferior de la ventana.
+5. Ingrese el nombre del usuario con el que desea compartir la carpeta o el reporte y presione ``Enter``. Observe que el nombre del usuario aparecerá en la parte inferior de la ventana.
+
+.. attention:: Compartir un reporte es útil para que otros usuarios puedan visualizar y consultar datos de una o varias formas, según la finalidad del reporte. Sin embargo, al compartir un reporte, también es necesario compartir los elementos que lo componen, es decir, la forma, catálogos o cualquier otro recurso del cual el reporte consulte la información.
+    
+    Revise :ref:`compartir` :octicon:`report;1em;sd-text-info` y :ref:`compartir-cat` :octicon:`report;1em;sd-text-info` para más detalles. 
 
 .. image:: /imgs/Reportes/Reportes5.png
 
-.. seealso:: 
+.. note:: Observe la diferencia entre los permisos permitidos para diferentes usuarios: 
 
-    La diferencia en las opciones de permisos se debe a que el usuario Omar Vázquez es una conexión. Es decir, pertenece a otra cuenta padre diferente a la suya.
+    Cuando comparte cualquier elemento con algún miembro perteneciente a la misma cuenta padre que la suya, puede otorgarle el permiso de ``Admin``. Sin embargo, al compartir un elemento con un usuario perteneciente a otra cuenta padre diferente a la suya pero dentro del mismo sistema de Linkaform, se establece una **conexión**, lo que significa que se limita a otorgarle permisos que puedan afectar al elemento compartido.
 
-    En cambio, el usuario Israel pertenece a la misma cuenta padre.
-
-5. Establezca al usuario el permiso que requiera. Tenga en cuenta las descripciones:
+6. Establezca al usuario el permiso que requiera. Tenga en cuenta las descripciones:
 
 - **Lectura**: El usuario puede ver todos los reportes dentro de la carpeta. 
-- **Compartir**: El usuario puede ver y compartir la carpeta con otros usuarios. 
-- **Admin**: El usuario tiene los mismos privilegios que los perfiles anteriores y puede modificar y eliminar los reportes.
+- **Compartir**: El usuario puede ver y compartir la carpeta o el reporte con otros usuarios. 
+- **Admin**: El usuario tiene los mismos privilegios que los perfiles anteriores, pero puede modificar y eliminar los reportes o la carpeta.
 - **Borrar registros**: Al activar esta opción, el usuario puede eliminar los reportes. Si no se activa, el usuario no puede eliminar los reportes, incluso si tiene el perfil de ``Admin``.
 
-.. caution:: Cuando se comparte una carpeta, los reportes que contiene heredan automáticamente los permisos. Sin embargo, compartir un reporte e intentar moverlo a una carpeta puede causar problemas.
+.. warning:: Cuando comparte una carpeta, los reportes que contiene heredan automáticamente los permisos. Sin embargo, tenga cuidado al compartir un reporte e intentar moverlo a una carpeta diferente, ya que esto puede causar problemas con los permisos y otras acciones inesperadas.
 
 .. tip:: 
     
@@ -80,7 +124,7 @@ Compartir una carpeta o un reporte es un proceso sencillo. Siga los pasos:
     
     Si necesita mover un reporte fuera de alguna carpeta, a la raíz, simplemente arrástrelo a la columna principal.
 
-Si necesita editar el nombre de su carpeta siga los siguientes pasos:
+Para editar el nombre de un carpeta o reporte, siga los siguientes pasos:
 
 .. grid:: 2
     :gutter: 0
@@ -101,9 +145,10 @@ Si necesita editar el nombre de su carpeta siga los siguientes pasos:
         :padding: 0
         :margin: 0
 
-        1. Presione el icono de engrane, seguido de ``Editar``.
-        2. Renombre a la carpeta.
-        3. Haga clic en ``Renombrar``.
+        1. Identifique la carpeta o reporte de su interés.
+        2. Presione el icono de engrane, seguido de ``Editar``.
+        3. Ingrese el nuevo nombre.
+        4. Haga clic en ``Renombrar``.
 
 .. _config-reporte:
 
@@ -112,11 +157,9 @@ Crear reporte
 
 Crear un reporte en Linkaform es un proceso sencillo. Siga el siguiente procedimiento teniendo en cuenta las notas y recomendaciones:
 
-.. caution:: Tenga en cuenta que estos son los pasos que debe seguir para configurar el reporte (previamente preparado) en su cuenta de Linkaform; sin embargo, NO constituyen la totalidad del proceso.
+.. warning:: Tenga en cuenta que estos son los pasos que debe seguir para configurar el reporte (previamente preparado) en su cuenta de Linkaform; sin embargo, **no** constituyen la totalidad del proceso.
 
-    Antes de realizar esta configuración, asegúrese de `cargar el script <#cargar-script>`_ :octicon:`report;1em;sd-text-info`.
-
-1. Ingrese a la aplicación web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en otro caso, en |Preproducción| :octicon:`report;1em;sd-text-info`.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
 
 .. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar el proceso de creación de reportes en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
 
@@ -125,99 +168,175 @@ Crear un reporte en Linkaform es un proceso sencillo. Siga el siguiente procedim
 
 .. image:: /imgs/Reportes/Reportes7.png
 
-.. note:: Pase el cursor sobre las opciones para conocer las funcionalidades que ofrecen.
+.. tip:: Pase el cursor sobre las opciones para conocer las funcionalidades que ofrecen.
 
 4. Configure el reporte teniendo en cuenta lo siguiente:
 
-- **Nombre del Reporte**: Identificador del reporte, no necesariamente es el mismo que se visualiza en el nombre del reporte.
+- **Nombre del Reporte**: Identificador del reporte, no necesariamente es el mismo que se visualiza al consultar el reporte.
 - **URL**: Dirección del reporte. 
 
-.. note:: En la siguiente figura, observe que se está asignando la ``URL`` de servido, indicando que es un reporte de demostración. Consulte la sección :ref:`url-acceso` :octicon:`report;1em;sd-text-info`, específicamente :ref:`link-servido` :octicon:`report;1em;sd-text-info`.
+.. note:: En la siguiente figura, observe que se está asignando la ``URL`` de servido. Consulte la sección :ref:`url-acceso` :octicon:`report;1em;sd-text-info`, específicamente :ref:`link-servido` :octicon:`report;1em;sd-text-info` para más detalle.
  
 - **Script**: Nombre del script previamente desarrollado en lenguaje Python. 
 
-.. important:: Automáticamente el ``ID`` del ``script`` se envía como parámetro en la ``URL``, especificando al reporte a dónde consultar la data. Por esta razón, el script no se coloca directamente en la ``URL``, ya que es dinámico.
+.. attention:: Asegúrese de `cargar el script <#cargar-script>`_ :octicon:`report;1em;sd-text-info`. Automáticamente, el ``ID`` del **script** se enviará como parámetro en la ``URL``, especificando al reporte en dónde deberá consultar la data. 
+    
+    Por esta razón, la **URL** solo incluye la estructura del reporte ya que el script es dinámico.
 
 .. image:: /imgs/Reportes/Reportes8.png
 
-.. seealso:: Consulte :ref:`crear-script` :octicon:`report;1em;sd-text-info` para desarrollar su script personalizado. 
-    
 5. Presione el botón ``Cargar``.
 
 Si necesita editar las configuraciones de su reporte, simplemente presione el icono de engranaje, seguido de ``Editar`` y modifique su reporte según las instrucciones anteriores.
 
 .. image:: /imgs/Reportes/Reportes9.png
 
-.. _generar-api-key:
+.. _cargar-script:
 
-Generar API key
-===============
+Cargar script
+=============
 
-Una ``API Key`` (clave de API) es un código alfanumérico único que se utiliza para autenticar y autorizar el acceso a toda la información de la cuenta.
+Para cargar un script en la plataforma de Linkaform, siga los siguientes pasos y lea las recomendaciones necesarias.
 
-Para generar una ``API Key``, siga las instrucciones:
+.. caution:: Tenga en cuenta que los siguientes pasos son necesarios para configurar el script previamente desarrollado.
 
-1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
-2. Inicie sesión en la cuenta padre. 
+    Antes de realizar esta configuración, asegúrese de haber creado el script de acuerdo a sus requerimientos. Revise la sección :ref:`crear-script` :octicon:`report;1em;sd-text-info` para más detalles.
 
-.. caution:: El administrador de la cuenta padre es el único que puede asignar a los usuarios dependientes de él una ``API Key``.
+1. Inicie sesión en la plataforma web en |Producción| :octicon:`report;1em;sd-text-info` o |Preproducción| :octicon:`report;1em;sd-text-info`.
 
-3. Seleccione ``Grupos > Usuarios`` ubicado en el menú lateral.
+.. important:: El proceso de configuración en producción y preproducción es idéntico. Sin embargo, se recomienda iniciar el proceso de creación de reportes en preproducción. Una vez finalizado y seguro de sus cambios, puede transferirlo a producción.
 
-.. image:: /imgs/Reportes/Reportes20.png
+2. Seleccione ``Formas > Scripts`` en el menú lateral.
+3. Seleccione el icono de documento ubicado en la parte superior derecha.
 
-4. Identifique y seleccione al usuario que desea asignar una ``API Key``. Utilice el buscador.
+.. image:: /imgs/Reportes/Reportes31.png
 
-.. image:: /imgs/Reportes/Reportes21.png
+Complete el formulario de acuerdo a los siguientes pasos:
 
-De manera detallada, podrá encontrar toda la información del usuario, desde permisos hasta dispositivos conectados, etc.
+1. Seleccione el archivo correspondiente al script. Automáticamente, se rellenará el nombre del script.
+2. Seleccione la imagen de Docker (versión del contenedor de scripts):
 
-.. image:: /imgs/Reportes/Reportes22.png
+- ``python3_lkf:latest`` es la imagen que actualmente se utiliza; usa la version 3 de python.
+- ``python:development`` **no** se usa para scripts actuales; utiliza la version 2 de python.
 
-5. Seleccione el menú desplegable ``API Keys``. Si no ha creado una ``API Key`` Simplemente haga clic en el enlace de color azul ``+ Crear api key de Linkaform``, que se muestra a continuación:
+.. hint:: Ingrese el número 3, automáticamente aparecerá la opción utilizada.
 
-.. image:: /imgs/Reportes/Reportes23.png
+    .. image:: /imgs/Reportes/Reportes32.1.png
 
-.. caution:: En caso de tener una ``API Key`` previamente creada, ya no es necesario volver a crear una nueva, ya que es utilizada por el archivo ``account_settings`` y si cambia podría provocar acciones inesperadas. 
+3. Seleccione los bullets que considere:
+
+- **Activity**: Active el bullet si desea que la actividad (ejecuciones exitosas o fallas) del script le sea notificada por correo electrónico a la cuenta padre.
+- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
+
+.. image:: /imgs/Reportes/Reportes32.png
+
+.. _visualizar-id-script:
+
+Ver ``ID`` del script
+---------------------
+
+Hay dos maneras para consultar el id de un script.
+
+**Log de script**
+
+Para consultar a través del log de flujo, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de scripts.
+2. Identifique el script del cual necesita conocer el ``id``.
+3. Seleccione el icono ``Ejecutar script`` para generar el log del script.
+
+.. note:: Solo ejecute si aún no tienen ningún log.
+
+4. Presione el icono ``Log de script``.
+
+.. image:: /imgs/Reportes/Reportes35.png
+
+5. Seleccione ``Log``.
+6. Presione ``Ctrl + f`` para abrir el buscador de la página.
+7. Escriba:
+
+.. code-block::
+
+    script_id.
+
+8. Copie y pegue el ``script_id`` según lo requiera. 
+
+.. image:: /imgs/Reportes/Reportes36.png
+
+**Herramientas de desarrollador**
+
+Para utilizar las herramientas de desarrollador, siga los pasos:
+
+1. Ubíquese en la interfaz de scripts.
+2. Presione ``Clic derecho > Inspeccionar`` o bien presione ``F12``.
+3. Ubíquese en la pestaña ``Network``.
+4. Recargue la página sin cerrar la ventana de inspección.
+5. Identifique el script que necesite saber el ``id``.
+6. Seleccione la opción ``Compartir``. 
+
+.. image:: /imgs/Reportes/Reportes33.png
+
+7. Identifique la línea ``file_shared_email/?file_shared=`` en el inspector de código.
+8. Copie y pegue el ``id``.
+
+.. image:: /imgs/Reportes/Reportes34.png
 
 .. _log-script:
 
 Log de script
 =============
 
-El ``log`` de script es una herramienta útil que se utiliza para depurar (*debuggear*) y verificar la correcta ejecución de los scripts.
+El registro de script es una funcionalidad útil que se utiliza para depurar y verificar la correcta ejecución de los scripts.
 
-Para visualizar el ``log`` de un script, siga los siguientes pasos:
+Para visualizar el log de un script, siga los siguientes pasos:
 
-1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
-2. Inicie sesión utilizando sus credenciales.
-3. Seleccione ``Formas > Scripts`` en el menú lateral. Podrá observar todos los scripts cargados en la cuenta.
+.. grid:: 2
+    :gutter: 0
+    :padding: 0
+    :margin: 0
 
-.. image:: /imgs/Reportes/Reportes24.png
+    .. grid-item-card:: 
+        :columns: 8
+        :padding: 0
+        :margin: 0
 
-4. Identifique el script del cual desea conocer la información.
-5. Presione el último icono ``Script log``.
+        1. Inicie sesión en la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en |Preproducción| :octicon:`report;1em;sd-text-info`.
+        2. Seleccione ``Formas > Scripts`` en el menú lateral. Podrá observar todos los scripts cargados en la cuenta.
+        3. Identifique el script de su interés.
+
+    .. grid-item-card:: 
+        :columns: 4
+        :padding: 0
+        :margin: 0
+
+        .. image:: /imgs/Reportes/Reportes24.png
+
+4. Presione el icono play para ejecutar el script.
 
 .. image:: /imgs/Reportes/Reportes25.png
 
-Observe la siguiente pantalla, que es el historial de los ``logs`` de script cada vez que se ejecuta. En esta ventana, puede ver la fecha y hora de ejecución, el nombre del script y su estatus, que es el más importante, ya que indica si se ejecutó exitosamente.
+5. Presione el último icono, ``Log de Script``. Esto abrirá un modal donde encontrará el historial e información útil, como fechas de ejecución y estado del script. Preste mucha atención al estado, ya que le indicará si la ejecución del script fue exitosa o no.
+
+.. image:: /imgs/Reportes/Reportes25.1.png
 
 6. Presione la opción ``log`` para más detalles.
 
-.. image:: /imgs/Reportes/Reportes26.png
+.. seealso:: Consulte la siguiente sección sobre la `interpretación del log <#interpretacion-log-script>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
-.. seealso:: Consulte `la siguiente sección <#interpretacion-log-script>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+.. image:: /imgs/Reportes/Reportes26.png
 
 .. _interpretacion-log-script:
 
 Interpretación log de script
 ----------------------------
 
-La línea ``print(sys.argv)`` imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para depurar (*debuggear*) código en Python.
+El registro del script le proporciona información util de la ejecución del script.
 
-.. seealso:: Consulte :ref:`main` :octicon:`report;1em;sd-text-info` para más detalles.
-    
-La variable ``sys.argv`` es una lista que contiene los argumentos pasados al script en la línea de comandos. Al imprimir ``sys.argv``, puede verificar si los argumentos que esperaba están siendo pasados correctamente al script y entender la estructura y valores de esos argumentos.
+Regularmente, en la interpretación del log se analizan las consultas a la base de datos (querys), errores de ejecución, peticiones y otros datos relevantes relacionados con el script.
+
+Toda la información en el log del registro se genera gracias a la línea de código ``print(sys.argv)`` del script. Esta línea imprime una cadena de objetos JSON con los argumentos de la línea de comandos, lo cual es útil para debuggear código en Python.
+
+La variable sys.argv es una lista que contiene los argumentos pasados al script en la línea de comandos. Al imprimir sys.argv, se puede verificar si los argumentos que esperaba están siendo pasados correctamente al script y entender la estructura y valores de esos argumentos.
 
 Regularmente, lo que imprime ``sys.argv`` son tres argumentos, de los cuales el tercero o de la ``posición [2]`` es la más importante:
 
@@ -287,94 +406,31 @@ Si experimenta errores durante la ejecución del script, la impresión de ``sys.
     "data": {"script_id": 123, "date_from": "2023-08-28", "option": 0, "date_to": ""}, "account_id": 11702, "name": "reporte_encuestas.py"}', 'False'
     ]
 
-.. _cargar-script:
+.. _generar-api-key:
 
-Cargar script
-=============
+Generar API key
+===============
 
-Para cargar un script en la aplicación web de Linkaform, siga los siguientes pasos y lea las recomendaciones necesarias.
+Una ``API Key`` (clave de API) es un código alfanumérico único que se utiliza para autenticar y autorizar el acceso a toda la información de la cuenta.
 
-.. caution:: Tenga en cuenta que los siguientes pasos son necesarios para configurar el script previamente desarrollado.
+.. warning:: El usuario con perfil de administrador es el único que puede generar una ``API Key``.
 
-    Antes de realizar esta configuración, asegúrese de haber creado su script de acuerdo a sus necesidades. Revise la sección sobre :ref:`crear-script` :octicon:`report;1em;sd-text-info`.
+Para generar una ``API Key``, siga las instrucciones:
 
-1. Ingrese a la aplicación web de |Linkaform| :octicon:`report;1em;sd-text-info`.
-2. Inicie sesión con sus credenciales.
+1. Inicie sesión en la plataforma web de Linkaform en |Producción| :octicon:`report;1em;sd-text-info` o en |Preproducción| :octicon:`report;1em;sd-text-info`.
+2. Seleccione ``Grupos > Usuarios`` ubicado en el menú lateral.
+3. Identifique y seleccione su cuenta. Observe la información que le proporciona. 
+4. Identifique el campo ``ApiKey``.
 
-.. note:: En caso de no contar con credenciales, solicite asistencia a soporte técnico.
+- Presione el icono en forma de rueda para generar una nueva key.
+- Presione el icono de la papelera para eliminar la key actual.
+- Presione el icono del portapapeles para copiar la key.
 
-3. Seleccione ``Formas > Scripts`` en el menú lateral.
-4. Seleccione el icono de documento ubicado en la parte superior derecha para cargar el script.
+.. image:: /imgs/Reportes/Reportes23.png
 
-.. image:: /imgs/Reportes/Reportes31.png
+.. warning:: En caso de que ya exista una ``API Key``, no es necesario crear una nueva, ya que probablemente esté siendo utilizada para otras operaciones. Cambiarla podría provocar acciones inesperadas.
 
-Complete el formulario de acuerdo a los siguientes pasos:
-
-1. Seleccione el archivo correspondiente al script. Automáticamente, se rellenará el nombre del script.
-2. Seleccione la imagen de Docker (versiones de las herramientas):
-
-- ``python:development`` no se usa para scripts actuales; utiliza la version 2 de python.
-- ``python3_lkf:latest`` es la imagen que actualmente se utiliza; usa la version 3 de python.
-
-3. Seleccione los bullets que considere:
-
-- **Activity**: Active el bullet si desea que la actividad (ejecuciones exitosas o fallas) del script le sea notificada por correo electrónico de la cuenta padre.
-- **Pública**: Active el bullet si desea consultar el script a través de un ``fetch``, sino está indicando que desea consultar el script a través del ``JWT`` del usuario que hace la consulta del script. Es decir, verifica a través del ``token`` si el usuario tiene los permisos necesarios para consultar el script. 
-
-.. note:: Regularmente, los bullet están desactivados.
-
-.. image:: /imgs/Reportes/Reportes32.png
-
-.. _visualizar-id-script:
-
-Ver ``ID`` del script
----------------------
-
-Hay dos maneras para consultar el id de un script.
-
-**Log de script**
-
-Para consultar a través del log de flujo, siga los siguientes pasos:
-
-1. Ubíquese en la interfaz de scripts.
-2. Identifique el script del cual necesita conocer el ``id``.
-3. Seleccione el icono ``Ejecutar script`` para generar el log del script.
-
-.. note:: Solo ejecute si aún no tienen ningún log.
-
-4. Presione el icono ``Log de script``.
-
-.. image:: /imgs/Reportes/Reportes35.png
-
-5. Seleccione ``Log``.
-6. Presione ``Ctrl + f`` para abrir el buscador de la página.
-7. Escriba:
-
-.. code-block::
-
-    script_id.
-
-8. Copie y pegue el ``script_id`` según lo requiera. 
-
-.. image:: /imgs/Reportes/Reportes36.png
-
-**Herramientas de desarrollador**
-
-Para utilizar las herramientas de desarrollador, siga los pasos:
-
-1. Ubíquese en la interfaz de scripts.
-2. Presione ``Clic derecho > Inspeccionar`` o bien presione ``F12``.
-3. Ubíquese en la pestaña ``Network``.
-4. Recargue la página sin cerrar la ventana de inspección.
-5. Identifique el script que necesite saber el ``id``.
-6. Seleccione la opción ``Compartir``. 
-
-.. image:: /imgs/Reportes/Reportes33.png
-
-7. Identifique la línea ``file_shared_email/?file_shared=`` en el inspector de código.
-8. Copie y pegue el ``id``.
-
-.. image:: /imgs/Reportes/Reportes34.png
+    En el desarrollo de reportes, utilizará esta ``API Key`` en el :ref:`account-settings` :octicon:`report;1em;sd-text-info`.
 
 .. _informacion-cuenta:
 
@@ -433,3 +489,8 @@ Si desea crear su propio reporte personalizado, le sugerimos revisar las siguien
 .. |Preproducción| raw:: html
 
    <a href="https://preprod.linkaform.com/" target="_blank">preproducción</a>
+
+.. |faq| raw:: html
+
+   <a href="https://faq.linkaform.com/" target="_blank">FAQs de Linkaform</a>
+   

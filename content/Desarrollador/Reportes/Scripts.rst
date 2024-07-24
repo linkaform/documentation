@@ -15,7 +15,7 @@ Una vez que haya desarrollado y esté seguro de su script, cárguelo en la aplic
 Estructura de archivos
 ======================
 
-Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info` encontrarán los archivos correspondientes al back-end del reporte. Por favor, sigan los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
+Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info` encontrarán los archivos correspondientes al back-end del reporte. Por favor, siga los siguientes pasos para crear los archivos necesarios y continúen revisando cada sección correspondiente a la explicación sobre su contenido.
 
 1. Cree una carpeta exclusiva dentro de la carpeta ``infosync-scripts`` para sus reportes en caso de no contar con una.
 
@@ -28,13 +28,12 @@ Dentro del :ref:`repositorio-infosync-scripts` :octicon:`report;1em;sd-text-info
 
 .. important:: En las siguientes secciones se explicará el contenido de cada archivo. Sin embargo, considere que NO se tiene un estándar establecido para el contenido. No obstante, utilice los ejemplos como base para sus proyectos futuros.
 
-
 .. _account-settings:
 
 Archivo account settings
 ------------------------
 
-.. caution:: El archivo ``account_settings`` escrito en ``python`` contiene información y configuraciones sensibles de la cuenta del cliente. 
+.. caution:: El archivo ``account_settings`` desarrollado en ``python`` contiene información y configuraciones sensibles de la cuenta del cliente. 
     
 Si requiere hacer actualizaciones en el archivo ``account_settings`` y no encuentra el archivo, lo podrá encontrar con el nombre del cliente seguido de ``settings``, por ejemplo: ``linkaform_settings``.
 

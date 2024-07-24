@@ -6,7 +6,7 @@ Formas
 
 En Linkaform, el término **forma** hace referencia a un formulario digital que posibilita la recopilación de información. En este apartado, encontrará documentación sobre las funcionalidades que ofrece una forma, entre las que se incluyen:
 
-- Crear y editar de formas.
+- Crear y editar formas.
 - Crear carpetas para organizar y almacenar formas.
 - Compartir formas con otros usuarios.
 - Responder formas para generar nuevos registros.
@@ -197,7 +197,7 @@ Los campos de tipo texto son utilizados para capturar datos que consisten en car
         
         El campo **Email** permite configurar la forma para enviar una copia del registro capturado por correo. Para activar esta función, seleccione la opción ``Enviar Email``.
 
-        .. caution:: Esta opción está disponible unicamente para formas. 
+        .. attention:: Esta opción está disponible unicamente para formas. 
 
         .. image:: /imgs/Formas/Formas6.4.png
 
@@ -364,7 +364,6 @@ Revise las siguientes configuraciones:
   .. image:: /imgs/Formas/Formas9.png
 
 .. dropdown:: Configuración de la notificación
-  :open:
 
   La configuración de correo electrónico permite establecer y personalizar cómo se gestionan y entregan los correos electrónicos para notificar al destinatario según se responda la forma.
 
@@ -583,7 +582,7 @@ Un grupo repetitivo es un campo utilizado para agregar varios sets dentro de él
 
 .. image:: /imgs/Formas/Formas12.jpg
 
-.. caution:: Esta opción está disponible unicamente para formas. 
+.. attention:: Esta opción está disponible unicamente para formas. 
 
 Para utilizarlo, siga estos pasos:
 
@@ -1021,17 +1020,13 @@ La configuración de flujos se utiliza para automatizar procesos en las formas.
 
 Si desea configurar un flujo para una acción específica, siga estos pasos:
 
-1. Diríjase a ``Opciones > Configuración de Flujos``.
-
-En esta sección, Linkaform presenta una página en blanco donde se agregarán los flujos deseados para esta forma.
-
-2. Haga clic en el botón verde para ``Agregar Regla``.
+1. Edite la forma a la que desea aplicar una configuración de flujo.
+2. Seleccione ``Opciones > Configuración de Flujos``. Será redirigido a otra página.
+3. Haga clic en el botón verde para ``Agregar Regla``.
 
 .. image:: /imgs/Formas/Formas26.png
 
-Ahora continúe con la configuración siguiendo las recomendaciones y teniendo en cuenta las secciones que la componen.
-
-3. Asigne un nombre al flujo. Para hacerlo, simplemente haga clic en ``Nombre de regla`` y establezca el nombre.
+4. Asigne un nombre al flujo. Para hacerlo, simplemente haga clic en ``Nombre de regla`` y establezca el nombre.
 
 .. important:: Es importante establecer un nombre para el flujo, ya que facilita la identificación y modificación rápida cuando sea necesario editar este flujo, especialmente si hay muchos flujos configurados.
 
@@ -1647,7 +1642,7 @@ La creación de una carpeta en Linkaform sirve para almacenar una o más formas 
 Compartir Carpeta / Forma
 -------------------------
 
-Compartir una carpeta o una forma es un proceso similar y sencillo, siga los pasos:
+Compartir una carpeta o una forma es un proceso sencillo, siga los pasos:
 
 1. Diríjase y presione la opción ``Formas > Mis Formas`` en el menú lateral.
 2. Identifique la carpeta o la forma de su interés.
@@ -1663,7 +1658,7 @@ Compartir una carpeta o una forma es un proceso similar y sencillo, siga los pas
 - **Admin**: El usuario tendrá los mismos privilegios que los perfiles anteriores, además de poder modificar y eliminar las formas.
 - **Borrar registros**: Al activar esta opción, el usuario podrá eliminar registros de las formas. Si no se activa, el usuario no podrá eliminar registros incluso si tiene el perfil de ``Admin``.
 
-.. important:: Cuando se comparte una carpeta, las formas que contiene heredan automáticamente los permisos.
+.. warning:: Cuando se comparte una carpeta, las formas que contiene heredan automáticamente los permisos.
 
 .. tip:: Si necesita mover una forma a una carpeta, simplemente arrástrela al lugar que necesite. Si necesita mover una forma fuera de alguna carpeta, a la raíz, simplemente arrástrela a la columna principal.
 
@@ -1677,7 +1672,7 @@ Las formas proporcionan opciones que permiten una rápida gestión de las mismas
 - **Editar**: Permite realizar cambios en la estructura de la forma. Se pueden agregar campos, modificar respuestas, etc.
 - **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo.
 
-.. caution:: Al duplicar una forma, Linkaform NO duplica flujos de trabajo.
+.. warning:: Al duplicar una forma, Linkaform **no** duplica flujos de trabajo.
 
 - **Responder**: Permite crear registros de la forma deseada. Simplemente haga clic sobre la opción y se mostrará la estructura de la forma en modo ``Responder``. Al terminar de capturar la información, haga clic en ``Mandar respuestas``.
 

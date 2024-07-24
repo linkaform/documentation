@@ -411,9 +411,40 @@ Observe que simplemente debe crear una etiqueta HTML con el atributo target segu
 Enlaces internos
 ----------------
 
-Si desea enlazar a otra parte de su propia documentación, puede hacerlo utilizando dos funciones especiales de reST proporcionada por Sphinx.
+Si desea enlazar a otra sección de su propia documentación, puede hacerlo utilizando dos funciones especiales de reST proporcionadas por Sphinx.
 
-Para que la función de reST opere correctamente, los nombres de las etiquetas deben ser únicos. Si coloca una etiqueta directamente antes del título de una sección, esta función tomará ese nombre por defecto y lo mostrará; es decir, no podrá modificar el nombre que quiera presentar. Por ejemplo:
+Siga los siguientes pasos y considere los siguientes puntos antes de utilizar la función de enlace:
+    
+1. Identifique la sección del titulo o subtitulo de la sección a la que desea hacer referencia.
+2. Establezca el nombre de etiqueta de referencia.
+
+.. note:: Se recomienda el uso del :ref:`icons` para destacar al usuario que se trata de un enlace.
+
+.. warning:: 
+
+    - Para que la función de reST opere correctamente, los nombres de las etiquetas deben ser únicos.
+    - Cuando coloca una etiqueta directamente antes del título de una sección, esta función tomará el nombre del titulo por defecto y lo mostrará; es decir, el nombre de la sección **no se modificara**.
+    - Al establecer el nombre de la etiqueta de referencia, esta debe comenzar con un guion bajo. Por ejemplo:
+
+.. code-block::
+    :caption: Establezca la etiqueta de referencia
+        
+    .. _mi-etiqueta-de-referencia:
+
+Enlaces internos
+----------------
+
+3. Para llamar a la etiqueta de referencia utilice la siguiente estructura:
+
+.. code-block::
+    :caption: Llame a la etiqueta de referencia
+
+    :ref:`mi-etiqueta-de-referencia` :octicon:`report;1em;sd-text-info`
+
+.. warning:: 
+    - Al hacer referencia a una etiqueta, omita el guion bajo al inicio.
+
+Observe el siguiente ejemplo completo:
 
 .. tab-set::
 
@@ -434,22 +465,19 @@ Para que la función de reST opere correctamente, los nombres de las etiquetas d
         .. code-block::
             :caption: Haga referencia a la etiqueta
 
-            Se refiere a la sección misma :ref:`mi-etiqueta-de-referencia` :octicon:`report;1em;sd-text-info`.
+            Se refiere a la sección misma :ref:`mi-etiqueta-de-referencia` :octicon:`report;1em;sd-text-info`
 
-.. important:: 
-    Las etiquetas de referencia deben comenzar con un guion bajo. 
-    
-    Al hacer referencia a una etiqueta, se debe omitir el guion bajo.
+La otra opción de hipervínculo interno es utilizando etiquetas personalizadas. Esta función es más cómoda y permite personalizar el mensaje del hipervínculo. Considere los puntos mencionados:
 
-    Si necesita información más detallada acerca de hipervínculos, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/referencing.html#ref-role/>`_ :octicon:`report;1em;sd-text-info`.
-
-La otra opción de hipervínculo interno es utilizando etiquetas personalizadas, como se muestra a continuación:
+.. warning:: 
+    - El nombre de la etiqueta debe ser una sola palabra; no puede incluir espacios o caracteres.
+    - Esta función de enlace personalizado está limitada a utilizarse unicamente en la misma pagina. Es decir, no podrá utilizar esta etiqueta para hacer referencia a otras paginas diferentes a las que se encuentra.
 
 .. tab-set::
 
     .. tab-item:: Ejemplo
 
-        Se refiere a la sección misma, ver `Personaliza <#etiqueta>`_ :octicon:`report;1em;sd-text-info`
+        Se refiere a la sección misma, ver `Personaliza el nombre <#etiqueta>`_ :octicon:`report;1em;sd-text-info`
 
     .. tab-item:: Estructura
 
@@ -466,7 +494,7 @@ La otra opción de hipervínculo interno es utilizando etiquetas personalizadas,
 
             Se refiere a la sección misma, ver `Personaliza <#etiqueta>`_ :octicon:`report;1em;sd-text-info`
 
-.. important:: Esta función es más cómoda y permite personalizar el mensaje del hipervínculo. El nombre de la etiqueta debe ser una sola palabra; no puede incluir espacios, por ejemplo, ``nombre_etiqueta`` debe ser ``etiqueta``.
+.. seealso:: Si necesita información más detallada acerca de hipervínculos, puede consultar la documentación disponible en `reStructuredText  <https://www.sphinx-doc.org/en/master/usage/referencing.html#ref-role/>`_ :octicon:`report;1em;sd-text-info`.
 
 Directivas
 ==========

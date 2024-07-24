@@ -8,7 +8,7 @@ Los PDF son una funcionalidad que Linkaform ofrece al momento de consultar y des
 
 A lo largo de la documentación, podrá encontrar orientación sobre los aspectos necesarios para la creación de sus propios PDFs personalizados.
 
-.. important:: Tenga en cuenta que el desarrollo de PDFs se basa en la información recopilada de las formas (formularios digitales), por lo que es importante que comprenda su funcionamiento. Consulte el siguiente enlace para revisar la documentación oficial de las :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
+.. important:: Tenga en cuenta que el desarrollo de reportes se basa en la información recopilada de las formas (formularios digitales), por lo que es importante que comprenda su funcionamiento. Consulte el siguiente :ref:`section-forms` :octicon:`report;1em;sd-text-info` para más información.
 
 Subdominios
 ===========

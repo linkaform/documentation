@@ -77,3 +77,18 @@ Explora nuestras herramientas de desarrollo y descubre cómo puedes integrar y m
                 <i class="fa-solid fa-chart-line fa-2x" style="margin-right:18px"></i>
             </body>
         </html>
+
+.. |Modulos| raw:: html
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <i class="fa-solid fa-boxes-stacked fa-2x" style="margin-right:18px"></i>
+            </body>
+        </html>
+        
