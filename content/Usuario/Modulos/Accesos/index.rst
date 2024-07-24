@@ -1,87 +1,123 @@
 .. _doc-accesos:
 
-==============
-Módulo Accesos
-==============
+===================
+Módulo de Seguridad
+===================
 
-El **módulo Accesos** está diseñado para gestionar y controlar el acceso de personas a una ubicación específica. 
-Este módulo es esencial para garantizar la seguridad y la organización dentro de cualquier instalación, permitiendo a los usuarios autorizados supervisar y administrar las entradas y salidas, así como otras funciones relacionadas con la seguridad.
+El **módulo de Seguridad** está diseñado para gestionar y controlar el acceso de personas a una ubicación. Su objetivo es garantizar la seguridad, proteger activos y recursos, y mantener un registro detallado de las actividades de entrada y salida, así como otras funciones relacionadas con la seguridad.
 
-El propósito principal del módulo de Accesos es proporcionar un control riguroso sobre quién puede ingresar a una instalación, cuándo y con qué permisos. Este módulo es utilizado principalmente por el personal de seguridad, recepcionistas y recursos humanos para crear pases de entrada, gestionar perfiles de visitantes y empleados, y registrar incidencias y fallos. Además, se enfoca en:
+Este módulo opera mediante una interfaz de usuario utilizada exclusivamente por el personal de seguridad en las casetas de acceso. Las casetas son puntos de control que permiten la entrada a la ubicación.
 
-- **Control de entradas y salidas**: Asegura que solo personas autorizadas ingresen a las áreas designadas.
-- **Gestión de permisos**: Asigna y controla permisos específicos necesarios para ciertos perfiles de visitantes y empleados.
-- **Registro de incidencias y fallos**: Mantiene un registro detallado de cualquier incidente o fallo reportado.
-- **Concesión y control de equipos**: Facilita el seguimiento de equipos y objetos dentro de la instalación.
+El módulo de seguridad es utilizado por dos roles diferentes:
 
-El módulo de Accesos está compuesto por varias formas y catálogos que se interrelacionan para ofrecer una funcionalidad completa y detallada. 
-A continuación, se presenta una lista de los componentes del módulo, organizados en el orden lógico de su utilización:
+- **Personal dentro de la instalación**: Son responsables de generar pases de entrada (invitaciones) y gestionar perfiles de visitantes y empleados. Este personal interactúa directamente con algunas formas y catálogos del módulo.
+- **Personal de Seguridad**: Utiliza la interfaz de usuario para ejecutar funciones de control de acceso, reportar incidencias, gestionar equipos y más.
 
-1. **Notas**
-2. **Checkin - Checkout Casetas**
-3. **Definición de Permisos**
-4. **Configuración de Perfiles**
-5. **Visita Autorizada**
-6. **Carga de Permisos de Visitantes**
-7. **Pase de Entrada**
-8. **Bitácora de Entradas y Salidas**
-9. **Bitácora de Gafetes y Lockers**
-10. **Bitácora de Incidencias**
-11. **Bitácora de Fallas**
-12. **Concesión de Activos Único**
-13. **Concesión de Activos Múltiple**
-14. **Bitácora de Artículos Perdidos**
-15. **Configuración de Recorridos**
-16. **Bitácora de Rondines**
+.. seealso:: El personal de seguridad no interactúa directamente con las formas y catálogos; consulte :ref:`doc-base` :octicon:`report;1em;sd-text-info` para más detalles.
 
-Catálogos
+Esta documentación se centra en explicar el funcionamiento, los flujos y las configuraciones de las formas y catálogos que involucra el módulo de seguridad. A medida que avance en la lectura, encontrará más detalles sobre cada forma y catálogo, junto con ejemplos y guías paso a paso para su correcta implementación y utilización.
 
-1. **Definición de Exámenes**
-2. **Definición de Permisos**
-3. **Perfiles**
-4. **Configuración de Perfiles**
-5. **Visita Autorizada**
-6. **Pase de Entrada**
-7. **Lockers**
-8. **Configuración de Gafetes y Lockers**
-9. **Gafetes**
-10. **Lista de Incidentes**
-11. **Lista de Fallas**
-12. **Configuración de Recorridos**
-13. **Configuración de Recorridos Áreas de Inspección**
+Para acceder a las formas del módulo, seleccione la opción ``Formas > Mis Formas`` en el menú lateral y ubique la carpeta ``Seguridad``.
 
-.. hint:: Para facilitar la comprensión y el uso del módulo, esta documentación se organiza de manera lógica siguiendo el flujo de procesos y no estrictamente separada entre formas y catálogos. Esto le permitirá comprender cómo cada componente interactúa y se integra con los demás dentro del contexto del control de accesos. A medida que avance en la documentación, encontrará más detalles sobre cada forma y catálogo, proporcionando ejemplos y guías paso a paso para su correcta implementación y utilización.
+.. image:: /imgs/Modulos/Accesos/Accesos2.png
+
+Para acceder a los catálogos, seleccione la opción ``Catálogos > Catálogos`` en el menú lateral y ubique la carpeta ``Seguridad``.
+
+.. image:: /imgs/Modulos/Accesos/Accesos3.png
+
+.. warning:: Antes de utilizar el módulo, asegúrese de contar con la instalación y registros necesarios del :ref:`doc-employee` :octicon:`report;1em;sd-text-info`, :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` y :ref:`doc-contratistas` :octicon:`report;1em;sd-text-info`.
+
+Generar Pase de Entrada
+=======================
+
+Observe y analice el siguiente diagrama de flujo del módulo de seguridad. Este diagrama representa de manera general el flujo de acciones necesarias para generar un pase de entrada. Cada recuadro representa un proceso que involucra varios pasos. Siga el proceso y continúe leyendo las secciones en el orden indicado en el diagrama para comprender completamente el funcionamiento del módulo.
+
+.. image:: /imgs/Modulos/Accesos/Accesos2.png
 
 Definición de Permisos
-======================
-
-El **Catálogo de Definición de Permisos** es esencial para establecer y gestionar los permisos necesarios que se asignan a los perfiles de visitantes o empleados. Este catálogo se sincroniza con el **Catálogo de Definición de Exámenes** para garantizar que todos los requisitos necesarios sean cumplidos antes de otorgar un permiso.
-
-Campos del Catálogo de Definición de Permisos
----------------------------------------------
-
-1. **Nombre del Permiso o Certificación**: El nombre descriptivo del permiso o certificación.
-2. **Requerimientos**: Los requisitos necesarios para obtener el permiso, que pueden incluir aprobaciones de exámenes u otros criterios específicos.
-3. **Vigencia**: El período de validez del permiso o certificación.
-4. **Vigencia Expresada en**:
-    - **Ejemplo de documento del permiso/certificación**: Un documento que demuestre el permiso o certificación.
-    - **Ejemplo en imagen**: Una imagen del documento que acredite el permiso o certificación.
-5. **Examen**: El examen que debe ser aprobado para obtener el permiso, sincronizado con el **Catálogo de Definición de Exámenes**.
-6. **Estado del Permiso/Certificación**: El estado actual del permiso o certificación.
-
-Definición de Exámenes
 ----------------------
 
-El **Catálogo de Definición de Exámenes** define los exámenes necesarios para ciertos permisos y perfiles. Este catálogo es utilizado por la **Forma de Definición de Permisos** para validar los requisitos.
+La **Definición de Permisos** es un proceso importante dentro del módulo de seguridad que permite establecer y gestionar los requisitos necesarios para los perfiles de visitantes.
 
-Campos del Catálogo de Definición de Exámenes
+Este proceso garantiza que cada visitante cumpla con los requisitos específicos necesarios antes de ser autorizado para acceder a las instalaciones. Al definir y gestionar estos permisos, se asegura que solo aquellos que cumplen con los criterios establecidos puedan ingresar, mejorando así la seguridad y el control dentro de las instalaciones.
 
-1. **ID Forma**: Identificador único del examen.
-2. **Nombre del Examen**: El nombre descriptivo del examen.
+Observe y analice el siguiente diagrama y consulte las siguientes secciones para más detalles de los elementos:
+
+.. image:: /imgs/Modulos/Accesos/Accesos5.png
+   :align: center
+
+.. _catalog-examenes:
+
+Catálogo: ``Definición de Exámenes``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este catálogo permite definir los exámenes necesarios para ciertos permisos requeridos. Estos exámenes pueden ser necesarios para otorgar acceso a áreas específicas, cumplir con requisitos de seguridad u otros criterios establecidos.
+
+Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
+      
+.. tab-set::
+
+    .. tab-item:: Estructura
+
+      Este catálogo incluye los siguientes campos principales:
+
+      - **ID Forma**: Identificador único de la forma que contiene el examen.
+      - **Nombre del Examen**: El nombre descriptivo del examen.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos6.png
+
+    .. tab-item:: Registros
+
+      Para aprovechar todas las funcionalidades que ofrece |linkaform| :octicon:`report;1em;sd-text-info`, cree formularios con ponderaciones específicas para cada examen que desea que el visitante apruebe para que el examen sea considerado válido.
+      
+      .. seealso:: Consulte :ref:`ponderacion-conf` :octicon:`report;1em;sd-text-info` para más detalles sobre cómo configurar su forma.
+
+      Cada registro en este catálogo representa un tipo de examen o certificado necesario para los visitantes, observe el ejemplo:
+
+      .. image:: /imgs/Modulos/Accesos/Accesos7.png
+
+.. _catalog-permisos:
+
+Catálogo: ``Definición de Permisos``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este catálogo contiene la lista de permisos o certificaciones necesarias según algún tipo de perfil. Incluye los mismos registros que la `forma Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info`. Revise la documentación correspondiente para obtener más detalles sobre la estructura del mismo.
+
+.. warning:: Este catálogo está preparado para recibir registros derivados de una forma. Por lo tanto, no es necesario ingresar manualmente los registros. Simplemente complete la forma `Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info` y |linkaform| :octicon:`report;1em;sd-text-info` se encargará de sincronizar automáticamente los registros en este catálogo.
+
+.. image:: /imgs/Modulos/Accesos/Accesos8.png
+
+.. _form-permisos:
+
+Forma: ``Definición de Permisos``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Esta forma permite crear y gestionar los permisos o certificaciones necesarias según el tipo de perfil. Al definir y configurar adecuadamente los exámenes, permisos y perfiles, se asegura que solo personas debidamente autorizadas y preparadas puedan acceder a áreas críticas dentro de la ubicación.
+
+A través de esta forma, se pueden registrar nuevos permisos y asignar requisitos específicos a cada uno.
+
+La forma incluye los siguientes campos:
+
+- **Nombre del Permiso o Certificación**: Nombre descriptivo del permiso o certificación.
+- **Requerimientos**: Requisitos necesarios para el permiso, que pueden incluir aprobaciones de exámenes u otros criterios específicos.
+- **Vigencia**: Período de validez del permiso o certificación, expresado en número entero.
+- **Vigencia Expresada en**: Periodo de validez del permiso o certificación en días, meses, semanas o años.
+- **Ejemplo de Documento del Permiso/Certificación**: Documento que demuestra el permiso o certificación.
+- **Ejemplo en Imagen**: Imagen del documento que acredita el permiso o certificación.
+- **Examen**: Examen que debe ser aprobado para obtener el permiso, sincronizado con el **Catálogo de Definición de Exámenes**.
+- **Estado del Permiso/Certificación**: Estado actual del permiso o certificación.
+
+Cada vez que se registre un nuevo permiso a través de esta forma, el **Catálogo de Definición de Permisos** se actualizará automáticamente con la nueva entrada.
+
+.. note:: La sincronización entre los registros de la forma y el catálogo garantiza que todos los permisos y requisitos estén actualizados y disponibles para la asignación a los perfiles de visitantes.
+
+La forma de **Definición de Permisos** valida que los requisitos de examen sean cumplidos antes de que se puedan asignar permisos a los visitantes. Los registros en el catálogo deben completarse y estar actualizados para asegurar una correcta gestión de los permisos.
 
 La sincronización entre el **Catálogo de Definición de Permisos** y el **Catálogo de Definición de Exámenes** garantiza que los permisos otorgados se basen en la aprobación de exámenes específicos. Esto asegura que solo las personas que cumplan con todos los requisitos necesarios puedan acceder a áreas restringidas o desempeñar ciertas funciones.
 
-Ejemplo
+**Ejemplo:**
+
+En este ejemplo, el **Catálogo de Definición de Permisos** utiliza la información del **Catálogo de Definición de Exámenes** para validar que el permiso de **Acceso a Zonas Elevadas** solo sea otorgado a personas que hayan aprobado el **Examen de Seguridad en Alturas**.
 
 1. **Catálogo de Definición de Exámenes**:
    - ID Forma: 001
@@ -91,84 +127,14 @@ Ejemplo
    - Nombre del Permiso o Certificación: Acceso a Zonas Elevadas
    - Requerimientos: Aprobación del Examen de Seguridad en Alturas
    - Vigencia: 1 año
-   - Vigencia Expresada en:
-       - Documento del permiso/certificación
-       - Imagen del documento
+   - Vigencia Expresada en: 12 meses
+   - Ejemplo de Documento del Permiso/Certificación: Documento adjunto
+   - Ejemplo en Imagen: Imagen del documento adjunto
    - Examen: Examen de Seguridad en Alturas (ID Forma: 001)
    - Estado del Permiso/Certificación: Activo
 
-En este ejemplo, el **Catálogo de Definición de Permisos** utiliza la información del **Catálogo de Definición de Exámenes** para validar que el permiso de **Acceso a Zonas Elevadas** solo sea otorgado a personas que hayan aprobado el **Examen de Seguridad en Alturas**.
+.. LIGAS EXTERNAS
 
-Catálogos de Configuración y Definición
-=======================================
+.. |linkaform| raw:: html
 
-En el módulo de **Accesos**, los catálogos de configuración y definición permite establecer y gestionar los parámetros y criterios que rigen el control de acceso en una ubicación. 
-Estos catálogos permiten definir permisos, perfiles, exámenes y configuraciones necesarias para asegurar un entorno controlado y seguro. A continuación, se describen los catálogos más importantes de esta sección.
-
-Definición de Exámenes
-----------------------
-
-Este catálogo permite definir los exámenes necesarios para ciertos perfiles de visitantes o empleados. Estos exámenes pueden ser requeridos para otorgar acceso a áreas específicas o para cumplir con requisitos de seguridad.
-
-- **Nombre del Examen**: Nombre descriptivo del examen (e.g., Examen de Primeros Auxilios).
-- **Descripción**: Descripción detallada del examen y su propósito.
-- **Frecuencia**: Indica la frecuencia con la que el examen debe ser tomado (e.g., Anual, Semestral).
-- **Responsable**: Persona o departamento encargado de administrar el examen.
-
-Definición de Permisos
-----------------------
-
-Este catálogo permite definir los diferentes permisos que pueden ser asignados a perfiles de visitantes o empleados. Los permisos determinan las áreas y recursos a los que una persona puede acceder.
-
-- **Nombre del Permiso**: Nombre descriptivo del permiso (e.g., Acceso a Áreas Restringidas).
-- **Descripción**: Descripción detallada del permiso y las condiciones para su otorgamiento.
-- **Duración**: Período de validez del permiso (e.g., Temporal, Permanente).
-- **Requisitos**: Exámenes o condiciones que deben cumplirse para obtener el permiso.
-
-Perfiles
---------
-
-Este catálogo define los diferentes perfiles de visitantes y empleados que pueden tener acceso a la instalación. Cada perfil tiene un conjunto de permisos y requisitos específicos.
-
-- **Nombre del Perfil**: Nombre descriptivo del perfil (e.g., Trabajador de Alturas, Visitante General).
-- **Descripción**: Descripción detallada del perfil y su propósito dentro de la instalación.
-- **Permisos Asociados**: Lista de permisos que se asignan a este perfil.
-- **Requisitos de Exámenes**: Lista de exámenes que deben ser aprobados para obtener el perfil.
-
-Configuración de Perfiles
--------------------------
-
-Este catálogo permite configurar los detalles específicos de cada perfil, incluyendo los permisos y exámenes asociados. Es crucial para garantizar que los perfiles cumplan con todas las condiciones necesarias para el acceso seguro.
-
-- **Perfil**: Selección del perfil a configurar.
-- **Permisos Asociados**: Detalle de los permisos que se asignan al perfil.
-- **Exámenes Requeridos**: Detalle de los exámenes que deben ser aprobados para obtener el perfil.
-- **Observaciones**: Notas adicionales sobre la configuración del perfil.
-
-Ejemplo de Configuración de Perfil: Trabajador de Alturas
-
-1. **Definición de Exámenes**:
-   - Nombre del Examen: Examen de Seguridad en Alturas
-   - Descripción: Evaluación de habilidades y conocimientos necesarios para trabajar en alturas.
-   - Frecuencia: Anual
-   - Responsable: Departamento de Seguridad
-
-2. **Definición de Permisos**:
-   - Nombre del Permiso: Acceso a Zonas Elevadas
-   - Descripción: Permite el acceso a áreas elevadas dentro de la instalación.
-   - Duración: Permanente
-   - Requisitos: Examen de Seguridad en Alturas aprobado
-
-3. **Perfiles**:
-   - Nombre del Perfil: Trabajador de Alturas
-   - Descripción: Empleado autorizado para realizar trabajos en áreas elevadas.
-   - Permisos Asociados: Acceso a Zonas Elevadas
-   - Requisitos de Exámenes: Examen de Seguridad en Alturas
-
-4. **Configuración de Perfiles**:
-   - Perfil: Trabajador de Alturas
-   - Permisos Asociados: Acceso a Zonas Elevadas
-   - Exámenes Requeridos: Examen de Seguridad en Alturas
-   - Observaciones: Este perfil debe renovarse anualmente tras la aprobación del examen.
-
-Estos catálogos de configuración y definición son esenciales para establecer un sistema de control de accesos robusto y eficiente. Al definir y configurar adecuadamente los exámenes, permisos y perfiles, se asegura que solo personas debidamente autorizadas y preparadas puedan acceder a áreas críticas dentro de la instalación.
+   <a href="https://www.linkaform.com/" target="_blank">LinkaForm</a>

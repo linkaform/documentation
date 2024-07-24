@@ -1,4 +1,4 @@
-.. _doc-compania:
+.. _doc-contratistas:
 
 ===================
 Módulo Contratistas
