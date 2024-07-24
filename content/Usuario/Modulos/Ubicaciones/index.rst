@@ -10,7 +10,7 @@ El **Módulo Ubicaciones** proporciona las herramientas necesarias para gestiona
 
 Observe y analice el siguiente diagrama de flujo del módulo ubicaciones. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar información de ubicaciones y áreas.
 
-.. image:: /imgs/Modulos/Ubicaciones/Ubicaciones1.png
+.. image:: /imgs/Modulos/Ubicaciones/ubicaciones1.png
 
 Formas del Módulo Ubicaciones
 =============================
