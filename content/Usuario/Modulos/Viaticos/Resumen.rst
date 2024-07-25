@@ -1,18 +1,4 @@
-===============
-Módulo Viáticos
-===============
-
-.. toctree::
-   :hidden:
-
-   ind
-   Resumen
-   Configuración_inicial
-   Solicitar_viáticos
-   Registrar_gastos
-   Autorizar_gastos
-   Entrega_de_anticipo
-
+=======
 Resumen
 =======
 
@@ -46,4 +32,30 @@ Este diagrama representa el flujo de acciones que ocurren al realizar una solici
         style form_entrega_anticipo_efectivo fill:#40c057,stroke:#333,stroke-width:1px;
         style form_registros_gastos_viajes fill:#40c057,stroke:#333,stroke-width:1px;
         style catalogo_solicitud_gastos fill:#228be6,stroke:#333,stroke-width:1px;
+
+Formularios
+===========
+
+Formularios que componen el módulo de viáticos:
+
+- Registro de gastos
+- Solicitud de viáticos
+- Entrega de anticipo
+- Autorización de viáticos
+
+.. image:: /imgs/Modulos/Viaticosss/Resumen/formasModViaticos.png
+    :alt: Formas del módulo viáticos
+    :align: center
+
+Figura 1. Formas del módulo viáticos
+
+Catálogos
+=========
+
+Los catálogos que componen el módulo son:
+
+- Empleados
+- Moneda
+- Responsables de autorizar gastos
+- Solicitud de gastos.
 

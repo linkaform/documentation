@@ -11,6 +11,7 @@ Documentación para desarrolladores
 
     PDFs/index
     Reportes/index
+    Modulos/index
 
 ¡Bienvenido a la documentación para desarrolladores! Aquí encontrarás guías detalladas y completas que te ayudarán a aprovechar al máximo nuestras nuevas funcionalidades, incluyendo la creación y personalización de documentos PDF, así como el desarrollo de reportes personalizados. 
 
@@ -47,6 +48,19 @@ Explora nuestras herramientas de desarrollo y descubre cómo puedes integrar y m
 
             Descubre cómo crear reportes personalizados adaptados a tus necesidades con nuestras herramientas y ejemplos.
 
+    .. grid-item-card:: 
+        :columns: 6
+
+        .. card:: 
+            :link: doc-modules
+            :link-type: ref
+            :margin: 0
+            :class-card: card-i
+
+            |Modulos| **Documentación de Modulos**
+
+            Conoce el proceso para crear y personalizar módulos especiales para funcionalidades preparadas.
+            
 .. ICONOS SOBRE EL ÍNDICE
 .. <img width="48" height="48" src="https://img.icons8.com/color/48/folder-tree.png" alt="folder-tree"/>
 
