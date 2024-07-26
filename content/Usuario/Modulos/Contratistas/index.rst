@@ -72,6 +72,7 @@ Una vez completada la solicitud, proceda con la autorización dentro de la empre
         Observe el siguiente ejemplo de registro.
 
         .. image:: /imgs/Modulos/Contratistas/Contratistas4.png
+            
 .. _catalog-contratistas:
 
 Catálogo del Módulo Contratistas

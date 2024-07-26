@@ -164,7 +164,7 @@ Configuración de Perfiles
 
 La **Configuración de Perfiles** es el proceso que permite definir y gestionar los perfiles de los visitantes y asociarles los permisos necesarios para acceder a diferentes áreas o realizar funciones específicas. Este proceso asegura que cada tipo de visitante o empleado tenga el nivel adecuado de acceso según sus responsabilidades y necesidades.
 
-Para comprende cómo se integra este proceso, observe el siguiente diagrama que ilustra la relación entre la **Configuración de Perfiles** y la `Definición de Permisos <#definir-permisos>`_ :octicon:`report;1em;sd-text-info`. Revise las siguientes secciones para obtener más detalles sobre los elementos involucrados y cómo se configuran:
+Para comprender cómo se integra este proceso, observe el siguiente diagrama que ilustra la relación entre la **Configuración de Perfiles** y la `Definición de Permisos <#definir-permisos>`_ :octicon:`report;1em;sd-text-info`. Revise las siguientes secciones para obtener más detalles sobre los elementos involucrados y cómo se configuran:
  
 .. image:: /imgs/Modulos/Accesos/Accesos19.png
    :align: center
@@ -174,7 +174,7 @@ Para comprende cómo se integra este proceso, observe el siguiente diagrama que 
 Catálogo: ``Perfiles``
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo permite definir los diferentes perfiles de usuarios que pueden acceder a las ubicaciones. Cada perfil representa un tipo específico de visitante o trabajador que puede tener diferentes niveles de acceso y requisitos asociados.
+Este catálogo permite definir los diferentes perfiles de usuarios. Cada perfil representa un tipo específico de visitante o trabajador que puede tener diferentes niveles de acceso y requisitos asociados.
 
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
@@ -201,11 +201,6 @@ Forma: ``Configuración de Perfiles``
 
 Esta forma permite relacionar los perfiles con los permisos que requieren. Este proceso garantiza que cada visitante cumpla con los requisitos específicos necesarios antes de ser autorizado para acceder a las instalaciones.
 
-.. admonition:: Ejemplo
-   :class: pied-piper
-
-   Por ejemplo, un perfil puede ser un **Chofer** que necesita acceso solo a áreas de carga, mientras que otro perfil puede ser un **Instalador** con acceso a zonas técnicas especializadas.
-
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
 .. tab-set::
@@ -214,9 +209,9 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       La forma incluye los siguientes campos:
 
-      - **Catálogo Perfiles**: Selección del perfil definido en el catálogo de `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
+      - **Catálogo Perfiles**: Tipos de perfiles definidos en el catálogo `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
 
-      - **Permisos Requeridos**: Grupo repetitivo donde se seleccionan los permisos necesarios para el perfil desde el catálogo de `Definicion de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+      - **Permisos/Certificaciones**: Grupo repetitivo que especifica los permisos necesarios para cada perfil, utilizando el catálogo `Definicion de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
 
       .. image:: /imgs/Modulos/Accesos/Accesos22.png
 
@@ -230,9 +225,9 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
          .. image:: /imgs/Modulos/Accesos/Accesos24.png
 
-      .. warning:: Al crear un nuevo registro en esta forma, es necesario sincronizarlo con el catálogo `Configuración de Perfiles <#catalog-config-perfiles>`_ :octicon:`report;1em;sd-text-info`. Sin embargo, debido a la limitación de que los catálogos no admiten campos de grupo repetitivo, no es posible aplicar la sincronización automática completa en estos casos.
+      .. warning:: Los registros de esta forma son indispensables y son utilizados por otras formas, lo que requiere que estén disponibles también en un catálogo. Sin embargo, debido a la limitación de que los catálogos no admiten campos de grupo repetitivo, no es posible realizar una sincronización automática completa en estos casos.
 
-         Por lo tanto, cuando registre un nuevo perfil en la forma, asegúrese de también registrarlo manualmente en el catálogo. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
+         Por lo tanto, cuando registre la configuración de un nuevo perfil en la forma, asegúrese de también ingresarlo manualmente en el catálogo `Configuración de Perfiles <#catalog-config-perfiles>`_ :octicon:`report;1em;sd-text-info`. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
 
          Actualmente, estamos trabajando en una solución para mejorar este flujo y automatizar completamente la sincronización en futuras versiones.
 
@@ -241,7 +236,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 Catálogo: ``Configuración de Perfiles``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo es una réplica de la forma `Configuración de Perfiles <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info` y contiene la lista de registros que relacionan perfiles con sus permisos necesarios.
+Este catálogo es una réplica de la forma `Configuración de Perfiles <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info` y contiene la lista de registros que relacionan perfiles con los permisos necesarios.
 
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
@@ -265,8 +260,225 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       .. image:: /imgs/Modulos/Accesos/Accesos26.png
 
+Generar Visita
+--------------
+
+El proceso de **Generar una Visita** está diseñado para registrar y gestionar los datos de los visitantes autorizados. Este proceso, mantiene un control adecuado de las personas que ingresan a las instalaciones.
+
+.. warning:: Antes de continuar con el proceso, asegúrese de contar con la instalación y registros necesarios del :ref:`doc-contratistas` :octicon:`report;1em;sd-text-info`.
+ 
+Aunque este proceso no requiere los procesos anteriormente vistos, sí involucra catálogos pertenecientes a otro módulo. Observe el siguiente diagrama y revise las siguientes secciones para obtener más detalles sobre los elementos involucrados y cómo se configuran:
+
+.. image:: /imgs/Modulos/Accesos/Accesos27.png
+   :align: center
+   
+.. _form-visita-autorizada:
+
+Forma: ``Visita Autorizada``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Esta forma permite registrar los datos de un visitante y gestionar su estado en relación con la empresa. Se utiliza principalmente para registrar a personas que realizarán una tarea o función beneficiosa para la empresa. Esta forma es útil para identificar a visitantes que podrían convertirse en visitas regulares de la ubicación.
+
+Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
+
+.. tab-set::
+
+   .. tab-item:: Estructura
+
+      La forma incluye los siguientes campos:
+
+      .. note:: Considere ajustar la estructura de la forma según el nivel de detalle de los datos que necesite recopilar.
+
+      **Nombre de la Visita**: Nombre completo del visitante.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos28.png
+
+      **CURP**: Clave Única de Registro de Población.
+            
+      .. image:: /imgs/Modulos/Accesos/Accesos29.png
+            
+      **Email**: Dirección de correo electrónico de la visita.
+            
+      .. image:: /imgs/Modulos/Accesos/Accesos30.png
+            
+      **Teléfono**: Número de teléfono de la visita.
+            
+      .. image:: /imgs/Modulos/Accesos/Accesos31.png
+            
+      **Foto**: Imagen de la persona que realiza la visita.
+            
+      .. image:: /imgs/Modulos/Accesos/Accesos32.png
+            
+      **Identificación**: Documento de identificación oficial.
+            
+      .. image:: /imgs/Modulos/Accesos/Accesos33.png
+            
+      **Empresa**: Empresa a la que pertenece la visita, utiliza el :ref:`catalog-contratistas` :octicon:`report;1em;sd-text-info`.
+            
+      .. image:: /imgs/Modulos/Accesos/Accesos34.png
+            
+      **Estatus**: Estado actual de la visita (**autorizado**, **boletinado**, **baja**, etc.).
+
+      .. image:: /imgs/Modulos/Accesos/Accesos35.png
+      
+   .. tab-item:: Responder
+
+      Al responder la forma, tenga en cuenta los siguientes puntos:
+
+      - Antes de registrar un visita, asegúrese de recopilar toda la información relevante de la persona, similar a cómo se solicitarían los datos a un trabajador antes de su contratación. Esto permite verificar su identidad antes de permitir el acceso a la empresa.
+
+      - Solo los visitantes registrados como **autorizados** pueden recibir un pase de entrada, que sirve como la invitación para acceder a las instalaciones.
+
+      - Una vez que la visita esté registrada y autorizada, se debe generar un pase de entrada que especifique las áreas a las que el visitante tiene permiso para acceder.
+
+      - La forma actúa como un filtro de seguridad, separando a los visitantes autorizados de aquellos que tienen prohibido el acceso (boletinados) debido a comportamientos previos que comprometieron la seguridad o el cumplimiento de las normas. Además, permite actualizar el estado de visitantes que anteriormente eran regulares pero ahora están dados de baja o no autorizados.
+
+      - Cada visita puede ser asignado a un perfil específico. Esta asignación se tratará en secciones posteriores, pero por ahora, enfóquese en registrar y autorizar las visitas que necesite.
+      
+      .. warning:: Registrar una visita **no** significa que el visitante tenga acceso inmediato a la ubicación o a todas las áreas. 
+
+      Observe el siguiente registro de ejemplo:
+      
+      .. image:: /imgs/Modulos/Accesos/Accesos36.png
+
+      Al crear un nuevo registro en esta forma, la información se sincroniza automáticamente con el catálogo `Visita Autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. La sincronización se realiza a través de la acción ``Sync Catalog Records``.
+
+      .. attention:: Si realiza cambios en la forma, asegúrese de actualizar también el catálogo `Visita Autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info` verificando que los identificadores de los campos coincidan; Consulte :ref:`flujos` :octicon:`report;1em;sd-text-info` para más detalles.
+
+.. _catalog-visita-autorizada:
+
+Catálogo: ``Visita Autorizada``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este catálogo es una réplica de la forma `Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Su propósito es mantener la información organizada para su consulta en otras formas y catálogos.
+
+.. attention:: Este catálogo está diseñado para recibir registros automáticamente derivados de una forma. Por lo tanto, no es necesario ingresar los datos manualmente en el catálogo. En su lugar, complete la `forma Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info` y LinkaForm sincronizará automáticamente esos registros en el catálogo.
+
+Consulte la forma para obtener más detalles sobre la estructura del catálogo. Observe el siguiente ejemplo:
+
+.. image:: /imgs/Modulos/Accesos/Accesos37.png
+
+Observe que el catálogo cuenta con un filtro. Al instalar el módulo, es **muy importante** que verifique la existencia de este filtro, ya que es utilizado en la forma Pase de entrada. Este filtro permitirá que solo aquellas visitas con el estatus **autorizado** puedan recibir un pase para ingresar a la ubicación.
+
+En caso de que no encuentre el filtro, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` para obtener más detalles y aplique los siguientes valores:
+
+.. code-block::
+   :caption: Guarde el filtro con el nombre ``Autorizada``
+
+   Campo = Estatus
+   Condición = Igual a
+   Valor = Autorizado
+
+   // Este filtro mostrará todos los registros de las visitas autorizadas
+
+Generar Pase de Entrada
+-----------------------
+
+El proceso de **Generar Pase de Entrada** está diseñado para gestionar el acceso de visitantes a las instalaciones mediante la emisión de una invitación formal, conocida como pase de entrada. Este pase configura al visitante con el tipo de perfil adecuado y le proporciona acceso a las áreas necesarias.
+
+.. image:: /imgs/Modulos/Accesos/Accesos38.png
+
+**Descripción del Proceso**
+
+Este proceso es importante para permitir el acceso controlado a las instalaciones. Aquí se integran todos los procesos anteriores para garantizar que solo los visitantes autorizados reciban su pase. Una vez que se completan los datos necesarios en el pase, este se activa. 
+
+Notificaciones
+
+- **Visitante Nuevo**: Recibirá un correo electrónico con un enlace para completar su registro.
+- **Visitante Registrado**: Recibirá un correo electrónico con un código QR. Este QR contiene toda la información necesaria y será escaneado por el personal de seguridad al llegar a la caseta.
+
+El proceso consta de una forma y dos catálogos. Nota: este proceso requiere catálogos de otros módulos, específicamente el módulo Empleados.
+
+Catálogo: ``Tipos de Vehículos``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este catálogo se instala con registros por defecto y contiene una lista de tipos de vehículos, marcas y modelos.
+
+Forma: ``Pase de Entrada``
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+La forma **Pase de Entrada** se sincroniza automáticamente con el catálogo **Pase de Entrada**. A continuación, se describen los campos necesarios para responder la forma:
+
+1. **Selección de Visitante**: 
+
+   - **Alta de Nuevo Visitante**
+   - **Buscar Visitantes Registrados** (Visita Autorizada)
+
+2. **Ubicación**: Seleccionar la ubicación a la que se invita al visitante (catálogo Ubicaciones).
+
+3. **Pase a Nombre de**: Este campo aparece si se selecciona **Buscar Visitantes Registrados** y permite elegir un visitante del catálogo **Visita Autorizada**.
+
+4. **Nombre Completo**: Nombre del visitante (aparece solo para **Alta de Nuevo Visitante**).
+
+5. **Email**: Correo electrónico del nuevo visitante.
+
+6. **Teléfono**: Número de teléfono del nuevo visitante.
+
+7. **Empresa**: Empresa del visitante, opcional.
+
+8. **Tipo de Pase**: Seleccionar el perfil del visitante, definimos los permisos/certificaciones necesarios.
+
+   - Si selecciona un perfil diferente a **Visita General**, se iniciará el proceso de **Carga de Permisos de Visitantes** (documentado en secciones posteriores).
+
+9. **Visita a**: Selección de la persona a la que va a visitar, relacionada con el catálogo Configuración Áreas y Empleados.
+
+   - Verifique que este catálogo esté relacionado con el catálogo Ubicaciones para filtrar correctamente las personas por ubicación.
+
+10. **Autorizado por**: Selección del empleado que autoriza el pase.
+
+11. **Visita de**: 
+
+    - **Fecha fija**: Para visitas de un solo día.
+    - **Rango de Fechas**: Para visitas recurrentes.
+
+12. **Fecha y Hora de Visita**: Fecha y hora en que el visitante vendrá.
+
+13. **Fecha y Hora Hasta**: Tiempo que durará el pase (aparece solo si se selecciona **Rango de Fechas**).
+
+14. **Días de Acceso**: Seleccionar los días de la semana en que el visitante tendrá acceso.
+
+15. **Limitar Número de Accesos a**: Número de días a la semana que el visitante tendrá acceso.
+
+16. **Seleccione los Días de Acceso**: Días específicos en que el pase será válido.
+
+17. **Áreas de Acceso**: Especificar las áreas a las que el visitante tendrá acceso (catálogo **Áreas de las Ubicaciones** del módulo Ubicaciones).
+
+18. **Vehículos**: Registrar vehículos del visitante:
+
+- Tipo de Vehículo (catálogo Tipos de Vehículo)
+- Estado del Vehículo
+- Placas
+- Color
+
+19. **Equipos**: Registrar equipos del visitante:
+
+- Tipo de Equipo
+- Nombre del Artículo
+- Marca
+- Número de Serie
+- Color
+
+20. **Comentarios/Instrucciones para la Visita**: Comentarios importantes para el visitante.
+
+21. **Estatus del Pase**: Activo o Vencido, según si el pase está autorizado.
+
+22. **QR**: Código QR para el pase de entrada (campo oculto).
+
+Sincronización y Notificaciones
+
+Al completar y enviar la forma, la información se sincroniza automáticamente con el catálogo **Pase de Entrada**. El visitante recibirá un correo electrónico con su invitación, dependiendo de si es un nuevo visitante o un visitante registrado.
+
+.. admonition:: Ejemplo
+   :class: pied-piper
+
+   Por ejemplo, un perfil puede ser un **Chofer** que necesita acceso solo a áreas de carga, mientras que otro perfil puede ser un **Instalador** con acceso a zonas técnicas especializadas.
+
 .. LIGAS EXTERNAS
 
 .. |linkaform| raw:: html
 
-   <a href="https://www.linkaform.com/" target="_blank">LinkaForm</a>
+   <a href=**https://www.linkaform.com/** target=**_blank**>LinkaForm</a>
+
+
+
+
