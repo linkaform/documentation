@@ -80,19 +80,6 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       .. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
 
-.. _catalog-permisos:
-
-Catálogo: ``Definición de Permisos``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Este catálogo contiene la lista de permisos o certificaciones necesarias según algún tipo de perfil. Incluye los mismos registros que la `forma Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info`. Revise la documentación correspondiente para obtener más detalles sobre la estructura del mismo.
- 
-.. warning:: Este catálogo está preparado para recibir registros derivados de una forma. Por lo tanto, no es necesario ingresar manualmente los registros. Simplemente complete la `forma Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info` y linkaform se encargará de sincronizar automáticamente los registros en este catálogo.
-
-.. image:: /imgs/Modulos/Accesos/Accesos8.png
-
-.. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
-
 .. _form-permisos:
 
 Forma: ``Definición de Permisos``
@@ -158,6 +145,19 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
          En este ejemplo, el permiso **Trabajo en Zonas Elevadas** requiere que el visitante apruebe el **Examen Primeros Auxilios**, también especifica que el permiso tiene una vigencia de 6 meses.
 
          .. image:: /imgs/Modulos/Accesos/Accesos18.png
+
+.. _catalog-permisos:
+
+Catálogo: ``Definición de Permisos``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este catálogo contiene la lista de permisos o certificaciones necesarias según algún tipo de perfil. Incluye los mismos registros que la `forma Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info`. Revise la documentación correspondiente para obtener más detalles sobre la estructura del mismo.
+ 
+.. warning:: Este catálogo está preparado para recibir registros derivados de una forma. Por lo tanto, no es necesario ingresar manualmente los registros. Simplemente complete la forma `Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info` y linkaform se encargará de sincronizar automáticamente los registros en este catálogo.
+
+.. image:: /imgs/Modulos/Accesos/Accesos8.png
+
+.. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
 
 Configuración de Perfiles
 -------------------------
@@ -371,23 +371,16 @@ En caso de que no encuentre el filtro, consulte la documentación sobre cómo :r
 
    // Este filtro mostrará todos los registros de las visitas autorizadas
 
-Generar Pase de Entrada
------------------------
+Crear Pase de Entrada
+---------------------
 
-El proceso de **Generar Pase de Entrada** está diseñado para gestionar el acceso de visitantes a las instalaciones mediante la emisión de una invitación formal, conocida como pase de entrada. Este pase configura al visitante con el tipo de perfil adecuado y le proporciona acceso a las áreas necesarias.
+El proceso de crear un **Pase de Entrada** está diseñado para gestionar el acceso de visitantes a las instalaciones mediante la emisión de una invitación, conocida como **pase de entrada**. Este proceso asegura que los visitantes reciban los permisos necesarios para ingresar a las áreas designadas dentro de la ubicación.
+
+.. warning:: Antes de continuar con el proceso, asegúrese de contar con la instalación y registros necesarios del :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` y el :ref:`doc-employee` :octicon:`report;1em;sd-text-info`.
+
+Observe el siguiente diagrama y revise las siguientes secciones para obtener más detalles sobre los elementos involucrados y cómo se configuran:
 
 .. image:: /imgs/Modulos/Accesos/Accesos38.png
-
-**Descripción del Proceso**
-
-Este proceso es importante para permitir el acceso controlado a las instalaciones. Aquí se integran todos los procesos anteriores para garantizar que solo los visitantes autorizados reciban su pase. Una vez que se completan los datos necesarios en el pase, este se activa. 
-
-Notificaciones
-
-- **Visitante Nuevo**: Recibirá un correo electrónico con un enlace para completar su registro.
-- **Visitante Registrado**: Recibirá un correo electrónico con un código QR. Este QR contiene toda la información necesaria y será escaneado por el personal de seguridad al llegar a la caseta.
-
-El proceso consta de una forma y dos catálogos. Nota: este proceso requiere catálogos de otros módulos, específicamente el módulo Empleados.
 
 Catálogo: ``Tipos de Vehículos``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -397,12 +390,19 @@ Este catálogo se instala con registros por defecto y contiene una lista de tipo
 Forma: ``Pase de Entrada``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-La forma **Pase de Entrada** se sincroniza automáticamente con el catálogo **Pase de Entrada**. A continuación, se describen los campos necesarios para responder la forma:
+Esta forma genera y gestiona los pases de entrada de los visitantes. A través de esta forma, podrá otorgar la autorización al visitante, configurando el tipo de perfil adecuado y proporcionando acceso a las áreas necesarias dentro de la ubicación. Esta forma asegura un acceso controlado a las instalaciones, garantizando que solo los visitantes autorizados reciban su pase. Consulte el proceso para responder y crear un pase de entrada.
+
+.. warning:: Asegúrese de contar con los procesos y registros necesarios mencionados anteriormente en esta documentación.
+
+Pasos para Crear un Pase de Entrada
+***********************************
 
 1. **Selección de Visitante**: 
 
    - **Alta de Nuevo Visitante**
    - **Buscar Visitantes Registrados** (Visita Autorizada)
+   - **Visitante Nuevo**: Recibirá un correo electrónico con un enlace para completar su registro. Este enlace permitirá al visitante ingresar la información adicional requerida para su autorización final.
+   - **Visitante Registrado**: Recibirá un correo electrónico con un código QR. Este código QR contiene toda la información necesaria del visitante y será escaneado por el personal de seguridad al llegar a la caseta para facilitar su entrada.
 
 2. **Ubicación**: Seleccionar la ubicación a la que se invita al visitante (catálogo Ubicaciones).
 
@@ -465,6 +465,7 @@ La forma **Pase de Entrada** se sincroniza automáticamente con el catálogo **P
 22. **QR**: Código QR para el pase de entrada (campo oculto).
 
 Sincronización y Notificaciones
+La forma **Pase de Entrada** se sincroniza automáticamente con el catálogo **Pase de Entrada**. A continuación, se describen los campos necesarios para responder la forma:
 
 Al completar y enviar la forma, la información se sincroniza automáticamente con el catálogo **Pase de Entrada**. El visitante recibirá un correo electrónico con su invitación, dependiendo de si es un nuevo visitante o un visitante registrado.
 
