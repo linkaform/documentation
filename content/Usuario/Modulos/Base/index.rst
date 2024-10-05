@@ -14,9 +14,9 @@ El **Módulo Base** proporciona las formas y catálogos necesarios para:
 
 .. note:: Este módulo es importante y sumamente útil para el funcionamiento de otros módulos dentro de LinkaForm.
 
-Observe y analice el siguiente diagrama de flujo del módulo base. Este diagrama representa el flujo de acciones que ocurren al realizar el registro de un contacto.
+Observe y analice el siguiente diagrama de flujo del módulo base. Este diagrama representa cada paso requerido para llevar a cabo el registro de un contacto.
 
-.. image:: /imgs/Modulos/Base/Base2.png
+.. image:: /imgs/Modulos/Base/Base1.png
 
 Catálogos del Módulo Base
 =========================
