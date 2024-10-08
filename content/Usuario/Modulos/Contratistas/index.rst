@@ -57,7 +57,7 @@ Una vez completada la solicitud, proceda con la autorización dentro de la empre
            - **Estatus Solicitud**: Indica el estado actual del proceso de solicitud de alta del contratista.
            - **Estatus del Contratista**: Refleja el estado operativo del contratista dentro de la empresa. 
         
-        .. warning:: Asegúrese de que el correo electrónico del contratista sea válido, ya que se utilizará para comunicaciones importantes sobre su solicitud de alta.
+        .. warning:: Asegúrese de que el correo electrónico del contratista sea válido, ya que se utilizará para comunicaciones importantes relacionadas con su solicitud de alta y otros procesos importantes.
 
         2. **Documentos**
 

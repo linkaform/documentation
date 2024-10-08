@@ -6,7 +6,7 @@ Módulo de Seguridad
 
 El **módulo de Seguridad** está diseñado para gestionar y controlar el acceso de personas a una ubicación. Su objetivo es garantizar la seguridad, proteger activos, recursos y mantener un registro detallado de las actividades de entrada y salida, así como otras funciones relacionadas con la seguridad.
 
-Este módulo opera mediante una interfaz de usuario utilizada exclusivamente por el personal de seguridad en las casetas de acceso. Las casetas son puntos de control encargados de gestionar y supervisar la entrada y salida de usuarios de una ubicación.
+Este módulo opera mediante una interfaz de usuario utilizada exclusivamente por el personal de seguridad en las casetas de acceso. Las casetas son puntos de control encargados de gestionar y supervisar la entrada y salida de visitas de una ubicación.
 
 El módulo de seguridad es utilizado por dos roles diferentes:
 
@@ -274,10 +274,10 @@ A diferencia de la forma **Definición de Permisos**, este catálogo no permite 
 Configuración de Perfiles
 -------------------------
 
-El proceso de configuración de perfiles consiste en definir y personalizar los perfiles de usuario mediante la asignación de permisos, garantizando que cada perfil cuente con el acceso adecuado a las funciones y recursos necesarios según sus responsabilidades.
+El proceso de configuración de perfiles implica definir distintos tipos de visitantes y personalizar sus características mediante la asignación de permisos específicos. Esto asegura que cada usuario tenga el acceso adecuado a las funciones y recursos necesarios, según su rol y responsabilidades dentro de la ubicación.
 
-Para comprender cómo se integra este proceso, observe el siguiente diagrama que ilustra la relación entre la **Configuración de Perfiles** y la `Definición de Permisos <#definir-permisos>`_ :octicon:`report;1em;sd-text-info`. Revise las siguientes secciones para obtener más detalles sobre los elementos involucrados y cómo se configuran:
- 
+Observe el siguiente diagrama, que ilustra la relación entre la **Configuración de Perfiles** y la `Definición de Permisos <#definir-permisos>`_ :octicon:`report;1em;sd-text-info`. Consulte las secciones a continuación para obtener más detalles sobre los elementos involucrados.
+
 .. image:: /imgs/Modulos/Accesos/Accesos19.png
    :align: center
 
@@ -286,7 +286,7 @@ Para comprender cómo se integra este proceso, observe el siguiente diagrama que
 Catálogo: ``Perfiles``
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo permite definir diferentes perfiles para las visitas. Cada perfil representa un tipo específico de visitante o trabajador que puede tener diferentes niveles de acceso y requisitos asociados.
+Este catálogo es útil para definir diferentes tipos de visitas. 
 
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
@@ -294,13 +294,28 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
    .. tab-item:: Estructura
 
-      El catálogo incluye el siguiente campo:
+      .. grid:: 2
+         :gutter: 0
 
-      - **Nombre del Perfil**: Nombre descriptivo del perfil.
-      - **Motivo de Visita**: Breve descripción que especifica el propósito del perfil.
-      - **Walkin**: Indica si la visita puede ser espontánea. Un valor de No significa que la visita debe ser planificada, mientras que un valor de Sí indica que no es necesario programar la visita con anticipación.
+         .. grid-item-card::
+            :columns: 6
 
-      .. image:: /imgs/Modulos/Accesos/Accesos20.png
+            El catálogo incluye los siguientes campos:
+
+            - **Nombre del Perfil**: Nombre descriptivo del perfil.
+            - **Motivo de Visita**: Propósito del perfil.
+            - **Walkin**: Indica si la visita puede ser espontánea.
+
+            .. note::
+
+               **Sí** indica que no es necesario programar la visita con anticipación.
+
+               **No** significa que la visita debe ser planificada.
+
+         .. grid-item-card::   
+            :columns: 6
+
+            .. image:: /imgs/Modulos/Accesos/Accesos20.png
 
    .. tab-item:: Registros
 
@@ -315,7 +330,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 Forma: ``Configuración de Perfiles``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Esta forma permite relacionar los perfiles con los permisos que requieren. Este proceso garantiza que cada visitante cumpla con los requisitos específicos necesarios antes de ser autorizado para acceder a las instalaciones.
+Esta forma permite asociar perfiles con los permisos requeridos, garantizando que cada perfil cumpla con los requisitos establecidos antes de autorizar su acceso a la ubicación.
 
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
@@ -325,18 +340,27 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       La forma incluye los siguientes campos:
 
-      - **Perfil**: Tipos de perfiles definidos en el catálogo `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
+      - **Perfil**: Tipo de perfile, definido en el catálogo `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
 
-      - **Permisos/Certificaciones**: Grupo repetitivo que especifica los permisos necesarios para cada perfil, utiliza el catálogo `Definicion de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+      - **Permisos/Certificaciones**: Grupo repetitivo que detalla los permisos necesarios para cada perfil, especificados en el catálogo `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+
+      .. note:: Un perfil puede contener uno o varios permisos
+
+      - **Ubicación**: Ubicación a la cual se aplicará esta configuración.
+
+      .. warning:: Si no se selecciona una ubicación, la configuración del perfil y los permisos estará disponible en todas las ubicaciones.
+
+      .. seealso:: Revise la documentación del :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` para obtener más detalles.
 
       .. image:: /imgs/Modulos/Accesos/Accesos22.png
 
    .. tab-item:: Registros
 
-      Cada registro en esta forma relaciona un perfil con uno o más permisos necesarios. Observe el siguiente ejemplo:
+      Cada registro representa un perfil relacionado con uno o varios permisos. Observe el siguiente ejemplo:
 
       .. image:: /imgs/Modulos/Accesos/Accesos23.png
-
+         :width: 880px
+            
       .. attention:: El único perfil que no necesita permisos es la **Visita General**. Este perfil se utiliza para registrar a las visitas que no tienen una cita previa ni un trabajo especial que realizar dentro de las instalaciones. Es una visita espontánea.
 
          .. image:: /imgs/Modulos/Accesos/Accesos24.png
@@ -362,15 +386,19 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       El catálogo incluye los siguientes campos:
 
-      - **Perfil**: Selección del perfil definido en el catálogo de `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
+      - **Perfil**: Tipo de perfile, definido en el catálogo `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
       
-      - **Permisos/Certificaciones**: Lista de permisos necesarios para el perfil, derivados del catálogo de `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+      - **Permisos/Certificaciones**: Lista de permisos para el perfil, especificados en el catálogo `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+
+      - **Ubicación**: Ubicación a la cual se aplicará esta configuración.
+
+      .. warning:: Si no se selecciona una ubicación, la configuración del perfil y los permisos estará disponible en todas las ubicaciones.
 
       .. image:: /imgs/Modulos/Accesos/Accesos25.png
 
    .. tab-item:: Registros
 
-      A diferencia de la forma **Configuración de Perfiles**, este catálogo no admite campos de grupo repetitivo, por lo que es necesario registrar manualmente los permisos asociados a cada perfil. Observe el siguiente ejemplo:
+      A diferencia de la forma `Configuración de Perfiles <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info`, este catálogo no admite campos de grupo repetitivo, por lo que es necesario registrar manualmente los permisos asociados a cada perfil. Observe el siguiente ejemplo:
 
       .. seealso:: Consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para una importación masiva de registros.
 
@@ -393,7 +421,7 @@ Aunque este proceso no requiere los procesos anteriormente vistos, sí involucra
 Forma: ``Visita Autorizada``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Esta forma permite registrar los datos de un visitante y gestionar su estado en relación con la empresa. Se utiliza principalmente para registrar a personas que realizarán una tarea o función beneficiosa para la empresa. Esta forma es útil para identificar a visitantes que podrían convertirse en visitas regulares de la ubicación.
+Esta forma permite registrar los datos de un visitante y gestionar su estado en relación con la empresa. Se utiliza principalmente para registrar a personas que realizarán una tarea o función beneficiosa para la empresa, facilitando la identificación de aquellos que podrían convertirse en visitantes recurrentes.
 
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
@@ -429,14 +457,16 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
             
       .. image:: /imgs/Modulos/Accesos/Accesos33.png
             
-      **Contratista**: Empresa a la que pertenece la visita, utiliza el :ref:`catalog-contratistas` :octicon:`report;1em;sd-text-info`.
-            
+      **Contratista**: Empresa a la que pertenece el visitante. Utiliza el :ref:`catalog-contratistas` :octicon:`report;1em;sd-text-info`.
+
+      .. note:: Si la visita no corresponde a un trabajador de un contratista, deje este campo en blanco.
+
       .. image:: /imgs/Modulos/Accesos/Accesos34.png
             
       **Estatus**: Estado actual de la visita (**autorizado**, **boletinado**, **baja**, etc.).
-
+          
       .. image:: /imgs/Modulos/Accesos/Accesos35.png
-      
+
    .. tab-item:: Responder
 
       Al responder la forma, tenga en cuenta los siguientes puntos:
@@ -457,8 +487,12 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
       
       .. image:: /imgs/Modulos/Accesos/Accesos36.png
 
-      Al crear un nuevo registro en esta forma, la información se sincroniza automáticamente con el catálogo `Visita Autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. La sincronización se realiza a través de la acción ``Sync Catalog Records``.
+      .. note:: Una vez que el estatus de la visita esté **autorizado**, el contratista asociado será notificado por correo electrónico, informándole que su empleado es candidato para recibir pases de entrada. Observe el siguiente correo de ejemplo:
 
+         .. image:: /imgs/Modulos/Accesos/Accesos45.png
+
+      Al crear un nuevo registro en esta forma, la información se sincroniza automáticamente con el catálogo `Visita Autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`.
+      
       .. attention:: Si realiza cambios en la forma, asegúrese de actualizar también el catálogo `Visita Autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info` verificando que los identificadores de los campos coincidan; Consulte :ref:`flujos` :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. _catalog-visita-autorizada:
@@ -468,9 +502,9 @@ Catálogo: ``Visita Autorizada``
 
 Este catálogo es una réplica de la forma `Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Su propósito es mantener la información organizada para su consulta en otras formas y catálogos.
 
-.. attention:: Este catálogo está diseñado para recibir registros automáticamente derivados de una forma. Por lo tanto, no es necesario ingresar los datos manualmente en el catálogo. En su lugar, complete la `forma Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info` y LinkaForm sincronizará automáticamente esos registros en el catálogo.
+.. attention:: Este catálogo está diseñado para recibir registros automáticamente derivados de una forma. Por lo tanto, no es necesario ingresar los datos manualmente. En su lugar, complete la `forma Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info` y LinkaForm sincronizará automáticamente esos registros en el catálogo.
 
-Consulte la forma para obtener más detalles sobre la estructura del catálogo. Observe el siguiente ejemplo:
+Consulte la forma para obtener más detalles sobre la estructura del catálogo. Observe los siguientes registro de ejemplo:
 
 .. image:: /imgs/Modulos/Accesos/Accesos37.png
 
