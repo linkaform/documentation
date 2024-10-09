@@ -123,6 +123,13 @@ Si es contratista, siga siga los siguientes pasos para completar su alta:
 
 .. warning:: Por ningún motivo modifique el ``Estatus del contratista``. Este campo solo puede ser modificado por la empresa que solicitó sus servicios.
 
+.. _carga-permisos-visitas:
+
+Carga de Permisos de Visitantes
+===============================
+
+lorem
+
 Ha completado con éxito el proceso de configuración y utilización del módulo de contratistas. Recuerde que este módulo es adaptable a sus necesidades, lo que significa que puede ajustarlo según lo requiera.
 
 Si tiene alguna duda o necesita asistencia técnica, no dude en ponerse en contacto con nuestro equipo de soporte.

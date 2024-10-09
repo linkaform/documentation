@@ -16,6 +16,7 @@ Documentación para usuarios
     Inbox/index
     AppMóvil/index
     Modulos/index
+    Soter/index
 
 ¡Bienvenido a la documentación exclusiva para usuarios de Linkaform! Aquí, podrás explorar las funcionalidades avanzadas que ofrecemos para optimizar y simplificar tus procesos tanto en la aplicación web como en la aplicación móvil. 📊📱
 
