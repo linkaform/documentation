@@ -1,4 +1,4 @@
-.. _doc-pases-:
+.. _doc-pases:
 
 ================
 Pases de Entrada

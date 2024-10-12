@@ -13,7 +13,7 @@ El módulo de seguridad es utilizado por dos roles diferentes:
 - **Personal dentro de la instalación**: Son responsables de generar pases de entrada (invitaciones) y gestionar perfiles de visitantes y empleados. Este personal interactúa directamente con algunas formas y catálogos del módulo.
 - **Personal de Seguridad**: Utiliza la interfaz de usuario para ejecutar funciones de control de acceso, reportar incidencias, fallas, gestionar equipos y más funcionalidades.
 
-.. warning:: El personal de seguridad no interactúa directamente con ninguna de las formas ni catálogos; Para más detalles, revise la documentación de Soter.
+.. warning:: El personal de seguridad no interactúa directamente con ninguna de las formas ni catálogos; Para más detalles, revise la documentación de :ref:`doc-soter` :octicon:`report;1em;sd-text-info`
 
 Esta documentación se centra en explicar flujos y configuraciones de las formas y catálogos que involucra el módulo de seguridad. A medida que avance, encontrará más detalles, ejemplos y guías paso a paso para la correcta implementación y utilización del módulo.
 
@@ -531,6 +531,8 @@ Observe el siguiente diagrama y revise las siguientes secciones para obtener má
 
 .. image:: /imgs/Modulos/Accesos/Accesos38.png
 
+.. _tipos-vehiculos:
+
 Catálogo: ``Tipos de Vehículos``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -545,159 +547,278 @@ Esta forma permite configurar toda la información relevante para autorizar el p
 
 .. warning:: Asegúrese de contar con los procesos y registros necesarios mencionados anteriormente en esta documentación.
 
-Para responder la forma, considere la siguiente información y preste atención a las notas importantes.
+Para responder la forma, revise las siguientes pestañas que detallan los campos necesarios para generar un pase de entrada. Asegúrese de prestar atención a la información proporcionada y las notas importantes.
 
-**Selección de Visitante**: Candidato para generar el pase de entrada. Consulte el siguiente menú desplegable para más detalles sobre las opciones disponibles.
+.. tab-set::
 
-.. image:: /imgs/Modulos/Accesos/Accesos46.png
+   .. tab-item:: Selección de Visitante
 
-.. dropdown:: Opciones
+      **Selección de Visitante**: Candidato para generar el pase de entrada. Consulte el siguiente menú desplegable para más detalles sobre las opciones disponibles.
 
-   .. tab-set::
+      .. image:: /imgs/Modulos/Accesos/Accesos46.png
 
-      .. tab-item:: Alta de Nuevo Visitante
+      .. dropdown:: Opciones
+         .. :open:
 
-         .. grid:: 2
-            :gutter: 0
+         .. tab-set::
 
-            .. grid-item-card::
-               :columns: 6
+            .. tab-item:: Alta de Nuevo Visitante
 
-               **Alta de Nuevo Visitante**: Permite registrar un nuevo visitante que aún no está en el catálogo de `visitas autorizadas <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Al seleccionar esta opción, llene los siguientes campos:
+               .. grid:: 2
+                  :gutter: 0
 
-               .. hint:: Utilice esta opción para registrar visitas que no implican grandes responsabilidades, como visitas espontáneas o asuntos personales.
+                  .. grid-item-card::
+                     :columns: 6
 
-               - **Nombre Completo**: Nombre del visitante.
+                     **Alta de Nuevo Visitante**: Permite registrar un nuevo visitante que aún no está en el catálogo de `visitas autorizadas <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Al seleccionar esta opción, llene los siguientes campos:
 
-               - **Email**: Correo electrónico del nuevo visitante.
-               
-               - **Teléfono**: Número de teléfono del nuevo visitante.
+                     .. hint:: Utilice esta opción para registrar visitas que no implican grandes responsabilidades, como visitas espontáneas o asuntos personales.
 
-               - **Empresa**: Empresa a la que pertenece el visitante.
+                     - **Nombre Completo**: Nombre del visitante.
 
-               .. note:: Si la visita no corresponde a un trabajador de un contratista, deje este campo en blanco.
+                     - **Email**: Correo electrónico del nuevo visitante.
+                     
+                     - **Teléfono**: Número de teléfono del nuevo visitante.
 
-               - **Fotografía**: Imagen de la persona que realiza la visita.
+                     - **Empresa**: Empresa a la que pertenece el visitante.
 
-               - **Identificación**: Documento de identificación oficial.
+                     .. note:: Si la visita no corresponde a un trabajador de un contratista, deje este campo en blanco.
 
-            .. grid-item-card::   
-               :columns: 6
+                     - **Fotografía**: Imagen de la persona que realiza la visita.
 
-               .. image:: /imgs/Modulos/Accesos/Accesos47.png
+                     - **Identificación**: Documento de identificación oficial.
 
-         .. attention:: Al registrar un nuevo visitante, este deberá completar su proceso de registro. Consulte y envíe la documentación del :ref:`proceso-registro-visitantes` :octicon:`report;1em;sd-text-info` a quien corresponda, para más detalles sobre cómo finalizar el registro.
+                  .. grid-item-card::   
+                     :columns: 6
 
-         .. hint:: Considere ajustar la estructura de la forma según el nivel de detalle de los datos que necesite recopilar.
+                     .. image:: /imgs/Modulos/Accesos/Accesos47.png
 
-      .. tab-item:: Buscar Visitantes Registrados
+               .. attention:: Al registrar un nuevo visitante, este deberá completar su proceso de registro. Consulte y envíe la documentación del :ref:`proceso-registro-visitantes` :octicon:`report;1em;sd-text-info` a quien corresponda, para más detalles sobre cómo finalizar el registro.
 
-         .. grid:: 2
-            :gutter: 0
+               .. hint:: Considere ajustar la estructura de la forma según el nivel de detalle de los datos que necesite recopilar.
 
-            .. grid-item-card::
-               :columns: 6
+            .. tab-item:: Buscar Visitantes Registrados
 
-               **Buscar visitantes registrados**: Muestra la lista de visitas autorizadas definidas en el catálogo `visita autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`.
+               .. grid:: 2
+                  :gutter: 0
 
-               .. note:: Si anteriormente registró una visita y no aparece en la lista, revise el catálogo y verifique que el estatus de la visita sea **Autorizada**
+                  .. grid-item-card::
+                     :columns: 6
 
-               - **Pase a Nombre de**: Visitante autorizado candidato para el pase de entrada. 
-               
-               .. hint:: Verifique los datos proporcionados, especialmente el email y si es necesario, modifique la información en la forma correspondiente.
+                     **Buscar visitantes registrados**: Muestra la lista de visitas autorizadas definidas en el catálogo `visita autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`.
 
-            .. grid-item-card::
-               :columns: 6
+                     .. note:: Si anteriormente registró una visita y no aparece en la lista, revise el catálogo y verifique que el estatus de la visita sea **Autorizada**
 
-               .. image:: /imgs/Modulos/Accesos/Accesos48.png
-                  :width: 372 px
+                     - **Pase a Nombre de**: Visitante autorizado candidato para el pase de entrada. 
+                     
+                     .. hint:: Verifique los datos proporcionados, especialmente el email y si es necesario, modifique la información en la forma correspondiente.
 
-         .. attention:: Al seleccionar una visita registrada y solo si el pase de entrada está **Activo**, el visitante recibirá un correo electrónico con la información de la ubicación, los documentos necesarios para su ingreso y un código QR, el cual será escaneado por el personal de seguridad al llegar a la caseta, facilitando su entrada a la ubicación.
+                  .. grid-item-card::
+                     :columns: 6
+
+                     .. image:: /imgs/Modulos/Accesos/Accesos48.png
+                        :width: 372 px
+
+               .. attention:: Al seleccionar una visita registrada y solo si el pase de entrada está **Activo**, el visitante recibirá un correo electrónico con la información de la ubicación, los documentos necesarios para su ingreso y un código QR, el cual será escaneado por el personal de seguridad al llegar a la caseta, facilitando su entrada a la ubicación.
+                  
+                  Observe el siguiente ejemplo de correo para un pase de entrada activo.
+
+                  .. image:: /imgs/Modulos/Accesos/Accesos49.png
+                     :align: center
+                     :width: 600 px
+
+   .. tab-item:: Ubicación
+
+      **Ubicación**: Ubicación a la que se invita al visitante.
+
+      .. seealso:: Revise el catálogo **ubicaciones** del :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` para más detalles.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos50.png
+
+   .. tab-item:: Tipo de Pase
+
+      **Tipo de Pase**: Perfil del visitante. El perfil seleccionado determina los permisos o certificaciones que el visitante debe cumplir para acceder a la ubicación. 
+         
+      .. attention:: Si selecciona un perfil diferente a **Visita General**, el contratista del empleado deberá completar el proceso de :ref:`carga-permisos-visitas` :octicon:`report;1em;sd-text-info`.
+
+      .. admonition:: Ejemplo
+         :class: pied-piper
+
+         Observe los siguientes ejemplos que ilustran la diferencia entre perfiles. Mientras que el perfil **Visita General** no requiere permisos, un perfil como **Técnico de Telecomunicaciones** sí los exige.
+
+         .. image:: /imgs/Modulos/Accesos/Accesos51.png
             
-            Observe el siguiente ejemplo de correo para un pase de entrada activo.
+         .. image:: /imgs/Modulos/Accesos/Accesos52.png
 
-            .. image:: /imgs/Modulos/Accesos/Accesos49.png
-               :align: center
-               :width: 600 px
+   .. tab-item:: Visita a
 
-**Ubicación**: Ubicación a la que se invita al visitante.
+      **Visita a**: Personas a la que visitará (opcionalmente).
 
-.. seealso:: Revise el :ref:`doc-ubicaciones` para más detalles.
+      .. seealso:: Revise el catálogo **configuración áreas y empleados** del :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` para más detalles.
 
-.. image:: /imgs/Modulos/Accesos/Accesos50.png
+      .. image:: /imgs/Modulos/Accesos/Accesos53.png
 
-**Tipo de Pase**: Perfil del visitante.
+      .. hint:: Si observa que en el catálogo aparecen empleados de otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
+         
+         Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
 
-.. attention:: El perfil seleccionado determina los permisos o certificaciones que el visitante debe cumplir para acceder a la ubicación. 
-   
-   Si selecciona un perfil diferente a **Visita General**, el contratista del empleado deberá completar el proceso de :ref:`carga-permisos-visitas` :octicon:`report;1em;sd-text-info`.
+   .. tab-item:: Autorizado por
 
-.. admonition:: Ejemplo
-   :class: pied-piper
+      **Autorizado por**: Empleado responsable de aprobar el pase de entrada.
 
-   Observe los siguientes ejemplos que ilustran la diferencia entre perfiles. Mientras que el perfil **Visita General** no requiere permisos, un perfil como **Técnico de Telecomunicaciones** sí los exige.
+      .. seealso:: Consulte el catálogo **Configuración de Áreas y Empleados de Apoyo** en el :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` para más detalles.
 
-   .. image:: /imgs/Modulos/Accesos/Accesos51.png
+      .. image:: /imgs/Modulos/Accesos/Accesos54.png
       
-   .. image:: /imgs/Modulos/Accesos/Accesos52.png
+      .. hint:: Si observa que en el catálogo aparecen empleados de otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
+         
+         Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
 
-**Visita a**: Persona a la que visitará (opcionalmente).
+   .. tab-item:: Visita de
 
-.. seealso:: Revise el catálogo **configuración áreas y empleados** del :ref:`doc-ubicaciones` para más detalles.
+      **Visita de**: Este campo permite configurar la vigencia y acceso para la visita.
 
-.. image:: /imgs/Modulos/Accesos/Accesos53.png
+      .. .. image:: /imgs/Modulos/Accesos/Accesos55.png
 
-- Verifique que este catálogo esté relacionado con el catálogo Ubicaciones para filtrar correctamente las personas por ubicación.
+      **Fecha Fija**: El pase es válido para un solo día, útil para visitas de un solo día. 
+                  
+      Si selecciona esta opción, deberá especificar la Fecha y hora de visita. Observe el ejemplo:
+                     
+      .. image:: /imgs/Modulos/Accesos/Accesos56.gif
+      
+      .. warning:: Al seleccionar **Fecha Fija**, el pase solo estará vigente el día y hora indicados. Después de esa fecha y hora, el pase se considerará vencido.
 
-**Autorizado por**: Selección del empleado que autoriza el pase.
+      **Rango de fechas**: El pase es válido durante un rango de fechas, ideal para visitas recurrentes.
 
-**Visita de**: 
+      Si selecciona esta opción, debe especificar lo siguiente:
 
-   - **Fecha fija**: Para visitas de un solo día.
-   - **Rango de Fechas**: Para visitas recurrentes.
+      1. Especifique la fecha inicial y fecha final del pase.
+      2. Seleccione los días de acceso entre las siguientes opciones:
 
-**Fecha y Hora de Visita**: Fecha y hora en que el visitante vendrá.
+      - **Cualquier dia**: La visita puede acceder cualquier día dentro del rango de fechas seleccionado.
+      - **Limitar Días de Acceso**: Especifica los días y las veces permitidas dentro del rango en los que el visitante tendrá acceso.
 
-**Fecha y Hora Hasta**: Tiempo que durará el pase (aparece solo si se selecciona **Rango de Fechas**).
+      .. grid:: 2
+         :gutter: 0
 
-**Días de Acceso**: Seleccionar los días de la semana en que el visitante tendrá acceso.
+         .. grid-item-card::
+            :columns: 6
 
-**Limitar Número de Accesos a**: Número de días a la semana que el visitante tendrá acceso.
+            - **Limitar número de accesos a**: Define cuántas veces por día la visita puede ingresar.
 
-**Seleccione los Días de Acceso**: Días específicos en que el pase será válido.
+            .. note:: Si no se especifica una cantidad, se asume que no hay límite de entradas por día.
 
-**Áreas de Acceso**: Especificar las áreas a las que el visitante tendrá acceso (catálogo **Áreas de las Ubicaciones** del módulo Ubicaciones).
+            - **Seleccione los días de acceso**: Seleccione los días específicos en los que la visita tendrá permiso para acceder.
 
-**Vehículos**: Registrar vehículos del visitante:
+            .. warning:: Aunque el pase tenga un rango de fechas vigente, si no selecciona los días específicos de acceso, podría causar problemas en la caseta de seguridad, ya que el sistema indicaría que en esos días la visita no debe estar en las instalaciones.
 
-- Tipo de Vehículo (catálogo Tipos de Vehículo)
-- Estado del Vehículo
-- Placas
-- Color
+         .. grid-item-card::
+            :columns: 6
 
-**Equipos**: Registrar equipos del visitante:
+            .. image:: /imgs/Modulos/Accesos/Accesos57.gif
 
-- Tipo de Equipo
-- Nombre del Artículo
-- Marca
-- Número de Serie
-- Color
+   .. tab-item:: Areas de Acceso
 
-20. **Comentarios/Instrucciones para la Visita**: Comentarios importantes para el visitante.
+      **Áreas de Acceso**: Áreas a las que el visitante tendrá permiso de ingresar.
 
-21. **Estatus del Pase**: Activo o Vencido, según si el pase está autorizado.
+      .. image:: /imgs/Modulos/Accesos/Accesos58.png
 
-22. **QR**: Código QR para el pase de entrada (campo oculto).
+      .. seealso:: Consulte el catálogo **áreas de las ubicaciones** del :ref:`doc-ubicaciones` :octicon:`report;1em;sd-text-info` para más detalles.
+
+      .. hint:: Si el catálogo muestra áreas de otra ubicación, verifique que en la forma el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para que solo se muestren las áreas correspondientes.
+         
+         Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
+
+   .. tab-item:: Vehículos
+
+      **Vehículos**: Grupo repetitivo que permite registrar los vehículos asociados con la visita.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos59.png
+
+      .. attention:: Generalmente, este grupo repetitivo se deja vacío. Si se conoce el vehículo que traerá la visita, puede registrarlo aquí. En la mayoría de los casos, esta forma se utiliza para almacenar los datos obtenidos de la aplicación web :ref:`doc-soter` :octicon:`report;1em;sd-text-info`. Regularmente, el campo se completa cuando el guardia de seguridad revisa los datos de la visita y registra el vehículo con el que ingresa.
+
+      Los campos que componen al grupo repetitivo son:
+
+      - **Tipo de Vehículo**, **Marca** y **Modelo**.
+
+      .. seealso:: Consulte el catálogo `Tipos de Vehículos <#tipos-vehiculos>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+      - **Estado del Vehículo**
+
+      .. seealso:: Consulte el catálogo **Estados** del :ref:`doc-base` :octicon:`report;1em;sd-text-info` para más detalles.
+
+      - **Placas**
+      - **Color**
+
+   .. tab-item:: Equipos
+
+      **Equipos**: Grupo repetitivo que permite registrar los equipos que el visitante llevará consigo durante su estancia.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos60.png
+
+      - **Tipo de Equipo**: Clasificación del equipo o dispositivo.
+      - **Nombre del Artículo**: Descripción o denominación específica del equipo.
+      - **Marca**: Marca o fabricante del equipo (opcionalmente).
+      - **Número de Serie**: Identificador único del equipo (opcionalmente).
+      - **Color**
+
+      .. attention:: Normalmente, este grupo repetitivo se deja vacío. Si se conoce con anticipación los equipos que el visitante traerá, puede registrarlo aquí. En la mayoría de los casos, esta sección se utiliza para almacenar la información proporcionada posteriormente por el guardia de seguridad, quien registra los equipos que el visitante lleva consigo al ingresar.
+
+   .. tab-item:: Comentarios/Instrucciones
+
+      **Comentarios/Instrucciones para la Visita**: Añada comentarios o instrucciones importantes según el tipo seleccionado.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos61.png
+      
+      - **Instrucción o comentario**: Detalles relacionados con la visita.
+
+      - **Tipo de comentario**: 
+         - **Pase**: El comentario será dirigido al visitante.
+         - **caseta**: El comentario estará dirigido al guardia de seguridad.
+
+   .. tab-item:: Estatus
+
+      **Estatus del Pase**: Define el estado actual del pase de entrada para la visita.
+      
+      .. grid:: 2
+         :gutter: 0
+
+         .. grid-item-card::
+            :columns: 6
+
+            - **Proceso**: El pase está en espera o aún no ha sido autorizado.
+            - **Activo**: El pase ha sido aprobado y está vigente, permitiendo el acceso del visitante.
+            - **Vencido**: El pase ha expirado y ya no es válido para ingresar.
+
+         .. grid-item-card::
+            :columns: 6
+
+            .. image:: /imgs/Modulos/Accesos/Accesos62.png
+
+      .. attention:: Cuando el estado del pase de entrada es **Activo**, se enviará automáticamente un aviso y el gafete con un código QR del pase de entrada al correo electrónico del visitante. Este código deberá presentarse en la caseta de seguridad para permitir el acceso.
+
+         Observe el siguiente ejemplo:
+            
+         .. image:: /imgs/Modulos/Accesos/Accesos64.png
+            :width: 600px
+
+   .. tab-item:: QR
+      
+      Los siguientes campos son de solo lectura y se generan automáticamente a través de un script. Estos permanecen ocultos ya que no requieren interacción del usuario. 
+
+      .. image:: /imgs/Modulos/Accesos/Accesos63.png
+
+      - **QR**: Código QR generado para el pase de entrada.
+      - **QR Code**: Identificador del pase de entrada.
+
+Siga el flujo para comprender el proceso que ocurre al responder la forma.
+
+.. image:: /imgs/Modulos/Accesos/Accesos65.png
 
 Sincronización y Notificaciones
 La forma **Pase de Entrada** se sincroniza automáticamente con el catálogo **Pase de Entrada**. A continuación, se describen los campos necesarios para responder la forma:
 
 Al completar y enviar la forma, la información se sincroniza automáticamente con el catálogo **Pase de Entrada**. El visitante recibirá un correo electrónico con su invitación, dependiendo de si es un nuevo visitante o un visitante registrado.
-
-.. admonition:: Ejemplo
-   :class: pied-piper
-
-   Por ejemplo, un perfil puede ser un **Chofer** que necesita acceso solo a áreas de carga, mientras que otro perfil puede ser un **Instalador** con acceso a zonas técnicas especializadas.
 
 .. LIGAS EXTERNAS
 
