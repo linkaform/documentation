@@ -536,7 +536,29 @@ Observe el siguiente diagrama y revise las siguientes secciones para obtener má
 Catálogo: ``Tipos de Vehículos``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo se instala con registros por defecto y contiene una lista de tipos de vehículos, marcas y modelos.
+Este catálogo contiene los diferentes tipos de vehículos que pueden ser registrados para las visitas. Revise las siguientes pestañas para obtener más detalles sobre la estructura del catálogo y ejemplos de registros.
+
+.. tab-set::
+
+   .. tab-item:: Estructura
+
+      Este catálogo incluye los siguientes campos:
+
+      - **Tipo de Vehículo**: Describe la categoría del vehículo, como automóvil, camioneta, moto, entre otros.
+      - **Marca**: Indica la marca del vehículo, por ejemplo, Toyota, Ford, Honda, etc.
+      - **Modelo**: Especifica el modelo del vehículo, proporcionando más detalles sobre la versión o variante de la marca.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos68.png
+
+   .. tab-item:: Registros
+
+      Cada registro representa información específica sobre un vehículo.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos69.png
+
+      .. note:: Al instalar el módulo, se incluyen registros precargados que abarcan la mayoría de los vehículos existentes. Sin embargo, considere agregar más registros según lo requiera.
+
+.. _form-pase-entrada:
 
 Forma: ``Pase de Entrada``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -553,12 +575,14 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
    .. tab-item:: Selección de Visitante
 
-      **Selección de Visitante**: Candidato para generar el pase de entrada. Consulte el siguiente menú desplegable para más detalles sobre las opciones disponibles.
+      **Selección de Visitante**: Persona para la cual se generará el pase de entrada.
 
-      .. image:: /imgs/Modulos/Accesos/Accesos46.png
+      Una vez que haya seleccionado al visitante y el pase esté en estado **Activo**, consulte el siguiente flujo que ilustra las acciones involucradas en la creación del pase de entrada. Para más detalles sobre las opciones, consulte el menú desplegable a continuación.
+
+      .. image:: /imgs/Modulos/Accesos/Accesos65.png
 
       .. dropdown:: Opciones
-         .. :open:
+
 
          .. tab-set::
 
@@ -624,7 +648,6 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
                   Observe el siguiente ejemplo de correo para un pase de entrada activo.
 
                   .. image:: /imgs/Modulos/Accesos/Accesos49.png
-                     :align: center
                      :width: 600 px
 
    .. tab-item:: Ubicación
@@ -658,7 +681,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
       .. image:: /imgs/Modulos/Accesos/Accesos53.png
 
-      .. hint:: Si observa que en el catálogo aparecen empleados de otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
+      .. hint:: Si observa que en el catálogo muestra empleados pertenecientes a otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
          
          Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
 
@@ -670,7 +693,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
       .. image:: /imgs/Modulos/Accesos/Accesos54.png
       
-      .. hint:: Si observa que en el catálogo aparecen empleados de otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
+      .. hint:: Si observa que en el catálogo muestra empleados de otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
          
          Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
 
@@ -680,14 +703,12 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
       .. .. image:: /imgs/Modulos/Accesos/Accesos55.png
 
-      **Fecha Fija**: El pase es válido para un solo día, útil para visitas de un solo día. 
+      **Fecha Fija**: El pase es válido para un solo día, útil para visitas espontaneas. 
                   
-      Si selecciona esta opción, deberá especificar la Fecha y hora de visita. Observe el ejemplo:
-                     
+      .. warning:: Si selecciona esta opción, deberá especificar la **fecha de vigencia** y la **hora límite** del pase. Esto significa que el pase será válido desde el inicio del día seleccionado hasta la hora indicada. Por ejemplo, si establece la hora límite a las 7:56 p.m., el pase será válido hasta esa hora y luego se considerará vencido.
+
       .. image:: /imgs/Modulos/Accesos/Accesos56.gif
       
-      .. warning:: Al seleccionar **Fecha Fija**, el pase solo estará vigente el día y hora indicados. Después de esa fecha y hora, el pase se considerará vencido.
-
       **Rango de fechas**: El pase es válido durante un rango de fechas, ideal para visitas recurrentes.
 
       Si selecciona esta opción, debe especificar lo siguiente:
@@ -706,11 +727,11 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
             - **Limitar número de accesos a**: Define cuántas veces por día la visita puede ingresar.
 
-            .. note:: Si no se especifica una cantidad, se asume que no hay límite de entradas por día.
+            .. attention:: Si no se especifica una cantidad, se asume que no hay límite de entradas por día.
 
-            - **Seleccione los días de acceso**: Seleccione los días específicos en los que la visita tendrá permiso para acceder.
+            - **Seleccione los días de acceso**: Días específicos en los que la visita tendrá permiso para acceder.
 
-            .. warning:: Aunque el pase tenga un rango de fechas vigente, si no selecciona los días específicos de acceso, podría causar problemas en la caseta de seguridad, ya que el sistema indicaría que en esos días la visita no debe estar en las instalaciones.
+            .. warning:: Aunque el pase tenga un rango de fechas vigente, si no selecciona los días de acceso, podría causar problemas en la caseta de seguridad, ya que el sistema indicaría que en esos días la visita no debe estar en las instalaciones.
 
          .. grid-item-card::
             :columns: 6
@@ -804,21 +825,35 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
    .. tab-item:: QR
       
-      Los siguientes campos son de solo lectura y se generan automáticamente a través de un script. Estos permanecen ocultos ya que no requieren interacción del usuario. 
+      Los siguientes campos se generan automáticamente a través de un script. Estos permanecen ocultos ya que no requieren interacción del usuario. 
 
       .. image:: /imgs/Modulos/Accesos/Accesos63.png
 
       - **QR**: Código QR generado para el pase de entrada.
       - **QR Code**: Identificador del pase de entrada.
 
-Siga el flujo para comprender el proceso que ocurre al responder la forma.
+.. attention::
 
-.. image:: /imgs/Modulos/Accesos/Accesos65.png
+   Los registros de esta forma son utilizadas en otras formas, por lo que es necesario que estén disponibles también en un catálogo. Los registros de esta forma deben estar sincronizados con el catálogo `Pase de Entrada <#catalog-pase-entrada>`_ :octicon:`report;1em;sd-text-info`. Para más detalles, consulte el catálogo y revise los siguientes ejemplos de registros:
 
-Sincronización y Notificaciones
-La forma **Pase de Entrada** se sincroniza automáticamente con el catálogo **Pase de Entrada**. A continuación, se describen los campos necesarios para responder la forma:
+   .. image:: /imgs/Modulos/Accesos/Accesos66.png
+      :width: 880px
 
-Al completar y enviar la forma, la información se sincroniza automáticamente con el catálogo **Pase de Entrada**. El visitante recibirá un correo electrónico con su invitación, dependiendo de si es un nuevo visitante o un visitante registrado.
+.. _catalog-pase-entrada:
+
+Catálogo: ``Pase de Entrada``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Este catálogo contiene los mismos registros que de la forma `pase de entrada <#form-pase-entrada>`_ :octicon:`report;1em;sd-text-info`. 
+
+Su estructura es similar a la de la forma, pero a diferencia de esta, los catálogos no pueden incluir campos de grupo repetitivo. Sin embargo, es posible sincronizar registros entre la forma y el catálogo, omitiendo la información de los grupos repetitivos. Por lo tanto, no es necesario completar el catálogo manualmente; simplemente complete la forma para crear un pase de entrada y LinkaForm se encargará de sincronizar automáticamente el registro en este catálogo.
+
+.. note:: Para asegurarse de que la sincronización funcione correctamente, si se agregan nuevos campos (que no sean grupos repetitivos) en la forma, asegúrese de incluirlos también en el catálogo.
+
+Para más detalles de la estructura consulte la forma y observe los registros que se presentan a continuación:
+
+.. image:: /imgs/Modulos/Accesos/Accesos67.png
+   :width: 880px
 
 .. LIGAS EXTERNAS
 

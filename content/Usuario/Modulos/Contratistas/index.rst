@@ -4,17 +4,22 @@
 Módulo Contratistas
 ===================
 
-El **Módulo Contratistas** proporciona los elementos base necesarios para gestionar y administrar la información de múltiples contratistas. Este módulo es importante para el :ref:`doc-accesos` :octicon:`report;1em;sd-text-info`.
+El **Módulo Contratistas** facilita la gestión y administración de la información de múltiples contratistas, además de permitir la ejecución de procesos específicos que involucran a los contratistas.
 
-Observe y analice el siguiente diagrama de flujo del módulo compañía. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar la información de los contratistas.
+.. warning:: Este módulo es importante para el :ref:`doc-accesos` :octicon:`report;1em;sd-text-info`.
+
+Alta de Contratistas
+====================
+
+Observe y analice el siguiente diagrama de flujo. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar la información de los contratistas.
 
 .. image:: /imgs/Modulos/Contratistas/Contratistas1.png
     :align: center
 
 .. _form-contratistas:
 
-Forma del Módulo Contratistas
-=============================
+Forma: ``Contratistas`` 
+^^^^^^^^^^^^^^^^^^^^^^^
 
 La forma **Contratistas** permite ingresar y gestionar toda la información relevante sobre los diferentes contratistas.
 
@@ -75,8 +80,8 @@ Una vez completada la solicitud, proceda con la autorización dentro de la empre
             
 .. _catalog-contratistas:
 
-Catálogo del Módulo Contratistas
-================================
+Catálogo: ``Contratistas`` 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 El catálogo **Contratistas** contiene los mismos registros que de la `forma contratistas <#form-contratistas>`_ :octicon:`report;1em;sd-text-info`.
 
@@ -100,8 +105,8 @@ Para acceder al catálogo, seleccione la opción ``Catálogos > Catálogos`` en 
 
 .. _alta-contratista:
 
-Alta de Contratista
-===================
+Completar Alta de Contratista
+=============================
 
 Si es contratista, siga siga los siguientes pasos para completar su alta:
 
@@ -113,7 +118,7 @@ Si es contratista, siga siga los siguientes pasos para completar su alta:
 .. image:: /imgs/Modulos/Contratistas/Contratistas5.png
 
 3. Presione el hipervínculo al final del correo. Será redirigido a una nueva pestaña con una forma prellenada.
-4. Revise que los datos generales registrados sean correctos, de lo contrario, actualícelos.
+4. Revise que los datos generales registrados sean correctos, de lo contrario actualice la información.
 5. Complete la sección de documentos y suba los archivos requeridos.
 6. Cambie el ``Estatus Solicitud`` a ``Completada`` **solo si** ha completado toda la información solicitada. De lo contrario, no modifique el ``estatus`` hasta que termine su captura.
 
@@ -125,11 +130,49 @@ Si es contratista, siga siga los siguientes pasos para completar su alta:
 
 .. _carga-permisos-visitas:
 
-Carga de Permisos de Visitantes
-===============================
+Carga de Permisos para Empleados
+================================
 
-lorem
+La carga de permisos es el proceso mediante el cual los contratistas se encargan de registrar o cargar los permisos necesarios para sus empleados, según los requisitos establecidos por la empresa o la ubicación a la que buscan acceder.
 
+Este proceso permite que los empleados obtengan la autorización de acceso una vez que cumplan con los permisos solicitados, asegurando que todos los requisitos estén en regla antes de otorgarles el acceso a la instalación.
+
+Forma: ``Carga de Permisos de Visitantes``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Esta forma está diseñada para facilitar la administración de los permisos requeridos para los visitantes, permitiendo cargar documentación, establecer fechas de vigencia y proporcionar otros detalles relevantes. A través de esta forma, se asegura que todos los permisos solicitados estén debidamente registrados y actualizados para permitir el acceso autorizado a las instalaciones.
+
+Revise las siguientes pestañas para obtener más detalles sobre la estructura de la forma y ejemplos de registros.
+
+.. tab-set::
+
+    .. tab-item:: Estructura
+
+        La forma está compuesta por los siguientes campos:
+
+        - **Razón Social**: 
+
+        .. caution:: Solo podrá ver su propia razón social. Si por algún motivo visualiza una razón social diferente a la suya, omita esa información y no la seleccione bajo ninguna circunstancia, ya que se trata de información clasificada de otros contratistas.
+
+        - **Nombre completo**: Seleccione al visitante al que se le cargará el permiso.
+        - **Permiso**: Identifique el tipo de permiso o certificación requerida.            
+        - **Documento**: Suba una copia digital del documento que acredita el permiso.
+        - **Fotografía**: Añada una imagen del documento para respaldo visual.
+        - **Fecha de Expedición**: Fecha en la que fue expedido el permiso.
+        - **Fecha de Caducidad**: Fecha en la que el permiso dejará de ser válido.
+
+        .. warning:: Si el permiso está próximo a vencer, asegúrese de actualizar la información para evitar restricciones en el acceso del visitante, ya que la forma no realiza estos cálculos automáticamente. Actualmente, se está trabajando en mejorar este proceso.
+
+        - **Estatus de Autorización**: Indica el estado actual del permiso (Pendiente, Autorizado, En Revisión).
+
+        .. note:: i el estatus de la autorización del permiso no es Autorizado, el visitante no podrá acceder a las instalaciones, ya que el permiso aparecerá como no válido en el pase de entrada.
+
+        - **Estatus de Documento**: Refleja el estado del documento (Activo, Vencido).
+
+    .. tab-item:: Registros
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas6.png
+    
 Ha completado con éxito el proceso de configuración y utilización del módulo de contratistas. Recuerde que este módulo es adaptable a sus necesidades, lo que significa que puede ajustarlo según lo requiera.
 
 Si tiene alguna duda o necesita asistencia técnica, no dude en ponerse en contacto con nuestro equipo de soporte.
