@@ -4,7 +4,7 @@
 Módulo Ubicaciones
 ==================
 
-El **Módulo Ubicaciones** proporciona las herramientas necesarias para gestionar y administrar información relacionada con diferentes ubicaciones y sus áreas asociadas. 
+El **Módulo Ubicaciones** proporciona los elementosy configuraciones necesarias para gestionar y administrar información relacionada con diferentes ubicaciones y sus áreas asociadas. 
 
 .. warning:: Antes de utilizar el módulo, asegúrese de contar con las configuraciones y registros necesarios del :ref:`doc-base` :octicon:`report;1em;sd-text-info`.
 
@@ -79,13 +79,12 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
 
     .. tab-item:: Registros
 
-        Cuando registre una nueva área dentro de una ubicación, es posible que no cuente con una dirección específica. En tal caso, utilice la dirección de la ubicación general.
-
-        Sin embargo, para ubicaciones que no se encuentran físicamente dentro del edificio pero forman parte de la misma instalación, utilice una dirección específica. Por ejemplo:
+        Cuando registre una nueva área dentro de una ubicación, es posible que no cuente con una dirección específica. En tal caso, utilice la dirección de la ubicación general. Sin embargo, para ubicaciones que no se encuentran físicamente dentro del edificio pero forman parte de la misma instalación, utilice una dirección específica. Por ejemplo:
 
         Para casetas de vigilancia, que se encuentran en diferentes puntos fuera de la instalación, asegúrese de asignar una dirección específica para cada una. Observe la siguiente imagen.
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones13.png
+            :width: 648px
 
         Cuando crea un nuevo registro en la forma, este se sincroniza automáticamente en dos catálogos distintos, como se muestra en el siguiente diagrama.
 
@@ -200,7 +199,7 @@ Este catálogo contiene los mismos registros que la `forma áreas dentro de la u
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones8.png
         
-        Observe que el catálogo cuenta con algunos filtros. Al instalar el módulo, es importante que verifique la existencia de estos filtros, ya que son utilizados por el módulo de accesos.
+        Observe que el catálogo cuenta con algunos filtros. Al instalar el módulo, es importante que verifique la existencia de estos filtros, ya que son utilizados por el módulo de seguridad.
 
         En caso de que no encuentre los filtros necesarios, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` para obtener más detalles y aplicarlos con los siguientes valores:
 

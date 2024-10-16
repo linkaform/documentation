@@ -27,7 +27,7 @@ Para acceder a la forma, seleccione la opción ``Formas > Mis Formas`` en el men
 
 .. image:: /imgs/Modulos/Contratistas/Contratistas2.png
 
-Al crear un nuevo registro en esta forma, se sincroniza automáticamente con el `catálogo contratistas <#catalog-contratistas>`_ :octicon:`report;1em;sd-text-info`. Observe el flujo de acciones necesario en el siguiente diagrama.
+Al crear un nuevo registro en esta forma, se sincronizará automáticamente con el `catálogo contratistas <#catalog-contratistas>`_ :octicon:`report;1em;sd-text-info`. Observe el flujo de acciones necesario en el siguiente diagrama.
 
 .. image:: /imgs/Modulos/Contratistas/Contratistas1.png
     :align: center
@@ -85,23 +85,17 @@ Catálogo: ``Contratistas``
 
 El catálogo **Contratistas** contiene los mismos registros que de la `forma contratistas <#form-contratistas>`_ :octicon:`report;1em;sd-text-info`.
 
-.. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `contratistas <#form-contratistas>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
+.. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente responda la forma de `contratistas <#form-contratistas>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
-Para acceder al catálogo, seleccione la opción ``Catálogos > Catálogos`` en el menú lateral y ubique la carpeta ``Contratistas``.
+Para acceder al catálogo, seleccione la opción ``Catálogos > Catálogos`` en el menú lateral y ubique la carpeta ``Contratistas``. 
 
 .. image:: /imgs/Modulos/Contratistas/Contratistas9.png
 
-.. tab-set::
+Para más detalles sobre la estructura, consulte la forma correspondiente. Observe los siguientes registros de ejemplo:
 
-    .. tab-item:: Estructura
+.. image:: /imgs/Modulos/Contratistas/Contratistas8.png
 
-       .. image:: /imgs/Modulos/Contratistas/Contratistas7.png
-
-    .. tab-item:: Registros
-
-        .. image:: /imgs/Modulos/Contratistas/Contratistas8.png
-
-.. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
+.. note:: Recuerde que un catálogo es útil para tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
 
 .. _alta-contratista:
 
@@ -150,28 +144,50 @@ Revise las siguientes pestañas para obtener más detalles sobre la estructura d
 
         La forma está compuesta por los siguientes campos:
 
-        - **Razón Social**: 
+        **Razón Social**: Nombre legal del contratista.
 
-        .. caution:: Solo podrá ver su propia razón social. Si por algún motivo visualiza una razón social diferente a la suya, omita esa información y no la seleccione bajo ninguna circunstancia, ya que se trata de información clasificada de otros contratistas.
+        .. caution:: Si por algún motivo visualiza una razón social diferente a la suya, omita esa información y no la seleccione bajo ninguna circunstancia, ya que se trata de información clasificada de otros contratistas.
+        
+        .. image:: /imgs/Modulos/Contratistas/Contratistas10.png
 
-        - **Nombre completo**: Seleccione al visitante al que se le cargará el permiso.
-        - **Permiso**: Identifique el tipo de permiso o certificación requerida.            
-        - **Documento**: Suba una copia digital del documento que acredita el permiso.
-        - **Fotografía**: Añada una imagen del documento para respaldo visual.
-        - **Fecha de Expedición**: Fecha en la que fue expedido el permiso.
-        - **Fecha de Caducidad**: Fecha en la que el permiso dejará de ser válido.
+        **Nombre completo**: Seleccione al empleado al que se le cargará el permiso.
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas11.png
+
+        **Permiso**: Identifique el tipo de permiso o certificación requerida.
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas12.png
+
+        **Documento**: Suba una copia digital del documento que acredita el permiso.
+
+        **Fotografía**: Añada una imagen del documento para respaldo visual.
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas13.png
+
+        **Fecha de Expedición**: Fecha en la que fue expedido el permiso.
+
+        **Fecha de Caducidad**: Fecha en la que el permiso dejará de ser válido.
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas14.png
 
         .. warning:: Si el permiso está próximo a vencer, asegúrese de actualizar la información para evitar restricciones en el acceso del visitante, ya que la forma no realiza estos cálculos automáticamente. Actualmente, se está trabajando en mejorar este proceso.
 
-        - **Estatus de Autorización**: Indica el estado actual del permiso (Pendiente, Autorizado, En Revisión).
+        **Estatus de Autorización**: Indica el estado actual del permiso (Pendiente, Autorizado, En Revisión).
 
-        .. note:: i el estatus de la autorización del permiso no es Autorizado, el visitante no podrá acceder a las instalaciones, ya que el permiso aparecerá como no válido en el pase de entrada.
+        .. image:: /imgs/Modulos/Contratistas/Contratistas15.png
 
-        - **Estatus de Documento**: Refleja el estado del documento (Activo, Vencido).
+        .. note:: Si el estatus de la autorización del permiso no es **Autorizado**, el visitante no podrá acceder a las instalaciones, ya que el permiso aparecerá como no válido en el pase de entrada.
+
+        **Estatus de Documento**: Refleja el estado del documento (Activo, Vencido).
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas16.png
 
     .. tab-item:: Registros
 
-        .. image:: /imgs/Modulos/Contratistas/Contratistas6.png
+        Cada registro representa información sobre un permiso otorgado a un empleado. Observe el siguiente ejemplo de los permisos solicitados para un empleado, que incluye la documentación, vigencia y estatus de cada permiso.
+
+        .. image:: /imgs/Modulos/Contratistas/Contratistas17.png
+            :width: 880px
     
 Ha completado con éxito el proceso de configuración y utilización del módulo de contratistas. Recuerde que este módulo es adaptable a sus necesidades, lo que significa que puede ajustarlo según lo requiera.
 
