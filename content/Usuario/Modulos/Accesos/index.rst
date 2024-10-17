@@ -30,11 +30,12 @@ Para acceder a los catálogos, seleccione la opción ``Catálogos > Catálogos``
 Generar Pase de Entrada
 =======================
 
-Observe y analice el siguiente diagrama de flujo del módulo de seguridad. Este diagrama representa de manera general el flujo de acciones necesarias para generar un pase de entrada. Cada recuadro representa un proceso que involucra varios pasos. Siga el proceso y continúe leyendo las secciones en el orden indicado en el diagrama para comprender el módulo.
+Observe y analice el siguiente diagrama de flujo del módulo. Este diagrama representa el flujo de acciones necesarias para generar un pase de entrada. Cada recuadro representa un proceso. Siga el proceso y continúe leyendo las secciones en el orden indicado en el diagrama para comprender el módulo.
 
-.. image:: /imgs/Modulos/Accesos/Accesos2.png
+.. image:: /imgs/Modulos/Accesos/Accesos1.png
+   :width: 880px
 
-.. _definir-permisos:
+.. _proceso-definir-permisos:
 
 Definición de Permisos
 ----------------------
@@ -184,7 +185,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       .. image:: /imgs/Modulos/Accesos/Accesos44.png
 
-.. _form-permisos:
+.. _form-definicion-permisos:
 
 Forma: ``Definición de Permisos``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,7 +230,7 @@ Consulte las siguientes pestañas para obtener más detalles sobre la estructura
       
       **Materiales/Equipo**: Grupo repetitivo que especifica el material, objeto o equipo requerido para el permiso, enlazado al catálogo de `lista de objetos <#catalog-lista-objetos>`_ :octicon:`report;1em;sd-text-info`.
       
-      .. warning:: En el catálogo `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`, no es posible utilizar un grupo repetitivo. Por lo tanto, se recurre directamente al catálogo de lista de objetos.
+      .. warning:: En el `Catálogo Definición de Permisos <#catalog-definicion-permisos>`_ :octicon:`report;1em;sd-text-info`, no es posible utilizar un grupo repetitivo. Por lo tanto, se utiliza directamente al catálogo de lista de objetos.
 
       .. image:: /imgs/Modulos/Accesos/Accesos43.png
 
@@ -245,7 +246,7 @@ Consulte las siguientes pestañas para obtener más detalles sobre la estructura
 
       .. warning:: Los registros de esta forma son indispensables y son utilizados por otras formas, lo que implica la necesidad de que estén disponibles en un catálogo. Sin embargo, debido a que los catálogos no admiten campos con grupos repetitivos, no es posible una sincronización automática completa en estos casos.
 
-         Por lo tanto, cuando registre un permiso en la forma, asegúrese de ingresarlo también manualmente en el catálogo `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
+         Por lo tanto, cuando registre un permiso en la forma, asegúrese de ingresarlo manualmente en el `catálogo definición de permisos <#catalog-definicion-permisos>`_ :octicon:`report;1em;sd-text-info`. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
 
          Actualmente, estamos trabajando en una solución para mejorar este flujo y automatizar completamente la sincronización en futuras versiones.
 
@@ -256,13 +257,12 @@ Consulte las siguientes pestañas para obtener más detalles sobre la estructura
 
          .. image:: /imgs/Modulos/Accesos/Accesos18.png
 
-
-.. _catalog-permisos:
+.. _catalog-definicion-permisos:
 
 Catálogo: ``Definición de Permisos``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo contiene los permisos o certificaciones, detallando los requisitos específicos necesarios para cada uno. Para obtener más información sobre su estructura y funcionamiento, consulte la documentación correspondiente a la forma `Definición de Permisos <#form-permisos>`_ :octicon:`report;1em;sd-text-info`.
+Este catálogo contiene los permisos o certificaciones, detallando los requisitos específicos necesarios para cada uno. Para obtener más información sobre su estructura y funcionamiento, consulte la documentación correspondiente a la `forma definición de permisos <#form-definicion-permisos>`_ :octicon:`report;1em;sd-text-info`.
 
 .. image:: /imgs/Modulos/Accesos/Accesos8.png
    :width: 880px
@@ -276,7 +276,7 @@ Configuración de Perfiles
 
 El proceso de configuración de perfiles implica definir distintos tipos de visitantes y personalizar sus características mediante la asignación de permisos específicos. Esto asegura que cada usuario tenga el acceso adecuado a las funciones y recursos necesarios, según su rol y responsabilidades dentro de la ubicación.
 
-Observe el siguiente diagrama, que ilustra la relación entre la **Configuración de Perfiles** y la `Definición de Permisos <#definir-permisos>`_ :octicon:`report;1em;sd-text-info`. Consulte las secciones a continuación para obtener más detalles sobre los elementos involucrados.
+Observe el siguiente diagrama, que ilustra la relación entre la **Configuración de Perfiles** y la `Definición de Permisos <#proceso-definir-permisos>`_ :octicon:`report;1em;sd-text-info`. Consulte las secciones a continuación para obtener más detalles sobre los elementos involucrados.
 
 .. image:: /imgs/Modulos/Accesos/Accesos19.png
    :align: center
@@ -342,7 +342,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       - **Perfil**: Tipo de perfile, definido en el catálogo `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
 
-      - **Permisos/Certificaciones**: Grupo repetitivo que detalla los permisos necesarios para cada perfil, especificados en el catálogo `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+      - **Permisos/Certificaciones**: Grupo repetitivo que detalla los permisos necesarios para cada perfil, especificados en el `catálogo Definición de Permisos <#catalog-definicion-permisos>`_ :octicon:`report;1em;sd-text-info`.
 
       .. note:: Un perfil puede contener uno o varios permisos
 
@@ -367,7 +367,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       .. warning:: Los registros de esta forma son indispensables y son utilizados por otras formas, lo que requiere que estén disponibles también en un catálogo. Sin embargo, debido a la limitación de que los catálogos no admiten campos de grupo repetitivo, no es posible realizar una sincronización automática completa en estos casos.
 
-         Por lo tanto, cuando registre la configuración de un nuevo perfil en la forma, asegúrese de también ingresarlo manualmente en el catálogo `Configuración de Perfiles <#catalog-config-perfiles>`_ :octicon:`report;1em;sd-text-info`. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
+         Por lo tanto, cuando registre la configuración de un nuevo perfil en la forma, asegúrese de también ingresarlo manualmente en el catálogo `configuración de perfiles <#catalog-config-perfiles>`_ :octicon:`report;1em;sd-text-info`. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
 
          Actualmente, estamos trabajando en una solución para mejorar este flujo y automatizar completamente la sincronización en futuras versiones.
 
@@ -376,7 +376,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 Catálogo: ``Configuración de Perfiles``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo es una réplica de la forma `Configuración de Perfiles <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info` y contiene la lista de registros que relacionan perfiles con los permisos necesarios.
+Este catálogo es una réplica de la `forma configuración de perfiles <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info` y contiene la lista de registros que relacionan perfiles con los permisos necesarios.
 
 Revise las siguientes pestañas para más detalles sobre la estructura y algunos ejemplos.
 
@@ -388,7 +388,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
       - **Perfil**: Tipo de perfile, definido en el catálogo `Perfiles <#catalog-perfiles>`_ :octicon:`report;1em;sd-text-info`.
       
-      - **Permisos/Certificaciones**: Lista de permisos para el perfil, especificados en el catálogo `Definición de Permisos <#catalog-permisos>`_ :octicon:`report;1em;sd-text-info`.
+      - **Permisos/Certificaciones**: Lista de permisos para el perfil, especificados en el `catálogo definición de permisos <#catalog-definicion-permisos>`_ :octicon:`report;1em;sd-text-info` .
 
       - **Ubicación**: Ubicación a la cual se aplicará esta configuración.
 
@@ -398,9 +398,9 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
    .. tab-item:: Registros
 
-      A diferencia de la forma `Configuración de Perfiles <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info`, un catálogo no admite campos de grupo repetitivo, por lo que es necesario registrar manualmente los permisos asociados a cada perfil. Observe el siguiente ejemplo:
+      A diferencia de la `forma <#form-config-perfiles>`_ :octicon:`report;1em;sd-text-info`, un catálogo no admite campos de grupo repetitivo, por lo que es necesario registrar manualmente los permisos asociados a cada perfil. Observe el siguiente ejemplo:
 
-      .. seealso:: Consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para una importación masiva de registros.
+      .. seealso:: Consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para una importación masiva.
 
       .. image:: /imgs/Modulos/Accesos/Accesos26.png
          :width: 880 px
@@ -492,7 +492,7 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 
          .. image:: /imgs/Modulos/Accesos/Accesos45.png
 
-      Al crear un nuevo registro en esta forma, la información se sincroniza automáticamente con el catálogo `Visita Autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`.
+      Al crear un nuevo registro en esta forma, la información se sincroniza automáticamente con el `catálogo visita autorizada <#catalog-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`.
       
       .. attention:: Si realiza cambios en la forma, asegúrese de actualizar también el catálogo, verificando que los identificadores de los campos coincidan; Consulte :ref:`flujos` :octicon:`report;1em;sd-text-info` para más detalles.
 
@@ -501,9 +501,9 @@ Revise las siguientes pestañas para más detalles sobre la estructura y algunos
 Catálogo: ``Visita Autorizada``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Este catálogo es una réplica de la forma `Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Su propósito es mantener la información organizada para su consulta en otras formas y catálogos.
+Este catálogo es una réplica de la `forma visita autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Su propósito es mantener la información organizada para su consulta en otras formas y catálogos.
 
-.. attention:: Este catálogo está diseñado para recibir registros automáticamente derivados de una forma. Por lo tanto, no es necesario ingresar los datos manualmente. En su lugar, complete la `forma Visita Autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info` y LinkaForm sincronizará automáticamente esos registros en el catálogo.
+.. attention:: Este catálogo está diseñado para recibir registros automáticamente derivados de una forma. Por lo tanto, no es necesario ingresar los datos manualmente. En su lugar, complete la forma correspondiente y LinkaForm sincronizará automáticamente esos registros en el catálogo.
 
 Consulte la forma para obtener más detalles sobre la estructura del catálogo. Observe los siguientes registros de ejemplo:
 
@@ -683,7 +683,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
       .. hint:: Si observa que en el catálogo muestra empleados pertenecientes a otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
          
-         Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
+         Consulte el :ref:`campo-catalogo` :octicon:`report;1em;sd-text-info`, específicamente el menú desplegable **Relacionar**, para obtener más información sobre como relacionar catálogos.
 
    .. tab-item:: Autorizado por
 
@@ -695,7 +695,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
       
       .. hint:: Si observa que en el catálogo muestra empleados de otra ubicación, asegúrese de que, en la forma, el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para filtrar correctamente a las personas según su ubicación.
          
-         Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
+         Consulte el :ref:`campo-catalogo` :octicon:`report;1em;sd-text-info`, específicamente el menú desplegable **Relacionar**, para obtener más información sobre como relacionar catálogos.
 
    .. tab-item:: Visita de
 
@@ -748,7 +748,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
       .. hint:: Si el catálogo muestra áreas de otra ubicación, verifique que en la forma el catálogo esté correctamente relacionado con el catálogo **Ubicaciones** para que solo se muestren las áreas correspondientes.
          
-         Consulte :ref:`section-forms` :octicon:`report;1em;sd-text-info` para obtener más información sobre como relacionar catálogos.
+         Consulte el :ref:`campo-catalogo` :octicon:`report;1em;sd-text-info`, específicamente el menú desplegable **Relacionar**, para obtener más información sobre como relacionar catálogos.
 
    .. tab-item:: Vehículos
 
@@ -834,7 +834,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
 .. attention::
 
-   Los registros de esta forma son utilizadas en otras formas, por lo que es necesario que estén disponibles también en un catálogo. Los registros de esta forma deben estar sincronizados con el catálogo `Pase de Entrada <#catalog-pase-entrada>`_ :octicon:`report;1em;sd-text-info`. Para más detalles, consulte el catálogo y revise los siguientes ejemplos de registros:
+   Los registros de esta forma son utilizadas en otras formas, por lo que es necesario que estén disponibles también en un catálogo. Los registros de esta forma deben estar sincronizados con el `catálogo pase de entrada <#catalog-pase-entrada>`_ :octicon:`report;1em;sd-text-info`. Para más detalles, consulte el catálogo y revise los siguientes ejemplos de registros:
 
    .. image:: /imgs/Modulos/Accesos/Accesos66.png
       :width: 880px
@@ -860,7 +860,3 @@ Para más detalles de la estructura consulte la forma y observe los registros qu
 .. |linkaform| raw:: html
 
    <a href=**https://www.linkaform.com/** target=**_blank**>LinkaForm</a>
-
-
-
-

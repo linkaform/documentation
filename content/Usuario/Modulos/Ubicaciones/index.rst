@@ -4,11 +4,11 @@
 Módulo Ubicaciones
 ==================
 
-El **Módulo Ubicaciones** proporciona los elementosy configuraciones necesarias para gestionar y administrar información relacionada con diferentes ubicaciones y sus áreas asociadas. 
+El **Módulo Ubicaciones** proporciona los elementos y configuraciones necesarias para gestionar y administrar información relacionada con diferentes ubicaciones y sus áreas asociadas. 
 
 .. warning:: Antes de utilizar el módulo, asegúrese de contar con las configuraciones y registros necesarios del :ref:`doc-base` :octicon:`report;1em;sd-text-info`.
 
-Observe y analice el siguiente diagrama de flujo del módulo ubicaciones. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar información de ubicaciones y áreas.
+Observe y analice el siguiente diagrama de flujo del módulo. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar información de ubicaciones y áreas.
 
 .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones1.png
 
@@ -44,7 +44,7 @@ Al crear un nuevo registro en esta forma, se sincroniza automáticamente con el 
         El catálogo **Ubicaciones** incluye los siguientes campos:
 
         - **Ubicación**: Nombre descriptivo de la ubicación.
-        - **Dirección**: Dirección de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
+        - **Dirección**: Dirección de la ubicación (catálogo **contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones10.png
 
@@ -68,9 +68,9 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
         El catálogo **Áreas de las Ubicaciones** incluye los siguientes campos:
 
         - **Nombre del Área**: Nombre de la área específica.
-        - **Tipo de Área**: Tipo al que pertenece el área (enlazado al catálogo `Tipo de Áreas <#catalog-tipo-areas>`_ :octicon:`report;1em;sd-text-info`).
-        - **Ubicación**: Ubicación a la que pertenece el área (enlazado al catálogo `Ubicaciones <#catalog-ubicaciones>`_ :octicon:`report;1em;sd-text-info`).
-        - **Dirección**: Dirección específica del área dentro de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
+        - **Tipo de Área**: Tipo al que pertenece el área (catálogo `tipo de áreas <#catalog-tipo-areas>`_ :octicon:`report;1em;sd-text-info`).
+        - **Ubicación**: Ubicación a la que pertenece el área (catálogo `ubicaciones <#catalog-ubicaciones>`_ :octicon:`report;1em;sd-text-info`).
+        - **Dirección**: Dirección específica del área dentro de la ubicación (catálogo **contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
         - **Estatus del Área**: Estado actual del área (**abierta**, **cerrada**, **clausurada**, en **mantenimiento**, **disponible**, **ocupada**).
         - **Estatus**: Estado administrativo del área (**activa** o **inactiva**).
         - **QR Área**: Código QR asociado al área para su identificación y acceso.
@@ -120,7 +120,7 @@ Ubicaciones
 
 Este catálogo contiene los mismos registros que la `forma ubicaciones <#form-ubicaciones>`_ :octicon:`report;1em;sd-text-info`.
 
-.. important:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente responda la forma `ubicaciones <#form-ubicaciones>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
+.. important:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente responda la `forma ubicaciones <#form-ubicaciones>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
 .. tab-set::
 
@@ -129,7 +129,7 @@ Este catálogo contiene los mismos registros que la `forma ubicaciones <#form-ub
         El catálogo **Ubicaciones** incluye los siguientes campos:
 
         - **Ubicación**: Nombre descriptivo de la ubicación.
-        - **Dirección**: Dirección de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
+        - **Dirección**: Dirección de la ubicación (catálogo **contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones5.png
 

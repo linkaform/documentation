@@ -677,69 +677,85 @@ Si se contesta o edita el formulario o catálogo desde la aplicación web, simpl
 Campo catálogo
 ^^^^^^^^^^^^^^
 
-Este campo se utiliza para mostrar información almacenada en una base de datos (consulte :ref:`catalogo` :octicon:`report;1em;sd-text-info`).
+Un campo de tipo catálogo permite consultar los registros almacenados en la misma.
 
-Para utilizar dicho campo, tenga en cuenta los siguientes aspectos y siga los siguientes pasos:
+.. seealso:: consulte :ref:`catalogo` :octicon:`report;1em;sd-text-info` para más detalles. 
 
-1. Primero, considere tener o, en su defecto, cree un catálogo (consulte :ref:`crear-catalogo` :octicon:`report;1em;sd-text-info`). En este caso, contemple el catálogo ``Tiendas``.
+Para utilizar un catálogo, siga los siguientes pasos:
+
+1. Cree un catálogo.
+
+.. seealso:: consulte :ref:`crear-catalogo` :octicon:`report;1em;sd-text-info`.
+
 2. Agregue el campo catálogo.
 3. Asigne un nombre al campo catálogo.
-4. En ``Selecciona un catálogo``, coloque el nombre del catálogo previamente preparado. Automáticamente, Linkaform sugerirá el nombre del catálogo.
+4. Ingrese el nombre del catálogo previamente preparado en el recuadro vacío. Linkaform sugerirá automáticamente el catálogo correspondiente.
 
-.. important:: 
-  
-  * No puede tener dos campos de catálogo utilizando el mismo catálogo.
-  * Al crear un catálogo, considere que puede tener múltiples catálogos, e incluso pueden estar anidados.
-
+.. warning:: Dentro de una forma, no es posible utilizar el mismo catálogo más de una vez.
 
 5. Guarde la forma o el catálogo en su totalidad.
-6. Presione el botón ``Editar``.
+6. Presione el botón ``Editar`` para personalizar los campos del catálogo. Consulte el siguiente desplegable para más detalles.
 
 .. image:: /imgs/Formas/Formas17.png
 
 .. dropdown:: Editar
   
-      En la interfaz de edición, podrá configurar los siguientes apartados. 
+    En la interfaz de edición, podrá configurar los siguientes apartados: 
 
-      **Filtro de catálogo:** Puede crear un filtro de la información del catálogo y al aplicar el filtro, la forma solo mostrará el resultado de ese filtro. (hipervínculo de filtros en catálogos)
+    .. tab-set::
 
-      .. image:: /imgs/Formas/Formas17.1.png
+      .. tab-item:: Filtros
 
-      **Editar campos del catálogo:** En la opción ``Editar``, seleccione los campos del catálogo que desea incluir.
-      
-      .. admonition:: Ejemplo
-          :class: pied-piper
+          Los filtros permiten que la forma muestre únicamente los registros que cumplan con los criterios seleccionados.
 
-          Por ejemplo, aunque el catálogo tenga 10 campos, en la forma solo puede utilizar 3 campos.
-
-      .. image:: /imgs/Formas/Formas17.2.1.png
-
-      Al seleccionar los campos, podrá observarlos en la interfaz de edición y tendrá las siguientes opciones:
-      
-      .. image:: /imgs/Formas/Formas17.2.2.png
-
-      - **Solo lectura:** Al activar esta opción, el campo solo será visible. El usuario al capturar información no podrá seleccionarlo. 
-
-      .. admonition:: Ejemplo
-          :class: pied-piper
+          .. image:: /imgs/Formas/Formas17.1.png
           
-          Por ejemplo, en el catálogo ``Tiendas``, se incluyen los campos de tipo texto ``Tienda`` y ``Cadena`` con la opción de lectura deshabilitada. Al ejecutarlo en el formulario, permitirá al usuario seleccionar estos campos. En cambio, los campos ``Determinante`` y ``Dirección``, al estar habilitados, no podrán ser seleccionados, pero con los dos campos anteriores permitirán el autorellenado.
+          .. seealso:: Consulte :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` para crear y guardar filtros.
 
-      - **Requerido:** Activar esta opción asegura que no se enviará la información sin todos los datos del catálogo.
+      .. tab-item:: Editar
 
-      - **Ayuda:** Habilita una opción de texto adicional en el campo como referencia a la respuesta que se solicita.
+          La opción ``Editar`` permite seleccionar los campos del catálogo que desea mostrar en la forma. Es decir, aunque el catálogo tenga 10 campos, en la forma solo visualizará las que haya seleccionado.
 
-      En **Propiedades** ubicada debajo del campo, puede habilitar la lectura de código de barras. Esto aplica para campos en los que su información corresponda a alguna etiqueta. También, puede establecer el **Tipo** para que haga la lectura directa o búsqueda de la información en la base de datos.
+          .. image:: /imgs/Formas/Formas17.2.1.png
 
-      .. image:: /imgs/Formas/Formas18.jpg
-      
-      .. important:: Para organizar los campos seleccionados; simplemente haga clic en el campo y arrástralo a la posición deseada.
+          Al seleccionar los campos, podrá observarlos en la interfaz de edición. Considere las siguientes opciones:
 
-      - **Geocerca:** Una funcionalidad de catálogos es poder dar de alta ubicaciones mediante coordenadas GPS. Al habilitarse ``Geocerca``, se define la distancia de referencia permitida de las coordenadas, y así solo se mostrará la información si se encuentra en el rango de metros configurado.
+          - **Solo lectura:** Al activar esta opción, el campo solo será visible. El usuario al capturar información no podrá seleccionarlo. 
 
-      .. image:: /imgs/Formas/Formas17.3.png
+          .. admonition:: Ejemplo
+              :class: pied-piper
+                
+              Por ejemplo, en el catálogo ``Tiendas``, se incluyen los campos de tipo texto ``Tienda`` y ``Cadena`` con la opción de lectura deshabilitada. Al ejecutarlo en el formulario, permitirá al usuario seleccionar estos campos. En cambio, los campos ``Determinante`` y ``Dirección``, al estar habilitados, no podrán ser seleccionados, pero con los dos campos anteriores permitirán el autorellenado.
 
-      Al tener tus configuraciones listas, presione ``Guardar`` y regrese presionando ``Cerrar``.
+          - **Requerido:** Al activar esta opción, se obliga a seleccionar un dato, garantizando que la información no se envíe hasta que se complete el campo. 
+
+          - **Ayuda:** Habilita una opción de texto adicional en el campo como referencia a la respuesta que se solicita.
+
+          .. image:: /imgs/Formas/Formas17.2.2.png
+
+          En **Propiedades** ubicada debajo del campo, puede habilitar la lectura de código de barras. Esto aplica para campos en los que su información corresponda a alguna etiqueta. 
+          
+          También, puede establecer el **Tipo** para que haga la lectura directa o búsqueda de la información en la base de datos.
+
+          .. image:: /imgs/Formas/Formas18.jpg
+            
+          .. important:: Para organizar los campos seleccionados; simplemente haga clic en el campo y arrástralo a la posición deseada.
+
+      .. tab-item:: Geocerca
+
+          Esta funcionalidad permite dar de alta ubicaciones mediante coordenadas GPS. 
+          
+          Al habilitarse, deberá definir la distancia de referencia permitida de las coordenadas y solo así se mostrará la información si se encuentra en el rango de metros configurado.
+
+          .. image:: /imgs/Formas/Formas17.3.png
+
+          Al tener tus configuraciones listas, presione ``Guardar`` y regrese presionando ``Cerrar``.
+
+.. dropdown:: Relacionar
+
+  Relacionar un catálogo con otro catálogo se refiere al proceso de establecer una conexión o vínculo entre dos catálogos diferentes, permitiendo que los registros de uno puedan ser utilizados o referenciados en el otro. 
+
+  Para que esta relación funcione, ambos catálogos deben compartir un identificador común que los conecte.
 
 .. _configurar-correo-email:
 

@@ -4,7 +4,7 @@
 Módulo Contratistas
 ===================
 
-El **Módulo Contratistas** facilita la gestión y administración de la información de múltiples contratistas, además de permitir la ejecución de procesos específicos que involucran a los contratistas.
+El **Módulo Contratistas** proporciona elementos y configuraciones para la administración de la información de múltiples contratistas, además de permitir la ejecución de procesos específicos que involucran a los contratistas.
 
 .. warning:: Este módulo es importante para el :ref:`doc-accesos` :octicon:`report;1em;sd-text-info`.
 

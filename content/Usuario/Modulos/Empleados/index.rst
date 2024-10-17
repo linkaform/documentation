@@ -9,7 +9,7 @@ El **Módulo Empleados** proporciona los elementos y configuraciones necesarias 
 - Registrar y administrar datos personales y laborales de los empleados.
 - Gestionar y asignar departamentos y puestos dentro de una empresa.
 
-Observe y analice el siguiente diagrama de flujo del módulo. Este diagrama representa el flujo ordenado de acciones necesarias para realizar el registro de un empleado.
+Observe y analice el siguiente diagrama de flujo del módulo. Este diagrama representa el flujo de acciones necesarias para realizar el registro de un empleado.
 
 .. image:: /imgs/Modulos/Empleados/Empleados1.png
 

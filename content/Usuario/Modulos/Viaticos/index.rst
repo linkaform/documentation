@@ -4,7 +4,7 @@
 Módulo Viáticos
 ================
 
-El **Módulo de Viáticos** gestiona y administra el proceso completo de solicitud, autorización, registro de viáticos y gastos relacionados con viajes o fondos asignados como caja chica para empleados.
+El **Módulo de Viáticos** proporciona elementos y configuraciones para administrar el proceso completo de solicitud, autorización, registro de viáticos y gastos relacionados con viajes o fondos asignados como caja chica para empleados.
 
 A continuación, se describe el flujo del proceso del módulo de viáticos, tal como se muestra en el diagrama adjunto.
 
