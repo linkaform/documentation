@@ -502,7 +502,7 @@ Catálogo: ``Visita Autorizada``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Este catálogo es una réplica de la `forma visita autorizada <#form-visita-autorizada>`_ :octicon:`report;1em;sd-text-info`. Su propósito es mantener la información organizada para su consulta en otras formas y catálogos.
-
+  
 .. attention:: Este catálogo está diseñado para recibir registros automáticamente derivados de una forma. Por lo tanto, no es necesario ingresar los datos manualmente. En su lugar, complete la forma correspondiente y LinkaForm sincronizará automáticamente esos registros en el catálogo.
 
 Consulte la forma para obtener más detalles sobre la estructura del catálogo. Observe los siguientes registros de ejemplo:
