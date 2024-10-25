@@ -4,13 +4,13 @@
 Módulo Ubicaciones
 ==================
 
-El **Módulo Ubicaciones** proporciona las herramientas necesarias para gestionar y administrar información relacionada con diferentes ubicaciones y sus áreas asociadas. 
+El **Módulo Ubicaciones** proporciona los elementos y configuraciones necesarias para gestionar y administrar información relacionada con diferentes ubicaciones y sus áreas asociadas. 
 
 .. warning:: Antes de utilizar el módulo, asegúrese de contar con las configuraciones y registros necesarios del :ref:`doc-base` :octicon:`report;1em;sd-text-info`.
 
-Observe y analice el siguiente diagrama de flujo del módulo ubicaciones. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar información de ubicaciones y áreas.
+Observe y analice el siguiente diagrama de flujo del módulo. Este diagrama representa el flujo de acciones necesarias para registrar y gestionar información de ubicaciones y áreas.
 
-.. image:: /imgs/Modulos/Ubicaciones/ubicaciones1.png
+.. image:: /imgs/Modulos/Ubicaciones/Ubicaciones1.png
 
 Formas del Módulo Ubicaciones
 =============================
@@ -44,7 +44,7 @@ Al crear un nuevo registro en esta forma, se sincroniza automáticamente con el 
         El catálogo **Ubicaciones** incluye los siguientes campos:
 
         - **Ubicación**: Nombre descriptivo de la ubicación.
-        - **Dirección**: Dirección de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
+        - **Dirección**: Dirección de la ubicación (catálogo **contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones10.png
 
@@ -68,9 +68,9 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
         El catálogo **Áreas de las Ubicaciones** incluye los siguientes campos:
 
         - **Nombre del Área**: Nombre de la área específica.
-        - **Tipo de Área**: Tipo al que pertenece el área (enlazado al catálogo `Tipo de Áreas <#catalog-tipo-areas>`_ :octicon:`report;1em;sd-text-info`).
-        - **Ubicación**: Ubicación a la que pertenece el área (enlazado al catálogo `Ubicaciones <#catalog-ubicaciones>`_ :octicon:`report;1em;sd-text-info`).
-        - **Dirección**: Dirección específica del área dentro de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
+        - **Tipo de Área**: Tipo al que pertenece el área (catálogo `tipo de áreas <#catalog-tipo-areas>`_ :octicon:`report;1em;sd-text-info`).
+        - **Ubicación**: Ubicación a la que pertenece el área (catálogo `ubicaciones <#catalog-ubicaciones>`_ :octicon:`report;1em;sd-text-info`).
+        - **Dirección**: Dirección específica del área dentro de la ubicación (catálogo **contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
         - **Estatus del Área**: Estado actual del área (**abierta**, **cerrada**, **clausurada**, en **mantenimiento**, **disponible**, **ocupada**).
         - **Estatus**: Estado administrativo del área (**activa** o **inactiva**).
         - **QR Área**: Código QR asociado al área para su identificación y acceso.
@@ -79,13 +79,12 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
 
     .. tab-item:: Registros
 
-        Cuando registre una nueva área dentro de una ubicación, es posible que no cuente con una dirección específica. En tal caso, utilice la dirección de la ubicación general.
-
-        Sin embargo, para ubicaciones que no se encuentran físicamente dentro del edificio pero forman parte de la misma instalación, utilice una dirección específica. Por ejemplo:
+        Cuando registre una nueva área dentro de una ubicación, es posible que no cuente con una dirección específica. En tal caso, utilice la dirección de la ubicación general. Sin embargo, para ubicaciones que no se encuentran físicamente dentro del edificio pero forman parte de la misma instalación, utilice una dirección específica. Por ejemplo:
 
         Para casetas de vigilancia, que se encuentran en diferentes puntos fuera de la instalación, asegúrese de asignar una dirección específica para cada una. Observe la siguiente imagen.
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones13.png
+            :width: 648px
 
         Cuando crea un nuevo registro en la forma, este se sincroniza automáticamente en dos catálogos distintos, como se muestra en el siguiente diagrama.
 
@@ -121,7 +120,7 @@ Ubicaciones
 
 Este catálogo contiene los mismos registros que la `forma ubicaciones <#form-ubicaciones>`_ :octicon:`report;1em;sd-text-info`.
 
-.. important:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente responda la forma `ubicaciones <#form-ubicaciones>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
+.. important:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente responda la `forma ubicaciones <#form-ubicaciones>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
 .. tab-set::
 
@@ -130,7 +129,7 @@ Este catálogo contiene los mismos registros que la `forma ubicaciones <#form-ub
         El catálogo **Ubicaciones** incluye los siguientes campos:
 
         - **Ubicación**: Nombre descriptivo de la ubicación.
-        - **Dirección**: Dirección de la ubicación (enlazado al catálogo **Contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
+        - **Dirección**: Dirección de la ubicación (catálogo **contacto** del :ref:`doc-base` :octicon:`report;1em;sd-text-info`).
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones5.png
 
@@ -200,7 +199,7 @@ Este catálogo contiene los mismos registros que la `forma áreas dentro de la u
 
         .. image:: /imgs/Modulos/Ubicaciones/Ubicaciones8.png
         
-        Observe que el catálogo cuenta con algunos filtros. Al instalar el módulo, es importante que verifique la existencia de estos filtros, ya que son utilizados por el módulo de accesos.
+        Observe que el catálogo cuenta con algunos filtros. Al instalar el módulo, es importante que verifique la existencia de estos filtros, ya que son utilizados por el módulo de seguridad.
 
         En caso de que no encuentre los filtros necesarios, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` para obtener más detalles y aplicarlos con los siguientes valores:
 

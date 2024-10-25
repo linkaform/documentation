@@ -4,7 +4,7 @@
 Catálogos
 =========
 
-En Linkaform, el término **catálogo** es una especie de base de datos que facilita la organización, almacenamiento y acceso de datos, permitiendo la creación, consulta, actualización y eliminación de información.
+En LinkaForm, el término **catálogo** es una especie de repositorio que almacena y organiza datos estructurados. Un catálogo puede ser utilizado en otras formas e incluso en otros catálogos, facilitando el acceso y consulta de sus registros.
 
 En este apartado, encontrará documentación sobre las funcionalidades que ofrece un catálogo, tales como:
 

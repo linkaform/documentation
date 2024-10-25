@@ -11,6 +11,7 @@ Documentación para desarrolladores
 
     PDFs/index
     Reportes/index
+..    Modulos/index
 
 ¡Bienvenido a la documentación para desarrolladores! Aquí encontrarás guías detalladas y completas que te ayudarán a aprovechar al máximo nuestras nuevas funcionalidades, incluyendo la creación y personalización de documentos PDF, así como el desarrollo de reportes personalizados. 
 

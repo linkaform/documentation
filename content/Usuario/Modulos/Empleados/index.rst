@@ -4,12 +4,12 @@
 Módulo Empleados
 ================
 
-El **Módulo Empleados** proporciona las configuraciones y datos necesarios para la gestión de empleados, útil para otros módulos. Con las formas y catálogos del módulo, podrá:
+El **Módulo Empleados** proporciona los elementos y configuraciones necesarias para la gestión de empleados. Con las formas y catálogos del módulo, podrá:
 
 - Registrar y administrar datos personales y laborales de los empleados.
-- Gestionar y asignar departamentos y puestos dentro de la empresa.
+- Gestionar y asignar departamentos y puestos dentro de una empresa.
 
-Observe y analice el siguiente diagrama de flujo del módulo empleados. Este diagrama representa el flujo de acciones necesarias para realizar el registro de un empleado.
+Observe y analice el siguiente diagrama de flujo del módulo. Este diagrama representa el flujo de acciones necesarias para realizar el registro de un empleado.
 
 .. image:: /imgs/Modulos/Empleados/Empleados1.png
 
@@ -29,115 +29,82 @@ Los catálogos que componen el módulo de empleados son los siguientes:
 
 .. image:: /imgs/Modulos/Empleados/Empleados2.png
 
-.. _ver-config:
-
-.. dropdown:: Ver más
-
-    Para acceder a los catálogos, navegue a la opción ``Catálogos > Catálogos`` en el menú lateral.
-
-    .. image:: /imgs/Modulos/Base/Base5.png
-
-    Para acceder a los registros de los catálogos, diríjase a ``Catálogos > Registros de catálogo`` en el menú lateral.
-
-    .. image:: /imgs/Modulos/Base/Base6.png
-
-    Si al responder un catálogo con catálogos anidados no muestra los registros necesarios, asegúrese de:
-
-    - Actualizar el catálogo.
-    - Verificar que el catálogo contenga registros.
-
-    .. image:: /imgs/Modulos/Base/Base10.png
-
-    - Verificar que la configuración del catálogo sea la correcta.
-
-    .. seealso:: Consulte :ref:`campo-catalogo` :octicon:`report;1em;sd-text-info` para más detalles sobre la configuración del catálogo.
+.. _catalog-departamentos:
 
 Departamentos
 -------------
 
-El catálogo **Departamentos** contiene registros de los diferentes departamentos de una empresa.
+El catálogo contiene registros de los diferentes departamentos de una empresa.
+
+.. image:: /imgs/Modulos/Empleados/Empleados3.png
 
 .. note:: Al instalar el módulo, encontrará registros demo de posibles departamentos. Considere que son solo opciones y siempre puede modificar los campos del catálogo y/o registros. 
 
-.. tab-set::
-
-    .. tab-item:: Registros
-
-        .. image:: /imgs/Modulos/Empleados/Empleados3.png
-
-    .. tab-item:: Estructura
-
-        .. image:: /imgs/Modulos/Empleados/Empleados4.png
+.. _catalog-puestos:
 
 Puestos
 -------
 
-El catálogo **Puestos** contiene información sobre los puestos asignados a los empleados.
+El catálogo contiene registros sobre los puestos asignados a los empleados.
 
-.. note:: Del mismo modo que el catálogo de departamentos, encontrará registros demo de posibles puestos. Considere que son solo opciones y siempre puede modificar los campos del catálogo y/o registros. 
+.. image:: /imgs/Modulos/Empleados/Empleados5.png
 
-.. tab-set::
+.. note:: Del mismo modo, al instalar el módulo, encontrará registros demo de posibles puestos. Considere modificar los campos del catálogo y/o registros. 
 
-    .. tab-item:: Registros
-
-        .. image:: /imgs/Modulos/Empleados/Empleados5.png
-
-    .. tab-item:: Estructura
-
-        .. image:: /imgs/Modulos/Empleados/Empleados6.png
+.. _catalog-departamentos-puestos:
 
 Configuración de Departamentos y Puestos
 ----------------------------------------
 
-Este catálogo contiene la relación entre departamentos y puestos.
+Este catálogo es una réplica de la forma `configuración de departamentos y puestos <#id3>`_ :octicon:`report;1em;sd-text-info`, con la excepción de los grupos repetitivos.
 
-.. caution:: Este catálogo debe contener los mismos registros que la forma `Configuración de Departamentos y Puestos <#id3>`_ :octicon:`report;1em;sd-text-info`. Revise la documentación correspondiente para más detalles importantes sobre este catálogo.
+Debido a la limitación de los catálogos para manejar grupos repetitivos, es necesario realizar la relación entre departamentos y puestos de forma manual. A continuación, se muestra un ejemplo de cómo hacerlo:
 
-.. tab-set::
+.. image:: /imgs/Modulos/Empleados/Empleados8.png
 
-    .. tab-item:: Registros
-
-        .. image:: /imgs/Modulos/Empleados/Empleados7.png
-
-    .. tab-item:: Estructura
-
-        .. image:: /imgs/Modulos/Empleados/Empleados8.png
+.. seealso:: Consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para una importación masiva de registros.
 
 Empleados
 ---------
 
-Este catálogo contiene los mismos registros que la `forma empleados <#id5>`_ :octicon:`report;1em;sd-text-info` y es de gran utilidad para otros módulos.
+Este catálogo es una réplica de la `forma empleados <#id5>`_ :octicon:`report;1em;sd-text-info`. Consulte la documentación correspondiente para más detalles sobre su estructura. Observe los siguientes registros de ejemplo:
+
+.. image:: /imgs/Modulos/Empleados/Empleados9.png
+
+Observe que el catálogo cuenta con algunos filtros. Al instalar el módulo, es importante que verifique la existencia de estos filtros, ya que son utilizados por el módulo de seguridad.
+
+En caso de que no encuentre los filtros necesarios, consulte la documentación sobre cómo :ref:`crear-filtro` :octicon:`report;1em;sd-text-info` para obtener más detalles y aplicarlos con los siguientes valores:
+
+.. code-block::
+    :caption: Guarde el filtro con el nombre ``Filtro_empleados``
+
+    Campo = Nombre del departamento
+    Condición = NO es igual a
+    Valor = Seguridad
+
+    // Este filtro mostrará todos los registros de empleados que no pertenecen al departamento de seguridad.
+
+.. code-block::
+    :caption: Guarde el filtro con el nombre ``Filtro_guardias``
+
+    Campo = Nombre del departamento
+    Condición = Igual a
+    Valor = Seguridad
+
+    // Este filtro mostrará todos los registros de empleados pertenecientes al departamento de seguridad. 
+
+.. warning:: Asegúrese de revisar y aplicar los mismos filtros para el catálogo `jefes directos <#catalog-jefes-directos>`_ :octicon:`report;1em;sd-text-info`.
 
 .. attention:: Este catálogo está preparado para recibir un registro derivado de una forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo. Simplemente preocúpese por responder la forma de `empleados <#id5>`_ :octicon:`report;1em;sd-text-info` y Linkaform se encargará de sincronizar el mismo registro en este catálogo.
 
-.. tab-set::
-
-    .. tab-item:: Registros
-
-        .. image:: /imgs/Modulos/Empleados/Empleados9.png
-
-    .. tab-item:: Estructura
-
-        .. image:: /imgs/Modulos/Empleados/Empleados10.png
-
-.. note:: Recuerde que un catálogo actúa como una base de datos donde se puede tener acceso rápido a los datos necesarios para distintas funciones dentro de otras formas o catálogos.
+.. _catalog-jefes-directos:
 
 Empleados Jefes Directos
 ------------------------
 
-El catálogo **Empleados Jefes Directos** contiene registros de los empleados de la empresa.  
+Este catálogo es otra réplica de la forma `empleados <#id5>`_ :octicon:`report;1em;sd-text-info`. Consulte la documentación correspondiente para más detalles sobre su estructura. Observe los siguientes registros de ejemplo:
 
-.. caution:: Este catálogo contiene los mismos registros que la forma `empleado <#id5>`_ :octicon:`report;1em;sd-text-info`. Este catálogo está preparado para recibir un registro derivado de la forma, por lo tanto, no deberá preocuparse por contestar manualmente el registro en el catálogo.
-
-.. tab-set::
-
-    .. tab-item:: Registros
-
-        .. image:: /imgs/Modulos/Empleados/Empleados11.png
-
-    .. tab-item:: Estructura
-
-        .. image:: /imgs/Modulos/Empleados/Empleados12.png
+.. image:: /imgs/Modulos/Empleados/Empleados11.png
 
 .. warning:: Debido a que un mismo ``ID`` no puede ser utilizado dos veces en el mismo formulario o catálogo, se realiza una copia con los mismos campos pero con ``IDs`` distintos para poder utilizarlo.
 
@@ -151,26 +118,22 @@ Los formularios que componen al módulo empleados son los siguientes:
 
 .. image:: /imgs/Modulos/Empleados/Empleados13.png
 
+.. _form-departamentos-puestos:
+
 Configuración de Departamentos y Puestos
 ----------------------------------------
 
-Esta forma le permitirá relacionar los registros del departamento con los registros de los puestos.
+Esta forma le permite relacionar los departamentos con los puestos. Revise el siguiente ejemplo para relacionar un departamento con sus respectivos puestos:
 
-.. warning:: Cuando crea un nuevo registro en esta forma, este debe sincronizarse con el catálogo `Configuracion de Departamentos y Puestos <#configuracion-de-departamentos-y-puestos>`_ :octicon:`report;1em;sd-text-info`. Sin embargo, recuerde que un catálogo no contiene el campo sobre grupo repetitivo, por lo que no es posible aplicar el flujo de sincronización automáticamente.
-    
-    Por lo tanto, si crea un registro en la forma, asegúrese de registrarlo manualmente en el catálogo. Si son varios registros, considere hacer la importación masiva.
+.. image:: /imgs/Modulos/Empleados/Empleados25.png
 
-    Actualmente, se está trabajando para solucionar este detalle. 
+.. seealso:: Consulte los catálogos `puestos <#catalog-puestos>`_ :octicon:`report;1em;sd-text-info` y `departamentos <#catalog-departamentos>`_ :octicon:`report;1em;sd-text-info` para más detalles.
 
-.. tab-set::
+.. warning:: Los registros de esta forma son utilizados por otras formas, lo que requiere que estén disponibles también en un catálogo. Sin embargo, debido a la limitación de que los catálogos no admiten campos de grupo repetitivo, no es posible realizar una sincronización automática en estos casos.
 
-    .. tab-item:: Registros
+    Por lo tanto, cuando registre la configuración de departamentos y puestos en la forma, asegúrese de también ingresarlo manualmente en el `catálogo configuración de departamentos y puestos <#catalog-departamentos-puestos>`_ :octicon:`report;1em;sd-text-info`. Si tiene múltiples registros, considere utilizar la funcionalidad de importación masiva para agilizar el proceso; consulte :ref:`importar-registros` :octicon:`report;1em;sd-text-info` para más detalles.
 
-        .. image:: /imgs/Modulos/Empleados/Empleados14.png
-
-    .. tab-item:: Estructura
-
-        .. image:: /imgs/Modulos/Empleados/Empleados15.png
+    Actualmente, estamos trabajando en una solución para mejorar este flujo y automatizar completamente la sincronización en futuras versiones.
 
 Empleados
 ---------
