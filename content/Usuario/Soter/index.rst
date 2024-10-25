@@ -384,7 +384,7 @@ Para editar una nota existente, siga estos pasos:
 Accesos
 =======
 
-El apartado de **Accesos** permite la gestión y control de entradas y salidas de los visitantes de la ubicación.
+El apartado de **Accesos** permite gestionar y controlar las entradas y salidas de los visitantes, así como visualizar toda la información relacionada con sus pases.
 
 .. attention:: Este apartado está disponible únicamente cuando inicia su turno. Para acceder, presione la opción **Accesos** ubicada en el menú superior.
 
@@ -393,11 +393,11 @@ El apartado de **Accesos** permite la gestión y control de entradas y salidas d
 Información de Caseta
 ---------------------
 
-Esta interfaz actúa como una vista previa antes de acceder al detalle de los pases de entrada. Proporciona un panorama general sobre la caseta actual, donde se realizará la gestión de pases de entrada.
-
+Esta interfaz actúa como una vista previa antes de acceder al detalle de los `pases de entrada <#detalle-pase>`_ :octicon:`report;1em;sd-text-info`. Proporciona un panorama general sobre la caseta actual, donde se realizará la gestión de pases.
+ 
 1. **Ubicación**: Le permite confirmar la ubicación y caseta en la que se encuentra actualmente.
 
-.. warning:: Para acceder a **Accesos**, no puede cambiar entre casetas ni ubicaciones. 
+.. warning:: Al ingresar a **Accesos**, no podrá cambiar entre casetas ni ubicaciones. 
     
     Todo el flujo de información registrada en accesos estará vinculada a la ubicación con la que inició su turno. Si desea cambiar, debe cerrar su turno e iniciar en la caseta o ubicación deseada.
 
@@ -420,21 +420,25 @@ Para buscar un pase de entrada, siga estos pasos y asegúrese de que el visitant
 
 1. En el campo ``Codigo User``, escanee el QR que le mostrará el visitante.
 
+.. image:: /imgs/Soter/Soter61.png
+
 .. note:: El visitante deberá mostrarle el gafete que el personal administrativo le hizo llegar. Observe el siguiente ejemplo de QR que el visitante le debe mostrar:
 
     .. image:: /imgs/Soter/Soter26.png
+        :width: 500px
 
-2. Presione el botón de lupa para buscar al visitante. Será redirigido al detalle del pase; consulte :ref:`registrar-visita` :octicon:`report;1em;sd-text-info` para más detalles.
+2. Presione el botón de lupa para buscar al visitante. Será redirigido al :ref:`detalle-pase` :octicon:`report;1em;sd-text-info`.
 
 Si la visita no tiene el QR, pero está seguro de que cuenta con un pase de seguridad, siga estos pasos:
 
 1. Presione el ícono de lista ubicado en la barra buscadora. Se abrirá un modal.
-2. Identifique al visitante por el nombre o la fotografía. Utilice la barra buscadora en caso de tener múltiples pases.
-3. Presione sobre el nombre del visitante. Será redirigido al detalle del pase; revise :ref:`registrar-visita` :octicon:`report;1em;sd-text-info` para más información.
+2. Identifique al visitante por el nombre o la fotografía. Utilice el buscador en caso de tener múltiples pases.
+3. Presione sobre el nombre del visitante. Será redirigido al :ref:`detalle-pase` :octicon:`report;1em;sd-text-info`.
 
-.. warning:: Al buscar un pase de entrada desde la barra buscadora por QR o desde la lista, el pase debe estar Activo. Si, por algún motivo, el pase no aparece por los medios mencionados, considere buscarlos en los `pases temporales <#pases-temp>`_ :octicon:`report;1em;sd-text-info`.
+.. warning:: Al buscar un pase de entrada por QR o desde la lista, el pase debe estar **Activo**. Si, por algún motivo, el pase no aparece por los medios mencionados, considere buscarlos en los `pases temporales <#pases-temp>`_ :octicon:`report;1em;sd-text-info`.
 
 .. image:: /imgs/Soter/Soter27.png
+    :width: 500px
 
 Nuevo Pase de Entrada
 ---------------------
@@ -444,6 +448,9 @@ Crear un nuevo pase de entrada para visitas espontáneas es un proceso sencillo.
 .. note:: Esta opción solo está disponible en la interfaz donde se muestra la información de la caseta.
 
 1. Presione ``+Nueva Visita``. Se abrirá el modal correspondiente.
+
+.. image:: /imgs/Soter/Soter62.png
+
 2. Complete los siguientes campos, todos son requeridos:
 
 - **Nombre completo**: Ingrese el nombre completo de la persona que realizará la visita.
@@ -458,136 +465,41 @@ Crear un nuevo pase de entrada para visitas espontáneas es un proceso sencillo.
 
     Para pases de entrada espontáneos, es habitual seleccionar un perfil de  **visita general** o **candidatos**.
 
-3. Presione ``Crear`` para confirmar los datos y generar el pase de entrada. Se redirigirá al detalle del pase; para más detalles, consulte :ref:`registrar-visita` :octicon:`report;1em;sd-text-info`.
+3. Presione ``Crear`` para confirmar los datos y generar el pase de entrada. Será redirigido al :ref:`detalle-pase` :octicon:`report;1em;sd-text-info`.
 
 .. warning:: Al crear un pase de entrada, **no** se está concediendo automáticamente el acceso al visitante.
 
 .. image:: /imgs/Soter/Soter28.png
+    :width: 500px
 
 .. _pases-temp:
 
 Pases Temporales
 ----------------
 
-Los **pases temporales** corresponden a aquellas visitas cuyo pase tiene el estatus de **vencido** o **en proceso**. Para consultar los pases temporales, siga estos pasos:
+Los **pases temporales** corresponden a aquellas visitas cuyo pase tiene el estatus de **vencido** o **en proceso**. 
+Para consultar los pases temporales, siga estos pasos:
 
 1. Presione ``Pases temporales``. Se abrirá el modal correspondiente.
-2. Identifique al visitante por el nombre o la fotografía. Utilice la barra buscadora en caso de tener múltiples pases.
-3. Presione sobre el nombre del visitante. Se le redirigirá al detalle del pase; revise :ref:`registrar-visita` :octicon:`report;1em;sd-text-info` para más detalles.
 
-.. warning:: Considere que un visitante con un pase temporal no es candidato para ingresar a las instalaciones. Para ello, deberá ponerse en contacto con el personal administrativo para actualizar su estatus. Para más detalles, consulte :ref:`registrar-visita` :octicon:`report;1em;sd-text-info`.
+.. image:: /imgs/Soter/Soter63.png
+
+2. Identifique al visitante por el nombre o la fotografía. Utilice el buscador en caso de tener múltiples pases.
+3. Haga clic sobre el nombre del visitante. Será redirigido al :ref:`detalle-pase` :octicon:`report;1em;sd-text-info`.
+
+.. warning:: Considere que un visitante con un pase temporal no es candidato para ingresar a las instalaciones. Para ello, deberá ponerse en contacto con el personal administrativo para actualizar su estatus. Consulte :ref:`detalle-pase` :octicon:`report;1em;sd-text-info`.
 
 .. image:: /imgs/Soter/Soter29.png
+    :width: 500px
 
-.. _registrar-visita:
-
-Registrar Ingreso/Salida
-------------------------
-
-La interfaz principal de **Accesos** le permitirá registrar tanto el ingreso como la salida de visitas, además de gestionar y visualizar todo lo relacionado con el pase.
-
-La siguiente figura muestra las diferencias en el menú de opciones antes y después de registrar el ingreso o la salida de una visita:
-
-.. image:: /imgs/Soter/Soter31.png
-    :width: 880px
-
-Considere los siguientes elementos comunes al registrar un ingreso o salida:
-
-- **Barra búsqueda**: Le permite escanear el código QR para visualizar un nuevo pase de entrada.
-
-.. seealso:: Consulte `buscar pases <#buscador-pases>`_ :octicon:`report;1em;sd-text-info` para más detalles.
-
-- **Boton** ``Registrar ingreso`` / ``Registrar salida``: Permite registrar el ingreso o salida de la visita. La apariencia variará según la acción que deba realizar.
-
-.. warning:: Asegúrese de revisar cuidadosamente los `detalles del pase <#detalles-pase-entrada>`_ :octicon:`report;1em;sd-text-info` antes de registrar el ingreso de una visita.
-
-- **Botón Limpiar**: Permite limpiar la interfaz actual y regresar a la interfaz previa para buscar un nuevo pase de entrada.
-
-- **Botón** ``Pases temporales``: Facilita la búsqueda de pases de entrada que **no están activos**. 
-
-.. warning:: Consulte pases `temporales <#pases-temp>`_ :octicon:`report;1em;sd-text-info` para mas detalles.
-
-Agregar comentario de Pase
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Estos comentarios se centran en las condiciones específicas del acceso del visitante, como requisitos o restricciones del pase de entrada.
-
-Al realizar un comentario sobre el pase, este se registra automáticamente al momento de registrar la entrada del visitante. Estos comentarios se almacenan como parte de los **comentarios de últimos accesos**. Para más detalles, consulte la sección correspondiente.
-
-.. admonition:: Ejemplo
-    :class: pied-piper
-
-    Ejemplos de estos comentarios podrían ser:
-            
-    - El pase es válido solo hasta las 3:00 PM.
-    - El visitante debe entregar su identificación al finalizar la visita.
-
-Para agregar un comentario, siga estos pasos:
-
-1. Presione el botón rojo ``+Agregar comentario``.
-2. Escriba el comentario para el pase de entrada.
-3. Presione ``Agregar`` para confirmar los datos.
-
-.. image:: /imgs/Soter/Soter33.png
-
-.. _asignacion-gafete:
-
-Asignar Gafete
-^^^^^^^^^^^^^^
-
-El proceso de asignar un gafete está disponible unicamente antes de registrar el ingreso de la visita. Este proceso implica otorgar a un identificador físico que contiene información relevante sobre la identidad y autorización para acceder a ciertas áreas del visitante.
-
-.. note:: Asignar un gafete no es un procedimiento obligatorio.
-
-Para asignar un gafete, siga estos pasos:
-
-1. Presione el botón ``Asignar Gafete``.
-
-.. note:: Si realiza la asignación de un gafete desde la `bitácora <#bitacora>`_ :octicon:`report;1em;sd-text-info`, presione el segundo icono sobre id.
-
-    .. image:: /imgs/Soter/Soter51.png
-
-2. Complete los campos correspondientes:
-
-- **Número de gafete**: Seleccione el gafete deseado.
-- **Tipo de documento de garantía**: Seleccione el documento que el visitante dejará como garantía.
-- **Locker de seguridad**: Seleccione el locker de seguridad.
-
-3. Presione ``Asignar gafete`` para confirmar los datos.
-
-.. image:: /imgs/Soter/Soter32.png
-        
-.. note:: Una vez que asigne un gafete, podrá visualizar el registro en la sección de Información personal.
-
-.. _recibimiento-gafete:
-
-Recibir Gafete
-^^^^^^^^^^^^^^
-
-El proceso de recibir un gafete está disponible únicamente antes de registrar la salida de la visita. Este procedimiento permite liberar el gafete y el locker asignado al visitante. Para completar el proceso de recibir un gafete, siga estos pasos:
-
-1. Haga clic el botón ``Recibir Gafete``.
-
-.. note:: Si recibe un gafete desde la `bitácora <#bitacora>`_ :octicon:`report;1em;sd-text-info`, presione el segundo icono sobre id.
-
-    .. image:: /imgs/Soter/Soter51.png
-
-2. Revise cuidadosamente la información proporcionada y confirme la acción seleccionando el botón ``Confirmar``
-
-.. image:: /imgs/Soter/Soter50.png
-        
-.. warning:: Si el visitante tiene un gafete asignado y necesita registrar su salida, primero deberá completar el proceso de recepción del gafete. De lo contrario, el sistema no permitirá continuar.
-
-    .. image:: /imgs/Soter/Soter49.png
-
-.. _detalles-pase-entrada:
+.. _detalle-pase:
 
 Detalle del Pase de Entrada
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 Un pase de entrada es una invitación generada por el personal administrativo para permitir el acceso de los visitantes a las instalaciones de la ubicación. Este pase detalla todos los requisitos que el visitante debe cumplir antes de ser autorizado para ingresar. 
 
-.. warning:: Es su responsabilidad, como guardia de seguridad, asegurarse de que se cumplan todos los requisitos solicitados para la visita antes de permitir su acceso.
+.. warning:: Es su responsabilidad, como guardia de seguridad, verificar que se cumplan todos los requisitos solicitados para la visita antes de autorizar su acceso. Una vez que haya confirmado que todo está en regla, proceda a `registrar el ingreso <#registrar-visita>`_ :octicon:`report;1em;sd-text-info`.
 
 Observe la siguiente imagen que muestra la interfaz completa:
 
@@ -825,6 +737,172 @@ Revise las siguientes pestañas para obtener más detalles y casos de uso sobre 
 
         .. image:: /imgs/Soter/Soter48.png
 
+.. _comentarios-pase:
+
+Agregar comentario de Pase
+--------------------------
+
+Estos comentarios se centran en las condiciones específicas del acceso del visitante, como requisitos o restricciones del pase de entrada.
+
+Al agregar un comentario sobre el pase, este se registra automáticamente en el momento de registrar la entrada del visitante. Los comentarios se almacenan como parte de los registros en la sección de **últimos accesos**. Para más información, consulte el apartado de `detalle del pase <#detalle-pase>`_ :octicon:`report;1em;sd-text-info`.
+
+Para agregar un comentario, siga estos pasos:
+
+1. Busque el pase de entrada del visitante. Utilice la barra de búsqueda para localizar el pase.
+
+.. seealso:: Consulte `buscar pases <#buscador-pases>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+2. Presione el botón rojo ``+Agregar comentario``, ubicado en la parte superior del pase.
+
+.. image:: /imgs/Soter/Soter68.png
+
+3. Escriba el comentario para el pase de entrada.
+
+.. admonition:: Ejemplo
+    :class: pied-piper
+
+    Ejemplos de estos comentarios podrían ser:
+            
+    - El pase es válido solo hasta las 3:00 PM.
+    - El visitante debe entregar su identificación al finalizar la visita.
+
+4. Presione ``Agregar`` para confirmar los datos.
+
+.. image:: /imgs/Soter/Soter33.png
+
+.. _asignacion-gafete:
+
+Asignar Gafete
+--------------
+
+El proceso de asignar un gafete está disponible unicamente antes de registrar el ingreso de la visita. Este proceso implica otorgar a un identificador físico que contiene información relevante sobre la identidad y autorización para acceder a ciertas áreas del visitante.
+
+.. note:: Asignar un gafete no es un procedimiento obligatorio.
+
+Para asignar un gafete, siga estos pasos:
+
+1. Busque el pase de entrada del visitante. Utilice la barra de búsqueda para localizar el pase.
+
+.. seealso:: Consulte `buscar pases <#buscador-pases>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+2. Presione el botón ``Asignar Gafete``, ubicado en la parte superior del pase.
+
+.. image:: /imgs/Soter/Soter69.png
+
+.. note:: Si realiza la asignación de un gafete desde la `bitácora <#bitacora>`_ :octicon:`report;1em;sd-text-info`, presione el segundo icono sobre id.
+
+    .. image:: /imgs/Soter/Soter51.png
+
+2. Complete los campos correspondientes:
+
+- **Número de gafete**: Seleccione el gafete deseado.
+- **Tipo de documento de garantía**: Seleccione el documento que el visitante dejará como garantía.
+- **Locker de seguridad**: Seleccione el locker de seguridad.
+
+3. Presione ``Asignar gafete`` para confirmar los datos.
+
+.. image:: /imgs/Soter/Soter32.png
+    :width: 500px
+        
+.. note:: Consulte el apartado de **Información personal** en el `detalle del pase <#detalle-pase>`_ :octicon:`report;1em;sd-text-info`, para visualizar el registro del gafete.
+
+.. _registrar-visita:
+
+Registrar Ingreso
+-----------------
+
+El proceso de registrar el ingreso de un visitante permite controlar su acceso, asegurando que se cumplan todos los requisitos y permisos necesarios antes de permitir la entrada. Siga estos pasos para realizar el registro de ingreso:
+
+1. Busque el pase de entrada del visitante. Utilice la barra de búsqueda para localizar el pase.
+
+.. seealso:: Consulte `buscar pases <#buscador-pases>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+2. Verifique los detalles del pase y asegúrese de que la información esté completa y actualizada, incluyendo permisos, áreas de acceso, equipos o vehículos asignados.
+
+.. seealso:: Consulte los `detalles del pase <#detalle-pase>`_ :octicon:`report;1em;sd-text-info`.
+
+3. Asigne un gafete. Aunque no es obligatorio, la asignación de un gafete le permite tener un mejor control de la visita.
+
+.. seealso:: Consulte los `asignar pase <#asignacion-gafete>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+4. Agregue comentarios al pase, según lo requiera.
+
+.. seealso:: Consulte `agregar comentarios <#comentarios-pase>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+5. Presione el botón ``Registrar ingreso``, ubicado en la parte superior del detalle del pase.
+
+.. image:: /imgs/Soter/Soter64.png
+    :width: 880px
+
+.. note:: Si la opción no está disponible, significa que la visita ya ha sido registrada como ingresada. Observe la etiqueta del pase:
+
+    - Si el ingreso aún no ha sido registrado, la etiqueta mostrará **Entrada**.
+    - Si el ingreso ya ha sido registrado, la etiqueta mostrará **Salida**.
+    
+    El menú de opciones cambiará automáticamente según la situación del pase, facilitando la selección de la acción correspondiente.
+
+6. Observe el mensaje de confirmación, presione ``OK`` para cerrar el modal 
+
+.. image:: /imgs/Soter/Soter66.png
+
+.. seealso:: Para verificar la actualización del registro, consulte la sección de :ref:`bitacora` :octicon:`report;1em;sd-text-info` y revise los registros de entradas y salidas.
+
+.. _recibimiento-gafete:
+
+Recibir Gafete
+--------------
+
+El proceso de recibir un gafete está disponible únicamente antes de registrar la salida de la visita. Este procedimiento permite liberar el gafete y el locker asignado al visitante. Para completar el proceso de recibir un gafete, siga estos pasos:
+
+1. Busque el pase de entrada del visitante. Utilice la barra de búsqueda para localizar el pase.
+
+.. seealso:: Consulte `buscar pases <#buscador-pases>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+2. Haga clic el botón ``Recibir Gafete``, ubicado en la parte superior del pase.
+
+.. image:: /imgs/Soter/Soter70.png
+
+.. note:: Si recibe un gafete desde la `bitácora <#bitacora>`_ :octicon:`report;1em;sd-text-info`, presione el segundo icono sobre id.
+
+    .. image:: /imgs/Soter/Soter51.png
+
+3. Revise cuidadosamente la información proporcionada y confirme la acción seleccionando el botón ``Confirmar``
+
+.. image:: /imgs/Soter/Soter50.png
+    :width: 500px
+        
+.. warning:: Si el visitante tiene un gafete asignado y necesita registrar su salida, primero deberá completar el proceso de recepción del gafete. De lo contrario, el sistema no permitirá continuar.
+
+    .. image:: /imgs/Soter/Soter49.png
+        :width: 500px
+
+.. _registrar-salida:
+
+Registrar Salida
+----------------
+
+El proceso de registrar la salida de un visitante permite controlar y documentar la finalización de la estancia del visitante en las instalaciones. Siga los siguientes pasos para realizar este proceso:
+
+1. Busque el pase de entrada del visitante. Utilice la barra de búsqueda para localizar el pase.
+
+.. seealso:: Consulte `buscar pases <#buscador-pases>`_ :octicon:`report;1em;sd-text-info` para más detalles.
+
+2. Reciba el gafete (si aplica).
+
+.. warning:: Si la visita tiene un gafete asignado, no será posible registrar la salida hasta que se realice el proceso de recepción del gafete. Consulte `recibimiento de gafete <#recibimiento-gafete>`_ :octicon:`report;1em;sd-text-info`.
+
+3. Presione el botón ``Registrar salida``, ubicado en la parte superior del detalle del pase.
+
+.. note:: Este botón estará visible solo si la visita aún está registrada como activa (es decir, no se ha marcado su salida).
+
+   .. image:: /imgs/Soter/Soter65.png
+
+4. Observe el mensaje de confirmación, presione ``OK`` para cerrar el modal.
+
+.. image:: /imgs/Soter/Soter67.png
+
+.. seealso:: Para verificar la actualización del registro, consulte la sección de :ref:`bitacora` :octicon:`report;1em;sd-text-info` y revise los registros de entradas y salidas.
+
 .. _bitacora:
 
 Bitácoras
@@ -897,7 +975,7 @@ Desde la bitácora, puede registrar más equipos o herramientas que un visitante
 
 .. image:: /imgs/Soter/Soter52.png
 
-3. Consulte :ref:`detalles-pase-entrada` :octicon:`report;1em;sd-text-info` en la sección **Equipos autorizados**.
+3. Consulte :ref:`detalle-pase` :octicon:`report;1em;sd-text-info` en la sección **Equipos autorizados**.
 
 Agregar Vehículo
 ----------------
@@ -914,7 +992,7 @@ Para agregar un vehículo, siga los pasos:
 
 .. image:: /imgs/Soter/Soter53.png
 
-3. Consulte :ref:`detalles-pase-entrada` :octicon:`report;1em;sd-text-info` en la sección **Vehículos autorizados**.
+3. Consulte :ref:`detalle-pase` :octicon:`report;1em;sd-text-info` en la sección **Vehículos autorizados**.
 
 Registrar Salida
 ----------------
@@ -938,6 +1016,133 @@ Desde la la bitácora, puede registrar la salida de un visitante, siga los sigui
 
     .. image:: /imgs/Soter/Soter59.png
         :width: 400px
+
+Incidencias
+===========
+
+La interfaz de **Incidencias** permite la gestión de incidentes o fallas que se presentan en las instalaciones.
+
+.. warning:: Este apartado está disponible únicamente cuando haya iniciado su turno. Para acceder, presione la opción **Incidentes** ubicada en el menú superior.
+
+   .. image:: /imgs/Soter/Soter71.png
+
+Al acceder, encontrará la información de la caseta actual. Esta sección de la interfaz proporciona la situación actual sobre la caseta, dónde:
+
+1. **Ubicación**: Permite confirmar la ubicación y caseta en la que se encuentra actualmente y cambiar entre diferentes ubicaciones o casetas dentro de la misma empresa.
+
+.. attention:: Si cambia de ubicación o caseta, la información de la bitácora se actualizará automáticamente para reflejar los datos correspondientes a la nueva selección.
+
+2. **Información**: Muestra tarjetas con información relevante y útil para el monitoreo de la situación actual, lo que facilita estar al tanto de pendientes y eventos importantes. Dependiendo de la sección, las tarjetas mostrarán la cantidad de diferentes elementos, como por ejemplo:
+
+- **Fallas x día**: Muestra el número total de fallas reportadas en el día, lo que ayuda a identificar la frecuencia de problemas que ocurren en las instalaciones.
+- **Fallas por resolver**: Indica la cantidad de fallas que aún no han sido atendidas o solucionadas, lo que permite priorizar y dar seguimiento a los problemas pendientes.
+
+Si desea colapsar la información de la caseta para visualizar solo la información de la sección:
+
+- Presione el ícono de flecha hacia abajo. El contenido se ocultará.
+- Si desea volver a ver la información, presione el mismo ícono nuevamente.
+
+Bitácora de Incidentes
+----------------------
+
+Un incidente es cualquier evento inesperado que interrumpe una actividad o proceso, sin que necesariamente implique un mal funcionamiento de un equipo o sistema.
+
+En la bitácora de incidentes, los registros se organizan según su nivel de prioridad, mostrando primero los incidentes **Críticos** para una atención inmediata. La bitácora está organizada en varias columnas, donde:
+
+- **Ubicación**: Indica la ubicación donde ocurrió el incidente.
+- **Lugar del incidente**: Especifica el área exacta dentro de la ubicación donde ocurrió el evento.
+- **Fecha**: Registra la fecha en la que el incidente fue reportado.
+- **Incidente**: Tipo de incidente reportado.
+- **Evidencia**: Muestra fotografías o archivos subidos como evidencia del incidente.
+- **Comentarios**: Detalles adicionales sobre el evento, proporcionando contexto o información relevante para del incidente.
+- **Reporta**: Indica el nombre del guardia o personal que reportó el incidente.
+
+.. image:: /imgs/Soter/Soter73.png
+    :width: 880px
+
+Para filtrar los registros de los incidentes por prioridad:
+
+1. Identifique el selector ubicado en la parte superior de la bitácora.
+2. Seleccione la prioridad donde:
+
+   - **Alta**: Incidentes que requieren atención inmediata debido a su gravedad.
+   - **Mediana**: Incidentes que deben ser atendidos, pero que no representan un riesgo crítico.
+   - **Baja**: Incidentes de menor urgencia que pueden ser atendidos posteriormente.
+
+   Los registros de la bitácora se actualizarán automáticamente para mostrar solo los incidentes de la prioridad seleccionada.
+
+.. image:: /imgs/Soter/Soter72.png
+
+Nuevo Incidente
+^^^^^^^^^^^^^^^
+
+.. attention:: En Soter, el levantamiento de un reporte para un incidente funciona como un registro de los eventos que afectan una actividad o proceso. Sin embargo, no incluye un mecanismo de seguimiento o cierre del incidente, lo que significa que el reporte se limita a documentar el evento sin un proceso adicional para su resolución o cierre.
+
+Reportar un nuevo incidente es un proceso sencillo, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Presione el botón azul ``+Nuevo Incidente``, ubicado en la parte superior derecha de la bitácora. Esto abrirá el modal correspondiente.
+3. Complete los campos, según lo requiera, donde:
+
+- **Ubicación**: Seleccione la ubicación donde ocurrió el incidente.
+- **Área**: Indique la zona específica dentro de la ubicación donde se produjo el incidente.
+- **Fecha**: Especifique la fecha exacta del incidente.
+- **Hora**: Ingrese la hora en que ocurrió el incidente.
+- **Reporta**: Seleccione el guardia que reporta el incidente.
+- **Prioridad**: Seleccione entre baja, media, alta o crítica, según la gravedad del incidente.
+- **Incidencia**: Seleccione el tipo de incidente de una lista predefinida.
+
+.. note:: Al seleccionar la opción **Depósitos** como tipo de incidencia, se desplegarán dos campos adicionales relacionados con dinero, donde:
+
+    - **Tipo de Depósito**: Especifique el tipo de depósito.
+    - **Cantidad**: Ingrese el monto del depósito. Puede agregar más de un depósito y el sistema calculará el total.
+
+    Esta selección es la única que modifica el contenido del modal.
+
+    .. image:: /imgs/Soter/Soter74.png
+        :width: 500px
+
+- **Comentarios**: Agregue información adicional que pueda ser útil para entender la situación.
+- **Tipo de daño**: Seleccione si el daño fue a materiales o a personas.
+- **Daños causados**: Describa los daños observados.
+- **Evidencia**: Adjunte imágenes o videos que respalden el reporte.
+- **Documentos**: Suba documentos adicionales si es necesario.
+
+- **Personas involucradas**: Ingrese el nombre completo de cada persona involucrada y seleccione si es un afectado o un testigo.
+
+- **Acciones tomadas**: Registre las medidas que se tomaron en respuesta al incidente, junto con el responsable de cada acción.
+
+4. Presione ``Crear`` para finalizar el registro.
+
+Bitácora de fallas
+==================
+
+La bitácora de **fallas** permite registrar y realizar un seguimiento de problemas técnicos o malfuncionamientos que ocurren en las instalaciones. A diferencia de los incidentes, las fallas requieren un proceso de resolución para poder ser cerradas, asegurando que los problemas sean atendidos y solucionados de manera adecuada.
+
+Las fallas pueden incluir problemas como daños en equipos, malfuncionamientos de sistemas de seguridad, fallas eléctricas, entre otros que afecten el funcionamiento normal de las instalaciones.
+
+La bitácora de fallas está organizada en varias columnas para facilitar la gestión y seguimiento de cada registro:
+
+- **Fecha y Hora**: Indica el momento en que se reportó la falla, lo cual ayuda a mantener un registro cronológico.
+- **Estado**: Muestra el estado actual de la falla, que puede ser **Abierto** (pendiente de resolver) o **Cerrado** (ya solucionado).
+- **Ubicación**: Indica la ubicación específica dentro de la empresa donde ocurrió la falla, permitiendo a los responsables identificar el lugar afectado.
+- **Lugar de la falla**: Especifica la zona exacta dentro de la ubicación donde se presentó el problema, como un área de la planta o una oficina.
+- **Falla**: Describe brevemente la naturaleza del problema o malfuncionamiento reportado.
+- **Evidencia**: Permite adjuntar fotografías o documentos que respalden la existencia de la falla y faciliten su comprensión para los técnicos responsables.
+- **Comentarios**: Espacio para agregar observaciones adicionales relacionadas con la falla, como detalles de su origen o posibles soluciones.
+- **Reporta**: Identifica al guardia o persona que realizó el reporte de la falla.
+- **Responsable**: Indica quién se encargará de dar seguimiento a la falla para asegurar su solución.
+
+A diferencia de los incidentes, las fallas requieren un proceso de seguimiento que implica la revisión del problema y la eventual resolución para poder marcar el registro como **Cerrado**. Esto asegura que todos los problemas técnicos sean debidamente atendidos y resueltos, manteniendo la operatividad de las instalaciones.
+
+Para cambiar el estado de una falla de **Abierto** a **Cerrado**, el responsable deberá:
+
+1. Acceder al registro de la falla en la bitácora.
+2. Revisar la evidencia y los comentarios asociados.
+3. Realizar las acciones necesarias para resolver el problema.
+4. Marcar la falla como **Cerrada** una vez que la solución haya sido implementada.
+
+.. image:: /imgs/Soter/Soter73.png
 
 .. _proceso-registro-visitantes:
 
