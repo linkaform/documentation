@@ -255,30 +255,17 @@ Puede acceder a la sección completa de todas las notas de las siguientes manera
 
 .. image:: /imgs/Soter/Soter22.png
 
-La bitácora de notas le muestra un registro de todas las notas, incluyendo la siguiente información:
+Al acceder, encontrará información sobre las notas de la caseta actual, dónde:
 
-- **Folio**: Identificador único de la nota.
-- **Guardia**: El nombre del guardia que dejó la nota.
-- **Apertura**: Fecha en que se creó la nota.
-- **Cierre**: Si la nota ya fue cerrada, se mostrará la fecha de cierre.
-- **Nota**: Título de la nota.
-- **Archivo**: Documentos de evidencia.
-- **Fotografía**: Imágenes de evidencia.
-- **Comentarios**: Detalles adicionales o seguimiento de la nota.
+**Ubicación**
 
-.. image:: /imgs/Soter/Soter17.png
-    :width: 880px
-
-Información de Caseta
----------------------
-
-La información de caseta es una funcionalidad disponible en la parte superior de la mayoría de los apartados de Soter. Esta se divide en dos partes:
-
-1. **Ubicación**: Le permite cambiar entre diferentes ubicaciones o casetas dentro de la misma empresa. Por ejemplo, puede acceder a una sucursal diferente y seleccionar una caseta específica en esa ubicación.
+Le permite cambiar entre diferentes ubicaciones o casetas dentro de la misma empresa. Por ejemplo, puede acceder a una sucursal diferente y seleccionar una caseta específica en esa ubicación.
 
 .. attention:: Si cambia de ubicación o caseta, la información de la bitácora se actualizará automáticamente para reflejar los datos correspondientes a la nueva selección.
 
-2. **Información**: Muestra tarjetas (cards) con información relevante y útil para el monitoreo de la situación actual, lo que facilita estar al tanto de pendientes y eventos importantes. Dependiendo de la sección, las tarjetas mostrarán la cantidad de diferentes elementos, como por ejemplo:
+**Información**
+
+Muestra tarjetas (cards) con información relevante y útil para el monitoreo de la situación actual, lo que facilita estar al tanto de pendientes y eventos importantes. Dependiendo de la sección, las tarjetas mostrarán la cantidad de diferentes elementos, como por ejemplo:
    
 - **Notas del día**: Número de notas registradas de la fecha actual.
 - **Notas abiertas**: Cantidad de notas que aún están activas y requieren atención.
@@ -292,8 +279,25 @@ Si desea colapsar la información de la caseta para visualizar solo la informaci
 - Presione el ícono de flecha hacia abajo. El contenido se ocultará.
 - Si desea volver a ver la información, presione el mismo ícono nuevamente.
 
-Agregar una Nota
-----------------
+Bitácora de Notas
+-----------------
+
+La bitácora de notas le muestra un registro de todas las notas, entre las columnas podrá encontrar:
+
+- **Folio**: Identificador único de la nota.
+- **Guardia**: El nombre del guardia que dejó la nota.
+- **Apertura**: Fecha en que se creó la nota.
+- **Cierre**: Si la nota ya fue cerrada, se mostrará la fecha de cierre.
+- **Nota**: Título de la nota.
+- **Archivo**: Documentos de evidencia.
+- **Fotografía**: Imágenes de evidencia.
+- **Comentarios**: Detalles adicionales o seguimiento de la nota.
+
+.. image:: /imgs/Soter/Soter17.png
+    :width: 880px
+
+Agregar Nota
+------------
 
 Para agregar una nueva nota, siga estos pasos:
 
@@ -958,7 +962,7 @@ Desde la bitácora, es posible asignar o recibir un gafete para una visita. Siga
 
 .. image:: /imgs/Soter/Soter51.png
 
-3. Consulte la documentación adicional según lo requiera:
+3. Consulte la documentación según lo requiera:
 
 .. seealso:: Consulte :ref:`asignacion-gafete` :octicon:`report;1em;sd-text-info` para más detalles.
 
@@ -1028,11 +1032,15 @@ La interfaz de **Incidencias** permite la gestión de incidentes o fallas que se
 
 Al acceder, encontrará la información de la caseta actual. Esta sección de la interfaz proporciona la situación actual sobre la caseta, dónde:
 
-1. **Ubicación**: Permite confirmar la ubicación y caseta en la que se encuentra actualmente y cambiar entre diferentes ubicaciones o casetas dentro de la misma empresa.
+**Ubicación**
+
+Permite confirmar la ubicación y caseta en la que se encuentra actualmente y cambiar entre diferentes ubicaciones o casetas dentro de la misma empresa.
 
 .. attention:: Si cambia de ubicación o caseta, la información de la bitácora se actualizará automáticamente para reflejar los datos correspondientes a la nueva selección.
 
-2. **Información**: Muestra tarjetas con información relevante y útil para el monitoreo de la situación actual, lo que facilita estar al tanto de pendientes y eventos importantes. Dependiendo de la sección, las tarjetas mostrarán la cantidad de diferentes elementos, como por ejemplo:
+**Información**
+
+Muestra tarjetas con información relevante y útil para el monitoreo de la situación actual, lo que facilita estar al tanto de pendientes y eventos importantes. Dependiendo de la sección, las tarjetas mostrarán la cantidad de diferentes elementos, como por ejemplo:
 
 - **Fallas x día**: Muestra el número total de fallas reportadas en el día, lo que ayuda a identificar la frecuencia de problemas que ocurren en las instalaciones.
 - **Fallas por resolver**: Indica la cantidad de fallas que aún no han sido atendidas o solucionadas, lo que permite priorizar y dar seguimiento a los problemas pendientes.
@@ -1041,6 +1049,9 @@ Si desea colapsar la información de la caseta para visualizar solo la informaci
 
 - Presione el ícono de flecha hacia abajo. El contenido se ocultará.
 - Si desea volver a ver la información, presione el mismo ícono nuevamente.
+
+.. image:: /imgs/Soter/Soter75.png
+    :width: 880px
 
 Bitácora de Incidentes
 ----------------------
@@ -1057,7 +1068,7 @@ En la bitácora de incidentes, los registros se organizan según su nivel de pri
 - **Comentarios**: Detalles adicionales sobre el evento, proporcionando contexto o información relevante para del incidente.
 - **Reporta**: Indica el nombre del guardia o personal que reportó el incidente.
 
-.. image:: /imgs/Soter/Soter73.png
+.. image:: /imgs/Soter/Soter76V.png
     :width: 880px
 
 Para filtrar los registros de los incidentes por prioridad:
@@ -1065,13 +1076,16 @@ Para filtrar los registros de los incidentes por prioridad:
 1. Identifique el selector ubicado en la parte superior de la bitácora.
 2. Seleccione la prioridad donde:
 
-   - **Alta**: Incidentes que requieren atención inmediata debido a su gravedad.
-   - **Mediana**: Incidentes que deben ser atendidos, pero que no representan un riesgo crítico.
-   - **Baja**: Incidentes de menor urgencia que pueden ser atendidos posteriormente.
+- **Crítico**: Incidentes con daños severos que tienen un alto impacto en las actividades o instalaciones.
+- **Alta**: Incidentes que implican daños significativos, aunque no tan severos como los críticos.
+- **Mediana**: Incidentes que presentan daños moderados y cuyo impacto es limitado.
+- **Baja**: Incidentes con daños menores que no afectan de forma considerable las operaciones o instalaciones.
 
-   Los registros de la bitácora se actualizarán automáticamente para mostrar solo los incidentes de la prioridad seleccionada.
+Los registros de la bitácora se actualizarán automáticamente para mostrar solo los incidentes de la prioridad seleccionada.
 
 .. image:: /imgs/Soter/Soter72.png
+
+.. _nuevo-incident:
 
 Nuevo Incidente
 ^^^^^^^^^^^^^^^
@@ -1086,11 +1100,26 @@ Reportar un nuevo incidente es un proceso sencillo, siga los siguientes pasos:
 
 - **Ubicación**: Seleccione la ubicación donde ocurrió el incidente.
 - **Área**: Indique la zona específica dentro de la ubicación donde se produjo el incidente.
+
+.. image:: /imgs/Soter/Soter76.png
+
 - **Fecha**: Especifique la fecha exacta del incidente.
 - **Hora**: Ingrese la hora en que ocurrió el incidente.
+
+.. image:: /imgs/Soter/Soter77.png
+
 - **Reporta**: Seleccione el guardia que reporta el incidente.
+
+.. image:: /imgs/Soter/Soter78.png
+
 - **Prioridad**: Seleccione entre baja, media, alta o crítica, según la gravedad del incidente.
-- **Incidencia**: Seleccione el tipo de incidente de una lista predefinida.
+
+.. image:: /imgs/Soter/Soter79.png
+
+- **Incidencia**: Seleccione el tipo de incidente de la lista predefinida.
+
+.. image:: /imgs/Soter/Soter80.png
+    :width: 650px
 
 .. note:: Al seleccionar la opción **Depósitos** como tipo de incidencia, se desplegarán dos campos adicionales relacionados con dinero, donde:
 
@@ -1103,53 +1132,330 @@ Reportar un nuevo incidente es un proceso sencillo, siga los siguientes pasos:
         :width: 500px
 
 - **Comentarios**: Agregue información adicional que pueda ser útil para entender la situación.
+
+.. image:: /imgs/Soter/Soter81.png
+
 - **Tipo de daño**: Seleccione si el daño fue a materiales o a personas.
-- **Daños causados**: Describa los daños observados.
+
+.. image:: /imgs/Soter/Soter82.png
+
+- **Daños**: Describa los daños causados.
+
+.. image:: /imgs/Soter/Soter83.png
+
 - **Evidencia**: Adjunte imágenes o videos que respalden el reporte.
 - **Documentos**: Suba documentos adicionales si es necesario.
 
+.. image:: /imgs/Soter/Soter84.png
+
 - **Personas involucradas**: Ingrese el nombre completo de cada persona involucrada y seleccione si es un afectado o un testigo.
+
+.. image:: /imgs/Soter/Soter85.png
+
+.. note:: No hay un límite en la cantidad de personas que pueden ser agregadas como involucradas. Añada tantas como sea necesario para asegurar que todos los involucrados estén debidamente registrados.
 
 - **Acciones tomadas**: Registre las medidas que se tomaron en respuesta al incidente, junto con el responsable de cada acción.
 
+.. image:: /imgs/Soter/Soter86.png
+
 4. Presione ``Crear`` para finalizar el registro.
 
-Bitácora de fallas
-==================
+Visualizar Incidente
+^^^^^^^^^^^^^^^^^^^^
 
-La bitácora de **fallas** permite registrar y realizar un seguimiento de problemas técnicos o malfuncionamientos que ocurren en las instalaciones. A diferencia de los incidentes, las fallas requieren un proceso de resolución para poder ser cerradas, asegurando que los problemas sean atendidos y solucionados de manera adecuada.
+Para consultar los detalles de un incidente registrado en la bitácora, siga los siguientes pasos:
 
-Las fallas pueden incluir problemas como daños en equipos, malfuncionamientos de sistemas de seguridad, fallas eléctricas, entre otros que afecten el funcionamiento normal de las instalaciones.
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Incidencias**. Aquí se mostrarán todos los incidentes registrados, ordenados por prioridad.
+3. Filtre los incidentes (opcional).
 
-La bitácora de fallas está organizada en varias columnas para facilitar la gestión y seguimiento de cada registro:
+.. note:: Si desea ver incidentes de una prioridad específica (**Crítico**, **Alta**, **Mediana**, **Baja**), utilice el selector de prioridad en la parte superior de la bitácora.
 
-- **Fecha y Hora**: Indica el momento en que se reportó la falla, lo cual ayuda a mantener un registro cronológico.
-- **Estado**: Muestra el estado actual de la falla, que puede ser **Abierto** (pendiente de resolver) o **Cerrado** (ya solucionado).
-- **Ubicación**: Indica la ubicación específica dentro de la empresa donde ocurrió la falla, permitiendo a los responsables identificar el lugar afectado.
-- **Lugar de la falla**: Especifica la zona exacta dentro de la ubicación donde se presentó el problema, como un área de la planta o una oficina.
-- **Falla**: Describe brevemente la naturaleza del problema o malfuncionamiento reportado.
-- **Evidencia**: Permite adjuntar fotografías o documentos que respalden la existencia de la falla y faciliten su comprensión para los técnicos responsables.
-- **Comentarios**: Espacio para agregar observaciones adicionales relacionadas con la falla, como detalles de su origen o posibles soluciones.
-- **Reporta**: Identifica al guardia o persona que realizó el reporte de la falla.
-- **Responsable**: Indica quién se encargará de dar seguimiento a la falla para asegurar su solución.
+4. Ubique el incidente deseado.
+
+.. note:: En caso de múltiples registros, utilice la barra de búsqueda de alguna columna para encontrar el incidente específico que desea revisar.
+
+5. Haga clic en el ícono de vista ubicado en la misma fila del incidente que desea revisar. Esto abrirá un modal que mostrará todos los detalles del incidente seleccionado de forma completa.
+
+.. image:: /imgs/Soter/Soter88.png
+
+6. Una vez revisada la información, presione el botón de ``Cerrar`` o el ícono ``X`` para salir de la ventana de detalles y regresar a la lista de la bitácora de incidentes.
+
+.. image:: /imgs/Soter/Soter89.gif
+
+Actualizar Incidente
+^^^^^^^^^^^^^^^^^^^^
+
+Para actualizar la información de un incidente registrado en la bitácora, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Incidencias**. Aquí se mostrarán todos los incidentes registrados, ordenados por prioridad.
+3. Filtre los incidentes (opcional).
+
+.. note:: Si desea ver incidentes de una prioridad específica (**Crítico**, **Alta**, **Mediana**, **Baja**), utilice el selector de prioridad en la parte superior de la bitácora.
+
+4. Ubique el incidente que desea actualizar.
+
+.. note:: En caso de múltiples registros, utilice la barra de búsqueda de alguna columna para encontrar el incidente específico que desea modificar.
+
+5. Haga clic en el ícono de **editar** ubicado en la misma fila del incidente. Esto abrirá un modal con todos los detalles del incidente en modo de edición.
+
+.. image:: /imgs/Soter/Soter90.png
+
+6. Realice los cambios necesarios en los campos que desee actualizar. 
+
+.. seealso:: Consulte los campos en la sección `nuevo incidente <#nuevo-incident>`_ :octicon:`report;1em;sd-text-info`.
+
+7. Una vez que haya realizado las modificaciones, presione el botón ``Actualizar`` para confirmar la información del incidente. Recibirá un mensaje de confirmación indicando que la información ha sido actualizada exitosamente.
+
+.. image:: /imgs/Soter/Soter91.png
+    :width: 500px
+
+8. Presione el botón de ``OK`` para cerrar de la ventana y regresar a la lista de la bitácora de incidentes.
+
+.. image:: /imgs/Soter/Soter92.png
+
+Eliminar un Registro
+^^^^^^^^^^^^^^^^^^^^
+
+Para eliminar un incidente específico de la bitácora, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Incidencias**. Aquí se mostrarán todos los incidentes registrados, ordenados por prioridad.
+3. Filtre los incidentes (opcional).
+
+.. note:: Si desea ver incidentes de una prioridad específica (**Crítico**, **Alta**, **Mediana**, **Baja**), utilice el selector de prioridad en la parte superior de la bitácora.
+
+4. Ubique el incidente que desea eliminar.
+
+.. note:: En caso de múltiples registros, utilice la barra de búsqueda de alguna columna para encontrar el incidente específico que desea eliminar.
+
+5. Seleccione el icono **Eliminar** ubicado en la misma fila del incidente que desea borrar.
+
+.. image:: /imgs/Soter/Soter93.png
+
+6. Presione ``Confirmar`` para proceder con la eliminación del incidente. Recibirá un mensaje de confirmación indicando que el registro ha sido eliminado exitosamente.
+
+.. image:: /imgs/Soter/Soter94.png
+    :width: 500px
+
+Eliminar Múltiples Registros
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Para eliminar varios incidentes al mismo tiempo de la bitácora, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Incidencias**. Aquí se mostrarán todos los incidentes registrados, ordenados por prioridad.
+3. Filtre los incidentes (opcional).
+
+.. note:: Si desea ver incidentes de una prioridad específica (**Crítico**, **Alta**, **Mediana**, **Baja**), utilice el selector de prioridad en la parte superior de la bitácora.
+
+4. Ubique los incidentes que desea eliminar.
+
+.. note:: En caso de múltiples registros, utilice la barra de búsqueda de alguna columna para encontrar los incidentes específicos que desea eliminar.
+
+5. Seleccione las casillas de los registros que desea eliminar.
+6. Presione el botón ``Eliminar`` ubicado en la esquina superior de la bitácora.
+
+.. image:: /imgs/Soter/Soter95.png
+    :width: 880px
+
+7. Presione ``Confirmar`` para proceder con la eliminación de los registros seleccionados.
+
+.. image:: /imgs/Soter/Soter96.png
+    :width: 500px
+
+8. Presione ``OK`` para cerrar el modal de confirmación y finalizar el proceso.
+
+.. image:: /imgs/Soter/Soter97.png
+    :width: 500px
+
+Bitácora de Fallas
+------------------
+
+La bitácora de **fallas** permite registrar y realizar un seguimiento de problemas técnicos o malfuncionamientos que ocurren en las instalaciones. 
+
+.. attention:: A diferencia de los incidentes, las fallas requieren un proceso de resolución para poder ser cerradas, asegurando que los problemas sean atendidos y solucionados de manera adecuada.
+
+En la bitácora de fallas, los registros se organizan según el estado, mostrando primero las fallas abiertas para una atención inmediata. La bitácora está organizada en varias columnas, donde:
+
+- **Fecha y Hora**: Indica el momento en que se reportó la falla.
+- **Estado**: Muestra el estado actual de la falla.
+
+.. note:: 
+    
+    - **Abierto**: Pendiente de resolver.
+    - **Cerrado**: Falla resuelta.
+
+- **Ubicación**: Indica la ubicación donde ocurrió la falla.
+- **Lugar de la falla**: Especifica la zona exacta dentro de la ubicación donde se presentó el problema.
+- **Falla**: Tipo de problema o malfuncionamiento reportado.
+- **Evidencia**: Fotografías o documentos que respalden la existencia de la falla y faciliten su comprensión para los responsables.
+- **Comentarios**: Observaciones adicionales relacionadas con la falla, como detalles de su origen o posibles soluciones.
+- **Reporta**: Guardia o persona que realizó el reporte de la falla.
+- **Responsable**: Responsable para dar seguimiento a la falla y asegurar su solución.
+
+.. image:: /imgs/Soter/Soter98.png
+    :width: 850px
+
+Nueva Falla
+^^^^^^^^^^^
+
+Para registrar una nueva falla en la bitácora, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Fallas**.
+3. Presione el botón azul ``+Nueva Falla`` ubicado en la esquina derecha de la bitácora. Se abrirá un modal para el registro de la nueva falla.
+4. Complete los campos requeridos según corresponda:
+
+- **Ubicación**: Seleccione la ubicación donde se ha presentado la falla.
+- **Área**: Seleccione el área específica dentro de la ubicación donde ocurrió la falla.
+- **Fecha**: Indique la fecha en la que se detectó la falla.
+- **Hora**: Registre la hora exacta de la detección de la falla.
+- **Falla**: Seleccione el tipo de falla de la lista predefinida. 
+- **Objeto afectado**: Especifique el objeto que ha sido afectado por la falla (si aplica).
+
+.. note:: Algunas fallas están relacionadas con objetos que afectan. Por ejemplo, la falla **Mal funcionamiento de equipos informáticos** puede afectar a un objeto específico como una laptop, servidor, etc.
+
+- **Evidencia**: Adjunte fotografías u otros archivos visuales que muestren la falla detectada.
+- **Documentación**: Adjunte documentos relevantes a la falla (manuales, informes técnicos, etc.).
+- **Comentarios**: Agregue detalles adicionales que consideren importantes para el seguimiento de la falla.
+- **Reporta**: Guardia o personal que está reportando la falla.
+- **Responsable a solucionar**: Seleccione la persona encargada de resolver la falla.
+
+5. Presione ``Registrar`` para finalizar el registro de la falla.
+
+.. image:: /imgs/Soter/Soter99.png
+    :width: 500px
+
+Visualizar Falla
+^^^^^^^^^^^^^^^^
+
+Para consultar los detalles de una falla registrada en la bitácora, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Fallas**.
+3. Ubique la falla deseada.
+
+.. note:: En caso de múltiples registros, utilice la barra de búsqueda de alguna columna.
+
+4. Haga clic en el ícono de vista ubicado en la misma fila de la falla que desea revisar. Esto abrirá un modal que mostrará todos los detalles de la falla seleccionada.
+
+.. image:: /imgs/Soter/Soter100.png
+
+5. Una vez revisada la información, presione el botón ``Cerrar`` o el ícono ``X`` para salir de la ventana de detalles y regresar a la lista de la bitácora de fallas.
+
+.. image:: /imgs/Soter/Soter101.png
+    :width: 650px
+
+Actualizar una falla
+^^^^^^^^^^^^^^^^^^^^
+
+Para modificar los detalles de una falla registrada en la bitácora, siga los siguientes pasos:
+
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Fallas**.
+3. Ubique la falla deseada.
+
+.. note:: Si hay múltiples registros, la búsqueda por columna le permitirá encontrar la falla específica de manera más eficiente.
+
+4. Haga clic en el ícono de edición ubicado en la misma fila de la falla que desea actualizar. Esto abrirá un modal con los detalles de la falla.
+
+.. image:: /imgs/Soter/Soter102.png
+
+5. Modifique los campos necesarios.
+
+.. seealso:: Consulte los campos en la sección `nueva falla <#nueva-falla>`_ :octicon:`report;1em;sd-text-info`.
+
+7. Una vez que haya realizado las modificaciones necesarias, presione el botón ``Actualizar`` para confirmar los cambios.
+
+.. note:: Las actualizaciones se reflejarán de inmediato en la bitácora de fallas y estarán disponibles para todos los usuarios autorizados.
+
+.. image:: /imgs/Soter/Soter103.png
+    :width: 650px
+
+Cerrar Falla
+^^^^^^^^^^^^
 
 A diferencia de los incidentes, las fallas requieren un proceso de seguimiento que implica la revisión del problema y la eventual resolución para poder marcar el registro como **Cerrado**. Esto asegura que todos los problemas técnicos sean debidamente atendidos y resueltos, manteniendo la operatividad de las instalaciones.
 
-Para cambiar el estado de una falla de **Abierto** a **Cerrado**, el responsable deberá:
+.. attention:: El cierre de una falla es un proceso que corresponde únicamente al responsable asignado al momento de crear la falla.
 
-1. Acceder al registro de la falla en la bitácora.
-2. Revisar la evidencia y los comentarios asociados.
-3. Realizar las acciones necesarias para resolver el problema.
-4. Marcar la falla como **Cerrada** una vez que la solución haya sido implementada.
+Para cerrar una falla registrada en la bitácora una vez que ha sido solucionada, siga los siguientes pasos:
 
-.. image:: /imgs/Soter/Soter73.png
+1. Ubíquese en la interfaz de ``Incidentes`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Fallas**. 
+3. Ubique la falla que desea cerrar.
 
-.. _proceso-registro-visitantes:
+.. note:: Si hay múltiples registros, la búsqueda por columna le permitirá encontrar la falla específica de manera más eficiente.
 
-Proceso de Registro de Visitantes 
-=================================
+4. Haga clic en el ícono de **check** (palomita) ubicado en la misma fila de la falla que desea cerrar. Esto abrirá un modal.
 
-lorem inpus
+.. image:: /imgs/Soter/Soter104.png
+
+6. Complete los siguientes campos en el modal de cierre:
+
+- **Folio del reporte de acción correctiva**: Ingrese el número de folio correspondiente a la acción correctiva que se llevó a cabo para solucionar la falla.
+- **Comentario**: Agregue un comentario detallando la solución aplicada o cualquier observación relevante sobre el proceso de cierre.
+- **Evidencia de solución**: Cargue fotografías que muestren la solución implementada y el estado actual de la situación.
+- **Documento de solución**: Adjunte cualquier documento relevante que respalde la solución aplicada, como reportes de mantenimiento, certificados de reparación, etc.
+
+7. Una vez que haya completado todos los campos, presione el botón ``Cerrar`` para finalizar el proceso.
+
+.. image:: /imgs/Soter/Soter105.png
+    :width: 650px
+
+.. warning:: 
+    
+    - Una falla solo puede ser cerrada una vez. 
+    - Al cerrar la falla, el registro se actualizará y pasará a la sección de **Resueltos**.
+    - Una vez que una falla está marcada como resuelta, no podrá ser editada ni cerrada nuevamente.
+
+    .. image:: /imgs/Soter/Soter106.png
+        :width: 780px
+
+Eliminar un Registro
+^^^^^^^^^^^^^^^^^^^^
+
+1. Ubíquese en la interfaz de ``Fallas`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Fallas**.
+3. Filtre las fallas según su estado (opcional).
+
+.. note:: Si tiene muchos registros, utilice la barra de búsqueda para encontrar la falla específica que desea eliminar.
+
+4. Ubique la falla deseada en la bitácora.
+5. Seleccione el ícono de **Eliminar** (ícono de papelera) en la misma fila de la falla que desea eliminar.
+
+.. image:: /imgs/Soter/Soter107.png
+
+6. Presione el botón ``Confirmar`` en el modal de confirmación para proceder con la eliminación de la falla.
+
+.. image:: /imgs/Soter/Soter108.png
+
+Eliminar Múltiples Registros
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Ubíquese en la interfaz de ``Fallas`` en el menú principal de Soter.
+2. Asegúrese de estar en la pestaña **Fallas** para visualizar los registros.
+3. Filtre las fallas según su estado (opcional).
+
+.. note:: Utilice la barra de búsqueda si desea buscar y seleccionar registros específicos para eliminar.
+
+4. Marque las casillas de verificación de las fallas que desea eliminar.
+5. Presione el botón ``Eliminar`` ubicado en la esquina superior de la bitácora.
+
+.. image:: /imgs/Soter/Soter109.png
+    :width: 880px
+
+6. En el modal de confirmación, presione ``Confirmar`` para eliminar las fallas seleccionadas.
+
+.. image:: /imgs/Soter/Soter96.png
+    :width: 500px
+
+7. Presione ``OK`` para cerrar el modal de confirmación y regresar a la lista actualizada de fallas.
+
+.. image:: /imgs/Soter/Soter110.png
+    :width: 500px
 
 .. LIGAS DE INTERÉS EXTERNO 
 

@@ -617,7 +617,7 @@ Para responder la forma, revise las siguientes pestañas que detallan los campos
 
                      .. image:: /imgs/Modulos/Accesos/Accesos47.png
 
-               .. attention:: Al registrar un nuevo visitante, este deberá completar su proceso de registro. Consulte y envíe la documentación del :ref:`proceso-registro-visitantes` :octicon:`report;1em;sd-text-info` a quien corresponda, para más detalles sobre cómo finalizar el registro.
+               .. attention:: Al registrar un nuevo visitante, este deberá completar su proceso de registro. Consulte y envíe la documentación del **proceso registro visitantes** :octicon:`report;1em;sd-text-info` a quien corresponda, para más detalles sobre cómo finalizar el registro.
 
                .. hint:: Considere ajustar la estructura de la forma según el nivel de detalle de los datos que necesite recopilar.
 

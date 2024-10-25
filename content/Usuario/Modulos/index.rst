@@ -40,4 +40,4 @@ En este apartado, encontrará documentación sobre el flujo, configuración de f
 
 .. warning:: Esta documentación proporciona detalles sobre las configuraciones, procesos y funcionalidades de cada módulo. Sin embargo, no incluye instrucciones sobre cómo instalar o crear un módulo.
     
-    Para continuar, damos por hecho que ya tiene instalado el módulo de su preferencia. Si desea instalar o crear sus propios módulos, consulte la :ref:`doc-modules` :octicon:`report;1em;sd-text-info` para desarrolladores o, en su defecto, contacte a soporte técnico para que nuestro equipo se encargue de instalar el módulo en la cuenta de su preferencia.
+ ..   Para continuar, damos por hecho que ya tiene instalado el módulo de su preferencia. Si desea instalar o crear sus propios módulos, consulte la :ref:`doc-modules` :octicon:`report;1em;sd-text-info` para desarrolladores o, en su defecto, contacte a soporte técnico para que nuestro equipo se encargue de instalar el módulo en la cuenta de su preferencia.
