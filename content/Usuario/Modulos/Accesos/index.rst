@@ -4,16 +4,15 @@
 Módulo de Seguridad
 ===================
 
-El **módulo de Seguridad** está diseñado para gestionar y controlar el acceso de personas a una ubicación. Su objetivo es garantizar la seguridad, proteger activos, recursos y mantener un registro detallado de las actividades de entrada y salida, así como otras funciones relacionadas con la seguridad.
+El **módulo de Seguridad** está diseñado para brindar seguridad industrial, se enfoca en proteger a los trabajadores, el entorno de trabajo y la infraestructura de la empresa, especialmente en industrias donde hay riesgos físicos significativos, como fábricas, plantas de producción, minería, y construcción.
 
-Este módulo opera mediante una interfaz de usuario utilizada exclusivamente por el personal de seguridad en las casetas de acceso. Las casetas son puntos de control encargados de gestionar y supervisar la entrada y salida de visitas de una ubicación.
+Su objetivo es prevenir accidentes laborales y enfermedades ocupacionales, garantizando que se cumplan las normativas de seguridad y salud en el trabajo.
 
-El módulo de seguridad es utilizado por dos roles diferentes:
+Este módulo está diseñado para integrarse con un sistema de control de seguridad patrimonial, operado por el personal de seguridad en las casetas de acceso. Las casetas funcionan como puntos de control responsables de gestionar y supervisar la entrada y salida de visitantes en una ubicación, asegurando un control eficiente y seguro de los accesos.
 
-- **Personal dentro de la instalación**: Son responsables de generar pases de entrada (invitaciones) y gestionar perfiles de visitantes y empleados. Este personal interactúa directamente con algunas formas y catálogos del módulo.
-- **Personal de Seguridad**: Utiliza la interfaz de usuario para ejecutar funciones de control de acceso, reportar incidencias, fallas, gestionar equipos y más funcionalidades.
+.. seealso:: Para más detalles, revise la documentación de :ref:`doc-soter` :octicon:`report;1em;sd-text-info`.
 
-.. warning:: El personal de seguridad no interactúa directamente con ninguna de las formas ni catálogos; Para más detalles, revise la documentación de :ref:`doc-soter` :octicon:`report;1em;sd-text-info`
+El módulo de seguridad es utilizado por el personal que tienen la responsabilidad de generar pases de entrada (invitaciones) y gestionar todo lo relacionado con la seguridad de visitantes y empleados.
 
 Esta documentación se centra en explicar flujos y configuraciones de las formas y catálogos que involucra el módulo de seguridad. A medida que avance, encontrará más detalles, ejemplos y guías paso a paso para la correcta implementación y utilización del módulo.
 

@@ -4,11 +4,15 @@
 Aplicación Web Soter
 ====================
 
-Bienvenido a la documentación de **Soter**, un sistema web diseñado para el **control de accesos de visitas** en una empresa. Este recurso ofrece una guía detallada sobre el uso de las funcionalidades de Soter, proporcionando ejemplos, tutoriales paso a paso y soluciones a problemas comunes para facilitar su uso.
+Bienvenido a la documentación de **Soter**, un sistema web diseñado para el **control de accesos de visitas** en una empresa. 
 
-Soter tiene como objetivo principal brindar seguridad a las instalaciones de la empresa mediante un control exhaustivo de los usuarios (visitas) que entran y salen de la ubicación. A través de este sistema, los guardias de seguridad pueden gestionar la **revisión de permisos**, el **control de objetos** y **vehículos autorizados**, la **supervisión de accesos a áreas específicas** entre otras dentro de las instalaciones.
+Soter tiene como objetivo principal proporcionar seguridad patrimonial, asegurando tanto la protección de la infraestructura física (edificios y equipos) como de la información sensible y la integridad de las personas (empleados y visitantes).
 
-Este manual está dirigido principalmente a **guardias de seguridad** y **personal administrativo** que interactúan directamente con la gestión de entradas y salidas de visitantes. Las herramientas que Soter proporciona incluyen la capacidad de reportar **incidencias**, **fallas**, gestionar **objetos perdidos** y llevar a cabo funcionalidades específicas para tareas diarias de los guardias de seguridad, optimizando el control y la vigilancia en la empresa.
+Este sistema se centra en salvaguardar los activos físicos de una empresa, que incluyen propiedades, instalaciones, bienes, información y personas, garantizando un entorno seguro y ordenado para todos.
+
+Este recurso ofrece una guía detallada sobre el uso de las funcionalidades de Soter, proporcionando ejemplos, tutoriales paso a paso y soluciones a problemas comunes para facilitar su uso.
+
+Este manual está destinado principalmente a **guardias de seguridad** y **personal administrativo** que gestionan las entradas y salidas de visitantes, así como todos los aspectos relacionados con la **seguridad física** de las instalaciones.
 
 Requisitos previos
 ==================
