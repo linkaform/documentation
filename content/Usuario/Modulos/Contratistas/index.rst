@@ -122,7 +122,7 @@ Si es contratista, siga siga los siguientes pasos para completar su alta:
 
 .. warning:: Por ningún motivo modifique el ``Estatus del contratista``. Este campo solo puede ser modificado por la empresa que solicitó sus servicios.
 
-.. _carga-permisos-visitas:
+.. _carga-permisoss-visitas:
 
 Carga de Permisos para Empleados
 ================================
