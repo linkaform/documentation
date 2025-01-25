@@ -65,7 +65,7 @@ Esta forma permite registrar toda información a cerca de las diferentes áreas 
 
     .. tab-item:: Estructura
 
-        El catálogo **Áreas de las Ubicaciones** incluye los siguientes campos:
+        La forma **Áreas de las Ubicaciones** incluye los siguientes campos:
 
         - **Nombre del Área**: Nombre de la área específica.
         - **Tipo de Área**: Tipo al que pertenece el área (catálogo `tipo de áreas <#catalog-tipo-areas>`_ :octicon:`report;1em;sd-text-info`).

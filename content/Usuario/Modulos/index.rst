@@ -23,7 +23,7 @@ Un **módulo en Linkaform** es un conjunto de formas, catálogos, scripts que se
 - **Automatizar Procesos**: Facilita la gestión y el control de diferentes áreas operativas mediante la automatización de tareas.
 - **Mejorar la Organización**: Ayuda a mantener la información ordenada y accesible, mejorando la eficiencia operativa.
 - **Registrar Actividades**: Permite llevar un registro detallado de todas las actividades relevantes.
-- **Asegurar la Cumplimentación de Normativas**: Garantiza que todas las actividades cumplan con los estándares y normativas establecidos.
+- **Asegurar el Cumplimiento de Normativas**: Garantiza que todas las actividades cumplan con los estándares y normativas establecidos.
 - **Proporcionar Reportes y Análisis**: Genera reportes y análisis que ayudan en la toma de decisiones y en la mejora continua de los procesos.
 
 Cada módulo está integrado con los demás para proporcionar una solución completa y cohesionada que se adapta a las necesidades específicas de la organización.

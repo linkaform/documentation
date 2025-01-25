@@ -142,7 +142,7 @@ Contacto
 
 La forma **Contacto** ofrece una funcionalidad similar a la de la lista de contactos en un teléfono. Sirve para almacenar y gestionar la información de contacto de personas y empresas. 
 
-Para responder la forma, revise las siguiente información que detalla los campos necesarios para crear un contacto. Asegúrese de prestar atención a la información proporcionada y las notas importantes.
+Para responder la forma, revise la siguiente información que detalla los campos necesarios para crear un contacto. Asegúrese de prestar atención a las notas importantes.
 
 .. warning:: Antes de responder la forma, asegúrese de tener registros en los catálogos propios del módulo. 
 
@@ -179,9 +179,10 @@ Para responder la forma, revise las siguiente información que detalla los campo
 .. image:: /imgs/Modulos/Base/Base22.png
 
 **Teléfono**: Número telefónico del contacto (opcionalmente).
-**Email**: Correo electrónico del contacto (opcionalmente).
 
 .. image:: /imgs/Modulos/Base/Base23.png
+
+**Email**: Correo electrónico del contacto (opcionalmente).
 
 **Tipo de Contacto**: seleccione según corresponda:
         

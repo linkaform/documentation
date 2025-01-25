@@ -102,7 +102,7 @@ Para más detalles sobre la estructura, consulte la forma correspondiente. Obser
 Completar Alta de Contratista
 =============================
 
-Si es contratista, siga siga los siguientes pasos para completar su alta:
+Si es contratista, siga los siguientes pasos para completar su alta:
 
 .. important:: Si no tiene una cuenta en |linkaform| :octicon:`report;1em;sd-text-info`, podrá responder la forma sin necesidad de una cuenta o suscripción.
 
