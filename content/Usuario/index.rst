@@ -15,8 +15,6 @@ Documentación para usuarios
     Registros/index
     Inbox/index
     AppMóvil/index
-    Modulos/index
-    Soter/index
 
 ¡Bienvenido a la documentación exclusiva para usuarios de Linkaform! Aquí, podrás explorar las funcionalidades avanzadas que ofrecemos para optimizar y simplificar tus procesos tanto en la aplicación web como en la aplicación móvil. 📊📱
 
@@ -105,17 +103,6 @@ Descubre cómo utilizar formularios personalizados, bases de datos eficientes y 
      
             Explora, captura y gestiona con facilidad desde tu bolsillo
 
-    .. grid-item-card:: 
-        :columns: 6
-
-        .. card:: 
-            :link: doc-modules-user
-            :link-type: ref
-            :margin: 0
-            :class-card: card-i
-
-            Módulos
-
 .. ICONOS SOBRE EL ÍNDICE
 
 .. |Inicio| raw:: html
@@ -202,3 +189,18 @@ Descubre cómo utilizar formularios personalizados, bases de datos eficientes y 
             </body>
         </html>
 
+.. |Modulos| raw:: html
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <i class="fa-solid fa-boxes-packing fa-2x" style="margin-right:18px"></i>
+            </body>
+        </html>
+        
+.. <i class="fa-solid fa-person-military-pointing"></i>

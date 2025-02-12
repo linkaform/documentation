@@ -387,6 +387,8 @@ Para cambiar el idioma:
 
 .. important:: Cierre sesión y vuelva a ingresar para completar los cambios.
 
+.. _usuarios-admin:
+
 Usuarios
 ========
 

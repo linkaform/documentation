@@ -13,9 +13,11 @@ Documentación de Linkaform
    :hidden:
 
    Usuario/index
+   Soter/index
    Desarrollador/index
    Contribución/index
-   Manual/index
+
+
 
 ¡Te damos la bienvenida a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
 
@@ -64,6 +66,20 @@ Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para a
             |Contribución| **Contribución**
 
             Inicia tu contribución a Linkaform con nuestros tutoriales y pautas disponibles.
+
+    .. grid-item-card:: 
+        :columns: 6
+
+        .. card:: 
+            :link: doc-soter
+            :link-type: ref
+            :margin: 0
+            :class-card: card-i
+
+            |Soter| **Soter**
+
+            Descubre la aplicación web para seguridad patrimonial.
+
 
 |Soporte| **Obtenga ayuda**
 
@@ -139,3 +155,19 @@ Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para a
                <i class="fa-solid fa-puzzle-piece fa-2x" style="margin-right:18px"></i>
             </body>
         </html>
+
+
+.. |Soter| raw:: html
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="https://kit.fontawesome.com/7a9f3502a7.js" crossorigin="anonymous"></script>
+            </head>
+            <body>
+                <i class="fa-solid fa-user-shield fa-2x" style="margin-right:18px"></i>
+            </body>
+        </html>
+
