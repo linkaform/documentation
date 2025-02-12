@@ -14,7 +14,7 @@ A continuación, te presentamos un índice que enumera los temas que te serán d
     :hidden:
 
     Patrimonial/index
-    Soter/index
+    App/index
 
 .. grid:: 2
     :gutter: 0

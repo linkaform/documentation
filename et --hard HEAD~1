@@ -1,0 +1,170 @@
+[33m6fe1887[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit (merge): Resolviendo conflictos de fusión entre develop y main
+[33mdb29438[m HEAD@{1}: checkout: moving from develop to main
+[33md5092ae[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33md5092ae[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{3}: commit: Agregué imagenes de Soter
+[33m4a6531a[m HEAD@{4}: commit: Agregando manuales para Soter
+[33m7a6a61d[m HEAD@{5}: checkout: moving from main to develop
+[33mdb29438[m HEAD@{6}: commit: Subí manuales de implementacion de Soter
+[33mb9e65b7[m HEAD@{7}: checkout: moving from develop to main
+[33m7a6a61d[m HEAD@{8}: checkout: moving from main to develop
+[33mb9e65b7[m HEAD@{9}: checkout: moving from develop to main
+[33m7a6a61d[m HEAD@{10}: commit: Actualización sobre manuales Soter
+[33mb9e65b7[m HEAD@{11}: merge main: Fast-forward
+[33m0ec78e3[m HEAD@{12}: checkout: moving from main to develop
+[33mb9e65b7[m HEAD@{13}: commit: Actualización descripción de Soter y módulos
+[33m8bc2202[m HEAD@{14}: merge develop: Merge made by the 'ort' strategy.
+[33m914648b[m HEAD@{15}: checkout: moving from develop to main
+[33m0ec78e3[m HEAD@{16}: commit: Actualización documentación Soter parte incidencias
+[33m8020059[m HEAD@{17}: commit: Actualización documentación Soter, parte incidencias
+[33m7102c3f[m HEAD@{18}: commit: Actualización documentación Soter
+[33me94b4e5[m HEAD@{19}: commit: Documentación de Soter
+[33mc6549fb[m HEAD@{20}: commit: Actualización para formas e imagenes del modulo accesos
+[33m986871c[m HEAD@{21}: commit: Actualización módulo base, empleados, ubicaciones, contratistas y viáticos
+[33m3858b7a[m HEAD@{22}: commit: Actualización del módulo Seguridad, parte pases de entrada y módulo contratistas
+[33md7af7d3[m HEAD@{23}: commit: Actualización módulo seguridad parte pase de entrada
+[33m11707db[m HEAD@{24}: commit: Actualización módulo seguridad parte Pase de entrada
+[33mf68219b[m HEAD@{25}: commit: Actualización módulo accesos parte configuración de perfiles
+[33m62c16f2[m HEAD@{26}: commit: Actualización documentación módulo seguridad
+[33m4ccca7f[m HEAD@{27}: commit: Actualización módulo Seguridad
+[33md2468f2[m HEAD@{28}: commit: Actualización documentación módulo seguridad
+[33mc76cc28[m HEAD@{29}: commit: Actualización módulo Accesos
+[33ma4b015d[m HEAD@{30}: checkout: moving from main to develop
+[33m914648b[m HEAD@{31}: merge develop: Merge made by the 'ort' strategy.
+[33mb6685b3[m HEAD@{32}: pull origin main: Fast-forward
+[33m1effe81[m HEAD@{33}: checkout: moving from develop to main
+[33ma4b015d[m HEAD@{34}: commit: Actualización primera version documentación sobre módulos para usuarios
+[33m7515225[m HEAD@{35}: commit: Actualización del módulo seguridad parte definición de permisos
+[33m7721fab[m HEAD@{36}: commit: Documentación sobre el módulo de accesos
+[33m106f160[m HEAD@{37}: commit: Actualización documentación viaticos
+[33mf0dfc2a[m HEAD@{38}: commit: Actualización del módulo viáticos
+[33m182bc19[m HEAD@{39}: commit: Actualización del módulo viáticos
+[33m34b6af1[m HEAD@{40}: commit: Finalización de la documentación del módulo location
+[33md9d54e7[m HEAD@{41}: commit: Actualicé documentación del módulo Contratistas y añadí nuevo apartado para documentación del módulo Ubicaciones
+[33m9437e9c[m HEAD@{42}: commit: agregué nuevo apartado para la documentación del módulo de contratistas
+[33mb468293[m HEAD@{43}: commit: Actualización de documentación módulo viáticos
+[33ma9406cd[m HEAD@{44}: commit: Agregué nueva documentación sobre el módulo Empleados
+[33mab2e556[m HEAD@{45}: commit: Finalicé documentación sobre el módulo Base y agregué la documentación del módulo Empleados
+[33m48e92f8[m HEAD@{46}: commit: Agregué apartado para documentación de modulos para usuarios y corregí datos en la documentación de modulos para desarrolladores
+[33m5767961[m HEAD@{47}: commit: Explicación sobre base y lkf object
+[33mbe53318[m HEAD@{48}: commit: Actualice archivo sobre scripts en reportes y en modulos agregue apartado sobre explicacion de archivos
+[33mc4d22ad[m HEAD@{49}: commit: Añadí nuevo apartado sobre Modulos. Comienza con la instalación y configuración del entorno
+[33me147aef[m HEAD@{50}: commit: Actualización sobre log de scrips
+[33m9bed3b5[m HEAD@{51}: commit: Actualización en interpretación del log deen la documentación sobre reportes
+[33mf4cdd1f[m HEAD@{52}: commit: Actualización bases de datos en reportes, se añadió nueva sección sobre como debuggear con los scripts
+[33m1687085[m HEAD@{53}: commit: Actualización de la seccion de estilos de RML
+[33m9ecd848[m HEAD@{54}: commit: Actualización de conceptos basicos de rml
+[33m55f94e5[m HEAD@{55}: commit: Actualización en rml de pdfs
+[33md821b05[m HEAD@{56}: merge main: Merge made by the 'ort' strategy.
+[33m855abf1[m HEAD@{57}: checkout: moving from main to develop
+[33m1effe81[m HEAD@{58}: checkout: moving from develop to main
+[33m855abf1[m HEAD@{59}: reset: moving to HEAD
+[33m855abf1[m HEAD@{60}: checkout: moving from main to develop
+[33m1effe81[m HEAD@{61}: commit: Corrección ortografia
+[33m383b31a[m HEAD@{62}: checkout: moving from develop to main
+[33m855abf1[m HEAD@{63}: commit: actualizacion de ortografia
+[33m847de0c[m HEAD@{64}: checkout: moving from main to develop
+[33m383b31a[m HEAD@{65}: checkout: moving from main to main
+[33m383b31a[m HEAD@{66}: commit: actualice la configuracion de pdfs
+[33m5a0b399[m HEAD@{67}: commit: Actualice las plantillas de los pdfs
+[33mbce5176[m HEAD@{68}: commit: Actualización sobre la administración de Django
+[33mf14b0ef[m HEAD@{69}: commit: Actualización de bases de linkaform en pdfs
+[33m31df496[m HEAD@{70}: commit: Añadí un nuevo apartado a pdfs, separando las bases de linkaform, actualicé la configuración del pdf en la forma
+[33m3e44ba7[m HEAD@{71}: commit: Actualizacion de rutas del menú
+[33m7ad0c5b[m HEAD@{72}: commit: Elimine plantilla de Interdesarrollos
+[33m847de0c[m HEAD@{73}: merge develop: Fast-forward
+[33m5a65ba1[m HEAD@{74}: checkout: moving from develop to main
+[33m847de0c[m HEAD@{75}: commit: actualización de hipervinculo de reportes
+[33mff11e07[m HEAD@{76}: checkout: moving from develop to develop
+[33mff11e07[m HEAD@{77}: commit: actualización configuración de notificación del campo respuesta múltiple
+[33m6e47775[m HEAD@{78}: commit: Actualización campo de opcion multiple
+[33mca33d70[m HEAD@{79}: commit: Actualización configuración de email en el campo email, configuración de ponderaciones y campos de opción múltiple
+[33m2ef5174[m HEAD@{80}: commit: Actualización en configuración de email (Formas)
+[33ma03bf22[m HEAD@{81}: commit: Actualización en los campos de texto sobre formas
+[33mf9b2a51[m HEAD@{82}: commit: Actualización en sección sobre formas
+[33m0bd6ecf[m HEAD@{83}: commit: Correcciones y ejemplos nuevos en reportes, mejoras en el inicio (introduccion a linkaform)
+[33m5a65ba1[m HEAD@{84}: merge main: Fast-forward
+[33mf7f3bfb[m HEAD@{85}: checkout: moving from main to develop
+[33m5a65ba1[m HEAD@{86}: commit: Continuación de ejemplos para reportes y elaboración de estructura de documentación para Katusak
+[33mb9bd516[m HEAD@{87}: commit: Edición de imagenes con información sensible
+[33me939db0[m HEAD@{88}: commit: Actualización de la sección usuarios, cuentas, grupos y licencias
+[33m6aaf03d[m HEAD@{89}: commit: Inicio de la documentación sobre usuariosy cuentas
+[33m5afb777[m HEAD@{90}: commit: Mejora en la sección registros guardados de la app móvil
+[33m307985c[m HEAD@{91}: merge develop: Merge made by the 'ort' strategy.
+[33mce89328[m HEAD@{92}: checkout: moving from develop to main
+[33mf7f3bfb[m HEAD@{93}: commit: Actualización en indices, presentación y reportes
+[33m6749672[m HEAD@{94}: commit: Actualización en registros de app
+[33mc0e9312[m HEAD@{95}: commit: Actualización sobre la documentación sobre la aplicación móvil
+[33mb2745bf[m HEAD@{96}: checkout: moving from dev-report to develop
+[33mc7581fe[m HEAD@{97}: checkout: moving from develop to dev-report
+[33mb2745bf[m HEAD@{98}: commit: Funcionalidades de la aplicación móvil
+[33mc7581fe[m HEAD@{99}: merge dev-report: Fast-forward
+[33mbf4ae5e[m HEAD@{100}: checkout: moving from dev-report to develop
+[33mc7581fe[m HEAD@{101}: commit: Actualización del módulo reportes y comienzo de la documentación para la aplicación móvil
+[33m158e726[m HEAD@{102}: commit: Actualización y ejemplos sobre query
+[33m352b1aa[m HEAD@{103}: checkout: moving from main to dev-report
+[33mce89328[m HEAD@{104}: rebase (continue) (finish): returning to refs/heads/main
+[33mce89328[m HEAD@{105}: rebase (continue): Actualizacion de index
+[33m352b1aa[m HEAD@{106}: rebase (start): checkout dev-report
+[33mdc30613[m HEAD@{107}: merge dev-report: Merge made by the 'ort' strategy.
+[33m0ee278b[m HEAD@{108}: commit (merge): Resolver problemas con el stash
+[33m9479a56[m HEAD@{109}: checkout: moving from dev-report to main
+[33m352b1aa[m HEAD@{110}: reset: moving to HEAD
+[33m352b1aa[m HEAD@{111}: commit: Actualización en script
+[33m34b7c9f[m HEAD@{112}: commit: Actualización en la sección query
+[33mf281730[m HEAD@{113}: commit: Actualización sobre documentación de reportes, creación de Demo y Scripts
+[33me9bb0c8[m HEAD@{114}: commit: Primera actualización del módulo reportes y correcciones generales de otros módulos
+[33mbf4ae5e[m HEAD@{115}: checkout: moving from develop to dev-report
+[33mbf4ae5e[m HEAD@{116}: commit: Actualización de como contribuir y pasos para hacer request en contribución
+[33m5aaee5e[m HEAD@{117}: commit: Actualización en portadas
+[33m25b320c[m HEAD@{118}: commit: Actualización completa de portadas y contenido de Usuarios y Desarrillador
+[33m7179634[m HEAD@{119}: commit: Actualización en archivos de contribución y nuevo contenido sobre formas, catálogos y registros
+[33m2146680[m HEAD@{120}: commit: Actualización sobre formas en el apartado de funcionalidades
+[33mbf9957d[m HEAD@{121}: commit: Actualización de la sección formas
+[33m5a9e62e[m HEAD@{122}: commit: Eliminacion de reportes
+[33maf30091[m HEAD@{123}: commit: Añadí una seccion de ejemplos sobre grupos repetitivos y catalogos en el desarrollo de PDFs
+[33mc55c4e6[m HEAD@{124}: commit: Actualización del indice en index desarrolladores
+[33m75b22a6[m HEAD@{125}: pull origin develop: Merge made by the 'ort' strategy.
+[33mc1f06ad[m HEAD@{126}: commit: Agregué nuevas pautas de contenido en contribución, y se actualizó la sección de PDFs. También se actualizo la estructura del contenido
+[33m60bbc00[m HEAD@{127}: commit: Actualización en módulo PDFs
+[33m85999e0[m HEAD@{128}: commit: Actualización general de Contribución y pdfs
+[33m54b367c[m HEAD@{129}: commit: Actualización de estructura y modificaciones en Contribución
+[33mf817af8[m HEAD@{130}: commit: Actualización sección instalación V2
+[33m7f98aa2[m HEAD@{131}: commit: Actualización sección instalación
+[33mfe0e9dd[m HEAD@{132}: commit: Actualización personalización
+[33m7d78261[m HEAD@{133}: commit: Actualización sección personalización
+[33m4ff1c57[m HEAD@{134}: commit: Actualización de la sección contenido adicional(extensiones)
+[33ma2d4d73[m HEAD@{135}: commit: Actualización de la sección reStructuredText e implementación de la sección Build
+[33md173439[m HEAD@{136}: commit: Actualización de la sección 4.reStructuredText
+[33m42c8750[m HEAD@{137}: pull origin develop: Merge made by the 'ort' strategy.
+[33m577c92a[m HEAD@{138}: commit: Actualizacion 4.Res
+[33me255272[m HEAD@{139}: commit: Actualización sección nueva para contribuidores
+[33m55fdfee[m HEAD@{140}: checkout: moving from main to develop
+[33m9479a56[m HEAD@{141}: checkout: moving from develop to main
+[33m55fdfee[m HEAD@{142}: commit: Modificación al archivo conf.py pra restaurar el tema furo
+[33m651b4f2[m HEAD@{143}: commit: Actualizaciones sobre el apartado de Reportes
+[33mceb76fa[m HEAD@{144}: pull origin develop: Fast-forward
+[33m38da7da[m HEAD@{145}: commit: Actualización Sección Reportes
+[33m99a989d[m HEAD@{146}: pull origin develop: Fast-forward
+[33m541b143[m HEAD@{147}: commit: Actualización traducciones
+[33m2542351[m HEAD@{148}: commit: Actualizacioón tema Furo, estilos y contenido
+[33m176a60a[m HEAD@{149}: commit: Actualizacion de viaticos, final en contenido
+[33mc93f7e0[m HEAD@{150}: checkout: moving from mark to develop
+[33mda04f29[m[33m ([m[1;31morigin/mark[m[33m)[m HEAD@{151}: commit: Actualizacion segun markdown
+[33mc93f7e0[m HEAD@{152}: checkout: moving from develop to mark
+[33mc93f7e0[m HEAD@{153}: commit: Actualización del módulo de viáticos
+[33m61a7fed[m HEAD@{154}: checkout: moving from dockr to develop
+[33mc34587e[m HEAD@{155}: commit: nuevas actualizciones
+[33m0eea8f0[m HEAD@{156}: commit: actualizacion del index
+[33mdbc85b5[m HEAD@{157}: checkout: moving from develop to dockr
+[33m61a7fed[m HEAD@{158}: checkout: moving from dockr to develop
+[33mdbc85b5[m HEAD@{159}: commit: configuracion de ancho
+[33ma01f099[m[33m ([m[1;31morigin/dockr[m[33m)[m HEAD@{160}: commit: Actualización del módulo viáticos
+[33m61a7fed[m HEAD@{161}: checkout: moving from develop to dockr
+[33m61a7fed[m HEAD@{162}: commit: Pestaña Solicitar Viaticos
+[33mf69eceb[m HEAD@{163}: checkout: moving from main to develop
+[33m9479a56[m HEAD@{164}: commit: Actualizacion de index
+[33m2b5acdb[m HEAD@{165}: pull origin main: Fast-forward
+[33mb179922[m HEAD@{166}: pull origin main: Fast-forward
+[33m9d1bca9[m HEAD@{167}: pull origin main: Fast-forward
+[33mcf792e0[m HEAD@{168}: pull origin main: Fast-forward
+[33m4e5ba0c[m HEAD@{169}: clone: from github.com:linkaform/documentation.git

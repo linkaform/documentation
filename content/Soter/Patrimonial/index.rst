@@ -1,8 +1,8 @@
 .. _doc-seguridad-patrimonial:
 
-===========================
-Manual Administración Soter
-===========================
+==========================
+Manual Configuración Soter
+==========================
 
 .. toctree::
     :maxdepth: 1

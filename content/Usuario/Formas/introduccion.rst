@@ -4,12 +4,7 @@
 Introducción
 ============
 
-En este apartado, encontrará una guía completa sobre cómo acceder, localizar y organizar formas y carpetas en Linkaform.
-
-Formas
-======
-
-Las **forma** en Linkaform son formularios digitales que permiten recopilar, organizar y gestionar información de manera estructurada. Estas formas pueden configurarse para adaptarse a diferentes procesos de su empresa, desde la recolección de datos hasta la automatización de flujos de trabajo. 
+Las **formas** en Linkaform son formularios digitales que permiten recopilar, organizar y gestionar información de manera estructurada. Estas formas pueden configurarse para adaptarse a diferentes procesos de su empresa, desde la recolección de datos hasta la automatización de flujos de trabajo. 
 
 Acceder a forma
 ---------------
@@ -26,45 +21,6 @@ Para acceder a las **formas**, siga los siguientes pasos:
 .. hint:: Presione el símbolo ``>`` para visualizar el nombre de las opciones del menú lateral.  
   
 .. image:: /imgs/Formas/Formas1.1.png
-
-Opciones de forma
------------------
-
-Las formas proporcionan opciones que permiten una rápida gestión de las mismas. Revise las siguientes opciones de una forma.
-
-.. warning:: Las opciones disponibles en una forma dependen de los permisos asignados. Como creador de la forma, tendrá acceso completo a todas las opciones, mientras que si la forma es compartida con usted, sus permisos dependerán de los niveles de acceso otorgados. Consulte :ref:`compartir`_ :octicon:`report;1em;sd-text-info` para más información sobre los permisos.
-
-Borrar forma
-^^^^^^^^^^^^
-
-Compartir forma
-^^^^^^^^^^^^^^^
-
-Permite otorgar permisos de la forma a otros usuarios. 
-
-.. seealso:: Siga estos `pasos <#compartir>`_ :octicon:`report;1em;sd-text-info` para compartir una forma.
-
-Editar forma
-^^^^^^^^^^^^
-
-Permite realizar cambios en la estructura de la forma. Se pueden agregar campos, modificar respuestas, etc.
-- **Duplicar**: Duplica la forma, incluidos los IDs y reglas de campo.
-
-.. warning:: Al duplicar una forma, Linkaform **no** duplica flujos de trabajo.
-
-Responder forma
-^^^^^^^^^^^^^^^
-Permite crear registros de la forma deseada. Simplemente haga clic sobre la opción y se mostrará la estructura de la forma en modo ``Responder``. Al terminar de capturar la información, haga clic en ``Mandar respuestas``.
-
-Ver registros 
-^^^^^^^^^^^^^
-
-Mostrará los registros de la forma. Esta opción tiene dos tipos de resultados:
-
-  * Si la forma se tiene compartida en modo ``Solo Lectura``, el usuario solo podrá ver sus propios registros.
-  * Si la forma se tiene compartida en modo ``Admin``, el usuario podrá ver todos los registros, independientemente del usuario que los haya creado.
-
-.. image:: /imgs/Formas/Formas99.png
 
 Carpetas
 ========

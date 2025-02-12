@@ -4,19 +4,6 @@
 Formas
 ======
 
-En Linkaform, una **forma** es un formulario digital que facilita la recopilación, organización y gestión de datos. 
-Este apartado le guiará en el uso y personalización de las formas, cubriendo funcionalidades como:
-
-- Creación y edición de formas.
-- Organización de formas mediante carpetas.
-- Opciones para compartir y colaborar en formas con otros usuarios.
-- Captura de datos al responder formas.
-- Herramientas de búsqueda para el acceso directo a los registros almacenados en cada forma.
-- Configuración avanzada para personalizar el uso y apariencia de cada forma.
-
-Aquí encontrará todas las instrucciones necesarias para crear una solución integral con Linkaform, aprovechando su flexibilidad y funciones para optimizar los procesos de su empresa.
-
-
 Bienvenido a la guía de **Formas en Linkaform**. En este apartado, encontrará toda la información necesaria para aprovechar al máximo las herramientas y configuraciones que le permitirán optimizar la captura y gestión de datos en su organización. Aquí podrá conocer en detalle las funcionalidades de las formas, incluyendo:
 
 - **Creación y edición**: Diseñe y adapte sus formularios digitales según los requisitos específicos de cada proceso.

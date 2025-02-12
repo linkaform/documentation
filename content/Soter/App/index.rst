@@ -1,8 +1,8 @@
 .. _doc-manual-soter:
 
-============
-Manual Soter
-============
+====================
+Manual App Web Soter
+====================
 
 Este manual es una guía detallada sobre el uso de las funcionalidades de **Soter**, proporciona ejemplos, tutoriales paso a paso y soluciones a problemas comunes para facilitar su uso.  
 
