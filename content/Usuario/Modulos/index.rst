@@ -12,9 +12,6 @@ Módulos
     Base/index
     Empleados/index
     Viaticos/index
-    Contratistas/index
-    Ubicaciones/index
-    Accesos/index
 
 Un **módulo en Linkaform** es un conjunto de formas, catálogos, scripts que se encarga de una función particular dentro de una empresa u organización. Cada módulo está diseñado para gestionar y optimizar diferentes aspectos operativos.
 
