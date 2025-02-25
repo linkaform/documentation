@@ -2,7 +2,7 @@
 Carpeta: Base
 =============
 
-La carpeta contiene formas y catálogos bases. Aquí podrá registrar compañías, definir contactos y administrar otros elementos básicos de Soter.
+La carpeta contiene formas y catálogos para registrar compañías, definir contactos y administrar otros elementos básicos de **Soter**.
 
 .. image:: /imgs/Manual/Manual1.png
 
@@ -11,7 +11,7 @@ La carpeta contiene formas y catálogos bases. Aquí podrá registrar compañía
 Catalogo: ``Compañía``
 ----------------------
 
-Este catálogo es utilizada para registrar y gestionar las compañías dentro del Soter, utilizada para establecer la relación entre empleados y sus respectivas empresas. 
+Este catálogo es utilizada para registrar y gestionar las compañías dentro de **Soter**, utilizada para establecer la relación entre empleados y sus respectivas empresas. 
 
 **Pasos para la configuración**:
 
