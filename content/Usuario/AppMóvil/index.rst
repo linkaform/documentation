@@ -625,8 +625,38 @@ El inbox es un espacio que detalla el estado de los registros asignados a su cue
 1. Presione el botón hamburguesa en la parte superior izquierda.
 2. Seleccione la opción ``Inbox``. Observe la bandeja donde se encuentran todos los registros asignados.
 
+.. image:: /imgs/Móvil/Móvil40.jpeg
+    :width: 200px
+
+Opciones Disponibles
+^^^^^^^^^^^^^^^^^^^^
+
+Los registros permiten las siguientes opciones:
+
 .. grid:: 2
     :gutter: 0
+
+    .. grid-item-card::
+        :columns: 8
+
+        **Añadir a favoritos**: Permite marcar como favorito al registro.
+        
+        - Presione el icono de estrella.
+        
+        **Visualizar**: Permite tener una vista previa del registro para darle seguimiento.
+        
+        - Presione ``Visualizar``.
+
+        **Asignar**: Permite asignar el registro a otro usuario.
+
+        - Presione ``Asignar``.
+
+        .. seealso:: Consulte la sección sobre cómo `asignar registro <#asignar-registro-app>`_ :octicon:`report;1em;sd-text-info` y siga directamente al paso 3.
+        
+        **Editar**: Permite realizar actualizaciones al registro.
+
+        - Seleccione ``Editar`` y realice las actualizaciones al registro. 
+        - `Envíe el registro <#enviar-registro-app>`_ :octicon:`report;1em;sd-text-info`.
 
     .. grid-item-card::
         :columns: 4
@@ -634,47 +664,62 @@ El inbox es un espacio que detalla el estado de los registros asignados a su cue
         .. image:: /imgs/Móvil/Móvil32.gif
 
     .. grid-item-card::
+        :columns: 12
+
+        .. warning:: Una vez enviado el registro, ya no aparecerá en inbox. 
+        
+        **Renombrar**: Permite cambiar el nombre del registro.
+
+        - Seleccione ``Renombrar``.
+        
+        **Eliminar**:Permite quitar el registro del Inbox, aunque este seguirá asignado a su cuenta.
+
+        - Presione ``Eliminar``.
+
+        .. important:: Al elegir esta opción, el registro no se elimina, solo desaparece de la bitácora del Inbox, pero sigue asignado a su cuenta.
+
+Estatus de Registros Asignados
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Los registros en el **Inbox** pueden tener diferentes estados, representados por colores e íconos específicos:  
+
+.. grid:: 2
+    :gutter: 0
+
+    .. grid-item-card::
         :columns: 8
 
-        **Registros nuevos**
+        **Registros Nuevos**
 
-        Los registros nuevos (color verde) son aquellos que han sido asignados por otro usuario a su cuenta y que están en espera de revisión o para continuar con la respuesta según sea necesario.
+        - **Ícono**: Sobre cerrado color verde.
+        - **Descripción**: Registros asignados recientemente que **nunca han sido abiertos**.
 
-        **Registros vistos**
+        **Registros Vistos**
 
-        Los registros vistos (color rosa) son aquellos registros que han sido revisados o visualizados en la bandeja de Inbox. Estos registros ya han sido abiertos y vistos, pero no necesariamente se han completado o enviado. Pueden estar en diferentes estados, como en proceso de edición o a la espera de ser enviados. Es una manera de distinguir los registros que ya han sido abiertos.
+        - **Ícono**: Sobre abierto color rojo. 
+        - **Descripción:** Registros en los que se hizo clic en ”Visualizar”, pero que no han sido editados ni guardados.
 
-        **Registros en progreso**
+        .. Sirven para distinguir registros que ya han sido abiertos de aquellos que aún no han sido revisados.  
 
-        Los registros  en progreso (icono sobre color azul) son aquellos registros que, al momento de enviar, se encuentran en proceso de envío.
+        **Registros en Progreso**
+    
+        - **Ícono**: Sobre abierto color azul.
+        - **Descripción**: Registros en los que **se ingresó, pero no se hizo clic en ”Guardar”**, sin importar si la información fue modificada o no.  
 
-En ocasiones, algunos registros que contienen grandes cantidades de información e imágenes pueden quedar atascados en el proceso de envío. Se recomienda editar estos registros y realizar el envío correspondiente directamente desde la aplicación web.
+    .. grid-item-card::
+        :columns: 4
 
-**Registros guardados**
+        .. image:: /imgs/Móvil/Móvil39.jpeg
 
-Los registros guardados (icono guardado color azul) son aquellos que ha guardado, ya sea en la aplicación web o en otro dispositivo, y que puede continuar capturando y enviar sin problemas desde la aplicación móvil.
+    .. grid-item-card::
+        :columns: 12
 
-**Opciones**
+        **Registros Guardados**
 
-Los registros permiten las siguientes opciones:
-
-- Presione el selector  ``Campos de la Forma`` para visualizar los campos y registros marcados como ``favoritos`` desde la configuración de la forma.
-
-.. seealso:: Consulte las características de los :ref:`opciones-campos` :octicon:`report;1em;sd-text-info` en la documentación de :ref:`section-forms` :octicon:`report;1em;sd-text-info`.
-
-- Presione ``Visualizar`` para tener solo una vista previa del registro para darle seguimiento.
-- Presione ``Asignar`` para poder asignar a otro usuario el mismo registro. 
-
-.. seealso:: Por favor, consulte la sección sobre cómo `asignar registro <#asignar-registro-app>`_ :octicon:`report;1em;sd-text-info`, evitando los primeros pasos y proceda directamente al paso 3.
-
-- Seleccione ``Editar`` para hacer nuevas actualizaciones al registro. Una vez que realice los cambios, `envíe el registro <#enviar-registro-app>`_ :octicon:`report;1em;sd-text-info`.
-
-.. note:: Una vez enviado el registro, ya no aparecerá en inbox. 
-
-- Seleccione ``Renombrar`` para cambiar el nombre del registro.
-- Presione ``Eliminar`` para quitar el registro del inbox.
-
-.. important:: Cuando elige esta opción, no necesariamente elimina el registro, sino que simplemente lo quita de la bitácora del Inbox, aunque seguirá teniéndolo asignado.
+        - **Ícono**: Sobre guardado color azul.
+        - **Descripción**: Registros en los que **se ingresó y se hizo clic en ”Guardar”**, independientemente de si la información fue modificada. 
+        
+        .. Pueden ser continuados y enviados en cualquier momento desde la aplicación.  
 
 Registros
 =========

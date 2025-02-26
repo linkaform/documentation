@@ -14,11 +14,18 @@ Manual Configuración Soter
     RecursosHumanos
     Seguridad
 
-Este manual tiene como objetivo guiarlo en la configuración de las formas y catálogos necesarios para el funcionamiento de **Soter**. 
+Este manual tiene como objetivo guiarlo en la configuración de las formas y catálogos necesarios para el funcionamiento de |soter| :octicon:`report;1em;sd-text-info`. 
 Aunque existen otros catálogos y formas dentro de las carpetas, este manual se centrará exclusivamente en los elementos necesarios para comenzar a utilizar el sistema. Los demás catálogos y formas se presentan solo para su referencia, pero no forman parte de la configuración inicial requerida.
 
 En las siguientes secciones encontrará instrucciones detalladas paso a paso para cada forma. Mientras tanto, observe el siguiente flujo como referencia y siga los pasos en el orden indicado.
 
 .. image:: /imgs/Manual/Manual35.png
     :width: 880px
+
+.. LIGAS EXTERNAS
+
+.. |soter| raw:: html
+
+   <a href="https://www.soter.mx/" target="_blank">Soter</a>
+
 

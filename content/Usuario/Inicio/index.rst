@@ -415,16 +415,11 @@ Proceso de Alta de Usuarios
 
 Considere los siguientes puntos y pasos importantes como administrador para dar de alta a un nuevo usuario:
 
-1. Cree un nuevo `nuevo usuario <#usuario-nuevo>`_ :octicon:`report;1em;sd-text-info`.
-
 .. note:: 
 
-    - Al crear un usuario nuevo, Linkaform enviará automáticamente un correo electrónico al nuevo usuario para que inicie el proceso de `activación <#activar-cuenta-usuario>`_ :octicon:`report;1em;sd-text-info` de la cuenta, que consiste en la confirmación del correo.
+    - Al `crear un usuario <#usuario-nuevo>`_ :octicon:`report;1em;sd-text-info`, Linkaform enviará automáticamente un correo electrónico al nuevo usuario para que inicie el proceso de `activación <#activar-cuenta-usuario>`_ :octicon:`report;1em;sd-text-info` de la cuenta, que consiste en la confirmación del correo.
     - Si el usuario no recibe el correo para activar la cuenta, simplemente reenvíe el correo presionando el botón de reenvío ubicado en la ``Información del usuario >  Información de la cuenta``.
-
-2. Asigne una `licencia <#asignar-licencia>`_ :octicon:`report;1em;sd-text-info`.
-
-.. note:: Una vez que el usuario haya completado el proceso de activación, asigne una licencia. Sin una licencia el usuario no podrá utilizar las funcionalidades de Linkaform.
+    - Una vez que el usuario haya completado el proceso de activación, asigne una `licencia <#asignar-licencia>`_ :octicon:`report;1em;sd-text-info`. Sin una licencia el usuario no podrá utilizar las funcionalidades de Linkaform.
 
 .. _usuario-nuevo:
 

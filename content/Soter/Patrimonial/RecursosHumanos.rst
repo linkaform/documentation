@@ -2,7 +2,7 @@
 Carpeta: Recursos Humanos
 =========================
 
-La carpeta agrupa las formas necesarias para gestionar la información del personal. Aquí podrá registrar empleados, asignar puestos y definir departamentos.
+La carpeta agrupa las formas necesarias para gestionar la información del personal. Aquí podrá registrar empleados, definir departamentos y asignar puestos.
 
 .. image:: /imgs/Manual/Manual4.png
     :width: 880px
@@ -95,6 +95,10 @@ Forma: ``Usuarios``
 
 La forma **Usuarios** es una de las más importantes dentro de **Soter**, ya que permite registrar y gestionar las credenciales de acceso de los usuarios que utilizarán la plataforma.  
 
+.. warning:: Los usuarios que utilicen **Soter** deberán tener una cuenta vigente en **Linkaform**.
+    
+    Para más detalles sobre como crear usuarios activos en Linkaform consulte; :ref:`usuarios-admin` :octicon:`report;1em;sd-text-info` para más detalles. 
+
 **Pasos para la configuración**:
 
 1. Navegue al apartado de formas seleccionando la opción ``Formas > Mis Formas`` en el menú lateral.
@@ -107,9 +111,9 @@ La forma **Usuarios** es una de las más importantes dentro de **Soter**, ya que
    - **Email**: Correo electrónico único del empleado en la plataforma **LinkaForm**.  
    - **Estatus**: Define si el usuario está **activo** (puede acceder a la plataforma) o **inactivo** (sin acceso hasta nueva autorización).  
 
-   .. warning:: Los usuarios que utilicen **Soter** deberán tener una cuenta vigente en **Linkaform**.
-   
-       Para más detalles sobre como crear usuarios activos en Linkaform consulte; :ref:`usuarios-admin` para más detalles. 
+   .. image:: /imgs/Manual/Manual36.png
+
+   .. seealso:: Consulte; :ref:`informacion-usuario-administrador` :octicon:`report;1em;sd-text-info` para obtener los datos de los usuarios.
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 

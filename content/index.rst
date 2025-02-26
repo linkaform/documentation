@@ -17,8 +17,6 @@ Documentación de Linkaform
    Desarrollador/index
    Contribución/index
 
-
-
 ¡Te damos la bienvenida a la documentación de Linkaform, tu guía oficial para dominar cada rincón de nuestra plataforma! 
 
 Descubre trucos, consejos, nuevas funcionalidades y todo lo que necesitas para aprovechar al máximo tu experiencia. 🚀📊
