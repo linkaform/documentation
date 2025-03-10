@@ -1,3 +1,5 @@
+.. _carga-universal-xlsx:
+
 ===============
 Carga Universal
 ===============
@@ -9,7 +11,7 @@ La carga universal es una funcionalidad que LinkaForm ofrece para importar regis
 Estructura del Archivo
 ======================
 
-Para asegurar una correcta importación, siga las siguientes recomendaciones para preparar el archivo según los campos de la forma.  
+Para asegurar una correcta importación, siga las siguientes recomendaciones para preparar el archivo **.xlsx** según los campos de la forma.  
 
 .. Cada columna del archivo **.xlsx** debe corresponder a un campo de la forma.
 .. .. warning:: El nombre de la columna en el archivo debe coincidir exactamente con el nombre del campo en la forma para evitar errores en la carga.
@@ -131,11 +133,7 @@ Debe contener exclusivamente: **Sí** o **No**
 Respuesta Selecciona un Campo
 -----------------------------
 
-Funciona igual que la respuesta única. Debe ser una de las opciones disponibles.  
-
-.. code-block::
-
-    ✔️ Opción A
+Similar a la respuesta única, debe ser una de las opciones disponibles.  
 
 .. image:: /imgs/Registros/Registros73.png
 
@@ -237,7 +235,7 @@ Para cargar múltiples registros dentro de un **grupo repetitivo**, siga estas r
 Alta de Forma
 =============
 
-Antes de realizar la carga universal, primero debe registrar la forma donde se cargará la información. Para ello, siga estos pasos:  
+Antes de realizar la carga universal, primero deberá registrar la forma donde se cargará la información. Para ello, siga estos pasos:  
 
 1. Acceda a ``Catálogos > Catálogos`` desde el menú lateral.  
 2. Ubique el catálogo **Catálogo de Formas**, dentro de la carpeta **Base**.  
@@ -258,7 +256,7 @@ Carga Universal
 
 Para cargar registros en la forma, siga estos pasos:
 
-.. note:: Verifique que su `archivo .xlsx <#estructura-xlsx>`_ :octicon:`report;1em;sd-text-info` esté preparado y que la `forma <#alta-forma>`_ :octicon:`report;1em;sd-text-info` correspondiente haya sido dada de alta.
+.. note:: Verifique que su `archivo .xlsx <#estructura-xlsx>`_ :octicon:`report;1em;sd-text-info` esté preparado y que la forma correspondiente haya sido dada de `alta <#alta-forma>`_ :octicon:`report;1em;sd-text-info`.
 
 1. Acceda a ``Formas > Mis Formas`` desde el menú lateral.  
 2. Ubique la forma **Carga Universal Module** dentro de la carpeta **Base**.  
@@ -267,14 +265,14 @@ Para cargar registros en la forma, siga estos pasos:
    - **Excel de relaciones campo-documento**: Cargue el archivo **.xlsx** previamente preparado.  
    - **Forma**: Seleccione el nombre de la forma donde se cargarán los registros.  
 
+   .. image:: /imgs/Registros/Registros82.png  
+
    .. warning::  
 
         No ingrese o modifique datos en los campos de estatus, errores o comentarios. Al enviar el registro, estos campos se actualizarán automáticamente según el resultado de la carga.
 
 4. Haga clic en ``Mandar respuestas`` o utilice el botón flotante de envío para finalizar el registro.
 5. Una vez enviada la carga, regrese al registro presionando ``Ver Registro``.
-
-.. image:: /imgs/Registros/Registros82.png  
 
 .. hint:: Espere entre 2 - 4 minutos, dependiendo de la cantidad de registros, y luego recargue la página del detalle del registro para visualizar los resultados.
 
@@ -302,6 +300,7 @@ Interpretación de Errores
 Para revisar la interpretación de errores, ubíquese en el registro correspondiente y verifique el estatus:
 
 **Carga terminada**: La importación fue exitosa. Podrá ver el número total de registros creados en la sección de comentarios.
+
 **Error**: Hubo problemas en la carga. Se mostrará la cantidad de registros creados y los errores detectados
 
 .. note:: En caso de error, se adjuntará un archivo **.xlsx** con los registros que no se importaron correctamente.
@@ -341,7 +340,7 @@ A continuación, tomaremos como ejemplo el siguiente registro detectado con erro
      - 3  
      - 54  
      - Gasolia  
-     - SSensor de Revrsa
+     - Sensor de Revrsa
      - Verde  
      - 2024-12-04  
      - Cambio de llantas  
@@ -354,7 +353,11 @@ El valor *“pati“* no cumple con el formato válido de correo electrónico (d
 
 - **La opción no esta dentro de los valores definidos: “¿Cuenta con Seguro?“**:
 
-La opción *“No sé“* no está dentro de los valores definidos (ebe ser, por ejemplo: *Sí* / *No*).  
+La opción *“No sé“* no está dentro de los valores definidos (debe ser, por ejemplo: *Sí* / *No*).  
+
+- **No se encontró información en el catalogo “Tipo“**:
+
+Alguno de los valores en *Tipo de Vehículo*, *Marca* o *Modelo* no se encontró en el catálogo correspondiente (en este caso el modelo).  
 
 - **La opción no esta dentro de los valores definidos: “Tipo de Combustible“**:
 
@@ -367,10 +370,6 @@ La opción *“Gasolia“* no coincide con los valores definidos en el catálogo
 - **La opción no esta dentro de los valores definidos: “Color“**:
 
 *“Verde“* no coincide con los valores definidos (debe ser, por ejemplo: *Azul* / *Blanco* / *Negro* / *Rojo*).  
-
-- **No se encontró información en el catalogo “Tipo“**:
-
-Alguno de los valores en *Tipo de Vehículo*, *Marca* o *Modelo* no se encontró en el catálogo correspondiente (en este caso el modelo).  
 
 - **No se encontró información en el catalogo “Mecánico Encargado“**:
 

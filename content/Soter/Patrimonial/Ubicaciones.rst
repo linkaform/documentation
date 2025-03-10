@@ -30,7 +30,7 @@ Esta forma permite registrar múltiples sucursales, plantas o edificios físicos
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si necesita agregar múltiples registros, considere realizar una carga universal desde las formas. Para más detalles, consulte la sección **Carga Universal**.
+.. seealso:: Si necesita agregar múltiples registros, considere realizar una carga masiva a las formas. Consulte; :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. dropdown:: Revisar Sincronización
 
@@ -137,7 +137,7 @@ Esta forma permite definir las áreas que estarán asociadas a cada ubicación.
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si requiere agregar varios registros a la vez, utilice la opción de Carga Universal en las formas. Consulte la sección correspondiente para más información.
+.. seealso:: Si necesita agregar varios registros a la vez, realice una :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` en las formas. Descargue la plantilla de registros |config-areas-empleados| :octicon:`report;1em;sd-text-info`.
 
 .. dropdown:: Revisar Sincronización 
 

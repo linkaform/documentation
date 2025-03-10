@@ -66,7 +66,7 @@ Asegúrese de que la forma contenga registros. Para verificarlo, siga estos paso
 
 .. image:: /imgs/Manual/Manual29.png
 
-.. attention:: Si no encuentra registros o necesita agregar más, repórtelo con **soporte técnico** o realice una importación a través de la Carga universal. Para ello, descargue la plantilla de registros |config-departamentos-puestos| :octicon:`report;1em;sd-text-info`.
+.. attention:: Si no encuentra registros o necesita agregar más, repórtelo con **soporte técnico** o realice una importación a través de la :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info`. Para ello, descargue la plantilla de registros |config-departamentos-puestos| :octicon:`report;1em;sd-text-info`.
 
 .. dropdown:: Revisar Sincronización
 
@@ -117,7 +117,7 @@ La forma **Usuarios** es una de las más importantes dentro de **Soter**, ya que
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si requiere agregar varios registros a la vez, utilice la opción de Carga Universal en las formas. Consulte la sección correspondiente para más información.
+.. seealso:: Si necesita agregar múltiples registros, considere realizar una carga masiva a las formas. Consulte; :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. dropdown:: Revisar Sincronización
 
@@ -209,7 +209,7 @@ Esta forma permite registrar y gestionar los datos personales y laborales de los
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si requiere agregar varios registros a la vez, utilice la opción de Carga Universal en las formas. Descargue la plantilla de registros |empleados| :octicon:`report;1em;sd-text-info`.
+.. seealso:: Si necesita agregar varios registros a la vez, realice una :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` en las formas. Descargue la plantilla de registros |empleados| :octicon:`report;1em;sd-text-info`.
 
 .. dropdown:: Revisar Sincronización 
 
@@ -263,7 +263,7 @@ Esta forma permite asociar empleados a áreas específicas dentro de una ubicaci
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si requiere agregar varios registros a la vez, utilice la opción de Carga Universal en las formas. Descargue la plantilla de registros |config-areas-empleados| :octicon:`report;1em;sd-text-info`.
+.. seealso:: Si necesita agregar varios registros a la vez, realice una :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` en las formas. Descargue la plantilla de registros |config-areas-empleados| :octicon:`report;1em;sd-text-info`.
 
 .. dropdown:: Revisar Sincronización
 

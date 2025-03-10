@@ -79,7 +79,7 @@ La forma ofrece una funcionalidad similar a la de la lista de contactos en un te
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si necesita agregar múltiples registros, considere realizar una carga universal. Para más detalles, consulte la sección **Carga Universal**.
+.. seealso:: Si necesita agregar múltiples registros, considere realizar una carga masiva a las formas. Consulte; :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` para más detalles.
 
 .. dropdown:: Revisar Sincronización
 
