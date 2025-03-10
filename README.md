@@ -52,6 +52,8 @@ docker compose up
 
 Entrar al contenedor y hacer el build local
 ```
+docker exec -it lkf-documentation bash
+./local_build
 ```
 
 una vez realizada la compilacion hacer un tar de la carpeta build
@@ -62,6 +64,10 @@ tar -czvf documentacion.tar.gz build
 copiar tar  a server
 ```
 scp documentacion.tar.gz docs.linkaform.com:
+```
+Entrar al servidor 
+```
+ ssh docs.linkaform.com
 ```
 
 En el servidor correr estos comandos

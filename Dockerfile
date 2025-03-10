@@ -4,7 +4,6 @@
 
 #FROM python:3.7-bullseye-slim as develop
 FROM sphinxdoc/sphinx as develop
-MAINTAINER Linkaform
 
 
 RUN apt-get update && \
