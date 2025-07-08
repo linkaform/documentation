@@ -137,8 +137,8 @@ Esta forma permite definir las áreas que estarán asociadas a cada ubicación.
 
 4. Presione el botón ``Mandar respuestas`` o el botón flotante de envío para finalizar la captura de la forma. 
 
-.. seealso:: Si necesita agregar varios registros a la vez, realice una :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` en las formas. Descargue la plantilla de registros |config-areas-empleados| :octicon:`report;1em;sd-text-info`.
-
+.. seealso:: Si necesita agregar varios registros a la vez, realice una :ref:`carga-universal-xlsx` :octicon:`report;1em;sd-text-info` en las formas.
+    
 .. dropdown:: Revisar Sincronización 
 
     Los datos ingresados en la forma se sincronizan automáticamente con los catálogos **Áreas de las Ubicaciones** y **Áreas de las Ubicaciones Salidas**.  

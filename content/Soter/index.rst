@@ -15,6 +15,7 @@ A continuación, te presentamos un índice que enumera los temas que te serán d
 
     Patrimonial/index
     App/index
+    Manuales/index
 
 .. grid:: 2
     :gutter: 0
